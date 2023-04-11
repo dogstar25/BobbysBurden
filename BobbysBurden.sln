@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BobbysBurden", "BobbysBurden\BobbysBurden.vcxproj", "{FA5EC07E-261C-4CAF-B6D0-67A8324E627D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5BC96C69-A864-419D-96C6-BC3507DE7D1B} = {5BC96C69-A864-419D-96C6-BC3507DE7D1B}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MobyDick", "..\MobyDick_NEW\MobyDick\MobyDick.vcxproj", "{5BC96C69-A864-419D-96C6-BC3507DE7D1B}"
 EndProject
