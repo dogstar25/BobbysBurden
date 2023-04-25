@@ -1,0 +1,56 @@
+{
+    "gameObjects": [
+        {
+            "type": "LIGHT_FULL_32",
+            "traitTags": [ "light" ],
+            "description": "Light 32",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_LIGHT_360"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "LIGHT_COMPONENT",
+                    "type": "LightType::TEXTURE_LIGHT",
+                    "intensity": 5,
+                    "flicker": 0
+                }
+            ]
+        },
+        {
+            "type": "DARK_ROOM_OVERLAY_544",
+            "traitTags": [],
+            "description": "Dark room overlay",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WHITE_QUAD",
+                    "textureBlendMode": "RenderBlendMode::BLEND",
+                    "color": {
+                        "tint": "Colors::BLACK",
+                        "alpha": 200
+                    }
+
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 544,
+                        "height": 320
+                    }
+                },
+                {
+                    "id": "LIGHTED_TREATMENT_COMPONENT"
+                }
+            ]
+        }
+
+    ]
+}

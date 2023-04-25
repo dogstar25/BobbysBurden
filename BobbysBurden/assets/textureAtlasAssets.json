@@ -340,6 +340,17 @@
                 "width": 16,
                 "height": 16
             }
+        },
+        {
+            "id": "TX_LIGHT_360",
+            "description": "Light 360",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 1,
+                "y": 1024,
+                "width": 512,
+                "height": 512
+            }
         }
 
     ],
