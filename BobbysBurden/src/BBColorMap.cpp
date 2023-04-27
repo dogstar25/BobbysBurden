@@ -5,6 +5,7 @@
 BBColorMap::BBColorMap()
 {
 
+
 	addColor("Colors::NOCOLOR", Colors::NOCOLOR);
 
 	//greens
