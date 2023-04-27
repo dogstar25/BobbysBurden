@@ -72,12 +72,27 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>c:\projects\MobyDick_NEW\MobyDick\include;$(VC_IncludePath);$(IncludePath)</IncludePath>
-    <LibraryPath>C:\projects\MobyDick_NEW\MobyDick\x64\$(Configuration)\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\MobyDick_NEW\MobyDick\include;$(VC_IncludePath);$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\MobyDick_NEW\MobyDick\x64\$(Configuration)\lib;$(LibraryPath)</LibraryPath>
+    <CopyLocalProjectReference>true</CopyLocalProjectReference>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>c:\projects\MobyDick_NEW\MobyDick\include;$(VC_IncludePath);$(IncludePath)</IncludePath>
-    <LibraryPath>C:\projects\MobyDick_NEW\MobyDick\x64\$(Configuration)\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\MobyDick_NEW\MobyDick\include;$(VC_IncludePath);$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\MobyDick_NEW\MobyDick\x64\$(Configuration)\lib;$(LibraryPath)</LibraryPath>
+    <CopyLocalProjectReference>true</CopyLocalProjectReference>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgUseStatic>false</VcpkgUseStatic>
+    <VcpkgUseMD>false</VcpkgUseMD>
+    <VcpkgInstalledDir>..\..\MobyDick_NEW\MobyDick\vcpkg_installed\x64-windows</VcpkgInstalledDir>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>true</VcpkgEnabled>
+    <VcpkgEnableManifest>false</VcpkgEnableManifest>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <VcpkgUseMD>false</VcpkgUseMD>
+    <VcpkgInstalledDir>..\..\MobyDick_NEW\MobyDick\vcpkg_installed\x64-windows</VcpkgInstalledDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -115,6 +130,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,6 +152,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -239,6 +256,11 @@
     <Font Include="assets\fonts\DroidSans.ttf" />
     <Font Include="assets\fonts\ProggyClean.ttf" />
     <Font Include="assets\fonts\Roboto-Medium.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MobyDick_NEW\MobyDick\MobyDick.vcxproj">
+      <Project>{5bc96c69-a864-419d-96c6-bc3507de7d1b}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
