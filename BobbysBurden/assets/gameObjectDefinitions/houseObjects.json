@@ -105,31 +105,6 @@
 
         },
         {
-            "type": "DARK_OVERLAY",
-            "traitTags": [],
-            "description": "Dark room overlay",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_WHITE_QUAD",
-                    "textureBlendMode": "RenderBlendMode::BLEND",
-                    "color": {
-                        "tint": "Colors::BLACK",
-                        "alpha": 200
-                    }
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 544,
-                        "height": 320
-                    }
-                }
-            ]
-
-        },
-        {
             "type": "PARLOR_ROOM",
             "traitTags": [],
             "description": "Parlor Room",
