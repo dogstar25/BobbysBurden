@@ -102,11 +102,6 @@
             "layer": "GameLayer::BACKGROUND_2"
         },
         {
-            "id": "LOC_0016_0134",
-            "gameObjectType": "DARK_OVERLAY",
-            "layer": "GameLayer::FOREGROUND_2"
-        },
-        {
             "id": "LOC_0043_0134",
             "gameObjectType": "BEDROOM2_ROOM",
             "layer": "GameLayer::BACKGROUND_2"
@@ -260,7 +255,31 @@
             "gameObjectType": "BEAM_46",
             "description": "Floor",
             "layer": "GameLayer::ABSTRACT"
+        },
+        //
+        // Light Stuff
+        //
+        {
+            "id": "LOC_0019_0135",
+            "gameObjectType": "LIGHT_FULL_64",
+            "layer": "GameLayer::MAIN"
+        },
+        {
+            "id": "LOC_0030_0141",
+            "gameObjectType": "LIGHT_FULL_64",
+            "layer": "GameLayer::MAIN"
+        },
+        {
+            "id": "LOC_0024_0134",
+            "gameObjectType": "LIGHT_FULL_544_320",
+            "layer": "GameLayer::MAIN"
+        },
+        {
+            "id": "LOC_0016_0134",
+            "gameObjectType": "DARK_ROOM_OVERLAY_544",
+            "layer": "GameLayer::FOREGROUND_2"
         }
+
 
     ]
 }

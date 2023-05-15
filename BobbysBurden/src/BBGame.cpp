@@ -41,6 +41,7 @@ bool BBGame::init(std::shared_ptr<ContactListener> contactListener, std::shared_
 	GameObjectManager::instance().load("gameObjectDefinitions/playerObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/commonObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/guiObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/lightObjects");
 
 	_displayLoadingMsg();
 
