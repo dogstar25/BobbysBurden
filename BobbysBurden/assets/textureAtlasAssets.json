@@ -341,8 +341,9 @@
                 "height": 16
             }
         },
+        //LIGHTS
         {
-            "id": "TX_LIGHT_360",
+            "id": "TX_LIGHT_CIRCLE",
             "description": "Light 360",
             "atlas": "TEXTURE_ATLAS_0",
             "quadPosition": {
@@ -350,6 +351,61 @@
                 "y": 1024,
                 "width": 512,
                 "height": 512
+            }
+        },
+        {
+            "id": "TX_LIGHT_DIAMOND",
+            "description": "Light 360",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 1024,
+                "y": 894,
+                "width": 512,
+                "height": 512
+            }
+        }, 
+        {
+            "id": "TX_LIGHT_WINDOW_1",
+            "description": "Light Window 1",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 515,
+                "y": 1024,
+                "width": 256,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_LIGHT_WINDOW_2",
+            "description": "Light Window 2",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 515,
+                "y": 1282,
+                "width": 256,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_LIGHT_WINDOW_3",
+            "description": "Light Window 3",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 773,
+                "y": 1024,
+                "width": 256,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_LIGHT_WINDOW_4",
+            "description": "Light Window 4",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 773,
+                "y": 1282,
+                "width": 256,
+                "height": 256
             }
         }
 

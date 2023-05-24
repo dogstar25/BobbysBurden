@@ -16,6 +16,8 @@ namespace Colors {
 
 	//yellow
 	inline SDL_Color GOLD = { 173, 167, 54, 255 };
+	inline SDL_Color CANDLE_LIGHT = { 238, 235, 175, 255 };
+	
 
 	//blue
 	inline SDL_Color MARINE = { 50, 147, 196, 255 };

@@ -256,28 +256,42 @@
             "description": "Floor",
             "layer": "GameLayer::ABSTRACT"
         },
-        //
-        // Light Stuff
-        //
+
+        //Light Stuff
+
         {
             "id": "LOC_0019_0135",
-            "gameObjectType": "LIGHT_FULL_64",
+            "gameObjectType": "LIGHT_DIAMOND",
             "layer": "GameLayer::MAIN"
         },
         {
             "id": "LOC_0030_0141",
-            "gameObjectType": "LIGHT_FULL_64",
+            "gameObjectType": "LIGHT_DIAMOND",
             "layer": "GameLayer::MAIN"
         },
-        {
-            "id": "LOC_0024_0134",
-            "gameObjectType": "LIGHT_FULL_544_320",
-            "layer": "GameLayer::MAIN"
-        },
+        //{
+        //    "id": "LOC_0024_0134",
+        //    "gameObjectType": "LIGHT_FULL_544_320",
+        //    "layer": "GameLayer::MAIN"
+        //},
+        //{
+        //    "id": "LOC_0020_0141",
+        //    "gameObjectType": "LIGHT_WINDOW",
+        //    "layer": "GameLayer::MAIN"
+        //},
+        //{
+        //    "id": "LOC_0028_0141",
+        //    "gameObjectType": "LIGHT_WINDOW",
+        //    "layer": "GameLayer::MAIN"
+        //},
         {
             "id": "LOC_0016_0134",
-            "gameObjectType": "DARK_ROOM_OVERLAY_544",
+            "gameObjectType": "LIT_AREA",
             "layer": "GameLayer::FOREGROUND_2"
+            //"size": {
+            //    "width": 544,
+            //    "height": 320
+            //}
         }
 
 

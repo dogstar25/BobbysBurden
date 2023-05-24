@@ -19,6 +19,7 @@ BBColorMap::BBColorMap()
 
 	//yellows
 	addColor("Colors::GOLD", Colors::GOLD);
+	addColor("Colors::CANDLE_LIGHT", Colors::CANDLE_LIGHT);
 
 	//blues
 	addColor("Colors::CYAN", Colors::CYAN);
