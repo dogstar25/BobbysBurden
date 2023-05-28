@@ -13,6 +13,12 @@
             "filename": "assets/textureAtlas01.png"
         },
         {
+            "id": "TEXTURE_ATLAS_2",
+            "description": "Texture atlas 2",
+            "openglTextureIndex": "GL_TextureIndexType::MAIN_TEXTURE_ATLAS_2",
+            "filename": "assets/textureAtlas02.png"
+        },
+        {
             "id": "TEXTURE_IMGUI_ATLAS",
             "description": "Texture For IMGUI stuff",
             "openglTextureIndex": "GL_TextureIndexType::IMGUI_TEXTURE_ATLAS",
@@ -363,7 +369,7 @@
                 "width": 512,
                 "height": 512
             }
-        }, 
+        },
         {
             "id": "TX_LIGHT_WINDOW_1",
             "description": "Light Window 1",
@@ -406,6 +412,105 @@
                 "y": 1282,
                 "width": 256,
                 "height": 256
+            }
+        },
+        {
+            "id": "TX_HOLDING_CANDLE_32",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 2,
+                "y": 20,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_HOLDING_CANDLE_32_2",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 36,
+                "y": 20,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_HOLDING_CANDLE_64",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 2,
+                "y": 54,
+                "width": 64,
+                "height": 64
+            }
+        },
+        {
+            "id": "TX_HOLDING_CANDLE_128",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 2,
+                "y": 120,
+                "width": 128,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_HOLDING_CANDLE_256",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 2,
+                "y": 250,
+                "width": 256,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_WALLLAMP_1_64",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 68,
+                "y": 54,
+                "width": 64,
+                "height": 64
+            }
+        },
+        {
+            "id": "TX_BED_1_256",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 518,
+                "y": 250,
+                "width": 256,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_DRESSER_1_256",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 776,
+                "y": 250,
+                "width": 256,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_SIDETABLE_1_128",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 261,
+                "y": 121,
+                "width": 128,
+                "height": 128
             }
         }
 

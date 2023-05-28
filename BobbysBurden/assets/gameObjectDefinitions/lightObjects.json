@@ -2,7 +2,7 @@
     "gameObjects": [
         {
             "type": "LIGHT_DIAMOND",
-            "traitTags": [ "abstract", "light" ],
+            "traitTags": ["abstract", "light" ],
             "description": "Light Diamond",
             "components": [
                 {
@@ -10,7 +10,7 @@
                     "textureId": "TX_LIGHT_DIAMOND",
                     "textureBlendMode": "RenderBlendMode::BLEND",
                     "color": {
-                        "tint": "Colors::CANDLE_LIGHT",
+                        "tint": "Colors::ORANGE",
                         "alpha": 255
                     }
 
@@ -32,7 +32,7 @@
         },
         {
             "type": "LIGHT_CIRCLE",
-            "traitTags": [ "abstract", "light" ],
+            "traitTags": ["abstract", "light"],
             "description": "Light Circle",
             "components": [
                 {
@@ -56,7 +56,57 @@
                     "id": "LIGHT_COMPONENT",
                     "type": "LightType::TEXTURE_LIGHT",
                     "intensity": 5,
-                    "flicker": 10
+                    "flicker": 100
+                }
+            ]
+        },
+        {
+            "type": "LIGHT_CANDLE_1",
+            "traitTags": [ "abstract" ],
+            "description": "Light Candle 1",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD",
+                    "textureBlendMode": "RenderBlendMode::BLEND"
+
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "LIGHT_CIRCLE",
+                            "absolutePosition": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "size": {
+                                "width": 512,
+                                "height": 512
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIGHT_DIAMOND",
+                            "absolutePosition": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "size": {
+                                "width": 64,
+                                "height": 64
+                            }
+
+                        }
+                    ]
                 }
             ]
         },
@@ -101,15 +151,15 @@
                     "textureBlendMode": "RenderBlendMode::BLEND",
                     "color": {
                         "tint": "Colors::WHITE",
-                        "alpha": 0
+                        "alpha": 25
                     }
 
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 544,
-                        "height": 320
+                        "width": 32,
+                        "height": 32
                     }
                 },
                 {

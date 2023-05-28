@@ -61,6 +61,13 @@
                         {
                             "gameObjectType": "BOBBY_LABEL",
                             "locationSlot": 1
+                        },
+                        {
+                            "gameObjectType": "HOLDING_CANDLE",
+                            "absolutePosition": {
+                                "x": -32,
+                                "y": 0
+                            }
                         }
 
                     ]
