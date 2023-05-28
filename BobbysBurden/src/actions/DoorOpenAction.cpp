@@ -30,6 +30,9 @@ void DoorOpenAction::perform(GameObject* doorObject)
 	//disable the collision
 	doorObject->disableCollision();
 
+	//Remove barrier trait
+	doorObject->removeTrait(TraitTag::barrier);
+
 	//If there is a partner door, animate state to opened and disabled its collision
 	if (partnerDoor.has_value()) {
 		partnerDoor.value()->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT)->setCurrentAnimationState(AnimationState::OPENED);

@@ -87,6 +87,15 @@
             "layer": "GameLayer::BACKGROUND_2"
         },
         {
+            "id": "LOC_0033_0134",
+            "gameObjectType": "PARLOR_ROOM",
+            "layer": "GameLayer::BACKGROUND_2",
+            "size": {
+                "width": 320,
+                "height": 320
+            }
+        },
+        {
             "id": "LOC_0043_0145",
             "gameObjectType": "DEN_ROOM",
             "layer": "GameLayer::BACKGROUND_2"
@@ -166,14 +175,14 @@
             "gameObjectType": "DOOR_SIDE",
             "description": "Large Closet door",
             "name": "bedroom1",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::MAIN"
         },
         {
             "id": "LOC_0031_0136",
             "gameObjectType": "DOOR_SIDE",
             "description": "Large Closet door",
             "name": "bedroom1_side",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::MAIN"
         },
         {
             "id": "LOC_0054_0054",
@@ -260,38 +269,84 @@
         //Light Stuff
 
         {
-            "id": "LOC_0019_0135",
-            "gameObjectType": "LIGHT_DIAMOND",
-            "layer": "GameLayer::MAIN"
-        },
-        {
-            "id": "LOC_0030_0141",
-            "gameObjectType": "LIGHT_DIAMOND",
-            "layer": "GameLayer::MAIN"
-        },
-        //{
-        //    "id": "LOC_0024_0134",
-        //    "gameObjectType": "LIGHT_FULL_544_320",
-        //    "layer": "GameLayer::MAIN"
-        //},
-        //{
-        //    "id": "LOC_0020_0141",
-        //    "gameObjectType": "LIGHT_WINDOW",
-        //    "layer": "GameLayer::MAIN"
-        //},
-        //{
-        //    "id": "LOC_0028_0141",
-        //    "gameObjectType": "LIGHT_WINDOW",
-        //    "layer": "GameLayer::MAIN"
-        //},
-        {
             "id": "LOC_0016_0134",
             "gameObjectType": "LIT_AREA",
-            "layer": "GameLayer::FOREGROUND_2"
-            //"size": {
-            //    "width": 544,
-            //    "height": 320
-            //}
+            "layer": "GameLayer::FOREGROUND_2",
+            "size": {
+                "width": 544,
+                "height": 320
+            }
+        },
+        {
+            "id": "LOC_0033_0134",
+            "gameObjectType": "LIT_AREA",
+            "layer": "GameLayer::FOREGROUND_2",
+            "size": {
+                "width": 320,
+                "height": 320
+            }
+        },
+        {
+            "id": "LOC_0043_0134",
+            "gameObjectType": "LIT_AREA",
+            "layer": "GameLayer::FOREGROUND_1",
+            "size": {
+                "width": 544,
+                "height": 320
+            }
+        },
+        {
+            "id": "LOC_0033_0145",
+            "gameObjectType": "LIT_AREA",
+            "layer": "GameLayer::FOREGROUND_1",
+            "size": {
+                "width": 320,
+                "height": 320
+            }
+        },
+        {
+            "id": "LOC_0043_0145",
+            "gameObjectType": "LIT_AREA",
+            "layer": "GameLayer::FOREGROUND_1",
+            "size": {
+                "width": 544,
+                "height": 320
+            }
+        },
+        {
+            "id": "LOC_0016_0145",
+            "gameObjectType": "LIT_AREA",
+            "layer": "GameLayer::FOREGROUND_1",
+            "size": {
+                "width": 544,
+                "height": 320
+            }
+        },
+
+        //HouseHold Stuff
+
+        {
+            "id": "LOC_0045_0149",
+            "gameObjectType": "WALLLAMP_1",
+            "layer": "GameLayer::FOREGROUND_1"
+        },
+        {
+            "id": "LOC_0021_0137",
+            "gameObjectType": "BOBBYS_BED",
+            "layer": "GameLayer::MAIN"
+        },
+        {
+            "id": "LOC_0027_0140",
+            "gameObjectType": "BOBBYS_DRESSER",
+            "layer": "GameLayer::BACKGROUND_2"
+        },
+        {
+            "id": "LOC_0020_0141",
+            "gameObjectType": "BOBBYS_SIDETABLE",
+            "layer": "GameLayer::MAIN",
+            "locationAdjust": {
+                "x": -8
+            }
         }
 
 

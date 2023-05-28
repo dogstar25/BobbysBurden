@@ -172,10 +172,10 @@ void BobbyPlayerControlComponent::_handleActions()
 					
 					if(m_state.test(PlayerState::sprinting) == false){
 
-						if (mouseButtons & SDL_BUTTON_LMASK) {
-							action = actionComponent->getAction(Actions::USE);
-							action->perform(parent(), Actions::USAGE);
-						}
+						//if (mouseButtons & SDL_BUTTON_LMASK) {
+						//	action = actionComponent->getAction(Actions::USE);
+						//	action->perform(parent(), Actions::USAGE);
+						//}
 					}
 					break;
 

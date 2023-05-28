@@ -265,7 +265,7 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 96,
+                        "width": 80,
                         "height": 224
                     },
                     "absolutePositioning": false
@@ -337,7 +337,7 @@
         },
         {
             "type": "DOOR_SIDE",
-            "traitTags": [ "interactive" ],
+            "traitTags": [ "interactive", "barrier" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
