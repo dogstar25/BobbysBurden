@@ -19,6 +19,7 @@ public:
 private:
 
 	void _actor_warpEntry(GameObject*, GameObject*, b2Vec2 contactPoint);
+	void _puzzle_puzzlePiece(GameObject*, GameObject*, b2Vec2 contactPoint);
 	
 };
 

@@ -29,6 +29,18 @@ void BBContactListener::_actor_warpEntry(GameObject* interactingObject, GameObje
 
 }
 
+void BBContactListener::_puzzle_puzzlePiece(GameObject* puzzleObject, GameObject* puzzlePieceObject, b2Vec2 contactPoint)
+{
+
+	const auto& puzzleComponent = puzzleObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+
+	auto puzzle = puzzleComponent->isApplicable(puzzlePieceObject);
+	if (puzzle) {
+		puzzle.value()->applyPuzzlePiece(puzzlePieceObject->name());
+	}
+
+}
+
 
 void BBContactListener::BeginContact(b2Contact* contact) {
 
@@ -84,6 +96,20 @@ void BBContactListener::handleContact(b2Contact* contact, b2Vec2 contactPoint)
 		}
 	}
 
+
+	////////////////////////////////////
+	// Player -  Wall
+	//////////////////////////////////
+	if ((contactTag1 == ContactTag::PUZZLE && contactTag2 == ContactTag::PUZZLE_PIECE) ||
+		(contactTag2 == ContactTag::PUZZLE && contactTag1 == ContactTag::PUZZLE_PIECE)) {
+
+		if (contactTag1 == ContactTag::PUZZLE) {
+			_puzzle_puzzlePiece(contact1, contact2, contactPoint);
+		}
+		else {
+			_puzzle_puzzlePiece(contact2, contact1, contactPoint);
+		}
+	}
 
 }
 

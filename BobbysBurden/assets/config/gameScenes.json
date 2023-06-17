@@ -2,9 +2,22 @@
     "scenes": [
         {
             "id": "SCENE_PLAY",
-            "inputControlMode": "CONTROL_MODE_PLAY",
+            "inputControlMode": "CONTROL_MODE_IMGUI",
             "maxObjects": 7000,
-
+            "gameObjects": [
+                {
+                    "gameObjectType": "MAIN_HUD_FRAME",
+                    "name": "MainHudFrame",
+                    "layer": "GameLayer::GUI",
+                    "location": {
+                        "windowPosition": "PositionAlignment::CENTER",
+                        "adjust": {
+                            "x": 0,
+                            "y": 275
+                        }
+                    }
+                }
+            ],
             "keyActions": [
                 {
                     "keyCode": "SDLK_F2",

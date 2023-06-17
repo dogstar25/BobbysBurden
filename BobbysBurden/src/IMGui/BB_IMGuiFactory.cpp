@@ -3,6 +3,7 @@
 #include "IMGuiTitleScreenMenu.h"
 #include "IMGuiTestLevelMenu.h"
 #include "IMGuiInteractiveMenuDoor.h"
+#include "IMGuiDynamicInterfaceMenu.h"
 
 
 BB_IMGuiFactory::BB_IMGuiFactory()
@@ -27,6 +28,9 @@ std::shared_ptr<IMGuiItem> BB_IMGuiFactory::create(std::string iMGuiItemType, st
 	}
 	else if (iMGuiItemType == "IMGuiInteractiveMenuDoor") {
 		iMGuiItem = std::make_shared<IMGuiInteractiveMenuDoor>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
+	}
+	else if (iMGuiItemType == "IMGuiDynamicInterfaceMenu") {
+		iMGuiItem = std::make_shared<IMGuiDynamicInterfaceMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
 	}
 	else {
 

@@ -8,6 +8,7 @@
 #include "actions/BBActionFactory.h"
 #include "IMGui/BB_IMGuiFactory.h"
 #include "particleEffects/BBParticleEffectsFactory.h"
+#include "puzzles/BBPuzzleFactory.h"
 #include "BBContextManager.h"
 #include "BBEnumMap.h"
 #include "BBColorMap.h"
@@ -33,6 +34,7 @@ int main(int argc, char* args[])
 		std::make_shared<BBCutSceneFactory>(),
 		std::make_shared<BB_IMGuiFactory>(),
 		std::make_shared<BBTriggerFactory>(),
+		std::make_shared<BBPuzzleFactory>(),
 		std::make_shared<BBContextManager>(),
 		std::make_shared<BBEnumMap>(),
 		std::make_shared<BBColorMap>()

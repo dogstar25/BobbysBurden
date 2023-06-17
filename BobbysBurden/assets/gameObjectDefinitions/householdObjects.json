@@ -2,40 +2,6 @@
 
     "gameObjects": [
         {
-            "type": "HOLDING_CANDLE",
-            "traitTags": [],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_HOLDING_CANDLE_64"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    },
-                    "absolutePositioning": false
-                },
-                {
-                    "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "childPositionRelative": false,
-                    "childObjects": [
-                        {
-                            "gameObjectType": "LIGHT_CANDLE_1",
-                            "absolutePosition": {
-                                "x": 0,
-                                "y": -16
-                            }
-                        }
-
-                    ]
-                }
-
-            ]
-        },
-        {
             "type": "WALLLAMP_1",
             "traitTags": [],
             "components": [
@@ -69,63 +35,6 @@
                         }
 
                     ]
-                }
-
-            ]
-        },
-        {
-            "type": "BOBBYS_BED",
-            "traitTags": [],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_BED_1_256"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 224,
-                        "height": 224
-                    },
-                    "absolutePositioning": false
-                }
-
-            ]
-        },
-        {
-            "type": "BOBBYS_DRESSER",
-            "traitTags": [],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_DRESSER_1_256"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 160,
-                        "height": 128
-                    },
-                    "absolutePositioning": false
-                }
-
-            ]
-        },
-        {
-            "type": "BOBBYS_SIDETABLE",
-            "traitTags": [],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_SIDETABLE_1_128"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 56,
-                        "height": 96
-                    },
-                    "absolutePositioning": false
                 }
 
             ]

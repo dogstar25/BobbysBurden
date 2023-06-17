@@ -33,6 +33,7 @@ private:
 	bool _isTouchingStairs();
 	void _applyStairWalkingSettings();
 	void _removeStairWalkingSettings();
+	std::optional<GameObject*> _doorPortalContact();
 
 };
 

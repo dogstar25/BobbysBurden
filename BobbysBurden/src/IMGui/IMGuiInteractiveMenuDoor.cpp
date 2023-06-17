@@ -17,6 +17,8 @@ IMGuiInteractiveMenuDoor::IMGuiInteractiveMenuDoor(std::string gameObjectType, b
 glm::vec2 IMGuiInteractiveMenuDoor::render()
 {
 
+	
+
 	glm::vec2 windowSize{};
 
 	const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
@@ -47,29 +49,31 @@ glm::vec2 IMGuiInteractiveMenuDoor::render()
 		ImGui::PushFont(m_normalFont);
 		ImGui::SetWindowPos(ImVec2{ renderComponent->getRenderDestRect().x, renderComponent->getRenderDestRect().y });
 
-		//If the door is open and the door has an "ENTER" action defined, then show the ENTER menu item
-		if (doorState == AnimationState::OPENED && doorActionComponent->hasAction(Actions::ENTER)) {
-			
-			enterAction = doorActionComponent->getAction(Actions::ENTER);
-			
-			ImGui::SmallButton("W");
-			ImGui::SameLine();
-			ImGui::Text("ENTER");
+		ImGui::PushFont(m_smallFont);
+		ImGui::Text("Bathroom Door");
+		ImGui::PopFont();
 
-		}
-
-		//Open/Close button
-		ImGui::SmallButton("E");
-		ImGui::SameLine();
-
+		ImGui::Separator();
+		
 		//If the door is open, then make the openCloseAction , the Close action, and visa versa
 		if (doorState == AnimationState::OPENED) {
 			openCloseAction = doorActionComponent->getAction(Actions::CLOSE);
-			ImGui::Text("CLOSE");
+			//ImGui::Text("CLOSE");
+			ImGui::Text(openCloseAction.value()->label().c_str());
 		}
 		else if (doorState == AnimationState::CLOSED) {
 			openCloseAction = doorActionComponent->getAction(Actions::OPEN);
-			ImGui::Text("OPEN");
+			ImGui::Text(openCloseAction.value()->label().c_str());
+		}
+
+
+		//If the door is open and the door has an "ENTER" action defined, then show the ENTER menu item
+		if (doorState == AnimationState::OPENED && doorActionComponent->hasAction(Actions::ENTER)) {
+
+			enterAction = doorActionComponent->getAction(Actions::ENTER);
+			ImGui::Text(enterAction.value()->label().c_str());
+
+
 		}
 
 		ImGui::PopFont();
@@ -87,9 +91,11 @@ glm::vec2 IMGuiInteractiveMenuDoor::render()
 	ImGui::PopStyleVar();
 
 	//Execute the open or close action of the door
-	if (ImGui::IsKeyPressed(ImGuiKey_E) && openCloseAction.has_value()) {
+	if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
 
-		openCloseAction.value()->perform(parent()->parent().value());
+		if (openCloseAction.has_value()) {
+			openCloseAction.value()->perform(parent()->parent().value());
+		}
 
 	}
 
