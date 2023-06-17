@@ -58,14 +58,16 @@
                     "childPadding": 0,
                     "childPositionRelative": false,
                     "childObjects": [
-                        {
-                            "gameObjectType": "BOBBY_LABEL",
-                            "locationSlot": 1
-                        },
+                        //{
+                        //    "gameObjectType": "MAIN_HUD_FRAME",
+                        //    "name": "MainHudFrame",
+                        //    "layer": "GameLayer::GUI",
+                        //    "locationSlot": 8
+                        //},
                         {
                             "gameObjectType": "HOLDING_CANDLE",
                             "absolutePosition": {
-                                "x": -32,
+                                "x": -8,
                                 "y": 0
                             }
                         }

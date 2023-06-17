@@ -256,11 +256,11 @@
         },
         {
             "type": "DOOR_FRONT",
-            "traitTags": [ "interactive" ],
+            "traitTags": [ "mouse_interface", "door_portal" ],
+            "description": "Door",
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
-
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -282,22 +282,27 @@
                     ]
                 },
                 {
+                    "id": "INTERFACE_COMPONENT",
+                    "menuObject": "INTERFACE_DOOR_MENU",
+                    "remoteLocationObject": "MainHudFrame"
+                },
+                {
                     "id": "ACTION_COMPONENT",
-                    "interactiveMenuObject": "INTERACTIVE_MENU_DOOR",
                     "actions": [
                         {
                             "actionId": "Actions::OPEN",
+                            "label": "Open",
                             "actionClass": "DoorOpenAction"
                         },
                         {
                             "actionId": "Actions::CLOSE",
+                            "label": "Close",
                             "actionClass": "DoorCloseAction"
                         },
                         {
                             "actionId": "Actions::ENTER",
                             "actionClass": "DoorEnterAction"
                         }
-
                     ]
                 },
                 {
@@ -337,11 +342,10 @@
         },
         {
             "type": "DOOR_SIDE",
-            "traitTags": [ "interactive", "barrier" ],
+            "traitTags": [ "mouse_interface", "barrier" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
-
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -367,24 +371,27 @@
                                 "width": 16,
                                 "height": 256
                             }
-
                         }
-
                     ]
                 },
                 {
+                    "id": "INTERFACE_COMPONENT",
+                    "menuObject": "INTERFACE_DOOR_MENU",
+                    "remoteLocationObject": "MainHudFrame"
+                },
+                {
                     "id": "ACTION_COMPONENT",
-                    "interactiveMenuObject": "INTERACTIVE_MENU_DOOR",
                     "actions": [
                         {
                             "actionId": "Actions::OPEN",
+                            "label": "Open",
                             "actionClass": "DoorOpenAction"
                         },
                         {
                             "actionId": "Actions::CLOSE",
+                            "label": "Close",
                             "actionClass": "DoorCloseAction"
                         }
-
                     ]
                 },
                 {
@@ -422,11 +429,10 @@
         },
         {
             "type": "DOOR_WARP_ENTRY",
-            "traitTags": [ "interactive", "abstract" ],
+            "traitTags": [ "contact_interface", "abstract" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
-
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",

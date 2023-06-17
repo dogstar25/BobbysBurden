@@ -89,31 +89,35 @@
 
                 }
             ]
-
         },
         {
-            "type": "INTERACTIVE_MENU_BASIC",
+            "type": "GENERIC_INTERFACE_MENU",
             "traitTags": [ "abstract" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
                 },
                 {
-                    "id": "TRANSFORM_COMPONENT"
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": true,
+                    "size": {
+                        "width": 268,
+                        "height": 236
+                    }
                 },
                 {
                     "id": "IMGUI_COMPONENT",
-                    "imguiType": "IMGuiInteractiveMenuBasic",
-                    "autoSize": true,
+                    "imguiType": "IMGuiDynamicInterfaceMenu",
+                    "autoSize": false,
                     "padding": {
-                        "x": 4,
-                        "y": 4
+                        "x": 16,
+                        "y": 16
                     },
                     "color": {
                         "background": "Colors::CHARCOAL",
                         "backgroundAlpha": 172,
-                        "text": "Colors::WHITE",
-                        "button": "Colors::BLUE",
+                        "text": "Colors::CANDLE_LIGHT",
+                        "button": "Colors::MIRKWOOD",
                         "buttonHover": "Colors::MIRKWOOD",
                         "buttonActive": "Colors::YELLOW"
                     }
@@ -124,19 +128,25 @@
 
         },
         {
-            "type": "INTERACTIVE_MENU_DOOR",
+            "type": "INTERFACE_DOOR_MENU",
             "traitTags": [ "abstract" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
                 },
                 {
-                    "id": "TRANSFORM_COMPONENT"
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": true,
+                    "size": {
+                        "width": 193,
+                        "height": 151
+                    }
+
                 },
                 {
                     "id": "IMGUI_COMPONENT",
                     "imguiType": "IMGuiInteractiveMenuDoor",
-                    "autoSize": true,
+                    "autoSize": false,
                     "padding": {
                         "x": 14,
                         "y": 14

@@ -173,6 +173,9 @@
     <ClCompile Include="src\actions\DoorCloseAction.cpp" />
     <ClCompile Include="src\actions\DoorEnterAction.cpp" />
     <ClCompile Include="src\actions\DoorOpenAction.cpp" />
+    <ClCompile Include="src\actions\HideUnderBedAction.cpp" />
+    <ClCompile Include="src\actions\OilBedKnobAction.cpp" />
+    <ClCompile Include="src\actions\TwistBedKnobAction.cpp" />
     <ClCompile Include="src\BBColorMap.cpp" />
     <ClCompile Include="src\BBComponentFactory.cpp" />
     <ClCompile Include="src\BBContactFilter.cpp" />
@@ -185,12 +188,15 @@
     <ClCompile Include="src\cutScenes\BBCutSceneFactory.cpp" />
     <ClCompile Include="src\IMGui\BB_IMGuiFactory.cpp" />
     <ClCompile Include="src\IMGui\BB_IMGuiUtil.cpp" />
+    <ClCompile Include="src\IMGui\IMGuiDynamicInterfaceMenu.cpp" />
     <ClCompile Include="src\IMGui\IMGuiInteractiveMenuDoor.cpp" />
     <ClCompile Include="src\IMGui\IMGuiPauseWindow.cpp" />
     <ClCompile Include="src\IMGui\IMGuiPlayerDeath.cpp" />
     <ClCompile Include="src\IMGui\IMGuiTestLevelMenu.cpp" />
     <ClCompile Include="src\IMGui\IMGuiTitleScreenMenu.cpp" />
     <ClCompile Include="src\particleEffects\BBParticleEffectsFactory.cpp" />
+    <ClCompile Include="src\puzzles\BBPuzzleFactory.cpp" />
+    <ClCompile Include="src\puzzles\OilBedKnobPuzzle.cpp" />
     <ClCompile Include="src\triggers\BBTriggerFactory.cpp" />
     <ClCompile Include="src\triggers\PlayerDeath.cpp" />
   </ItemGroup>
@@ -201,6 +207,9 @@
     <ClInclude Include="src\actions\DoorCloseAction.h" />
     <ClInclude Include="src\actions\DoorEnterAction.h" />
     <ClInclude Include="src\actions\DoorOpenAction.h" />
+    <ClInclude Include="src\actions\HideUnderBedAction.h" />
+    <ClInclude Include="src\actions\OilBedKnobAction.h" />
+    <ClInclude Include="src\actions\TwistBedKnobAction.h" />
     <ClInclude Include="src\BBColorMap.h" />
     <ClInclude Include="src\BBComponentFactory.h" />
     <ClInclude Include="src\BBContactFilter.h" />
@@ -213,6 +222,7 @@
     <ClInclude Include="src\GameConstants.h" />
     <ClInclude Include="src\IMGui\BB_IMGuiFactory.h" />
     <ClInclude Include="src\IMGui\BB_IMGuiUtil.h" />
+    <ClInclude Include="src\IMGui\IMGuiDynamicInterfaceMenu.h" />
     <ClInclude Include="src\IMGui\IMGuiInteractiveMenuDoor.h" />
     <ClInclude Include="src\IMGui\IMGuiPauseWindow.h" />
     <ClInclude Include="src\IMGui\IMGuiPlayerDeath.h" />
@@ -220,6 +230,8 @@
     <ClInclude Include="src\IMGui\IMGuiTitleScreenMenu.h" />
     <ClInclude Include="src\particleEffects\BBParticleEffectsFactory.h" />
     <ClInclude Include="src\particleEffects\GameParticleEffects.h" />
+    <ClInclude Include="src\puzzles\BBPuzzleFactory.h" />
+    <ClInclude Include="src\puzzles\OilBedKnobPuzzle.h" />
     <ClInclude Include="src\triggers\BBTriggerFactory.h" />
     <ClInclude Include="src\triggers\PlayerDeath.h" />
   </ItemGroup>
@@ -234,6 +246,7 @@
   <ItemGroup>
     <None Include="assets\config\gameConfig.json" />
     <None Include="assets\config\gameScenes.json" />
+    <None Include="assets\gameObjectDefinitions\bobbysObjects.json" />
     <None Include="assets\gameObjectDefinitions\commonObjects.json" />
     <None Include="assets\gameObjectDefinitions\guiObjects.json" />
     <None Include="assets\gameObjectDefinitions\householdObjects.json" />
@@ -251,7 +264,9 @@
     <Media Include="assets\sound\music\main_theme_a.mp3" />
   </ItemGroup>
   <ItemGroup>
+    <Font Include="assets\fonts\AnandaBlack.ttf" />
     <Font Include="assets\fonts\arial.ttf" />
+    <Font Include="assets\fonts\ArianaVioleta.ttf" />
     <Font Include="assets\fonts\AtariFontFullVersion-ZJ23.ttf" />
     <Font Include="assets\fonts\conthrax-sb.ttf" />
     <Font Include="assets\fonts\DroidSans.ttf" />

@@ -4,13 +4,17 @@
 
 using namespace std::chrono_literals;
 
-bool BBGame::init(std::shared_ptr<ContactListener> contactListener, std::shared_ptr<ContactFilter> contactFilter,
-	std::shared_ptr<ComponentFactory> componentFactory, std::shared_ptr<ActionFactory> actionFactory, std::shared_ptr<ParticleEffectsFactory> particleEffectsFactory,
-	std::shared_ptr<CutSceneFactory> cutSceneFactory, std::shared_ptr<IMGuiFactory> iMGuiFactory, std::shared_ptr<TriggerFactory> triggerFactory, std::shared_ptr<ContextManager> contextManager,
+bool BBGame::init(
+	std::shared_ptr<ContactListener> contactListener, std::shared_ptr<ContactFilter> contactFilter,
+	std::shared_ptr<ComponentFactory> componentFactory, std::shared_ptr<ActionFactory> actionFactory, 
+	std::shared_ptr<ParticleEffectsFactory> particleEffectsFactory,	std::shared_ptr<CutSceneFactory> cutSceneFactory, 
+	std::shared_ptr<IMGuiFactory> iMGuiFactory, std::shared_ptr<TriggerFactory> triggerFactory, 
+	std::shared_ptr<PuzzleFactory> puzzleFactory, std::shared_ptr<ContextManager> contextManager,
 	std::shared_ptr<EnumMap> enumMap, std::shared_ptr<ColorMap> colorMap)
 {
 
-	Game::init(contactListener, contactFilter, componentFactory, actionFactory, particleEffectsFactory, cutSceneFactory, iMGuiFactory, triggerFactory, contextManager, enumMap, colorMap);
+	Game::init(contactListener, contactFilter, componentFactory, actionFactory, particleEffectsFactory, cutSceneFactory, iMGuiFactory, triggerFactory, 
+		puzzleFactory, contextManager, enumMap, colorMap);
 
 	m_gameState = GameState::PLAY;
 
@@ -43,6 +47,7 @@ bool BBGame::init(std::shared_ptr<ContactListener> contactListener, std::shared_
 	GameObjectManager::instance().load("gameObjectDefinitions/guiObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/lightObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/householdObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/bobbysObjects");
 
 	_displayLoadingMsg();
 
@@ -53,7 +58,6 @@ bool BBGame::init(std::shared_ptr<ContactListener> contactListener, std::shared_
 	Scene& scene = SceneManager::instance().pushScene("SCENE_PLAY");
 	//scene.loadLevel("front1");
 	scene.loadLevel("full_interior");
-
 
 	//Initialize the clock object
 	Clock::instance().init();

@@ -46,13 +46,15 @@ namespace ContactTag {
 	inline constexpr int STAIRS_TOUCH = 21;
 	inline constexpr int STAIRS_TOP_TOUCH = 22;
 	inline constexpr int STAIRS_BOTTOM_TOUCH = 23;
+	inline constexpr int PUZZLE = 24;
+	inline constexpr int PUZZLE_PIECE = 25;
 	
 
 }
 
 namespace ComponentTypes {
 
-	inline constexpr int BOBBY_PLAYER_CONTROL_COMPONENT = 27;
+	inline constexpr int BOBBY_PLAYER_CONTROL_COMPONENT = 29;
 
 }
 

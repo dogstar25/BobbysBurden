@@ -1,0 +1,242 @@
+{
+
+    "gameObjects": [
+        {
+            "type": "HOLDING_CANDLE",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_HOLDING_CANDLE_64"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    },
+                    "absolutePositioning": false
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "LIGHT_CANDLE_1",
+                            "absolutePosition": {
+                                "x": 0,
+                                "y": -16
+                            }
+                        }
+
+                    ]
+                }
+
+            ]
+        },
+        {
+            "type": "BOBBYS_BED",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BED_1_256"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 224,
+                        "height": 224
+                    },
+                    "absolutePositioning": false
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "BOBBYS_BEDSHEET",
+                            "size": {
+                                "width": 157,
+                                "height": 32
+                            },
+                            "absolutePosition": {
+                                "x": 0,
+                                "y": 8
+                            }
+                        },
+                        {
+                            "gameObjectType": "BOBBYS_BEDKNOB",
+                            "size": {
+                                "width": 8,
+                                "height": 8
+                            },
+                            "absolutePosition": {
+                                "x": 60,
+                                "y": -46
+                            }
+                        }
+
+                    ]
+                }
+
+            ]
+        },
+        {
+            "type": "BOBBYS_DRESSER",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_DRESSER_1_256"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 160,
+                        "height": 128
+                    },
+                    "absolutePositioning": false
+                }
+
+            ]
+        },
+        {
+            "type": "BOBBYS_SIDETABLE",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_SIDETABLE_1_128"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 56,
+                        "height": 96
+                    },
+                    "absolutePositioning": false
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "INTERACTIVE_INVENTORY_AREA",
+                            "size": {
+                                "width": 32,
+                                "height": 16
+                            },
+                            "absolutePosition": {
+                                "x": 0,
+                                "y": -28
+                            }
+                        },
+                        {
+                            "gameObjectType": "INTERACTIVE_INVENTORY_AREA",
+                            "size": {
+                                "width": 32,
+                                "height": 32
+                            },
+                            "absolutePosition": {
+                                "x": 0,
+                                "y": 8
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "BOBBYS_BEDSHEET",
+            "traitTags": [ "mouse_interface", "abstract" ],
+            "description": "Bobby's BedSheet",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WHITE_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "INTERFACE_COMPONENT",
+                    "menuObject": "GENERIC_INTERFACE_MENU",
+                    "remoteLocationObject": "MainHudFrame"
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::INTERFACE",
+                            "label": "Hide Under the Sheets",
+                            "actionClass": "HideUnderSheetsAction"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "BOBBYS_BEDKNOB",
+            "traitTags": [ "mouse_interface", "abstract", "puzzle" ],
+            "description": "Bed Knob",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WHITE_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "INTERFACE_COMPONENT",
+                    "menuObject": "GENERIC_INTERFACE_MENU",
+                    "remoteLocationObject": "MainHudFrame"
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::INTERFACE",
+                            "label": "Twist",
+                            "actionClass": "TwistBedKnobAction",
+                            "dependentPuzzles": [
+                                "OIL_BEDKNOB"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "PUZZLE_COMPONENT",
+                    "puzzles": [
+                        {
+                            "name": "OIL_BEDKNOB",
+                            "clue": "The bedknob looks worn, like its been touched alot.",
+                            "puzzleClass": "OilBedKnobPuzzle",
+                            "pieces": [
+                                {
+                                    "id": "oilCan"
+                                }
+                            ]
+                        }
+
+                    ]
+                }
+
+            ]
+
+        }
+
+    ]
+}
