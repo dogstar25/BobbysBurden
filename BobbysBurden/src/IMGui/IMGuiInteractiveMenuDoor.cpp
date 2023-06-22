@@ -99,13 +99,5 @@ glm::vec2 IMGuiInteractiveMenuDoor::render()
 
 	}
 
-	//Execute the player ENTERING the door action
-	if (ImGui::IsKeyPressed(ImGuiKey_W) && enterAction.has_value()) {
-
-		const auto& player = parent()->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
-		enterAction.value()->perform(player->get(), parent()->parent().value());
-
-	}
-
 	return windowSize;
 }

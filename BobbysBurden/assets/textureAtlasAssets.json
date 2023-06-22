@@ -123,6 +123,40 @@
             }
         },
         {
+            "id": "TX_BRICK_SMALL_RIGHT_1",
+            "description": "Brick Wall 1",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 91,
+                "y": 2,
+                "width": 16,
+                "height": 16
+            }
+        },
+        {
+            "id": "TX_BRICK_SMALL_LEFT_1",
+            "description": "Brick Wall 1",
+            "atlas": "TEXTURE_ATLAS_0",
+            "flip": true,
+            "quadPosition": {
+                "x": 91,
+                "y": 2,
+                "width": 16,
+                "height": 16
+            }
+        },
+        {
+            "id": "TX_BRICK_CHIMNEY_1",
+            "description": "Brick Wall 1",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 74,
+                "y": 2,
+                "width": 16,
+                "height": 16
+            }
+        },
+        {
             "id": "TX_BRICK_WALL_2",
             "description": "Brick Wall 2",
             "atlas": "TEXTURE_ATLAS_0",

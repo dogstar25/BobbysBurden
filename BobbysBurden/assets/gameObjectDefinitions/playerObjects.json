@@ -32,6 +32,12 @@
                             "friction": 0.2,
                             "restitution": 0.0,
                             "density": 1000
+                        },
+                        {
+                            "contactTag": "ContactTag::PLAYER_TOUCH",
+                            "collisionShape": "B2_CIRCLE",
+                            "collisionRadius": 1.4,
+                            "isSensor": true
                         }
 
                     ]
