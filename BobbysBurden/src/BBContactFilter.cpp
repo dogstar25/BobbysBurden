@@ -24,7 +24,7 @@ BBContactFilter::BBContactFilter()
 	
 	//PLAYER_TOUCH
 	m_contactMasks[PLAYER_TOUCH].reset();
-	m_contactMasks[PLAYER_TOUCH].flip();
+	m_contactMasks[PLAYER_TOUCH].set(INTERACTABLE_OBJECT);
 
 	//PLAYER_HITBOX
 	m_contactMasks[PLAYER_HITBOX].reset();
@@ -52,6 +52,9 @@ BBContactFilter::BBContactFilter()
 
 	//Stairs Touch
 	m_contactMasks[STAIRS_TOUCH].set(PLAYER_COLLISION);
+
+	//Interactable Objects
+	m_contactMasks[INTERACTABLE_OBJECT].set(PLAYER_TOUCH);
 
 }
 

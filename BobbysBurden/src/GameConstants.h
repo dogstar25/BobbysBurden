@@ -48,6 +48,7 @@ namespace ContactTag {
 	inline constexpr int STAIRS_BOTTOM_TOUCH = 23;
 	inline constexpr int PUZZLE = 24;
 	inline constexpr int PUZZLE_PIECE = 25;
+	inline constexpr int INTERACTABLE_OBJECT = 26;
 	
 
 }
@@ -55,6 +56,7 @@ namespace ContactTag {
 namespace ComponentTypes {
 
 	inline constexpr int BOBBY_PLAYER_CONTROL_COMPONENT = 29;
+	inline constexpr int BB_INTERFACE_COMPONENT = 30;
 
 }
 
@@ -68,6 +70,9 @@ namespace TraitTag {
 
 	//Custom traits
 	inline constexpr int stairs = 20;
+	inline constexpr int door_entry = 19;
+	inline constexpr int door = 22;
+	inline constexpr int hiding_spot = 23;
 }
 
 namespace Actions {

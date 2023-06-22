@@ -20,6 +20,103 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
+                    "touchingObjectsCapturedRequired": false,
+                    "fixtures": [
+                        {
+                            "friction": 1,
+                            "restitution": 0.5,
+                            "contactTag": "ContactTag::WALL",
+                            "collisionShape": "B2_BOX"
+                        }
+                    ]
+                }
+            ]
+
+        },
+        {
+            "type": "BRICK_WALL_SMALL_RIGHT_1",
+            "traitTags": [ "barrier" ],
+            "description": "Brick Wall 1",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BRICK_SMALL_RIGHT_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "touchingObjectsCapturedRequired": false,
+                    "fixtures": [
+                        {
+                            "friction": 1,
+                            "restitution": 0.5,
+                            "contactTag": "ContactTag::WALL",
+                            "collisionShape": "B2_BOX"
+                        }
+                    ]
+                }
+            ]
+
+        },
+        {
+            "type": "BRICK_WALL_SMALL_LEFT_1",
+            "traitTags": [ "barrier" ],
+            "description": "Brick Wall 1",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BRICK_SMALL_LEFT_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "touchingObjectsCapturedRequired": false,
+                    "fixtures": [
+                        {
+                            "friction": 1,
+                            "restitution": 0.5,
+                            "contactTag": "ContactTag::WALL",
+                            "collisionShape": "B2_BOX"
+                        }
+                    ]
+                }
+            ]
+
+        },
+        {
+            "type": "BRICK_WALL_CHIMNEY_1",
+            "traitTags": [ "barrier" ],
+            "description": "Brick Wall 1",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BRICK_CHIMNEY_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "touchingObjectsCapturedRequired": false,
                     "fixtures": [
                         {
                             "friction": 1,
@@ -220,7 +317,7 @@
         },
         {
             "type": "MAIN_STAIRS",
-            "traitTags": [],
+            "traitTags": [ "vertical_movement" ],
             "description": "Bottom Stairs Room",
             "components": [
                 {
@@ -256,7 +353,7 @@
         },
         {
             "type": "DOOR_FRONT",
-            "traitTags": [ "mouse_interface", "door_portal" ],
+            "traitTags": [ "mouse_interface", "door" ],
             "description": "Door",
             "components": [
                 {
@@ -282,7 +379,7 @@
                     ]
                 },
                 {
-                    "id": "INTERFACE_COMPONENT",
+                    "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "INTERFACE_DOOR_MENU",
                     "remoteLocationObject": "MainHudFrame"
                 },
@@ -316,13 +413,13 @@
                         {
                             "state": "AnimationState::OPEN",
                             "textureId": "TX_DOOR1_FRONT_OPEN",
-                            "speed": 0.05,
+                            "speed": 0.15,
                             "frames": 3
                         },
                         {
                             "state": "AnimationState::CLOSE",
                             "textureId": "TX_DOOR1_FRONT_CLOSE",
-                            "speed": 0.05,
+                            "speed": 0.15,
                             "frames": 3
                         },
                         {
@@ -336,13 +433,23 @@
                             "frames": 1
                         }
                     ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "DOOR_ENTRY",
+                            "locationSlot": 5
+                        }
+
+                    ]
                 }
 
             ]
         },
         {
             "type": "DOOR_SIDE",
-            "traitTags": [ "mouse_interface", "barrier" ],
+            "traitTags": [ "mouse_interface", "barrier", "door" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
@@ -375,7 +482,7 @@
                     ]
                 },
                 {
-                    "id": "INTERFACE_COMPONENT",
+                    "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "INTERFACE_DOOR_MENU",
                     "remoteLocationObject": "MainHudFrame"
                 },
@@ -457,7 +564,7 @@
             ]
         },
         {
-            "type": "DOOR_EXIT",
+            "type": "DOOR_WARP_EXIT",
             "traitTags": [ "abstract" ],
             "components": [
                 {
@@ -472,6 +579,35 @@
                     },
                     "absolutePositioning": false
                 }
+            ]
+        },
+        {
+            "type": "DOOR_ENTRY",
+            "traitTags": [ "door_entry", "abstract" ],
+            "description": "Door",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 2,
+                        "height": 2
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::DOOR_TOUCH",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                }
+
             ]
         },
         {

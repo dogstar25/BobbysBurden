@@ -185,6 +185,7 @@
     <ClCompile Include="src\BBGame.cpp" />
     <ClCompile Include="src\blindBetty.cpp" />
     <ClCompile Include="src\components\BobbyPlayerControlComponent.cpp" />
+    <ClCompile Include="src\components\BBInterfaceComponent.cpp" />
     <ClCompile Include="src\cutScenes\BBCutSceneFactory.cpp" />
     <ClCompile Include="src\IMGui\BB_IMGuiFactory.cpp" />
     <ClCompile Include="src\IMGui\BB_IMGuiUtil.cpp" />
@@ -218,6 +219,7 @@
     <ClInclude Include="src\BBEnumMap.h" />
     <ClInclude Include="src\BBGame.h" />
     <ClInclude Include="src\components\BobbyPlayerControlComponent.h" />
+    <ClInclude Include="src\components\BBInterfaceComponent.h" />
     <ClInclude Include="src\cutScenes\BBCutSceneFactory.h" />
     <ClInclude Include="src\GameConstants.h" />
     <ClInclude Include="src\IMGui\BB_IMGuiFactory.h" />

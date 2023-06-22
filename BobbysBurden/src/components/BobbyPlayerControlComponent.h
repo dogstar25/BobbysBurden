@@ -30,10 +30,8 @@ private:
 
 	void _handleMovement();
 	void _handleActions();
-	bool _isTouchingStairs();
 	void _applyStairWalkingSettings();
 	void _removeStairWalkingSettings();
-	std::optional<GameObject*> _doorPortalContact();
 
 };
 

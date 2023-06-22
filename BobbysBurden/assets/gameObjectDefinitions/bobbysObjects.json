@@ -58,10 +58,6 @@
                     "childObjects": [
                         {
                             "gameObjectType": "BOBBYS_BEDSHEET",
-                            "size": {
-                                "width": 157,
-                                "height": 32
-                            },
                             "absolutePosition": {
                                 "x": 0,
                                 "y": 8
@@ -69,10 +65,6 @@
                         },
                         {
                             "gameObjectType": "BOBBYS_BEDKNOB",
-                            "size": {
-                                "width": 8,
-                                "height": 8
-                            },
                             "absolutePosition": {
                                 "x": 60,
                                 "y": -46
@@ -152,7 +144,7 @@
         },
         {
             "type": "BOBBYS_BEDSHEET",
-            "traitTags": [ "mouse_interface", "abstract" ],
+            "traitTags": [ "mouse_interface", "abstract", "hiding_spot" ],
             "description": "Bobby's BedSheet",
             "components": [
                 {
@@ -162,12 +154,12 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 32,
+                        "width": 124,
                         "height": 32
                     }
                 },
                 {
-                    "id": "INTERFACE_COMPONENT",
+                    "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "GENERIC_INTERFACE_MENU",
                     "remoteLocationObject": "MainHudFrame"
                 },
@@ -180,12 +172,23 @@
                             "actionClass": "HideUnderSheetsAction"
                         }
                     ]
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX"
+                        }
+
+                    ]
                 }
             ]
         },
         {
             "type": "BOBBYS_BEDKNOB",
-            "traitTags": [ "mouse_interface", "abstract", "puzzle" ],
+            "traitTags": [ "mouse_interface","abstract","puzzle" ],
             "description": "Bed Knob",
             "components": [
                 {
@@ -195,12 +198,12 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 32,
-                        "height": 32
+                        "width": 8,
+                        "height": 8
                     }
                 },
                 {
-                    "id": "INTERFACE_COMPONENT",
+                    "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "GENERIC_INTERFACE_MENU",
                     "remoteLocationObject": "MainHudFrame"
                 },
@@ -229,6 +232,17 @@
                                     "id": "oilCan"
                                 }
                             ]
+                        }
+
+                    ]
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX"
                         }
 
                     ]
