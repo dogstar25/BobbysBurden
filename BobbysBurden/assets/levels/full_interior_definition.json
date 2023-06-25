@@ -28,56 +28,17 @@
     ],
     "locationDefinedObjects": [
         {
+            "id": "LOC_0000_0123",
+            "gameObjectType": "FULL_HOUSE_EXTERIOR",
+            "layer": "GameLayer::FOREGROUND_5"
+        },
+        {
             "id": "LOC_0029_0141",
             "gameObjectType": "BOBBY",
             "name": "Player Bobby",
             "layer": "GameLayer::MAIN",
             "cameraFollow": true
         },
-        {
-            "id": "LOC_0027_0139",
-            "gameObjectType": "CRYSTAL",
-            "objectColor": "Colors::GREEN",
-            "layer": "GameLayer::FOREGROUND_1"
-        },
-        {
-            "id": "LOC_0027_0139",
-            "gameObjectType": "CRYSTAL",
-            "objectColor": "Colors::GREEN",
-            "layer": "GameLayer::FOREGROUND_1"
-        },
-        {
-            "id": "LOC_0027_0139",
-            "gameObjectType": "CRYSTAL",
-            "objectColor": "Colors::GREEN",
-            "layer": "GameLayer::FOREGROUND_1"
-        },
-        {
-            "id": "LOC_0027_0139",
-            "gameObjectType": "CRYSTAL",
-            "objectColor": "Colors::GREEN",
-            "layer": "GameLayer::FOREGROUND_1"
-        },
-        {
-            "id": "LOC_0027_0139",
-            "gameObjectType": "CRYSTAL",
-            "objectColor": "Colors::GREEN",
-            "layer": "GameLayer::FOREGROUND_1"
-        },
-        {
-            "id": "LOC_0027_0139",
-            "gameObjectType": "CRYSTAL",
-            "objectColor": "Colors::GREEN",
-            "layer": "GameLayer::FOREGROUND_1"
-        },
-        {
-            "id": "LOC_0027_0139",
-            "gameObjectType": "CRYSTAL",
-            "objectColor": "Colors::GREEN",
-            "layer": "GameLayer::FOREGROUND_1"
-        },
-
-
         //
         //ROOMS
         //

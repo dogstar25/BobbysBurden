@@ -19,6 +19,12 @@
             "filename": "assets/textureAtlas02.png"
         },
         {
+            "id": "TEXTURE_ATLAS_3",
+            "description": "Texture atlas 2",
+            "openglTextureIndex": "GL_TextureIndexType::MAIN_TEXTURE_ATLAS_3",
+            "filename": "assets/textureAtlas03.png"
+        },
+        {
             "id": "TEXTURE_IMGUI_ATLAS",
             "description": "Texture For IMGUI stuff",
             "openglTextureIndex": "GL_TextureIndexType::IMGUI_TEXTURE_ATLAS",
@@ -45,6 +51,17 @@
 
     ],
     "textures": [
+        {
+            "id": "TX_FULL_HOUSE_EXTERIOR",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_3",
+            "quadPosition": {
+                "x": 0,
+                "y": 0,
+                "width": 2240,
+                "height": 1600
+            }
+        },
         {
             "id": "TX_DEFAULT",
             "description": "Default Texure",

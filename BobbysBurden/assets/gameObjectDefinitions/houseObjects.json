@@ -2,6 +2,25 @@
 
     "gameObjects": [
         {
+            "type": "FULL_HOUSE_EXTERIOR",
+            "traitTags": [],
+            "description": "House",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_FULL_HOUSE_EXTERIOR"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 2240,
+                        "height": 1600
+                    }
+                }
+            ]
+
+        },
+        {
             "type": "BRICK_WALL_STATIC_1",
             "traitTags": [ "barrier" ],
             "description": "Brick Wall 1",
