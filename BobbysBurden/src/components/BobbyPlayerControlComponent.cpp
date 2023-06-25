@@ -50,7 +50,7 @@ void BobbyPlayerControlComponent::_handleMovement()
 	const uint8_t* currentKeyStates = SDL_GetKeyboardState(NULL);
 
 	//Touching stairs
-	if (_isTouchingStairs()) {
+	if (parent()->isTouchingByTrait(TraitTag::vertical_movement)) {
 
 		onStairs = true;
 		_applyStairWalkingSettings();
@@ -61,7 +61,7 @@ void BobbyPlayerControlComponent::_handleMovement()
 	}
 
 	//Touching door entrance/portal
-	auto doorPortalContact = _doorPortalContact();
+	auto doorEntryContact = parent()->getFirstTouchingByTrait(TraitTag::door_entry);
 
 	if (currentKeyStates[SDL_SCANCODE_W])
 	{
@@ -97,15 +97,19 @@ void BobbyPlayerControlComponent::_handleMovement()
 			const auto& moveAction = actionComponent->getAction(Actions::STAIRS_MOVE);
 			moveAction->perform(parent(), direction);
 		}
-		else if (doorPortalContact.has_value() && direction == -1 ) {
+		else if (doorEntryContact.has_value() && direction == -1 ) {
+			
+			const auto& doorEntryContactObject = doorEntryContact.value().lock().get(); 
+			const auto& doorObject = doorEntryContactObject->parent();
+			const auto& doorAnimationComponent = doorObject.value()->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
+			const auto& doorActionComponent = doorObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
 
-			const auto& doorAnimationComponent = doorPortalContact.value()->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
 			auto doorState = doorAnimationComponent->currentAnimationState();
-			const auto& enterAction = actionComponent->getAction(Actions::ENTER);
+			const auto& enterAction = doorActionComponent->getAction(Actions::ENTER);
 
 			if (doorState == AnimationState::OPENED) {
 				
-				enterAction->perform(parent(), doorPortalContact.value());
+				enterAction->perform(parent(), doorObject.value());
 			}
 
 		}
@@ -204,31 +208,6 @@ void BobbyPlayerControlComponent::_handleActions()
 	}
 }
 
-bool BobbyPlayerControlComponent::_isTouchingStairs()
-{
-
-	for (const auto& touchingObject : parent()->getTouchingObjects()) {
-
-		if (touchingObject.second.expired() == false && touchingObject.second.lock()->type() == "MAIN_STAIRS") {
-			return true;
-		}
-	}
-
-	return false;
-}
-
-std::optional<GameObject*> BobbyPlayerControlComponent::_doorPortalContact()
-{
-
-	for (const auto& touchingObject : parent()->getTouchingObjects()) {
-
-		if (touchingObject.second.expired() == false && touchingObject.second.lock()->hasTrait(TraitTag::door_portal)) {
-			return touchingObject.second.lock().get();
-		}
-	}
-
-	return std::nullopt;
-}
 
 
 

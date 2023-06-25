@@ -17,10 +17,12 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("ContactTag::STAIRS_TOUCH", ContactTag::STAIRS_TOUCH);
 	addEnumItem("ContactTag::STAIRS_TOP_TOUCH", ContactTag::STAIRS_TOP_TOUCH);
 	addEnumItem("ContactTag::STAIRS_BOTTOM_TOUCH", ContactTag::STAIRS_BOTTOM_TOUCH);
+	addEnumItem("ContactTag::INTERACTABLE_OBJECT", ContactTag::INTERACTABLE_OBJECT);
 	
 
 	//Custom Component Types
 	addEnumItem("BOBBY_PLAYER_CONTROL_COMPONENT", ComponentTypes::BOBBY_PLAYER_CONTROL_COMPONENT);
+	addEnumItem("BB_INTERFACE_COMPONENT", ComponentTypes::BB_INTERFACE_COMPONENT);
 
 	//Custom Status/Context Item Types
 	addEnumItem("StatusItemId::PLAYERS_HEART_COUNT", StatusItemId::PLAYERS_HEART_COUNT);
@@ -39,11 +41,15 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("AnimationState::WALK_DOWN_IDLE", AnimationState::WALK_DOWN_IDLE);
 
 	//Custom actions
-	m_enumMap["Actions::WARP"] = Actions::WARP;
-	m_enumMap["Actions::OPEN"] = Actions::OPEN;
-	m_enumMap["Actions::CLOSE"] = Actions::CLOSE;
-	m_enumMap["Actions::ENTER"] = Actions::ENTER;
-	m_enumMap["Actions::STAIRS_MOVE"] = Actions::STAIRS_MOVE;
+	addEnumItem("Actions::WARP", Actions::WARP);
+	addEnumItem("Actions::OPEN", Actions::OPEN);
+	addEnumItem("Actions::CLOSE", Actions::CLOSE);
+	addEnumItem("Actions::ENTER", Actions::ENTER);
+	addEnumItem("Actions::STAIRS_MOVE", Actions::STAIRS_MOVE);
 
+	//Traits
+	addEnumItem("door", TraitTag::door);
+	addEnumItem("door_entry", TraitTag::door_entry);
+	addEnumItem("hiding_spot", TraitTag::hiding_spot);
 	
 }

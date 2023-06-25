@@ -8,6 +8,17 @@
         "tileWidth": 32,
         "tileHeight": 32
     },
+    //"parallax": [
+    //    {
+    //        "layer": "GameLayer::BACKGROUND_1",
+    //        "parallaxRate": -10 // percent of normal scroll. negative value is slower. positive value is faster
+    //    },
+    //    {
+    //        "layer": "GameLayer::FOREGROUND_2",
+    //        "parallaxRate": 15 // percent of normal scroll. negative value is slower. positive value is faster
+    //    }
+
+    //],
     "colorDefinedObjects": [
         {
             "colorKey": "Colors::BROWN",
@@ -39,6 +50,47 @@
             "layer": "GameLayer::MAIN",
             "cameraFollow": true
         },
+        {
+            "id": "LOC_0015_0140",
+            "gameObjectType": "BRICK_WALL_SMALL_RIGHT_1",
+            "layer": "GameLayer::BACKGROUND_2"
+        },
+        {
+            "id": "LOC_0015_0139",
+            "gameObjectType": "BRICK_WALL_CHIMNEY_1",
+            "layer": "GameLayer::BACKGROUND_2"
+        },
+        {
+            "id": "LOC_0013_0142",
+            "gameObjectType": "BRICK_WALL_SMALL_LEFT_1",
+            "layer": "GameLayer::BACKGROUND_2"
+        },
+        {
+            "id": "LOC_0013_0143",
+            "gameObjectType": "BRICK_WALL_SMALL_LEFT_1",
+            "layer": "GameLayer::BACKGROUND_2"
+        },
+        {
+            "id": "LOC_0013_0144",
+            "gameObjectType": "BRICK_WALL_SMALL_LEFT_1",
+            "layer": "GameLayer::BACKGROUND_2"
+        },
+        {
+            "id": "LOC_0013_0145",
+            "gameObjectType": "BRICK_WALL_SMALL_LEFT_1",
+            "layer": "GameLayer::BACKGROUND_2"
+        },
+        {
+            "id": "LOC_0013_0146",
+            "gameObjectType": "BRICK_WALL_SMALL_LEFT_1",
+            "layer": "GameLayer::BACKGROUND_2"
+        },
+        {
+            "id": "LOC_0014_0144",
+            "gameObjectType": "BRICK_WALL_SMALL_RIGHT_1",
+            "layer": "GameLayer::BACKGROUND_2"
+        },
+
         //
         //ROOMS
         //
@@ -126,7 +178,7 @@
         },
         {
             "id": "LOC_0050_0054",
-            "gameObjectType": "DOOR_EXIT",
+            "gameObjectType": "DOOR_WARP_EXIT",
             "description": "Bedroom1 door destination",
             "name": "bedroom1_EXIT",
             "layer": "GameLayer::ABSTRACT"
@@ -154,7 +206,7 @@
         },
         {
             "id": "LOC_0018_0142",
-            "gameObjectType": "DOOR_EXIT",
+            "gameObjectType": "DOOR_WARP_EXIT",
             "description": "Bedroom1 door destination",
             "name": "bedroom1_warp_EXIT",
             "layer": "GameLayer::ABSTRACT"

@@ -1,6 +1,7 @@
 #include "BBComponentFactory.h"
 #include "GameConstants.h"
 #include "components/BobbyPlayerControlComponent.h"
+#include "components/BBInterfaceComponent.h"
 
 std::shared_ptr<Component> BBComponentFactory::create(
 	Json::Value definitionJSON,
@@ -20,6 +21,10 @@ std::shared_ptr<Component> BBComponentFactory::create(
 	if (componentType == ComponentTypes::BOBBY_PLAYER_CONTROL_COMPONENT) {
 		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BOBBY_PLAYER_CONTROL_COMPONENT);
 		component = std::make_shared<BobbyPlayerControlComponent>(componentJSON);
+	}
+	else if (componentType == ComponentTypes::BB_INTERFACE_COMPONENT) {
+		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BB_INTERFACE_COMPONENT);
+		component = std::make_shared<BBInterfaceComponent>(componentJSON, scene);
 	}
 	
 	else {
