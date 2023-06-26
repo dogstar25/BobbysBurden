@@ -243,6 +243,8 @@
     <Image Include="assets\levels\full_interior_blueprint.png" />
     <Image Include="assets\textureAtlas00.png" />
     <Image Include="assets\textureAtlas01.png" />
+    <Image Include="assets\textureAtlas02.png" />
+    <Image Include="assets\textureAtlas03.png" />
     <Image Include="assets\textureAtlasImGui.png" />
   </ItemGroup>
   <ItemGroup>

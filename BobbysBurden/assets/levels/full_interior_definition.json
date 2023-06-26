@@ -23,21 +23,29 @@
         {
             "colorKey": "Colors::BROWN",
             "gameObjectType": "BRICK_WALL_STATIC_1",
-            "layer": "GameLayer::FOREGROUND_1"
+            "layer": "GameLayer::FOREGROUND_4"
         },
         {
             "colorKey": "Colors::WINE",
             "gameObjectType": "BRICK_WALL_FREE_1",
-            "layer": "GameLayer::BACKGROUND_1"
+            "layer": "GameLayer::FOREGROUND_4"
         },
         {
             "colorKey": "Colors::ORANGE",
             "gameObjectType": "BRICK_WALL_2",
-            "layer": "GameLayer::BACKGROUND_1"
+            "layer": "GameLayer::BACKGROUND_5"
         }
 
     ],
     "locationDefinedObjects": [
+        {
+            "id": "LOC_0000_0109",
+            "gameObjectType": "FULL_HOUSE_EXTERIOR",
+            "layer": "GameLayer::FOREGROUND_5",
+            "locationAdjust": {
+                "x": -192
+            }
+        },
         {
             "id": "LOC_0029_0141",
             "gameObjectType": "BOBBY",
@@ -48,44 +56,43 @@
         {
             "id": "LOC_0015_0140",
             "gameObjectType": "BRICK_WALL_SMALL_RIGHT_1",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::FOREGROUND_4"
         },
         {
             "id": "LOC_0015_0139",
             "gameObjectType": "BRICK_WALL_CHIMNEY_1",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::FOREGROUND_4"
         },
         {
             "id": "LOC_0013_0142",
             "gameObjectType": "BRICK_WALL_SMALL_LEFT_1",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::FOREGROUND_4"
         },
         {
             "id": "LOC_0013_0143",
             "gameObjectType": "BRICK_WALL_SMALL_LEFT_1",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::FOREGROUND_4"
         },
         {
             "id": "LOC_0013_0144",
             "gameObjectType": "BRICK_WALL_SMALL_LEFT_1",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::FOREGROUND_4"
         },
         {
             "id": "LOC_0013_0145",
             "gameObjectType": "BRICK_WALL_SMALL_LEFT_1",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::FOREGROUND_4"
         },
         {
             "id": "LOC_0013_0146",
             "gameObjectType": "BRICK_WALL_SMALL_LEFT_1",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::FOREGROUND_4"
         },
         {
             "id": "LOC_0014_0144",
             "gameObjectType": "BRICK_WALL_SMALL_RIGHT_1",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::FOREGROUND_4"
         },
-
 
         //
         //ROOMS
@@ -93,12 +100,12 @@
         {
             "id": "LOC_0016_0145",
             "gameObjectType": "PARLOR_ROOM",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::BACKGROUND_5"
         },
         {
             "id": "LOC_0033_0134",
             "gameObjectType": "PARLOR_ROOM",
-            "layer": "GameLayer::BACKGROUND_2",
+            "layer": "GameLayer::BACKGROUND_5",
             "size": {
                 "width": 320,
                 "height": 320
@@ -107,22 +114,22 @@
         {
             "id": "LOC_0043_0145",
             "gameObjectType": "DEN_ROOM",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::BACKGROUND_5"
         },
         {
             "id": "LOC_0017_0037",
             "gameObjectType": "PARLOR_ROOM",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::BACKGROUND_5"
         },
         {
             "id": "LOC_0016_0134",
             "gameObjectType": "BEDROOM1_ROOM",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::BACKGROUND_5"
         },
         {
             "id": "LOC_0043_0134",
             "gameObjectType": "BEDROOM2_ROOM",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::BACKGROUND_5"
         },
         //{
         //    "id": "LOC_0033_0134",
@@ -132,7 +139,7 @@
         {
             "id": "LOC_0038_0145",
             "gameObjectType": "MAIN_STAIRS",
-            "layer": "GameLayer::BACKGROUND_2"
+            "layer": "GameLayer::BACKGROUND_5"
         },
         //
         //BRICKS

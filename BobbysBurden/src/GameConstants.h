@@ -1,6 +1,27 @@
  #pragma once
 #include "MobyDick.h"
 
+
+/*
+* 
+* Layer Guide
+* 
+BACKGROUND_5	backgroundBricks,		
+BACKGROUND_4
+BACKGROUND_3
+BACKGROUND_2
+BACKGROUND_1
+MAIN			player
+FOREGROUND_1
+FOREGROUND_2
+FOREGROUND_3
+FOREGROUND_4	foregroundBricks
+FOREGROUND_5	exterior
+GUI,
+ABSTRACT,
+GRID_DISPLAY,
+*/
+
 namespace Colors {
 
 	inline SDL_Color NOCOLOR = { 0, 0, 0, 0 };
