@@ -42,6 +42,7 @@
             "id": "LOC_0000_0109",
             "gameObjectType": "FULL_HOUSE_EXTERIOR",
             "layer": "GameLayer::FOREGROUND_5",
+            "objectColor": "Colors::ALPHA_100_COLOR",
             "locationAdjust": {
                 "x": -192
             }

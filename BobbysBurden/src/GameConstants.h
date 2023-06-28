@@ -25,6 +25,7 @@ GRID_DISPLAY,
 namespace Colors {
 
 	inline SDL_Color NOCOLOR = { 0, 0, 0, 0 };
+	inline SDL_Color ALPHA_100_COLOR = { 255, 255, 255, 100 };
 
 	//green
 	inline SDL_Color FOREST = { 10, 75, 10, 255 };

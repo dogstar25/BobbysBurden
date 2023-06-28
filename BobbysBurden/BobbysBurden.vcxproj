@@ -252,6 +252,7 @@
     <None Include="assets\config\gameScenes.json" />
     <None Include="assets\gameObjectDefinitions\bobbysObjects.json" />
     <None Include="assets\gameObjectDefinitions\commonObjects.json" />
+    <None Include="assets\gameObjectDefinitions\containerObjects.json" />
     <None Include="assets\gameObjectDefinitions\guiObjects.json" />
     <None Include="assets\gameObjectDefinitions\householdObjects.json" />
     <None Include="assets\gameObjectDefinitions\houseObjects.json" />

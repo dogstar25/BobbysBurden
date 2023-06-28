@@ -631,6 +631,17 @@
             }
         },
         {
+            "id": "TX_MOUSE_CURSOR_OUT_OF_REACH",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 1160,
+                "y": 305,
+                "width": 64,
+                "height": 64
+            }
+        },
+        {
             "id": "TX_HUD_FRAME_1",
             "description": "Default Texure",
             "atlas": "TEXTURE_ATLAS_0",
@@ -737,6 +748,14 @@
         {
             "id": "CURSOR_DOOR_OPEN",
             "textureId": "TX_MOUSE_CURSOR_DOOR_OPEN",
+            "hotSpot": {
+                "x": 32,
+                "y": 32
+            }
+        },
+        {
+            "id": "CURSOR_OUT_OF_REACH",
+            "textureId": "TX_MOUSE_CURSOR_OUT_OF_REACH",
             "hotSpot": {
                 "x": 32,
                 "y": 32
