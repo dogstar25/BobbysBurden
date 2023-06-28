@@ -138,8 +138,8 @@
                     "id": "TRANSFORM_COMPONENT",
                     "absolutePositioning": true,
                     "size": {
-                        "width": 193,
-                        "height": 151
+                        "width": 268,
+                        "height": 236
                     }
 
                 },
@@ -164,6 +164,42 @@
             ]
 
 
+        },
+        {
+            "type": "INTERFACE_DRAWER_MENU",
+            "traitTags": [ "abstract" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": true,
+                    "size": {
+                        "width": 268,
+                        "height": 236
+                    }
+
+                },
+                {
+                    "id": "IMGUI_COMPONENT",
+                    "imguiType": "IMGuiInteractiveMenuDoor",
+                    "autoSize": false,
+                    "padding": {
+                        "x": 14,
+                        "y": 14
+                    },
+                    "color": {
+                        "background": "Colors::CHARCOAL",
+                        "backgroundAlpha": 172,
+                        "text": "Colors::WHITE",
+                        "button": "Colors::BLUE",
+                        "buttonHover": "Colors::MIRKWOOD",
+                        "buttonActive": "Colors::YELLOW"
+                    }
+
+                }
+            ]
         },
         {
             "type": "IMGUI_TEST_MENU",

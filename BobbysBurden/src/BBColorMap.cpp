@@ -7,7 +7,8 @@ BBColorMap::BBColorMap()
 
 
 	addColor("Colors::NOCOLOR", Colors::NOCOLOR);
-
+	addColor("Colors::ALPHA_100_COLOR", Colors::ALPHA_100_COLOR);
+	
 	//greens
 	addColor("Colors::FOREST", Colors::FOREST);
 	addColor("Colors::EMERALD", Colors::EMERALD);

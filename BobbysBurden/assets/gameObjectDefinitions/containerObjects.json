@@ -1,0 +1,90 @@
+{
+
+    "gameObjects": [
+        {
+            "type": "DRAWER_SMALL",
+            "traitTags": [ "abstract" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "INVENTORY_COMPONENT"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX"
+                        }
+                    ]
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "interactiveMenuObject": "INTERACTIVE_MENU_BASIC",
+                    "actions": [
+                        {
+                            "actionId": "ACTION_INTERACTION",
+                            "actionClass": "HealthStationInteraction"
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "INTERFACE_DRAWER_MENU"
+                }
+
+            ]
+        },
+        {
+            "type": "DRAWER_INVENTORY_SMALL",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 256,
+                        "height": 128
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_FREE",
+                            "collisionShape": "B2_CHAIN",
+                            "physicsChainType": "PhysicsChainType::CW_REFLECT_OUT",
+                            "friction": 0.00,
+                            "restitution": 0.0,
+                            "density": 1.5
+                        },
+                        {
+                            "contactTag": "ContactTag::CONTAINER_INSIDE",
+                            "collisionShape": "B2_CHAIN",
+                            "physicsChainType": "PhysicsChainType::CCW_REFLECT_IN",
+                            "friction": 0.00,
+                            "restitution": 0.0,
+                            "density": 1.5
+                        }
+
+                    ]
+                }
+
+            ]
+        }
+
+    ]
+}
