@@ -40,7 +40,7 @@ void BBInterfaceComponent::setCursor(GameObject* gameObject, bool isMouseOver)
 	}
 	else {
 
-		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_OUT_OF_REACH");
+		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_POINT");
 		SDL_SetCursor(cursor);
 
 	}

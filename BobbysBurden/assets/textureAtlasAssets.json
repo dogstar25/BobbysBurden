@@ -684,6 +684,28 @@
                 "width": 1498,
                 "height": 406
             }
+        },
+        {
+            "id": "TX_OILCAN",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 134,
+                "y": 54,
+                "width": 64,
+                "height": 64
+            }
+        },
+        {
+            "id": "TX_BOTTLE_1",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 200,
+                "y": 54,
+                "width": 64,
+                "height": 64
+            }
         }
 
     ],

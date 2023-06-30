@@ -16,7 +16,8 @@
                     }
                 },
                 {
-                    "id": "INVENTORY_COMPONENT"
+                    "id": "INVENTORY_COMPONENT",
+                    "presentationObject": "DRAWER_INVENTORY_DISPLAY_SMALL"
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -30,7 +31,6 @@
                 },
                 {
                     "id": "ACTION_COMPONENT",
-                    "interactiveMenuObject": "INTERACTIVE_MENU_BASIC",
                     "actions": [
                         {
                             "actionId": "ACTION_INTERACTION",
@@ -46,7 +46,7 @@
             ]
         },
         {
-            "type": "DRAWER_INVENTORY_SMALL",
+            "type": "DRAWER_INVENTORY_DISPLAY_SMALL",
             "traitTags": [],
             "components": [
                 {
