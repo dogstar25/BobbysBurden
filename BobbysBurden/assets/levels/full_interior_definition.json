@@ -38,14 +38,19 @@
 
     ],
     "locationDefinedObjects": [
+        //{
+        //    "id": "LOC_0000_0109",
+        //    "gameObjectType": "FULL_HOUSE_EXTERIOR",
+        //    "layer": "GameLayer::FOREGROUND_5",
+        //    "objectColor": "Colors::ALPHA_100_COLOR",
+        //    "locationAdjust": {
+        //        "x": -192
+        //    }
+        //},
         {
-            "id": "LOC_0000_0109",
-            "gameObjectType": "FULL_HOUSE_EXTERIOR",
-            "layer": "GameLayer::FOREGROUND_5",
-            "objectColor": "Colors::ALPHA_100_COLOR",
-            "locationAdjust": {
-                "x": -192
-            }
+            "id": "LOC_0036_0143",
+            "gameObjectType": "OIL_CAN",
+            "layer": "GameLayer::MAIN"
         },
         {
             "id": "LOC_0029_0141",
