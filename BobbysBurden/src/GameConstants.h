@@ -98,11 +98,7 @@ namespace TraitTag {
 }
 
 namespace Actions {
-	inline constexpr int WARP = 13;
-	inline constexpr int OPEN = 14;
-	inline constexpr int CLOSE = 15;
-	inline constexpr int ENTER = 16;
-	inline constexpr int STAIRS_MOVE = 17;
+	inline constexpr int STAIRS_MOVE = 30;
 }
 
 namespace StatusItemId {
