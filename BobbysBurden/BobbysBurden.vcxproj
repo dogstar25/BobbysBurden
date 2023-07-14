@@ -167,6 +167,7 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\actions\ShowPuzzleInterfaceAction.cpp" />
     <ClCompile Include="src\actions\ActorMoveAction.cpp" />
     <ClCompile Include="src\actions\ActorStairsMoveAction.cpp" />
     <ClCompile Include="src\actions\BBActionFactory.cpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="src\actions\DoorOpenAction.cpp" />
     <ClCompile Include="src\actions\HideUnderBedAction.cpp" />
     <ClCompile Include="src\actions\OilBedKnobAction.cpp" />
+    <ClCompile Include="src\actions\StandardHideAction.cpp" />
     <ClCompile Include="src\actions\TwistBedKnobAction.cpp" />
     <ClCompile Include="src\BBColorMap.cpp" />
     <ClCompile Include="src\BBComponentFactory.cpp" />
@@ -202,6 +204,7 @@
     <ClCompile Include="src\triggers\PlayerDeath.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\actions\ShowPuzzleInterfaceAction.h" />
     <ClInclude Include="src\actions\ActorMoveAction.h" />
     <ClInclude Include="src\actions\ActorStairsMoveAction.h" />
     <ClInclude Include="src\actions\BBActionFactory.h" />
@@ -210,6 +213,7 @@
     <ClInclude Include="src\actions\DoorOpenAction.h" />
     <ClInclude Include="src\actions\HideUnderBedAction.h" />
     <ClInclude Include="src\actions\OilBedKnobAction.h" />
+    <ClInclude Include="src\actions\StandardHideAction.h" />
     <ClInclude Include="src\actions\TwistBedKnobAction.h" />
     <ClInclude Include="src\BBColorMap.h" />
     <ClInclude Include="src\BBComponentFactory.h" />

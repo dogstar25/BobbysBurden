@@ -31,8 +31,6 @@ void BobbyPlayerControlComponent::update()
 	const auto& playerPhysics = parent()->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
 	playerPhysics->setAngle(0.);
 
-	_handleActions();
-
 	_handleMovement();
 
 }
@@ -125,8 +123,15 @@ void BobbyPlayerControlComponent::_handleMovement()
 
 
 	//Handle Mouse related movement
-	const uint32_t currentMouseStates = SDL_GetRelativeMouseState(&mouseX, &mouseY);
-	float angularVelocity = mouseX * game->contextMananger()->getMouseSensitivity();
+	//const uint32_t currentMouseStates = SDL_GetRelativeMouseState(&mouseX, &mouseY);
+	//float angularVelocity = mouseX * game->contextMananger()->getMouseSensitivity();
+
+	//ImGui::Begin("mouse2");
+	//ImGui::Value("X", mouseX);
+	//ImGui::Value("Y", mouseY);
+
+	//ImGui::End();
+
 
 }
 
@@ -156,57 +161,72 @@ void BobbyPlayerControlComponent::_removeStairWalkingSettings()
 
 }
 
-void BobbyPlayerControlComponent::_handleActions()
-{
-	//Get the current mouse state
-	int mouseX, mouseY;
-	auto mouseButtons = SDL_GetMouseState(&mouseX, &mouseY);
-
-	if (SceneManager::instance().playerInputEvents().empty() == false) {
-		//convenience reference to outside component(s)
-		const auto& actionComponent = parent()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
-
-		const Uint8* keyStates = nullptr;
-		std::shared_ptr<Action> action{};
-
-		for (auto& inputEvent : SceneManager::instance().playerInputEvents())
-		{
-			//std::optional<Action> playerAction{};
-			keyStates = inputEvent.keyStates;
-			SDL_Scancode keyScanCode = SDL_GetScancodeFromKey(inputEvent.event.key.keysym.sym);
-
-			
-			switch (inputEvent.event.type)
-			{
-				//case SDL_KEYUP:
-				case SDL_KEYDOWN:
-
-					////Interaction Keys
-					//if (keyScanCode == SDL_SCANCODE_E || keyScanCode == SDL_SCANCODE_R)
-					//{
-					//	action = actionComponent->getAction(ACTION_INTERACT);
-					//	action->perform(parent(), keyScanCode);
-					//}
-
-					break;
-				case SDL_MOUSEBUTTONDOWN:
-					
-					if(m_state.test(PlayerState::sprinting) == false){
-
-						//if (mouseButtons & SDL_BUTTON_LMASK) {
-						//	action = actionComponent->getAction(Actions::USE);
-						//	action->perform(parent(), Actions::USAGE);
-						//}
-					}
-					break;
-
-				default:
-					break;
-			}
-
-		}
-	}
-}
+//void BobbyPlayerControlComponent::_handleActions()
+//{
+//	//Get the current mouse state
+//	int mouseX, mouseY;
+//	auto mouseButtons = SDL_GetMouseState(&mouseX, &mouseY);
+//
+//	if (SceneManager::instance().playerInputEvents().empty() == false) {
+//		//convenience reference to outside component(s)
+//		const auto& actionComponent = parent()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
+//
+//		std::shared_ptr<Action> action{};
+//
+//		for (auto& inputEvent : SceneManager::instance().playerInputEvents())
+//		{
+//			//std::optional<Action> playerAction{};
+//			SDL_Scancode keyScanCode = SDL_GetScancodeFromKey(inputEvent.event.key.keysym.sym);
+//
+//
+//
+//			//
+//			// What if we determine here if the mouse clicked or a key was hit that is NOT movement related
+//			// then we let it pass so that the various objects with interface components can catch it and do whatever
+//			//
+//			//OR
+//			//
+//			//If a mouse click then we see if it clicked an object and we call thats objects onClick
+//			//		The onClick would be smart enought to know what the interface needs, puzzles, etc
+//			//If a key is pressed then see if there is an active interface and call that objects on_keypress action
+//			//Maybe interface components have an interfaceEventList that has all of the events that do NOT control the player
+//
+//
+//
+//			switch (inputEvent.event.type)
+//			{
+//				//case SDL_KEYUP:
+//				case SDL_KEYDOWN:
+//
+//					////Interaction Keys
+//					//if (keyScanCode == SDL_SCANCODE_E || keyScanCode == SDL_SCANCODE_R)
+//					//{
+//					//	action = actionComponent->getAction(ACTION_INTERACT);
+//					//	action->perform(parent(), keyScanCode);
+//					//}
+//
+//					break;
+//				case SDL_MOUSEBUTTONDOWN:
+//					
+//
+//
+//
+//					if(m_state.test(PlayerState::sprinting) == false){
+//
+//						//if (mouseButtons & SDL_BUTTON_LMASK) {
+//						//	action = actionComponent->getAction(Actions::USE);
+//						//	action->perform(parent(), Actions::USAGE);
+//						//}
+//					}
+//					break;
+//
+//				default:
+//					break;
+//			}
+//
+//		}
+//	}
+//}
 
 
 

@@ -191,7 +191,7 @@
                     "interactiveMenuObject": "INTERACTIVE_DYNAMIC_MENU",
                     "actions": [
                         {
-                            "actionId": "Actions::INTERFACE",
+                            "actionId": "Actions::USE",
                             "actionClass": "NoAction"
                         }
 

@@ -144,7 +144,7 @@
         },
         {
             "type": "BOBBYS_BEDSHEET",
-            "traitTags": [ "mouse_interface", "abstract", "hiding_spot" ],
+            "traitTags": ["abstract", "hiding_spot" ],
             "description": "Bobby's BedSheet",
             "components": [
                 {
@@ -161,16 +161,40 @@
                 {
                     "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "GENERIC_INTERFACE_MENU",
-                    "remoteLocationObject": "MainHudFrame"
+                    "interfaceEvents": [
+                        {
+                            "eventId": "InterfaceEvents::ON_CLICK",
+                            "actionId": "Actions::USE",
+                            "label": "Hide Under Sheets"
+                        },
+                        {
+                            "eventId": "InterfaceEvents::ON_HOVER_AND_TOUCHING",
+                            "actionId": "Actions::SHOW_INTERFACE"
+                        },
+                        {
+                            "eventId": "InterfaceEvents::ON_NO_HOVER_AND_NO_TOUCHING",
+                            "actionId": "Actions::HIDE_INTERFACE"
+                        }
+
+                    ]
                 },
                 {
                     "id": "ACTION_COMPONENT",
                     "actions": [
                         {
-                            "actionId": "Actions::INTERFACE",
-                            "label": "Hide Under the Sheets",
+                            "actionId": "Actions::USE",
                             "actionClass": "HideUnderSheetsAction"
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowPuzzleInterfaceAction"
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "StandardHideAction"
                         }
+
                     ]
                 },
                 {
@@ -179,7 +203,8 @@
                     "fixtures": [
                         {
                             "contactTag": "ContactTag::INTERACTABLE_OBJECT",
-                            "collisionShape": "B2_BOX"
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
                         }
 
                     ]
@@ -188,7 +213,7 @@
         },
         {
             "type": "BOBBYS_BEDKNOB",
-            "traitTags": [ "mouse_interface","abstract","puzzle" ],
+            "traitTags": [ "abstract","puzzle" ],
             "description": "Bed Knob",
             "components": [
                 {
@@ -205,19 +230,43 @@
                 {
                     "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "GENERIC_INTERFACE_MENU",
-                    "remoteLocationObject": "MainHudFrame"
+                    "interfaceEvents": [
+                        {
+                            "eventId": "InterfaceEvents::ON_CLICK",
+                            "actionId": "Actions::USE",
+                            "label": "Twist",
+                            "dependentPuzzles": [
+                                "OIL_BEDKNOB"
+                            ]
+                        },
+                        {
+                            "eventId": "InterfaceEvents::ON_HOVER_AND_TOUCHING",
+                            "actionId": "Actions::SHOW_INTERFACE"
+                        },
+                        {
+                            "eventId": "InterfaceEvents::ON_NO_HOVER_AND_NO_TOUCHING",
+                            "actionId": "Actions::HIDE_INTERFACE"
+                        }
+
+                    ]
                 },
                 {
                     "id": "ACTION_COMPONENT",
                     "actions": [
                         {
-                            "actionId": "Actions::INTERFACE",
-                            "label": "Twist",
-                            "actionClass": "TwistBedKnobAction",
-                            "dependentPuzzles": [
-                                "OIL_BEDKNOB"
-                            ]
+                            "actionId": "Actions::USE",
+                            "actionClass": "TwistBedKnobAction"
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowPuzzleInterfaceAction"
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "StandardHideAction"
                         }
+
                     ]
                 },
                 {
@@ -242,7 +291,8 @@
                     "fixtures": [
                         {
                             "contactTag": "ContactTag::INTERACTABLE_OBJECT",
-                            "collisionShape": "B2_BOX"
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
                         }
 
                     ]

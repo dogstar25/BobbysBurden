@@ -83,42 +83,26 @@ void IMGuiDynamicInterfaceMenu::_buildInteractionRow(GameObject* playerObject, G
 {
 	static int buttonSeq{};
 
-	const auto& actionComponent = interfaceGameObject->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
 	const auto& puzzleComponent = interfaceGameObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 	const auto& interfaceComponent = interfaceGameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
-
-	const auto& action = actionComponent->getAction(Actions::INTERFACE);
+	const auto clickEvent = interfaceComponent->events().at(InterfaceEvents::ON_CLICK);
 
 	ImGui::PushFont(m_normalFont);
 
-	//If this interface has 1 or more puzzles and they are solved, then show the interface action
-	//Do not show the interface action if the interface has autoInteractOnPuzzleComplete set to true
-	if(interfaceGameObject->hasComponent(ComponentTypes::PUZZLE_COMPONENT) == false ||
-		(interfaceGameObject->hasComponent(ComponentTypes::PUZZLE_COMPONENT) == true &&
-			(puzzleComponent->hasBeenSolved() && interfaceComponent->isAutoInteractOnPuzzleComplete() == false) )) {
+
+	//If the OnClick isAvailable, then show the green mouseclick image and the label that goes with the event
+	if (interfaceComponent->isEventAvailable(InterfaceEvents::ON_CLICK)) {
 
 		_displayMousePointImage(util::SDLColorToImVec4(Colors::EMERALD));
-
 		ImGui::SameLine();
-
-		//ImGui::TextColored(util::SDLColorToImVec4(Colors::PARAKEET), action->label().c_str());
-		ImGui::PushStyleColor(ImGuiCol_Text, util::SDLColorToImVec4(Colors::PARAKEET));
-		ImGui::TextWrapped(action->label().c_str());
-		ImGui::PopStyleColor();
-
-		if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
-
-			action->perform(interfaceGameObject, playerObject);
-		}
-
+		ImGui::TextWrapped(clickEvent->label.c_str());
 	}
 	else {
 
-		//Show the fact that there is a locked action  and show the clue to unlock
 		_displayMousePointImage(util::SDLColorToImVec4(Colors::GREY));
 		ImGui::SameLine();
 		ImGui::TextColored(util::SDLColorToImVec4(Colors::GREY), "[Locked]");
-			
+
 	}
 
 	ImGui::PopFont();
@@ -130,7 +114,6 @@ void IMGuiDynamicInterfaceMenu::_buildPuzzleRow(GameObject* playerObject, GameOb
 	static int buttonSeq{};
 
 	const auto& puzzleComponent = interfaceGameObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
-
 
 	//Use small Font
 	ImGui::PushFont(m_smallFont);
@@ -150,15 +133,11 @@ void IMGuiDynamicInterfaceMenu::_buildPuzzleRow(GameObject* playerObject, GameOb
 			ImGui::SameLine();
 
 			if (piecePair.second.isSolved == false) {
-				_displayPuzzlePieceImage(false, util::SDLColorToImVec4(Colors::EMERALD));
-				ImGui::SameLine();
-				_displayPuzzlePieceImage(true, util::SDLColorToImVec4(Colors::GREY));
-				ImGui::SameLine();
 				_displayPuzzlePieceImage(true, util::SDLColorToImVec4(Colors::GREY));
 
 			}
 			else {
-				_displayPuzzlePieceImage(true, util::SDLColorToImVec4(Colors::GREY));
+				_displayPuzzlePieceImage(false, util::SDLColorToImVec4(Colors::EMERALD));
 			}
 
 		}
@@ -172,9 +151,7 @@ void IMGuiDynamicInterfaceMenu::_buildPuzzleRow(GameObject* playerObject, GameOb
 void IMGuiDynamicInterfaceMenu::_displayMousePointImage(ImVec4 color)
 {
 
-	//ImVec4 color = util::SDLColorToImVec4(Colors::EMERALD);
-
-	//TextureAtlas Coordinates for bar
+	//TextureAtlas Coordinates
 	glm::vec2 topLeft = util::glNormalizeTextureCoords({ 177,65 }, { 256, 256 });
 	glm::vec2 bottomRight = util::glNormalizeTextureCoords({ 240,128 }, { 256, 256 });
 
@@ -196,7 +173,7 @@ void IMGuiDynamicInterfaceMenu::_displayPuzzlePieceImage( bool locked, ImVec4 co
 	glm::vec2 topLeft{};
 	glm::vec2 bottomRight{};
 
-	//TextureAtlas Coordinates for bar
+	//TextureAtlas Coordinates
 	if (locked) {
 		topLeft = util::glNormalizeTextureCoords({ 47,65 }, { 256, 256 });
 		bottomRight = util::glNormalizeTextureCoords({ 110,128 }, { 256, 256 });

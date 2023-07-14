@@ -169,7 +169,7 @@
         },
         {
             "type": "BRICK_WALL_DYNAMIC_1",
-            "traitTags": [ "barrier" ],
+            "traitTags": [ "barrier","draggable" ],
             "description": "Brick Wall 1",
             "components": [
                 {
@@ -193,7 +193,7 @@
                         {
                             "contactTag": "ContactTag::WALL",
                             "collisionShape": "B2_BOX",
-                            "density": 100,
+                            "density": 10,
                             "friction": 1.0
                         }
                     ]

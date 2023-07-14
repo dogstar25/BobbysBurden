@@ -2,7 +2,7 @@
     "scenes": [
         {
             "id": "SCENE_PLAY",
-            "inputControlMode": "CONTROL_MODE_IMGUI",
+            "inputControlMode": "CONTROL_MODE_SELECT",
             "maxObjects": 7000,
             "gameObjects": [
                 {
@@ -63,7 +63,7 @@
         },
         {
             "id": "SCENE_PAUSE_MENU",
-            "inputControlMode": "CONTROL_MODE_IMGUI",
+            "inputControlMode": "CONTROL_MODE_SELECT",
             "maxObjects": 24,
             "tags": [ "gui" ],
             "gameObjects": [

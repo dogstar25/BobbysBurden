@@ -91,13 +91,13 @@ glm::vec2 IMGuiInteractiveMenuDoor::render()
 	ImGui::PopStyleVar();
 
 	//Execute the open or close action of the door
-	if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
+	//if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
 
-		if (openCloseAction.has_value()) {
-			openCloseAction.value()->perform(parent()->parent().value());
-		}
+	//	if (openCloseAction.has_value()) {
+	//		openCloseAction.value()->perform(parent()->parent().value());
+	//	}
 
-	}
+	//}
 
 	return windowSize;
 }
