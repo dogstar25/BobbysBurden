@@ -85,13 +85,13 @@ void IMGuiDynamicInterfaceMenu::_buildInteractionRow(GameObject* playerObject, G
 
 	const auto& puzzleComponent = interfaceGameObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 	const auto& interfaceComponent = interfaceGameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
-	const auto clickEvent = interfaceComponent->events().at(InterfaceEvents::ON_CLICK);
+	const auto clickEvent = interfaceComponent->eventActions().at(Actions::USE);
 
 	ImGui::PushFont(m_normalFont);
 
 
 	//If the OnClick isAvailable, then show the green mouseclick image and the label that goes with the event
-	if (interfaceComponent->isEventAvailable(InterfaceEvents::ON_CLICK)) {
+	if (interfaceComponent->isEventAvailable(Actions::USE)) {
 
 		_displayMousePointImage(util::SDLColorToImVec4(Colors::EMERALD));
 		ImGui::SameLine();
