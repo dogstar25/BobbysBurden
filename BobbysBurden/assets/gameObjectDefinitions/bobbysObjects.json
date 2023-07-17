@@ -161,19 +161,39 @@
                 {
                     "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "GENERIC_INTERFACE_MENU",
-                    "interfaceEvents": [
+                    "interfaceActions": [
                         {
-                            "eventId": "InterfaceEvents::ON_CLICK",
                             "actionId": "Actions::USE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_CLICK"
+                                ]
+                            },
                             "label": "Hide Under Sheets"
                         },
                         {
-                            "eventId": "InterfaceEvents::ON_HOVER_AND_TOUCHING",
-                            "actionId": "Actions::SHOW_INTERFACE"
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
                         },
                         {
-                            "eventId": "InterfaceEvents::ON_NO_HOVER_AND_NO_TOUCHING",
-                            "actionId": "Actions::HIDE_INTERFACE"
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_NO_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
                         }
 
                     ]
@@ -183,7 +203,7 @@
                     "actions": [
                         {
                             "actionId": "Actions::USE",
-                            "actionClass": "HideUnderSheetsAction"
+                            "actionClass": "HideUnderBedAction"
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
@@ -230,22 +250,42 @@
                 {
                     "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "GENERIC_INTERFACE_MENU",
-                    "interfaceEvents": [
+                    "interfaceActions": [
                         {
-                            "eventId": "InterfaceEvents::ON_CLICK",
                             "actionId": "Actions::USE",
                             "label": "Twist",
                             "dependentPuzzles": [
                                 "OIL_BEDKNOB"
-                            ]
+                            ],
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_CLICK"
+                                ]
+                            }
                         },
                         {
-                            "eventId": "InterfaceEvents::ON_HOVER_AND_TOUCHING",
-                            "actionId": "Actions::SHOW_INTERFACE"
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
                         },
                         {
-                            "eventId": "InterfaceEvents::ON_NO_HOVER_AND_NO_TOUCHING",
-                            "actionId": "Actions::HIDE_INTERFACE"
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_NO_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
                         }
 
                     ]

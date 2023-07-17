@@ -372,7 +372,7 @@
         },
         {
             "type": "DOOR_FRONT",
-            "traitTags": [ "mouse_interface", "door" ],
+            "traitTags": [ "door" ],
             "description": "Door",
             "components": [
                 {
@@ -400,25 +400,70 @@
                 {
                     "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "INTERFACE_DOOR_MENU",
-                    "remoteLocationObject": "MainHudFrame"
+                    "interfaceEvents": [
+                        {
+                            "eventId": "InterfaceEvents::ON_CLICK",
+                            "actionId": "Actions::USE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_CLICK",
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_NO_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
                 },
                 {
                     "id": "ACTION_COMPONENT",
                     "actions": [
                         {
                             "actionId": "Actions::OPEN",
-                            "label": "Open",
                             "actionClass": "DoorOpenAction"
                         },
                         {
                             "actionId": "Actions::CLOSE",
-                            "label": "Close",
                             "actionClass": "DoorCloseAction"
                         },
                         {
                             "actionId": "Actions::ENTER",
                             "actionClass": "DoorEnterAction"
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowPuzzleInterfaceAction"
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "StandardHideAction"
                         }
+
                     ]
                 },
                 {

@@ -8,8 +8,3 @@ void OilBedKnobAction::perform(GameObject* gameObject, GameObject* gameObject2)
 
 }
 
-bool OilBedKnobAction::isApplicable(GameObject* gameObject, GameObject* gameObject2)
-{
-
-	return true;
-}

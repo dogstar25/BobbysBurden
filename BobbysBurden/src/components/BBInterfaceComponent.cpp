@@ -10,14 +10,14 @@ BBInterfaceComponent::BBInterfaceComponent(Json::Value componentJSON, Scene* par
 
 	//For all interface events that were already built in the base classes construtor
 	//go and find any dependent puzzle items that are tied to this event
-	for (Json::Value itr : componentJSON["interfaceEvents"]) {
+	for (Json::Value itr : componentJSON["interfaceActions"]) {
 
-		int eventId = game->enumMap()->toEnum(itr["eventId"].asString());
+		int actionId = game->enumMap()->toEnum(itr["actionId"].asString());
 
 		if (itr.isMember("dependentPuzzles")) {
 			for (Json::Value puzzleItr : itr["dependentPuzzles"]) {
 
-				m_dependentPuzzles[eventId] = puzzleItr.asString();
+				m_dependentPuzzles[actionId] = puzzleItr.asString();
 
 			}
 		}
@@ -26,12 +26,12 @@ BBInterfaceComponent::BBInterfaceComponent(Json::Value componentJSON, Scene* par
 
 }
 
-bool BBInterfaceComponent::isEventAvailable(int eventId)
+bool BBInterfaceComponent::isEventAvailable(int actionId)
 {
 	bool puzzlesDone{};
 
 	//Do we have a puzzle component that could make this event NOT available?
-	if (m_dependentPuzzles.find(eventId) != m_dependentPuzzles.end()) {
+	if (m_dependentPuzzles.find(actionId) != m_dependentPuzzles.end()) {
 
 		const auto& puzzleComponent = parent()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 		if (puzzleComponent->hasBeenSolved() == true) {
