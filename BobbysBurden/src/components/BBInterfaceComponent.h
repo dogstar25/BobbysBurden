@@ -7,13 +7,29 @@ public:
 	BBInterfaceComponent(Json::Value definitionJSON, Scene* parentScene);
 	~BBInterfaceComponent() = default;
 
-	virtual void setCursor(GameObject* gameObject, bool isMouseOver) override;
+	virtual void render() override;
+
+	virtual void setCursor(GameObject* gameObject, std::bitset<(int)InterfaceEvents::COUNT> eventState) override;
 	void postInit() override;
 	void handleDragging() override;
 	virtual bool isEventAvailable(int eventId) override;
+	virtual bool shouldInterfaceBeActivated(std::bitset<(int)InterfaceEvents::COUNT> eventState) override;
+	virtual bool shouldInterfaceMenuBeShown(std::bitset<(int)InterfaceEvents::COUNT> eventState) override;
+	void clearCurrentGameObjectInterfaceActive() { m_currentGameObjectInterfaceActive = std::nullopt; }
+	std::optional<GameObject*> currentGameObjectInterfaceActive() {
+		return m_currentGameObjectInterfaceActive;
+	}
+	void setCurrentGameObjectInterfaceActive(GameObject* gameObject) { m_currentGameObjectInterfaceActive = gameObject; }
 
 private:
 	std::map<int, std::string> m_dependentPuzzles{};
+
+	////////Static Variables
+	static inline std::optional<GameObject*> m_currentGameObjectInterfaceActive{};
+	static inline std::optional<GameObject*> m_currentDraggingObject{};
+
+	///////////////////////
+
 
 };
 

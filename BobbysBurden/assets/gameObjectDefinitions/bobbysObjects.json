@@ -243,8 +243,8 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 8,
-                        "height": 8
+                        "width": 12,
+                        "height": 12
                     }
                 },
                 {
@@ -255,7 +255,9 @@
                             "actionId": "Actions::USE",
                             "label": "Twist",
                             "dependentPuzzles": [
+
                                 "OIL_BEDKNOB"
+
                             ],
                             "condition": {
                                 "operator": "ConditionOperator::AND",

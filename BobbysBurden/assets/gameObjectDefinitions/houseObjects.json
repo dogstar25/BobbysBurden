@@ -399,10 +399,9 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "INTERFACE_DOOR_MENU",
-                    "interfaceEvents": [
+                    "menuObject": "OPEN_CLOSE_MENU",
+                    "interfaceActions": [
                         {
-                            "eventId": "InterfaceEvents::ON_CLICK",
                             "actionId": "Actions::USE",
                             "condition": {
                                 "operator": "ConditionOperator::AND",
@@ -443,21 +442,17 @@
                     "id": "ACTION_COMPONENT",
                     "actions": [
                         {
-                            "actionId": "Actions::OPEN",
-                            "actionClass": "DoorOpenAction"
-                        },
-                        {
-                            "actionId": "Actions::CLOSE",
-                            "actionClass": "DoorCloseAction"
+                            "actionId": "Actions::USE",
+                            "actionClass": "DoorToggleAction"
                         },
                         {
                             "actionId": "Actions::ENTER",
                             "actionClass": "DoorEnterAction"
+
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
                             "actionClass": "ShowPuzzleInterfaceAction"
-
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
@@ -547,22 +542,61 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "INTERFACE_DOOR_MENU",
-                    "remoteLocationObject": "MainHudFrame"
+                    "menuObject": "OPEN_CLOSE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_CLICK",
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_NO_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
                 },
                 {
                     "id": "ACTION_COMPONENT",
                     "actions": [
                         {
-                            "actionId": "Actions::OPEN",
-                            "label": "Open",
-                            "actionClass": "DoorOpenAction"
+                            "actionId": "Actions::USE",
+                            "actionClass": "DoorToggleAction"
                         },
                         {
-                            "actionId": "Actions::CLOSE",
-                            "label": "Close",
-                            "actionClass": "DoorCloseAction"
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowPuzzleInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "StandardHideAction"
                         }
+
                     ]
                 },
                 {

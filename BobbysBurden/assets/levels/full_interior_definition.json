@@ -195,7 +195,7 @@
         {
             "id": "LOC_0050_0048",
             "gameObjectType": "DOOR_SIDE",
-            "description": "Large Closet door",
+            "description": "Large Closet BACKGROUND_1",
             "name": "bedroom1",
             "layer": "GameLayer::MAIN"
         },
@@ -204,7 +204,7 @@
             "gameObjectType": "DOOR_SIDE",
             "description": "Large Closet door",
             "name": "bedroom1_side",
-            "layer": "GameLayer::MAIN"
+            "layer": "GameLayer::BACKGROUND_1"
         },
         {
             "id": "LOC_0054_0054",

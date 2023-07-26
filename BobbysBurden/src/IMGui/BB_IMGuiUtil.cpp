@@ -59,4 +59,107 @@ namespace ImGui
 
 	}
 
+	void displayMousePointImage(ImVec4 color)
+	{
+
+		//TextureAtlas Coordinates
+		glm::vec2 topLeft = util::glNormalizeTextureCoords({ 177,65 }, { 256, 256 });
+		glm::vec2 bottomRight = util::glNormalizeTextureCoords({ 240,128 }, { 256, 256 });
+
+		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
+
+			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+		else {
+
+			//SDL2 Texture void* is the SDL_Texture*
+			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+	}
+
+	void displayPuzzlePieceImage(bool locked, ImVec4 color)
+	{
+		glm::vec2 topLeft{};
+		glm::vec2 bottomRight{};
+
+		//TextureAtlas Coordinates
+		if (locked) {
+			topLeft = util::glNormalizeTextureCoords({ 47,65 }, { 256, 256 });
+			bottomRight = util::glNormalizeTextureCoords({ 110,128 }, { 256, 256 });
+		}
+		else {
+			topLeft = util::glNormalizeTextureCoords({ 47,130 }, { 256, 256 });
+			bottomRight = util::glNormalizeTextureCoords({ 110,193 }, { 256, 256 });
+		}
+
+		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
+
+			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+		else {
+
+			//SDL2 Texture void* is the SDL_Texture*
+			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+
+	}
+
+	void displayUpArrowEnterImage(ImVec4 color)
+	{
+
+		glm::vec2 topLeft{};
+		glm::vec2 bottomRight{};
+
+		//TextureAtlas Coordinates
+		topLeft = util::glNormalizeTextureCoords({ 177,140 }, { 256, 256 });
+		bottomRight = util::glNormalizeTextureCoords({ 240,203 }, { 256, 256 });
+
+		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
+
+			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+		else {
+
+			//SDL2 Texture void* is the SDL_Texture*
+			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+
+
+	}
+
+
+	void displayKeyImage(std::string keyValue, ImVec4 color)
+	{
+
+		//TextureAtlas Coordinates for bar
+		glm::vec2 topLeft = util::glNormalizeTextureCoords({ 177,0 }, { 256, 256 });
+		glm::vec2 bottomRight = util::glNormalizeTextureCoords({ 240,63 }, { 256, 256 });
+
+		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
+
+			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+		else {
+
+			//SDL2 Texture void* is the SDL_Texture*
+			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(24, 24), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+
+		ImGui::SameLine();
+
+		ImGui::adjustCursorPosition(-24.0, 2.0);
+
+		//Keyboard key value
+		ImGui::Text(keyValue.c_str());
+	}
+
+
 }

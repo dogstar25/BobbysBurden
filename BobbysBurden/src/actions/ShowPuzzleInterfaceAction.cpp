@@ -1,4 +1,5 @@
 #include "ShowPuzzleInterfaceAction.h"
+#include "../components/BBInterfaceComponent.h"
 
 
 void ShowPuzzleInterfaceAction::perform(GameObject* gameObject)
@@ -10,8 +11,10 @@ void ShowPuzzleInterfaceAction::perform(GameObject* gameObject)
 	//		parentObject->parentScene(), GameLayer::MAIN);
 
 	//Get the Puzzle Interface Menu
+	const auto& interfaceComponent =
+		gameObject->getComponent<BBInterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
 	const auto& menuObject =
-		gameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT)->interfaceMenuObject();
+		interfaceComponent->interfaceMenuObject();
 
 	//Enable Render
 	menuObject.value()->enableRender();
@@ -22,6 +25,9 @@ void ShowPuzzleInterfaceAction::perform(GameObject* gameObject)
 	if (mainFrame.has_value()) {
 		menuObject.value()->setPosition(mainFrame.value()->getCenterPosition());
 	}
+
+	//Set ME as the game object with the active menu interface
+	interfaceComponent->setCurrentGameObjectInterfaceActive(gameObject);
 
 
 }

@@ -2,8 +2,9 @@
 #include "IMGuiPauseWindow.h"
 #include "IMGuiTitleScreenMenu.h"
 #include "IMGuiTestLevelMenu.h"
-#include "IMGuiInteractiveMenuDoor.h"
 #include "IMGuiDynamicInterfaceMenu.h"
+#include "IMGuiOpenCloseMenu.h"
+#include "IMGuiItemDescription.h"
 
 
 BB_IMGuiFactory::BB_IMGuiFactory()
@@ -26,12 +27,17 @@ std::shared_ptr<IMGuiItem> BB_IMGuiFactory::create(std::string iMGuiItemType, st
 	else if (iMGuiItemType == "IMGuiTestLevelMenu") {
 		iMGuiItem = std::make_shared<IMGuiTestLevelMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
 	}
-	else if (iMGuiItemType == "IMGuiInteractiveMenuDoor") {
-		iMGuiItem = std::make_shared<IMGuiInteractiveMenuDoor>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
-	}
 	else if (iMGuiItemType == "IMGuiDynamicInterfaceMenu") {
 		iMGuiItem = std::make_shared<IMGuiDynamicInterfaceMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
 	}
+	else if (iMGuiItemType == "IMGuiOpenCloseMenu") {
+		iMGuiItem = std::make_shared<IMGuiOpenCloseMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
+	}
+	else if (iMGuiItemType == "IMGuiItemDescription") {
+		iMGuiItem = std::make_shared<IMGuiItemDescription>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
+	}
+
+	
 	else {
 
 		iMGuiItem = IMGuiFactory::create(iMGuiItemType, gameObjectType, parentScene, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize, staticTextValue);

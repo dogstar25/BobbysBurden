@@ -41,7 +41,8 @@
         },
         {
             "type": "OIL_CAN",
-            "traitTags": ["draggable"],
+            "traitTags": [ "draggable" ],
+            "description": "Oil Can",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -55,7 +56,46 @@
                     }
                 },
                 {
-                    "id": "BB_INTERFACE_COMPONENT"
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "ITEM_DESCRIPTION_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowPuzzleInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "StandardHideAction"
+                        }
+
+                    ]
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
