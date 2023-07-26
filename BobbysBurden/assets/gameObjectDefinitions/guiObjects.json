@@ -128,7 +128,44 @@
 
         },
         {
-            "type": "INTERFACE_DOOR_MENU",
+            "type": "ITEM_DESCRIPTION_MENU",
+            "traitTags": [ "abstract" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": true,
+                    "size": {
+                        "width": 268,
+                        "height": 236
+                    }
+                },
+                {
+                    "id": "IMGUI_COMPONENT",
+                    "imguiType": "IMGuiItemDescription",
+                    "autoSize": false,
+                    "padding": {
+                        "x": 16,
+                        "y": 16
+                    },
+                    "color": {
+                        "background": "Colors::CHARCOAL",
+                        "backgroundAlpha": 172,
+                        "text": "Colors::CANDLE_LIGHT",
+                        "button": "Colors::MIRKWOOD",
+                        "buttonHover": "Colors::MIRKWOOD",
+                        "buttonActive": "Colors::YELLOW"
+                    }
+
+                }
+            ]
+
+
+        },
+        {
+            "type": "OPEN_CLOSE_MENU",
             "traitTags": [ "abstract" ],
             "components": [
                 {
@@ -145,7 +182,7 @@
                 },
                 {
                     "id": "IMGUI_COMPONENT",
-                    "imguiType": "IMGuiInteractiveMenuDoor",
+                    "imguiType": "IMGuiOpenCloseMenu",
                     "autoSize": false,
                     "padding": {
                         "x": 14,

@@ -1,13 +1,12 @@
-#include "IMGuiDynamicInterfaceMenu.h"
+#include "IMGuiOpenCloseMenu.h"
 #include "BB_IMGuiUtil.h"
-#include "../GameConstants.h"
-#include "../BBContextManager.h"
+#include "../gameConstants.h"
 
 
 
 extern std::unique_ptr<Game> game;
 
-IMGuiDynamicInterfaceMenu::IMGuiDynamicInterfaceMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
+IMGuiOpenCloseMenu::IMGuiOpenCloseMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
 	ImVec4 buttonColor, ImVec4 buttonHoverColor, ImVec4 buttonActiveColor, bool autoSize) :
 	IMGuiItem(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize)
 {
@@ -16,7 +15,7 @@ IMGuiDynamicInterfaceMenu::IMGuiDynamicInterfaceMenu(std::string gameObjectType,
 
 }
 
-glm::vec2 IMGuiDynamicInterfaceMenu::render()
+glm::vec2 IMGuiOpenCloseMenu::render()
 {
 
 	glm::vec2 windowSize{};
@@ -26,7 +25,7 @@ glm::vec2 IMGuiDynamicInterfaceMenu::render()
 	const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
 	const auto& actionComponent = interfaceGameObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
 	const auto& player = parent()->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
-	
+
 
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
 
@@ -43,7 +42,7 @@ glm::vec2 IMGuiDynamicInterfaceMenu::render()
 
 	ImGui::Begin(m_gameObjectType.c_str(), &showWindow, m_flags);
 	{
-		
+
 		ImGui::SetWindowPos(ImVec2{ renderComponent->getRenderDestRect().x, renderComponent->getRenderDestRect().y });
 
 		//Build the description
@@ -52,7 +51,7 @@ glm::vec2 IMGuiDynamicInterfaceMenu::render()
 		ImGui::PopFont();
 		ImGui::Separator();
 		ImGui::Spacing();
-		ImGui::Spacing();	
+		ImGui::Spacing();
 
 		//Default interaction action
 		_buildInteractionRow(interfaceGameObject.value());
@@ -63,6 +62,7 @@ glm::vec2 IMGuiDynamicInterfaceMenu::render()
 			_buildPuzzleRow(interfaceGameObject.value());
 
 		}
+
 		//Capture this imGui window size
 		windowSize = { ImGui::GetWindowSize().x, ImGui::GetWindowSize().y };
 
@@ -80,27 +80,51 @@ glm::vec2 IMGuiDynamicInterfaceMenu::render()
 	return windowSize;
 }
 
-void IMGuiDynamicInterfaceMenu::_buildInteractionRow(GameObject* interfaceGameObject)
+void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 {
 	static int buttonSeq{};
 
 	const auto& puzzleComponent = interfaceGameObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 	const auto& interfaceComponent = interfaceGameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
-	const auto clickEvent = interfaceComponent->eventActions().at(Actions::USE);
 
 	ImGui::PushFont(m_normalFont);
 
 
-	//If the OnClick isAvailable, then show the green mouseclick image and the label that goes with the event
+	//If the USE isAvailable, then show the green mouseclick image and the label that goes with the event
 	if (interfaceComponent->isEventAvailable(Actions::USE)) {
 
 		ImGui::displayMousePointImage(util::SDLColorToImVec4(Colors::EMERALD));
 		ImGui::SameLine();
-		ImGui::TextWrapped(clickEvent->label.c_str());
 
-		//set the cursor
-		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_POINT");
-		SDL_SetCursor(cursor);
+		//Show Open or Close based on the current state
+		if (interfaceGameObject->hasComponent(ComponentTypes::ANIMATION_COMPONENT)) {
+			const auto& animationComponent = interfaceGameObject->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
+			auto animationState = animationComponent->currentAnimationState();
+			if (animationState == AnimationState::CLOSED) {
+
+				ImGui::TextWrapped("Open");
+				
+				//Set mouse Cursor
+				if (parent()->parent().value()->hasTrait(TraitTag::door)) {
+
+					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_OPEN");
+					SDL_SetCursor(cursor);
+				}
+
+			}
+			else {
+				ImGui::TextWrapped("Close");
+
+				//Set mouse Cursor
+				if (parent()->parent().value()->hasTrait(TraitTag::door)) {
+
+					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_CLOSE");
+					SDL_SetCursor(cursor);
+				}
+
+			}
+
+		}
 
 	}
 	else {
@@ -111,11 +135,12 @@ void IMGuiDynamicInterfaceMenu::_buildInteractionRow(GameObject* interfaceGameOb
 
 	}
 
+
 	ImGui::PopFont();
 
 }
 
-void IMGuiDynamicInterfaceMenu::_buildPuzzleRow(GameObject* interfaceGameObject)
+void IMGuiOpenCloseMenu::_buildPuzzleRow(GameObject* interfaceGameObject)
 {
 	static int buttonSeq{};
 
@@ -153,6 +178,3 @@ void IMGuiDynamicInterfaceMenu::_buildPuzzleRow(GameObject* interfaceGameObject)
 	ImGui::PopFont();
 
 }
-
-
-

@@ -28,67 +28,118 @@ BBInterfaceComponent::BBInterfaceComponent(Json::Value componentJSON, Scene* par
 
 bool BBInterfaceComponent::isEventAvailable(int actionId)
 {
-	bool puzzlesDone{};
+	bool isAvailable{};
 
 	//Do we have a puzzle component that could make this event NOT available?
 	if (m_dependentPuzzles.find(actionId) != m_dependentPuzzles.end()) {
 
 		const auto& puzzleComponent = parent()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 		if (puzzleComponent->hasBeenSolved() == true) {
-			puzzlesDone =  true;
+			isAvailable =  true;
 		}
 
 	}
 	else {
-		puzzlesDone = true;
+
+		isAvailable = true;
 	}
 
-	return puzzlesDone;
+	return isAvailable;
 }
 
 
-void BBInterfaceComponent::setCursor(GameObject* gameObject, bool isMouseOver)
+void BBInterfaceComponent::setCursor(GameObject* gameObject, std::bitset<(int)InterfaceEvents::COUNT> eventState)
 {
 
 	//If the mouse is Over the object then set the cursor based on various factors
-	if (isMouseOver) {
+	//if (m_eventActions.find(Actions::USE) != m_eventActions.end()) {
 
-		//Door cursors
-		if (gameObject->hasTrait(TraitTag::door)) {
-
-			const auto& animationComponent =
-				parent()->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
-
-			if (animationComponent->currentAnimationState() == AnimationState::OPENED) {
-
-				auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_CLOSE");
-				SDL_SetCursor(cursor);
-			}
-			else {
-
-				auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_OPEN");
-				SDL_SetCursor(cursor);
-			}
-		}
-		else if (gameObject->hasTrait(TraitTag::puzzle)) {
-
-			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_POINT");
-			SDL_SetCursor(cursor);
+	//	auto actionEvent = m_eventActions[Actions::USE];
+	//	if (hasActionMetEventRequirements(actionEvent.get(), eventState)) {
 
 
-		}
-	}
-	else {
+	//		//Door
+	//		if(gameObject->hasTrait())
 
-		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_POINT");
-		SDL_SetCursor(cursor);
 
-	}
+
+	//	}
+
+	//}
+	
+	//	//Door cursors
+	//	if (gameObject->hasTrait(TraitTag::door)) {
+
+	//		const auto& animationComponent =
+	//			parent()->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
+
+	//		if (animationComponent->currentAnimationState() == AnimationState::OPENED) {
+
+	//			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_CLOSE");
+	//			SDL_SetCursor(cursor);
+	//		}
+	//		else {
+
+	//			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_OPEN");
+	//			SDL_SetCursor(cursor);
+	//		}
+	//	}
+	//	else if (gameObject->hasTrait(TraitTag::puzzle)) {
+
+	//		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_POINT");
+	//		SDL_SetCursor(cursor);
+
+
+	//	}
+	//}
+	//else {
+
+	//	auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_POINT");
+	//	SDL_SetCursor(cursor);
+
+	//}
 
 
 
 
 }
+
+
+bool BBInterfaceComponent::shouldInterfaceBeActivated(std::bitset<(int)InterfaceEvents::COUNT> eventState)
+{
+	bool activate{true};
+
+	if (m_currentGameObjectInterfaceActive.has_value()) {
+
+		if (m_currentGameObjectInterfaceActive.value() == parent()) {
+
+			activate = true;
+		}
+		//Is my Layer in front of the other object
+		else if (m_currentGameObjectInterfaceActive.value()->layer() < parent()->layer()) {
+			activate = true;
+		}
+		else {
+			activate = false;
+		}
+
+	}
+
+	return activate;
+}
+
+bool BBInterfaceComponent::shouldInterfaceMenuBeShown(std::bitset<(int)InterfaceEvents::COUNT> eventState)
+{
+
+	//At this point, we know the interface(with or without a menu will be active)
+	// This is only applicable to the action "Actions::ShowInterface"
+	//showing menu precedence
+	//	If this is showing in the main hud, then 
+
+
+	return true;
+}
+
 
 void BBInterfaceComponent::postInit() {
 
@@ -123,7 +174,18 @@ void BBInterfaceComponent::handleDragging()
 	else {
 		const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
 		renderComponent->removeDisplayOverlay();
+
 	}
+
+}
+
+void BBInterfaceComponent::render()
+{
+
+	InterfaceComponent::render();
+
+	//set the current interface global to be this one
+	//m_currentGameObjectInterfaceActive = parent();
 
 }
 

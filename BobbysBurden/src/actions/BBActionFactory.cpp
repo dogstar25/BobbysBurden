@@ -1,7 +1,6 @@
 #include "BBActionFactory.h"
 #include "ActorMoveAction.h"
-#include "DoorCloseAction.h"
-#include "DoorOpenAction.h"
+#include "DoorToggleAction.h"
 #include "DoorEnterAction.h"
 #include "ActorStairsMoveAction.h"
 #include "TwistBedKnobAction.h"
@@ -20,13 +19,9 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType)
 
         action = std::make_shared<NoAction>();
     }
-    else if (actionType == "DoorOpenAction") {
+    else if (actionType == "DoorToggleAction") {
 
-        action = std::make_shared<DoorOpenAction>();
-    }
-    else if (actionType == "DoorCloseAction") {
-
-        action = std::make_shared<DoorCloseAction>();
+        action = std::make_shared<DoorToggleAction>();
     }
     else if (actionType == "DoorEnterAction") {
 
