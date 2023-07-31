@@ -220,7 +220,7 @@
                 },
                 {
                     "id": "IMGUI_COMPONENT",
-                    "imguiType": "IMGuiInteractiveMenuDoor",
+                    "imguiType": "IMGuiText",
                     "autoSize": false,
                     "padding": {
                         "x": 14,
