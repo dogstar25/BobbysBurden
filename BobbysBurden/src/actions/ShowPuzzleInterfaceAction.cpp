@@ -27,7 +27,7 @@ void ShowPuzzleInterfaceAction::perform(GameObject* gameObject)
 	}
 
 	//Set ME as the game object with the active menu interface
-	interfaceComponent->setCurrentGameObjectInterfaceActive(gameObject);
+	//interfaceComponent->setCurrentGameObjectInterfaceActive(gameObject);
 
 
 }

@@ -105,7 +105,7 @@ void BBInterfaceComponent::setCursor(GameObject* gameObject, std::bitset<(int)In
 }
 
 
-bool BBInterfaceComponent::shouldInterfaceBeActivated(std::bitset<(int)InterfaceEvents::COUNT> eventState)
+bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<(int)InterfaceEvents::COUNT> eventState)
 {
 	bool activate{true};
 
@@ -128,17 +128,17 @@ bool BBInterfaceComponent::shouldInterfaceBeActivated(std::bitset<(int)Interface
 	return activate;
 }
 
-bool BBInterfaceComponent::shouldInterfaceMenuBeShown(std::bitset<(int)InterfaceEvents::COUNT> eventState)
-{
-
-	//At this point, we know the interface(with or without a menu will be active)
-	// This is only applicable to the action "Actions::ShowInterface"
-	//showing menu precedence
-	//	If this is showing in the main hud, then 
-
-
-	return true;
-}
+//bool BBInterfaceComponent::shouldInterfaceMenuBeShown(std::bitset<(int)InterfaceEvents::COUNT> eventState)
+//{
+//
+//	//At this point, we know the interface(with or without a menu will be active)
+//	// This is only applicable to the action "Actions::ShowInterface"
+//	//showing menu precedence
+//	//	If this is showing in the main hud, then 
+//
+//
+//	return true;
+//}
 
 
 void BBInterfaceComponent::postInit() {
