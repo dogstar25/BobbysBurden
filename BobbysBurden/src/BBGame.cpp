@@ -48,6 +48,7 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/lightObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/householdObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/bobbysObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/containerObjects");
 
 	_displayLoadingMsg();
 
@@ -58,6 +59,18 @@ bool BBGame::init(
 	Scene& scene = SceneManager::instance().pushScene("SCENE_PLAY");
 	//scene.loadLevel("front1");
 	scene.loadLevel("full_interior");
+
+	//Add Inventory to all inventory objects
+	//Figure out a place to put this custom game type stuff later
+	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
+	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	auto gameObject = scene.addGameObject("OIL_CAN", GameLayer::FOREGROUND_5, (float)-50, (float)-50, (float)0);
+	auto inventoryObject = scene.getGameObject(gameObject->id());
+
+	playerInventory->addItem(inventoryObject.value());
+
+	
+
 
 	//Initialize the clock object
 	Clock::instance().init();

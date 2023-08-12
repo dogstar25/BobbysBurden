@@ -48,7 +48,7 @@ bool BBInterfaceComponent::isEventAvailable(int actionId)
 }
 
 
-void BBInterfaceComponent::setCursor(GameObject* gameObject, std::bitset<(int)InterfaceEvents::COUNT> eventState)
+void BBInterfaceComponent::setCursor(GameObject* gameObject, std::bitset<MAX_EVENT_STATES> eventState)
 {
 
 	//If the mouse is Over the object then set the cursor based on various factors
@@ -105,7 +105,7 @@ void BBInterfaceComponent::setCursor(GameObject* gameObject, std::bitset<(int)In
 }
 
 
-bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<(int)InterfaceEvents::COUNT> eventState)
+bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATES> eventState)
 {
 	bool activate{true};
 

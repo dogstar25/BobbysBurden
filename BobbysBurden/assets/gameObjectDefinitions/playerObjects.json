@@ -16,9 +16,30 @@
                     }
                 },
                 {
+                    "id": "INVENTORY_COMPONENT",
+                    "displayObject": "BOBBY_INVENTORY_DISPLAY"
+                },
+                {
                     "id": "VITALITY_COMPONENT",
                     "speed": 3,
                     "health": 6
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::OPEN",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "Key::SDL_SCANCODE_I"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -55,6 +76,10 @@
                         {
                             "actionId": "Actions::STAIRS_MOVE",
                             "actionClass": "ActorStairsMoveAction"
+                        },
+                        {
+                            "actionId": "Actions::OPEN",
+                            "actionClass": "ToggleBobbyInventory"
                         }
 
                     ]
@@ -64,12 +89,6 @@
                     "childPadding": 0,
                     "childPositionRelative": false,
                     "childObjects": [
-                        //{
-                        //    "gameObjectType": "MAIN_HUD_FRAME",
-                        //    "name": "MainHudFrame",
-                        //    "layer": "GameLayer::GUI",
-                        //    "locationSlot": 8
-                        //},
                         {
                             "gameObjectType": "HOLDING_CANDLE",
                             "absolutePosition": {
@@ -124,31 +143,6 @@
                         }
                     ]
                 }
-                //{
-                //    "id": "ATTACHMENTS_COMPONENT",
-                //    "attachments": [
-                //        {
-                //            "id": "Bumper1",
-                //            "gameObjectType": "PLAYER_BUMPER",
-                //            "attachLocation": {
-                //                "x": 0,
-                //                "y": 0
-                //            },
-                //            "attachB2JointType": "B2_WELD"
-                //        },
-                //        {
-                //            "id": "Bumper1",
-                //            "gameObjectType": "PLAYER_BUMPER",
-                //            "attachLocation": {
-                //                "x": 0,
-                //                "y": 0.62
-                //            },
-                //            "attachB2JointType": "B2_WELD"
-                //        }
-
-
-                //    ]
-                //}
 
             ]
 

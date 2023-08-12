@@ -20,7 +20,8 @@ void ShowPuzzleInterfaceAction::perform(GameObject* gameObject)
 	menuObject.value()->enableRender();
 
 	//Get the Main frame object where we're gonna show this menu
-	const auto& mainFrame = gameObject->parentScene()->getFirstGameObjectByName("MainHudFrame");
+	//const auto& mainFrame = gameObject->parentScene()->getFirstGameObjectByName("MainHudFrame");
+	const auto& mainFrame = gameObject->parentScene()->getFirstGameObjectByType("HUD_INTERFACE_FRAME");
 
 	if (mainFrame.has_value()) {
 		menuObject.value()->setPosition(mainFrame.value()->getCenterPosition());

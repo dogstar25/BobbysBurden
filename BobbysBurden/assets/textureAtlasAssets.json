@@ -706,6 +706,17 @@
                 "width": 64,
                 "height": 64
             }
+        },
+        {
+            "id": "TX_BOBBY_INVENTORY_HUD",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 50,
+                "y": 510,
+                "width": 188,
+                "height": 404
+            }
         }
 
     ],

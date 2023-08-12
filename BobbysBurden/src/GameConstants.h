@@ -71,6 +71,8 @@ namespace ContactTag {
 	inline constexpr int PUZZLE = 24;
 	inline constexpr int PUZZLE_PIECE = 25;
 	inline constexpr int INTERACTABLE_OBJECT = 26;
+	inline constexpr int INVENTORY_HOLDER = 27;
+	inline constexpr int INVENTORY_ITEM = 28;
 	
 
 }

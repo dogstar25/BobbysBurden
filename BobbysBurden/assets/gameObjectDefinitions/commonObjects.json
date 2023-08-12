@@ -202,28 +202,6 @@
 
         },
         {
-            "type": "MAIN_HUD_FRAME",
-            "traitTags": [ "gui" ],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_HUD_FRAME_2",
-                    "alpha": 255
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
-                    "size": {
-                        "width": 352,
-                        "height": 320
-                    }
-                }
-
-            ]
-
-        },
-        {
             "type": "MAIN_HUD_FRAME_RIGHT",
             "traitTags": [ "gui" ],
             "description": "",

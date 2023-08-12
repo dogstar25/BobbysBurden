@@ -150,7 +150,7 @@
         },
         {
             "type": "BRICK_WALL_FREE_1",
-            "traitTags": [],
+            "traitTags": [ "draggable" ],
             "description": "Brick Wall 1",
             "components": [
                 {

@@ -18,6 +18,9 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("ContactTag::STAIRS_TOP_TOUCH", ContactTag::STAIRS_TOP_TOUCH);
 	addEnumItem("ContactTag::STAIRS_BOTTOM_TOUCH", ContactTag::STAIRS_BOTTOM_TOUCH);
 	addEnumItem("ContactTag::INTERACTABLE_OBJECT", ContactTag::INTERACTABLE_OBJECT);
+	addEnumItem("ContactTag::INVENTORY_HOLDER", ContactTag::INVENTORY_HOLDER);
+	addEnumItem("ContactTag::INVENTORY_ITEM", ContactTag::INVENTORY_ITEM);
+
 	
 
 	//Custom Component Types

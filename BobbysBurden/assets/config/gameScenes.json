@@ -6,8 +6,7 @@
             "maxObjects": 7000,
             "gameObjects": [
                 {
-                    "gameObjectType": "MAIN_HUD_FRAME",
-                    "name": "MainHudFrame",
+                    "gameObjectType": "MAIN_HUD_HOLDER",
                     "layer": "GameLayer::GUI",
                     "location": {
                         "windowPosition": "PositionAlignment::CENTER",
@@ -20,28 +19,28 @@
             ],
             "keyActions": [
                 {
-                    "keyCode": "SDLK_F2",
+                    "keyCode": "Key::SDLK_F2",
                     "sceneAction": {
                         "action": "SCENE_ACTION_REPLACE",
                         "actionId": "SCENE_TEST"
                     }
                 },
                 {
-                    "keyCode": "SDLK_ESCAPE",
+                    "keyCode": "Key::SDLK_ESCAPE",
                     "sceneAction": {
                         "action": "SCENE_ACTION_ADD_AND_PAUSE",
                         "actionId": "SCENE_PAUSE_MENU"
                     }
                 },
                 {
-                    "keyCode": "SDLK_F3",
+                    "keyCode": "Key::SDLK_F3",
                     "sceneAction": {
                         "action": "SCENE_ACTION_TOGGLE_SETTING",
                         "actionId": "DebugSceneSettings::SHOW_NAVIGATION_DEBUG_MAP"
                     }
                 },
                 {
-                    "keyCode": "SDLK_F4",
+                    "keyCode": "Key::SDLK_F4",
                     "sceneAction": {
                         "action": "SCENE_ACTION_TOGGLE_SETTING",
                         "actionId": "DebugSceneSettings::SHOW_PHYSICS_DEBUG"
@@ -78,7 +77,7 @@
             ],
             "keyActions": [
                 {
-                    "keyCode": "SDLK_ESCAPE",
+                    "keyCode": "Key::SDLK_ESCAPE",
                     "sceneAction": {
                         "action": "SCENE_ACTION_EXIT"
                     }
@@ -105,21 +104,21 @@
             ],
             "keyActions": [
                 {
-                    "keyCode": "SDLK_F1",
+                    "keyCode": "Key::SDLK_F1",
                     "sceneAction": {
                         "action": "SCENE_ACTION_DIRECT",
                         "actionId": "CutSceneExample"
                     }
                 },
                 {
-                    "keyCode": "SDLK_F3",
+                    "keyCode": "Key::SDLK_F3",
                     "sceneAction": {
                         "action": "SCENE_ACTION_TOGGLE_SETTING",
                         "actionId": "DebugSceneSettings::SHOW_NAVIGATION_DEBUG_MAP"
                     }
                 },
                 {
-                    "keyCode": "SDLK_F4",
+                    "keyCode": "Key::SDLK_F4",
                     "sceneAction": {
                         "action": "SCENE_ACTION_TOGGLE_SETTING",
                         "actionId": "DebugSceneSettings::SHOW_PHYSICS_DEBUG"

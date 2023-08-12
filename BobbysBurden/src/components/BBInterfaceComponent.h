@@ -9,11 +9,11 @@ public:
 
 	virtual void render() override;
 
-	virtual void setCursor(GameObject* gameObject, std::bitset<(int)InterfaceEvents::COUNT> eventState) override;
+	virtual void setCursor(GameObject* gameObject, std::bitset<MAX_EVENT_STATES> eventState) override;
 	void postInit() override;
 	void handleDragging() override;
 	virtual bool isEventAvailable(int eventId) override;
-	virtual bool doesInterfaceHavePriority(std::bitset<(int)InterfaceEvents::COUNT> eventState) override;
+	virtual bool doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATES> eventState) override;
 	//virtual bool shouldInterfaceMenuBeShown(std::bitset<(int)InterfaceEvents::COUNT> eventState) override;
 	void clearCurrentGameObjectInterfaceActive() { m_currentGameObjectInterfaceActive = std::nullopt; }
 	std::optional<GameObject*> currentGameObjectInterfaceActive() {
