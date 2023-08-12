@@ -17,7 +17,7 @@
                 },
                 {
                     "id": "INVENTORY_COMPONENT",
-                    "presentationObject": "DRAWER_INVENTORY_DISPLAY_SMALL"
+                    "displayObject": "DRAWER_INVENTORY_DISPLAY_SMALL"
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -50,13 +50,14 @@
             "traitTags": [],
             "components": [
                 {
-                    "id": "RENDER_COMPONENT"
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BOBBY_INVENTORY_HUD"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 256,
-                        "height": 128
+                        "width": 190,
+                        "height": 435
                     }
                 },
                 {
@@ -64,23 +65,15 @@
                     "type": "B2_STATIC",
                     "fixtures": [
                         {
-                            "contactTag": "ContactTag::GENERAL_FREE",
-                            "collisionShape": "B2_CHAIN",
-                            "physicsChainType": "PhysicsChainType::CW_REFLECT_OUT",
-                            "friction": 0.00,
-                            "restitution": 0.0,
-                            "density": 1.5
-                        },
-                        {
-                            "contactTag": "ContactTag::CONTAINER_INSIDE",
-                            "collisionShape": "B2_CHAIN",
-                            "physicsChainType": "PhysicsChainType::CCW_REFLECT_IN",
-                            "friction": 0.00,
-                            "restitution": 0.0,
-                            "density": 1.5
+                            "contactTag": "ContactTag::INVENTORY_HOLDER",
+                            "collisionShape": "B2_BOX"
                         }
-
                     ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "sameSlotTreatment": "ChildSlotTreatment::HORIZONTAL"
                 }
 
             ]

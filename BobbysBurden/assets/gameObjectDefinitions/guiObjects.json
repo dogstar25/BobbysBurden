@@ -18,6 +18,84 @@
 
         },
         {
+            "type": "MAIN_HUD_HOLDER",
+            "traitTags": [ "gui" ],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": true,
+                    "size": {
+                        "width": 64,
+                        "height": 64
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "sameSlotTreatment": "ChildSlotTreatment::HORIZONTAL",
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "HUD_INTERFACE_FRAME",
+                            "locationSlot": 5
+                        }
+                    ]
+                }
+
+            ]
+
+        },
+        {
+            "type": "HUD_INTERFACE_FRAME",
+            "traitTags": [ "gui" ],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_HUD_FRAME_2",
+                    "alpha": 255
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": true,
+                    "size": {
+                        "width": 352,
+                        "height": 320
+                    }
+                }
+
+            ]
+
+        },
+        {
+            "type": "BOBBY_INVENTORY_DISPLAY",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BOBBY_INVENTORY_HUD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": true,
+                    "size": {
+                        "width": 190,
+                        "height": 320
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "sameSlotTreatment": "ChildSlotTreatment::VERTICAL"
+                }
+
+            ]
+        },
+        {
             "type": "IMGUI_PAUSE_WINDOW",
             "traitTags": [ "abstract" ],
             "components": [
@@ -115,7 +193,7 @@
                     },
                     "color": {
                         "background": "Colors::CHARCOAL",
-                        "backgroundAlpha": 172,
+                        "backgroundAlpha": 0,
                         "text": "Colors::CANDLE_LIGHT",
                         "button": "Colors::MIRKWOOD",
                         "buttonHover": "Colors::MIRKWOOD",
@@ -124,7 +202,6 @@
 
                 }
             ]
-
 
         },
         {
@@ -190,7 +267,7 @@
                     },
                     "color": {
                         "background": "Colors::CHARCOAL",
-                        "backgroundAlpha": 172,
+                        "backgroundAlpha": 0,
                         "text": "Colors::WHITE",
                         "button": "Colors::BLUE",
                         "buttonHover": "Colors::MIRKWOOD",

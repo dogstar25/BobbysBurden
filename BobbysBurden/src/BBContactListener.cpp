@@ -41,6 +41,12 @@ void BBContactListener::_puzzle_puzzlePiece(GameObject* puzzleObject, GameObject
 
 }
 
+void BBContactListener::_inventoryItem_inventoryHolder(GameObject*, GameObject*, b2Vec2 contactPoint)
+{
+	std::cout << "Inventory Holder touched Inventory Item" << std::endl;
+
+}
+
 
 void BBContactListener::BeginContact(b2Contact* contact) {
 
@@ -108,6 +114,20 @@ void BBContactListener::handleContact(b2Contact* contact, b2Vec2 contactPoint)
 		}
 		else {
 			_puzzle_puzzlePiece(contact2, contact1, contactPoint);
+		}
+	}
+
+	////////////////////////////////////
+	// Inventory Item -  Inventory Holder
+	//////////////////////////////////
+	if ((contactTag1 == ContactTag::INVENTORY_ITEM && contactTag2 == ContactTag::INVENTORY_HOLDER) ||
+		(contactTag2 == ContactTag::INVENTORY_ITEM && contactTag1 == ContactTag::INVENTORY_HOLDER)) {
+
+		if (contactTag1 == ContactTag::INVENTORY_ITEM) {
+			_inventoryItem_inventoryHolder(contact1, contact2, contactPoint);
+		}
+		else {
+			_inventoryItem_inventoryHolder(contact2, contact1, contactPoint);
 		}
 	}
 
