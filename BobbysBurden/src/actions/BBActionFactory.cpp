@@ -9,6 +9,8 @@
 #include "ShowPuzzleInterfaceAction.h"
 #include "StandardHideAction.h"
 #include "ToggleBobbyInventory.h"
+#include "ItemDragTreatmentAction.h"
+#include "ItemDropAction.h"
 
 
 
@@ -59,6 +61,14 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType)
     else if (actionType == "ToggleBobbyInventory") {
 
         action = std::make_shared<ToggleBobbyInventory>();
+    }
+    else if (actionType == "ItemDragTreatmentAction") {
+
+        action = std::make_shared<ItemDragTreatmentAction>();
+    }
+    else if (actionType == "ItemDropAction") {
+
+        action = std::make_shared<ItemDropAction>();
     }
 
     else {

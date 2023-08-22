@@ -7,7 +7,7 @@
             "gameObjects": [
                 {
                     "gameObjectType": "MAIN_HUD_HOLDER",
-                    "layer": "GameLayer::GUI",
+                    "layer": "GameLayer::GUI_1",
                     "location": {
                         "windowPosition": "PositionAlignment::CENTER",
                         "adjust": {
@@ -69,7 +69,7 @@
                 {
                     "gameObjectType": "IMGUI_PAUSE_WINDOW",
                     //"gameObjectType": "IMGUI_EXAMPLE_PANEL",
-                    "layer": "GameLayer::GUI",
+                    "layer": "GameLayer::GUI_1",
                     "location": {
                         "windowPosition": "PositionAlignment::CENTER"
                     }
@@ -92,7 +92,7 @@
             "gameObjects": [
                 {
                     "gameObjectType": "IMGUI_TEST_MENU",
-                    "layer": "GameLayer::GUI",
+                    "layer": "GameLayer::GUI_1",
                     "location": {
                         "windowPosition": "PositionAlignment::TOP_RIGHT",
                         "adjust": {

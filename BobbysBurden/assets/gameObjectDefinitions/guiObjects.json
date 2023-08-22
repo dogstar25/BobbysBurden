@@ -19,7 +19,7 @@
         },
         {
             "type": "MAIN_HUD_HOLDER",
-            "traitTags": [ "gui" ],
+            "traitTags": [ "gui"],
             "description": "",
             "components": [
                 {
@@ -44,6 +44,9 @@
                             "locationSlot": 5
                         }
                     ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT"
                 }
 
             ]
@@ -51,7 +54,7 @@
         },
         {
             "type": "HUD_INTERFACE_FRAME",
-            "traitTags": [ "gui" ],
+            "traitTags": [ "gui"],
             "description": "",
             "components": [
                 {
@@ -61,11 +64,14 @@
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
+                    "absolutePositioning": false,
                     "size": {
                         "width": 352,
                         "height": 320
                     }
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT"
                 }
 
             ]
@@ -81,7 +87,7 @@
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
+                    "absolutePositioning": false,
                     "size": {
                         "width": 190,
                         "height": 320
@@ -91,6 +97,18 @@
                     "id": "CHILDREN_COMPONENT",
                     "childPadding": 0,
                     "sameSlotTreatment": "ChildSlotTreatment::VERTICAL"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INVENTORY_HOLDER",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+
+                    ]
                 }
 
             ]

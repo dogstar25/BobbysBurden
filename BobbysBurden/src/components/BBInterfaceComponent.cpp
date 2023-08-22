@@ -118,7 +118,11 @@ bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATE
 		//Is my Layer in front of the other object
 		else if (m_currentGameObjectInterfaceActive.value()->layer() < parent()->layer()) {
 			activate = true;
+		}//is this the player, then it overrides other interfaces
+		else if (parent()->hasTrait(TraitTag::player)) {
+			activate = true;
 		}
+
 		else {
 			activate = false;
 		}
@@ -159,25 +163,25 @@ void BBInterfaceComponent::postInit() {
 
 }
 
-void BBInterfaceComponent::handleDragging()
-{
-
-	InterfaceComponent::handleDragging();
-
-	// Move this to BBInterface
-	//If the object being dragged is out of Bobby's reach range, then apply a red overlay
-	if (parent()->isTouchingByTrait(TraitTag::player) == false) {
-
-		const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
-		renderComponent->applyDisplayOverlay(displayOverlays::tint_RED1);
-	}
-	else {
-		const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
-		renderComponent->removeDisplayOverlay();
-
-	}
-
-}
+//void BBInterfaceComponent::handleDragging()
+//{
+//
+//	//InterfaceComponent::handleDragging();
+//
+//	//// Move this to BBInterface
+//	////If the object being dragged is out of Bobby's reach range, then apply a red overlay
+//	//if (parent()->isTouchingByTrait(TraitTag::player) == false) {
+//
+//	//	const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
+//	//	renderComponent->applyDisplayOverlay(displayOverlays::tint_RED1);
+//	//}
+//	//else {
+//	//	const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
+//	//	renderComponent->removeDisplayOverlay();
+//
+//	//}
+//
+//}
 
 void BBInterfaceComponent::render()
 {

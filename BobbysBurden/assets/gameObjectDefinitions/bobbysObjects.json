@@ -82,7 +82,10 @@
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_DRESSER_1_256"
+                    "textureId": "TX_DRESSER_1_256",
+                    "outline": {
+                        "color": "Colors::WHITE"
+                    }
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
