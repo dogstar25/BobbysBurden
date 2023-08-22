@@ -78,7 +78,28 @@
                                 ]
                             }
 
+                        },
+                        {
+                            "actionId": "Actions::DRAG_TREATMENT",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_DRAG"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::DROP",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_DROP"
+                                ]
+                            }
+
                         }
+
 
                     ]
 
@@ -93,32 +114,41 @@
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
                             "actionClass": "StandardHideAction"
+                        },
+                        {
+                            "actionId": "Actions::DRAG_TREATMENT",
+                            "actionClass": "ItemDragTreatmentAction"
+                        },
+                        {
+                            "actionId": "Actions::DROP",
+                            "actionClass": "ItemDropAction"
+                        }
+
+                    ]
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "gravityScale": 0,
+                    "linearDamping": 0.0,
+                    "angularDamping": 5.0,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            //"contactTag": "ContactTag::INVENTORY_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 18,
+                                "height": 48
+                            },
+                            "density": 1,
+                            "friction": 25
+
                         }
 
                     ]
                 }
-                //{
-                //    "id": "PHYSICS_COMPONENT",
-                //    "type": "B2_DYNAMIC",
-                //    "gravityScale": 0,
-                //    "linearDamping": 0.0,
-                //    "angularDamping": 5.0,
-                //    "fixtures": [
-                //        {
-                //            "contactTag": "ContactTag::INVENTORY_ITEM",
-                //            "collisionShape": "B2_BOX",
-                //            "isSensor": true,
-                //            "size": {
-                //                "width": 18,
-                //                "height": 48
-                //            },
-                //            "density": 1,
-                //            "friction": 25
-
-                //        }
-
-                //    ]
-                //}
             ]
         }
 

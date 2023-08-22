@@ -17,7 +17,18 @@
                 },
                 {
                     "id": "INVENTORY_COMPONENT",
-                    "displayObject": "BOBBY_INVENTORY_DISPLAY"
+                    "maxCapacity": 4,
+                    "display": {
+                        "backdropObject": "BOBBY_INVENTORY_DISPLAY",
+                        "startOffset": {
+                            "x": 96,
+                            "y": 64
+                        },
+                        "itemSize": 48,
+                        "itemPadding": 8,
+                        "rows": 4,
+                        "columns": 1
+                    }
                 },
                 {
                     "id": "VITALITY_COMPONENT",
@@ -95,6 +106,10 @@
                                 "x": -8,
                                 "y": 0
                             }
+                        },
+                        {
+                            "gameObjectType": "BOBBY_LABEL",
+                            "locationSlot": 3
                         }
 
                     ]

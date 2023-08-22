@@ -13,13 +13,9 @@ void ToggleBobbyInventory::perform(GameObject* playerObject)
 		//Get the Main HUD Holder and remove the bobby inventory object
 		const auto& mainHudHolder = playerObject->parentScene()->getFirstGameObjectByType("MAIN_HUD_HOLDER");
 		if (mainHudHolder.has_value()) {
-			const auto& mainHudHolderCildren = mainHudHolder.value()->getComponent<ChildrenComponent>(ComponentTypes::CHILDREN_COMPONENT);
+			const auto& mainHudHolderChildren = mainHudHolder.value()->getComponent<ChildrenComponent>(ComponentTypes::CHILDREN_COMPONENT);
 			
-			//remove child
-			if (inventoryComponent->getDisplayInventoryObjectId()) {
-				std::string displayObjectId = inventoryComponent->getDisplayInventoryObjectId().value();
-				mainHudHolderCildren->removeChild(displayObjectId);
-			}
+				mainHudHolderChildren->removeStepChild(inventoryComponent->getDisplayBackdropObject().value()->id());
 
 		}
 
@@ -28,8 +24,10 @@ void ToggleBobbyInventory::perform(GameObject* playerObject)
 
 	}
 	else {
-		
-		inventoryComponent->showInventory("MAIN_HUD_HOLDER");
+		const auto& mainHudHolder = playerObject->parentScene()->getFirstGameObjectByType("MAIN_HUD_HOLDER");
+		if (mainHudHolder.has_value()) {
+			inventoryComponent->showInventory(mainHudHolder.value().get());
+		}
 	}
 
 
