@@ -81,14 +81,12 @@
                 {
                     "id": "CHILDREN_COMPONENT",
                     "childPadding": 0,
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childPositionRelative": false,
                     "childObjects": [
                         {
                             "gameObjectType": "LIGHT_CIRCLE",
-                            "absolutePosition": {
-                                "x": 0,
-                                "y": 0
-                            },
+                            "standardSlot": "PositionAlignment::CENTER",
                             "size": {
                                 "width": 512,
                                 "height": 512
@@ -96,10 +94,7 @@
                         },
                         {
                             "gameObjectType": "LIGHT_DIAMOND",
-                            "absolutePosition": {
-                                "x": 0,
-                                "y": 0
-                            },
+                            "standardSlot": "PositionAlignment::CENTER",
                             "size": {
                                 "width": 64,
                                 "height": 64
@@ -151,7 +146,7 @@
                     "textureBlendMode": "RenderBlendMode::BLEND",
                     "color": {
                         "tint": "Colors::WHITE",
-                        "alpha": 255
+                        "alpha": 25
                     }
 
                 },

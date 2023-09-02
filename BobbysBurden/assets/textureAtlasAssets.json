@@ -47,6 +47,11 @@
             "id": "TX_FULL_INTERIOR_BLUEPRINT",
             "description": "Level 1 Bluprint",
             "filename": "assets/levels/full_interior_blueprint.png"
+        },
+        {
+            "id": "TX_TEST_BLUEPRINT",
+            "description": "Level 1 Bluprint",
+            "filename": "assets/levels/test_blueprint.png"
         }
 
     ],
@@ -470,10 +475,10 @@
             "description": "Default Texure",
             "atlas": "TEXTURE_ATLAS_2",
             "quadPosition": {
-                "x": 2,
-                "y": 20,
-                "width": 32,
-                "height": 32
+                "x": 3,
+                "y": 21,
+                "width": 30,
+                "height": 30
             }
         },
         {

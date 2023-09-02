@@ -1,0 +1,149 @@
+{
+    "gameObjects": [
+        {
+            "type": "PARENT_SQUARE",
+            "traitTags": [],
+            "description": "test",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "color": "Colors::BLUE"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 96,
+                        "height": 96
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CHILD_SQUARE",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            //"size": {
+                            //    "width": 32,
+                            //    "height": 32
+                            //},
+                            "color": "Colors::YELLOW"
+                        },
+                        //{
+                        //    "gameObjectType": "CHILD_SQUARE",
+                        //    "standardSlot": "PositionAlignment::CENTER"
+
+                        //}
+                        {
+                            "gameObjectType": "CHILD_SQUARE",
+                            "standardSlot": "PositionAlignment::TOP_LEFT",
+                            "color": "Colors::PURPLE"
+                        },
+                        {
+                            "gameObjectType": "CHILD_SQUARE",
+                            "standardSlot": "PositionAlignment::TOP_LEFT"
+                        },
+                        {
+                            "gameObjectType": "CHILD_SQUARE",
+                            "standardSlot": "PositionAlignment::TOP_RIGHT"
+                        },
+                        {
+                            "gameObjectType": "CHILD_SQUARE",
+                            "standardSlot": "PositionAlignment::TOP_CENTER"
+                        },
+                        {
+                            "gameObjectType": "CHILD_SQUARE",
+                            "color": "Colors::ORANGE",
+                            "absolutePositionSlot": {
+                                "x": 96,
+                                "y": 96
+                            },"size": {
+                                "width": 64,
+                                "height": 64
+                            }
+                        },
+                        {
+                            "gameObjectType": "CHILD_SQUARE",
+                            "color": "Colors::ORANGE",
+                            "absolutePositionSlot": {
+                                "x": 96,
+                                "y": 96
+                            }
+                        }
+
+
+                    ]
+                }
+
+            ]
+
+        },
+        {
+            "type": "CHILD_SQUARE",
+            "traitTags": [],
+            "description": "SS",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "color": "Colors::GREEN"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                }
+
+            ]
+
+        },
+        {
+            "type": "LEVEL_CAGE",
+            "traitTags": [ "abstract" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                }
+            ]
+        },
+        {
+            "type": "IMGUI_PAUSE_WINDOW",
+            "traitTags": [ "abstract" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 190,
+                        "height": 200
+                    },
+                    "absolutePositioning": true
+                },
+                {
+                    "id": "IMGUI_COMPONENT",
+                    "imguiType": "IMGuiPauseWindow",
+                    "color": {
+                        "background": "Colors::CHARCOAL",
+                        "backgroundAlpha": 175,
+                        "text": "Colors::WHITE",
+                        "button": "Colors::BLUE",
+                        "buttonHover": "Colors::MIRKWOOD",
+                        "buttonActive": "Colors::YELLOW"
+                    },
+                    "padding": {
+                        "x": 24,
+                        "y": 24
+                    },
+                    "autoSize": false
+
+                }
+            ]
+
+        }
+
+    ]
+}

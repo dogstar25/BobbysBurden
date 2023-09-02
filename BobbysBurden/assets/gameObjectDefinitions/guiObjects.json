@@ -41,7 +41,7 @@
                     "childObjects": [
                         {
                             "gameObjectType": "HUD_INTERFACE_FRAME",
-                            "locationSlot": 5
+                            "standardSlot": "PositionAlignment::CENTER"
                         }
                     ]
                 },

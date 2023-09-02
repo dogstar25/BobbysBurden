@@ -41,14 +41,16 @@ bool BBGame::init(
 
 	//Initialize the Game Object Manager
 	GameObjectManager::instance().init();
+	GameObjectManager::instance().load("gameObjectDefinitions/commonObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/houseObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/playerObjects");
-	GameObjectManager::instance().load("gameObjectDefinitions/commonObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/guiObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/lightObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/householdObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/bobbysObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/containerObjects");
+
+	GameObjectManager::instance().load("gameObjectDefinitions/testObjects");
 
 	_displayLoadingMsg();
 
@@ -57,15 +59,17 @@ bool BBGame::init(
 
 	//Load a first scene
 	Scene& scene = SceneManager::instance().pushScene("SCENE_PLAY");
+	//Scene& scene = SceneManager::instance().pushScene("SCENE_TEST");
 	//scene.loadLevel("front1");
 	scene.loadLevel("full_interior");
+	//scene.loadLevel("test");
 
 	//Add Inventory to all inventory objects
 	//Figure out a place to put this custom game type stuff later
-	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
-	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	playerInventory->addItem("OIL_CAN");
-	playerInventory->addItem("OIL_CAN");
+	//const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
+	//const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	//playerInventory->addItem("OIL_CAN");
+	//playerInventory->addItem("OIL_CAN");
 
 	//gameObject = scene.addGameObject("OIL_CAN", GameLayer::FOREGROUND_5, (float)-50, (float)-50, (float)0);
 	//gameObject->disablePhysics();
