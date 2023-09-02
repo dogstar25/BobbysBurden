@@ -7,7 +7,11 @@
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_BOWMAN1"
+                    "textureId": "TX_BOWMAN1",
+                    "outline": {
+                        "color": "Colors::WHITE"
+                    }
+
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",

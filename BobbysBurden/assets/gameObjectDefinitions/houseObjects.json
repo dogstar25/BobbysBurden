@@ -534,7 +534,7 @@
                     "childObjects": [
                         {
                             "gameObjectType": "DOOR_ENTRY",
-                            "locationSlot": 5
+                            "standardSlot": "PositionAlignment::CENTER"
                         }
 
                     ]

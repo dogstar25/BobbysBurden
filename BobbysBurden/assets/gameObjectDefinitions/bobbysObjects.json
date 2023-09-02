@@ -24,7 +24,7 @@
                     "childObjects": [
                         {
                             "gameObjectType": "LIGHT_CANDLE_1",
-                            "absolutePosition": {
+                            "absolutePositionSlot": {
                                 "x": 0,
                                 "y": -16
                             }
@@ -41,7 +41,11 @@
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_BED_1_256"
+                    "textureId": "TX_BED_1_256",
+                    "outline": {
+                        "color": "Colors::WHITE"
+                    }
+
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -58,17 +62,52 @@
                     "childObjects": [
                         {
                             "gameObjectType": "BOBBYS_BEDSHEET",
-                            "absolutePosition": {
+                            "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 8
                             }
                         },
                         {
                             "gameObjectType": "BOBBYS_BEDKNOB",
-                            "absolutePosition": {
+                            "absolutePositionSlot": {
                                 "x": 60,
                                 "y": -46
                             }
+                        }
+
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "gridDefinition": {
+                        "rows": 4,
+                        "columns": 1,
+                        "childPadding": 0,
+                        "matchParentRotation": false,
+                        "marginPadding": {
+                            "x": 96,
+                            "y": 64
+                        },
+                        "itemSize": 48
+                    },
+                    "childObjects": [
+                        //{
+                        //    "gameObjectType": "BOBBYS_BEDSHEET",
+                        //    "absolutePositionSlot": {
+                        //        "x": 0,
+                        //        "y": 8
+                        //    }
+                        //},
+                        //{
+                        //    "gameObjectType": "BOBBYS_BEDKNOB",
+                        //    "absolutePositionSlot": {
+                        //        "x": 60,
+                        //        "y": -46
+                        //    }
+                        //},
+                        {
+                            "gameObjectType": "OIL_CAN",
+                            "standardSlot": "PositionAlignment::CENTER"
                         }
 
                     ]
@@ -125,7 +164,7 @@
                                 "width": 32,
                                 "height": 16
                             },
-                            "absolutePosition": {
+                            "absolutePositionSlot": {
                                 "x": 0,
                                 "y": -28
                             }
@@ -136,7 +175,7 @@
                                 "width": 32,
                                 "height": 32
                             },
-                            "absolutePosition": {
+                            "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 8
                             }

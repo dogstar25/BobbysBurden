@@ -102,15 +102,16 @@
                     "childObjects": [
                         {
                             "gameObjectType": "HOLDING_CANDLE",
-                            "absolutePosition": {
+                            "absolutePositionSlot": {
                                 "x": -8,
                                 "y": 0
                             }
                         },
                         {
                             "gameObjectType": "BOBBY_LABEL",
-                            "locationSlot": 3
-                        }
+                            "standardSlot": "PositionAlignment::TOP_RIGHT"
+                        },
+
 
                     ]
                 },

@@ -89,25 +89,12 @@
             "id": "SCENE_TEST",
             "inputControlMode": "CONTROL_MODE_PLAY",
             "maxObjects": 8000,
-            "gameObjects": [
-                {
-                    "gameObjectType": "IMGUI_TEST_MENU",
-                    "layer": "GameLayer::GUI_1",
-                    "location": {
-                        "windowPosition": "PositionAlignment::TOP_RIGHT",
-                        "adjust": {
-                            "x": -64,
-                            "y": 0
-                        }
-                    }
-                }
-            ],
             "keyActions": [
                 {
-                    "keyCode": "Key::SDLK_F1",
+                    "keyCode": "Key::SDLK_ESCAPE",
                     "sceneAction": {
-                        "action": "SCENE_ACTION_DIRECT",
-                        "actionId": "CutSceneExample"
+                        "action": "SCENE_ACTION_ADD_AND_PAUSE",
+                        "actionId": "SCENE_PAUSE_MENU"
                     }
                 },
                 {

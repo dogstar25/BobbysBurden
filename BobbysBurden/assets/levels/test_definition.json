@@ -1,0 +1,27 @@
+{
+    "id": "FULL_INTERIOR",
+    "blueprint": "TX_TEST_BLUEPRINT",
+    "description": "Test",
+    "dimensions": {
+        "levelWidth": 60,
+        "levelHeight": 34,
+        "tileWidth": 32,
+        "tileHeight": 32
+    },
+    "colorDefinedObjects": [
+        {
+            "colorKey": "Colors::BROWN",
+            "gameObjectType": "BRICK_WALL_STATIC_1",
+            "layer": "GameLayer::FOREGROUND_4"
+        }
+    ],
+    "locationDefinedObjects": [
+        {
+            "id": "LOC_0027_0017",
+            "gameObjectType": "PARENT_SQUARE",
+            "layer": "GameLayer::MAIN"
+        }
+
+
+    ]
+}

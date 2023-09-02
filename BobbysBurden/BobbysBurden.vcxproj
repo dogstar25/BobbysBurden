@@ -251,6 +251,7 @@
     <Image Include="assets\bowman1.png" />
     <Image Include="assets\levels\front1_blueprint.png" />
     <Image Include="assets\levels\full_interior_blueprint.png" />
+    <Image Include="assets\levels\test_blueprint.png" />
     <Image Include="assets\textureAtlas00.png" />
     <Image Include="assets\textureAtlas01.png" />
     <Image Include="assets\textureAtlas02.png" />
@@ -268,8 +269,10 @@
     <None Include="assets\gameObjectDefinitions\houseObjects.json" />
     <None Include="assets\gameObjectDefinitions\lightObjects.json" />
     <None Include="assets\gameObjectDefinitions\playerObjects.json" />
+    <None Include="assets\gameObjectDefinitions\testObjects.json" />
     <None Include="assets\levels\full_interior_definition.json" />
     <None Include="assets\levels\levels.json" />
+    <None Include="assets\levels\test_definition.json" />
     <None Include="assets\sound\buttonWorking.ogg" />
     <None Include="assets\sound\soundAssets.json" />
     <None Include="assets\textureAtlas00.psd" />

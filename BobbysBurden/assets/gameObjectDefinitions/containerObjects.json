@@ -69,11 +69,6 @@
                             "collisionShape": "B2_BOX"
                         }
                     ]
-                },
-                {
-                    "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "sameSlotTreatment": "ChildSlotTreatment::HORIZONTAL"
                 }
 
             ]
