@@ -19,7 +19,7 @@
         },
         {
             "type": "MAIN_HUD_HOLDER",
-            "traitTags": [ "gui"],
+            "traitTags": [ "gui" ],
             "description": "",
             "components": [
                 {
@@ -54,7 +54,7 @@
         },
         {
             "type": "HUD_INTERFACE_FRAME",
-            "traitTags": [ "gui"],
+            "traitTags": [ "gui" ],
             "description": "",
             "components": [
                 {
@@ -79,7 +79,7 @@
         },
         {
             "type": "BOBBY_INVENTORY_DISPLAY",
-            "traitTags": [],
+            "traitTags": [ "gui" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -90,13 +90,19 @@
                     "absolutePositioning": false,
                     "size": {
                         "width": 190,
-                        "height": 320
+                        "height": 368
                     }
                 },
                 {
-                    "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "sameSlotTreatment": "ChildSlotTreatment::VERTICAL"
+                    "id": "GRID_DISPLAY_COMPONENT",
+                    "itemSize": 64,
+                    "itemPadding": 10,
+                    "rows": 4,
+                    "columns": 1,
+                    "marginPadding": {
+                        "x": 30,
+                        "y": 30
+                    }
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -390,6 +396,25 @@
                         "x": 8,
                         "y": 8
                     }
+                }
+            ]
+        },
+        {
+            "type": "GRID_SLOT_BOX",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_GRID_SLOT_BOX"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": true,
+                    "size": {
+                        "width": 8,
+                        "height": 8
+                    }
+
                 }
             ]
         }

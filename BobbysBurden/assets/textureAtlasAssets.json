@@ -722,6 +722,17 @@
                 "width": 188,
                 "height": 404
             }
+        },
+        {
+            "id": "TX_GRID_SLOT_BOX",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 267,
+                "y": 55,
+                "width": 62,
+                "height": 62
+            }
         }
 
     ],

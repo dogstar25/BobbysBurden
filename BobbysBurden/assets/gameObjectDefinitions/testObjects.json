@@ -19,58 +19,63 @@
                 {
                     "id": "CHILDREN_COMPONENT",
                     "childPadding": 0,
-                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "sameSlotTreatment": "ChildSlotTreatment::VERTICAL",
                     "childObjects": [
                         {
                             "gameObjectType": "CHILD_SQUARE",
                             "standardSlot": "PositionAlignment::CENTER",
-                            //"size": {
-                            //    "width": 32,
-                            //    "height": 32
-                            //},
+                            "size": {
+                                "width": 200,
+                                "height": 200
+                            },
                             "color": "Colors::YELLOW"
                         },
+                        {
+                            "gameObjectType": "CHILD_SQUARE",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "color": "Colors::RED"
+
+                        }
                         //{
                         //    "gameObjectType": "CHILD_SQUARE",
-                        //    "standardSlot": "PositionAlignment::CENTER"
-
+                        //    "standardSlot": "PositionAlignment::TOP_LEFT",
+                        //    "color": "Colors::PURPLE"
+                        //},
+                        //{
+                        //    "gameObjectType": "CHILD_SQUARE",
+                        //    "standardSlot": "PositionAlignment::TOP_LEFT",
+                        //    "size": {
+                        //        "width": 32,
+                        //        "height": 8
+                        //    }
+                        //},
+                        //{
+                        //    "gameObjectType": "CHILD_SQUARE",
+                        //    "standardSlot": "PositionAlignment::TOP_RIGHT"
+                        //},
+                        //{
+                        //    "gameObjectType": "CHILD_SQUARE",
+                        //    "standardSlot": "PositionAlignment::TOP_CENTER"
+                        //},
+                        //{
+                        //    "gameObjectType": "CHILD_SQUARE",
+                        //    "color": "Colors::ORANGE",
+                        //    "absolutePositionSlot": {
+                        //        "x": 96,
+                        //        "y": 96
+                        //    },"size": {
+                        //        "width": 64,
+                        //        "height": 64
+                        //    }
+                        //},
+                        //{
+                        //    "gameObjectType": "CHILD_SQUARE",
+                        //    "color": "Colors::ORANGE",
+                        //    "absolutePositionSlot": {
+                        //        "x": 96,
+                        //        "y": 96
+                        //    }
                         //}
-                        {
-                            "gameObjectType": "CHILD_SQUARE",
-                            "standardSlot": "PositionAlignment::TOP_LEFT",
-                            "color": "Colors::PURPLE"
-                        },
-                        {
-                            "gameObjectType": "CHILD_SQUARE",
-                            "standardSlot": "PositionAlignment::TOP_LEFT"
-                        },
-                        {
-                            "gameObjectType": "CHILD_SQUARE",
-                            "standardSlot": "PositionAlignment::TOP_RIGHT"
-                        },
-                        {
-                            "gameObjectType": "CHILD_SQUARE",
-                            "standardSlot": "PositionAlignment::TOP_CENTER"
-                        },
-                        {
-                            "gameObjectType": "CHILD_SQUARE",
-                            "color": "Colors::ORANGE",
-                            "absolutePositionSlot": {
-                                "x": 96,
-                                "y": 96
-                            },"size": {
-                                "width": 64,
-                                "height": 64
-                            }
-                        },
-                        {
-                            "gameObjectType": "CHILD_SQUARE",
-                            "color": "Colors::ORANGE",
-                            "absolutePositionSlot": {
-                                "x": 96,
-                                "y": 96
-                            }
-                        }
 
 
                     ]

@@ -79,8 +79,8 @@ namespace ContactTag {
 
 namespace ComponentTypes {
 
-	inline constexpr int BOBBY_PLAYER_CONTROL_COMPONENT = 29;
-	inline constexpr int BB_INTERFACE_COMPONENT = 30;
+	inline constexpr int BOBBY_PLAYER_CONTROL_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 1;
+	inline constexpr int BB_INTERFACE_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 2;
 
 }
 
