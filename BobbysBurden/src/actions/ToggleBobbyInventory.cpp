@@ -25,8 +25,15 @@ void ToggleBobbyInventory::perform(GameObject* playerObject)
 	}
 	else {
 		const auto& mainHudHolder = playerObject->parentScene()->getFirstGameObjectByType("MAIN_HUD_HOLDER");
+
 		if (mainHudHolder.has_value()) {
-			inventoryComponent->showInventory(mainHudHolder.value().get());
+
+			const auto& mainHudHolderChildren = mainHudHolder.value()->getComponent<ChildrenComponent>(ComponentTypes::CHILDREN_COMPONENT);
+
+			mainHudHolderChildren->addStepChild(inventoryComponent->getDisplayBackdropObject().value(), PositionAlignment::CENTER, false);
+
+			inventoryComponent->showInventory(inventoryComponent->getDisplayBackdropObject().value().get());
+
 		}
 	}
 

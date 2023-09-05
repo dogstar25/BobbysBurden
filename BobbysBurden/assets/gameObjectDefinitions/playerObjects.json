@@ -19,15 +19,7 @@
                     "id": "INVENTORY_COMPONENT",
                     "maxCapacity": 4,
                     "display": {
-                        "backdropObject": "BOBBY_INVENTORY_DISPLAY",
-                        "startOffset": {
-                            "x": 96,
-                            "y": 64
-                        },
-                        "itemSize": 48,
-                        "itemPadding": 8,
-                        "rows": 4,
-                        "columns": 1
+                        "backdropObject": "BOBBY_INVENTORY_DISPLAY"
                     }
                 },
                 {

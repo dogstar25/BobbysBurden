@@ -50,7 +50,7 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/bobbysObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/containerObjects");
 
-	GameObjectManager::instance().load("gameObjectDefinitions/testObjects");
+	//GameObjectManager::instance().load("gameObjectDefinitions/testObjects");
 
 	_displayLoadingMsg();
 
@@ -66,10 +66,11 @@ bool BBGame::init(
 
 	//Add Inventory to all inventory objects
 	//Figure out a place to put this custom game type stuff later
-	//const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
-	//const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	//playerInventory->addItem("OIL_CAN");
-	//playerInventory->addItem("OIL_CAN");
+	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
+	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	playerInventory->addItem("OIL_CAN");
+	playerInventory->addItem("OIL_CAN");
+	playerInventory->addItem("OIL_CAN", 3);
 
 	//gameObject = scene.addGameObject("OIL_CAN", GameLayer::FOREGROUND_5, (float)-50, (float)-50, (float)0);
 	//gameObject->disablePhysics();
