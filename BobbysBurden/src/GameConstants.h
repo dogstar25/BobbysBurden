@@ -93,10 +93,9 @@ namespace BrainState {
 namespace TraitTag {
 
 	//Custom traits
-	inline constexpr int stairs = 20;
-	inline constexpr int door_entry = 19;
-	inline constexpr int door = 22;
-	inline constexpr int hiding_spot = 23;
+	inline constexpr int door_entry = 30;
+	inline constexpr int door = 31;
+	inline constexpr int hiding_spot = 32;
 }
 
 namespace Actions {

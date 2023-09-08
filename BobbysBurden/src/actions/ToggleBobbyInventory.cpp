@@ -32,7 +32,7 @@ void ToggleBobbyInventory::perform(GameObject* playerObject)
 
 			mainHudHolderChildren->addStepChild(inventoryComponent->getDisplayBackdropObject().value(), PositionAlignment::CENTER, false);
 
-			inventoryComponent->showInventory(inventoryComponent->getDisplayBackdropObject().value().get());
+			inventoryComponent->showInventory();
 
 		}
 	}

@@ -39,7 +39,6 @@ glm::vec2 IMGuiOpenCloseMenu::render()
 	ImGui::PushStyleColor(ImGuiCol_Text, m_textColor);
 	ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
 
-
 	ImGui::Begin(m_gameObjectType.c_str(), &showWindow, m_flags);
 	{
 
@@ -100,6 +99,8 @@ void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 		if (interfaceGameObject->hasComponent(ComponentTypes::ANIMATION_COMPONENT)) {
 			const auto& animationComponent = interfaceGameObject->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
 			auto animationState = animationComponent->currentAnimationState();
+
+
 			if (animationState == AnimationState::CLOSED) {
 
 				ImGui::TextWrapped("Open");
@@ -108,7 +109,7 @@ void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 				if (parent()->parent().value()->hasTrait(TraitTag::door)) {
 
 					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_OPEN");
-					SDL_SetCursor(cursor);
+					SceneManager::instance().setMouseCursor(cursor);
 				}
 
 			}
@@ -119,7 +120,7 @@ void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 				if (parent()->parent().value()->hasTrait(TraitTag::door)) {
 
 					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_CLOSE");
-					SDL_SetCursor(cursor);
+					SceneManager::instance().setMouseCursor(cursor);
 				}
 
 			}

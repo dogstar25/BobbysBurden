@@ -176,7 +176,7 @@
         },
         {
             "type": "INTERACTIVE_INVENTORY_AREA",
-            "traitTags": [ "mouse_interface" ],
+            "traitTags": [ "abstract" ],
             "description": "",
             "components": [
                 {
@@ -191,12 +191,77 @@
                     }
                 },
                 {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "OPEN_CLOSE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_CLICK",
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_NO_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
+                },
+                {
                     "id": "ACTION_COMPONENT",
-                    "interactiveMenuObject": "INTERACTIVE_DYNAMIC_MENU",
                     "actions": [
                         {
                             "actionId": "Actions::USE",
-                            "actionClass": "NoAction"
+                            "actionClass": "DoorToggleAction"
+                        },
+                        {
+                            "actionId": "Actions::ENTER",
+                            "actionClass": "DoorEnterAction"
+
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowPuzzleInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "StandardHideAction"
+                        }
+
+                    ]
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
                         }
 
                     ]

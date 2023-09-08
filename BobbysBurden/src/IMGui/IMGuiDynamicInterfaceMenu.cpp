@@ -100,7 +100,7 @@ void IMGuiDynamicInterfaceMenu::_buildInteractionRow(GameObject* interfaceGameOb
 
 		//set the cursor
 		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_POINT");
-		SDL_SetCursor(cursor);
+		SceneManager::instance().setMouseCursor(cursor);
 
 	}
 	else {
