@@ -104,32 +104,33 @@ void BBInterfaceComponent::setCursor(GameObject* gameObject, std::bitset<MAX_EVE
 
 }
 
-
+//Remember that this is from the perspective of the game object whose interface we are deciding 
+//shoudl display
 bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATES> eventState)
 {
-	bool activate{true};
+	bool hasHigherPriority{true};
 
 	if (m_currentGameObjectInterfaceActive.has_value()) {
 
 		if (m_currentGameObjectInterfaceActive.value() == parent()) {
 
-			activate = true;
+			hasHigherPriority = true;
+		}
+		else if (parent()->hasTrait(TraitTag::player)) {
+			hasHigherPriority = true;
 		}
 		//Is my Layer in front of the other object
 		else if (m_currentGameObjectInterfaceActive.value()->layer() < parent()->layer()) {
-			activate = true;
-		}//is this the player, then it overrides other interfaces
-		else if (parent()->hasTrait(TraitTag::player)) {
-			activate = true;
+			hasHigherPriority = true;
 		}
 
 		else {
-			activate = false;
+			hasHigherPriority = false;
 		}
 
 	}
 
-	return activate;
+	return hasHigherPriority;
 }
 
 //bool BBInterfaceComponent::shouldInterfaceMenuBeShown(std::bitset<(int)InterfaceEvents::COUNT> eventState)

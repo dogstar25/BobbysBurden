@@ -69,8 +69,14 @@ bool BBGame::init(
 	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
 	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	playerInventory->addItem("OIL_CAN");
-	playerInventory->addItem("OIL_CAN");
-	playerInventory->addItem("OIL_CAN", 3);
+	//playerInventory->addItem("OIL_CAN");
+	//playerInventory->addItem("OIL_CAN", 3);
+
+	//const auto& drawer = scene.getFirstGameObjectByName("");
+	//const auto& drawerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	//playerInventory->addItem("OIL_CAN");
+
+
 
 	//gameObject = scene.addGameObject("OIL_CAN", GameLayer::FOREGROUND_5, (float)-50, (float)-50, (float)0);
 	//gameObject->disablePhysics();

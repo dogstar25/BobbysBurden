@@ -125,6 +125,7 @@
                     "childObjects": [
                         {
                             "gameObjectType": "INTERACTIVE_INVENTORY_AREA",
+                            "name": "TOP_DRAWER",
                             "size": {
                                 "width": 32,
                                 "height": 16
@@ -136,6 +137,7 @@
                         },
                         {
                             "gameObjectType": "INTERACTIVE_INVENTORY_AREA",
+                            "name": "BOTTOM_DRAWER",
                             "size": {
                                 "width": 32,
                                 "height": 32
