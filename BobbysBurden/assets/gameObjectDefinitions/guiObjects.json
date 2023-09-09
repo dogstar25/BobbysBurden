@@ -120,6 +120,49 @@
             ]
         },
         {
+            "type": "INVENTORY_SMALL_DRAWER",
+            "traitTags": [ "abstract", "inventory" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT"
+                },
+                {
+                    "id": "INVENTORY_COMPONENT",
+                    "maxCapacity": 3,
+                    "display": {
+                        "backdropObject": "DRAWER_INVENTORY_DISPLAY"
+                    }
+                },
+                {
+                    "id": "GRID_DISPLAY_COMPONENT",
+                    "itemSize": 64,
+                    "itemPadding": 10,
+                    "rows": 1,
+                    "columns": 3,
+                    "marginPadding": {
+                        "x": 30,
+                        "y": 30
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INVENTORY_HOLDER",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+
+                    ]
+                }
+
+            ]
+        },
+        {
             "type": "IMGUI_PAUSE_WINDOW",
             "traitTags": [ "abstract" ],
             "components": [

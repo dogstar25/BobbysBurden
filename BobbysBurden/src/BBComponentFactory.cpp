@@ -11,6 +11,7 @@ std::shared_ptr<Component> BBComponentFactory::create(
 	float xMapPos,
 	float yMapPos,
 	float angleAdjust,
+	b2Vec2 sizeOverride,
 	const int componentType)
 {
 	std::shared_ptr<Component> component{};
@@ -36,6 +37,7 @@ std::shared_ptr<Component> BBComponentFactory::create(
 			xMapPos,
 			yMapPos,
 			angleAdjust,
+			sizeOverride,
 			componentType);
 	}
 

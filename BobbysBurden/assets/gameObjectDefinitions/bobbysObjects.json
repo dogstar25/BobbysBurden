@@ -125,6 +125,7 @@
                     "childObjects": [
                         {
                             "gameObjectType": "INTERACTIVE_INVENTORY_AREA",
+                            "inventoryDisplayObject": "DRAWER_DISPLAY_SMALL",
                             "name": "TOP_DRAWER",
                             "size": {
                                 "width": 32,
