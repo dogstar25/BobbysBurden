@@ -169,7 +169,7 @@
         },
         {
             "type": "BRICK_WALL_DYNAMIC_1",
-            "traitTags": [ "barrier","draggable" ],
+            "traitTags": [ "barrier", "draggable" ],
             "description": "Brick Wall 1",
             "components": [
                 {
@@ -745,113 +745,14 @@
             ]
         },
         {
-            "type": "BEAM_46",
+            "type": "HOUSE_BEAM",
             "traitTags": [ "abstract" ],
-
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
-
                 },
                 {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 1472,
-                        "height": 32
-                    },
-                    "absolutePositioning": false
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_STATIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::GENERAL_SOLID",
-                            "collisionShape": "B2_BOX",
-                            "friction": 0.5
-                        }
-
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "BEAM_24",
-            "traitTags": [ "abstract" ],
-
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 768,
-                        "height": 32
-                    },
-                    "absolutePositioning": false
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_STATIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::GENERAL_SOLID",
-                            "collisionShape": "B2_BOX",
-                            "friction": 0.5
-                        }
-
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "BEAM_19",
-            "traitTags": [ "abstract" ],
-
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 608,
-                        "height": 32
-                    },
-                    "absolutePositioning": false
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_STATIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::GENERAL_SOLID",
-                            "collisionShape": "B2_BOX",
-                            "friction": 0.5
-                        }
-
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "BEAM_6",
-            "traitTags": [ "abstract" ],
-
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 192,
-                        "height": 32
-                    }
+                    "id": "TRANSFORM_COMPONENT"
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
