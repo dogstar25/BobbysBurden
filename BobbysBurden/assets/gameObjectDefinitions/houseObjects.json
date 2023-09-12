@@ -464,7 +464,7 @@
                             "condition": {
                                 "operator": "ConditionOperator::OR",
                                 "events": [
-                                    "InterfaceEvents::ON_NO_TOUCHING",
+                                    "InterfaceEvents::ON_STOP_TOUCHING",
                                     "InterfaceEvents::ON_HOVER_OUT"
                                 ]
                             }
@@ -607,7 +607,7 @@
                             "condition": {
                                 "operator": "ConditionOperator::OR",
                                 "events": [
-                                    "InterfaceEvents::ON_NO_TOUCHING",
+                                    "InterfaceEvents::ON_STOP_TOUCHING",
                                     "InterfaceEvents::ON_HOVER_OUT"
                                 ]
                             }
