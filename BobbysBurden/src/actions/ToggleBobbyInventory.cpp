@@ -15,11 +15,12 @@ void ToggleBobbyInventory::perform(GameObject* playerObject)
 		if (mainHudHolder.has_value()) {
 			const auto& mainHudHolderChildren = mainHudHolder.value()->getComponent<ChildrenComponent>(ComponentTypes::CHILDREN_COMPONENT);
 			
-				mainHudHolderChildren->removeChild(inventoryComponent->getDisplayBackdropObject().value()->id());
+				mainHudHolderChildren->removeChild(inventoryComponent->getDisplayObject().value().lock()->id());
 
 		}
 
 		//call standard hide logic - has to be after removeing child form hud because the id gets wipes out here
+		inventoryComponent->setOpen(false);
 		inventoryComponent->hideInventory();
 
 	}
@@ -30,8 +31,9 @@ void ToggleBobbyInventory::perform(GameObject* playerObject)
 
 			const auto& mainHudHolderChildren = mainHudHolder.value()->getComponent<ChildrenComponent>(ComponentTypes::CHILDREN_COMPONENT);
 
-			mainHudHolderChildren->addStepChild(inventoryComponent->getDisplayBackdropObject().value(), PositionAlignment::CENTER, false);
+			mainHudHolderChildren->addStepChild(inventoryComponent->getDisplayObject().value().lock(), PositionAlignment::CENTER, false);
 
+			inventoryComponent->setOpen(true);
 			inventoryComponent->showInventory();
 
 		}

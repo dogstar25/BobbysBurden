@@ -471,29 +471,7 @@
             }
         },
         {
-            "id": "TX_HOLDING_CANDLE_32",
-            "description": "Default Texure",
-            "atlas": "TEXTURE_ATLAS_2",
-            "quadPosition": {
-                "x": 3,
-                "y": 21,
-                "width": 30,
-                "height": 30
-            }
-        },
-        {
-            "id": "TX_HOLDING_CANDLE_32_2",
-            "description": "Default Texure",
-            "atlas": "TEXTURE_ATLAS_2",
-            "quadPosition": {
-                "x": 36,
-                "y": 20,
-                "width": 32,
-                "height": 32
-            }
-        },
-        {
-            "id": "TX_HOLDING_CANDLE_64",
+            "id": "TX_HOLDING_CANDLE",
             "description": "Default Texure",
             "atlas": "TEXTURE_ATLAS_2",
             "quadPosition": {
@@ -501,28 +479,6 @@
                 "y": 54,
                 "width": 64,
                 "height": 64
-            }
-        },
-        {
-            "id": "TX_HOLDING_CANDLE_128",
-            "description": "Default Texure",
-            "atlas": "TEXTURE_ATLAS_2",
-            "quadPosition": {
-                "x": 2,
-                "y": 120,
-                "width": 128,
-                "height": 128
-            }
-        },
-        {
-            "id": "TX_HOLDING_CANDLE_256",
-            "description": "Default Texure",
-            "atlas": "TEXTURE_ATLAS_2",
-            "quadPosition": {
-                "x": 2,
-                "y": 250,
-                "width": 256,
-                "height": 256
             }
         },
         {
@@ -732,6 +688,28 @@
                 "y": 55,
                 "width": 62,
                 "height": 62
+            }
+        },
+        {
+            "id": "TX_DRAWER_SMALL",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 240,
+                "y": 508,
+                "width": 261,
+                "height": 162
+            }
+        },
+        {
+            "id": "TX_INVENTORY_CLOSE_BUTTON",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 342,
+                "y": 64,
+                "width": 45,
+                "height": 45
             }
         }
 

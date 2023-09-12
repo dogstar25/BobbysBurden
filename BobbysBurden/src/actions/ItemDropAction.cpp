@@ -48,18 +48,29 @@ void ItemDropAction::perform(GameObject* gameObject)
 				sourceInventoryObject->refreshInventoryDisplay();
 
 			}
-			//Is this the inventory holding object itself instread of its grid display
-			else if (touchingInventoryObject->hasComponent(ComponentTypes::INVENTORY_COMPONENT)) {
+		}
+		//Is this the inventory holding object itself instread of its grid display
+		else if (touchingInventoryObject->hasComponent(ComponentTypes::INVENTORY_COMPONENT)) {
 
-				////Get the inventory objects Inventory component
-				//const auto& inventoryComponent = inventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+			////Get the inventory objects Inventory component
+			const auto& destinationInventoryComponent = touchingInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 
-				////Find this GameObjects shared ptr
-				//const auto& gameObjectSharedPtr = gameObject->parentScene()->getGameObject(gameObject->id());
-				//inventoryComponent->addItem(gameObjectSharedPtr.value());
+			//Remove the dropped gameObject from it's current inventory
+			//first get a shared pointer to the object so that the object isnt deallocated
+			std::shared_ptr<GameObject> gameObjectSharedPtr = gameObject->parentScene()->getGameObject(gameObject->id()).value();
+			sourceInventoryObject->removeItem(gameObjectSharedPtr.get());
 
-			}
+			//Add the dropped gameObject to it's new inventory
+			destinationInventoryComponent->addItem(gameObjectSharedPtr);
 
+			//Refresh the gridDisplayComponent so that it shows the new item
+			destinationInventoryComponent->refreshInventoryDisplay();
+			sourceInventoryObject->refreshInventoryDisplay();
+
+			//Set the active interface to the inventory we dropped the item to
+			//If we don't then the interface of the now offscreen object could never be overridden
+			const auto& interfaceComponent = gameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
+			interfaceComponent->setCurrentGameObjectInterfaceActive(touchingInventoryObject.get());
 
 		}
 

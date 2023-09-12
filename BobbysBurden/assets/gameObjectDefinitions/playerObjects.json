@@ -18,9 +18,8 @@
                 {
                     "id": "INVENTORY_COMPONENT",
                     "maxCapacity": 4,
-                    "display": {
-                        "backdropObject": "BOBBY_INVENTORY_DISPLAY"
-                    }
+                    "displayObject": "BOBBY_INVENTORY_DISPLAY",
+                    "displayLayer": "GameLayer::GUI_3"
                 },
                 {
                     "id": "VITALITY_COMPONENT",
