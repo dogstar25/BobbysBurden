@@ -13,27 +13,48 @@ void ItemDropAction::perform(GameObject* gameObject)
 	if (gameObject->isTouchingByTrait(TraitTag::inventory)) {
 
 		//Get reference to this dropped objects' inventory component
-		const auto& droppedObjectParent = gameObject->parent();
-		const auto& sourceInventoryObject = droppedObjectParent.value()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-		
-		const auto& touchingInventoryObject = gameObject->getFirstTouchingByTrait(TraitTag::inventory).value().lock();
+		if (gameObject->parent().has_value()) {
+			const auto& droppedObjectParent = gameObject->parent();
+			const auto& sourceInventoryObject = droppedObjectParent.value()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 
-		if (touchingInventoryObject->hasComponent(ComponentTypes::GRID_DISPLAY_COMPONENT)) {
+			const auto& touchingInventoryObject = gameObject->getFirstTouchingByTrait(TraitTag::inventory).value().lock();
 
-			//This is a grid display object so get its grid display component
-			const auto& gridDisplayComponent = touchingInventoryObject->getComponent<GridDisplayComponent>(ComponentTypes::GRID_DISPLAY_COMPONENT);
+			if (touchingInventoryObject->hasComponent(ComponentTypes::GRID_DISPLAY_COMPONENT)) {
 
-			//Get the grid slot that we dropped this object on. if it wasnt close enough to any then we
-			//wont move the object
-			auto slot = gridDisplayComponent->getClosestSlot(gameObject->getCenterPosition());
-			if (slot.has_value()) {
+				//This is a grid display object so get its grid display component
+				const auto& gridDisplayComponent = touchingInventoryObject->getComponent<GridDisplayComponent>(ComponentTypes::GRID_DISPLAY_COMPONENT);
 
-				//This grid display gameObject should have a parent that is the inventory holding object itself
-				//So get a reference to it and its inventory component
-				const auto& destinationInventoryObject = touchingInventoryObject->parent().value();
+				//Get the grid slot that we dropped this object on. if it wasnt close enough to any then we
+				//wont move the object
+				auto slot = gridDisplayComponent->getClosestSlot(gameObject->getCenterPosition());
+				if (slot.has_value()) {
 
-				//Get the inventory objects Inventory component
-				const auto& destinationInventoryComponent = destinationInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+					//This grid display gameObject should have a parent that is the inventory holding object itself
+					//So get a reference to it and its inventory component
+					const auto& destinationInventoryObject = touchingInventoryObject->parent().value();
+
+					//Get the inventory objects Inventory component
+					const auto& destinationInventoryComponent = destinationInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+
+					//Remove the dropped gameObject from it's current inventory
+					//first get a shared pointer to the object so that the object isnt deallocated
+					std::shared_ptr<GameObject> gameObjectSharedPtr = gameObject->parentScene()->getGameObject(gameObject->id()).value();
+					sourceInventoryObject->removeItem(gameObjectSharedPtr.get());
+
+					//Add the dropped gameObject to it's new inventory
+					destinationInventoryComponent->addItem(gameObjectSharedPtr, slot.value());
+
+					//Refresh the gridDisplayComponent so that it shows the new item
+					destinationInventoryComponent->refreshInventoryDisplay();
+					sourceInventoryObject->refreshInventoryDisplay();
+
+				}
+			}
+			//Is this the inventory holding object itself instread of its grid display
+			else if (touchingInventoryObject->hasComponent(ComponentTypes::INVENTORY_COMPONENT)) {
+
+				////Get the inventory objects Inventory component
+				const auto& destinationInventoryComponent = touchingInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 
 				//Remove the dropped gameObject from it's current inventory
 				//first get a shared pointer to the object so that the object isnt deallocated
@@ -41,39 +62,19 @@ void ItemDropAction::perform(GameObject* gameObject)
 				sourceInventoryObject->removeItem(gameObjectSharedPtr.get());
 
 				//Add the dropped gameObject to it's new inventory
-				destinationInventoryComponent->addItem(gameObjectSharedPtr, slot.value());
+				destinationInventoryComponent->addItem(gameObjectSharedPtr);
 
 				//Refresh the gridDisplayComponent so that it shows the new item
 				destinationInventoryComponent->refreshInventoryDisplay();
 				sourceInventoryObject->refreshInventoryDisplay();
 
+				//Set the active interface to the inventory we dropped the item to
+				//If we don't then the interface of the now offscreen object could never be overridden
+				const auto& interfaceComponent = gameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
+				interfaceComponent->setCurrentGameObjectInterfaceActive(touchingInventoryObject.get());
+
 			}
 		}
-		//Is this the inventory holding object itself instread of its grid display
-		else if (touchingInventoryObject->hasComponent(ComponentTypes::INVENTORY_COMPONENT)) {
-
-			////Get the inventory objects Inventory component
-			const auto& destinationInventoryComponent = touchingInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-
-			//Remove the dropped gameObject from it's current inventory
-			//first get a shared pointer to the object so that the object isnt deallocated
-			std::shared_ptr<GameObject> gameObjectSharedPtr = gameObject->parentScene()->getGameObject(gameObject->id()).value();
-			sourceInventoryObject->removeItem(gameObjectSharedPtr.get());
-
-			//Add the dropped gameObject to it's new inventory
-			destinationInventoryComponent->addItem(gameObjectSharedPtr);
-
-			//Refresh the gridDisplayComponent so that it shows the new item
-			destinationInventoryComponent->refreshInventoryDisplay();
-			sourceInventoryObject->refreshInventoryDisplay();
-
-			//Set the active interface to the inventory we dropped the item to
-			//If we don't then the interface of the now offscreen object could never be overridden
-			const auto& interfaceComponent = gameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
-			interfaceComponent->setCurrentGameObjectInterfaceActive(touchingInventoryObject.get());
-
-		}
-
 	}
 
 

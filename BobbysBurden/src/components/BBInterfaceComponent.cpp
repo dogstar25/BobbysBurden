@@ -122,6 +122,13 @@ bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATE
 		//Is my Layer in front of the other object
 		else if (m_currentGameObjectInterfaceActive.value()->layer() < parent()->layer()) {
 			hasHigherPriority = true;
+
+		}
+		//Certain events should always have priority, like dropping an object or stop tpuching
+		else if (eventState.test((int)InterfaceEvents::ON_DROP) ||
+			eventState.test((int)InterfaceEvents::ON_STOP_TOUCHING)) {
+			hasHigherPriority = true;
+
 		}
 
 		else {
