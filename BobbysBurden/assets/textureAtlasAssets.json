@@ -25,6 +25,12 @@
             "filename": "assets/textureAtlas03.png"
         },
         {
+            "id": "TEXTURE_ATLAS_4",
+            "description": "Texture atlas 4",
+            "openglTextureIndex": "GL_TextureIndexType::MAIN_TEXTURE_ATLAS_4",
+            "filename": "assets/textureAtlas04.png"
+        },
+        {
             "id": "TEXTURE_IMGUI_ATLAS",
             "description": "Texture For IMGUI stuff",
             "openglTextureIndex": "GL_TextureIndexType::IMGUI_TEXTURE_ATLAS",
@@ -307,7 +313,7 @@
             "description": "Door from side closed",
             "atlas": "TEXTURE_ATLAS_0",
             "quadPosition": {
-                "x": 1752,
+                "x": 1754,
                 "y": 2,
                 "width": 69,
                 "height": 256
@@ -475,10 +481,10 @@
             "description": "Default Texure",
             "atlas": "TEXTURE_ATLAS_2",
             "quadPosition": {
-                "x": 2,
-                "y": 54,
-                "width": 64,
-                "height": 64
+                "x": 3,
+                "y": 55,
+                "width": 60,
+                "height": 62
             }
         },
         {
@@ -528,10 +534,10 @@
         {
             "id": "TX_MOUSE_CURSOR_ARROW",
             "description": "Default Texure",
-            "atlas": "TEXTURE_ATLAS_0",
+            "atlas": "TEXTURE_ATLAS_4",
             "quadPosition": {
-                "x": 266,
-                "y": 54,
+                "x": 2,
+                "y": 2,
                 "width": 64,
                 "height": 64
             }
@@ -539,21 +545,21 @@
         {
             "id": "TX_MOUSE_CURSOR_ARROW_QUESTION",
             "description": "Default Texure",
-            "atlas": "TEXTURE_ATLAS_0",
+            "atlas": "TEXTURE_ATLAS_4",
             "quadPosition": {
-                "x": 332,
-                "y": 54,
+                "x": 69,
+                "y": 3,
                 "width": 64,
                 "height": 64
             }
         },
         {
-            "id": "TX_MOUSE_CURSOR_HAND_POINT",
+            "id": "TX_MOUSE_CURSOR_HAND_GRAB_1",
             "description": "Default Texure",
-            "atlas": "TEXTURE_ATLAS_0",
+            "atlas": "TEXTURE_ATLAS_4",
             "quadPosition": {
                 "x": 200,
-                "y": 120,
+                "y": 68,
                 "width": 64,
                 "height": 64
             }
@@ -711,6 +717,17 @@
                 "width": 45,
                 "height": 45
             }
+        },
+        {
+            "id": "TX_MOUSE_CURSOR_DROP_ITEM",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 1293,
+                "y": 372,
+                "width": 62,
+                "height": 62
+            }
         }
 
     ],
@@ -736,7 +753,7 @@
             "id": "CURSOR_ARROW",
             "textureId": "TX_MOUSE_CURSOR_ARROW",
             "hotSpot": {
-                "x": 23,
+                "x": 25,
                 "y": 2
             }
         },
@@ -749,11 +766,19 @@
             }
         },
         {
-            "id": "CURSOR_HAND_POINT",
-            "textureId": "TX_MOUSE_CURSOR_HAND_POINT",
+            "id": "CURSOR_HAND_GRAB_1",
+            "textureId": "TX_MOUSE_CURSOR_HAND_GRAB_1",
             "hotSpot": {
-                "x": 27,
-                "y": 2
+                "x": 16,
+                "y": 25
+            }
+        },
+        {
+            "id": "CURSOR_HAND_GRAB_1",
+            "textureId": "TX_MOUSE_CURSOR_HAND_GRAB_1",
+            "hotSpot": {
+                "x": 16,
+                "y": 25
             }
         },
         {
@@ -783,6 +808,14 @@
         {
             "id": "CURSOR_OUT_OF_REACH",
             "textureId": "TX_MOUSE_CURSOR_OUT_OF_REACH",
+            "hotSpot": {
+                "x": 32,
+                "y": 32
+            }
+        },
+        {
+            "id": "CURSOR_DROP_ITEM",
+            "textureId": "TX_MOUSE_CURSOR_DROP_ITEM",
             "hotSpot": {
                 "x": 32,
                 "y": 32
