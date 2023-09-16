@@ -41,7 +41,7 @@
         },
         {
             "type": "OIL_CAN",
-            "traitTags": [ "draggable" ],
+            "traitTags": [ "attainable" ],
             "description": "Oil Can",
             "components": [
                 {
@@ -57,8 +57,19 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "ITEM_DESCRIPTION_MENU",
+                    "menuObject": "ITEM_CONTACT_MENU",
                     "interfaceActions": [
+                        {
+                            "actionId": "Actions::TAKE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_CLICK",
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+
+                        },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
                             "condition": {
@@ -74,13 +85,14 @@
                             "condition": {
                                 "operator": "ConditionOperator::OR",
                                 "events": [
-                                    "InterfaceEvents::ON_HOVER_OUT"
+                                    "InterfaceEvents::ON_HOVER_OUT",
+                                    "InterfaceEvents::ON_STOP_TOUCHING"
                                 ]
                             }
 
                         },
                         {
-                            "actionId": "Actions::DRAG_TREATMENT",
+                            "actionId": "Actions::APPLY_HIGHLIGHT",
                             "condition": {
                                 "operator": "ConditionOperator::AND",
                                 "events": [
@@ -108,6 +120,10 @@
                     "id": "ACTION_COMPONENT",
                     "actions": [
                         {
+                            "actionId": "Actions::TAKE",
+                            "actionClass": "TakeItemAction"
+                        },
+                        {
                             "actionId": "Actions::SHOW_INTERFACE",
                             "actionClass": "ShowPuzzleInterfaceAction"
                         },
@@ -116,7 +132,7 @@
                             "actionClass": "StandardHideAction"
                         },
                         {
-                            "actionId": "Actions::DRAG_TREATMENT",
+                            "actionId": "Actions::APPLY_HIGHLIGHT",
                             "actionClass": "ItemDragTreatmentAction"
                         },
                         {
@@ -153,7 +169,7 @@
         },
         {
             "type": "BOTTLE1",
-            "traitTags": [ "draggable" ],
+            "traitTags": [ "attainable" ],
             "description": "Bottle",
             "components": [
                 {
@@ -169,7 +185,7 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "ITEM_DESCRIPTION_MENU",
+                    "menuObject": "ITEM_CONTACT_MENU",
                     "interfaceActions": [
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
@@ -186,13 +202,14 @@
                             "condition": {
                                 "operator": "ConditionOperator::OR",
                                 "events": [
-                                    "InterfaceEvents::ON_HOVER_OUT"
+                                    "InterfaceEvents::ON_HOVER_OUT",
+                                    "InterfaceEvents::ON_STOP_TOUCHING"
                                 ]
                             }
 
                         },
                         {
-                            "actionId": "Actions::DRAG_TREATMENT",
+                            "actionId": "Actions::APPLY_HIGHLIGHT",
                             "condition": {
                                 "operator": "ConditionOperator::AND",
                                 "events": [
@@ -228,7 +245,7 @@
                             "actionClass": "StandardHideAction"
                         },
                         {
-                            "actionId": "Actions::DRAG_TREATMENT",
+                            "actionId": "Actions::APPLY_HIGHLIGHT",
                             "actionClass": "ItemDragTreatmentAction"
                         },
                         {

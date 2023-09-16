@@ -3,10 +3,11 @@
     "gameObjects": [
         {
             "type": "DRAWER_SMALL",
-            "traitTags": [ "abstract", "inventory" ],
+            "traitTags": [ "inventory" ],
             "components": [
                 {
-                    "id": "RENDER_COMPONENT"
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -80,7 +81,30 @@
                                 ]
                             }
 
+                        },
+                        {
+                            "actionId": "Actions::APPLY_HIGHLIGHT",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER",
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER_OUT",
+                                    "InterfaceEvents::ON_STOP_TOUCHING"
+                                ]
+                            }
+
                         }
+
 
                     ]
 
@@ -103,6 +127,14 @@
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
                             "actionClass": "StandardHideAction"
+                        },
+                        {
+                            "actionId": "Actions::APPLY_HIGHLIGHT",
+                            "actionClass": "ItemhHighlightApplyAction"
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "actionClass": "ItemhHighlightRemoveAction"
                         }
 
                     ]
@@ -111,10 +143,11 @@
         },
         {
             "type": "DRAWER_MEDIUM",
-            "traitTags": [ "abstract", "inventory" ],
+            "traitTags": [ "inventory" ],
             "components": [
                 {
-                    "id": "RENDER_COMPONENT"
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -190,6 +223,28 @@
                                 ]
                             }
 
+                        },
+                        {
+                            "actionId": "Actions::APPLY_HIGHLIGHT",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER",
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER_OUT",
+                                    "InterfaceEvents::ON_STOP_TOUCHING"
+                                ]
+                            }
+
                         }
 
                     ]
@@ -213,7 +268,16 @@
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
                             "actionClass": "StandardHideAction"
+                        },
+                        {
+                            "actionId": "Actions::APPLY_HIGHLIGHT",
+                            "actionClass": "ItemhHighlightApplyAction"
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "actionClass": "ItemhHighlightRemoveAction"
                         }
+
 
                     ]
                 }
@@ -260,14 +324,6 @@
                 {
                     "id": "CHILDREN_COMPONENT",
                     "childObjects": [
-                        {
-                            "gameObjectType": "ITEM_DESCRIPTION_MENU",
-                            "absolutePositionSlot": {
-                                "x": 0,
-                                "y": 0
-                            }
-                            //"standardSlot": "PositionAlignment::BOTTOM_CENTER"
-                        },
                         {
                             "gameObjectType": "INVENTORY_CLOSE_BUTTON",
                             "standardSlot": "PositionAlignment::TOP_RIGHT"

@@ -4,7 +4,7 @@
 #include "IMGuiTestLevelMenu.h"
 #include "IMGuiDynamicInterfaceMenu.h"
 #include "IMGuiOpenCloseMenu.h"
-#include "IMGuiItemDescription.h"
+#include "IMGuiItemContact.h"
 
 
 BB_IMGuiFactory::BB_IMGuiFactory()
@@ -33,8 +33,8 @@ std::shared_ptr<IMGuiItem> BB_IMGuiFactory::create(std::string iMGuiItemType, st
 	else if (iMGuiItemType == "IMGuiOpenCloseMenu") {
 		iMGuiItem = std::make_shared<IMGuiOpenCloseMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
 	}
-	else if (iMGuiItemType == "IMGuiItemDescription") {
-		iMGuiItem = std::make_shared<IMGuiItemDescription>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
+	else if (iMGuiItemType == "IMGuiItemContact") {
+		iMGuiItem = std::make_shared<IMGuiItemContact>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
 	}
 
 	

@@ -19,7 +19,7 @@
         },
         {
             "type": "MAIN_HUD_HOLDER",
-            "traitTags": [ "gui" ],
+            "traitTags": [ "gui", "abstract" ],
             "description": "",
             "components": [
                 {
@@ -229,7 +229,7 @@
 
         },
         {
-            "type": "ITEM_DESCRIPTION_MENU",
+            "type": "ITEM_CONTACT_MENU",
             "traitTags": [ "abstract" ],
             "components": [
                 {
@@ -245,7 +245,7 @@
                 },
                 {
                     "id": "IMGUI_COMPONENT",
-                    "imguiType": "IMGuiItemDescription",
+                    "imguiType": "IMGuiItemContact",
                     "autoSize": false,
                     "padding": {
                         "x": 16,

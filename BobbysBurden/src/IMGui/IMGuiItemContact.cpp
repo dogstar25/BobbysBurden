@@ -1,4 +1,4 @@
-#include "IMGuiItemDescription.h"
+#include "IMGuiItemContact.h"
 #include "BB_IMGuiUtil.h"
 #include "../GameConstants.h"
 #include "../BBContextManager.h"
@@ -7,7 +7,7 @@
 
 extern std::unique_ptr<Game> game;
 
-IMGuiItemDescription::IMGuiItemDescription(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
+IMGuiItemContact::IMGuiItemContact(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
 	ImVec4 buttonColor, ImVec4 buttonHoverColor, ImVec4 buttonActiveColor, bool autoSize) :
 	IMGuiItem(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize)
 {
@@ -16,7 +16,7 @@ IMGuiItemDescription::IMGuiItemDescription(std::string gameObjectType, b2Vec2 pa
 
 }
 
-glm::vec2 IMGuiItemDescription::render()
+glm::vec2 IMGuiItemContact::render()
 {
 
 	glm::vec2 windowSize{};
@@ -47,14 +47,30 @@ glm::vec2 IMGuiItemDescription::render()
 		ImGui::SetWindowPos(ImVec2{ renderComponent->getRenderDestRect().x, renderComponent->getRenderDestRect().y });
 
 		//Build the description
-		ImGui::PushFont(m_smallGothicFont);
-		ImGui::textCentered(interfaceGameObject.value()->description().c_str());
+		
+
+		//We have to allow both attainable AND inventory draggable items into this interface since they can 
+		//go back and forth. If we are not in touching range of an attainable object then show ??? for description
+		if (interfaceGameObject.value()->hasTrait(TraitTag::attainable) && interfaceGameObject.value()->isTouchingByTrait(TraitTag::player) == false) {
+
+			ImGui::PushFont(m_normalFont);
+			ImGui::textCentered("???");
+		}
+		else {
+			ImGui::PushFont(m_smallGothicFont);
+			ImGui::textCentered(interfaceGameObject.value()->description().c_str());
+		}
+			
+		
 		ImGui::PopFont();
 		ImGui::Separator();
 		ImGui::Spacing();
 		ImGui::Spacing();	
 
-		ImGui::TextWrapped(parent()->parent().value()->description().c_str());
+
+
+		_buildActionRow(interfaceGameObject.value());
+
 
 		//Capture this imGui window size
 		windowSize = { ImGui::GetWindowSize().x, ImGui::GetWindowSize().y };
@@ -73,6 +89,42 @@ glm::vec2 IMGuiItemDescription::render()
 	return windowSize;
 }
 
+
+void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
+{
+
+	ImGui::PushFont(m_normalFont);
+
+	ImGui::displayMousePointImage(util::SDLColorToImVec4(Colors::EMERALD));
+	ImGui::SameLine();
+
+	//If this item has the "draggable" trait then show the Grab action
+	if (interfacedObject->hasTrait(TraitTag::draggable)) {
+
+		ImGui::TextWrapped("Grab");
+
+		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_GRAB_1");
+		SceneManager::instance().setMouseCursor(cursor);
+
+
+	}
+	//If this item has the "attainable" trait then show the Take action
+	else if (interfacedObject->hasTrait(TraitTag::attainable) && interfacedObject->isTouchingByTrait(TraitTag::player)) {
+
+		ImGui::TextWrapped("Take");
+
+		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_GRAB_1");
+		SceneManager::instance().setMouseCursor(cursor);
+
+
+	}
+
+
+	ImGui::PopFont();
+
+
+
+}
 
 
 
