@@ -49,9 +49,9 @@ glm::vec2 IMGuiItemContact::render()
 		//Build the description
 		
 
-		//We have to allow both attainable AND inventory draggable items into this interface since they can 
-		//go back and forth. If we are not in touching range of an attainable object then show ??? for description
-		if (interfaceGameObject.value()->hasTrait(TraitTag::attainable) && interfaceGameObject.value()->isTouchingByTrait(TraitTag::player) == false) {
+		//We have to allow both obtainable AND inventory draggable items into this interface since they can 
+		//go back and forth. If we are not in touching range of an obtainable object then show ??? for description
+		if (interfaceGameObject.value()->hasTrait(TraitTag::obtainable) && interfaceGameObject.value()->isTouchingByTrait(TraitTag::player) == false) {
 
 			ImGui::PushFont(m_normalFont);
 			ImGui::textCentered("???");
@@ -108,8 +108,8 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 
 
 	}
-	//If this item has the "attainable" trait then show the Take action
-	else if (interfacedObject->hasTrait(TraitTag::attainable) && interfacedObject->isTouchingByTrait(TraitTag::player)) {
+	//If this item has the "obtainable" trait then show the Take action
+	else if (interfacedObject->hasTrait(TraitTag::obtainable) && interfacedObject->isTouchingByTrait(TraitTag::player)) {
 
 		ImGui::TextWrapped("Take");
 
