@@ -26,8 +26,8 @@ void ItemDropAction::perform(GameObject* gameObject)
 
 				//Get the grid slot that we dropped this object on. if it wasnt close enough to any then we
 				//wont move the object
-				auto slot = gridDisplayComponent->getClosestSlot(gameObject->getCenterPosition());
-				if (slot.has_value()) {
+				auto destinationSlot = gridDisplayComponent->getClosestSlot(gameObject->getCenterPosition());
+				if (destinationSlot.has_value()) {
 
 					//This grid display gameObject should have a parent that is the inventory holding object itself
 					//So get a reference to it and its inventory component
@@ -38,11 +38,20 @@ void ItemDropAction::perform(GameObject* gameObject)
 
 					//Remove the dropped gameObject from it's current inventory
 					//first get a shared pointer to the object so that the object isnt deallocated
-					std::shared_ptr<GameObject> gameObjectSharedPtr = gameObject->parentScene()->getGameObject(gameObject->id()).value();
-					sourceInventoryObject->removeItem(gameObjectSharedPtr.get());
+					//std::shared_ptr<GameObject> gameObjectSharedPtr = gameObject->parentScene()->getGameObject(gameObject->id()).value();
+					auto currentSourceSlot = sourceInventoryObject->getSlot(gameObject);
+					std::shared_ptr<GameObject> gameObjectSharedPtr = sourceInventoryObject->removeItem(gameObject);
+					
+					//IF there is already an object in this slot then get a reference to it also so that we can swap places with the object we're dropping
+					if (destinationInventoryComponent->hasItem(destinationSlot.value())) {
 
+						std::shared_ptr<GameObject> swapObjectSharedPtr = destinationInventoryComponent->removeItem(destinationSlot.value());
+						sourceInventoryObject->addItem(swapObjectSharedPtr, currentSourceSlot.value());
+
+					}
+					
 					//Add the dropped gameObject to it's new inventory
-					destinationInventoryComponent->addItem(gameObjectSharedPtr, slot.value());
+					destinationInventoryComponent->addItem(gameObjectSharedPtr, destinationSlot.value());
 
 					//Refresh the gridDisplayComponent so that it shows the new item
 					destinationInventoryComponent->refreshInventoryDisplay();

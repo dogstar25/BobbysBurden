@@ -41,7 +41,7 @@
         },
         {
             "type": "OIL_CAN",
-            "traitTags": [ "attainable" ],
+            "traitTags": [ "obtainable" ],
             "description": "Oil Can",
             "components": [
                 {
@@ -169,7 +169,7 @@
         },
         {
             "type": "BOTTLE1",
-            "traitTags": [ "attainable" ],
+            "traitTags": [ "obtainable" ],
             "description": "Bottle",
             "components": [
                 {
