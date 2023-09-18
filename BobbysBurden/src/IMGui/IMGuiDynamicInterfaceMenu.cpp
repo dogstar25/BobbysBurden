@@ -94,7 +94,7 @@ void IMGuiDynamicInterfaceMenu::_buildInteractionRow(GameObject* interfaceGameOb
 	//If the OnClick isAvailable, then show the green mouseclick image and the label that goes with the event
 	if (interfaceComponent->isEventAvailable(Actions::USE)) {
 
-		ImGui::displayMousePointImage(util::SDLColorToImVec4(Colors::EMERALD));
+		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
 		ImGui::SameLine();
 		ImGui::TextWrapped(clickEvent->label.c_str());
 
@@ -105,7 +105,7 @@ void IMGuiDynamicInterfaceMenu::_buildInteractionRow(GameObject* interfaceGameOb
 	}
 	else {
 
-		ImGui::displayMousePointImage(util::SDLColorToImVec4(Colors::GREY));
+		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::GREY));
 		ImGui::SameLine();
 		ImGui::TextColored(util::SDLColorToImVec4(Colors::GREY), "[Locked]");
 

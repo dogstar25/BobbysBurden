@@ -31,31 +31,33 @@ void ItemDropAction::perform(GameObject* gameObject)
 
 					//This grid display gameObject should have a parent that is the inventory holding object itself
 					//So get a reference to it and its inventory component
-					const auto& destinationInventoryObject = touchingInventoryObject->parent().value();
+					if (touchingInventoryObject->parent().has_value()) {
+						const auto& destinationInventoryObject = touchingInventoryObject->parent().value();
 
-					//Get the inventory objects Inventory component
-					const auto& destinationInventoryComponent = destinationInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+						//Get the inventory objects Inventory component
+						const auto& destinationInventoryComponent = destinationInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 
-					//Remove the dropped gameObject from it's current inventory
-					//first get a shared pointer to the object so that the object isnt deallocated
-					//std::shared_ptr<GameObject> gameObjectSharedPtr = gameObject->parentScene()->getGameObject(gameObject->id()).value();
-					auto currentSourceSlot = sourceInventoryObject->getSlot(gameObject);
-					std::shared_ptr<GameObject> gameObjectSharedPtr = sourceInventoryObject->removeItem(gameObject);
-					
-					//IF there is already an object in this slot then get a reference to it also so that we can swap places with the object we're dropping
-					if (destinationInventoryComponent->hasItem(destinationSlot.value())) {
+						//Remove the dropped gameObject from it's current inventory
+						//first get a shared pointer to the object so that the object isnt deallocated
+						//std::shared_ptr<GameObject> gameObjectSharedPtr = gameObject->parentScene()->getGameObject(gameObject->id()).value();
+						auto currentSourceSlot = sourceInventoryObject->getSlot(gameObject);
+						std::shared_ptr<GameObject> gameObjectSharedPtr = sourceInventoryObject->removeItem(gameObject);
 
-						std::shared_ptr<GameObject> swapObjectSharedPtr = destinationInventoryComponent->removeItem(destinationSlot.value());
-						sourceInventoryObject->addItem(swapObjectSharedPtr, currentSourceSlot.value());
+						//IF there is already an object in this slot then get a reference to it also so that we can swap places with the object we're dropping
+						if (destinationInventoryComponent->hasItem(destinationSlot.value())) {
 
+							std::shared_ptr<GameObject> swapObjectSharedPtr = destinationInventoryComponent->removeItem(destinationSlot.value());
+							sourceInventoryObject->addItem(swapObjectSharedPtr, currentSourceSlot.value());
+
+						}
+
+						//Add the dropped gameObject to it's new inventory
+						destinationInventoryComponent->addItem(gameObjectSharedPtr, destinationSlot.value());
+
+						//Refresh the gridDisplayComponent so that it shows the new item
+						destinationInventoryComponent->refreshInventoryDisplay();
+						sourceInventoryObject->refreshInventoryDisplay();
 					}
-					
-					//Add the dropped gameObject to it's new inventory
-					destinationInventoryComponent->addItem(gameObjectSharedPtr, destinationSlot.value());
-
-					//Refresh the gridDisplayComponent so that it shows the new item
-					destinationInventoryComponent->refreshInventoryDisplay();
-					sourceInventoryObject->refreshInventoryDisplay();
 
 				}
 			}
@@ -71,16 +73,22 @@ void ItemDropAction::perform(GameObject* gameObject)
 				sourceInventoryObject->removeItem(gameObjectSharedPtr.get());
 
 				//Add the dropped gameObject to it's new inventory
-				destinationInventoryComponent->addItem(gameObjectSharedPtr);
+				if (destinationInventoryComponent->addItem(gameObjectSharedPtr) != std::nullopt) {
 
-				//Refresh the gridDisplayComponent so that it shows the new item
-				destinationInventoryComponent->refreshInventoryDisplay();
-				sourceInventoryObject->refreshInventoryDisplay();
+					//Refresh the gridDisplayComponent so that it shows the new item
+					destinationInventoryComponent->refreshInventoryDisplay();
+					sourceInventoryObject->refreshInventoryDisplay();
 
-				//Set the active interface to the inventory we dropped the item to
-				//If we don't then the interface of the now offscreen object could never be overridden
-				const auto& interfaceComponent = gameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
-				interfaceComponent->setCurrentGameObjectInterfaceActive(touchingInventoryObject.get());
+					//Set the active interface to the inventory we dropped the item to
+					//If we don't then the interface of the now offscreen object could never be overridden
+					const auto& interfaceComponent = gameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
+					interfaceComponent->setCurrentGameObjectInterfaceActive(touchingInventoryObject.get());
+				}
+				else {
+					sourceInventoryObject->addItem(gameObjectSharedPtr);
+					std::cout << "Inventory is full!" << std::endl;
+				}
+				
 
 			}
 		}

@@ -49,9 +49,7 @@ glm::vec2 IMGuiItemContact::render()
 		//Build the description
 		
 
-		//We have to allow both obtainable AND inventory draggable items into this interface since they can 
-		//go back and forth. If we are not in touching range of an obtainable object then show ??? for description
-		if (interfaceGameObject.value()->hasTrait(TraitTag::obtainable) && interfaceGameObject.value()->isTouchingByTrait(TraitTag::player) == false) {
+		if (interfaceGameObject.value()->hasTrait(TraitTag::loose) && interfaceGameObject.value()->isTouchingByTrait(TraitTag::player) == false) {
 
 			ImGui::PushFont(m_normalFont);
 			ImGui::textCentered("???");
@@ -95,21 +93,29 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 
 	ImGui::PushFont(m_normalFont);
 
-	ImGui::displayMousePointImage(util::SDLColorToImVec4(Colors::EMERALD));
-	ImGui::SameLine();
 
 	//If this item has the "draggable" trait then show the Grab action
 	if (interfacedObject->hasTrait(TraitTag::draggable)) {
+
+		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
+		ImGui::SameLine();
 
 		ImGui::TextWrapped("Grab");
 
 		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_GRAB_1");
 		SceneManager::instance().setMouseCursor(cursor);
-
+		ImGui::SameLine();
+		//ImGui::Spacing();
+		ImGui::Dummy({ 3,0 });
+		ImGui::SameLine();
 
 	}
 	//If this item has the "obtainable" trait then show the Take action
-	else if (interfacedObject->hasTrait(TraitTag::obtainable) && interfacedObject->isTouchingByTrait(TraitTag::player)) {
+	if ((interfacedObject->hasTrait(TraitTag::loose) == false && interfacedObject->hasTrait(TraitTag::obtainable)) ||
+		(interfacedObject->hasTrait(TraitTag::loose) == true && interfacedObject->isTouchingByTrait(TraitTag::player)) ) {
+
+		ImGui::displayMouseRightClickImage(util::SDLColorToImVec4(Colors::EMERALD));
+		ImGui::SameLine();
 
 		ImGui::TextWrapped("Take");
 

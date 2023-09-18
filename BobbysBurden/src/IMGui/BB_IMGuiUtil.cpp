@@ -59,7 +59,7 @@ namespace ImGui
 
 	}
 
-	void displayMousePointImage(ImVec4 color)
+	void displayMouseLeftClickImage(ImVec4 color)
 	{
 
 		//TextureAtlas Coordinates
@@ -79,6 +79,25 @@ namespace ImGui
 		}
 	}
 
+	void displayMouseRightClickImage(ImVec4 color)
+	{
+
+		//TextureAtlas Coordinates
+		glm::vec2 topLeft = util::glNormalizeTextureCoords({ 112,140 }, { 256, 256 });
+		glm::vec2 bottomRight = util::glNormalizeTextureCoords({ 175,203 }, { 256, 256 });
+
+		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
+
+			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+		else {
+
+			//SDL2 Texture void* is the SDL_Texture*
+			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+	}
 	void displayPuzzlePieceImage(bool locked, ImVec4 color)
 	{
 		glm::vec2 topLeft{};

@@ -92,7 +92,7 @@ void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 	//If the USE isAvailable, then show the green mouseclick image and the label that goes with the event
 	if (interfaceComponent->isEventAvailable(Actions::USE)) {
 
-		ImGui::displayMousePointImage(util::SDLColorToImVec4(Colors::EMERALD));
+		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
 		ImGui::SameLine();
 
 		//Show Open or Close based on the current state
@@ -130,7 +130,7 @@ void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 	}
 	else {
 
-		ImGui::displayMousePointImage(util::SDLColorToImVec4(Colors::GREY));
+		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::GREY));
 		ImGui::SameLine();
 		ImGui::TextColored(util::SDLColorToImVec4(Colors::GREY), "[Locked]");
 
