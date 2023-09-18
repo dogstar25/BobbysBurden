@@ -442,7 +442,7 @@
                             "condition": {
                                 "operator": "ConditionOperator::AND",
                                 "events": [
-                                    "InterfaceEvents::ON_CLICK",
+                                    "InterfaceEvents::ON_LCLICK",
                                     "InterfaceEvents::ON_TOUCHING"
                                 ]
                             }
@@ -585,7 +585,7 @@
                             "condition": {
                                 "operator": "ConditionOperator::AND",
                                 "events": [
-                                    "InterfaceEvents::ON_CLICK",
+                                    "InterfaceEvents::ON_LCLICK",
                                     "InterfaceEvents::ON_TOUCHING"
                                 ]
                             }

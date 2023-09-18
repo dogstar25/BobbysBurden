@@ -41,7 +41,7 @@
         },
         {
             "type": "OIL_CAN",
-            "traitTags": [ "obtainable" ],
+            "traitTags": [ "obtainable", "loose" ],
             "description": "Oil Can",
             "components": [
                 {
@@ -64,8 +64,7 @@
                             "condition": {
                                 "operator": "ConditionOperator::AND",
                                 "events": [
-                                    "InterfaceEvents::ON_CLICK",
-                                    "InterfaceEvents::ON_TOUCHING"
+                                    "InterfaceEvents::ON_RCLICK"
                                 ]
                             }
 
@@ -169,7 +168,7 @@
         },
         {
             "type": "BOTTLE1",
-            "traitTags": [ "obtainable" ],
+            "traitTags": [ "obtainable", "loose" ],
             "description": "Bottle",
             "components": [
                 {
@@ -187,6 +186,16 @@
                     "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "ITEM_CONTACT_MENU",
                     "interfaceActions": [
+                        {
+                            "actionId": "Actions::TAKE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_RCLICK"
+                                ]
+                            }
+
+                        },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
                             "condition": {
@@ -236,6 +245,10 @@
                 {
                     "id": "ACTION_COMPONENT",
                     "actions": [
+                        {
+                            "actionId": "Actions::TAKE",
+                            "actionClass": "TakeItemAction"
+                        },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
                             "actionClass": "ShowPuzzleInterfaceAction"

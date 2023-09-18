@@ -172,7 +172,7 @@
                                 "operator": "ConditionOperator::AND",
                                 "events": [
                                     "InterfaceEvents::ON_TOUCHING",
-                                    "InterfaceEvents::ON_CLICK"
+                                    "InterfaceEvents::ON_LCLICK"
                                 ]
                             },
                             "label": "Hide Under Sheets"
@@ -267,7 +267,7 @@
                                 "operator": "ConditionOperator::AND",
                                 "events": [
                                     "InterfaceEvents::ON_TOUCHING",
-                                    "InterfaceEvents::ON_CLICK"
+                                    "InterfaceEvents::ON_LCLICK"
                                 ]
                             }
                         },
