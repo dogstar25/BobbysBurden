@@ -3,8 +3,9 @@
 #include "IMGuiTitleScreenMenu.h"
 #include "IMGuiTestLevelMenu.h"
 #include "IMGuiDynamicInterfaceMenu.h"
-#include "IMGuiOpenCloseMenu.h"
+#include "IMGuiOpenCloseDoorMenu.h"
 #include "IMGuiItemContact.h"
+#include "IMGuiOpenCloseReceptacleMenu.h"
 
 
 BB_IMGuiFactory::BB_IMGuiFactory()
@@ -30,11 +31,14 @@ std::shared_ptr<IMGuiItem> BB_IMGuiFactory::create(std::string iMGuiItemType, st
 	else if (iMGuiItemType == "IMGuiDynamicInterfaceMenu") {
 		iMGuiItem = std::make_shared<IMGuiDynamicInterfaceMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
 	}
-	else if (iMGuiItemType == "IMGuiOpenCloseMenu") {
-		iMGuiItem = std::make_shared<IMGuiOpenCloseMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
+	else if (iMGuiItemType == "IMGuiOpenCloseDoorMenu") {
+		iMGuiItem = std::make_shared<IMGuiOpenCloseDoorMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
 	}
 	else if (iMGuiItemType == "IMGuiItemContact") {
 		iMGuiItem = std::make_shared<IMGuiItemContact>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
+	}
+	else if (iMGuiItemType == "IMGuiOpenCloseReceptacleMenu") {
+		iMGuiItem = std::make_shared<IMGuiOpenCloseReceptacleMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
 	}
 
 	

@@ -1,8 +1,8 @@
-#include "ShowPuzzleInterfaceAction.h"
+#include "ShowInterfaceAction.h"
 #include "../components/BBInterfaceComponent.h"
 
 
-void ShowPuzzleInterfaceAction::perform(GameObject* gameObject)
+void ShowInterfaceAction::perform(GameObject* gameObject)
 {
 
 	////Build a Puzzle Interface Menu

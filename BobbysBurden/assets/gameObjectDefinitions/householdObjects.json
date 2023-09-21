@@ -41,7 +41,7 @@
         },
         {
             "type": "OIL_CAN",
-            "traitTags": [ "obtainable", "loose" ],
+            "traitTags": [ "obtainable", "loose", "puzzle_item" ],
             "description": "Oil Can",
             "components": [
                 {
@@ -124,11 +124,11 @@
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowPuzzleInterfaceAction"
+                            "actionClass": "ShowInterfaceAction"
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "StandardHideAction"
+                            "actionClass": "HideInterfaceAction"
                         },
                         {
                             "actionId": "Actions::APPLY_HIGHLIGHT",
@@ -154,12 +154,10 @@
                             "collisionShape": "B2_BOX",
                             "isSensor": true,
                             "size": {
-                                "width": 18,
-                                "height": 48
+                                "width": 8,
+                                "height": 8
                             },
-                            "density": 1,
-                            "friction": 25
-
+                            "density": 1
                         }
 
                     ]
@@ -168,7 +166,7 @@
         },
         {
             "type": "BOTTLE1",
-            "traitTags": [ "obtainable", "loose" ],
+            "traitTags": [ "obtainable", "loose", "puzzle_item" ],
             "description": "Bottle",
             "components": [
                 {
@@ -251,11 +249,11 @@
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowPuzzleInterfaceAction"
+                            "actionClass": "ShowInterfaceAction"
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "StandardHideAction"
+                            "actionClass": "HideInterfaceAction"
                         },
                         {
                             "actionId": "Actions::APPLY_HIGHLIGHT",

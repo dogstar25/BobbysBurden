@@ -1,8 +1,8 @@
-#include "StandardHideAction.h"
+#include "HideInterfaceAction.h"
 #include "../components/BBInterfaceComponent.h"
 
 
-void StandardHideAction::perform(GameObject* parentObject)
+void HideInterfaceAction::perform(GameObject* parentObject)
 {
 
 	const auto& interfaceComponent = parentObject->getComponent<BBInterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);

@@ -73,7 +73,7 @@ void ItemDropAction::perform(GameObject* gameObject)
 				sourceInventoryObject->removeItem(gameObjectSharedPtr.get());
 
 				//Add the dropped gameObject to it's new inventory
-				if (destinationInventoryComponent->addItem(gameObjectSharedPtr) != std::nullopt) {
+				if (destinationInventoryComponent->addItem(gameObjectSharedPtr) == true) {
 
 					//Refresh the gridDisplayComponent so that it shows the new item
 					destinationInventoryComponent->refreshInventoryDisplay();

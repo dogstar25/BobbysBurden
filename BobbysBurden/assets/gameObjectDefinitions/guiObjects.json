@@ -266,7 +266,7 @@
 
         },
         {
-            "type": "OPEN_CLOSE_MENU",
+            "type": "OPEN_CLOSE_DOOR_MENU",
             "traitTags": [ "abstract" ],
             "components": [
                 {
@@ -283,7 +283,7 @@
                 },
                 {
                     "id": "IMGUI_COMPONENT",
-                    "imguiType": "IMGuiOpenCloseMenu",
+                    "imguiType": "IMGuiOpenCloseDoorMenu",
                     "autoSize": false,
                     "padding": {
                         "x": 14,
@@ -304,7 +304,7 @@
 
         },
         {
-            "type": "INTERFACE_DRAWER_MENU",
+            "type": "OPEN_CLOSE_RECEPTACLE_MENU",
             "traitTags": [ "abstract" ],
             "components": [
                 {
@@ -321,7 +321,7 @@
                 },
                 {
                     "id": "IMGUI_COMPONENT",
-                    "imguiType": "IMGuiText",
+                    "imguiType": "IMGuiOpenCloseReceptacleMenu",
                     "autoSize": false,
                     "padding": {
                         "x": 14,
@@ -329,7 +329,7 @@
                     },
                     "color": {
                         "background": "Colors::CHARCOAL",
-                        "backgroundAlpha": 172,
+                        "backgroundAlpha": 0,
                         "text": "Colors::WHITE",
                         "button": "Colors::BLUE",
                         "buttonHover": "Colors::MIRKWOOD",
@@ -338,6 +338,8 @@
 
                 }
             ]
+
+
         },
         {
             "type": "IMGUI_TEST_MENU",

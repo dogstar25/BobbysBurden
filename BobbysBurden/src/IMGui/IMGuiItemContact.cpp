@@ -46,7 +46,10 @@ glm::vec2 IMGuiItemContact::render()
 		
 		ImGui::SetWindowPos(ImVec2{ renderComponent->getRenderDestRect().x, renderComponent->getRenderDestRect().y });
 
-		//Build the description
+		//
+		if (interfaceGameObject.value()->isDragging()) {
+			SDL_ShowCursor(SDL_FALSE);
+		}
 		
 
 		if (interfaceGameObject.value()->hasTrait(TraitTag::loose) && interfaceGameObject.value()->isTouchingByTrait(TraitTag::player) == false) {
@@ -93,9 +96,8 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 
 	ImGui::PushFont(m_normalFont);
 
-
 	//If this item has the "draggable" trait then show the Grab action
-	if (interfacedObject->hasTrait(TraitTag::draggable)) {
+	if (interfacedObject->hasTrait(TraitTag::draggable) && interfacedObject->isDragging() == false) {
 
 		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
 		ImGui::SameLine();
@@ -111,7 +113,8 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 
 	}
 	//If this item has the "obtainable" trait then show the Take action
-	if ((interfacedObject->hasTrait(TraitTag::loose) == false && interfacedObject->hasTrait(TraitTag::obtainable)) ||
+	if (interfacedObject->isDragging() == false&&
+		(interfacedObject->hasTrait(TraitTag::loose) == false && interfacedObject->hasTrait(TraitTag::obtainable)) ||
 		(interfacedObject->hasTrait(TraitTag::loose) == true && interfacedObject->isTouchingByTrait(TraitTag::player)) ) {
 
 		ImGui::displayMouseRightClickImage(util::SDLColorToImVec4(Colors::EMERALD));
@@ -125,6 +128,42 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 
 	}
 
+	if (interfacedObject->hasTrait(TraitTag::puzzle_item) && interfacedObject->isTouchingByTrait(TraitTag::puzzle)) {
+
+		const auto& puzzleTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::puzzle);
+
+		ImGui::displayDropItemImage(util::SDLColorToImVec4(Colors::EMERALD));
+		ImGui::SameLine();
+
+		ImGui::Text("Apply To");
+		ImGui::SameLine();
+		ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), puzzleTouched.value().lock()->description().c_str());
+
+		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
+		SceneManager::instance().setMouseCursor(cursor);
+		SDL_ShowCursor(SDL_TRUE);
+
+
+	}
+
+
+	if (interfacedObject->hasTrait(TraitTag::puzzle_item) && interfacedObject->isTouchingByTrait(TraitTag::receptacle)) {
+
+		const auto& receptacleTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::receptacle);
+
+		ImGui::displayDropItemImage(util::SDLColorToImVec4(Colors::EMERALD));
+		ImGui::SameLine();
+
+		ImGui::Text("Put In");
+		ImGui::SameLine();
+		ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), receptacleTouched.value().lock()->description().c_str());
+
+		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
+		SceneManager::instance().setMouseCursor(cursor);
+		SDL_ShowCursor(SDL_TRUE);
+
+
+	}
 
 	ImGui::PopFont();
 

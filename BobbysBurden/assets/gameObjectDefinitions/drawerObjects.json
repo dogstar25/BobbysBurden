@@ -3,7 +3,8 @@
     "gameObjects": [
         {
             "type": "DRAWER_SMALL",
-            "traitTags": [ "inventory" ],
+            "traitTags": [ "inventory", "receptacle" ],
+            "description": "Top Drawer",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -37,7 +38,7 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "OPEN_CLOSE_MENU",
+                    "menuObject": "OPEN_CLOSE_RECEPTACLE_MENU",
                     "interfaceActions": [
                         {
                             "actionId": "Actions::USE",
@@ -122,11 +123,11 @@
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowPuzzleInterfaceAction"
+                            "actionClass": "ShowInterfaceAction"
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "StandardHideAction"
+                            "actionClass": "HideInterfaceAction"
                         },
                         {
                             "actionId": "Actions::APPLY_HIGHLIGHT",
@@ -143,7 +144,8 @@
         },
         {
             "type": "DRAWER_MEDIUM",
-            "traitTags": [ "inventory" ],
+            "traitTags": [ "inventory", "receptacle" ],
+            "description": "Bottom Drawer",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -179,7 +181,7 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "OPEN_CLOSE_MENU",
+                    "menuObject": "OPEN_CLOSE_RECEPTACLE_MENU",
                     "interfaceActions": [
                         {
                             "actionId": "Actions::USE",
@@ -263,11 +265,11 @@
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowPuzzleInterfaceAction"
+                            "actionClass": "ShowInterfaceAction"
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "StandardHideAction"
+                            "actionClass": "HideInterfaceAction"
                         },
                         {
                             "actionId": "Actions::APPLY_HIGHLIGHT",
@@ -363,7 +365,7 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "OPEN_CLOSE_MENU",
+                    "menuObject": "OPEN_CLOSE_RECEPTACLE_MENU",
                     "interfaceActions": [
                         {
                             "actionId": "Actions::USE",
@@ -408,11 +410,11 @@
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowPuzzleInterfaceAction"
+                            "actionClass": "ShowInterfaceAction"
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "StandardHideAction"
+                            "actionClass": "HideInterfaceAction"
                         }
 
                     ]
