@@ -1,4 +1,4 @@
-#include "IMGuiOpenCloseMenu.h"
+#include "IMGuiOpenCloseReceptacleMenu.h"
 #include "BB_IMGuiUtil.h"
 #include "../gameConstants.h"
 
@@ -6,7 +6,7 @@
 
 extern std::unique_ptr<Game> game;
 
-IMGuiOpenCloseMenu::IMGuiOpenCloseMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
+IMGuiOpenCloseReceptacleMenu::IMGuiOpenCloseReceptacleMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
 	ImVec4 buttonColor, ImVec4 buttonHoverColor, ImVec4 buttonActiveColor, bool autoSize) :
 	IMGuiItem(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize)
 {
@@ -15,7 +15,7 @@ IMGuiOpenCloseMenu::IMGuiOpenCloseMenu(std::string gameObjectType, b2Vec2 paddin
 
 }
 
-glm::vec2 IMGuiOpenCloseMenu::render()
+glm::vec2 IMGuiOpenCloseReceptacleMenu::render()
 {
 
 	glm::vec2 windowSize{};
@@ -79,7 +79,7 @@ glm::vec2 IMGuiOpenCloseMenu::render()
 	return windowSize;
 }
 
-void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
+void IMGuiOpenCloseReceptacleMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 {
 	static int buttonSeq{};
 
@@ -96,30 +96,24 @@ void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 		ImGui::SameLine();
 
 		//Show Open or Close based on the current state
-		if (interfaceGameObject->hasComponent(ComponentTypes::ANIMATION_COMPONENT)) {
-			const auto& animationComponent = interfaceGameObject->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
-			auto animationState = animationComponent->currentAnimationState();
+		if (interfaceGameObject->hasComponent(ComponentTypes::INVENTORY_COMPONENT)) {
+			const auto& inventoryComponent = interfaceGameObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 
-
-			if (animationState == AnimationState::CLOSED) {
+			if (inventoryComponent->isOpen() == false) {
 
 				ImGui::TextWrapped("Open");
 				
-				//Set mouse Cursor
-				if (parent()->parent().value()->hasTrait(TraitTag::door)) {
-
-					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_OPEN");
-					SceneManager::instance().setMouseCursor(cursor);
-				}
+				auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY");
+				SceneManager::instance().setMouseCursor(cursor);
 
 			}
 			else {
 				ImGui::TextWrapped("Close");
 
 				//Set mouse Cursor
-				if (parent()->parent().value()->hasTrait(TraitTag::door)) {
+				if (parent()->parent().value()->hasTrait(TraitTag::receptacle)) {
 
-					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_CLOSE");
+					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY");
 					SceneManager::instance().setMouseCursor(cursor);
 				}
 
@@ -141,7 +135,7 @@ void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 
 }
 
-void IMGuiOpenCloseMenu::_buildPuzzleRow(GameObject* interfaceGameObject)
+void IMGuiOpenCloseReceptacleMenu::_buildPuzzleRow(GameObject* interfaceGameObject)
 {
 	static int buttonSeq{};
 

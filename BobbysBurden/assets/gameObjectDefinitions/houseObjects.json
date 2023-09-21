@@ -435,7 +435,7 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "OPEN_CLOSE_MENU",
+                    "menuObject": "OPEN_CLOSE_DOOR_MENU",
                     "interfaceActions": [
                         {
                             "actionId": "Actions::USE",
@@ -488,11 +488,11 @@
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowPuzzleInterfaceAction"
+                            "actionClass": "ShowInterfaceAction"
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "StandardHideAction"
+                            "actionClass": "HideInterfaceAction"
                         }
 
                     ]
@@ -545,6 +545,7 @@
         {
             "type": "DOOR_SIDE",
             "traitTags": [ "mouse_interface", "barrier", "door" ],
+            "description": "Door",
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
@@ -578,7 +579,7 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "OPEN_CLOSE_MENU",
+                    "menuObject": "OPEN_CLOSE_DOOR_MENU",
                     "interfaceActions": [
                         {
                             "actionId": "Actions::USE",
@@ -626,11 +627,11 @@
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowPuzzleInterfaceAction"
+                            "actionClass": "ShowInterfaceAction"
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "StandardHideAction"
+                            "actionClass": "HideInterfaceAction"
                         }
 
                     ]

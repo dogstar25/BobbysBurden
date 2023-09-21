@@ -63,8 +63,8 @@ namespace ImGui
 	{
 
 		//TextureAtlas Coordinates
-		glm::vec2 topLeft = util::glNormalizeTextureCoords({ 177,65 }, { 256, 256 });
-		glm::vec2 bottomRight = util::glNormalizeTextureCoords({ 240,128 }, { 256, 256 });
+		glm::vec2 topLeft = util::glNormalizeTextureCoords({ 131,65 }, { 512, 256 });
+		glm::vec2 bottomRight = util::glNormalizeTextureCoords({ 194,128 }, { 512, 256 });
 
 		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
 
@@ -83,8 +83,8 @@ namespace ImGui
 	{
 
 		//TextureAtlas Coordinates
-		glm::vec2 topLeft = util::glNormalizeTextureCoords({ 112,140 }, { 256, 256 });
-		glm::vec2 bottomRight = util::glNormalizeTextureCoords({ 175,203 }, { 256, 256 });
+		glm::vec2 topLeft = util::glNormalizeTextureCoords({ 66,140 }, { 512, 256 });
+		glm::vec2 bottomRight = util::glNormalizeTextureCoords({ 129,203 }, { 512, 256 });
 
 		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
 
@@ -105,12 +105,12 @@ namespace ImGui
 
 		//TextureAtlas Coordinates
 		if (locked) {
-			topLeft = util::glNormalizeTextureCoords({ 47,65 }, { 256, 256 });
-			bottomRight = util::glNormalizeTextureCoords({ 110,128 }, { 256, 256 });
+			topLeft = util::glNormalizeTextureCoords({ 1,65 }, { 512, 256 });
+			bottomRight = util::glNormalizeTextureCoords({ 64,128 }, { 512, 256 });
 		}
 		else {
-			topLeft = util::glNormalizeTextureCoords({ 47,130 }, { 256, 256 });
-			bottomRight = util::glNormalizeTextureCoords({ 110,193 }, { 256, 256 });
+			topLeft = util::glNormalizeTextureCoords({ 1,130 }, { 512, 256 });
+			bottomRight = util::glNormalizeTextureCoords({ 64,193 }, { 512, 256 });
 		}
 
 		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
@@ -127,38 +127,12 @@ namespace ImGui
 
 	}
 
-	void displayUpArrowEnterImage(ImVec4 color)
-	{
-
-		glm::vec2 topLeft{};
-		glm::vec2 bottomRight{};
-
-		//TextureAtlas Coordinates
-		topLeft = util::glNormalizeTextureCoords({ 177,140 }, { 256, 256 });
-		bottomRight = util::glNormalizeTextureCoords({ 240,203 }, { 256, 256 });
-
-		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
-
-			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
-			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
-		}
-		else {
-
-			//SDL2 Texture void* is the SDL_Texture*
-			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
-			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
-		}
-
-
-	}
-
-
-	void displayKeyImage(std::string keyValue, ImVec4 color)
+	void displayDropItemImage(ImVec4 color)
 	{
 
 		//TextureAtlas Coordinates for bar
-		glm::vec2 topLeft = util::glNormalizeTextureCoords({ 177,0 }, { 256, 256 });
-		glm::vec2 bottomRight = util::glNormalizeTextureCoords({ 240,63 }, { 256, 256 });
+		glm::vec2 topLeft = util::glNormalizeTextureCoords({ 196,0 }, { 512, 256 });
+		glm::vec2 bottomRight = util::glNormalizeTextureCoords({ 259,63 }, { 512, 256 });
 
 		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
 
@@ -169,16 +143,29 @@ namespace ImGui
 
 			//SDL2 Texture void* is the SDL_Texture*
 			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
-			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(24, 24), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 
-		ImGui::SameLine();
-
-		ImGui::adjustCursorPosition(-24.0, 2.0);
-
-		//Keyboard key value
-		ImGui::Text(keyValue.c_str());
 	}
 
+	void displayDropItemIntoContainerImage(ImVec4 color)
+	{
 
+		//TextureAtlas Coordinates for bar
+		glm::vec2 topLeft = util::glNormalizeTextureCoords({ 66,67 }, { 512, 256 });
+		glm::vec2 bottomRight = util::glNormalizeTextureCoords({ 129,128 }, { 512, 256 });
+
+		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
+
+			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+		else {
+
+			//SDL2 Texture void* is the SDL_Texture*
+			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+
+	}
 }

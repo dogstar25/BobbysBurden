@@ -96,6 +96,7 @@ namespace TraitTag {
 	inline constexpr int door_entry = 30;
 	inline constexpr int door = 31;
 	inline constexpr int hiding_spot = 32;
+	inline constexpr int receptacle = 33;			//Can be open or closed and hold items
 }
 
 namespace Actions {

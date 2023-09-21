@@ -211,12 +211,12 @@
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowPuzzleInterfaceAction"
+                            "actionClass": "ShowInterfaceAction"
 
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "StandardHideAction"
+                            "actionClass": "HideInterfaceAction"
                         }
 
                     ]
@@ -305,12 +305,12 @@
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowPuzzleInterfaceAction"
+                            "actionClass": "ShowInterfaceAction"
 
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "StandardHideAction"
+                            "actionClass": "HideInterfaceAction"
                         }
 
                     ]
@@ -336,7 +336,7 @@
                     "type": "B2_STATIC",
                     "fixtures": [
                         {
-                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "contactTag": "ContactTag::GENERAL_SOLID",
                             "collisionShape": "B2_BOX",
                             "isSensor": true
                         }

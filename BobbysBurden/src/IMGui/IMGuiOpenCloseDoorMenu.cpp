@@ -1,4 +1,4 @@
-#include "IMGuiOpenCloseMenu.h"
+#include "IMGuiOpenCloseDoorMenu.h"
 #include "BB_IMGuiUtil.h"
 #include "../gameConstants.h"
 
@@ -6,7 +6,7 @@
 
 extern std::unique_ptr<Game> game;
 
-IMGuiOpenCloseMenu::IMGuiOpenCloseMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
+IMGuiOpenCloseDoorMenu::IMGuiOpenCloseDoorMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
 	ImVec4 buttonColor, ImVec4 buttonHoverColor, ImVec4 buttonActiveColor, bool autoSize) :
 	IMGuiItem(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize)
 {
@@ -15,7 +15,7 @@ IMGuiOpenCloseMenu::IMGuiOpenCloseMenu(std::string gameObjectType, b2Vec2 paddin
 
 }
 
-glm::vec2 IMGuiOpenCloseMenu::render()
+glm::vec2 IMGuiOpenCloseDoorMenu::render()
 {
 
 	glm::vec2 windowSize{};
@@ -79,7 +79,7 @@ glm::vec2 IMGuiOpenCloseMenu::render()
 	return windowSize;
 }
 
-void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
+void IMGuiOpenCloseDoorMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 {
 	static int buttonSeq{};
 
@@ -92,7 +92,7 @@ void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 	//If the USE isAvailable, then show the green mouseclick image and the label that goes with the event
 	if (interfaceComponent->isEventAvailable(Actions::USE)) {
 
-		ImGui::displayMousePointImage(util::SDLColorToImVec4(Colors::EMERALD));
+		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
 		ImGui::SameLine();
 
 		//Show Open or Close based on the current state
@@ -130,7 +130,7 @@ void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 	}
 	else {
 
-		ImGui::displayMousePointImage(util::SDLColorToImVec4(Colors::GREY));
+		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::GREY));
 		ImGui::SameLine();
 		ImGui::TextColored(util::SDLColorToImVec4(Colors::GREY), "[Locked]");
 
@@ -141,7 +141,7 @@ void IMGuiOpenCloseMenu::_buildInteractionRow(GameObject* interfaceGameObject)
 
 }
 
-void IMGuiOpenCloseMenu::_buildPuzzleRow(GameObject* interfaceGameObject)
+void IMGuiOpenCloseDoorMenu::_buildPuzzleRow(GameObject* interfaceGameObject)
 {
 	static int buttonSeq{};
 

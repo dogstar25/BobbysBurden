@@ -15,8 +15,8 @@ namespace ImGui
 	void displayMouseLeftClickImage(ImVec4 color);
 	void displayMouseRightClickImage(ImVec4 color);
 	void displayPuzzlePieceImage(bool locked, ImVec4 color);
-	void displayKeyImage(std::string keyValue, ImVec4 color);
-	void displayUpArrowEnterImage(ImVec4 color);
+	void displayDropItemImage(ImVec4 color);
+	void displayDropItemIntoContainerImage(ImVec4 color);
 
 
 }

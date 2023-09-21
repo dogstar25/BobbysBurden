@@ -6,8 +6,8 @@
 #include "TwistBedKnobAction.h"
 #include "OilBedKnobAction.h"
 #include "HideUnderBedAction.h"
-#include "ShowPuzzleInterfaceAction.h"
-#include "StandardHideAction.h"
+#include "ShowInterfaceAction.h"
+#include "HideInterfaceAction.h"
 #include "ToggleBobbyInventory.h"
 #include "ItemDragTreatmentAction.h"
 #include "ItemDropAction.h"
@@ -50,13 +50,13 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType)
 
         action = std::make_shared<TwistBedKnobAction>();
     }
-    else if (actionType == "ShowPuzzleInterfaceAction") {
+    else if (actionType == "ShowInterfaceAction") {
 
-        action = std::make_shared<ShowPuzzleInterfaceAction>();
+        action = std::make_shared<ShowInterfaceAction>();
     }
-    else if (actionType == "StandardHideAction") {
+    else if (actionType == "HideInterfaceAction") {
 
-        action = std::make_shared<StandardHideAction>();
+        action = std::make_shared<HideInterfaceAction>();
     }
     else if (actionType == "ToggleBobbyInventory") {
 
