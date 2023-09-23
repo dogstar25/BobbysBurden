@@ -69,7 +69,7 @@ bool BBGame::init(
 	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
 	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	playerInventory->addItem("OIL_CAN");
-	playerInventory->addItem("BOTTLE1");
+	//playerInventory->addItem("BOTTLE1");
 	//playerInventory->addItem("OIL_CAN");
 	//playerInventory->addItem("OIL_CAN", 3);
 	const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");

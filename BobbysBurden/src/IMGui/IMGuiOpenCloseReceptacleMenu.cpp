@@ -111,12 +111,25 @@ void IMGuiOpenCloseReceptacleMenu::_buildInteractionRow(GameObject* interfaceGam
 				ImGui::TextWrapped("Close");
 
 				//Set mouse Cursor
-				if (parent()->parent().value()->hasTrait(TraitTag::receptacle)) {
+				//if (parent()->parent().value()->hasTrait(TraitTag::receptacle)) {
 
 					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY");
 					SceneManager::instance().setMouseCursor(cursor);
-				}
+				//}
 
+			}
+
+		}
+		//Not an inventory component but maybe a inventory display object
+		else {
+
+			ImGui::TextWrapped("Close");
+
+			//Set mouse Cursor
+			if (parent()->parent().value()->hasTrait(TraitTag::receptacle)) {
+
+				auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY");
+				SceneManager::instance().setMouseCursor(cursor);
 			}
 
 		}

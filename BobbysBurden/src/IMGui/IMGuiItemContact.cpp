@@ -146,24 +146,27 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 
 	}
 
+	if (interfacedObject->isDragging() == true &&
+		interfacedObject->hasTrait(TraitTag::puzzle_item) && interfacedObject->isTouchingByTrait(TraitTag::inventory)) {
 
-	if (interfacedObject->hasTrait(TraitTag::puzzle_item) && interfacedObject->isTouchingByTrait(TraitTag::receptacle)) {
-
-		const auto& receptacleTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::receptacle);
+		const auto& inventoryTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::inventory);
+		std::string receptacleDescription = inventoryTouched.value().lock()->description();
 
 		ImGui::displayDropItemImage(util::SDLColorToImVec4(Colors::EMERALD));
 		ImGui::SameLine();
 
-		ImGui::Text("Put In");
+		ImGui::Text("Drop In");
 		ImGui::SameLine();
-		ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), receptacleTouched.value().lock()->description().c_str());
+		ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), receptacleDescription.c_str());
 
-		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
-		SceneManager::instance().setMouseCursor(cursor);
-		SDL_ShowCursor(SDL_TRUE);
-
+		if (inventoryTouched.value().lock()->hasTrait(TraitTag::receptacle)) {
+			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
+			SceneManager::instance().setMouseCursor(cursor);
+			SDL_ShowCursor(SDL_TRUE);
+		}
 
 	}
+
 
 	ImGui::PopFont();
 
