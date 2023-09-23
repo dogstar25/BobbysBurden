@@ -21,10 +21,7 @@
                     "id": "INVENTORY_COMPONENT",
                     "maxCapacity": 2,
                     "displayObject": "DRAWER_INVENTORY_DISPLAY_SMALL",
-                    "displayLayer": "GameLayer::GUI_3"
-                },
-                {
-                    "id": "CHILDREN_COMPONENT"
+                    "displayLayer": "GameLayer::GUI_1"
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -161,13 +158,8 @@
                 {
                     "id": "INVENTORY_COMPONENT",
                     "maxCapacity": 2,
-                    "displayObject": "DRAWER_INVENTORY_DISPLAY_SMALL",
+                    "displayObject": "DRAWER_INVENTORY_DISPLAY_MEDIUM",
                     "displayLayer": "GameLayer::GUI_3"
-                },
-                {
-                    "id": "CHILDREN_COMPONENT"
-
-
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -288,6 +280,7 @@
         {
             "type": "DRAWER_INVENTORY_DISPLAY_SMALL",
             "traitTags": [ "gui", "inventory" ],
+            "description": "Drawer",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -296,7 +289,7 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 172,
+                        "width": 130,
                         "height": 132
                     }
                 },
@@ -305,50 +298,10 @@
                     "itemSize": 64,
                     "itemPadding": 10,
                     "rows": 1,
-                    "columns": 2,
+                    "columns": 1,
                     "marginPadding": {
                         "x": 34,
                         "y": 40
-                    }
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_STATIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::INVENTORY_HOLDER",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
-                        }
-
-                    ]
-                },
-                {
-                    "id": "CHILDREN_COMPONENT",
-                    "childObjects": [
-                        {
-                            "gameObjectType": "INVENTORY_CLOSE_BUTTON",
-                            "standardSlot": "PositionAlignment::TOP_RIGHT"
-                        }
-
-                    ]
-                }
-
-            ]
-        },
-        {
-            "type": "INVENTORY_CLOSE_BUTTON",
-            "traitTags": [ "gui"],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_INVENTORY_CLOSE_BUTTON"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 45,
-                        "height": 45
                     }
                 },
                 {
@@ -418,6 +371,142 @@
                         }
 
                     ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "INVENTORY_CLOSE_BUTTON",
+                            "standardSlot": "PositionAlignment::TOP_CENTER"
+                        }
+
+                    ]
+                }
+
+            ]
+        },
+        {
+            "type": "DRAWER_INVENTORY_DISPLAY_MEDIUM",
+            "traitTags": [ "gui", "inventory" ],
+            "description": "Drawer",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_DRAWER_SMALL"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 172,
+                        "height": 132
+                    }
+                },
+                {
+                    "id": "GRID_DISPLAY_COMPONENT",
+                    "itemSize": 64,
+                    "itemPadding": 10,
+                    "rows": 1,
+                    "columns": 2,
+                    "marginPadding": {
+                        "x": 34,
+                        "y": 40
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INVENTORY_HOLDER",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "OPEN_CLOSE_RECEPTACLE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_LCLICK"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "actionClass": "ButtonCloseInventoryAction"
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        }
+
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "INVENTORY_CLOSE_BUTTON",
+                            "standardSlot": "PositionAlignment::TOP_CENTER"
+                        }
+
+                    ]
+                }
+
+            ]
+        },
+        {
+            "type": "INVENTORY_CLOSE_BUTTON",
+            "traitTags": [ "gui" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_INVENTORY_CLOSE_BUTTON"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 45,
+                        "height": 45
+                    }
                 }
 
             ]
