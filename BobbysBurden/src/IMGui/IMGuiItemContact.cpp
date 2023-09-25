@@ -52,7 +52,9 @@ glm::vec2 IMGuiItemContact::render()
 		}
 		
 
-		if (interfaceGameObject.value()->hasTrait(TraitTag::loose) && interfaceGameObject.value()->isTouchingByTrait(TraitTag::player) == false) {
+		if (interfaceGameObject.value()->isDragging() == false && 
+			interfaceGameObject.value()->hasTrait(TraitTag::loose) && 
+			interfaceGameObject.value()->isTouchingByTrait(TraitTag::player) == false) {
 
 			ImGui::PushFont(m_normalFont);
 			ImGui::textCentered("???");
@@ -99,23 +101,27 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 	//If this item has the "draggable" trait then show the Grab action
 	if (interfacedObject->hasTrait(TraitTag::draggable) && interfacedObject->isDragging() == false) {
 
-		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
-		ImGui::SameLine();
+		//If this is an object inside of an inventory OR its a loose item and touched by the player
+		if (interfacedObject->hasTrait(TraitTag::loose) && interfacedObject->isTouchingByTrait(TraitTag::player) ||
+			interfacedObject->hasTrait(TraitTag::loose) == false) {
+			ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
+			ImGui::SameLine();
 
-		ImGui::TextWrapped("Grab");
+			ImGui::TextWrapped("Grab");
 
-		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_GRAB_1");
-		SceneManager::instance().setMouseCursor(cursor);
-		ImGui::SameLine();
-		//ImGui::Spacing();
-		ImGui::Dummy({ 3,0 });
-		ImGui::SameLine();
+			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_GRAB_1");
+			SceneManager::instance().setMouseCursor(cursor);
+			ImGui::SameLine();
+			//ImGui::Spacing();
+			ImGui::Dummy({ 3,0 });
+			ImGui::SameLine();
+		}
 
 	}
 	//If this item has the "obtainable" trait then show the Take action
-	if (interfacedObject->isDragging() == false&&
-		(interfacedObject->hasTrait(TraitTag::loose) == false && interfacedObject->hasTrait(TraitTag::obtainable)) ||
-		(interfacedObject->hasTrait(TraitTag::loose) == true && interfacedObject->isTouchingByTrait(TraitTag::player)) ) {
+	if (interfacedObject->isDragging() == false &&
+		(interfacedObject->hasTrait(TraitTag::loose) == false && interfacedObject->hasTrait(TraitTag::obtainable) ||
+		interfacedObject->hasTrait(TraitTag::loose) == true && interfacedObject->isTouchingByTrait(TraitTag::player)) ) {
 
 		ImGui::displayMouseRightClickImage(util::SDLColorToImVec4(Colors::EMERALD));
 		ImGui::SameLine();
@@ -132,17 +138,20 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 
 		const auto& puzzleTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::puzzle);
 
-		ImGui::displayDropItemImage(util::SDLColorToImVec4(Colors::EMERALD));
-		ImGui::SameLine();
+		if (puzzleTouched.value().lock()->isTouchingByTrait(TraitTag::player)) {
 
-		ImGui::Text("Apply To");
-		ImGui::SameLine();
-		ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), puzzleTouched.value().lock()->description().c_str());
 
-		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
-		SceneManager::instance().setMouseCursor(cursor);
-		SDL_ShowCursor(SDL_TRUE);
+			ImGui::displayDropItemImage(util::SDLColorToImVec4(Colors::EMERALD));
+			ImGui::SameLine();
 
+			ImGui::Text("Apply To");
+			ImGui::SameLine();
+			ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), puzzleTouched.value().lock()->description().c_str());
+
+			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
+			SceneManager::instance().setMouseCursor(cursor);
+			SDL_ShowCursor(SDL_TRUE);
+		}
 
 	}
 
@@ -150,19 +159,26 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 		interfacedObject->hasTrait(TraitTag::puzzle_item) && interfacedObject->isTouchingByTrait(TraitTag::inventory)) {
 
 		const auto& inventoryTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::inventory);
-		std::string receptacleDescription = inventoryTouched.value().lock()->description();
 
-		ImGui::displayDropItemImage(util::SDLColorToImVec4(Colors::EMERALD));
-		ImGui::SameLine();
+		//Only show the Drop icon if its the players inventory OR we are touching the objects with the inventory
+		
+		if (inventoryTouched.value().lock()->hasTrait(TraitTag::player_inventory) ||
+			inventoryTouched.value().lock()->isTouchingByTrait(TraitTag::player)) {
 
-		ImGui::Text("Drop In");
-		ImGui::SameLine();
-		ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), receptacleDescription.c_str());
+			std::string receptacleDescription = inventoryTouched.value().lock()->description();
 
-		if (inventoryTouched.value().lock()->hasTrait(TraitTag::receptacle)) {
-			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
-			SceneManager::instance().setMouseCursor(cursor);
-			SDL_ShowCursor(SDL_TRUE);
+			ImGui::displayDropItemImage(util::SDLColorToImVec4(Colors::EMERALD));
+			ImGui::SameLine();
+
+			ImGui::Text("Drop In");
+			ImGui::SameLine();
+			ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), receptacleDescription.c_str());
+
+			if (inventoryTouched.value().lock()->hasTrait(TraitTag::receptacle)) {
+				auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
+				SceneManager::instance().setMouseCursor(cursor);
+				SDL_ShowCursor(SDL_TRUE);
+			}
 		}
 
 	}

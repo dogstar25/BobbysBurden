@@ -19,7 +19,7 @@
                 },
                 {
                     "id": "INVENTORY_COMPONENT",
-                    "maxCapacity": 2,
+                    "maxCapacity": 1,
                     "displayObject": "DRAWER_INVENTORY_DISPLAY_SMALL",
                     "displayLayer": "GameLayer::GUI_1"
                 },

@@ -55,5 +55,6 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("door_entry", TraitTag::door_entry);
 	addEnumItem("hiding_spot", TraitTag::hiding_spot);
 	addEnumItem("receptacle", TraitTag::receptacle);
+	addEnumItem("shelf", TraitTag::shelved);
 	
 }

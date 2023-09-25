@@ -49,6 +49,7 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/householdObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/bobbysObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/drawerObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/shelfObjects");
 
 	//GameObjectManager::instance().load("gameObjectDefinitions/testObjects");
 
@@ -75,9 +76,15 @@ bool BBGame::init(
 	const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");
 	const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	topDrawerInventory->addItem("BOTTLE1");
-	topDrawerInventory->addItem("OIL_CAN");
 
+	//Dresser Shelf
+	const auto& dresserShelf = scene.getFirstGameObjectByName("BOBBY_DRESSER_SHELF");
+	const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	dresserShelfInventory->addItem("BOTTLE1");
+	dresserShelfInventory->addItem("BOTTLE1");
+	dresserShelfInventory->refreshInventoryDisplay();
 	
+
 	//const auto& drawer = scene.getFirstGameObjectByName("");
 	//const auto& drawerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	//playerInventory->addItem("OIL_CAN");

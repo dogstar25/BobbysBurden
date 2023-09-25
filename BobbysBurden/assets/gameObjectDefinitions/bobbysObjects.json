@@ -90,8 +90,23 @@
                     "size": {
                         "width": 160,
                         "height": 128
-                    },
-                    "absolutePositioning": false
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "sameSlotTreatment": "ChildSlotTreatment::HORIZONTAL",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "SHELF_SMALL",
+                            "name": "BOBBY_DRESSER_SHELF",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -68
+                            }
+                        }
+                    ]
                 }
 
             ]
@@ -109,8 +124,7 @@
                     "size": {
                         "width": 56,
                         "height": 96
-                    },
-                    "absolutePositioning": false
+                    }
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
