@@ -160,48 +160,24 @@ bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATE
 void BBInterfaceComponent::postInit() {
 
 
-	//InterfaceComponent::postInit();
-
-	////The remoteLocationObject - we need to call this here to override what was dont in base postinit
-	////because BB_INTERFACE_COMPONENT would not be found in the base definition
-	//GameObjectDefinition gameObjectDefinition = parent()->gameObjectDefinition();
-	//Json::Value componentDefinition = util::getComponentConfig(gameObjectDefinition.definitionJSON(), ComponentTypes::BB_INTERFACE_COMPONENT);
-	//if (componentDefinition.isMember("remoteLocationObject")) {
-
-	//	std::string name = componentDefinition["remoteLocationObject"].asString();
-	//	m_remoteLocationObject = parent()->parentScene()->getFirstGameObjectByName(name);
-
-	//}
-
 }
 
-//void BBInterfaceComponent::handleDragging()
-//{
-//
-//	//InterfaceComponent::handleDragging();
-//
-//	//// Move this to BBInterface
-//	////If the object being dragged is out of Bobby's reach range, then apply a red overlay
-//	//if (parent()->isTouchingByTrait(TraitTag::player) == false) {
-//
-//	//	const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
-//	//	renderComponent->applyDisplayOverlay(displayOverlays::tint_RED1);
-//	//}
-//	//else {
-//	//	const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
-//	//	renderComponent->removeDisplayOverlay();
-//
-//	//}
-//
-//}
+bool BBInterfaceComponent::isDraggingAllowed()
+{
+
+	if (parent()->hasTrait(TraitTag::loose) && parent()->isTouchingByTrait(TraitTag::player) == false) {
+
+		return false;
+	}
+
+
+	return true;
+}
 
 void BBInterfaceComponent::render()
 {
 
 	InterfaceComponent::render();
-
-	//set the current interface global to be this one
-	//m_currentGameObjectInterfaceActive = parent();
 
 }
 

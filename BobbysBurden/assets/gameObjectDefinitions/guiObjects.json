@@ -79,7 +79,7 @@
         },
         {
             "type": "BOBBY_INVENTORY_DISPLAY",
-            "traitTags": [ "gui", "inventory" ],
+            "traitTags": [ "gui", "inventory", "player_inventory" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
