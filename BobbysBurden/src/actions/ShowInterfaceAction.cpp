@@ -16,19 +16,18 @@ void ShowInterfaceAction::perform(GameObject* gameObject)
 	const auto& menuObject =
 		interfaceComponent->interfaceMenuObject();
 
-	//Enable Render
-	menuObject.value()->enableRender();
+	if (menuObject.has_value()) {
+		//Enable Render
+		menuObject.value()->enableRender();
 
-	//Get the Main frame object where we're gonna show this menu
-	//const auto& mainFrame = gameObject->parentScene()->getFirstGameObjectByName("MainHudFrame");
-	const auto& mainFrame = gameObject->parentScene()->getFirstGameObjectByType("HUD_INTERFACE_FRAME");
+		//Get the Main frame object where we're gonna show this menu
+		//const auto& mainFrame = gameObject->parentScene()->getFirstGameObjectByName("MainHudFrame");
+		const auto& mainFrame = gameObject->parentScene()->getFirstGameObjectByType("HUD_INTERFACE_FRAME");
 
-	if (mainFrame.has_value()) {
-		menuObject.value()->setPosition(mainFrame.value()->getCenterPosition());
+		if (mainFrame.has_value()) {
+			menuObject.value()->setPosition(mainFrame.value()->getCenterPosition());
+		}
+
 	}
-
-	//Set ME as the game object with the active menu interface
-	//interfaceComponent->setCurrentGameObjectInterfaceActive(gameObject);
-
 
 }

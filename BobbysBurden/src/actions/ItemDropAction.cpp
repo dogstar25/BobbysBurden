@@ -5,10 +5,6 @@ extern std::unique_ptr<Game> game;
 void ItemDropAction::perform(GameObject* gameObject)
 {
 
-	//If there was a overlay added to the dragging somewhere then make sure its clear
-	const auto& renderComponent = gameObject->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
-	renderComponent->removeDisplayOverlay();
-
 	//Did we drop onto an inventory holding gameObject
 	if (gameObject->isTouchingByTrait(TraitTag::inventory)) {
 
@@ -57,6 +53,35 @@ void ItemDropAction::perform(GameObject* gameObject)
 					destinationInventoryComponent->refreshInventoryDisplay();
 					sourceInventoryObject->refreshInventoryDisplay();
 
+				}
+				//Just add it somewhere if theres an available slot. This shelf or cabinet inventory item
+				//probably doesnt show where the slots are so just add it somewhere
+				else {
+
+					//Get the inventory objects Inventory component
+					const auto& destinationInventoryComponent = touchingInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+
+					//Remove the dropped gameObject from it's current inventory
+					//first get a shared pointer to the object so that the object isnt deallocated
+					std::shared_ptr<GameObject> gameObjectSharedPtr = gameObject->parentScene()->getGameObject(gameObject->id()).value();
+					sourceInventoryObject->removeItem(gameObjectSharedPtr.get());
+
+					//Add the dropped gameObject to it's new inventory
+					if (destinationInventoryComponent->addItem(gameObjectSharedPtr) == true) {
+
+						//Refresh the gridDisplayComponent so that it shows the new item
+						destinationInventoryComponent->refreshInventoryDisplay();
+						sourceInventoryObject->refreshInventoryDisplay();
+
+						//Set the active interface to the inventory we dropped the item to
+						//If we don't then the interface of the now offscreen object could never be overridden
+						const auto& interfaceComponent = gameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
+						interfaceComponent->setCurrentGameObjectInterfaceActive(touchingInventoryObject.get());
+					}
+					else {
+						sourceInventoryObject->addItem(gameObjectSharedPtr);
+						std::cout << "Inventory is full!" << std::endl;
+					}
 				}
 
 			}

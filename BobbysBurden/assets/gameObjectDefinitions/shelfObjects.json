@@ -14,25 +14,25 @@
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
                         "width": 132,
-                        "height": 70
+                        "height": 36
                     }
                 },
                 {
                     "id": "INVENTORY_COMPONENT",
-                    "maxCapacity": 2,
+                    "maxCapacity": 3,
                     "displayLayer": "GameLayer::GUI_1",
                     "isAlwaysOpen": true
 
                 },
                 {
                     "id": "GRID_DISPLAY_COMPONENT",
-                    "itemSize": 64,
-                    "itemPadding": 4,
+                    "itemSize": 48,
+                    "itemPadding": 2,
                     "rows": 1,
-                    "columns": 2,
+                    "columns": 3,
                     "marginPadding": {
-                        "x": 34,
-                        "y": 40
+                        "x": 0,
+                        "y": 0
                     }
                 },
                 {
@@ -47,26 +47,14 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "OPEN_CLOSE_RECEPTACLE_MENU",
+                    //"menuObject": "OPEN_CLOSE_RECEPTACLE_MENU",
                     "interfaceActions": [
                         {
-                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionId": "Actions::CLOSE",
                             "condition": {
                                 "operator": "ConditionOperator::AND",
                                 "events": [
-                                    "InterfaceEvents::ON_TOUCHING",
-                                    "InterfaceEvents::ON_HOVER"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::OR",
-                                "events": [
-                                    "InterfaceEvents::ON_STOP_TOUCHING",
-                                    "InterfaceEvents::ON_HOVER_OUT"
+                                    "InterfaceEvents::ON_STOP_TOUCHING"
                                 ]
                             }
 
@@ -78,6 +66,10 @@
                 {
                     "id": "ACTION_COMPONENT",
                     "actions": [
+                        {
+                            "actionId": "Actions::CLOSE",
+                            "actionClass": "CloseShelfInventoryAction"
+                        },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
                             "actionClass": "ShowInterfaceAction"

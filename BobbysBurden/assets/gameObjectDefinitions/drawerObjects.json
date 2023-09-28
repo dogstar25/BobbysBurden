@@ -302,7 +302,8 @@
                     "marginPadding": {
                         "x": 34,
                         "y": 40
-                    }
+                    },
+                    "slotBackgroundImage": "GRID_SLOT_BOX"
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -410,7 +411,8 @@
                     "marginPadding": {
                         "x": 34,
                         "y": 40
-                    }
+                    },
+                    "slotBackgroundImage": "GRID_SLOT_BOX"
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
