@@ -102,8 +102,8 @@
                             "gameObjectType": "SHELF_SMALL",
                             "name": "BOBBY_DRESSER_SHELF",
                             "absolutePositionSlot": {
-                                "x": 0,
-                                "y": -68
+                                "x": 28,
+                                "y": -32
                             }
                         }
                     ]
