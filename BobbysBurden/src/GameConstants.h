@@ -102,6 +102,7 @@ namespace TraitTag {
 
 namespace Actions {
 	inline constexpr int STAIRS_MOVE = 30;
+
 }
 
 namespace StatusItemId {

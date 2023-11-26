@@ -25,6 +25,20 @@ void ActorMoveAction::perform(GameObject* gameObject, int direction, int strafe)
 			if (strafe < 0) {
 				animationComponent->animate(AnimationState::WALK_LEFT, ANIMATE_ONE_TIME);
 				animationComponent->setDefaultAnimationState(AnimationState::IDLE_LEFT);
+
+				//New direction - maybe if we want to tie state directly to animation
+				//hasMetTransitionDuration = stateComponent->transitionTo(State::IDLE_LEFT);
+				//if (hasMetTransitionDuration == false) {
+				//	animationId = stateComponent->getTransitionAnimation(State::IDLE_LEFT);
+				//	//animationComponent->animate(animationId, ANIMATE_ONE_TIME);
+				//}
+				//else {
+				//	//animationId = stateComponent->getAnimation(State::IDLE_LEFT);
+				//	//animationComponent->animate(animationId, ANIMATE_ONE_TIME);
+
+				//}
+
+
 			}
 			else {
 				animationComponent->animate(AnimationState::WALK_RIGHT, ANIMATE_ONE_TIME);

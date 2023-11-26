@@ -153,43 +153,6 @@
 
             ]
 
-        },
-        {
-            "type": "PLAYER_BUMPER",
-            "traitTags": ["abstract" ],
-            "description": "Payer Bumper",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 64,
-                        "height": 8
-                    }
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "gravityScale": 1,
-                    "linearDamping": 0.0,
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::PLAYER_COLLISION",
-                            "collisionShape": "B2_BOX",
-                            "friction": 4.5,
-                            "density": 500
-                        }
-                    ],
-                    "anchorPoint": {
-                        "x": 0.0,
-                        "y": 0.0
-                    }
-                }
-
-            ]
-
         }
     ]
 }

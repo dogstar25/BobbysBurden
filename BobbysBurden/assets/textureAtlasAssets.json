@@ -750,6 +750,28 @@
                 "width": 62,
                 "height": 62
             }
+        },
+        {
+            "id": "TX_WALL_ART_CLOWN_1",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 2,
+                "y": 919,
+                "width": 140,
+                "height": 150
+            }
+        },
+        {
+            "id": "TX_WALL_MIRROR_1",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 2,
+                "y": 1071,
+                "width": 128,
+                "height": 163
+            }
         }
 
     ],

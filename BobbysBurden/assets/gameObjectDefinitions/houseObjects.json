@@ -497,6 +497,24 @@
 
                     ]
                 },
+                //{
+                //    "id": "BB_STATE_COMPONENT",
+                //    "transitions": [
+                //        {
+                //            "from": "GameObjectState::CLOSED",
+                //            "to": "GameObjectState::OPENDED",
+                //            "duration": 0.15,
+                //            "animationId": "OPEN"
+                //        }
+                //    ],
+                //    "states": [
+                //        {
+                //            "GameObjectState::CLOSED",
+                //            "animationId": "CLOSED"
+                //        }
+                //    ]
+                //},
+
                 {
                     "id": "ANIMATION_COMPONENT",
                     "defaultState": "AnimationState::CLOSED",
