@@ -97,6 +97,7 @@
                     "id": "GRID_DISPLAY_COMPONENT",
                     "itemSize": 64,
                     "itemPadding": 10,
+                    "slotBackgroundImage": "GRID_SLOT_BOX",
                     "rows": 4,
                     "columns": 1,
                     "marginPadding": {
@@ -258,7 +259,15 @@
                         "button": "Colors::MIRKWOOD",
                         "buttonHover": "Colors::MIRKWOOD",
                         "buttonActive": "Colors::YELLOW"
+                    },
+                    /////////////////NEW////implement this////////////////////////////////////////
+                    "showParentImage": { 
+                        "offset": {
+                            "x": 0,
+                            "y": 0
+                        }
                     }
+                    /////////////////////////////////////////////////////////////////
 
                 }
             ]

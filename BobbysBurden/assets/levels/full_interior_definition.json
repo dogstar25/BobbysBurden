@@ -410,6 +410,23 @@
             "locationAdjust": {
                 "x": -8
             }
+        },
+        {
+            "id": "LOC_0028_0137",
+            "gameObjectType": "WALL_MIRROR_1",
+            "layer": "GameLayer::BACKGROUND_4",
+            "locationAdjust": {
+                "x": -8
+            }
+        },
+        {
+            "id": "LOC_0038_0136",
+            "gameObjectType": "WALL_ART_CLOWN_1",
+            "layer": "GameLayer::BACKGROUND_4",
+            "locationAdjust": {
+                "x": 16,
+                "y": 16
+            }
         }
 
 

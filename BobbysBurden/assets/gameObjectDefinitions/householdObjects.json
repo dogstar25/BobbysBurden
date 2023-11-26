@@ -56,6 +56,21 @@
                     }
                 },
                 {
+                    "id": "STATE_COMPONENT",
+                    "states": [
+                        {
+                            "id": "GameObjectState::ITEM_OBTAINABLE",
+                            "transitions": [
+                                {
+                                    "to": "GameObjectState::ITEM_STORED_PLAYER",
+                                    "transitionTime": 2.5
+                                }
+                            ]
+
+                        }
+                    ]
+                },
+                {
                     "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "ITEM_CONTACT_MENU",
                     "interfaceActions": [
@@ -290,7 +305,42 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "WALL_ART_CLOWN_1",
+            "traitTags": [ "obtainable", "loose", "puzzle_item" ],
+            "description": "A creepy portrait of a clown",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WALL_ART_CLOWN_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 140,
+                        "height": 150
+                    }
+                }
+            ]
+        },
+        {
+            "type": "WALL_MIRROR_1",
+            "traitTags": [ "obtainable", "loose", "puzzle_item" ],
+            "description": "Dresser Mirror",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WALL_MIRROR_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 100,
+                        "height": 128
+                    }
+                }
+            ]
         }
-
     ]
 }

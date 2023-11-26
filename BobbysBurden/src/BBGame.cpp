@@ -85,6 +85,10 @@ bool BBGame::init(
 	dresserShelfInventory->refreshInventoryDisplay();
 	
 
+	
+
+
+
 	//const auto& drawer = scene.getFirstGameObjectByName("");
 	//const auto& drawerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	//playerInventory->addItem("OIL_CAN");
