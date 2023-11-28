@@ -77,6 +77,19 @@ namespace ContactTag {
 
 }
 
+namespace GameObjectState {
+
+	inline constexpr int DEPLOYED = 50;
+	inline constexpr int CONCEALED = 51;
+	inline constexpr int IMPASSABLE = 52;
+	inline constexpr int ITEM_OBTAINABLE = 53;
+	inline constexpr int ITEM_LOOSE = 54;
+	inline constexpr int ITEM_STORED_ENCLOSED = 55;
+	inline constexpr int ITEM_STORED_OPEN = 56;
+	inline constexpr int ITEM_STORED_PLAYER = 57;
+
+};
+
 namespace ComponentTypes {
 
 	inline constexpr int BOBBY_PLAYER_CONTROL_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 1;
@@ -109,22 +122,5 @@ namespace StatusItemId {
 	inline constexpr int PLAYERS_HEART_COUNT = 10;
 	
 };
-
-namespace AnimationState {
-
-	inline constexpr int IDLE_RIGHT = 8;
-	inline constexpr int IDLE_LEFT = 9;
-	inline constexpr int WALK_RIGHT = 10;
-	inline constexpr int WALK_LEFT = 11;
-	inline constexpr int OPEN = 12;
-	inline constexpr int CLOSE = 13;
-	inline constexpr int OPENED = 14;
-	inline constexpr int CLOSED = 15;
-	inline constexpr int WALK_DOWN = 16;
-	inline constexpr int WALK_UP = 17;
-	inline constexpr int WALK_UP_IDLE = 18;
-	inline constexpr int WALK_DOWN_IDLE = 19;
-
-}
 
 

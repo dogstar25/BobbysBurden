@@ -497,24 +497,23 @@
 
                     ]
                 },
-                //{
-                //    "id": "BB_STATE_COMPONENT",
-                //    "transitions": [
-                //        {
-                //            "from": "GameObjectState::CLOSED",
-                //            "to": "GameObjectState::OPENDED",
-                //            "duration": 0.15,
-                //            "animationId": "OPEN"
-                //        }
-                //    ],
-                //    "states": [
-                //        {
-                //            "GameObjectState::CLOSED",
-                //            "animationId": "CLOSED"
-                //        }
-                //    ]
-                //},
-
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "transitions": [
+                        {
+                            "from": "GameObjectState::CLOSED",
+                            "to": "GameObjectState::OPENDED",
+                            "duration": 0.15,
+                            "animationId": "OPEN"
+                        }
+                    ],
+                    "renderStates": [
+                        {
+                            "state": "GameObjectState::CLOSED",
+                            "animationId": "CLOSED"
+                        }
+                    ]
+                },
                 {
                     "id": "ANIMATION_COMPONENT",
                     "defaultState": "AnimationState::CLOSED",
@@ -524,24 +523,24 @@
                     },
                     "animations": [
                         {
-                            "state": "AnimationState::OPEN",
+                            "id": "OPEN",
                             "textureId": "TX_DOOR1_FRONT_OPEN",
                             "speed": 0.15,
                             "frames": 3
                         },
                         {
-                            "state": "AnimationState::CLOSE",
+                            "id": "CLOSE",
                             "textureId": "TX_DOOR1_FRONT_CLOSE",
                             "speed": 0.15,
                             "frames": 3
                         },
                         {
-                            "state": "AnimationState::CLOSED",
+                            "id": "CLOSED",
                             "textureId": "TX_DOOR1_FRONT_CLOSED",
                             "frames": 1
                         },
                         {
-                            "state": "AnimationState::OPENED",
+                            "id": "OPENED",
                             "textureId": "TX_DOOR1_FRONT_OPENED",
                             "frames": 1
                         }

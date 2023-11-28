@@ -11,11 +11,11 @@ public:
 
 protected:
 
-	virtual void initializeMutuallyExclusiveStates() override;
-
-	virtual void setState(GameObjectState newState) override final;
+	virtual void addState(int state) override;
 
 private:
+
+	bool _checkTransition(int state);
 
 };
 
