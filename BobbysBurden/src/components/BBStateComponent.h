@@ -15,7 +15,7 @@ protected:
 
 private:
 
-	bool _checkTransition(int state);
+	bool _checkTransition(int state) override;
 
 };
 

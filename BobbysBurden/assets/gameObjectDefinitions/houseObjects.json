@@ -502,21 +502,31 @@
                     "transitions": [
                         {
                             "from": "GameObjectState::CLOSED",
-                            "to": "GameObjectState::OPENDED",
+                            "to": "GameObjectState::OPENED",
                             "duration": 0.15,
                             "animationId": "OPEN"
+                        },
+                        {
+                            "from": "GameObjectState::OPENED",
+                            "to": "GameObjectState::CLOSED",
+                            "duration": 0.15,
+                            "animationId": "CLOSE"
                         }
                     ],
                     "renderStates": [
                         {
                             "state": "GameObjectState::CLOSED",
                             "animationId": "CLOSED"
+                        },
+                        {
+                            "state": "GameObjectState::OPENED",
+                            "animationId": "OPENED"
                         }
                     ]
                 },
                 {
                     "id": "ANIMATION_COMPONENT",
-                    "defaultState": "AnimationState::CLOSED",
+                    "default": "CLOSED",
                     "frameSize": {
                         "width": 96,
                         "height": 225
@@ -524,23 +534,31 @@
                     "animations": [
                         {
                             "id": "OPEN",
+                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
                             "textureId": "TX_DOOR1_FRONT_OPEN",
-                            "speed": 0.15,
+                            "frames": 3
+                        },
+                        {
+                            "id": "OPEN_CONTINUOUSLY",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_DOOR1_FRONT_OPEN",
                             "frames": 3
                         },
                         {
                             "id": "CLOSE",
+                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
                             "textureId": "TX_DOOR1_FRONT_CLOSE",
-                            "speed": 0.15,
                             "frames": 3
                         },
                         {
                             "id": "CLOSED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
                             "textureId": "TX_DOOR1_FRONT_CLOSED",
                             "frames": 1
                         },
                         {
                             "id": "OPENED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
                             "textureId": "TX_DOOR1_FRONT_OPENED",
                             "frames": 1
                         }
@@ -654,34 +672,64 @@
                     ]
                 },
                 {
+                    "id": "BB_STATE_COMPONENT",
+                    "transitions": [
+                        {
+                            "from": "GameObjectState::CLOSED",
+                            "to": "GameObjectState::OPENED",
+                            "duration": 0.15,
+                            "animationId": "OPEN"
+                        },
+                        {
+                            "from": "GameObjectState::OPENED",
+                            "to": "GameObjectState::CLOSED",
+                            "duration": 0.15,
+                            "animationId": "CLOSE"
+                        }
+                    ],
+                    "renderStates": [
+                        {
+                            "state": "GameObjectState::CLOSED",
+                            "animationId": "CLOSED"
+                        },
+                        {
+                            "state": "GameObjectState::OPENED",
+                            "animationId": "OPENED"
+                        }
+                    ]
+                },
+                {
                     "id": "ANIMATION_COMPONENT",
-                    "defaultState": "AnimationState::CLOSED",
+                    "default": "CLOSED",
                     "frameSize": {
                         "width": 69,
                         "height": 256
                     },
                     "animations": [
                         {
-                            "state": "AnimationState::CLOSE",
-                            "textureId": "TX_DOOR1_SIDE_CLOSED",
-                            "frames": 1
-                        },
-                        {
-                            "state": "AnimationState::OPEN",
+                            "id": "OPEN",
+                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
                             "textureId": "TX_DOOR1_SIDE_OPENED",
                             "frames": 1
                         },
                         {
-                            "state": "AnimationState::CLOSED",
+                            "id": "CLOSE",
+                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
                             "textureId": "TX_DOOR1_SIDE_CLOSED",
                             "frames": 1
                         },
                         {
-                            "state": "AnimationState::OPENED",
+                            "id": "CLOSED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_DOOR1_SIDE_CLOSED",
+                            "frames": 1
+                        },
+                        {
+                            "id": "OPENED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
                             "textureId": "TX_DOOR1_SIDE_OPENED",
                             "frames": 1
                         }
-
                     ]
                 }
             ]

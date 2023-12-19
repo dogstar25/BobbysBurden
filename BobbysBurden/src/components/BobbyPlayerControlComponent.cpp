@@ -99,13 +99,13 @@ void BobbyPlayerControlComponent::_handleMovement()
 			
 			const auto& doorEntryContactObject = doorEntryContact.value().lock().get(); 
 			const auto& doorObject = doorEntryContactObject->parent();
-			const auto& doorAnimationComponent = doorObject.value()->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
+			const auto& doorStateComponent = doorObject.value()->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 			const auto& doorActionComponent = doorObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
 
-			auto doorState = doorAnimationComponent->currentAnimationState();
+			//auto doorState = doorAnimationComponent->currentAnimationState();
 			const auto& enterAction = doorActionComponent->getAction(Actions::ENTER);
 
-			if (doorState == AnimationState::OPENED) {
+			if (doorStateComponent->testState(GameObjectState::OPENED)) {
 				
 				enterAction->perform(parent(), doorObject.value());
 			}

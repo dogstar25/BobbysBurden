@@ -9,6 +9,7 @@ void ActorMoveAction::perform(GameObject* gameObject, int direction, int strafe)
 {
 	const auto& physicsComponent = gameObject->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
 	const auto& animationComponent = gameObject->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
+	const auto& stateComponent = gameObject->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 	const auto& vitalityComponent = gameObject->getComponent<VitalityComponent>(ComponentTypes::VITALITY_COMPONENT);
 
 	if (strafe != 0 || direction == -1) {
@@ -23,31 +24,25 @@ void ActorMoveAction::perform(GameObject* gameObject, int direction, int strafe)
 		if (direction != 0 || strafe != 0)
 		{
 			if (strafe < 0) {
-				animationComponent->animate(AnimationState::WALK_LEFT, ANIMATE_ONE_TIME);
-				animationComponent->setDefaultAnimationState(AnimationState::IDLE_LEFT);
 
-				//New direction - maybe if we want to tie state directly to animation
-				//hasMetTransitionDuration = stateComponent->transitionTo(State::IDLE_LEFT);
-				//if (hasMetTransitionDuration == false) {
-				//	animationId = stateComponent->getTransitionAnimation(State::IDLE_LEFT);
-				//	//animationComponent->animate(animationId, ANIMATE_ONE_TIME);
-				//}
-				//else {
-				//	//animationId = stateComponent->getAnimation(State::IDLE_LEFT);
-				//	//animationComponent->animate(animationId, ANIMATE_ONE_TIME);
-
-				//}
-
+				stateComponent->addState(GameObjectState::WALK_LEFT);
+				std::cout << "Set Left State" << std::endl;
 
 			}
 			else {
-				animationComponent->animate(AnimationState::WALK_RIGHT, ANIMATE_ONE_TIME);
-				animationComponent->setDefaultAnimationState(AnimationState::IDLE_RIGHT);
+				stateComponent->addState(GameObjectState::WALK_RIGHT);
 			}
 		}
+		//Set to Idle
 		else {
 
-			animationComponent->setToDefaultAnimation();
+			if (stateComponent->testState(GameObjectState::WALK_RIGHT)) {
+				stateComponent->addState(GameObjectState::IDLE_RIGHT);
+			}
+			else if (stateComponent->testState(GameObjectState::WALK_LEFT)) {
+				stateComponent->addState(GameObjectState::IDLE_LEFT);
+			}
+
 		}
 
 	}

@@ -2,6 +2,7 @@
 #include "GameConstants.h"
 #include "components/BobbyPlayerControlComponent.h"
 #include "components/BBInterfaceComponent.h"
+#include "components/BBStateComponent.h"
 
 std::shared_ptr<Component> BBComponentFactory::create(
 	Json::Value definitionJSON,
@@ -27,6 +28,13 @@ std::shared_ptr<Component> BBComponentFactory::create(
 		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BB_INTERFACE_COMPONENT);
 		component = std::make_shared<BBInterfaceComponent>(componentJSON, scene);
 	}
+	else if (componentType == ComponentTypes::BB_STATE_COMPONENT) {
+		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BB_STATE_COMPONENT);
+		component = std::make_shared<BBStateComponent>(componentJSON);
+	}
+
+
+	
 	
 	else {
 		component = ComponentFactory::create(

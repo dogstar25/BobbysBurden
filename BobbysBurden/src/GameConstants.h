@@ -87,6 +87,18 @@ namespace GameObjectState {
 	inline constexpr int ITEM_STORED_ENCLOSED = 55;
 	inline constexpr int ITEM_STORED_OPEN = 56;
 	inline constexpr int ITEM_STORED_PLAYER = 57;
+	inline constexpr int IDLE_RIGHT = 58;
+	inline constexpr int IDLE_LEFT = 59;
+	inline constexpr int IDLE_UP = 60;
+	inline constexpr int IDLE_DOWN = 61;
+	inline constexpr int WALK_RIGHT = 62;
+	inline constexpr int WALK_LEFT = 63;
+	inline constexpr int WALK_UP = 64;
+	inline constexpr int WALK_DOWN = 65;
+	inline constexpr int RUN_RIGHT = 66;
+	inline constexpr int RUN_LEFT = 67;
+	inline constexpr int RUN_UP = 68;
+	inline constexpr int RUN_DOWN = 69;
 
 };
 
@@ -94,6 +106,7 @@ namespace ComponentTypes {
 
 	inline constexpr int BOBBY_PLAYER_CONTROL_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 1;
 	inline constexpr int BB_INTERFACE_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 2;
+	inline constexpr int BB_STATE_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 3;
 
 }
 

@@ -97,11 +97,9 @@ void IMGuiOpenCloseDoorMenu::_buildInteractionRow(GameObject* interfaceGameObjec
 
 		//Show Open or Close based on the current state
 		if (interfaceGameObject->hasComponent(ComponentTypes::ANIMATION_COMPONENT)) {
-			const auto& animationComponent = interfaceGameObject->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
-			auto animationState = animationComponent->currentAnimationState();
+			const auto& doorStateComponent = interfaceGameObject->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 
-
-			if (animationState == AnimationState::CLOSED) {
+			if (doorStateComponent->testState(GameObjectState::CLOSED)) {
 
 				ImGui::TextWrapped("Open");
 				
