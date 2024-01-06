@@ -101,51 +101,107 @@
                         {
                             "gameObjectType": "BOBBY_LABEL",
                             "standardSlot": "PositionAlignment::TOP_RIGHT"
-                        },
+                        }
 
 
                     ]
                 },
                 {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginState": "GameObjectState::IDLE_RIGHT",
+                    "animationStates": [
+                        {
+                            "state": "GameObjectState::IDLE_RIGHT",
+                            "animationId": "IDLE_RIGHT"
+                        },
+                        {
+                            "state": "GameObjectState::IDLE_LEFT",
+                            "animationId": "IDLE_LEFT"
+                        },
+                        {
+                            "state": "GameObjectState::IDLE_UP",
+                            "animationId": "WALK_UP_IDLE"
+                        },
+                        {
+                            "state": "GameObjectState::IDLE_DOWN",
+                            "animationId": "WALK_DOWN_IDLE"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_RIGHT",
+                            "animationId": "WALK_RIGHT"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_LEFT",
+                            "animationId": "WALK_LEFT"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_UP",
+                            "animationId": "WALK_UP"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_DOWN",
+                            "animationId": "WALK_DOWN"
+                        }
+                    ]
+                },
+                {
                     "id": "ANIMATION_COMPONENT",
-                    "defaultState": "AnimationState::IDLE_RIGHT",
+                    "default": "IDLE_RIGHT",
                     "frameSize": {
                         "width": 89,
                         "height": 116
                     },
                     "animations": [
                         {
-                            "state": "AnimationState::IDLE_RIGHT",
+                            "id": "IDLE_RIGHT",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
                             "textureId": "TX_BOBBY_IDLE_RIGHT",
                             "frames": 1
                         },
                         {
-                            "state": "AnimationState::IDLE_LEFT",
+                            "id": "IDLE_LEFT",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
                             "textureId": "TX_BOBBY_IDLE_LEFT",
                             "frames": 1
                         },
                         {
-                            "state": "AnimationState::WALK_RIGHT",
+                            "id": "WALK_RIGHT",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_RIGHT",
                             "speed": 0.01,
                             "frames": 24
                         },
                         {
-                            "state": "AnimationState::WALK_LEFT",
+                            "id": "WALK_LEFT",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_LEFT",
                             "speed": 0.01,
                             "frames": 24
                         },
                         {
-                            "state": "AnimationState::WALK_DOWN",
+                            "id": "WALK_DOWN",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_DOWN_STAIRS",
                             "speed": 0.1,
                             "frames": 4
                         },
                         {
-                            "state": "AnimationState::WALK_DOWN_IDLE",
+                            "id": "WALK_DOWN_IDLE",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
                             "textureId": "TX_BOBBY_WALK_DOWN_IDLE_STAIRS",
+                            "frames": 1
+                        },
+                        {
+                            "id": "WALK_UP",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_BOBBY_WALK_DOWN_STAIRS",
                             "speed": 0.1,
+                            "frames": 4
+                        },
+                        {
+                            "id": "WALK_UP_IDLE",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_BOBBY_WALK_DOWN_IDLE_STAIRS",
                             "frames": 1
                         }
                     ]

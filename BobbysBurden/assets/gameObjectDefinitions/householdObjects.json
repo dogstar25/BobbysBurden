@@ -57,18 +57,7 @@
                 },
                 {
                     "id": "STATE_COMPONENT",
-                    "states": [
-                        {
-                            "id": "GameObjectState::ITEM_OBTAINABLE",
-                            "transitions": [
-                                {
-                                    "to": "GameObjectState::ITEM_STORED_PLAYER",
-                                    "transitionTime": 2.5
-                                }
-                            ]
-
-                        }
-                    ]
+                    "beginState": "GameObjectState::ITEM_OBTAINABLE"
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
@@ -303,6 +292,10 @@
                         }
 
                     ]
+                },
+                {
+                    "id": "STATE_COMPONENT",
+                    "beginState": "GameObjectState::ITEM_OBTAINABLE"
                 }
             ]
         },
