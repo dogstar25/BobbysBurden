@@ -499,6 +499,7 @@
                 },
                 {
                     "id": "BB_STATE_COMPONENT",
+                    "beginState": "GameObjectState::CLOSED",
                     "transitions": [
                         {
                             "from": "GameObjectState::CLOSED",
@@ -513,7 +514,7 @@
                             "animationId": "CLOSE"
                         }
                     ],
-                    "renderStates": [
+                    "animationStates": [
                         {
                             "state": "GameObjectState::CLOSED",
                             "animationId": "CLOSED"
@@ -536,18 +537,21 @@
                             "id": "OPEN",
                             "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
                             "textureId": "TX_DOOR1_FRONT_OPEN",
+                            "speed": 1.01,
                             "frames": 3
                         },
                         {
                             "id": "OPEN_CONTINUOUSLY",
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_DOOR1_FRONT_OPEN",
+                            "speed": 0.01,
                             "frames": 3
                         },
                         {
                             "id": "CLOSE",
                             "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
                             "textureId": "TX_DOOR1_FRONT_CLOSE",
+                            "speed": 0.01,
                             "frames": 3
                         },
                         {
@@ -673,21 +677,8 @@
                 },
                 {
                     "id": "BB_STATE_COMPONENT",
-                    "transitions": [
-                        {
-                            "from": "GameObjectState::CLOSED",
-                            "to": "GameObjectState::OPENED",
-                            "duration": 0.15,
-                            "animationId": "OPEN"
-                        },
-                        {
-                            "from": "GameObjectState::OPENED",
-                            "to": "GameObjectState::CLOSED",
-                            "duration": 0.15,
-                            "animationId": "CLOSE"
-                        }
-                    ],
-                    "renderStates": [
+                    "beginState": "GameObjectState::CLOSED",
+                    "animationStates": [
                         {
                             "state": "GameObjectState::CLOSED",
                             "animationId": "CLOSED"

@@ -12,10 +12,12 @@ public:
 protected:
 
 	virtual void addState(int state) override;
+	void _setAndReconcileState(int newState);
+	bool _hasTransitionDuration(int state);
 
 private:
 
-	bool _checkTransition(int state) override;
+	
 
 };
 

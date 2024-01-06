@@ -18,7 +18,7 @@ void ActorMoveAction::perform(GameObject* gameObject, int direction, int strafe)
 	}
 
 
-	if (animationComponent)
+	if (stateComponent)
 	{
 
 		if (direction != 0 || strafe != 0)

@@ -108,7 +108,8 @@
                 },
                 {
                     "id": "BB_STATE_COMPONENT",
-                    "renderStates": [
+                    "beginState": "GameObjectState::IDLE_RIGHT",
+                    "animationStates": [
                         {
                             "state": "GameObjectState::IDLE_RIGHT",
                             "animationId": "IDLE_RIGHT"
@@ -174,7 +175,7 @@
                             "id": "WALK_LEFT",
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_LEFT",
-                            "speed": 1.01,
+                            "speed": 0.01,
                             "frames": 24
                         },
                         {

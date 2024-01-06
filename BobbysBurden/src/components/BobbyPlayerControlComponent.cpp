@@ -112,10 +112,9 @@ void BobbyPlayerControlComponent::_handleMovement()
 
 		}
 
-		if(strafe != 0) {
-			const auto& moveAction = actionComponent->getAction(Actions::MOVE);
-			moveAction->perform(parent(), direction, strafe);
-		}
+		//Always call the move action because it will also set to idle state
+		const auto& moveAction = actionComponent->getAction(Actions::MOVE);
+		moveAction->perform(parent(), direction, strafe);
 
 
 		//m_state.reset(PlayerState::sprinting);
