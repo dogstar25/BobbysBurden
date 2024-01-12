@@ -26,7 +26,6 @@ void ActorMoveAction::perform(GameObject* gameObject, int direction, int strafe)
 			if (strafe < 0) {
 
 				stateComponent->addState(GameObjectState::WALK_LEFT);
-				std::cout << "Set Left State" << std::endl;
 
 			}
 			else {

@@ -50,7 +50,16 @@
         {
             "id": "LOC_0036_0142",
             "gameObjectType": "OIL_CAN",
+            "layer": "GameLayer::MAIN",
+            "name": "toddcan",
+            "gameObjectStatus": [ "ITEM_LOOSE", "ITEM_OBTAINABLE" ]
+
+        },
+        {
+            "id": "LOC_0014_0141",
+            "gameObjectType": "FIRELOGS_1",
             "layer": "GameLayer::MAIN"
+
         },
         {
             "id": "LOC_0029_0141",
@@ -382,6 +391,15 @@
             "layer": "GameLayer::FOREGROUND_1",
             "size": {
                 "width": 544,
+                "height": 320
+            }
+        },
+        {
+            "id": "LOC_0013_0134",
+            "gameObjectType": "LIT_AREA",
+            "layer": "GameLayer::FOREGROUND_1",
+            "size": {
+                "width": 96,
                 "height": 320
             }
         },

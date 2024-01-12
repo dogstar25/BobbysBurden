@@ -11,13 +11,11 @@ public:
 
 protected:
 
-	virtual void addState(int state) override;
-	void _setAndReconcileState(int newState);
-	bool _hasTransitionDuration(int state);
+	virtual void addState(GameObjectState state) override;
+	void _setAndReconcileState(GameObjectState newState);
 
 private:
 
 	
-
 };
 

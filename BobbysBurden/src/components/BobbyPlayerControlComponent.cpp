@@ -48,7 +48,7 @@ void BobbyPlayerControlComponent::_handleMovement()
 	const uint8_t* currentKeyStates = SDL_GetKeyboardState(NULL);
 
 	//Touching stairs
-	if (parent()->isTouchingByTrait(TraitTag::vertical_movement)) {
+	if (parent()->isTouchingByTrait(TraitTag::vertical_movement_zone)) {
 
 		onStairs = true;
 		_applyStairWalkingSettings();

@@ -38,33 +38,7 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("Actions::STAIRS_MOVE", Actions::STAIRS_MOVE);
 
 	//Traits
-	addEnumItem("door", TraitTag::door);
-	addEnumItem("door_entry", TraitTag::door_entry);
 	addEnumItem("hiding_spot", TraitTag::hiding_spot);
-	addEnumItem("receptacle", TraitTag::receptacle);
-	addEnumItem("shelf", TraitTag::shelved);
-
-	//GameObject States
-	m_enumMap["GameObjectState::DEPLOYED"] = GameObjectState::DEPLOYED;
-	m_enumMap["GameObjectState::CONCEALED"] = GameObjectState::CONCEALED;
-	m_enumMap["GameObjectState::IMPASSABLE"] = GameObjectState::IMPASSABLE;
-	m_enumMap["GameObjectState::ITEM_OBTAINABLE"] = GameObjectState::ITEM_OBTAINABLE;
-	m_enumMap["GameObjectState::ITEM_LOOSE"] = GameObjectState::ITEM_LOOSE;
-	m_enumMap["GameObjectState::ITEM_STORED_ENCLOSED"] = GameObjectState::ITEM_STORED_ENCLOSED;
-	m_enumMap["GameObjectState::ITEM_STORED_OPEN"] = GameObjectState::ITEM_STORED_OPEN;
-	m_enumMap["GameObjectState::ITEM_STORED_PLAYER"] = GameObjectState::ITEM_STORED_PLAYER;
-	m_enumMap["GameObjectState::IDLE_RIGHT"] = GameObjectState::IDLE_RIGHT;
-	m_enumMap["GameObjectState::IDLE_LEFT"] = GameObjectState::IDLE_LEFT;
-	m_enumMap["GameObjectState::IDLE_UP"] = GameObjectState::IDLE_UP;
-	m_enumMap["GameObjectState::IDLE_DOWN"] = GameObjectState::IDLE_DOWN;
-	m_enumMap["GameObjectState::WALK_RIGHT"] = GameObjectState::WALK_RIGHT;
-	m_enumMap["GameObjectState::WALK_LEFT"] = GameObjectState::WALK_LEFT;
-	m_enumMap["GameObjectState::WALK_UP"] = GameObjectState::WALK_UP;
-	m_enumMap["GameObjectState::WALK_DOWN"] = GameObjectState::WALK_DOWN;
-	m_enumMap["GameObjectState::RUN_RIGHT"] = GameObjectState::RUN_RIGHT;
-	m_enumMap["GameObjectState::RUN_LEFT"] = GameObjectState::RUN_LEFT;
-	m_enumMap["GameObjectState::RUN_UP"] = GameObjectState::RUN_UP;
-	m_enumMap["GameObjectState::RUN_DOWN"] = GameObjectState::RUN_DOWN;
 
 
 }

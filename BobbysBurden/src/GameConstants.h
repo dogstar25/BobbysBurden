@@ -77,31 +77,6 @@ namespace ContactTag {
 
 }
 
-namespace GameObjectState {
-
-	inline constexpr int DEPLOYED = 50;
-	inline constexpr int CONCEALED = 51;
-	inline constexpr int IMPASSABLE = 52;
-	inline constexpr int ITEM_OBTAINABLE = 53;
-	inline constexpr int ITEM_LOOSE = 54;
-	inline constexpr int ITEM_STORED_ENCLOSED = 55;
-	inline constexpr int ITEM_STORED_OPEN = 56;
-	inline constexpr int ITEM_STORED_PLAYER = 57;
-	inline constexpr int IDLE_RIGHT = 58;
-	inline constexpr int IDLE_LEFT = 59;
-	inline constexpr int IDLE_UP = 60;
-	inline constexpr int IDLE_DOWN = 61;
-	inline constexpr int WALK_RIGHT = 62;
-	inline constexpr int WALK_LEFT = 63;
-	inline constexpr int WALK_UP = 64;
-	inline constexpr int WALK_DOWN = 65;
-	inline constexpr int RUN_RIGHT = 66;
-	inline constexpr int RUN_LEFT = 67;
-	inline constexpr int RUN_UP = 68;
-	inline constexpr int RUN_DOWN = 69;
-
-};
-
 namespace ComponentTypes {
 
 	inline constexpr int BOBBY_PLAYER_CONTROL_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 1;
@@ -119,10 +94,7 @@ namespace BrainState {
 namespace TraitTag {
 
 	//Custom traits
-	inline constexpr int door_entry = 30;
-	inline constexpr int door = 31;
 	inline constexpr int hiding_spot = 32;
-	inline constexpr int receptacle = 33;			//Can be open or closed and hold items
 	
 }
 
