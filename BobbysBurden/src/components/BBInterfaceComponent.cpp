@@ -105,7 +105,7 @@ void BBInterfaceComponent::setCursor(GameObject* gameObject, std::bitset<MAX_EVE
 }
 
 //Remember that this is from the perspective of the game object whose interface we are deciding 
-//shoudl display instead of the interfaces object current stored in m_currentGameObjectInterfaceActive
+//should display instead of the interfaces object current stored in m_currentGameObjectInterfaceActive
 bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATES> eventState)
 {
 	bool hasHigherPriority{true};
@@ -165,7 +165,7 @@ void BBInterfaceComponent::postInit() {
 bool BBInterfaceComponent::isDraggingAllowed()
 {
 
-	if (parent()->hasTrait(TraitTag::loose) && parent()->isTouchingByTrait(TraitTag::player) == false) {
+	if (parent()->hasState(GameObjectState::ITEM_LOOSE) && parent()->isTouchingByTrait(TraitTag::player) == false) {
 
 		return false;
 	}

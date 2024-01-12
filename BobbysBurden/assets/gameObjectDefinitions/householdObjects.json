@@ -41,7 +41,7 @@
         },
         {
             "type": "OIL_CAN",
-            "traitTags": [ "obtainable", "loose", "puzzle_item" ],
+            "traitTags": ["puzzle_item" ],
             "description": "Oil Can",
             "components": [
                 {
@@ -170,7 +170,7 @@
         },
         {
             "type": "BOTTLE1",
-            "traitTags": [ "obtainable", "loose", "puzzle_item" ],
+            "traitTags": [ "puzzle_item" ],
             "description": "Bottle",
             "components": [
                 {
@@ -301,7 +301,7 @@
         },
         {
             "type": "WALL_ART_CLOWN_1",
-            "traitTags": [ "obtainable", "loose", "puzzle_item" ],
+            "traitTags": [ "puzzle_item" ],
             "description": "A creepy portrait of a clown",
             "components": [
                 {
@@ -319,7 +319,7 @@
         },
         {
             "type": "WALL_MIRROR_1",
-            "traitTags": [ "obtainable", "loose", "puzzle_item" ],
+            "traitTags": [ "puzzle_item" ],
             "description": "Dresser Mirror",
             "components": [
                 {

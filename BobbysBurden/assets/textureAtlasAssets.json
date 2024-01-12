@@ -772,6 +772,17 @@
                 "width": 128,
                 "height": 163
             }
+        },
+        {
+            "id": "TX_FIRELOGS_1",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 392,
+                "y": 120,
+                "width": 426,
+                "height": 128
+            }
         }
 
     ],
