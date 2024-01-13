@@ -40,7 +40,7 @@
             ]
         },
         {
-            "type": "PARTICLE_X_EMITTER",
+            "type": "PARTICLE_EMITTER_FIREPLACE",
             "traitTags": [ "abstract" ],
             "description": "Particle Emitter",
             "components": [
@@ -56,7 +56,14 @@
                 },
                 {
                     "id": "PARTICLE_X_COMPONENT",
-                    "type": "ParticleEmitterType::ONETIME"
+                    "type": "ParticleEmitterType::CONTINUOUS",
+                    "emissionInterval": 0.3,
+                    "emissionLayer": "GameLayer::BACKGROUND_1",
+                    "maxParticles": 300,
+                    "effects": [
+                        "spark",
+                        "fireFlame"
+                    ]
                 }
             ]
         },

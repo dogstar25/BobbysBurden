@@ -1,0 +1,100 @@
+{
+    "gameObjects": [
+        {
+            "type": "ROUND_PARTICLE_LIT_1",
+            "traitTags": [ "pooled", "fragment" ],
+            "description": "Smoke Particle 1",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_ROUND_PARTICLE_2",
+                    "textureBlendMode": "RenderBlendMode::ADD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 8,
+                        "height": 8
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "gravityScale": -0.05,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::HEAVY_PARTICLE",
+                            "collisionShape": "B2_BOX",
+                            "density": 0.01,
+                            "restitution": 1.2
+                        }
+                    ]
+
+                },
+                {
+                    "id": "VITALITY_COMPONENT"
+                },
+                {
+                    "id": "POOL_COMPONENT"
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "LIGHT_CIRCLE_DIM",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 32,
+                                "height": 32
+                            }
+                        }
+                    ]
+                }
+
+            ]
+        },
+        {
+            "type": "ROUND_PARTICLE_1",
+            "traitTags": [ "pooled", "fragment" ],
+            "description": "Smoke Particle 1",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_ROUND_PARTICLE_2",
+                    "textureBlendMode": "RenderBlendMode::ADD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 1,
+                        "height": 1
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "gravityScale": -0.1,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_FREE",
+                            "collisionShape": "B2_BOX",
+                            "density": 0.01
+                        }
+                    ]
+
+                },
+                {
+                    "id": "VITALITY_COMPONENT"
+                },
+                {
+                    "id": "POOL_COMPONENT"
+                }
+
+            ]
+        }
+
+    ]
+}

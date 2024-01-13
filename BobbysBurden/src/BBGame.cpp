@@ -50,6 +50,7 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/bobbysObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/drawerObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/shelfObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/particleObjects");
 
 	//GameObjectManager::instance().load("gameObjectDefinitions/testObjects");
 

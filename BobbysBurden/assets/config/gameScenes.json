@@ -49,6 +49,21 @@
 
 
             ],
+            "gameObjectPools": [
+                {
+                    "id": "ROUND_LIT_PARTICLE_POOL",
+                    "gameObjectType": "ROUND_PARTICLE_LIT_1",
+                    "lifetime": 2.25,
+                    "maxItems": 300
+                },
+                {
+                    "id": "ROUND_PARTICLE_POOL",
+                    "gameObjectType": "ROUND_PARTICLE_1",
+                    "lifetime": 2.25,
+                    "maxItems": 300
+                }
+
+            ],
             "physics": {
                 "gravity": {
                     "x": 0.0,
