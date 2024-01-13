@@ -875,16 +875,6 @@
                     "absolutePositioning": false
                 },
                 {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_STATIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::GENERAL_SOLID",
-                            "collisionShape": "B2_BOX"
-                        }
-                    ]
-                },
-                {
                     "id": "BB_STATE_COMPONENT",
                     "beginState": "GameObjectState::ON",
                     "animationStates": [
@@ -906,7 +896,7 @@
                             "id": "LIT",
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_FIRELOGS_1",
-                            "speed": 0.3,
+                            "speed": 0.50,
                             "frames": 6
                         }
                     ]
@@ -924,7 +914,6 @@
                                 "height": 256
                             }
                         }
-
                     ]
                 }
             ]

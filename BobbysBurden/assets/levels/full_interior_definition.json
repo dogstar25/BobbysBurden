@@ -445,8 +445,16 @@
                 "x": 16,
                 "y": 16
             }
+        },
+        {
+            "id": "LOC_0014_0142",
+            "gameObjectType": "PARTICLE_EMITTER_FIREPLACE",
+            "locationAdjust": {
+                "x": 24,
+                "y": 16
+            }
+
         }
-
-
     ]
+
 }

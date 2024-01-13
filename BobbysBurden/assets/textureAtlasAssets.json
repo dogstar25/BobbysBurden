@@ -783,6 +783,28 @@
                 "width": 426,
                 "height": 128
             }
+        },
+        {
+            "id": "TX_ROUND_PARTICLE_1",
+            "description": "Smoke particle",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 2,
+                "y": 2,
+                "width": 16,
+                "height": 16
+            }
+        },
+        {
+            "id": "TX_ROUND_PARTICLE_2",
+            "description": "Smoke particle",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 398,
+                "y": 54,
+                "width": 64,
+                "height": 64
+            }
         }
 
     ],

@@ -67,6 +67,10 @@ BBContactFilter::BBContactFilter()
 	m_contactMasks[INVENTORY_HOLDER].reset();
 	m_contactMasks[INVENTORY_HOLDER].set(INVENTORY_ITEM);
 
+	//Heavy Particle
+	m_contactMasks[HEAVY_PARTICLE].reset();
+	m_contactMasks[HEAVY_PARTICLE].set(PLAYER_COLLISION);
+	m_contactMasks[HEAVY_PARTICLE].set(WALL);
 
 }
 

@@ -10,7 +10,11 @@ ParticleEffect BBParticleEffectsFactory::create(std::string particleType)
 
         particleEffect = ParticleEffects::spark;
     }
-    
+    else if (particleType == "fireFlame") {
+
+        particleEffect = ParticleEffects::fireFlame;
+    }
+
 
     else {
         particleEffect = ParticleEffectsFactory::create(particleType);

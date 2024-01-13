@@ -279,6 +279,7 @@
     <None Include="assets\gameObjectDefinitions\houseObjects.json" />
     <None Include="assets\gameObjectDefinitions\lightObjects.json" />
     <None Include="assets\gameObjectDefinitions\models\componentModels.json" />
+    <None Include="assets\gameObjectDefinitions\particleObjects.json" />
     <None Include="assets\gameObjectDefinitions\playerObjects.json" />
     <None Include="assets\gameObjectDefinitions\shelfObjects.json" />
     <None Include="assets\gameObjectDefinitions\roomStudyObjects.json" />
