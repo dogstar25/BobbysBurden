@@ -47,7 +47,7 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/guiObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/lightObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/householdObjects");
-	GameObjectManager::instance().load("gameObjectDefinitions/bobbysObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/bobbysRoomFurniture");
 	GameObjectManager::instance().load("gameObjectDefinitions/drawerObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/shelfObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/particleObjects");

@@ -101,13 +101,24 @@
                     "sameSlotTreatment": "ChildSlotTreatment::HORIZONTAL",
                     "childObjects": [
                         {
-                            "gameObjectType": "SHELF_SMALL",
+                            "gameObjectType": "SHELF_1X3",
                             "name": "BOBBY_DRESSER_SHELF",
                             "absolutePositionSlot": {
-                                "x": 28,
-                                "y": -32
+                                "x": 0,
+                                "y": -52
                             }
                         }
+                    ]
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_FREE",
+                            "collisionShape": "B2_BOX"
+                        }
+
                     ]
                 }
 
@@ -135,7 +146,7 @@
                     "sameSlotTreatment": "ChildSlotTreatment::HORIZONTAL",
                     "childObjects": [
                         {
-                            "gameObjectType": "DRAWER_SMALL",
+                            "gameObjectType": "DRAWER_1X1",
                             "name": "BOBBY_SIDETABLE_TOP_DRAWER",
                             "size": {
                                 "width": 32,
@@ -147,7 +158,7 @@
                             }
                         },
                         {
-                            "gameObjectType": "DRAWER_MEDIUM",
+                            "gameObjectType": "DRAWER_1X2",
                             "name": "BOBBY_SIDETABLE_BOTTOM_DRAWER",
                             "size": {
                                 "width": 32,

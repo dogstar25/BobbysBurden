@@ -271,7 +271,7 @@
   <ItemGroup>
     <None Include="assets\config\gameConfig.json" />
     <None Include="assets\config\gameScenes.json" />
-    <None Include="assets\gameObjectDefinitions\bobbysObjects.json" />
+    <None Include="assets\gameObjectDefinitions\bobbysRoomFurniture.json" />
     <None Include="assets\gameObjectDefinitions\commonObjects.json" />
     <None Include="assets\gameObjectDefinitions\drawerObjects.json" />
     <None Include="assets\gameObjectDefinitions\guiObjects.json" />
