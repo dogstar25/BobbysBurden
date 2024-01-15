@@ -73,6 +73,7 @@ namespace ContactTag {
 	inline constexpr int INTERACTABLE_OBJECT = 26;
 	inline constexpr int INVENTORY_HOLDER = 27;
 	inline constexpr int INVENTORY_ITEM = 28;
+	inline constexpr int DOOR_KNOB = 29;
 	
 
 }

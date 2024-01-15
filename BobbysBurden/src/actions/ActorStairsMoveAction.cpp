@@ -21,11 +21,11 @@ void ActorStairsMoveAction::perform(GameObject* gameObject, int direction)
 
 		if (direction == -1)
 		{
-			stateComponent->addState(GameObjectState::WALK_DOWN);
+			stateComponent->addState(GameObjectState::WALK_UP);
 		}
 		else if (direction == 1){
 
-			stateComponent->addState(GameObjectState::WALK_UP);
+			stateComponent->addState(GameObjectState::WALK_DOWN);
 		}
 		else {
 

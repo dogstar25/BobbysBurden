@@ -407,401 +407,6 @@
 
         },
         {
-            "type": "DOOR_FRONT",
-            "traitTags": [ "door" ],
-            "description": "Door",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 80,
-                        "height": 224
-                    },
-                    "absolutePositioning": false
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::DOOR_TOUCH",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
-                        }
-                    ]
-                },
-                {
-                    "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "OPEN_CLOSE_DOOR_MENU",
-                    "interfaceActions": [
-                        {
-                            "actionId": "Actions::USE",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_LCLICK",
-                                    "InterfaceEvents::ON_TOUCHING"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_TOUCHING",
-                                    "InterfaceEvents::ON_HOVER"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::OR",
-                                "events": [
-                                    "InterfaceEvents::ON_STOP_TOUCHING",
-                                    "InterfaceEvents::ON_HOVER_OUT"
-                                ]
-                            }
-
-                        }
-
-                    ]
-
-                },
-                {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
-                        {
-                            "actionId": "Actions::USE",
-                            "actionClass": "DoorToggleAction"
-                        },
-                        {
-                            "actionId": "Actions::ENTER",
-                            "actionClass": "DoorEnterAction"
-
-                        },
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowInterfaceAction"
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "HideInterfaceAction"
-                        }
-
-                    ]
-                },
-                {
-                    "id": "BB_STATE_COMPONENT",
-                    "beginState": "GameObjectState::CLOSED",
-                    "transitions": [
-                        {
-                            "from": "GameObjectState::CLOSED",
-                            "to": "GameObjectState::OPENED",
-                            "duration": 0.15,
-                            "animationId": "OPEN"
-                        },
-                        {
-                            "from": "GameObjectState::OPENED",
-                            "to": "GameObjectState::CLOSED",
-                            "duration": 0.15,
-                            "animationId": "CLOSE"
-                        }
-                    ],
-                    "animationStates": [
-                        {
-                            "state": "GameObjectState::CLOSED",
-                            "animationId": "CLOSED"
-                        },
-                        {
-                            "state": "GameObjectState::OPENED",
-                            "animationId": "OPENED"
-                        }
-                    ]
-                },
-                {
-                    "id": "ANIMATION_COMPONENT",
-                    "default": "CLOSED",
-                    "frameSize": {
-                        "width": 96,
-                        "height": 225
-                    },
-                    "animations": [
-                        {
-                            "id": "OPEN",
-                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
-                            "textureId": "TX_DOOR1_FRONT_OPEN",
-                            "speed": 1.01,
-                            "frames": 3
-                        },
-                        {
-                            "id": "OPEN_CONTINUOUSLY",
-                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_DOOR1_FRONT_OPEN",
-                            "speed": 0.01,
-                            "frames": 3
-                        },
-                        {
-                            "id": "CLOSE",
-                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
-                            "textureId": "TX_DOOR1_FRONT_CLOSE",
-                            "speed": 0.01,
-                            "frames": 3
-                        },
-                        {
-                            "id": "CLOSED",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_DOOR1_FRONT_CLOSED",
-                            "frames": 1
-                        },
-                        {
-                            "id": "OPENED",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_DOOR1_FRONT_OPENED",
-                            "frames": 1
-                        }
-                    ]
-                },
-                {
-                    "id": "CHILDREN_COMPONENT",
-                    "childObjects": [
-                        {
-                            "gameObjectType": "DOOR_ENTRY",
-                            "standardSlot": "PositionAlignment::CENTER"
-                        }
-
-                    ]
-                }
-
-            ]
-        },
-        {
-            "type": "DOOR_SIDE",
-            "traitTags": [ "mouse_interface", "barrier", "door" ],
-            "description": "Door",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 69,
-                        "height": 256
-                    },
-                    "absolutePositioning": false
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::DOOR_TOUCH",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
-                        },
-                        {
-                            "contactTag": "ContactTag::DOOR_COLLISION",
-                            "collisionShape": "B2_BOX",
-                            "size": {
-                                "width": 16,
-                                "height": 256
-                            }
-                        }
-                    ]
-                },
-                {
-                    "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "OPEN_CLOSE_DOOR_MENU",
-                    "interfaceActions": [
-                        {
-                            "actionId": "Actions::USE",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_LCLICK",
-                                    "InterfaceEvents::ON_TOUCHING"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_TOUCHING",
-                                    "InterfaceEvents::ON_HOVER"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::OR",
-                                "events": [
-                                    "InterfaceEvents::ON_STOP_TOUCHING",
-                                    "InterfaceEvents::ON_HOVER_OUT"
-                                ]
-                            }
-
-                        }
-
-                    ]
-
-                },
-                {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
-                        {
-                            "actionId": "Actions::USE",
-                            "actionClass": "DoorToggleAction"
-                        },
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowInterfaceAction"
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "HideInterfaceAction"
-                        }
-
-                    ]
-                },
-                {
-                    "id": "BB_STATE_COMPONENT",
-                    "beginState": "GameObjectState::CLOSED",
-                    "animationStates": [
-                        {
-                            "state": "GameObjectState::CLOSED",
-                            "animationId": "CLOSED"
-                        },
-                        {
-                            "state": "GameObjectState::OPENED",
-                            "animationId": "OPENED"
-                        }
-                    ]
-                },
-                {
-                    "id": "ANIMATION_COMPONENT",
-                    "default": "CLOSED",
-                    "frameSize": {
-                        "width": 69,
-                        "height": 256
-                    },
-                    "animations": [
-                        {
-                            "id": "OPEN",
-                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
-                            "textureId": "TX_DOOR1_SIDE_OPENED",
-                            "frames": 1
-                        },
-                        {
-                            "id": "CLOSE",
-                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
-                            "textureId": "TX_DOOR1_SIDE_CLOSED",
-                            "frames": 1
-                        },
-                        {
-                            "id": "CLOSED",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_DOOR1_SIDE_CLOSED",
-                            "frames": 1
-                        },
-                        {
-                            "id": "OPENED",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_DOOR1_SIDE_OPENED",
-                            "frames": 1
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "DOOR_WARP_ENTRY",
-            "traitTags": [ "contact_interface", "abstract" ],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 8,
-                        "height": 8
-                    },
-                    "absolutePositioning": false
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::WARP_ENTRY",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
-                        }
-                    ]
-                }
-
-            ]
-        },
-        {
-            "type": "DOOR_WARP_EXIT",
-            "traitTags": [ "abstract" ],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    },
-                    "absolutePositioning": false
-                }
-            ]
-        },
-        {
-            "type": "DOOR_ENTRY",
-            "traitTags": [ "door_entry", "abstract" ],
-            "description": "Door",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 2,
-                        "height": 2
-                    }
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::DOOR_TOUCH",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
-                        }
-                    ]
-                }
-
-            ]
-        },
-        {
             "type": "HOUSE_BEAM",
             "traitTags": [ "abstract" ],
             "components": [
@@ -864,13 +469,14 @@
             "description": "Firelogs",
             "components": [
                 {
-                    "id": "RENDER_COMPONENT"
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_FIRELOGS_2"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 64,
-                        "height": 96
+                        "width": 69,
+                        "height": 72
                     },
                     "absolutePositioning": false
                 },
@@ -884,23 +490,23 @@
                         }
                     ]
                 },
-                {
-                    "id": "ANIMATION_COMPONENT",
-                    "default": "LIT",
-                    "frameSize": {
-                        "width": 71,
-                        "height": 128
-                    },
-                    "animations": [
-                        {
-                            "id": "LIT",
-                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_FIRELOGS_1",
-                            "speed": 0.50,
-                            "frames": 6
-                        }
-                    ]
-                },
+                //{
+                //    "id": "ANIMATION_COMPONENT",
+                //    "default": "LIT",
+                //    "frameSize": {
+                //        "width": 71,
+                //        "height": 128
+                //    },
+                //    "animations": [
+                //        {
+                //            "id": "LIT",
+                //            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                //            "textureId": "TX_FIRELOGS_1",
+                //            "speed": 0.50,
+                //            "frames": 6
+                //        }
+                //    ]
+                //},
                 {
                     "id": "CHILDREN_COMPONENT",
                     "childPadding": 0,
@@ -912,6 +518,13 @@
                             "size": {
                                 "width": 256,
                                 "height": 256
+                            }
+                        },
+                        {
+                            "gameObjectType": "PARTICLE_EMITTER_FIREPLACE",
+                            "absolutePositionSlot": {
+                                "x": -5,
+                                "y": -12
                             }
                         }
                     ]
