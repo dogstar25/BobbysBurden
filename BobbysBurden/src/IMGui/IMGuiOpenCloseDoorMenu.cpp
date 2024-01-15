@@ -21,9 +21,9 @@ glm::vec2 IMGuiOpenCloseDoorMenu::render()
 	glm::vec2 windowSize{};
 	bool showWindow = true;
 
-	const auto& interfaceGameObject = parent()->parent();
+	const auto& doorKnobGameObject = parent()->parent();
 	const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
-	const auto& actionComponent = interfaceGameObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
+	//const auto& doorKnobActionComponent = doorKnobGameObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
 	const auto& player = parent()->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
 
 
@@ -42,23 +42,23 @@ glm::vec2 IMGuiOpenCloseDoorMenu::render()
 	ImGui::Begin(m_gameObjectType.c_str(), &showWindow, m_flags);
 	{
 
-		ImGui::SetWindowPos(ImVec2{ renderComponent->getRenderDestRect().x, renderComponent->getRenderDestRect().y });
+		//ImGui::SetWindowPos(ImVec2{ renderComponent->getRenderDestRect().x, renderComponent->getRenderDestRect().y });
 
 		//Build the description
 		ImGui::PushFont(m_smallGothicFont);
-		ImGui::textCentered(interfaceGameObject.value()->description().c_str());
+		ImGui::textCentered(doorKnobGameObject.value()->description().c_str());
 		ImGui::PopFont();
 		ImGui::Separator();
 		ImGui::Spacing();
 		ImGui::Spacing();
 
 		//Default interaction action
-		_buildInteractionRow(interfaceGameObject.value());
+		_buildInteractionRow(doorKnobGameObject.value());
 
 		//If we have puzzle info the show then show it
-		if (interfaceGameObject.value()->hasComponent(ComponentTypes::PUZZLE_COMPONENT)) {
+		if (doorKnobGameObject.value()->hasComponent(ComponentTypes::PUZZLE_COMPONENT)) {
 
-			_buildPuzzleRow(interfaceGameObject.value());
+			_buildPuzzleRow(doorKnobGameObject.value());
 
 		}
 
@@ -79,48 +79,47 @@ glm::vec2 IMGuiOpenCloseDoorMenu::render()
 	return windowSize;
 }
 
-void IMGuiOpenCloseDoorMenu::_buildInteractionRow(GameObject* interfaceGameObject)
+void IMGuiOpenCloseDoorMenu::_buildInteractionRow(GameObject* doorKnobGameObject)
 {
 	static int buttonSeq{};
 
-	const auto& puzzleComponent = interfaceGameObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
-	const auto& interfaceComponent = interfaceGameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
+	//Get reference to door that doorKnob controls
+	const auto& doorGameObject = doorKnobGameObject->parent();
+	
+	//const auto& puzzleComponent = doorKnobGameObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+	const auto& doorKnobInterfaceComponent = doorKnobGameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
 
 	ImGui::PushFont(m_normalFont);
 
-
 	//If the USE isAvailable, then show the green mouseclick image and the label that goes with the event
-	if (interfaceComponent->isEventAvailable(Actions::USE)) {
+	if (doorKnobInterfaceComponent->isEventAvailable(Actions::USE)) {
 
 		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
 		ImGui::SameLine();
 
 		//Show Open or Close based on the current state
-		if (interfaceGameObject->hasComponent(ComponentTypes::ANIMATION_COMPONENT)) {
-			const auto& doorStateComponent = interfaceGameObject->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
+		const auto& doorStateComponent = doorGameObject.value()->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 
-			if (doorStateComponent->testState(GameObjectState::CLOSED)) {
+		if (doorStateComponent->testState(GameObjectState::CLOSED)) {
 
-				ImGui::TextWrapped("Open");
+			ImGui::TextWrapped("Open");
 				
-				//Set mouse Cursor
-				if (parent()->parent().value()->hasTrait(TraitTag::door)) {
+			//Set mouse Cursor
+			if (parent()->parent().value()->hasTrait(TraitTag::door)) {
 
-					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_OPEN");
-					SceneManager::instance().setMouseCursor(cursor);
-				}
-
+				auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_OPEN");
+				SceneManager::instance().setMouseCursor(cursor);
 			}
-			else {
-				ImGui::TextWrapped("Close");
 
-				//Set mouse Cursor
-				if (parent()->parent().value()->hasTrait(TraitTag::door)) {
+		}
+		else {
+			ImGui::TextWrapped("Close");
 
-					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_CLOSE");
-					SceneManager::instance().setMouseCursor(cursor);
-				}
+			//Set mouse Cursor
+			if (parent()->parent().value()->hasTrait(TraitTag::door)) {
 
+				auto cursor = TextureManager::instance().getMouseCursor("CURSOR_DOOR_CLOSE");
+				SceneManager::instance().setMouseCursor(cursor);
 			}
 
 		}

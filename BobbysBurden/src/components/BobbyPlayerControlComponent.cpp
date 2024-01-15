@@ -95,9 +95,9 @@ void BobbyPlayerControlComponent::_handleMovement()
 			const auto& moveAction = actionComponent->getAction(Actions::STAIRS_MOVE);
 			moveAction->perform(parent(), direction);
 		}
-		else if (doorEntryContact.has_value() && direction == -1 ) {
-			
-			const auto& doorEntryContactObject = doorEntryContact.value().lock().get(); 
+		else if (doorEntryContact.has_value() && direction == -1) {
+
+			const auto& doorEntryContactObject = doorEntryContact.value().lock().get();
 			const auto& doorObject = doorEntryContactObject->parent();
 			const auto& doorStateComponent = doorObject.value()->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 			const auto& doorActionComponent = doorObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
@@ -106,13 +106,12 @@ void BobbyPlayerControlComponent::_handleMovement()
 			const auto& enterAction = doorActionComponent->getAction(Actions::ENTER);
 
 			if (doorStateComponent->testState(GameObjectState::OPENED)) {
-				
+
 				enterAction->perform(parent(), doorObject.value());
 			}
 
 		}
 
-		//Always call the move action because it will also set to idle state
 		const auto& moveAction = actionComponent->getAction(Actions::MOVE);
 		moveAction->perform(parent(), direction, strafe);
 

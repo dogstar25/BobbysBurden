@@ -13,14 +13,14 @@ namespace ParticleEffects {
 		.lifetimeMin = 0.5F,
 		.lifetimeMax = 3.5F,
 		.alphaFade = true,
-		.angleMin = 80,
-		.angleMax = 99,
+		.angleMin = 70,
+		.angleMax = 125,
 		.particleSizeMin = 4.F,
 		.particleSizeMax = 8.F,
-		.colorRangeBegin = {255,0,0,255},
-		.colorRangeEnd = {255,0,0,255},
+		.colorRangeBegin = {255,255,255,255},
+		.colorRangeEnd = {255,255,255,255},
 		.particleSpawnCountMin = 0,
-		.particleSpawnCountMax = 2
+		.particleSpawnCountMax = 5
 	};
 
 	static const ParticleEffect fireFlame = {

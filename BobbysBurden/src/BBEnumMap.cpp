@@ -20,6 +20,7 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("ContactTag::INTERACTABLE_OBJECT", ContactTag::INTERACTABLE_OBJECT);
 	addEnumItem("ContactTag::INVENTORY_HOLDER", ContactTag::INVENTORY_HOLDER);
 	addEnumItem("ContactTag::INVENTORY_ITEM", ContactTag::INVENTORY_ITEM);
+	addEnumItem("ContactTag::DOOR_KNOB", ContactTag::DOOR_KNOB);
 
 	
 	//Custom Component Types
