@@ -462,7 +462,11 @@
             "id": "LOC_0031_0139",
             "gameObjectType": "LIGHT_SWITCH",
             "name": "bobbyRoomLightSwitch",
-            "layer": "GameLayer::BACKGROUND_4"
+            "layer": "GameLayer::BACKGROUND_4",
+            "locationAdjust": {
+                "y": -16.0
+            }
+
         }
     ]
 

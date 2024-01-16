@@ -82,6 +82,8 @@ bool BBGame::init(
 	const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	dresserShelfInventory->addItem("BOTTLE1");
 	dresserShelfInventory->addItem("BOTTLE1");
+	dresserShelfInventory->refreshInventoryDisplay();
+
 	
 	//Initialize the clock object
 	Clock::instance().init();
