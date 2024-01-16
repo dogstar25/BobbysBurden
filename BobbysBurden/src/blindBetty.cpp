@@ -17,12 +17,12 @@
 std::unique_ptr<Game> game;
 
 //int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, char*, int nShowCmd)
-int main(int argc, char* args[])
+int main(int argc, char* argv[])
 {
 	//create game 
 	game = std::make_unique<BBGame>();
 
-	std::cout << "Blind Betty Begins\n";
+	std::cout << "Bobby's Ghost Adventure Begins\n";
 
 	//init game
 	game->init(

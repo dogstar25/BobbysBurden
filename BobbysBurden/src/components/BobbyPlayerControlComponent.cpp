@@ -39,10 +39,10 @@ void BobbyPlayerControlComponent::_handleMovement()
 {
 	int mouseX = 0, mouseY = 0;
 	int direction = 0, strafe = 0;
-	bool onStairs{};
 
 	//convenience reference to outside component(s)
 	const auto& actionComponent = parent()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
+	const auto& stateComponent = parent()->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 
 	//Handle Keyboard related movement
 	const uint8_t* currentKeyStates = SDL_GetKeyboardState(NULL);
@@ -50,16 +50,13 @@ void BobbyPlayerControlComponent::_handleMovement()
 	//Touching stairs
 	if (parent()->isTouchingByTrait(TraitTag::vertical_movement_zone)) {
 
-		onStairs = true;
+		stateComponent->addState(GameObjectState::ON_VERTICAL_MOVEMENT);
 		_applyStairWalkingSettings();
 	}
 	else {
-		onStairs = false;
+		stateComponent->removeState(GameObjectState::ON_VERTICAL_MOVEMENT);
 		_removeStairWalkingSettings();
 	}
-
-	//Touching door entrance/portal
-	auto doorEntryContact = parent()->getFirstTouchingByTrait(TraitTag::door_entry);
 
 	if (currentKeyStates[SDL_SCANCODE_W])
 	{
@@ -90,33 +87,10 @@ void BobbyPlayerControlComponent::_handleMovement()
 	}
 	else {
 
-
-		if (onStairs) {
-			const auto& moveAction = actionComponent->getAction(Actions::STAIRS_MOVE);
-			moveAction->perform(parent(), direction);
-		}
-		else if (doorEntryContact.has_value() && direction == -1) {
-
-			const auto& doorEntryContactObject = doorEntryContact.value().lock().get();
-			const auto& doorObject = doorEntryContactObject->parent();
-			const auto& doorStateComponent = doorObject.value()->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
-			const auto& doorActionComponent = doorObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
-
-			//auto doorState = doorAnimationComponent->currentAnimationState();
-			const auto& enterAction = doorActionComponent->getAction(Actions::ENTER);
-
-			if (doorStateComponent->testState(GameObjectState::OPENED)) {
-
-				enterAction->perform(parent(), doorObject.value());
-			}
-
-		}
-
 		const auto& moveAction = actionComponent->getAction(Actions::MOVE);
 		moveAction->perform(parent(), direction, strafe);
 
 
-		//m_state.reset(PlayerState::sprinting);
 	}
 
 

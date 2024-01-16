@@ -29,8 +29,10 @@ void DoorToggleAction::perform(GameObject* doorKnobObject)
 
 		stateComponent->addState(GameObjectState::CLOSED);
 
-		doorObject->enableCollision();
-		doorObject->addTrait(TraitTag::barrier);
+		if (doorObject->hasTrait(TraitTag::door_side)) {
+			doorObject->enableCollision();
+			doorObject->addTrait(TraitTag::barrier);
+		}
 		if (partnerDoor.has_value()) {
 
 			partnerDoor.value()->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT)->addState(GameObjectState::CLOSED);;
@@ -40,8 +42,11 @@ void DoorToggleAction::perform(GameObject* doorKnobObject)
 	}
 	else {
 		stateComponent->addState(GameObjectState::OPENED);
-		doorObject->disableCollision();
-		doorObject->removeTrait(TraitTag::barrier);
+
+		if (doorObject->hasTrait(TraitTag::door_side)) {
+			doorObject->disableCollision();
+			doorObject->removeTrait(TraitTag::barrier);
+		}
 
 		//If there is a partner door, set state to opened and disabled its collision
 		if (partnerDoor.has_value()) {

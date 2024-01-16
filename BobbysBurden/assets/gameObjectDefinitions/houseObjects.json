@@ -150,7 +150,7 @@
         },
         {
             "type": "BRICK_WALL_FREE_1",
-            "traitTags": [ "draggable" ],
+            "traitTags": [ "barrier" ],
             "description": "Brick Wall 1",
             "components": [
                 {
@@ -163,6 +163,17 @@
                         "width": 32,
                         "height": 32
                     }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "touchingObjectsCapturedRequired": false,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_FREE",
+                            "collisionShape": "B2_BOX"
+                        }
+                    ]
                 }
             ]
 
@@ -395,7 +406,7 @@
                             "collisionShape": "B2_BOX",
                             "isSensor": true,
                             "size": {
-                                "width": 96,
+                                "width": 24,
                                 "height": 400
                             }
 
@@ -408,7 +419,7 @@
         },
         {
             "type": "HOUSE_BEAM",
-            "traitTags": [ "abstract" ],
+            "traitTags": [ "abstract"],
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
