@@ -404,13 +404,15 @@
             }
         },
 
-        //HouseHold Stuff
+        //Study Stuff
 
         {
             "id": "LOC_0045_0149",
             "gameObjectType": "WALLLAMP_1",
             "layer": "GameLayer::FOREGROUND_1"
         },
+
+        //Bobbys Room Stuff
         {
             "id": "LOC_0021_0137",
             "gameObjectType": "BOBBYS_BED",
@@ -445,16 +447,27 @@
                 "x": 16,
                 "y": 16
             }
-        }
-        //{
-        //    "id": "LOC_0014_0142",
-        //    "gameObjectType": "PARTICLE_EMITTER_FIREPLACE",
-        //    "locationAdjust": {
-        //        "x": 24,
-        //        "y": 16
-        //    }
+        },
+        {
+            "id": "LOC_0024_0134",
+            "gameObjectType": "CEILING_LIGHT_1",
+            "name": "bobbyRoomLightSwitch_TARGET",
+            "layer": "GameLayer::BACKGROUND_4",
+            "locationAdjust": {
+                "y": -0.8
+            }
 
-        //}
+        },
+        {
+            "id": "LOC_0031_0139",
+            "gameObjectType": "LIGHT_SWITCH",
+            "name": "bobbyRoomLightSwitch",
+            "layer": "GameLayer::BACKGROUND_4",
+            "locationAdjust": {
+                "y": -16.0
+            }
+
+        }
     ]
 
 }

@@ -261,7 +261,7 @@
                         "buttonActive": "Colors::YELLOW"
                     },
                     /////////////////NEW////implement this////////////////////////////////////////
-                    "showParentImage": { 
+                    "showParentImage": {
                         "offset": {
                             "x": 0,
                             "y": 0
@@ -453,6 +453,44 @@
 
                 }
             ]
+        },
+        {
+            "type": "ON_OFF_MENU",
+            "traitTags": [ "abstract" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": true,
+                    "size": {
+                        "width": 268,
+                        "height": 236
+                    }
+
+                },
+                {
+                    "id": "IMGUI_COMPONENT",
+                    "imguiType": "IMGuiOnOffToggleMenu",
+                    "autoSize": false,
+                    "padding": {
+                        "x": 14,
+                        "y": 14
+                    },
+                    "color": {
+                        "background": "Colors::CHARCOAL",
+                        "backgroundAlpha": 0,
+                        "text": "Colors::WHITE",
+                        "button": "Colors::BLUE",
+                        "buttonHover": "Colors::MIRKWOOD",
+                        "buttonActive": "Colors::YELLOW"
+                    }
+
+                }
+            ]
+
+
         }
     ]
 }

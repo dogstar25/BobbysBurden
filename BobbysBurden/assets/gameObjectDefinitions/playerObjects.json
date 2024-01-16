@@ -76,10 +76,6 @@
                             "actionClass": "ActorMove"
                         },
                         {
-                            "actionId": "Actions::STAIRS_MOVE",
-                            "actionClass": "ActorStairsMoveAction"
-                        },
-                        {
                             "actionId": "Actions::OPEN",
                             "actionClass": "ToggleBobbyInventory"
                         }
@@ -194,14 +190,14 @@
                         {
                             "id": "WALK_UP",
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_BOBBY_WALK_DOWN_STAIRS",
+                            "textureId": "TX_BOBBY_WALK_UP_STAIRS",
                             "speed": 0.1,
                             "frames": 4
                         },
                         {
                             "id": "WALK_UP_IDLE",
                             "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_BOBBY_WALK_DOWN_IDLE_STAIRS",
+                            "textureId": "TX_BOBBY_WALK_UP_IDLE_STAIRS",
                             "frames": 1
                         }
                     ]

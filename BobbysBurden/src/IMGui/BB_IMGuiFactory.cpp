@@ -6,6 +6,7 @@
 #include "IMGuiOpenCloseDoorMenu.h"
 #include "IMGuiItemContact.h"
 #include "IMGuiOpenCloseReceptacleMenu.h"
+#include "IMGuiOnOffToggleMenu.h"
 
 
 BB_IMGuiFactory::BB_IMGuiFactory()
@@ -39,6 +40,10 @@ std::shared_ptr<IMGuiItem> BB_IMGuiFactory::create(std::string iMGuiItemType, st
 	}
 	else if (iMGuiItemType == "IMGuiOpenCloseReceptacleMenu") {
 		iMGuiItem = std::make_shared<IMGuiOpenCloseReceptacleMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
+	}
+	else if (iMGuiItemType == "IMGuiOnOffToggleMenu") {
+
+		iMGuiItem = std::make_shared<IMGuiOnOffToggleMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
 	}
 
 	
