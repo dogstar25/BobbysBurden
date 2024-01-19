@@ -349,6 +349,45 @@
 
             ]
 
+        },
+        {
+            "type": "UNLOCK_ICON",
+            "traitTags": [],
+            "description": "Navigation Object",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_UNLOCK_ICON",
+                    "color": "Colors::EMERALD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 64,
+                        "height": 64
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "gravityScale": -0.5,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_FREE",
+                            "density": 1,
+                            "collisionShape": "B2_BOX"
+                        }
+                    ]
+
+                },
+                {
+                    "id": "VITALITY_COMPONENT",
+                    "lifetime": 1,
+                    "lifetimeAlphaFade":  true
+                }
+            ]
         }
     ]
 }
+
+

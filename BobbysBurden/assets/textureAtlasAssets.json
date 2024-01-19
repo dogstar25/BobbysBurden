@@ -883,6 +883,17 @@
                 "width": 32,
                 "height": 32
             }
+        },
+        {
+            "id": "TX_UNLOCK_ICON",
+            "description": "Unlock icon for solving puzzle animation",
+            "atlas": "TEXTURE_IMGUI_ATLAS",
+            "quadPosition": {
+                "x": 1,
+                "y": 130,
+                "width": 64,
+                "height": 64
+            }
         }
 
     ],

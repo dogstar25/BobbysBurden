@@ -3,7 +3,7 @@
     "gameObjects": [
         {
             "type": "DRAWER_1X1",
-            "traitTags": [ "inventory", "receptacle" ],
+            "traitTags": [ "inventory", "inventory_closed", "receptacle" ],
             "description": "Top Drawer",
             "components": [
                 {
@@ -141,7 +141,7 @@
         },
         {
             "type": "DRAWER_1X2",
-            "traitTags": [ "inventory", "receptacle" ],
+            "traitTags": [ "inventory", "inventory_closed", "receptacle" ],
             "description": "Bottom Drawer",
             "components": [
                 {
@@ -279,7 +279,7 @@
         },
         {
             "type": "DRAWER_1X1_INVENTORY_DISPLAY",
-            "traitTags": [ "gui", "inventory" ],
+            "traitTags": [ "gui", "inventory", "inventory_display" ],
             "description": "Drawer",
             "components": [
                 {
@@ -388,7 +388,7 @@
         },
         {
             "type": "DRAWER_1X2_INVENTORY_DISPLAY",
-            "traitTags": [ "gui", "inventory" ],
+            "traitTags": [ "gui", "inventory", "inventory_display" ],
             "description": "Drawer",
             "components": [
                 {

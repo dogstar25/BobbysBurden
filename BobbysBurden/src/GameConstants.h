@@ -95,7 +95,7 @@ namespace BrainState {
 namespace TraitTag {
 
 	//Custom traits
-	inline constexpr int hiding_spot = 32;
+	inline constexpr int hiding_spot = 75;
 	
 }
 
