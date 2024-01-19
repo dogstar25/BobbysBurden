@@ -162,7 +162,7 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 
 			//Only show the Drop icon if its the players inventory OR we are touching the objects with the inventory
 
-			if (inventoryTouched.value().lock()->hasTrait(TraitTag::player_inventory) ||
+			if (inventoryTouched.value().lock()->hasTrait(TraitTag::inventory_player) ||
 				inventoryTouched.value().lock()->isTouchingByTrait(TraitTag::player)) {
 
 				std::string receptacleDescription = inventoryTouched.value().lock()->description();

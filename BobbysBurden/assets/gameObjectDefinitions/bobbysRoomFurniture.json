@@ -264,7 +264,7 @@
         },
         {
             "type": "BOBBYS_BEDKNOB",
-            "traitTags": [ "abstract","puzzle" ],
+            "traitTags": ["abstract", "puzzle" ],
             "description": "Bed Knob",
             "components": [
                 {
@@ -344,19 +344,12 @@
                 },
                 {
                     "id": "PUZZLE_COMPONENT",
-                    "puzzles": [
-                        {
-                            "name": "OIL_BEDKNOB",
-                            "clue": "The bedknob looks worn, like its been touched alot.",
-                            "puzzleClass": "OilBedKnobPuzzle",
-                            "pieces": [
-                                {
-                                    "id": "oilCan"
-                                }
-                            ]
-                        }
+                    "name": "OIL_BEDKNOB",
+                    "clue": "The bedknob looks worn, like its been touched alot.",
+                    "puzzleType": "OilBedKnobPuzzle",
+                    "pieces": 1
 
-                    ]
+
                 },
                 {
                     "id": "PHYSICS_COMPONENT",

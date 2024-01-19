@@ -17,6 +17,7 @@ namespace ImGui
 	void displayPuzzlePieceImage(bool locked, ImVec4 color);
 	void displayDropItemImage(ImVec4 color);
 	void displayDropItemIntoContainerImage(ImVec4 color);
+	void _buildPuzzleRow(GameObject* puzzleObjectM);
 
 
 }

@@ -6,7 +6,7 @@ class BBPuzzleFactory : public PuzzleFactory
 public:
 	BBPuzzleFactory() = default;
 
-	virtual std::shared_ptr<Puzzle> create(std::string puzzleType) override;
+	virtual std::shared_ptr<Puzzle> create(Json::Value pauzzleJSON) override;
 
 private:
 

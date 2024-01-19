@@ -1,4 +1,5 @@
 #include "BB_IMGuiUtil.h"
+#include "../GameConstants.h"
 #include "../BBContextManager.h"
 
 extern std::unique_ptr<Game> game;
@@ -165,6 +166,36 @@ namespace ImGui
 			//SDL2 Texture void* is the SDL_Texture*
 			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
+		}
+
+	}
+
+	void _buildPuzzleRow(GameObject* puzzleObject)
+	{
+		static int buttonSeq{};
+
+		const auto& puzzleComponent = puzzleObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+
+		//Clue text
+		ImGui::PushStyleColor(ImGuiCol_Text, util::SDLColorToImVec4(Colors::CANDLE_LIGHT));
+		ImGui::TextWrapped(puzzleComponent->puzzle->clue().c_str());
+		ImGui::PopStyleColor();
+		ImGui::NewLine();
+
+		//Loop through all puzzles and display the status of the pieces
+		for (auto piece : puzzleComponent->puzzle->pieces()) {
+
+			ImGui::SameLine();
+
+			if (piece == false) {
+
+				ImGui::displayPuzzlePieceImage(true, util::SDLColorToImVec4(Colors::GREY));
+
+			}
+			else {
+				ImGui::displayPuzzlePieceImage(false, util::SDLColorToImVec4(Colors::EMERALD));
+			}
+
 		}
 
 	}

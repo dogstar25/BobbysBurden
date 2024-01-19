@@ -57,7 +57,7 @@ glm::vec2 IMGuiOnOffToggleMenu::render()
 		//If we have puzzle info the show then show it
 		if (onOffSwitchObject.value()->hasComponent(ComponentTypes::PUZZLE_COMPONENT)) {
 
-			_buildPuzzleRow(onOffSwitchObject.value());
+			ImGui::_buildPuzzleRow(onOffSwitchObject.value());
 
 		}
 
@@ -118,41 +118,3 @@ void IMGuiOnOffToggleMenu::_buildInteractionRow(GameObject* onOffSwitchObject)
 
 }
 
-void IMGuiOnOffToggleMenu::_buildPuzzleRow(GameObject* onOffSwitchObject)
-{
-	static int buttonSeq{};
-
-	const auto& puzzleComponent = onOffSwitchObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
-
-	//Use small Font
-	ImGui::PushFont(m_smallFont);
-
-	//Loop through all puzzles and display the status of the pieces
-	for (const auto& puzzlePair : puzzleComponent->puzzles()) {
-
-		//Clue text
-		ImGui::PushStyleColor(ImGuiCol_Text, util::SDLColorToImVec4(Colors::CANDLE_LIGHT));
-		ImGui::TextWrapped(puzzlePair.second->clue().c_str());
-		ImGui::PopStyleColor();
-		ImGui::NewLine();
-
-		//Loop through all pieces and display the proper status image
-		for (const auto& piecePair : puzzlePair.second->pieces()) {
-
-			ImGui::SameLine();
-
-			if (piecePair.second.isSolved == false) {
-				ImGui::displayPuzzlePieceImage(true, util::SDLColorToImVec4(Colors::GREY));
-
-			}
-			else {
-				ImGui::displayPuzzlePieceImage(false, util::SDLColorToImVec4(Colors::EMERALD));
-			}
-
-		}
-
-	}
-
-	ImGui::PopFont();
-
-}

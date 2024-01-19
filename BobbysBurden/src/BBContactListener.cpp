@@ -32,12 +32,6 @@ void BBContactListener::_actor_warpEntry(GameObject* interactingObject, GameObje
 void BBContactListener::_puzzle_puzzlePiece(GameObject* puzzleObject, GameObject* puzzlePieceObject, b2Vec2 contactPoint)
 {
 
-	const auto& puzzleComponent = puzzleObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
-
-	auto puzzle = puzzleComponent->isApplicable(puzzlePieceObject);
-	if (puzzle) {
-		puzzle.value()->applyPuzzlePiece(puzzlePieceObject->name());
-	}
 
 }
 

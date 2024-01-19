@@ -1,32 +1,47 @@
 #include "OilBedKnobPuzzle.h"
 
-bool OilBedKnobPuzzle::hasBeenSolved()
+
+OilBedKnobPuzzle::OilBedKnobPuzzle(std::string name, std::string clue, int pieceCount)
+	:Puzzle(name, clue, pieceCount)
 {
-	return false;
+
+
 }
 
 bool OilBedKnobPuzzle::isPuzzlePieceApplicable(GameObject* puzzlePieceObject)
 {
 
-	if (m_pieces.find(puzzlePieceObject->name()) != m_pieces.end()) {
-		return true;
+	bool isApplicable = false;
+
+	//Piece 1
+	if (puzzlePieceObject->type() == "OIL_CAN") {
+
+		isApplicable = true;
 	}
 
+	return isApplicable;
+
 }
 
-void OilBedKnobPuzzle::applyPuzzlePiece(std::string puzzlePieceId)
+void OilBedKnobPuzzle::applyPuzzlePiece(GameObject* puzzleObject, GameObject* puzzlePieceObject)
 {
-	Puzzle::applyPuzzlePiece(puzzlePieceId);
 
+	//Piece 1
+	if (puzzlePieceObject->type() == "OIL_CAN") {
 
-	auto iter = m_pieces.find(puzzlePieceId);
-	iter->second.isSolved = true;
+		m_pieces[0] = true;
 
-	//execute the keys "USE" action
-	//which will play key unlock sound and animate the key
+	}
 
-	//Do other stuff
+	//Create an unlock image to indicated the puzzle piece application worked
+	auto position = puzzleObject->getCenterPosition();
+	auto mapPosition = util::pixelToTileLocation(position.x, position.y);
 
+	const auto& unlockObject = puzzlePieceObject->parentScene()->
+		addGameObject("UNLOCK_ICON", GameLayer::FOREGROUND_4, (float)mapPosition.x, (float)mapPosition.y, (float)0);
 
+	//Make the bedknob flash green
+	const auto& animationComponent = puzzleObject->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
+	animationComponent->setFlash(Colors::GREEN, 1, 3);
 
-}
+ }

@@ -58,7 +58,7 @@ glm::vec2 IMGuiOpenCloseReceptacleMenu::render()
 		//If we have puzzle info the show then show it
 		if (interfaceGameObject.value()->hasComponent(ComponentTypes::PUZZLE_COMPONENT)) {
 
-			_buildPuzzleRow(interfaceGameObject.value());
+			ImGui::_buildPuzzleRow(interfaceGameObject.value());
 
 		}
 
@@ -110,12 +110,8 @@ void IMGuiOpenCloseReceptacleMenu::_buildInteractionRow(GameObject* interfaceGam
 			else {
 				ImGui::TextWrapped("Close");
 
-				//Set mouse Cursor
-				//if (parent()->parent().value()->hasTrait(TraitTag::receptacle)) {
-
-					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY");
-					SceneManager::instance().setMouseCursor(cursor);
-				//}
+				auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY");
+				SceneManager::instance().setMouseCursor(cursor);
 
 			}
 
@@ -148,41 +144,3 @@ void IMGuiOpenCloseReceptacleMenu::_buildInteractionRow(GameObject* interfaceGam
 
 }
 
-void IMGuiOpenCloseReceptacleMenu::_buildPuzzleRow(GameObject* interfaceGameObject)
-{
-	static int buttonSeq{};
-
-	const auto& puzzleComponent = interfaceGameObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
-
-	//Use small Font
-	ImGui::PushFont(m_smallFont);
-
-	//Loop through all puzzles and display the status of the pieces
-	for (const auto& puzzlePair : puzzleComponent->puzzles()) {
-
-		//Clue text
-		ImGui::PushStyleColor(ImGuiCol_Text, util::SDLColorToImVec4(Colors::CANDLE_LIGHT));
-		ImGui::TextWrapped(puzzlePair.second->clue().c_str());
-		ImGui::PopStyleColor();
-		ImGui::NewLine();
-
-		//Loop through all pieces and display the proper status image
-		for (const auto& piecePair : puzzlePair.second->pieces()) {
-
-			ImGui::SameLine();
-
-			if (piecePair.second.isSolved == false) {
-				ImGui::displayPuzzlePieceImage(true, util::SDLColorToImVec4(Colors::GREY));
-
-			}
-			else {
-				ImGui::displayPuzzlePieceImage(false, util::SDLColorToImVec4(Colors::EMERALD));
-			}
-
-		}
-
-	}
-
-	ImGui::PopFont();
-
-}
