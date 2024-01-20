@@ -33,9 +33,6 @@ std::shared_ptr<Component> BBComponentFactory::create(
 		component = std::make_shared<BBStateComponent>(componentJSON);
 	}
 
-
-	
-	
 	else {
 		component = ComponentFactory::create(
 			definitionJSON,

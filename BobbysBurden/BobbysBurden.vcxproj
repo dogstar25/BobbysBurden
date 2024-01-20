@@ -279,7 +279,9 @@
     <None Include="assets\gameObjectDefinitions\householdObjects.json" />
     <None Include="assets\gameObjectDefinitions\houseObjects.json" />
     <None Include="assets\gameObjectDefinitions\lightObjects.json" />
-    <None Include="assets\gameObjectDefinitions\models\componentModels.json" />
+    <None Include="assets\gameObjectDefinitions\models\ACTION_COMPONENT_models.json" />
+    <None Include="assets\gameObjectDefinitions\models\BB_INTERFACE_COMPONENT_models.json" />
+    <None Include="assets\gameObjectDefinitions\models\TRANSFORM_COMPONENT_models.json" />
     <None Include="assets\gameObjectDefinitions\particleObjects.json" />
     <None Include="assets\gameObjectDefinitions\playerObjects.json" />
     <None Include="assets\gameObjectDefinitions\shelfObjects.json" />
@@ -314,4 +316,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

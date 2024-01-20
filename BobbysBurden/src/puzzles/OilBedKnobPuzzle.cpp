@@ -40,8 +40,5 @@ void OilBedKnobPuzzle::applyPuzzlePiece(GameObject* puzzleObject, GameObject* pu
 	const auto& unlockObject = puzzlePieceObject->parentScene()->
 		addGameObject("UNLOCK_ICON", GameLayer::FOREGROUND_4, (float)mapPosition.x, (float)mapPosition.y, (float)0);
 
-	//Make the bedknob flash green
-	const auto& animationComponent = puzzleObject->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
-	animationComponent->setFlash(Colors::GREEN, 1, 3);
 
  }

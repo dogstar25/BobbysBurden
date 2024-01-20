@@ -10,13 +10,7 @@
                     "textureId": "TX_HOLDING_CANDLE"
                 },
                 {
-                    "id": "TRANSFORM_COMPONENT",
-                    //"useModel": "[item_TRANSFORM_COMPONENT]"
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    },
-                    "absolutePositioning": false
+                    "id": "[item32_TRANSFORM_COMPONENT]"
 
                 },
                 {

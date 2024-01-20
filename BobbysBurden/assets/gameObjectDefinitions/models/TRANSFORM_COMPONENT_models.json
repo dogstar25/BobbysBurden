@@ -1,0 +1,35 @@
+{
+
+    "[item32_TRANSFORM_COMPONENT]": {
+
+        "id": "TRANSFORM_COMPONENT",
+        "absolutePositioning": false,
+        "size": {
+            "width": 32,
+            "height": 32
+        }
+
+    },
+    "[item64_TRANSFORM_COMPONENT]": {
+
+        "id": "TRANSFORM_COMPONENT",
+        "absolutePositioning": false,
+        "size": {
+            "width": 64,
+            "height": 64
+        }
+
+    },
+    "[interfaceMenu_TRANSFORM_COMPONENT]": {
+
+        "id": "TRANSFORM_COMPONENT",
+        "absolutePositioning": true,
+        "size": {
+            "width": 268,
+            "height": 236
+        }
+
+    }
+
+
+}

@@ -49,101 +49,17 @@
                     "textureId": "TX_OILCAN"
                 },
                 {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 64,
-                        "height": 64
-                    }
+                    "id": "[item64_TRANSFORM_COMPONENT]"
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
                 },
                 {
                     "id": "STATE_COMPONENT",
                     "beginState": "GameObjectState::ITEM_OBTAINABLE"
-                },
-                {
-                    "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "ITEM_CONTACT_MENU",
-                    "interfaceActions": [
-                        {
-                            "actionId": "Actions::TAKE",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_RCLICK"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_HOVER"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::OR",
-                                "events": [
-                                    "InterfaceEvents::ON_HOVER_OUT",
-                                    "InterfaceEvents::ON_STOP_TOUCHING"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::APPLY_HIGHLIGHT",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_DRAG"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::DROP",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_DROP"
-                                ]
-                            }
-
-                        }
-
-
-                    ]
-
-                },
-                {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
-                        {
-                            "actionId": "Actions::TAKE",
-                            "actionClass": "TakeItemAction"
-                        },
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowInterfaceAction"
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "HideInterfaceAction"
-                        },
-                        {
-                            "actionId": "Actions::APPLY_HIGHLIGHT",
-                            "actionClass": "ItemDragTreatmentAction"
-                        },
-                        {
-                            "actionId": "Actions::DROP",
-                            "actionClass": "ItemDropAction"
-                        }
-
-                    ]
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -178,97 +94,13 @@
                     "textureId": "TX_BOTTLE_1"
                 },
                 {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 64,
-                        "height": 64
-                    }
+                    "id": "[item64_TRANSFORM_COMPONENT]"
                 },
                 {
-                    "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "ITEM_CONTACT_MENU",
-                    "interfaceActions": [
-                        {
-                            "actionId": "Actions::TAKE",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_RCLICK"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_HOVER"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::OR",
-                                "events": [
-                                    "InterfaceEvents::ON_HOVER_OUT",
-                                    "InterfaceEvents::ON_STOP_TOUCHING"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::APPLY_HIGHLIGHT",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_DRAG"
-                                ]
-                            }
-
-                        },
-                        {
-                            "actionId": "Actions::DROP",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_DROP"
-                                ]
-                            }
-
-                        }
-
-
-                    ]
-
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
                 },
                 {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
-                        {
-                            "actionId": "Actions::TAKE",
-                            "actionClass": "TakeItemAction"
-                        },
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowInterfaceAction"
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "HideInterfaceAction"
-                        },
-                        {
-                            "actionId": "Actions::APPLY_HIGHLIGHT",
-                            "actionClass": "ItemDragTreatmentAction"
-                        },
-                        {
-                            "actionId": "Actions::DROP",
-                            "actionClass": "ItemDropAction"
-                        }
-
-                    ]
+                    "id": "[itemActions_ACTION_COMPONENT]"
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
