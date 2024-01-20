@@ -201,12 +201,7 @@
                     "id": "RENDER_COMPONENT"
                 },
                 {
-                    "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
-                    "size": {
-                        "width": 268,
-                        "height": 236
-                    }
+                    "id": "[interfaceMenu_TRANSFORM_COMPONENT]"
                 },
                 {
                     "id": "IMGUI_COMPONENT",
@@ -237,12 +232,7 @@
                     "id": "RENDER_COMPONENT"
                 },
                 {
-                    "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
-                    "size": {
-                        "width": 268,
-                        "height": 236
-                    }
+                    "id": "[interfaceMenu_TRANSFORM_COMPONENT]"
                 },
                 {
                     "id": "IMGUI_COMPONENT",
@@ -282,12 +272,7 @@
                     "id": "RENDER_COMPONENT"
                 },
                 {
-                    "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
-                    "size": {
-                        "width": 268,
-                        "height": 236
-                    }
+                    "id": "[interfaceMenu_TRANSFORM_COMPONENT]"
 
                 },
                 {
@@ -320,12 +305,7 @@
                     "id": "RENDER_COMPONENT"
                 },
                 {
-                    "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
-                    "size": {
-                        "width": 268,
-                        "height": 236
-                    }
+                    "id": "[interfaceMenu_TRANSFORM_COMPONENT]"
 
                 },
                 {
@@ -411,31 +391,6 @@
             ]
         },
         {
-            "type": "SMALL_DRAWER_LABEL",
-            "traitTags": [ "abstract" ],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT"
-                },
-                {
-                    "id": "IMGUI_COMPONENT",
-                    "imguiType": "IMGuiText",
-                    "staticText": "Top Drawer",
-                    "autoSize": true,
-                    "color": {
-                        "text": "Colors::WHITE"
-                    },
-                    "padding": {
-                        "x": 8,
-                        "y": 8
-                    }
-                }
-            ]
-        },
-        {
             "type": "GRID_SLOT_BOX",
             "traitTags": [],
             "components": [
@@ -462,12 +417,7 @@
                     "id": "RENDER_COMPONENT"
                 },
                 {
-                    "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
-                    "size": {
-                        "width": 268,
-                        "height": 236
-                    }
+                    "id": "[interfaceMenu_TRANSFORM_COMPONENT]"
 
                 },
                 {

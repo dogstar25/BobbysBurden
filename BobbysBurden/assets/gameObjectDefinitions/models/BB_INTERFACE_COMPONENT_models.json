@@ -1,0 +1,61 @@
+{
+
+    "[itemInterface_BB_INTERFACE_COMPONENT]": {
+
+        "id": "BB_INTERFACE_COMPONENT",
+        "menuObject": "ITEM_CONTACT_MENU",
+        "interfaceActions": [
+            {
+                "actionId": "Actions::TAKE",
+                "condition": {
+                    "operator": "ConditionOperator::AND",
+                    "events": [
+                        "InterfaceEvents::ON_RCLICK"
+                    ]
+                }
+
+            },
+            {
+                "actionId": "Actions::SHOW_INTERFACE",
+                "condition": {
+                    "operator": "ConditionOperator::AND",
+                    "events": [
+                        "InterfaceEvents::ON_HOVER"
+                    ]
+                }
+
+            },
+            {
+                "actionId": "Actions::HIDE_INTERFACE",
+                "condition": {
+                    "operator": "ConditionOperator::OR",
+                    "events": [
+                        "InterfaceEvents::ON_HOVER_OUT",
+                        "InterfaceEvents::ON_STOP_TOUCHING"
+                    ]
+                }
+
+            },
+            {
+                "actionId": "Actions::APPLY_HIGHLIGHT",
+                "condition": {
+                    "operator": "ConditionOperator::AND",
+                    "events": [
+                        "InterfaceEvents::ON_DRAG"
+                    ]
+                }
+
+            },
+            {
+                "actionId": "Actions::DROP",
+                "condition": {
+                    "operator": "ConditionOperator::AND",
+                    "events": [
+                        "InterfaceEvents::ON_DROP"
+                    ]
+                }
+
+            }
+        ]
+    }
+}

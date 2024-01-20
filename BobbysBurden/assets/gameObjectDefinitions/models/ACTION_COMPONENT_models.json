@@ -1,0 +1,33 @@
+{
+
+    "[itemActions_ACTION_COMPONENT]": {
+
+        "id": "ACTION_COMPONENT",
+        "actions": [
+            {
+                "actionId": "Actions::TAKE",
+                "actionClass": "TakeItemAction"
+            },
+            {
+                "actionId": "Actions::SHOW_INTERFACE",
+                "actionClass": "ShowInterfaceAction"
+            },
+            {
+                "actionId": "Actions::HIDE_INTERFACE",
+                "actionClass": "HideInterfaceAction"
+            },
+            {
+                "actionId": "Actions::APPLY_HIGHLIGHT",
+                "actionClass": "ItemDragTreatmentAction"
+            },
+            {
+                "actionId": "Actions::DROP",
+                "actionClass": "ItemDropAction"
+            }
+
+        ]
+
+    }
+
+
+}
