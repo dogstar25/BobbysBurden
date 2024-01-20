@@ -356,6 +356,21 @@
                         }
 
                     ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "PUZZLE_HINT_SENSOR_BOX",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 64,
+                                "height": 64
+                            }
+                        }
+
+                    ]
+
                 }
 
             ]

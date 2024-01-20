@@ -167,6 +167,8 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\actions\HideHintEffectAction.cpp" />
+    <ClCompile Include="src\actions\ShowHintEffectAction.cpp" />
     <ClCompile Include="src\components\BBStateComponent.cpp" />
     <ClCompile Include="src\actions\DoorToggleAction.cpp" />
     <ClCompile Include="src\actions\ItemDragTreatmentAction.cpp" />
@@ -209,6 +211,8 @@
     <ClCompile Include="src\triggers\PlayerDeath.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\actions\HideHintEffectAction.h" />
+    <ClInclude Include="src\actions\ShowHintEffectAction.h" />
     <ClInclude Include="src\components\BBStateComponent.h" />
     <ClInclude Include="src\actions\DoorToggleAction.h" />
     <ClInclude Include="src\actions\ItemDragTreatmentAction.h" />
