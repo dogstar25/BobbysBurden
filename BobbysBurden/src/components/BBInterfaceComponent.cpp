@@ -139,6 +139,13 @@ bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATE
 
 		}
 
+		if (m_currentGameObjectInterfaceActive.value() != parent() &&
+			m_currentGameObjectInterfaceActive.value()->type() == "PUZZLE_HINT_SENSOR_BOX"){
+
+			hasHigherPriority = true;
+		}
+
+
 	}
 
 	return hasHigherPriority;

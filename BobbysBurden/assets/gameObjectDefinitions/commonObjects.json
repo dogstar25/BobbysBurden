@@ -383,7 +383,75 @@
                 {
                     "id": "VITALITY_COMPONENT",
                     "lifetime": 1,
-                    "lifetimeAlphaFade":  true
+                    "lifetimeAlphaFade": true
+                }
+            ]
+        },
+        {
+            "type": "PUZZLE_HINT_SENSOR_BOX",
+            "traitTags": ["abstract"],
+            "description": "SS",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowHintEffectAction"
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideHintEffectAction"
+                        }
+
+                    ]
                 }
             ]
         }

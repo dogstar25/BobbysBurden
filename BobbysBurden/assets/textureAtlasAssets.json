@@ -581,8 +581,8 @@
             "description": "Default Texure",
             "atlas": "TEXTURE_ATLAS_4",
             "quadPosition": {
-                "x": 69,
-                "y": 3,
+                "x": 68,
+                "y": 2,
                 "width": 64,
                 "height": 64
             }
@@ -927,7 +927,7 @@
             "id": "CURSOR_ARROW_QUESTION",
             "textureId": "TX_MOUSE_CURSOR_ARROW_QUESTION",
             "hotSpot": {
-                "x": 23,
+                "x": 25,
                 "y": 2
             }
         },
