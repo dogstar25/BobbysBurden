@@ -1,7 +1,7 @@
 #pragma once
 #include "MobyDick.h"
 
-class HideHintEffectAction :  public Action
+class DisableProximityHintAction :  public Action
 {
 public:
 	void perform(GameObject* gameObject) override;

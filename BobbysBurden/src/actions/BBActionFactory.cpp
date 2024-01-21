@@ -10,8 +10,7 @@
 #include "ToggleBobbyInventory.h"
 #include "ItemDragTreatmentAction.h"
 #include "ItemDropAction.h"
-#include "ShowHintEffectAction.h"
-#include "HideHintEffectAction.h"
+#include "DisableProximityHintAction.h"
 
 
 
@@ -67,16 +66,10 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType)
 
         action = std::make_shared<ItemDropAction>();
     }
-    else if (actionType == "HideHintEffectAction") {
+    else if (actionType == "DisableProximityHintAction") {
 
-        action = std::make_shared<HideHintEffectAction>();
+        action = std::make_shared<DisableProximityHintAction>();
     }
-    else if (actionType == "ShowHintEffectAction") {
-
-        action = std::make_shared<ShowHintEffectAction>();
-    }
-
-    
 
     else {
         action = ActionFactory::create(actionType);

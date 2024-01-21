@@ -285,9 +285,9 @@
                     },
                     "color": {
                         "background": "Colors::CHARCOAL",
-                        "backgroundAlpha": 0,
-                        "text": "Colors::WHITE",
-                        "button": "Colors::BLUE",
+                        "backgroundAlpha": 172,
+                        "text": "Colors::CANDLE_LIGHT",
+                        "button": "Colors::MIRKWOOD",
                         "buttonHover": "Colors::MIRKWOOD",
                         "buttonActive": "Colors::YELLOW"
                     }
@@ -318,9 +318,9 @@
                     },
                     "color": {
                         "background": "Colors::CHARCOAL",
-                        "backgroundAlpha": 0,
-                        "text": "Colors::WHITE",
-                        "button": "Colors::BLUE",
+                        "backgroundAlpha": 172,
+                        "text": "Colors::CANDLE_LIGHT",
+                        "button": "Colors::MIRKWOOD",
                         "buttonHover": "Colors::MIRKWOOD",
                         "buttonActive": "Colors::YELLOW"
                     }
@@ -430,9 +430,42 @@
                     },
                     "color": {
                         "background": "Colors::CHARCOAL",
-                        "backgroundAlpha": 0,
-                        "text": "Colors::WHITE",
-                        "button": "Colors::BLUE",
+                        "backgroundAlpha": 172,
+                        "text": "Colors::CANDLE_LIGHT",
+                        "button": "Colors::MIRKWOOD",
+                        "buttonHover": "Colors::MIRKWOOD",
+                        "buttonActive": "Colors::YELLOW"
+                    }
+
+                }
+            ]
+
+
+        },
+        {
+            "type": "PROXIMITY_HINT_INTERFACE",
+            "traitTags": [ "abstract" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "[interfaceMenu_TRANSFORM_COMPONENT]"
+
+                },
+                {
+                    "id": "IMGUI_COMPONENT",
+                    "imguiType": "IMGuiProximityHintMenu",
+                    "autoSize": false,
+                    "padding": {
+                        "x": 14,
+                        "y": 14
+                    },
+                    "color": {
+                        "background": "Colors::CHARCOAL",
+                        "backgroundAlpha": 172,
+                        "text": "Colors::CANDLE_LIGHT",
+                        "button": "Colors::MIRKWOOD",
                         "buttonHover": "Colors::MIRKWOOD",
                         "buttonActive": "Colors::YELLOW"
                     }

@@ -167,8 +167,7 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\actions\HideHintEffectAction.cpp" />
-    <ClCompile Include="src\actions\ShowHintEffectAction.cpp" />
+    <ClCompile Include="src\actions\DisableProximityHintAction.cpp" />
     <ClCompile Include="src\components\BBStateComponent.cpp" />
     <ClCompile Include="src\actions\DoorToggleAction.cpp" />
     <ClCompile Include="src\actions\ItemDragTreatmentAction.cpp" />
@@ -202,6 +201,7 @@
     <ClCompile Include="src\IMGui\IMGuiOpenCloseReceptacleMenu.cpp" />
     <ClCompile Include="src\IMGui\IMGuiPauseWindow.cpp" />
     <ClCompile Include="src\IMGui\IMGuiPlayerDeath.cpp" />
+    <ClCompile Include="src\IMGui\IMGuiProximityHintMenu.cpp" />
     <ClCompile Include="src\IMGui\IMGuiTestLevelMenu.cpp" />
     <ClCompile Include="src\IMGui\IMGuiTitleScreenMenu.cpp" />
     <ClCompile Include="src\particleEffects\BBParticleEffectsFactory.cpp" />
@@ -211,8 +211,7 @@
     <ClCompile Include="src\triggers\PlayerDeath.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\actions\HideHintEffectAction.h" />
-    <ClInclude Include="src\actions\ShowHintEffectAction.h" />
+    <ClInclude Include="src\actions\DisableProximityHintAction.h" />
     <ClInclude Include="src\components\BBStateComponent.h" />
     <ClInclude Include="src\actions\DoorToggleAction.h" />
     <ClInclude Include="src\actions\ItemDragTreatmentAction.h" />
@@ -246,6 +245,7 @@
     <ClInclude Include="src\IMGui\IMGuiOpenCloseReceptacleMenu.h" />
     <ClInclude Include="src\IMGui\IMGuiPauseWindow.h" />
     <ClInclude Include="src\IMGui\IMGuiPlayerDeath.h" />
+    <ClInclude Include="src\IMGui\IMGuiProximityHintMenu.h" />
     <ClInclude Include="src\IMGui\IMGuiTestLevelMenu.h" />
     <ClInclude Include="src\IMGui\IMGuiTitleScreenMenu.h" />
     <ClInclude Include="src\particleEffects\BBParticleEffectsFactory.h" />

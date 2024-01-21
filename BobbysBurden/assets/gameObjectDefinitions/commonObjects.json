@@ -389,8 +389,8 @@
         },
         {
             "type": "PUZZLE_HINT_SENSOR_BOX",
-            "traitTags": ["abstract"],
-            "description": "SS",
+            "traitTags": [ "abstract" ],
+            "description": "Proximmity Hint",
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
@@ -412,6 +412,7 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "PROXIMITY_HINT_INTERFACE",
                     "interfaceActions": [
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
@@ -443,18 +444,56 @@
                     "actions": [
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowHintEffectAction"
+                            "actionClass": "ShowInterfaceAction"
 
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "HideHintEffectAction"
+                            "actionClass": "HideInterfaceAction"
                         }
 
                     ]
                 }
             ]
+        },
+        {
+            "type": "QUESTIONMARK_ICON",
+            "traitTags": [],
+            "description": "Navigation Object",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_QUESTIONMARK_ICON",
+                    "color": "Colors::BLUE"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "gravityScale": -0.1,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_FREE",
+                            "density": 1,
+                            "collisionShape": "B2_BOX"
+                        }
+                    ]
+
+                },
+                {
+                    "id": "VITALITY_COMPONENT",
+                    "lifetime": 1.5,
+                    "lifetimeAlphaFade": true
+                }
+            ]
         }
+
     ]
 }
 

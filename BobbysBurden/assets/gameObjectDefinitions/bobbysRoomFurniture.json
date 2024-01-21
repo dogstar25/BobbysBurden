@@ -313,6 +313,17 @@
                                 ]
                             }
 
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
                         }
 
                     ]
@@ -332,6 +343,11 @@
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
                             "actionClass": "HideInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "actionClass": "DisableProximityHintAction"
+
                         }
 
                     ]
