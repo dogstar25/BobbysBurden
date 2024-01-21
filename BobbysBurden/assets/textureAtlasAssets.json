@@ -676,6 +676,18 @@
             }
         },
         {
+            "id": "TX_MOUSE_CURSOR_SEARCH",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 398,
+                "y": 2,
+                "width": 64,
+                "height": 64
+            }
+        },
+
+        {
             "id": "TX_HUD_FRAME_1",
             "description": "Default Texure",
             "atlas": "TEXTURE_ATLAS_0",
@@ -894,6 +906,17 @@
                 "width": 64,
                 "height": 64
             }
+        },
+        {
+            "id": "TX_QUESTIONMARK_ICON",
+            "description": "Question Mark",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 266,
+                "y": 134,
+                "width": 64,
+                "height": 64
+            }
         }
 
     ],
@@ -1010,8 +1033,15 @@
                 "x": 32,
                 "y": 32
             }
+        },
+        {
+            "id": "CURSOR_SEARCH",
+            "textureId": "TX_MOUSE_CURSOR_SEARCH",
+            "hotSpot": {
+                "x": 32,
+                "y": 32
+            }
         }
-
     ]
 
 }
