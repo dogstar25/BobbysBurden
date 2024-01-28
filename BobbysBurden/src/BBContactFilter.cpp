@@ -25,7 +25,9 @@ BBContactFilter::BBContactFilter()
 	//PLAYER_TOUCH
 	m_contactMasks[PLAYER_TOUCH].reset();
 	m_contactMasks[PLAYER_TOUCH].set(INTERACTABLE_OBJECT);
-	m_contactMasks[PLAYER_TOUCH].set(INVENTORY_ITEM);
+	m_contactMasks[PLAYER_TOUCH].set(GAME_ITEM);
+	m_contactMasks[PLAYER_TOUCH].set(PUZZLE_OBJECT);
+	m_contactMasks[PLAYER_TOUCH].set(INTERACTABLE_OBJECT);
 	
 
 	//PLAYER_HITBOX
@@ -58,19 +60,24 @@ BBContactFilter::BBContactFilter()
 	//Interactable Objects
 	m_contactMasks[INTERACTABLE_OBJECT].reset();
 	m_contactMasks[INTERACTABLE_OBJECT].set(PLAYER_TOUCH);
-
-	//Inventory Items
-	m_contactMasks[INVENTORY_ITEM].reset();
-	m_contactMasks[INVENTORY_ITEM].set(INVENTORY_HOLDER);
-
-	//Inventory Holders
-	m_contactMasks[INVENTORY_HOLDER].reset();
-	m_contactMasks[INVENTORY_HOLDER].set(INVENTORY_ITEM);
+	m_contactMasks[INTERACTABLE_OBJECT].set(GAME_ITEM);
 
 	//Heavy Particle
 	m_contactMasks[HEAVY_PARTICLE].reset();
 	m_contactMasks[HEAVY_PARTICLE].set(PLAYER_COLLISION);
 	m_contactMasks[HEAVY_PARTICLE].set(WALL);
+
+	//Game Item
+	m_contactMasks[GAME_ITEM].reset();
+	m_contactMasks[GAME_ITEM].set(PLAYER_TOUCH);
+	m_contactMasks[GAME_ITEM].set(WALL);
+	m_contactMasks[GAME_ITEM].set(INTERACTABLE_OBJECT);
+	m_contactMasks[GAME_ITEM].set(PUZZLE_OBJECT);
+
+	//Puzzle Object
+	m_contactMasks[PUZZLE_OBJECT].reset();
+	m_contactMasks[PUZZLE_OBJECT].set(PLAYER_TOUCH);
+	m_contactMasks[PUZZLE_OBJECT].set(GAME_ITEM);
 
 }
 

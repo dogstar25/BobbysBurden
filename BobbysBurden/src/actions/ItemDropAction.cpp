@@ -14,7 +14,13 @@ void ItemDropAction::perform(GameObject* droppedGameObject)
 	else if (droppedGameObject->isTouchingByTrait(TraitTag::puzzle)) {
 
 		const auto& puzzleObject = droppedGameObject->getFirstTouchingByTrait(TraitTag::puzzle);
-		_handleDropOnPuzzle(puzzleObject.value().lock().get(), droppedGameObject);
+
+		const auto& puzzleComponent = puzzleObject->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+		if (puzzleComponent->hasBeenSolved() == false) {
+
+			_handleDropOnPuzzle(puzzleObject.value().lock().get(), droppedGameObject);
+
+		}
 
 	}
 
@@ -166,17 +172,11 @@ void ItemDropAction::_handleDropOnPuzzle(GameObject* puzzleGameObject, GameObjec
 	const auto& puzzleComponent = puzzleObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 
 	//does this dropped item apply to the puzzle it was dropped on?
-
 	if (puzzleComponent->puzzle->isPuzzlePieceApplicable(droppedGameObject)) {
 
 		//applyPuzzlePiece is a custom method of the puzzle in question and can do its own sound or image animation or whatever
 		puzzleComponent->puzzle->applyPuzzlePiece(puzzleGameObject, droppedGameObject);
 
 	}
-
-
-
-
-	//UNLOCK_ICON floaty uppy
 
 }

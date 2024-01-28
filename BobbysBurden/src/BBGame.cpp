@@ -80,7 +80,7 @@ bool BBGame::init(
 	//Dresser Shelf
 	const auto& dresserShelf = scene.getFirstGameObjectByName("BOBBY_DRESSER_SHELF");
 	const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	dresserShelfInventory->addItem("BOTTLE1");
+	dresserShelfInventory->addItem("OIL_CAN");
 	dresserShelfInventory->addItem("BOTTLE1");
 	dresserShelfInventory->refreshInventoryDisplay();
 

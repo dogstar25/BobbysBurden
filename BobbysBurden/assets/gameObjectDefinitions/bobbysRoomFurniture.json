@@ -273,6 +273,9 @@
                     }
                 },
                 {
+                    "id": "STATE_COMPONENT"
+                },
+                {
                     "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "GENERIC_INTERFACE_MENU",
                     "interfaceActions": [
@@ -366,7 +369,7 @@
                     "type": "B2_STATIC",
                     "fixtures": [
                         {
-                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "contactTag": "ContactTag::PUZZLE_OBJECT",
                             "collisionShape": "B2_BOX",
                             "isSensor": true
                         }
@@ -375,6 +378,7 @@
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childObjects": [
                         {
                             "gameObjectType": "PUZZLE_HINT_SENSOR_BOX",

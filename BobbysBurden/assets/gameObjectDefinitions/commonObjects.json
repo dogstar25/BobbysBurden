@@ -2,6 +2,25 @@
 
     "gameObjects": [
         {
+            "type": "DELETE_ME_OBJECT",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
+
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 2,
+                        "height": 2
+                    }
+
+                }
+            ]
+        },
+        {
             "type": "BOWMAN",
             "traitTags": [],
             "components": [
@@ -242,7 +261,6 @@
                 },
                 {
                     "id": "BB_STATE_COMPONENT",
-                    "beginState": "GameObjectState::ON",
                     "animationStates": [
                         {
                             "state": "GameObjectState::ON",
@@ -490,6 +508,51 @@
                     "id": "VITALITY_COMPONENT",
                     "lifetime": 1.5,
                     "lifetimeAlphaFade": true
+                }
+            ]
+        },
+        {
+            "type": "KEY1",
+            "traitTags": [ "puzzle_item" ],
+            "description": "Small Key",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_KEY1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 36,
+                        "height": 36
+                    }
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "STATE_COMPONENT"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            "restitution": 0.5,
+                            "collisionShape": "B2_BOX",
+                            "density": 5,
+                            "friction": 5,
+                            "size": {
+                                "width": 32,
+                                "height": 12
+                            }
+
+                        }
+                    ]
                 }
             ]
         }

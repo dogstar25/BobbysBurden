@@ -58,8 +58,7 @@
                     "id": "[itemActions_ACTION_COMPONENT]"
                 },
                 {
-                    "id": "STATE_COMPONENT",
-                    "beginState": "GameObjectState::ITEM_OBTAINABLE"
+                    "id": "STATE_COMPONENT"
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -69,7 +68,7 @@
                     "angularDamping": 5.0,
                     "fixtures": [
                         {
-                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "contactTag": "ContactTag::GAME_ITEM",
                             //"contactTag": "ContactTag::INVENTORY_ITEM",
                             "collisionShape": "B2_BOX",
                             "isSensor": true,
@@ -110,7 +109,7 @@
                     "angularDamping": 5.0,
                     "fixtures": [
                         {
-                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "contactTag": "ContactTag::GAME_ITEM",
                             //"contactTag": "ContactTag::INVENTORY_ITEM",
                             "collisionShape": "B2_BOX",
                             "isSensor": true,
@@ -126,8 +125,7 @@
                     ]
                 },
                 {
-                    "id": "STATE_COMPONENT",
-                    "beginState": "GameObjectState::ITEM_OBTAINABLE"
+                    "id": "STATE_COMPONENT"
                 }
             ]
         },

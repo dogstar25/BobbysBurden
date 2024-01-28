@@ -142,17 +142,20 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 
 			if (puzzleTouched.value().lock()->isTouchingByTrait(TraitTag::player)) {
 
+				const auto& puzzleComponent = puzzleTouched->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+				if (puzzleComponent->hasBeenSolved() == false) {
 
-				ImGui::displayDropItemImage(util::SDLColorToImVec4(Colors::EMERALD));
-				ImGui::SameLine();
+					ImGui::displayDropItemImage(util::SDLColorToImVec4(Colors::EMERALD));
+					ImGui::SameLine();
 
-				ImGui::Text("Apply To");
-				ImGui::SameLine();
-				ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), puzzleTouched.value().lock()->description().c_str());
+					ImGui::Text("Apply To");
+					ImGui::SameLine();
+					ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), puzzleTouched.value().lock()->description().c_str());
 
-				auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
-				SceneManager::instance().setMouseCursor(cursor);
-				SDL_ShowCursor(SDL_TRUE);
+					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
+					SceneManager::instance().setMouseCursor(cursor);
+					SDL_ShowCursor(SDL_TRUE);
+				}
 			}
 
 		}

@@ -14,8 +14,8 @@ void DisableProximityHintAction::perform(GameObject* gameObject)
 		childrenComponent->removeChildrenByType("PUZZLE_HINT_SENSOR_BOX");
 		auto position = gameObject->getCenterPosition();
 		auto mapPosition = util::pixelToTileLocation(position.x, position.y);
-		const auto& unlockObject = gameObject->parentScene()->
-			addGameObject("QUESTIONMARK_ICON", GameLayer::FOREGROUND_4, (float)mapPosition.x, (float)mapPosition.y-1, (float)0);
+
+		gameObject->addLitHighlight({ 128,128 });
 	}
 
 

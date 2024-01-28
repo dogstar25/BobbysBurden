@@ -18,7 +18,7 @@
                 },
                 {
                     "id": "STATE_COMPONENT",
-                    "beginState": "GameObjectState::DISABLED",
+                    "beginStates": [ "GameObjectState::DISABLED" ],
                     "states": [
                         {
                             "id": "GameObjectState::DISABLED",
