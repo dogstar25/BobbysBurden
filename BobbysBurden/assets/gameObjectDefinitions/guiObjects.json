@@ -110,7 +110,7 @@
                     "type": "B2_STATIC",
                     "fixtures": [
                         {
-                            "contactTag": "ContactTag::INVENTORY_HOLDER",
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
                             "collisionShape": "B2_BOX",
                             "isSensor": true
                         }

@@ -30,7 +30,7 @@
                 },
                 {
                     "id": "BB_STATE_COMPONENT",
-                    "beginState": "GameObjectState::CLOSED",
+                    "beginStates": [ "GameObjectState::CLOSED" ],
                     "transitions": [
                         {
                             "from": "GameObjectState::CLOSED",
@@ -180,7 +180,7 @@
                 }, 
                 {
                     "id": "BB_STATE_COMPONENT",
-                    "beginState": "GameObjectState::CLOSED",
+                    "beginStates": [ "GameObjectState::CLOSED" ],
                     "animationStates": [
                         {
                             "state": "GameObjectState::CLOSED",

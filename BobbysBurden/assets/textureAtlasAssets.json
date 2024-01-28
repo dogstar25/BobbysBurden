@@ -917,6 +917,17 @@
                 "width": 64,
                 "height": 64
             }
+        },
+        {
+            "id": "TX_KEY1",
+            "description": "Key 1",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 728,
+                "y": 54,
+                "width": 64,
+                "height": 64
+            }
         }
 
     ],

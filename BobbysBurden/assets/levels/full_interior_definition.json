@@ -52,7 +52,7 @@
             "gameObjectType": "OIL_CAN",
             "layer": "GameLayer::MAIN",
             "name": "toddcan",
-            "gameObjectStatus": [ "ITEM_LOOSE", "ITEM_OBTAINABLE" ]
+            "gameObjectStates": [ "ITEM_LOOSE", "ITEM_OBTAINABLE" ]
 
         },
         {
@@ -453,6 +453,7 @@
             "gameObjectType": "CEILING_LIGHT_1",
             "name": "bobbyRoomLightSwitch_TARGET",
             "layer": "GameLayer::BACKGROUND_4",
+            "gameObjectStates": ["ON"],
             "locationAdjust": {
                 "y": -0.8
             }
@@ -463,6 +464,7 @@
             "gameObjectType": "LIGHT_SWITCH",
             "name": "bobbyRoomLightSwitch",
             "layer": "GameLayer::BACKGROUND_4",
+            "gameObjectStates": [ "ON" ],
             "locationAdjust": {
                 "y": -16.0
             }

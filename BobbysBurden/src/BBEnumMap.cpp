@@ -17,9 +17,9 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("ContactTag::STAIRS_TOUCH", ContactTag::STAIRS_TOUCH);
 	addEnumItem("ContactTag::STAIRS_TOP_TOUCH", ContactTag::STAIRS_TOP_TOUCH);
 	addEnumItem("ContactTag::STAIRS_BOTTOM_TOUCH", ContactTag::STAIRS_BOTTOM_TOUCH);
+	addEnumItem("ContactTag::PUZZLE_OBJECT", ContactTag::PUZZLE_OBJECT);
 	addEnumItem("ContactTag::INTERACTABLE_OBJECT", ContactTag::INTERACTABLE_OBJECT);
-	addEnumItem("ContactTag::INVENTORY_HOLDER", ContactTag::INVENTORY_HOLDER);
-	addEnumItem("ContactTag::INVENTORY_ITEM", ContactTag::INVENTORY_ITEM);
+	addEnumItem("ContactTag::GAME_ITEM", ContactTag::GAME_ITEM);
 	addEnumItem("ContactTag::DOOR_KNOB", ContactTag::DOOR_KNOB);
 
 	

@@ -104,7 +104,7 @@
                 },
                 {
                     "id": "BB_STATE_COMPONENT",
-                    "beginState": "GameObjectState::IDLE_RIGHT",
+                    "beginStates": [ "GameObjectState::IDLE_RIGHT" ],
                     "animationStates": [
                         {
                             "state": "GameObjectState::IDLE_RIGHT",

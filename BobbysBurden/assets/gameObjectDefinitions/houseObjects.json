@@ -493,7 +493,7 @@
                 },
                 {
                     "id": "BB_STATE_COMPONENT",
-                    "beginState": "GameObjectState::ON",
+                    "beginStates": [ "GameObjectState::ON" ],
                     "animationStates": [
                         {
                             "state": "GameObjectState::ON",
