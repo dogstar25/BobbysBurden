@@ -39,14 +39,17 @@
     ],
     "locationDefinedObjects": [
         //{
-        //    "id": "LOC_0000_0109",
+        //    "id": "LOC_0000_0115",
         //    "gameObjectType": "FULL_HOUSE_EXTERIOR",
         //    "layer": "GameLayer::FOREGROUND_5",
-        //    "objectColor": "Colors::ALPHA_100_COLOR",
-        //    "locationAdjust": {
-        //        "x": -192
-        //    }
+        //    "objectColor": "Colors::ALPHA_100_COLOR"
         //},
+        {
+            "id": "LOC_0000_0115",
+            "gameObjectType": "HOUSE_OVERLAY", // You will ahve another "rain" overlay that uses the same mask object to mask the rain away.
+            "layer": "GameLayer::FOREGROUND_5"
+
+        },
         {
             "id": "LOC_0036_0142",
             "gameObjectType": "OIL_CAN",
@@ -453,7 +456,7 @@
             "gameObjectType": "CEILING_LIGHT_1",
             "name": "bobbyRoomLightSwitch_TARGET",
             "layer": "GameLayer::BACKGROUND_4",
-            "gameObjectStates": ["ON"],
+            "gameObjectStates": [ "ON" ],
             "locationAdjust": {
                 "y": -0.8
             }

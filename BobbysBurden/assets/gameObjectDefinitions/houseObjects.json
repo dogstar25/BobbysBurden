@@ -8,7 +8,8 @@
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_FULL_HOUSE_EXTERIOR"
+                    "textureId": "TX_FULL_HOUSE_EXTERIOR",
+                    "textureBlendMode": "RenderBlendMode::BLEND"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
