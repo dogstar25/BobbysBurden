@@ -118,6 +118,17 @@
             }
         },
         {
+            "id": "TX_ALMOST_CLEAR_BOX",
+            "description": "Fog Box",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 105,
+                "y": 21,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
             "id": "TX_DARK_BOX",
             "description": "Dark Box",
             "atlas": "TEXTURE_ATLAS_0",
