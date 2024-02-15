@@ -46,7 +46,7 @@
         //},
         {
             "id": "LOC_0000_0115",
-            "gameObjectType": "HOUSE_OVERLAY", // You will ahve another "rain" overlay that uses the same mask object to mask the rain away.
+            "gameObjectType": "HOUSE_OVERLAY",
             "layer": "GameLayer::FOREGROUND_5"
 
         },

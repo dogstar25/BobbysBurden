@@ -563,12 +563,7 @@
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureBlendMode": "RenderBlendMode::BLEND",
-                    "color": {
-                        "tint": "Colors::ORANGE",
-                        "alpha": 255
-                    }
-
+                    "textureBlendMode": "RenderBlendMode::BLEND"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -579,10 +574,12 @@
                 },
                 {
                     "id": "MASKED_OVERLAY_COMPONENT",
-                    "backgroundObject": "WHITE_QUAD",
-                    "foregroundObject": "FULL_HOUSE_EXTERIOR",
-                    "maskTextureObject": "CLEAR_QUAD"
-
+                    "overlayObjects": [
+                        "FULL_HOUSE_EXTERIOR"
+                    ],
+                    "maskObjects": [
+                        "playerMask"
+                    ]
                 }
             ]
         },
