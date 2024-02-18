@@ -45,9 +45,13 @@
         //    "objectColor": "Colors::ALPHA_100_COLOR"
         //},
         {
-            "id": "LOC_0000_0115",
+            "id": "LOC_0000_0110",
             "gameObjectType": "HOUSE_OVERLAY",
-            "layer": "GameLayer::FOREGROUND_5"
+            "layer": "GameLayer::FOREGROUND_5",
+            "locationAdjust": {
+                "x": -174.0,
+                "y": -4
+            }
 
         },
         {
@@ -118,7 +122,12 @@
         {
             "id": "LOC_0016_0145",
             "gameObjectType": "PARLOR_ROOM",
-            "layer": "GameLayer::BACKGROUND_5"
+            "layer": "GameLayer::BACKGROUND_5",
+            "size": {
+                "width": 320,
+                "height": 320
+            }
+
         },
         {
             "id": "LOC_0033_0134",
@@ -141,19 +150,27 @@
         },
         {
             "id": "LOC_0016_0134",
-            "gameObjectType": "BEDROOM1_ROOM",
+            "gameObjectType": "BOBBYS_ROOM",
             "layer": "GameLayer::BACKGROUND_5"
         },
         {
             "id": "LOC_0043_0134",
-            "gameObjectType": "BEDROOM2_ROOM",
+            "gameObjectType": "GUEST_BEDROOM",
             "layer": "GameLayer::BACKGROUND_5"
         },
-        //{
-        //    "id": "LOC_0033_0134",
-        //    "gameObjectType": "TOP_STAIRS_ROOM",
-        //    "layer": "GameLayer::BACKGROUND_2"
-        //},
+        {
+            "id": "LOC_0033_0134",
+            "gameObjectType": "FRONT_TOP_STAIRS_ROOM",
+            "layer": "GameLayer::BACKGROUND_5"
+        },
+        {
+            "id": "LOC_0038_0141",
+            "gameObjectType": "STAIRS_RAIL",
+            "layer": "GameLayer::MAIN",
+            "locationAdjust": {
+                "y": 6
+            }
+        },
         {
             "id": "LOC_0038_0145",
             "gameObjectType": "MAIN_STAIRS",

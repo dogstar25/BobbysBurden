@@ -251,6 +251,17 @@
             }
         },
         {
+            "id": "TX_TOP_STAIRS_RAIL",
+            "description": "Top stairs rail",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 1094,
+                "y": 239,
+                "width": 130,
+                "height": 83
+            }
+        },
+        {
             "id": "TX_BEDROOM_1",
             "description": "Bedroom 1",
             "atlas": "TEXTURE_ATLAS_0",
@@ -938,6 +949,17 @@
                 "y": 54,
                 "width": 64,
                 "height": 64
+            }
+        },
+        {
+            "id": "TX_GRADIENT_2",
+            "description": "Key 1",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 530,
+                "y": 2,
+                "width": 256,
+                "height": 256
             }
         }
 

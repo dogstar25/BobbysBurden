@@ -96,15 +96,6 @@
                         {
                             "gameObjectType": "BOBBY_LABEL",
                             "standardSlot": "PositionAlignment::TOP_RIGHT"
-                        },
-                        {
-                            "gameObjectType": "CLEAR_QUAD",
-                            "standardSlot": "PositionAlignment::CENTER",
-                            "name": "playerMask",
-                            "size": {
-                                "width": 512,
-                                "height": 256
-                            }
                         }
 
                     ]
