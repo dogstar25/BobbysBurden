@@ -8,6 +8,7 @@
 #include "IMGuiOpenCloseReceptacleMenu.h"
 #include "IMGuiOnOffToggleMenu.h"
 #include "IMGuiProximityHintMenu.h"
+#include "IMGuiGoUpDownMenu.h"
 
 
 BB_IMGuiFactory::BB_IMGuiFactory()
@@ -50,8 +51,10 @@ std::shared_ptr<IMGuiItem> BB_IMGuiFactory::create(std::string iMGuiItemType, st
 
 		iMGuiItem = std::make_shared<IMGuiProximityHintMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
 	}
+	else if (iMGuiItemType == "IMGuiGoUpDownMenu") {
 
-	
+		iMGuiItem = std::make_shared<IMGuiGoUpDownMenu>(gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize);
+	}
 	
 	else {
 

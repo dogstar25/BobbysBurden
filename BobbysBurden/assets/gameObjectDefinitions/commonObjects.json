@@ -87,9 +87,9 @@
             ]
         },
         {
-            "type": "PARTICLE_EMITTER",
-            "traitTags": [ "abstract" ],
-            "description": "Particle Emitter",
+            "type": "PARTICLE_EMITTER_RAIN",
+            "traitTags": [],
+            "description": "Particle Emitter for rain",
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
@@ -99,8 +99,12 @@
                 },
                 {
                     "id": "PARTICLE_COMPONENT",
-                    "type": "ParticleEmitterType::ONETIME",
-                    "maxParticles": 100
+                    "type": "ParticleEmitterType::CONTINUOUS",
+                    "emissionInterval": 0.2,
+                    "maxParticles": 2000,
+                    "effects": [
+                        "rain"
+                    ]
                 }
             ]
         },

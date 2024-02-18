@@ -31,7 +31,7 @@ void DoorToggleAction::perform(GameObject* doorKnobObject)
 
 		if (doorObject->hasTrait(TraitTag::door_side)) {
 			doorObject->enableCollision();
-			doorObject->addTrait(TraitTag::barrier);
+			doorObject->addState(GameObjectState::IMPASSABLE);
 		}
 		if (partnerDoor.has_value()) {
 
@@ -45,7 +45,7 @@ void DoorToggleAction::perform(GameObject* doorKnobObject)
 
 		if (doorObject->hasTrait(TraitTag::door_side)) {
 			doorObject->disableCollision();
-			doorObject->removeTrait(TraitTag::barrier);
+			doorObject->removeState(GameObjectState::IMPASSABLE);
 		}
 
 		//If there is a partner door, set state to opened and disabled its collision

@@ -133,7 +133,7 @@
         },
         {
             "type": "DOOR_SIDE",
-            "traitTags": [ "mouse_interface", "barrier", "door", "door_side" ],
+            "traitTags": [ "mouse_interface", "door", "door_side" ],
             "description": "Door",
             "components": [
                 {
@@ -180,7 +180,7 @@
                 }, 
                 {
                     "id": "BB_STATE_COMPONENT",
-                    "beginStates": [ "GameObjectState::CLOSED" ],
+                    "beginStates": [ "GameObjectState::CLOSED", "GameObjectState::IMPASSABLE" ],
                     "animationStates": [
                         {
                             "state": "GameObjectState::CLOSED",
