@@ -196,6 +196,7 @@
     <ClCompile Include="src\IMGui\BB_IMGuiFactory.cpp" />
     <ClCompile Include="src\IMGui\BB_IMGuiUtil.cpp" />
     <ClCompile Include="src\IMGui\IMGuiDynamicInterfaceMenu.cpp" />
+    <ClCompile Include="src\IMGui\IMGuiGoUpDownMenu.cpp" />
     <ClCompile Include="src\IMGui\IMGuiItemContact.cpp" />
     <ClCompile Include="src\IMGui\IMGuiOnOffToggleMenu.cpp" />
     <ClCompile Include="src\IMGui\IMGuiOpenCloseDoorMenu.cpp" />
@@ -242,6 +243,7 @@
     <ClInclude Include="src\IMGui\BB_IMGuiFactory.h" />
     <ClInclude Include="src\IMGui\BB_IMGuiUtil.h" />
     <ClInclude Include="src\IMGui\IMGuiDynamicInterfaceMenu.h" />
+    <ClInclude Include="src\IMGui\IMGuiGoUpDownMenu.h" />
     <ClInclude Include="src\IMGui\IMGuiItemContact.h" />
     <ClInclude Include="src\IMGui\IMGuiOnOffToggleMenu.h" />
     <ClInclude Include="src\IMGui\IMGuiOpenCloseDoorMenu.h" />
