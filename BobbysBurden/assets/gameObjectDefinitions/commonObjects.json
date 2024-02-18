@@ -563,12 +563,7 @@
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureBlendMode": "RenderBlendMode::BLEND",
-                    "color": {
-                        "tint": "Colors::ORANGE",
-                        "alpha": 255
-                    }
-
+                    "textureBlendMode": "RenderBlendMode::BLEND"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -578,11 +573,15 @@
                     }
                 },
                 {
-                    "id": "MASKED_OVERLAY_COMPONENT",
-                    "backgroundObject": "WHITE_QUAD",
-                    "foregroundObject": "FULL_HOUSE_EXTERIOR",
-                    "maskTextureObject": "CLEAR_QUAD"
-
+                    "id": "BB_MASKED_OVERLAY_COMPONENT",
+                    "overlayObjects": [
+                        "FULL_HOUSE_EXTERIOR"
+                    ],
+                    "maskObjects": [
+                        "bobbysRoomMask",
+                        "guestBedroomMask",
+                        "frontTopStairsRoomMask"
+                    ]
                 }
             ]
         },
@@ -624,6 +623,47 @@
                         "width": 512,
                         "height": 512
                     }
+                }
+            ]
+        },
+        {
+            "type": "GRDIENT_QUAD_2",
+            "traitTags": [ "abstract" ],
+            "description": "White quad",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_GRADIENT_2"
+
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 512,
+                        "height": 512
+                    }
+                }
+            ]
+        },
+        {
+            "type": "CLEAR_QUAD_MASK",
+            "traitTags": [],
+            "description": "Clear quad mask",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
+
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
                 }
             ]
         }

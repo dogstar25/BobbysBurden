@@ -41,7 +41,6 @@
                         }
 
                     ]
-
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -98,7 +97,6 @@
                             "gameObjectType": "BOBBY_LABEL",
                             "standardSlot": "PositionAlignment::TOP_RIGHT"
                         }
-
 
                     ]
                 },

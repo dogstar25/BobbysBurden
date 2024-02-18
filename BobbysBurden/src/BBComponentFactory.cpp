@@ -3,6 +3,7 @@
 #include "components/BobbyPlayerControlComponent.h"
 #include "components/BBInterfaceComponent.h"
 #include "components/BBStateComponent.h"
+#include "components/BBMaskedOverlayComponent.h"
 
 std::shared_ptr<Component> BBComponentFactory::create(
 	Json::Value definitionJSON,
@@ -31,6 +32,10 @@ std::shared_ptr<Component> BBComponentFactory::create(
 	else if (componentType == ComponentTypes::BB_STATE_COMPONENT) {
 		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BB_STATE_COMPONENT);
 		component = std::make_shared<BBStateComponent>(componentJSON);
+	}
+	else if (componentType == ComponentTypes::BB_MASKED_OVERLAY_COMPONENT) {
+		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BB_MASKED_OVERLAY_COMPONENT);
+		component = std::make_shared<BBMaskedOverlayComponent>(componentJSON, scene);
 	}
 
 	else {

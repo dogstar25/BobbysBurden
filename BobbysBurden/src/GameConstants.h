@@ -82,6 +82,8 @@ namespace ComponentTypes {
 	inline constexpr int BOBBY_PLAYER_CONTROL_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 1;
 	inline constexpr int BB_INTERFACE_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 2;
 	inline constexpr int BB_STATE_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 3;
+	inline constexpr int BB_MASKED_OVERLAY_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 4;
+	
 
 }
 

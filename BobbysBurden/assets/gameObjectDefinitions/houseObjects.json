@@ -252,7 +252,7 @@
 
         },
         {
-            "type": "BEDROOM1_ROOM",
+            "type": "BOBBYS_ROOM",
             "traitTags": [],
             "description": "Bedroom1 Room",
             "components": [
@@ -278,12 +278,33 @@
                         }
 
                     ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CLEAR_QUAD_MASK",
+                            "absolutePositionSlot": {
+                                "x": -48,
+                                "y": 0
+                            },
+                            "name": "bobbysRoomMask",
+                            "size": {
+                                "width": 640,
+                                "height": 384
+                            }
+                        }
+
+                    ]
                 }
+
             ]
 
         },
         {
-            "type": "BEDROOM2_ROOM",
+            "type": "GUEST_BEDROOM",
             "traitTags": [],
             "description": "Bedroom2 Room",
             "components": [
@@ -299,13 +320,21 @@
                     }
                 },
                 {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_STATIC",
-                    "fixtures": [
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
                         {
-                            "contactTag": "ContactTag::GENERAL_SOLID",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
+                            "gameObjectType": "CLEAR_QUAD_MASK",
+                            "absolutePositionSlot": {
+                                "x": -48,
+                                "y": 0
+                            },
+                            "name": "guestBedroomMask",
+                            "size": {
+                                "width": 640,
+                                "height": 384
+                            }
                         }
 
                     ]
@@ -345,19 +374,58 @@
 
         },
         {
-            "type": "TOP_STAIRS_ROOM",
+            "type": "FRONT_TOP_STAIRS_ROOM",
             "traitTags": [],
             "description": "Top Stairs Room",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_ROOM_TOPSTAIRS"
+                    "textureId": "TX_ROOM_PARLOR"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
                         "width": 320,
                         "height": 320
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CLEAR_QUAD_MASK",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "name": "frontTopStairsRoomMask",
+                            "size": {
+                                "width": 320,
+                                "height": 320
+                            }
+                        }
+
+                    ]
+                }
+            ]
+
+        },
+        {
+            "type": "STAIRS_RAIL",
+            "traitTags": [],
+            "description": "Stairs Rail",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_TOP_STAIRS_RAIL"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 160,
+                        "height": 96
                     }
                 }
             ]
@@ -420,7 +488,7 @@
         },
         {
             "type": "HOUSE_BEAM",
-            "traitTags": [ "abstract"],
+            "traitTags": [ "abstract" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
