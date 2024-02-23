@@ -61,6 +61,12 @@
                     "gameObjectType": "ROUND_PARTICLE_1",
                     "lifetime": 2.25,
                     "maxItems": 300
+                },
+                {
+                    "id": "RAIN_DROP_PARTICLE_POOL",
+                    "gameObjectType": "RAIN_DROP",
+                    "lifetime": 2.25,
+                    "maxItems": 10
                 }
 
             ],

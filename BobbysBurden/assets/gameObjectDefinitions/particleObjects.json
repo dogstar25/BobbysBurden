@@ -94,6 +94,53 @@
                 }
 
             ]
+        },
+        {
+            "type": "ROUND_PARTICLE_2",
+            "traitTags": [ "fragment" ],
+            "description": "Smoke Particle 2",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_ROUND_PARTICLE_2",
+                    "textureBlendMode": "RenderBlendMode::ADD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 1,
+                        "height": 1
+                    }
+                },
+                {
+                    "id": "VITALITY_COMPONENT"
+                }
+
+
+            ]
+        },
+        {
+            "type": "RAIN_DROP",
+            "traitTags": [ "pooled", "fragment" ],
+            "description": "Rain Drop",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_RAIN_DROP"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 1,
+                        "height": 1
+                    }
+                },
+                {
+                    "id": "VITALITY_COMPONENT"
+                }
+
+
+            ]
         }
 
     ]

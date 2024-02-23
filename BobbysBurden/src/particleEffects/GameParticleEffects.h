@@ -42,23 +42,46 @@ namespace ParticleEffects {
 		.particleSpawnCountMax = 20
 	};
 
+	//static const ParticleEffect rain = {
+	//	.poolId = "RAIN_SHEET_PARTICLE_POOL",
+	//	//.poolId = "ROUND_PARTICLE_POOL",
+	//	.originMin = {-100,2845},
+	//	.originMax = {-100,2845},
+	//	.forceMin = 61.2F,
+	//	//.forceMax = 20.0F,
+	//	.lifetimeMin = 3.0F,
+	//	.lifetimeMax = 3.0F,
+	//	.alphaFade = false,
+	//	.angleMin = 75,
+	//	.angleMax = 75,
+	//	.particleSizeMin = 2000.F,
+	//	.particleSizeMax = 2000.F,
+	//	.colorRangeBegin = {255,255,255,100},
+	//	.colorRangeEnd = {255,255,255,200},
+	//	.particleSpawnCountMin = 1,
+	//	.particleSpawnCountMax = 1
+	//};
+
 	static const ParticleEffect rain = {
-		.poolId = "ROUND_PARTICLE_POOL",
-		.originMin = {0,0},
-		.originMax = {2000,6000},		
-		.forceMin = 100.0F,
-		.forceMax = 100.1F,
-		.lifetimeMin = 10.2F,
-		.lifetimeMax = 11.5F,
+		//.poolId = "RAIN_SHEET_PARTICLE_POOL",
+		.poolId = "RAIN_DROP_PARTICLE_POOL",
+		.originMin = {0,2845},
+		.originMax = {2800,4845},
+		.forceMin = 100.2F,
+		.forceMax = 120.0F,
+		.lifetimeMin = 1.0F,
+		.lifetimeMax = 3.0F,
 		.alphaFade = false,
-		.angleMin = 90,
-		.angleMax = 90,
-		.particleSizeMin = 10.F,
-		.particleSizeMax = 30.F,
-		.colorRangeBegin = {0,0,0,255},
-		.colorRangeEnd = {0,0,0,255},
-		.particleSpawnCountMin = 100,
-		.particleSpawnCountMax = 200
+		.angleMin = 42,
+		.angleMax = 47,
+		.particleSizeMinWidth = 10.F,
+		.particleSizeMaxWidth = 10.F,
+		.particleSizeMinHeight = 20.F,
+		.particleSizeMaxHeight = 90.F,
+		.colorRangeBegin = {255,255,255,100},
+		.colorRangeEnd = {255,255,255,200},
+		.particleSpawnCountMin = 200,
+		.particleSpawnCountMax = 500
 	};
 
 }

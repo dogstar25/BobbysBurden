@@ -489,6 +489,12 @@
                 "y": -16.0
             }
 
+        },
+        {
+            "id": "LOC_0000_0110",
+            "gameObjectType": "PARTICLE_EMITTER_RAIN",
+            "layer": "GameLayer::FOREGROUND_5"
+
         }
     ]
 

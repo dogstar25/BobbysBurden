@@ -961,6 +961,17 @@
                 "width": 256,
                 "height": 256
             }
+        },
+        {
+            "id": "TX_RAIN_DROP",
+            "description": "Rain Drop",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 794,
+                "y": 54,
+                "width": 14,
+                "height": 64
+            }
         }
 
     ],
