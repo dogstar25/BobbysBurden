@@ -293,7 +293,7 @@
                             "name": "bobbysRoomMask",
                             "size": {
                                 "width": 640,
-                                "height": 384
+                                "height": 322
                             }
                         }
 
@@ -333,7 +333,7 @@
                             "name": "guestBedroomMask",
                             "size": {
                                 "width": 640,
-                                "height": 384
+                                "height": 322
                             }
                         }
 
@@ -397,12 +397,12 @@
                         {
                             "gameObjectType": "CLEAR_QUAD_MASK",
                             "absolutePositionSlot": {
-                                "x": 0,
+                                "x": -6,
                                 "y": 0
                             },
                             "name": "frontTopStairsRoomMask",
                             "size": {
-                                "width": 320,
+                                "width": 326,
                                 "height": 320
                             }
                         }
@@ -452,7 +452,7 @@
         },
         {
             "type": "MAIN_STAIRS",
-            "traitTags": [ "vertical_movement_zone" ],
+            "traitTags": [ "vertical_movement_zone", "always_in_line_of_sight" ],
             "description": "Stairs",
             "components": [
                 {

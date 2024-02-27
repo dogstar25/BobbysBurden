@@ -31,6 +31,12 @@
             "filename": "assets/textureAtlas04.png"
         },
         {
+            "id": "TEXTURE_ATLAS_5",
+            "description": "Texture atlas 5",
+            "openglTextureIndex": "GL_TextureIndexType::MAIN_TEXTURE_ATLAS_5",
+            "filename": "assets/textureAtlas05.png"
+        },
+        {
             "id": "TEXTURE_IMGUI_ATLAS",
             "description": "Texture For IMGUI stuff",
             "openglTextureIndex": "GL_TextureIndexType::IMGUI_TEXTURE_ATLAS",
@@ -71,6 +77,17 @@
                 "y": 0,
                 "width": 2240,
                 "height": 1600
+            }
+        },
+        {
+            "id": "TX_FULL_TREE_BACKGROUND_1",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_5",
+            "quadPosition": {
+                "x": 0,
+                "y": 0,
+                "width": 4000,
+                "height": 1266
             }
         },
         {

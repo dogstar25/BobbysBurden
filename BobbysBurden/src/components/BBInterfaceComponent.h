@@ -8,7 +8,6 @@ public:
 	~BBInterfaceComponent() = default;
 
 	virtual void render() override;
-	virtual void setCursor(GameObject* gameObject, std::bitset<MAX_EVENT_STATES> eventState) override;
 	void postInit() override;
 	virtual bool isDraggingAllowed() override;
 	virtual bool isEventAvailable(int eventId) override;

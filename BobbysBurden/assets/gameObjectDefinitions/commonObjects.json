@@ -579,7 +579,8 @@
                 {
                     "id": "BB_MASKED_OVERLAY_COMPONENT",
                     "overlayObjects": [
-                        "FULL_HOUSE_EXTERIOR"
+                        "FULL_HOUSE_EXTERIOR",
+                        "PARTICLE_EMITTER_RAIN"
                     ],
                     "maskObjects": [
                         "bobbysRoomMask",
@@ -664,6 +665,28 @@
                     "size": {
                         "width": 32,
                         "height": 32
+                    }
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
+        },
+        {
+            "type": "FULL_TREE_BACKGROUND_1",
+            "traitTags": [],
+            "description": "Background",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_FULL_TREE_BACKGROUND_1"
+
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 4000,
+                        "height": 1266
                     }
                 },
                 {
