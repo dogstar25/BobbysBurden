@@ -274,6 +274,7 @@
     <Image Include="assets\textureAtlas02.png" />
     <Image Include="assets\textureAtlas03.png" />
     <Image Include="assets\textureAtlas04.png" />
+    <Image Include="assets\textureAtlas05.png" />
     <Image Include="assets\textureAtlasImGui.png" />
     <Image Include="assets\window_shadow1.png" />
   </ItemGroup>

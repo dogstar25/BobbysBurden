@@ -231,7 +231,7 @@
         {
             "type": "DOOR_KNOB",
             "description": "Door",
-            "traitTags": [ "contact_interface", "abstract" ],
+            "traitTags": [ "always_in_line_of_sight", "abstract" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -320,7 +320,7 @@
         },
         {
             "type": "DOOR_WARP_ENTRY",
-            "traitTags": [ "contact_interface", "abstract" ],
+            "traitTags": [ "abstract" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT"

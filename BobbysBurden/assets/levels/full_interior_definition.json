@@ -491,9 +491,9 @@
 
         },
         {
-            "id": "LOC_0000_0110",
-            "gameObjectType": "PARTICLE_EMITTER_RAIN",
-            "layer": "GameLayer::FOREGROUND_5"
+            "id": "LOC_0000_0117",
+            "gameObjectType": "FULL_TREE_BACKGROUND_1",
+            "layer": "GameLayer::BACKGROUND_5"
 
         }
     ]
