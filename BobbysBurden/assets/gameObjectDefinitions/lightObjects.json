@@ -27,6 +27,12 @@
                     "type": "LightType::TEXTURE_LIGHT",
                     "intensity": 5,
                     "flicker": 10
+                },
+                {
+                    "id": "STATE_COMPONENT",
+                    "beginStates": [
+                        "GameObjectState::OFF"
+                    ]
                 }
             ]
         },
@@ -90,6 +96,12 @@
                     "type": "LightType::TEXTURE_LIGHT",
                     "intensity": 5,
                     "flicker": 100
+                },
+                {
+                    "id": "STATE_COMPONENT",
+                    "beginStates": [
+                        "GameObjectState::OFF"
+                    ]
                 }
             ]
         },
@@ -120,6 +132,13 @@
                     "type": "LightType::TEXTURE_LIGHT",
                     "intensity": 1,
                     "flicker": 100
+                },
+                {
+                    "id": "STATE_COMPONENT",
+                    "beginStates": [
+                        "GameObjectState::ON"
+                    ]
+
                 }
             ]
         },
@@ -165,6 +184,9 @@
 
                         }
                     ]
+                },
+                {
+                    "id": "STATE_COMPONENT"
                 }
             ]
         },
@@ -195,6 +217,9 @@
                     "type": "LightType::TEXTURE_LIGHT",
                     "intensity": 5,
                     "flicker": 0
+                },
+                {
+                    "id": "STATE_COMPONENT"
                 }
             ]
         },

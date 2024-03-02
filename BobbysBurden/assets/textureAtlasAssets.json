@@ -369,6 +369,9 @@
                 "height": 256
             }
         },
+        //
+        // Bobby Animations
+        //
         {
             "id": "TX_BOBBY_IDLE_RIGHT",
             "description": "Bobby Idle Right",
@@ -460,6 +463,98 @@
             }
         },
         {
+            "id": "TX_BOBBY_IDLE_RIGHT_EQUIPPED",
+            "description": "Bobby Idle Right",
+            "atlas": "TEXTURE_ATLAS_1",
+            "quadPosition": {
+                "x": 444,
+                "y": 697,
+                "width": 89,
+                "height": 116
+            }
+        },
+        {
+            "id": "TX_BOBBY_IDLE_LEFT_EQUIPPED",
+            "description": "Bobby Idle",
+            "atlas": "TEXTURE_ATLAS_1",
+            "flip": true,
+            "quadPosition": {
+                "x": 444,
+                "y": 697,
+                "width": 89,
+                "height": 116
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_RIGHT_EQUIPPED",
+            "description": "Bobby Walk",
+            "atlas": "TEXTURE_ATLAS_1",
+            "quadPosition": {
+                "x": 0,
+                "y": 467,
+                "width": 534,
+                "height": 464
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_LEFT_EQUIPPED",
+            "description": "Bobby Walk",
+            "atlas": "TEXTURE_ATLAS_1",
+            "flip": true,
+            "quadPosition": {
+                "x": 0,
+                "y": 467,
+                "width": 534,
+                "height": 464
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_DOWN_STAIRS_EQUIPPED",
+            "description": "Bobby Walk",
+            "atlas": "TEXTURE_ATLAS_1",
+            "quadPosition": {
+                "x": 536,
+                "y": 236,
+                "width": 356,
+                "height": 116
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_DOWN_IDLE_STAIRS_EQUIPPED",
+            "description": "Bobby Walk",
+            "atlas": "TEXTURE_ATLAS_1",
+            "quadPosition": {
+                "x": 625,
+                "y": 236,
+                "width": 89,
+                "height": 116
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_UP_STAIRS_EQUIPPED",
+            "description": "Bobby Walk",
+            "atlas": "TEXTURE_ATLAS_1",
+            "quadPosition": {
+                "x": 536,
+                "y": 354,
+                "width": 356,
+                "height": 116
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_UP_IDLE_STAIRS_EQUIPPED",
+            "description": "Bobby Walk",
+            "atlas": "TEXTURE_ATLAS_1",
+            "quadPosition": {
+                "x": 536,
+                "y": 354,
+                "width": 89,
+                "height": 116
+            }
+        },
+
+        ////////////
+        {
             "id": "TX_CRYSTAL",
             "description": "CC",
             "atlas": "TEXTURE_ATLAS_0",
@@ -499,7 +594,7 @@
             "description": "Light 360",
             "atlas": "TEXTURE_ATLAS_0",
             "quadPosition": {
-                "x": 1024,
+                "x": 1031,
                 "y": 894,
                 "width": 512,
                 "height": 512
@@ -554,10 +649,10 @@
             "description": "Default Texure",
             "atlas": "TEXTURE_ATLAS_2",
             "quadPosition": {
-                "x": 3,
-                "y": 55,
-                "width": 60,
-                "height": 62
+                "x": 2,
+                "y": 54,
+                "width": 64,
+                "height": 64
             }
         },
         {

@@ -168,13 +168,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\actions\DisableProximityHintAction.cpp" />
+    <ClCompile Include="src\actions\ToggleBobbyEquipAction.cpp" />
     <ClCompile Include="src\components\BBStateComponent.cpp" />
     <ClCompile Include="src\actions\DoorToggleAction.cpp" />
     <ClCompile Include="src\actions\ItemDragTreatmentAction.cpp" />
     <ClCompile Include="src\actions\ItemDropAction.cpp" />
     <ClCompile Include="src\actions\ToggleBobbyInventory.cpp" />
     <ClCompile Include="src\actions\ShowInterfaceAction.cpp" />
-    <ClCompile Include="src\actions\ActorMoveAction.cpp" />
+    <ClCompile Include="src\actions\BobbyMoveAction.cpp" />
     <ClCompile Include="src\actions\BBActionFactory.cpp" />
     <ClCompile Include="src\actions\DoorEnterAction.cpp" />
     <ClCompile Include="src\actions\HideUnderBedAction.cpp" />
@@ -215,13 +216,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\actions\DisableProximityHintAction.h" />
+    <ClInclude Include="src\actions\ToggleBobbyEquipAction.h" />
     <ClInclude Include="src\components\BBStateComponent.h" />
     <ClInclude Include="src\actions\DoorToggleAction.h" />
     <ClInclude Include="src\actions\ItemDragTreatmentAction.h" />
     <ClInclude Include="src\actions\ItemDropAction.h" />
     <ClInclude Include="src\actions\ToggleBobbyInventory.h" />
     <ClInclude Include="src\actions\ShowInterfaceAction.h" />
-    <ClInclude Include="src\actions\ActorMoveAction.h" />
+    <ClInclude Include="src\actions\BobbyMoveAction.h" />
     <ClInclude Include="src\actions\BBActionFactory.h" />
     <ClInclude Include="src\actions\DoorEnterAction.h" />
     <ClInclude Include="src\actions\HideUnderBedAction.h" />

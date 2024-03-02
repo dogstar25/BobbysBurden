@@ -585,7 +585,8 @@
                     "maskObjects": [
                         "bobbysRoomMask",
                         "guestBedroomMask",
-                        "frontTopStairsRoomMask"
+                        "frontTopStairsRoomMask",
+                        "frontBottomStairsRoomMask"
                     ]
                 }
             ]

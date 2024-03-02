@@ -38,7 +38,18 @@
                                 ]
                             }
 
+                        },
+                        {
+                            "actionId": "Actions::EQUIP_LIGHT",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "Key::SDL_SCANCODE_F"
+                                ]
+                            }
+
                         }
+
 
                     ]
                 },
@@ -72,11 +83,15 @@
                     "actions": [
                         {
                             "actionId": "Actions::MOVE",
-                            "actionClass": "ActorMove"
+                            "actionClass": "BobbyMoveAction"
                         },
                         {
                             "actionId": "Actions::OPEN",
                             "actionClass": "ToggleBobbyInventory"
+                        },
+                        {
+                            "actionId": "Actions::EQUIP_LIGHT",
+                            "actionClass": "ToggleBobbyEquip"
                         }
 
                     ]
@@ -89,13 +104,10 @@
                         {
                             "gameObjectType": "HOLDING_CANDLE",
                             "absolutePositionSlot": {
-                                "x": -8,
+                                "x": 0,
                                 "y": 0
-                            }
-                        },
-                        {
-                            "gameObjectType": "BOBBY_LABEL",
-                            "standardSlot": "PositionAlignment::TOP_RIGHT"
+                            },
+                            "beginStates": [ "GameObjectState::DISABLED_RENDER", "GameObjectState::DISABLED_COLLISION" ]
                         }
 
                     ]
@@ -135,7 +147,40 @@
                         {
                             "state": "GameObjectState::WALK_DOWN",
                             "animationId": "WALK_DOWN"
+                        },
+                        {
+                            "state": "GameObjectState::IDLE_RIGHT_EQUIPPED",
+                            "animationId": "IDLE_RIGHT_EQUIPPED"
+                        },
+                        {
+                            "state": "GameObjectState::IDLE_LEFT_EQUIPPED",
+                            "animationId": "IDLE_LEFT_EQUIPPED"
+                        },
+                        {
+                            "state": "GameObjectState::IDLE_UP_EQUIPPED",
+                            "animationId": "WALK_UP_IDLE_EQUIPPED"
+                        },
+                        {
+                            "state": "GameObjectState::IDLE_DOWN_EQUIPPED",
+                            "animationId": "WALK_DOWN_IDLE_EQUIPPED"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_RIGHT_EQUIPPED",
+                            "animationId": "WALK_RIGHT_EQUIPPED"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_LEFT_EQUIPPED",
+                            "animationId": "WALK_LEFT_EQUIPPED"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_UP_EQUIPPED",
+                            "animationId": "WALK_UP_EQUIPPED"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_DOWN_EQUIPPED",
+                            "animationId": "WALK_DOWN_EQUIPPED"
                         }
+
                     ]
                 },
                 {
@@ -196,6 +241,58 @@
                             "id": "WALK_UP_IDLE",
                             "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
                             "textureId": "TX_BOBBY_WALK_UP_IDLE_STAIRS",
+                            "frames": 1
+                        },
+                        {
+                            "id": "IDLE_RIGHT_EQUIPPED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_BOBBY_IDLE_RIGHT_EQUIPPED",
+                            "frames": 1
+                        },
+                        {
+                            "id": "IDLE_LEFT_EQUIPPED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_BOBBY_IDLE_LEFT_EQUIPPED",
+                            "frames": 1
+                        },
+                        {
+                            "id": "WALK_RIGHT_EQUIPPED",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_BOBBY_WALK_RIGHT_EQUIPPED",
+                            "speed": 0.01,
+                            "frames": 24
+                        },
+                        {
+                            "id": "WALK_LEFT_EQUIPPED",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_BOBBY_WALK_LEFT_EQUIPPED",
+                            "speed": 0.01,
+                            "frames": 24
+                        },
+                        {
+                            "id": "WALK_DOWN_EQUIPPED",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_BOBBY_WALK_DOWN_STAIRS_EQUIPPED",
+                            "speed": 0.1,
+                            "frames": 4
+                        },
+                        {
+                            "id": "WALK_DOWN_IDLE_EQUIPPED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_BOBBY_WALK_DOWN_IDLE_STAIRS_EQUIPPED",
+                            "frames": 1
+                        },
+                        {
+                            "id": "WALK_UP_EQUIPPED",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_BOBBY_WALK_UP_STAIRS_EQUIPPED",
+                            "speed": 0.1,
+                            "frames": 4
+                        },
+                        {
+                            "id": "WALK_UP_IDLE_EQUIPPED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_BOBBY_WALK_UP_IDLE_STAIRS_EQUIPPED",
                             "frames": 1
                         }
                     ]

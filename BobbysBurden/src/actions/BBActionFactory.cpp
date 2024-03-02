@@ -1,5 +1,5 @@
 #include "BBActionFactory.h"
-#include "ActorMoveAction.h"
+#include "BobbyMoveAction.h"
 #include "DoorToggleAction.h"
 #include "DoorEnterAction.h"
 #include "TwistBedKnobAction.h"
@@ -11,6 +11,7 @@
 #include "ItemDragTreatmentAction.h"
 #include "ItemDropAction.h"
 #include "DisableProximityHintAction.h"
+#include "ToggleBobbyEquipAction.h"
 
 
 
@@ -30,9 +31,9 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType)
 
         action = std::make_shared<DoorEnterAction>();
     }
-    else if (actionType == "ActorMove") {
+    else if (actionType == "BobbyMoveAction") {
 
-        action = std::make_shared<ActorMoveAction>();
+        action = std::make_shared<BobbyMoveAction>();
     }
     else if (actionType == "HideUnderBedAction") {
 
@@ -69,6 +70,10 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType)
     else if (actionType == "DisableProximityHintAction") {
 
         action = std::make_shared<DisableProximityHintAction>();
+    }
+    else if (actionType == "ToggleBobbyEquip") {
+
+        action = std::make_shared<ToggleBobbyEquipAction>();
     }
 
     else {

@@ -438,7 +438,7 @@
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_ROOM_BOTSTAIRS"
+                    "textureId": "TX_ROOM_PARLOR"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -446,6 +446,26 @@
                         "width": 320,
                         "height": 320
                     }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CLEAR_QUAD_MASK",
+                            "absolutePositionSlot": {
+                                "x": -6,
+                                "y": 0
+                            },
+                            "name": "frontBottomStairsRoomMask",
+                            "size": {
+                                "width": 326,
+                                "height": 320
+                            }
+                        }
+
+                    ]
                 }
             ]
 
@@ -612,23 +632,6 @@
                         }
                     ]
                 },
-                //{
-                //    "id": "ANIMATION_COMPONENT",
-                //    "default": "LIT",
-                //    "frameSize": {
-                //        "width": 71,
-                //        "height": 128
-                //    },
-                //    "animations": [
-                //        {
-                //            "id": "LIT",
-                //            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                //            "textureId": "TX_FIRELOGS_1",
-                //            "speed": 0.50,
-                //            "frames": 6
-                //        }
-                //    ]
-                //},
                 {
                     "id": "CHILDREN_COMPONENT",
                     "childPadding": 0,
