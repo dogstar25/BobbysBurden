@@ -164,6 +164,11 @@
             "layer": "GameLayer::BACKGROUND_5"
         },
         {
+            "id": "LOC_0033_0145",
+            "gameObjectType": "BOT_STAIRS_ROOM",
+            "layer": "GameLayer::BACKGROUND_5"
+        },
+        {
             "id": "LOC_0038_0141",
             "gameObjectType": "STAIRS_RAIL",
             "layer": "GameLayer::MAIN",

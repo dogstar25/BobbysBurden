@@ -38,6 +38,7 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("Actions::CLOSE", Actions::CLOSE);
 	addEnumItem("Actions::ENTER", Actions::ENTER);
 	addEnumItem("Actions::STAIRS_MOVE", Actions::STAIRS_MOVE);
+	addEnumItem("Actions::EQUIP_LIGHT", Actions::EQUIP_LIGHT);
 
 	//Traits
 	addEnumItem("hiding_spot", TraitTag::hiding_spot);
