@@ -258,7 +258,8 @@
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_BEDROOM_1"
+                    //"textureId": "TX_BEDROOM_1",
+                    "textureId": "TX_WHITE_QUAD"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
