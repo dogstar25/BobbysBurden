@@ -38,11 +38,11 @@
 
     ],
     "locationDefinedObjects": [
-        //{
-        //    "id": "LOC_0000_0000",
-        //    "gameObjectType": "ENVIORNMENT_CONTROLLER",
-        //    "layer": "GameLayer::ABSTRACT"
-        //},
+        {
+            "id": "LOC_0000_0000",
+            "gameObjectType": "ENVIORNMENT_CONTROLLER",
+            "layer": "GameLayer::ABSTRACT"
+        },
         {
             "id": "LOC_0000_0000",
             "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",

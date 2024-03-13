@@ -25,6 +25,7 @@ void BBEnvironmentComponent::postInit()
 	houseMaskOverlayComponent->addOverlayObject(lightingFilter);
 
 	
+	m_stormComponenets.push_range(stormCompDistantBeginning);
 
 }
 
@@ -32,18 +33,18 @@ void BBEnvironmentComponent::postInit()
 void BBEnvironmentComponent::update()
 {
 
+
+
+
+
+
+	//m_stormComponenets.pop_back();
+
+
+
 	if (testLightningTimer.hasMetTargetDuration()) {
 
 
-		/////
-		// 
-		// 
-		// The background lightning image you added is good, but maybe try removing the background of the 
-		// house overlay and ...hmmm. You also need a flash behind the tree images, not on top of
-		// maybe the backgreound of the tree image can be in different render mode to display the background lightning
-		// 
-		// 
-		// 
 		/////////////////////
 		//TODO:Add a toggleState to the stateComponent!! MAYBE?
 		//////////////////////////////////////
