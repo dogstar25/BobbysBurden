@@ -193,6 +193,7 @@
     <ClCompile Include="src\components\BobbyPlayerControlComponent.cpp" />
     <ClCompile Include="src\components\BBInterfaceComponent.cpp" />
     <ClCompile Include="src\components\BBMaskedOverlayComponent.cpp" />
+    <ClCompile Include="src\components\BBEnvironmentComponent.cpp" />
     <ClCompile Include="src\cutScenes\BBCutSceneFactory.cpp" />
     <ClCompile Include="src\IMGui\BB_IMGuiFactory.cpp" />
     <ClCompile Include="src\IMGui\BB_IMGuiUtil.cpp" />
@@ -217,6 +218,7 @@
   <ItemGroup>
     <ClInclude Include="src\actions\DisableProximityHintAction.h" />
     <ClInclude Include="src\actions\ToggleBobbyEquipAction.h" />
+    <ClInclude Include="src\BBEnviornmentEvents.h" />
     <ClInclude Include="src\components\BBStateComponent.h" />
     <ClInclude Include="src\actions\DoorToggleAction.h" />
     <ClInclude Include="src\actions\ItemDragTreatmentAction.h" />
@@ -240,6 +242,7 @@
     <ClInclude Include="src\components\BobbyPlayerControlComponent.h" />
     <ClInclude Include="src\components\BBInterfaceComponent.h" />
     <ClInclude Include="src\components\BBMaskedOverlayComponent.h" />
+    <ClInclude Include="src\components\BBEnvironmentComponent.h" />
     <ClInclude Include="src\cutScenes\BBCutSceneFactory.h" />
     <ClInclude Include="src\GameConstants.h" />
     <ClInclude Include="src\IMGui\BB_IMGuiFactory.h" />
@@ -287,6 +290,7 @@
     <None Include="assets\gameObjectDefinitions\commonObjects.json" />
     <None Include="assets\gameObjectDefinitions\doorObjects.json" />
     <None Include="assets\gameObjectDefinitions\drawerObjects.json" />
+    <None Include="assets\gameObjectDefinitions\environmentObjects.json" />
     <None Include="assets\gameObjectDefinitions\guiObjects.json" />
     <None Include="assets\gameObjectDefinitions\householdObjects.json" />
     <None Include="assets\gameObjectDefinitions\houseObjects.json" />
@@ -308,7 +312,44 @@
     <None Include="assets\textureAtlasAssets.json" />
   </ItemGroup>
   <ItemGroup>
+    <Media Include="assets\sound\background_wind_chimes_loop.wav" />
+    <Media Include="assets\sound\bear_pain_hurt_groan_02.wav" />
+    <Media Include="assets\sound\bell_large_ringing_01.wav" />
+    <Media Include="assets\sound\bell_med_ringing_03.wav" />
+    <Media Include="assets\sound\bell_small_ringing_01.wav" />
+    <Media Include="assets\sound\crickets_chirping_night_ambience_loop.wav" />
+    <Media Include="assets\sound\door_creak_short_05.wav" />
+    <Media Include="assets\sound\door_lock_open_01.wav" />
+    <Media Include="assets\sound\door_old_wooden_close_thud_01.wav" />
+    <Media Include="assets\sound\ghost_witch_voice_hiss_10.wav" />
+    <Media Include="assets\sound\ghost_witch_voice_hiss_12.wav" />
+    <Media Include="assets\sound\glass_smashable_small_break_01.wav" />
+    <Media Include="assets\sound\glass_smashable_small_break_02.wav" />
     <Media Include="assets\sound\music\main_theme_a.mp3" />
+    <Media Include="assets\sound\rain_heavy_loop_01.wav" />
+    <Media Include="assets\sound\rain_medium_loop_01.wav" />
+    <Media Include="assets\sound\storm_loop_distant.wav" />
+    <Media Include="assets\sound\storm_loop_full.wav" />
+    <Media Include="assets\sound\storm_loop_Light_rain.wav" />
+    <Media Include="assets\sound\storm_medium_2_long.mp3" />
+    <Media Include="assets\sound\storm_medium_long.mp3" />
+    <Media Include="assets\sound\thunder_boom_01.wav" />
+    <Media Include="assets\sound\thunder_boom_02.wav" />
+    <Media Include="assets\sound\thunder_rumble_01.wav" />
+    <Media Include="assets\sound\thunder_rumble_02.wav" />
+    <Media Include="assets\sound\thunder_rumble_03.wav" />
+    <Media Include="assets\sound\thunder_lightning_strike_rumble_04.wav" />
+    <Media Include="assets\sound\thunder_lightning_strike_rumble_05.wav" />
+    <Media Include="assets\sound\voice_monster_roar_growl_groan_distant_01.wav" />
+    <Media Include="assets\sound\voice_monster_roar_growl_groan_distant_03.wav" />
+    <Media Include="assets\sound\water_drop_drip_single_01.wav" />
+    <Media Include="assets\sound\water_drop_drip_single_02.wav" />
+    <Media Include="assets\sound\water_drop_drip_single_03.wav" />
+    <Media Include="assets\sound\water_drop_drip_single_04.wav" />
+    <Media Include="assets\sound\water_drop_drip_single_05.wav" />
+    <Media Include="assets\sound\wind_cold_howling_haunted_loop_01.wav" />
+    <Media Include="assets\sound\wind_cold_howling_haunted_loop_02.wav" />
+    <Media Include="assets\sound\wind_cold_howling_haunted_loop_03.wav" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="assets\fonts\AnandaBlack.ttf" />

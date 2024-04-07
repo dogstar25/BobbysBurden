@@ -1,0 +1,142 @@
+{
+    "gameObjects": [
+        {
+            "type": "ENVIORNMENT_CONTROLLER",
+            "traitTags": [],
+            "description": "Enviornment controller",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 1,
+                        "height": 1
+                    }
+                },
+                {
+                    "id": "BB_ENVIRONMENT_COMPONENT"
+                },
+                {
+                    "id": "SOUND_COMPONENT",
+                    "sounds": [
+                        {
+                            "id": "THUNDER_BOOM_1",
+                            "soundAssetId": "SFX_THUNDER_BOOM_1"
+                        },
+                        {
+                            "id": "THUNDER_BOOM_2",
+                            "soundAssetId": "SFX_THUNDER_BOOM_2"
+                        },
+                        {
+                            "id": "THUNDER_RUMBLE_1",
+                            "soundAssetId": "SFX_THUNDER_RUMBLE_1",
+                            "continuous": false
+                        },
+                        {
+                            "id": "THUNDER_RUMBLE_2",
+                            "soundAssetId": "SFX_THUNDER_RUMBLE_2",
+                            "continuous": false
+                        },
+                        {
+                            "id": "THUNDER_RUMBLE_3",
+                            "soundAssetId": "SFX_THUNDER_RUMBLE_3",
+                            "continuous": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "LIGHTNING_BACKGROUND_FILTER_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_FOG_BOX"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 5504,
+                        "height": 5504
+                    }
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::DISABLED_RENDER" ]
+                }
+            ]
+        },
+        {
+            "type": "LIGHTNING_FOREGROUND_FILTER_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_FOG_BOX2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 5504,
+                        "height": 5504
+                    }
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::DISABLED_RENDER" ]
+                }
+            ]
+        },
+        {
+            "type": "LIGHTNING_BOLT_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_LIGHTNING_BOLT1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 328,
+                        "height": 1300
+                    }
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::DISABLED_RENDER" ]
+                }
+            ]
+        },
+        {
+            "type": "LIGHTNING_BOLT_2",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_LIGHTNING_BOLT2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 328,
+                        "height": 1300
+                    }
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::DISABLED_RENDER" ]
+                }
+            ]
+        }
+
+    ]
+}

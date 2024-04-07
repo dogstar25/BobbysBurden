@@ -1,0 +1,50 @@
+#pragma once
+#include "MobyDick.h"
+
+
+
+
+class BBEnvironmentComponent : public EnvironmentComponent
+{
+
+public:
+
+	BBEnvironmentComponent(Json::Value definitionJSON);
+
+	virtual void update() override;
+	virtual void postInit() override;
+	virtual void setParent(GameObject* gameObject) override;
+
+	virtual const int CYCLE_COUNT() const override{
+		return 1;
+	}
+
+protected:
+
+
+private:
+
+	bool m_isStorming{};
+
+	Timer testLightningTimer{ 1.0, true };
+	Timer testLightningTimer2{ 1.2, true };
+	Timer testLightningTimer3{ 1.4, true };
+	
+	void _lightningflash(EnvironmentEvent& event);
+	void _handlelightingFront(EnvironmentEvent& event);
+	void _rain(EnvironmentEvent& event);
+	void _resetSequence(int sequence);
+
+	
+
+
+
+	
+
+
+
+	
+
+
+};
+

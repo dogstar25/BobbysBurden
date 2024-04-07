@@ -4,6 +4,7 @@
 #include "components/BBInterfaceComponent.h"
 #include "components/BBStateComponent.h"
 #include "components/BBMaskedOverlayComponent.h"
+#include "components/BBEnvironmentComponent.h"
 
 std::shared_ptr<Component> BBComponentFactory::create(
 	Json::Value definitionJSON,
@@ -36,6 +37,10 @@ std::shared_ptr<Component> BBComponentFactory::create(
 	else if (componentType == ComponentTypes::BB_MASKED_OVERLAY_COMPONENT) {
 		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BB_MASKED_OVERLAY_COMPONENT);
 		component = std::make_shared<BBMaskedOverlayComponent>(componentJSON, scene);
+	}
+	else if (componentType == ComponentTypes::BB_ENVIRONMENT_COMPONENT) {
+		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BB_ENVIRONMENT_COMPONENT);
+		component = std::make_shared<BBEnvironmentComponent>(componentJSON);
 	}
 
 	else {

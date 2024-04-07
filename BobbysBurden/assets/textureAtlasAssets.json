@@ -135,6 +135,17 @@
             }
         },
         {
+            "id": "TX_FOG_BOX2",
+            "description": "Fog Box",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 104,
+                "y": 20,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
             "id": "TX_ALMOST_CLEAR_BOX",
             "description": "Fog Box",
             "atlas": "TEXTURE_ATLAS_0",
@@ -1083,6 +1094,28 @@
                 "y": 54,
                 "width": 14,
                 "height": 64
+            }
+        },
+        {
+            "id": "TX_LIGHTNING_BOLT1",
+            "description": "Rain Drop",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 2,
+                "y": 201,
+                "width": 328,
+                "height": 855
+            }
+        },
+        {
+            "id": "TX_LIGHTNING_BOLT2",
+            "description": "Rain Drop",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 332,
+                "y": 201,
+                "width": 401,
+                "height": 855
             }
         }
 

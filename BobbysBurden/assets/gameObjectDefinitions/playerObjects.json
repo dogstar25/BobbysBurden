@@ -221,7 +221,7 @@
                             "id": "WALK_DOWN",
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_DOWN_STAIRS",
-                            "speed": 0.1,
+                            "speed": 0.01,
                             "frames": 4
                         },
                         {
@@ -234,7 +234,7 @@
                             "id": "WALK_UP",
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_UP_STAIRS",
-                            "speed": 0.1,
+                            "speed": 0.01,
                             "frames": 4
                         },
                         {

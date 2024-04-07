@@ -28,6 +28,7 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("BB_INTERFACE_COMPONENT", ComponentTypes::BB_INTERFACE_COMPONENT);
 	addEnumItem("BB_STATE_COMPONENT", ComponentTypes::BB_STATE_COMPONENT);
 	addEnumItem("BB_MASKED_OVERLAY_COMPONENT", ComponentTypes::BB_MASKED_OVERLAY_COMPONENT);
+	addEnumItem("BB_ENVIRONMENT_COMPONENT", ComponentTypes::BB_ENVIRONMENT_COMPONENT);
 
 	//Custom Status/Context Item Types
 	addEnumItem("StatusItemId::PLAYERS_HEART_COUNT", StatusItemId::PLAYERS_HEART_COUNT);

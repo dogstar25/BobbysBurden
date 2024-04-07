@@ -38,12 +38,24 @@
 
     ],
     "locationDefinedObjects": [
-        //{
-        //    "id": "LOC_0000_0115",
-        //    "gameObjectType": "FULL_HOUSE_EXTERIOR",
-        //    "layer": "GameLayer::FOREGROUND_5",
-        //    "objectColor": "Colors::ALPHA_100_COLOR"
-        //},
+        {
+            "id": "LOC_0000_0000",
+            "gameObjectType": "ENVIORNMENT_CONTROLLER",
+            "layer": "GameLayer::ABSTRACT"
+        },
+        {
+            "id": "LOC_0000_0000",
+            "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
+            "layer": "GameLayer::BACKGROUND_FINAL",
+            "name": "lightningBackgroundFinal"
+
+        },
+        {
+            "id": "LOC_0000_0000",
+            "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
+            "layer": "GameLayer::BACKGROUND_4",
+            "name": "lightningBackground"
+        },
         {
             "id": "LOC_0000_0110",
             "gameObjectType": "HOUSE_OVERLAY",

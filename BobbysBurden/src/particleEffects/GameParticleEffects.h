@@ -5,6 +5,7 @@ namespace ParticleEffects {
 
 
 	static const ParticleEffect spark = {
+		.name = "SPARK",
 		.poolId = "ROUND_LIT_PARTICLE_POOL",
 		.originMin = {0,0},
 		.originMax = {0,0},
@@ -24,6 +25,7 @@ namespace ParticleEffects {
 	};
 
 	static const ParticleEffect fireFlame = {
+		.name = "FIREFLAME",
 		.poolId = "ROUND_PARTICLE_POOL",
 		.originMin = {0,0},
 		.originMax = {0,0},
@@ -62,8 +64,8 @@ namespace ParticleEffects {
 	//	.particleSpawnCountMax = 1
 	//};
 
-	static const ParticleEffect rain = {
-		//.poolId = "RAIN_SHEET_PARTICLE_POOL",
+	static ParticleEffect rain = {
+		.name = "RAIN",
 		.poolId = "RAIN_DROP_PARTICLE_POOL",
 		.originMin = {-500,3890},
 		.originMax = {3000,5000},

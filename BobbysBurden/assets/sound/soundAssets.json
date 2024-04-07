@@ -4,7 +4,33 @@
             "id": "SFX_BUTTON_WORKING_1",
             "description": "Button Working 1",
             "filename": "buttonWorking.ogg"
+        },
+        {
+            "id": "SFX_THUNDER_BOOM_1",
+            "description": "",
+            "filename": "thunder_boom_01.wav"
+        },
+        {
+            "id": "SFX_THUNDER_BOOM_2",
+            "description": "",
+            "filename": "thunder_boom_02.wav"
+        },
+        {
+            "id": "SFX_THUNDER_RUMBLE_1",
+            "description": "",
+            "filename": "thunder_rumble_01.wav"
+        },
+        {
+            "id": "SFX_THUNDER_RUMBLE_2",
+            "description": "",
+            "filename": "thunder_rumble_02.wav"
+        },
+        {
+            "id": "SFX_THUNDER_RUMBLE_3",
+            "description": "",
+            "filename": "thunder_rumble_03.wav"
         }
+
 
     ],
     "music": [

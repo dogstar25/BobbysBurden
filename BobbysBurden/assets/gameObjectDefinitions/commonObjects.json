@@ -105,6 +105,9 @@
                     "effects": [
                         "rain"
                     ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
                 }
             ]
         },
@@ -579,8 +582,8 @@
                 {
                     "id": "BB_MASKED_OVERLAY_COMPONENT",
                     "overlayObjects": [
-                        "FULL_HOUSE_EXTERIOR",
-                        "PARTICLE_EMITTER_RAIN"
+                        "FULL_HOUSE_EXTERIOR"
+
                     ],
                     "maskObjects": [
                         "bobbysRoomMask",
