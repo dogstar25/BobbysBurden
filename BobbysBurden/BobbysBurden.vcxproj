@@ -218,6 +218,7 @@
   <ItemGroup>
     <ClInclude Include="src\actions\DisableProximityHintAction.h" />
     <ClInclude Include="src\actions\ToggleBobbyEquipAction.h" />
+    <ClInclude Include="src\BBEnviornmentEvents.h" />
     <ClInclude Include="src\components\BBStateComponent.h" />
     <ClInclude Include="src\actions\DoorToggleAction.h" />
     <ClInclude Include="src\actions\ItemDragTreatmentAction.h" />
@@ -327,9 +328,16 @@
     <Media Include="assets\sound\music\main_theme_a.mp3" />
     <Media Include="assets\sound\rain_heavy_loop_01.wav" />
     <Media Include="assets\sound\rain_medium_loop_01.wav" />
-    <Media Include="assets\sound\thunder_lightning_strike_rumble_01.wav" />
-    <Media Include="assets\sound\thunder_lightning_strike_rumble_02.wav" />
-    <Media Include="assets\sound\thunder_lightning_strike_rumble_03.wav" />
+    <Media Include="assets\sound\storm_loop_distant.wav" />
+    <Media Include="assets\sound\storm_loop_full.wav" />
+    <Media Include="assets\sound\storm_loop_Light_rain.wav" />
+    <Media Include="assets\sound\storm_medium_2_long.mp3" />
+    <Media Include="assets\sound\storm_medium_long.mp3" />
+    <Media Include="assets\sound\thunder_boom_01.wav" />
+    <Media Include="assets\sound\thunder_boom_02.wav" />
+    <Media Include="assets\sound\thunder_rumble_01.wav" />
+    <Media Include="assets\sound\thunder_rumble_02.wav" />
+    <Media Include="assets\sound\thunder_rumble_03.wav" />
     <Media Include="assets\sound\thunder_lightning_strike_rumble_04.wav" />
     <Media Include="assets\sound\thunder_lightning_strike_rumble_05.wav" />
     <Media Include="assets\sound\voice_monster_roar_growl_groan_distant_01.wav" />

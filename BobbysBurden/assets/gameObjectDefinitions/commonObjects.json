@@ -105,6 +105,9 @@
                     "effects": [
                         "rain"
                     ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
                 }
             ]
         },

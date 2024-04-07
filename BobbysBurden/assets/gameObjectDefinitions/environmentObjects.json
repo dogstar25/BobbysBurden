@@ -18,6 +18,34 @@
                 },
                 {
                     "id": "BB_ENVIRONMENT_COMPONENT"
+                },
+                {
+                    "id": "SOUND_COMPONENT",
+                    "sounds": [
+                        {
+                            "id": "THUNDER_BOOM_1",
+                            "soundAssetId": "SFX_THUNDER_BOOM_1"
+                        },
+                        {
+                            "id": "THUNDER_BOOM_2",
+                            "soundAssetId": "SFX_THUNDER_BOOM_2"
+                        },
+                        {
+                            "id": "THUNDER_RUMBLE_1",
+                            "soundAssetId": "SFX_THUNDER_RUMBLE_1",
+                            "continuous": false
+                        },
+                        {
+                            "id": "THUNDER_RUMBLE_2",
+                            "soundAssetId": "SFX_THUNDER_RUMBLE_2",
+                            "continuous": false
+                        },
+                        {
+                            "id": "THUNDER_RUMBLE_3",
+                            "soundAssetId": "SFX_THUNDER_RUMBLE_3",
+                            "continuous": false
+                        }
+                    ]
                 }
             ]
         },
