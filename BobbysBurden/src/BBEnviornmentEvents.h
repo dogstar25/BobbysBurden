@@ -66,6 +66,6 @@ EnvironmentEvent stormCycleCloseStorm[] = {
 	{ EnvironmentEventType::LIGHTNING_FLASH_MIDDLE, Timer(0.5F)},
 	{ EnvironmentEventType::THUNDER_RUMBLE_2, Timer(0.0F)},
 	{ EnvironmentEventType::WAIT_EVENT, Timer(2.1F) },
-	{ EnvironmentEventType::LIGHTNING_FLASH_BACK, Timer(2.2F)},
+	{ EnvironmentEventType::LIGHTNING_FLASH_FRONT, Timer(2.2F)},
 };
 

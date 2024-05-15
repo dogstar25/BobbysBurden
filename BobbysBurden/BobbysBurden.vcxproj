@@ -312,6 +312,7 @@
     <None Include="assets\textureAtlasAssets.json" />
   </ItemGroup>
   <ItemGroup>
+    <Media Include="assets\sound\approachingStorm_1.wav" />
     <Media Include="assets\sound\background_wind_chimes_loop.wav" />
     <Media Include="assets\sound\bear_pain_hurt_groan_02.wav" />
     <Media Include="assets\sound\bell_large_ringing_01.wav" />
