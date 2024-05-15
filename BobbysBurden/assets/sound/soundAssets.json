@@ -29,6 +29,11 @@
             "id": "SFX_THUNDER_RUMBLE_3",
             "description": "",
             "filename": "thunder_rumble_03.wav"
+        },
+        {
+            "id": "SFX_APPROACHING_STORM_1",
+            "description": "",
+            "filename": "approachingStorm_1.wav"
         }
 
 

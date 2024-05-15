@@ -72,9 +72,12 @@ void BBEnvironmentComponent::update()
 	const auto& soundComponent = parent()->getComponent<SoundComponent>(ComponentTypes::SOUND_COMPONENT);
 
 	bool allComplete = true;
+	int todd = 0;
 
 	//Find the first sequnce object that is not already complete or that has started and should continue
 	for (auto& event : m_enviornmentCycle[m_currentSequence]) {
+
+		todd++;
 
 		if (event.status != EventStatus::COMPLETE) {
 
@@ -117,11 +120,12 @@ void BBEnvironmentComponent::update()
 					break;
 				case EnvironmentEventType::WAIT_EVENT:
 
-					if (event.durationTimer.isFirstTime() == true) {
+					if (event.status == EventStatus::IDLE) {
 						event.durationTimer.reset();
 						event.status = EventStatus::IN_PROGRESS;
 					}
-					else if(event.durationTimer.hasMetTargetDuration()) {
+
+					if(event.durationTimer.hasMetTargetDuration()) {
 						event.status = EventStatus::COMPLETE;
 					}
 
@@ -163,10 +167,12 @@ void BBEnvironmentComponent::update()
 
 void BBEnvironmentComponent::_resetSequence(int sequence)
 {
+	//m_enviornmentCycle[enviornmentSequence::CLOSE_STORM].assign_range(stormCycleCloseStorm);
 
 	for (auto& event : m_enviornmentCycle[m_currentSequence]) {
 
 		event.status = EventStatus::IDLE;
+		event.durationTimer.reset();
 	}
 
 }
@@ -214,15 +220,17 @@ void BBEnvironmentComponent::_lightningflash(EnvironmentEvent& event)
 
 		//This is tied to the house overlay and is a little special
 		_handlelightingFront(event);
+		return;
 	}
 
-	//Expose lighting flash
-	if (event.durationTimer.isFirstTime()) {
+
+	if (event.status == EventStatus::IDLE) {
 
 		const auto& lightningOverlay = parent()->parentScene()->getFirstGameObjectByName(gameObjectName);
 		lightningOverlay.value()->removeState(GameObjectState::DISABLED_RENDER);
 		event.status = EventStatus::IN_PROGRESS;
 		event.durationTimer.reset();
+
 	}
 
 	//Hide lighting flash
@@ -242,12 +250,13 @@ void BBEnvironmentComponent::_handlelightingFront(EnvironmentEvent& event)
 	const auto& maskOverlayComponent = houseOverlayObject.value()->getComponent<MaskedOverlayComponent>(ComponentTypes::MASKED_OVERLAY_COMPONENT);
 	const auto& lightningFilterObject = maskOverlayComponent->getOverlayObject("LIGHTNING_FOREGROUND_FILTER_1");
 
-	//Expose lighting flash
-	if (event.durationTimer.isFirstTime()) {
+
+	if (event.status == EventStatus::IDLE) {
 
 		lightningFilterObject.value()->removeState(GameObjectState::DISABLED_RENDER);
 		event.status = EventStatus::IN_PROGRESS;
 		event.durationTimer.reset();
+
 	}
 
 	//Hide lighting flash
