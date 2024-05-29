@@ -195,6 +195,12 @@
     <ClCompile Include="src\components\BBMaskedOverlayComponent.cpp" />
     <ClCompile Include="src\components\BBEnvironmentComponent.cpp" />
     <ClCompile Include="src\cutScenes\BBCutSceneFactory.cpp" />
+    <ClCompile Include="src\environmentEvents\BBEnvironmentEventFactory.cpp" />
+    <ClCompile Include="src\environmentEvents\LightningEvent.cpp" />
+    <ClCompile Include="src\environmentEvents\LightningMaker.cpp" />
+    <ClCompile Include="src\environmentEvents\LightningWindowFlashEvent.cpp" />
+    <ClCompile Include="src\environmentEvents\LightningBoltEvent.cpp" />
+    <ClCompile Include="src\environmentEvents\RainEvent.cpp" />
     <ClCompile Include="src\IMGui\BB_IMGuiFactory.cpp" />
     <ClCompile Include="src\IMGui\BB_IMGuiUtil.cpp" />
     <ClCompile Include="src\IMGui\IMGuiDynamicInterfaceMenu.cpp" />
@@ -218,7 +224,7 @@
   <ItemGroup>
     <ClInclude Include="src\actions\DisableProximityHintAction.h" />
     <ClInclude Include="src\actions\ToggleBobbyEquipAction.h" />
-    <ClInclude Include="src\BBEnviornmentEvents.h" />
+    <ClInclude Include="src\BBEnvironmentEvents.h" />
     <ClInclude Include="src\components\BBStateComponent.h" />
     <ClInclude Include="src\actions\DoorToggleAction.h" />
     <ClInclude Include="src\actions\ItemDragTreatmentAction.h" />
@@ -244,6 +250,12 @@
     <ClInclude Include="src\components\BBMaskedOverlayComponent.h" />
     <ClInclude Include="src\components\BBEnvironmentComponent.h" />
     <ClInclude Include="src\cutScenes\BBCutSceneFactory.h" />
+    <ClInclude Include="src\environmentEvents\BBEnvironmentEventFactory.h" />
+    <ClInclude Include="src\environmentEvents\LightningEvent.h" />
+    <ClInclude Include="src\environmentEvents\LightningMaker.h" />
+    <ClInclude Include="src\environmentEvents\LightningWindowFlashEvent.h" />
+    <ClInclude Include="src\environmentEvents\LightningBoltEvent.h" />
+    <ClInclude Include="src\environmentEvents\RainEvent.h" />
     <ClInclude Include="src\GameConstants.h" />
     <ClInclude Include="src\IMGui\BB_IMGuiFactory.h" />
     <ClInclude Include="src\IMGui\BB_IMGuiUtil.h" />
@@ -326,7 +338,9 @@
     <Media Include="assets\sound\ghost_witch_voice_hiss_12.wav" />
     <Media Include="assets\sound\glass_smashable_small_break_01.wav" />
     <Media Include="assets\sound\glass_smashable_small_break_02.wav" />
+    <Media Include="assets\sound\heavyStorm_1.wav" />
     <Media Include="assets\sound\music\main_theme_a.mp3" />
+    <Media Include="assets\sound\nearStorm_1.wav" />
     <Media Include="assets\sound\rain_heavy_loop_01.wav" />
     <Media Include="assets\sound\rain_medium_loop_01.wav" />
     <Media Include="assets\sound\storm_loop_distant.wav" />

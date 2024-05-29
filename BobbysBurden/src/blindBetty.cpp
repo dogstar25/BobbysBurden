@@ -13,6 +13,7 @@
 #include "BBEnumMap.h"
 #include "BBColorMap.h"
 #include <wtypes.h>
+#include "EnvironmentEvents/BBEnvironmentEventFactory.h"
 
 std::unique_ptr<Game> game;
 
@@ -35,6 +36,7 @@ int main(int argc, char* argv[])
 		std::make_shared<BB_IMGuiFactory>(),
 		std::make_shared<BBTriggerFactory>(),
 		std::make_shared<BBPuzzleFactory>(),
+		std::make_shared<BBEnvironmentEventFactory>(),
 		std::make_shared<BBContextManager>(),
 		std::make_shared<BBEnumMap>(),
 		std::make_shared<BBColorMap>()

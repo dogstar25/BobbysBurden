@@ -3,7 +3,7 @@
     "blueprint": "TX_FULL_INTERIOR_BLUEPRINT",
     "description": "Front elevation level 1",
     "dimensions": {
-        "levelWidth": 172,
+        "levelWidth": 250,
         "levelHeight": 172,
         "tileWidth": 32,
         "tileHeight": 32
@@ -40,8 +40,14 @@
     "locationDefinedObjects": [
         {
             "id": "LOC_0000_0000",
-            "gameObjectType": "ENVIORNMENT_CONTROLLER",
+            "gameObjectType": "Environment_CONTROLLER",
             "layer": "GameLayer::ABSTRACT"
+        },
+        {
+            "id": "LOC_0000_0110",
+            "gameObjectType": "FULL_TREE_BACKGROUND_1",
+            "layer": "GameLayer::BACKGROUND_5"
+
         },
         {
             "id": "LOC_0000_0000",
@@ -440,6 +446,43 @@
                 "height": 320
             }
         },
+        {
+            "id": "LOC_0019_0135",
+            "name": "windowFlash",
+            "gameObjectType": "LIGHT_WINDOW_1",
+            "layer": "GameLayer::FOREGROUND_2"
+
+        },
+        {
+            "id": "LOC_0036_0135",
+            "name": "windowFlash",
+            "gameObjectType": "LIGHT_WINDOW_1",
+            "layer": "GameLayer::FOREGROUND_2"
+
+        },
+        {
+            "id": "LOC_0047_0135",
+            "name": "windowFlash",
+            "gameObjectType": "LIGHT_WINDOW_1",
+            "layer": "GameLayer::FOREGROUND_2"
+
+        },
+        {
+            "id": "LOC_0019_0146",
+            "name": "windowFlash",
+            "description": "parlor window lighting flash",
+            "gameObjectType": "LIGHT_WINDOW_1",
+            "layer": "GameLayer::FOREGROUND_2"
+
+        },
+        {
+            "id": "LOC_0046_0146",
+            "name": "windowFlash",
+            "description": "den window lighting flash",
+            "gameObjectType": "LIGHT_WINDOW_1",
+            "layer": "GameLayer::FOREGROUND_2"
+
+        },
 
         //Study Stuff
 
@@ -505,12 +548,6 @@
             "locationAdjust": {
                 "y": -16.0
             }
-
-        },
-        {
-            "id": "LOC_0000_0117",
-            "gameObjectType": "FULL_TREE_BACKGROUND_1",
-            "layer": "GameLayer::BACKGROUND_5"
 
         }
     ]

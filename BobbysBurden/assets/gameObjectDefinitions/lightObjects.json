@@ -201,15 +201,15 @@
                     "textureBlendMode": "RenderBlendMode::BLEND",
                     "color": {
                         "tint": "Colors::WHITE",
-                        "alpha": 255
+                        "alpha": 150
                     }
 
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 256,
-                        "height": 256
+                        "width": 315,
+                        "height": 315
                     }
                 },
                 {
@@ -219,7 +219,10 @@
                     "flicker": 0
                 },
                 {
-                    "id": "STATE_COMPONENT"
+                    "id": "STATE_COMPONENT",
+                    "beginStates": [
+                        "GameObjectState::OFF"
+                    ]
                 }
             ]
         },
