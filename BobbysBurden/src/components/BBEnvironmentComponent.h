@@ -15,25 +15,19 @@ public:
 	virtual void postInit() override;
 	virtual void setParent(GameObject* gameObject) override;
 
-	virtual const int CYCLE_COUNT() const override{
-		return 1;
-	}
 
 protected:
 
+	virtual void _applyEventInstructions(int sequenmce) override;
 
 private:
 
-	bool m_isStorming{};
-
-	Timer testLightningTimer{ 1.0, true };
-	Timer testLightningTimer2{ 1.2, true };
-	Timer testLightningTimer3{ 1.4, true };
-	
 	void _lightningflash(EnvironmentEvent& event);
+	void _playBackgroundTrack(EnvironmentEvent& event, std::string track);
 	void _handlelightingFront(EnvironmentEvent& event);
 	void _rain(EnvironmentEvent& event);
 	void _resetSequence(int sequence);
+
 
 	
 

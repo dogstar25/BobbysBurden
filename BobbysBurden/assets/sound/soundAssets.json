@@ -16,6 +16,16 @@
             "filename": "thunder_boom_02.wav"
         },
         {
+            "id": "SFX_THUNDER_BOOM_3",
+            "description": "",
+            "filename": "thunder_boom_03.wav"
+        },
+        {
+            "id": "SFX_THUNDER_BOOM_4",
+            "description": "",
+            "filename": "thunder_boom_04.wav"
+        },
+        {
             "id": "SFX_THUNDER_RUMBLE_1",
             "description": "",
             "filename": "thunder_rumble_01.wav"
@@ -34,6 +44,21 @@
             "id": "SFX_APPROACHING_STORM_1",
             "description": "",
             "filename": "approachingStorm_1.wav"
+        },
+        {
+            "id": "SFX_NEAR_STORM_1",
+            "description": "",
+            "filename": "nearStorm_1.wav"
+        },
+        {
+            "id": "SFX_HEAVY_STORM_1",
+            "description": "",
+            "filename": "heavyStorm_1.wav"
+        },
+        {
+            "id": "SFX_PEACEFULL_1",
+            "description": "",
+            "filename": "crickets_chirping_night_ambience_loop.wav"
         }
 
 

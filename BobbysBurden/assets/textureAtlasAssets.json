@@ -37,6 +37,12 @@
             "filename": "assets/textureAtlas05.png"
         },
         {
+            "id": "TEXTURE_ATLAS_6",
+            "description": "Texture atlas 6",
+            "openglTextureIndex": "GL_TextureIndexType::MAIN_TEXTURE_ATLAS_6",
+            "filename": "assets/textureAtlas06.png"
+        },
+        {
             "id": "TEXTURE_IMGUI_ATLAS",
             "description": "Texture For IMGUI stuff",
             "openglTextureIndex": "GL_TextureIndexType::IMGUI_TEXTURE_ATLAS",

@@ -1,9 +1,9 @@
 {
     "gameObjects": [
         {
-            "type": "ENVIORNMENT_CONTROLLER",
+            "type": "Environment_CONTROLLER",
             "traitTags": [],
-            "description": "Enviornment controller",
+            "description": "Environment controller",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -23,12 +23,35 @@
                     "id": "SOUND_COMPONENT",
                     "sounds": [
                         {
+                            "id": "APPROACHING_STORM",
+                            "soundAssetId": "SFX_APPROACHING_STORM_1",
+                            "continuous": true
+                        },
+                        {
+                            "id": "NEAR_STORM",
+                            "soundAssetId": "SFX_NEAR_STORM_1",
+                            "continuous": true
+                        },
+                        {
+                            "id": "HEAVY_STORM",
+                            "soundAssetId": "SFX_HEAVY_STORM_1",
+                            "continuous": true
+                        },
+                        {
                             "id": "THUNDER_BOOM_1",
                             "soundAssetId": "SFX_THUNDER_BOOM_1"
                         },
                         {
                             "id": "THUNDER_BOOM_2",
                             "soundAssetId": "SFX_THUNDER_BOOM_2"
+                        },
+                        {
+                            "id": "THUNDER_BOOM_3",
+                            "soundAssetId": "SFX_THUNDER_BOOM_3"
+                        },
+                        {
+                            "id": "THUNDER_BOOM_4",
+                            "soundAssetId": "SFX_THUNDER_BOOM_4"
                         },
                         {
                             "id": "THUNDER_RUMBLE_1",
@@ -110,8 +133,9 @@
                     }
                 },
                 {
-                    "id": "BB_STATE_COMPONENT",
-                    "beginStates": [ "GameObjectState::DISABLED_RENDER" ]
+                    "id": "VITALITY_COMPONENT",
+                    "lifetime": 0.4,
+                    "lifetimeAlphaFade": true
                 }
             ]
         },
@@ -132,8 +156,9 @@
                     }
                 },
                 {
-                    "id": "BB_STATE_COMPONENT",
-                    "beginStates": [ "GameObjectState::DISABLED_RENDER" ]
+                    "id": "VITALITY_COMPONENT",
+                    "lifetime": 0.4,
+                    "lifetimeAlphaFade": true
                 }
             ]
         }
