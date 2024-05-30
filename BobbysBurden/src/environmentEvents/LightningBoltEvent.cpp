@@ -1,5 +1,6 @@
 #include "LightningBoltEvent.h"
 #include "../BBGame.h"
+#include "../BBContextManager.h"
 
 
 extern std::unique_ptr<Game> game;
@@ -117,7 +118,8 @@ SDL_Point LightningBoltEvent::_determineLocation(LightningLayor layer)
 {
 	//The X for this location will be whatever our current house position is in
 	
-	SDL_Point location{ HousePositionTopLeftLocations::FRONT };
+	SDL_Point location = static_cast<BBContextManager*>(game->contextMananger().get())->m_currentHousePosition;
+
 	int randomNumberForLeftRight = std::rand() % 10;
 
 	//If this is the back or middle layer, pick a location that is to left or right of the house

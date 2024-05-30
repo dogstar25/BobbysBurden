@@ -21,6 +21,7 @@ bool BBGame::init(
 )
 {
 
+	//Assign all of the game specific managers and factories to the main game object
 	Game::init(
 		contactListener, contactFilter, componentFactory, actionFactory, particleEffectsFactory, cutSceneFactory, iMGuiFactory, triggerFactory, 
 		puzzleFactory, environmentEventFactory, contextManager, enumMap, colorMap
@@ -77,6 +78,13 @@ bool BBGame::init(
 	//Scene& scene = SceneManager::instance().pushScene("SCENE_TEST");
 	scene.loadLevel("full_interior");
 	
+	//Initialize the house position variable
+	StatusItem statusItem(StatusItemId::HOUSE_POSITION);
+	//statusItem.setValue(level);
+	//contextManager->addStatusItem(StatusItemId::HOUSE_POSITION, (float)HousePositionTopLeftLocations::FRONT.x);
+	//contextManager->m
+
+
 	//Figure out a place to put this custom game type stuff later
 	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
 	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);

@@ -167,6 +167,7 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="assets\config\Source.yaml" />
     <ClCompile Include="src\actions\DisableProximityHintAction.cpp" />
     <ClCompile Include="src\actions\ToggleBobbyEquipAction.cpp" />
     <ClCompile Include="src\components\BBStateComponent.cpp" />
