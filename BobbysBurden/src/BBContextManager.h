@@ -1,6 +1,7 @@
 #pragma once
 
 #include "MobyDick.h"
+#include "GameConstants.h"
 
 class GameSaveFileData : public BaseSaveFileData {
 	public:
@@ -18,7 +19,8 @@ public:
 	bool loadGame(BaseSaveFileData* saveFileData) override;
 	int getCurrentLevel();
 
-
+	//Custom to BBGame
+	SDL_Point m_currentHousePosition{ HousePositionTopLeftLocations::FRONT };
 
 };
 

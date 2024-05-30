@@ -55,10 +55,10 @@ namespace Colors {
 
 namespace HousePositionTopLeftLocations {
 
-	inline const SDL_Point FRONT = { 0, 110 };
-	inline const SDL_Point BACK = { 135, 22 };
-	inline const SDL_Point LEFT = { 0, 22 };
-	inline const SDL_Point RIGHT = { 135, 110 };
+	inline SDL_Point FRONT = { 0, 110 };
+	inline SDL_Point BACK = { 135, 22 };
+	inline SDL_Point LEFT = { 0, 22 };
+	inline SDL_Point RIGHT = { 135, 110 };
 
 }
 
@@ -117,7 +117,9 @@ namespace Actions {
 }
 
 namespace StatusItemId {
-	inline constexpr int PLAYERS_HEART_COUNT = 10;
+	inline constexpr int HOUSE_POSITION = 10;
+	inline constexpr int PLAYERS_HEART_COUNT = 11;
+	
 	
 };
 
