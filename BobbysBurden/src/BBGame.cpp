@@ -16,6 +16,7 @@ bool BBGame::init(
 	std::shared_ptr<PuzzleFactory> puzzleFactory, 
 	std::shared_ptr<EnvironmentEventFactory> environmentEventFactory,
 	std::shared_ptr<ContextManager> contextManager,
+	std::shared_ptr<GameStateManager> gameStateManager,
 	std::shared_ptr<EnumMap> enumMap, 
 	std::shared_ptr<ColorMap> colorMap
 )
@@ -24,13 +25,14 @@ bool BBGame::init(
 	//Assign all of the game specific managers and factories to the main game object
 	Game::init(
 		contactListener, contactFilter, componentFactory, actionFactory, particleEffectsFactory, cutSceneFactory, iMGuiFactory, triggerFactory, 
-		puzzleFactory, environmentEventFactory, contextManager, enumMap, colorMap
+		puzzleFactory, environmentEventFactory, contextManager, gameStateManager, enumMap, colorMap
 	);
 
 	m_gameState = GameState::PLAY;
 
 	//Init font library
 	//WE NEED THIS FOR PRE-EVERYTHING TO SHOW BASIC TEXT ON THE SCREEN
+	//for the "Loading..." text display
 	TTF_Init();
 
 	//Initialize the texture manager
@@ -76,30 +78,38 @@ bool BBGame::init(
 	//Load a first scene
 	Scene& scene = SceneManager::instance().pushScene("SCENE_PLAY");
 	//Scene& scene = SceneManager::instance().pushScene("SCENE_TEST");
+
 	scene.loadLevel("full_interior");
+
+	//////////////////////////////////////////////////////
+	//Force the load of the new game primer file for now
+	//This will latyer come from the splash screen New Game button
+	//Initialize the saveFile
+	gameStateManager->initializeGameDataFile();
+
+	gameStateManager->loadGamePrimerFile();
+
+
+	////////////////////////////////////////////////
+
+	//Load the game Settings
+	contextManager->loadSettings();
 	
-	//Initialize the house position variable
-	StatusItem statusItem(StatusItemId::HOUSE_POSITION);
-	//statusItem.setValue(level);
-	//contextManager->addStatusItem(StatusItemId::HOUSE_POSITION, (float)HousePositionTopLeftLocations::FRONT.x);
-	//contextManager->m
-
-
 	//Figure out a place to put this custom game type stuff later
-	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
-	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	playerInventory->addItem("OIL_CAN");
+	//const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
+	//const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	//playerInventory->addItem("OIL_CAN");
 
-	const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");
-	const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	topDrawerInventory->addItem("BOTTLE1");
+	//const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");
+	//const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	//topDrawerInventory->addItem("BOTTLE1");
 
-	//Dresser Shelf
-	const auto& dresserShelf = scene.getFirstGameObjectByName("BOBBY_DRESSER_SHELF");
-	const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	dresserShelfInventory->addItem("OIL_CAN");
-	dresserShelfInventory->addItem("BOTTLE1");
-	dresserShelfInventory->refreshInventoryDisplay();
+	////Dresser Shelf
+	//const auto& dresserShelf = scene.getFirstGameObjectByName("BOBBY_DRESSER_SHELF");
+	//const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	//dresserShelfInventory->addItem("OIL_CAN");
+	//dresserShelfInventory->addItem("BOTTLE1");
+	//dresserShelfInventory->refreshInventoryDisplay();
 
 	
 	//Initialize the clock object

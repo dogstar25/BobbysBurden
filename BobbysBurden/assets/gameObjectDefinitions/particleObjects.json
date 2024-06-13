@@ -38,6 +38,9 @@
                     "id": "POOL_COMPONENT"
                 },
                 {
+                    "id": "STATE_COMPONENT"
+                },
+                {
                     "id": "CHILDREN_COMPONENT",
                     "childPadding": 0,
                     "sameSlotTreatment": "ChildSlotTreatment::STACKED",

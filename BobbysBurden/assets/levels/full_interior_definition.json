@@ -233,45 +233,46 @@
         {
             "id": "LOC_0017_0137",
             "gameObjectType": "DOOR_FRONT",
-            "description": "Bedroom 1 door",
-            "name": "bedroom1",
+            "description": "Bedroom 1 closet door",
+            "name": "bedroom1ClosetDoor",
             "layer": "GameLayer::BACKGROUND_2"
-        },
-        {
-            "id": "LOC_0050_0054",
-            "gameObjectType": "DOOR_WARP_EXIT",
-            "description": "Bedroom1 door destination",
-            "name": "bedroom1_EXIT",
-            "layer": "GameLayer::ABSTRACT"
         },
         {
             "id": "LOC_0050_0048",
             "gameObjectType": "DOOR_SIDE",
-            "description": "Large Closet BACKGROUND_1",
-            "name": "bedroom1",
+            "description": "Bedroom 1 closet door side version",
+            "name": "bedroom1ClosetDoor",
             "layer": "GameLayer::MAIN"
         },
         {
-            "id": "LOC_0031_0136",
-            "gameObjectType": "DOOR_SIDE",
-            "description": "Large Closet door",
-            "name": "bedroom1_side",
-            "layer": "GameLayer::BACKGROUND_1"
+            "id": "LOC_0050_0054",
+            "gameObjectType": "DOOR_WARP_EXIT",
+            "description": "Bedroom 1 Door warp to location",
+            "name": "bedroom1ClosetDoor_EXIT",
+            "layer": "GameLayer::ABSTRACT"
         },
         {
             "id": "LOC_0054_0054",
             "gameObjectType": "DOOR_WARP_ENTRY",
-            "description": "Bedroom1 door waro to other location",
-            "name": "bedroom1_warp",
+            "description": "Bedroom 1 Door warp from location",
+            "name": "bedroom1ClosetDoor_warp",
             "layer": "GameLayer::ABSTRACT"
         },
         {
             "id": "LOC_0018_0142",
             "gameObjectType": "DOOR_WARP_EXIT",
-            "description": "Bedroom1 door destination",
-            "name": "bedroom1_warp_EXIT",
+            "description": "Bedroom 1 Door warp back to",
+            "name": "bedroom1ClosetDoor_warp_EXIT",
             "layer": "GameLayer::ABSTRACT"
         },
+        {
+            "id": "LOC_0031_0136",
+            "gameObjectType": "DOOR_SIDE",
+            "description": "Bedroom1 main door",
+            "name": "bedroom1MainDoor",
+            "layer": "GameLayer::BACKGROUND_1"
+        },
+
         //
         //WALLS
         //

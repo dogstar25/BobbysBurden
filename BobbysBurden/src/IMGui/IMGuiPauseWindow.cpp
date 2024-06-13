@@ -2,6 +2,7 @@
 #include "BB_IMGuiUtil.h"
 #include "../GameConstants.h"
 #include "../BBContextManager.h"
+#include "../BBGameStateManager.h"
 
 
 extern std::unique_ptr<Game> game;
@@ -165,15 +166,11 @@ void IMGuiPauseWindow::settingsModal()
 void IMGuiPauseWindow::apply(int mouseSensitivity, int soundVolume)
 {
 
-	auto saveFileData = std::make_shared<GameSaveFileData>();
+	game->contextMananger()->setMouseSensitivity(mouseSensitivity);
+	game->contextMananger()->setSoundVolume(soundVolume);
 
-	//First load whats currently on file
-	game->contextMananger()->loadGame(saveFileData.get());
+	game->contextMananger()->saveSettings();
 
-	saveFileData->mouseSensitivity = mouseSensitivity;
-	saveFileData->soundLevel = soundVolume;
-
-	game->contextMananger()->saveGame(saveFileData.get());
 
 }
 

@@ -12,6 +12,7 @@ public:
 protected:
 
 	virtual void addState(GameObjectState state) override;
+	virtual void removeState(GameObjectState state) override;
 	void _setAndReconcileState(GameObjectState newState);
 
 private:

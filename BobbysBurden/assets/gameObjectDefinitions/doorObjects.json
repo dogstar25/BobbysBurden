@@ -3,7 +3,7 @@
     "gameObjects": [
         {
             "type": "DOOR_FRONT",
-            "traitTags": [ "door", "door_front" ],
+            "traitTags": [ "door", "door_front", "save_me" ],
             "description": "Door",
             "components": [
                 {
@@ -133,7 +133,7 @@
         },
         {
             "type": "DOOR_SIDE",
-            "traitTags": [ "mouse_interface", "door", "door_side" ],
+            "traitTags": [ "mouse_interface", "door", "door_side", "save_me" ],
             "description": "Door",
             "components": [
                 {

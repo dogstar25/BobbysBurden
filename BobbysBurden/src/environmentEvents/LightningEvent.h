@@ -15,7 +15,7 @@ public:
 
 private:
 	EventLevel m_eventLevel{};
-	LightningLayor m_layer{ LightningLayor::MIDDLE };
+	LightningLayor m_layer{ LightningLayor::BACK };
 	std::optional<std::shared_ptr<GameObject>> m_lightningOverlay;
 
 	void _flipWindowFlash(GameObject* environmentObject, GameObjectState newState);

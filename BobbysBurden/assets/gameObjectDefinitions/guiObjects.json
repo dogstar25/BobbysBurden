@@ -116,6 +116,9 @@
                         }
 
                     ]
+                },
+                {
+                    "id": "STATE_COMPONENT"
                 }
 
             ]
@@ -220,6 +223,10 @@
                         "buttonActive": "Colors::YELLOW"
                     }
 
+                },
+                {
+                    "id": "STATE_COMPONENT"
+
                 }
             ]
 
@@ -259,6 +266,10 @@
                     }
                     /////////////////////////////////////////////////////////////////
 
+                },
+                {
+                    "id": "STATE_COMPONENT"
+
                 }
             ]
 
@@ -273,6 +284,10 @@
                 },
                 {
                     "id": "[interfaceMenu_TRANSFORM_COMPONENT]"
+
+                },
+                {
+                    "id": "STATE_COMPONENT"
 
                 },
                 {
@@ -325,6 +340,10 @@
                         "buttonActive": "Colors::YELLOW"
                     }
 
+                },
+                {
+                    "id": "STATE_COMPONENT"
+
                 }
             ]
 
@@ -357,6 +376,10 @@
                         "buttonHover": "Colors::MIRKWOOD",
                         "buttonActive": "Colors::YELLOW"
                     }
+
+                },
+                {
+                    "id": "STATE_COMPONENT"
 
                 }
             ]
@@ -470,6 +493,10 @@
                         "buttonActive": "Colors::YELLOW"
                     }
 
+                },
+                {
+                    "id": "STATE_COMPONENT"
+
                 }
             ]
 
@@ -502,6 +529,10 @@
                         "buttonHover": "Colors::MIRKWOOD",
                         "buttonActive": "Colors::YELLOW"
                     }
+
+                },
+                {
+                    "id": "STATE_COMPONENT"
 
                 }
             ]

@@ -3,24 +3,23 @@
 #include "MobyDick.h"
 #include "GameConstants.h"
 
-class GameSaveFileData : public BaseSaveFileData {
-	public:
-	short level;
-};
 
 class BBContextManager : public ContextManager
 {
 
 public:
 	//static MRContextManager& instance();
-	BBContextManager();
+	BBContextManager() = default;
+	SDL_Point currentHousePosition() { return m_currentHousePosition; }
+	
+	virtual bool saveSettings() override;
+	virtual void loadSettings() override;
 
-	bool saveGame(BaseSaveFileData* saveFileData) override;
-	bool loadGame(BaseSaveFileData* saveFileData) override;
-	int getCurrentLevel();
-
+private:
 	//Custom to BBGame
 	SDL_Point m_currentHousePosition{ HousePositionTopLeftLocations::FRONT };
+
+
 
 };
 

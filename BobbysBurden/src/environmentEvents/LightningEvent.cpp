@@ -34,9 +34,9 @@ std::vector<std::shared_ptr<EnvironmentEvent>> LightningEvent::perform(GameObjec
 				m_layer = LightningLayor::BACK;
 
 			}
-			else {
-				m_layer = LightningLayor::MIDDLE;
-			}
+			//else {
+			//	m_layer = LightningLayor::MIDDLE;
+			//}
 
 		}
 		else if (m_eventLevel == EventLevel::INTENSE) {
@@ -46,9 +46,9 @@ std::vector<std::shared_ptr<EnvironmentEvent>> LightningEvent::perform(GameObjec
 				m_layer = LightningLayor::BACK;
 
 			}
-			else if (randomNumber <= 9) {
-				m_layer = LightningLayor::MIDDLE;
-			}
+			//else if (randomNumber <= 9) {
+			//	m_layer = LightningLayor::MIDDLE;
+			//}
 			//else {
 			//	m_layer = LightningLayor::FRONT;
 			//}
@@ -56,7 +56,7 @@ std::vector<std::shared_ptr<EnvironmentEvent>> LightningEvent::perform(GameObjec
 		}
 
 		//test
-		//m_layer = LightningLayor::FRONT;
+		//m_layer = LightningLayor::BACK;
 		//////////
 
 		if (m_layer == LightningLayor::BACK) {
