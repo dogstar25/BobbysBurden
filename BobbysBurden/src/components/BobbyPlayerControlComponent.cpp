@@ -51,11 +51,11 @@ void BobbyPlayerControlComponent::_handleMovement()
 	if (parent()->isTouchingByTrait(TraitTag::vertical_movement_zone)) {
 
 		stateComponent->addState(GameObjectState::ON_VERTICAL_MOVEMENT);
-		_applyStairWalkingSettings();
+		//_applyStairWalkingSettings();
 	}
 	else {
 		stateComponent->removeState(GameObjectState::ON_VERTICAL_MOVEMENT);
-		_removeStairWalkingSettings();
+		//_removeStairWalkingSettings();
 	}
 
 	if (currentKeyStates[SDL_SCANCODE_W])

@@ -5,6 +5,7 @@
 #include "../BBContextManager.h"
 #include "../GameConstants.h"
 #include "../IMGui/BB_IMGuiUtil.h"
+#include "../BBGameStateManager.h"
 
 
 extern std::unique_ptr<Game> game;
@@ -44,9 +45,7 @@ glm::vec2 IMGuiTitleScreenMenu::render()
 		ImGui::Spacing();
 
 		//Continue Button - disable if the player hasnt yet started a game
-		GameSaveFileData gameSaveFileData{};
-		game->contextMananger()->loadGame(&gameSaveFileData);
-		if (gameSaveFileData.level <= 0) {
+		if (false) {
 			continueButtonDisabled = true;
 		}
 
@@ -175,34 +174,14 @@ void IMGuiTitleScreenMenu::settingsModal()
 	ImGui::EndPopup();
 
 }
-//void IMGuiPauseWindow::sendQuitEvent()
-//{
-//
-//	SDL_Event event;
-//
-//	SceneAction* sceneAction = new SceneAction();
-//	sceneAction->actionCode = SCENE_ACTION_QUIT;
-//	sceneAction->actionId = "";
-//
-//	event.type = SDL_USEREVENT;
-//	event.user.data1 = sceneAction;
-//	SDL_PushEvent(&event);
-//
-//
-//}
 
 void IMGuiTitleScreenMenu::apply(int mouseSensitivity, int soundVolume)
 {
 
-	auto saveFileData = std::make_shared<GameSaveFileData>();
+	game->contextMananger()->setMouseSensitivity(mouseSensitivity);
+	game->contextMananger()->setSoundVolume(soundVolume);
 
-	//First load whats currently on file
-	game->contextMananger()->loadGame(saveFileData.get());
-
-	saveFileData->mouseSensitivity = mouseSensitivity;
-	saveFileData->soundLevel = soundVolume;
-
-	game->contextMananger()->saveGame(saveFileData.get());
+	game->contextMananger()->saveSettings();
 
 }
 

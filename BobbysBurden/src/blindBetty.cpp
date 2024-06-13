@@ -10,6 +10,7 @@
 #include "particleEffects/BBParticleEffectsFactory.h"
 #include "puzzles/BBPuzzleFactory.h"
 #include "BBContextManager.h"
+#include "BBGameStateManager.h"
 #include "BBEnumMap.h"
 #include "BBColorMap.h"
 #include <wtypes.h>
@@ -20,6 +21,7 @@ std::unique_ptr<Game> game;
 //int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, char*, int nShowCmd)
 int main(int argc, char* argv[])
 {
+
 	//create game 
 	game = std::make_unique<BBGame>();
 
@@ -38,6 +40,7 @@ int main(int argc, char* argv[])
 		std::make_shared<BBPuzzleFactory>(),
 		std::make_shared<BBEnvironmentEventFactory>(),
 		std::make_shared<BBContextManager>(),
+		std::make_shared<BBGameStateManager>(),
 		std::make_shared<BBEnumMap>(),
 		std::make_shared<BBColorMap>()
 	);

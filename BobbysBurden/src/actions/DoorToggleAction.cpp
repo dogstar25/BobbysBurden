@@ -36,6 +36,10 @@ void DoorToggleAction::perform(GameObject* doorKnobObject)
 		if (partnerDoor.has_value()) {
 
 			partnerDoor.value()->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT)->addState(GameObjectState::CLOSED);;
+
+			//
+			//todd: remove the disabled state
+			//
 			partnerDoor.value()->enableCollision();
 		}
 

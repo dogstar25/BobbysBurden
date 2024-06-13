@@ -167,9 +167,9 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="assets\config\Source.yaml" />
     <ClCompile Include="src\actions\DisableProximityHintAction.cpp" />
     <ClCompile Include="src\actions\ToggleBobbyEquipAction.cpp" />
+    <ClCompile Include="src\BBGameStateManager.cpp" />
     <ClCompile Include="src\components\BBStateComponent.cpp" />
     <ClCompile Include="src\actions\DoorToggleAction.cpp" />
     <ClCompile Include="src\actions\ItemDragTreatmentAction.cpp" />
@@ -226,6 +226,7 @@
     <ClInclude Include="src\actions\DisableProximityHintAction.h" />
     <ClInclude Include="src\actions\ToggleBobbyEquipAction.h" />
     <ClInclude Include="src\BBEnvironmentEvents.h" />
+    <ClInclude Include="src\BBGameStateManager.h" />
     <ClInclude Include="src\components\BBStateComponent.h" />
     <ClInclude Include="src\actions\DoorToggleAction.h" />
     <ClInclude Include="src\actions\ItemDragTreatmentAction.h" />
@@ -297,6 +298,7 @@
     <Image Include="assets\window_shadow1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\config\BeginGamePrimerFile.json" />
     <None Include="assets\config\gameConfig.json" />
     <None Include="assets\config\gameScenes.json" />
     <None Include="assets\gameObjectDefinitions\bobbysRoomFurniture.json" />

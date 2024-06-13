@@ -1,0 +1,147 @@
+{
+	"gameObjects": [
+		{
+			"gameObjectName": "bedroom1ClosetDoor",
+			"gameObjectType": "DOOR_SIDE",
+			"state": [
+				"GameObjectState::CLOSED",
+				"GameObjectState::IMPASSABLE"
+			],
+			"transform": {
+				"x": 1635.0,
+				"y": 1664.0
+			}
+		},
+		{
+			"gameObjectName": "frontTopStairsRoomMask",
+			"gameObjectType": "CLEAR_QUAD_MASK",
+			"state": [
+				"GameObjectState::OFF"
+			],
+			"transform": {
+				"x": 1210.0,
+				"y": 4448.0
+			}
+		},
+		{
+			"gameObjectName": "BOBBY_SIDETABLE_TOP_DRAWER",
+			"gameObjectType": "DRAWER_1X1",
+			"transform": {
+				"x": 660.0,
+				"y": 4532.0
+			},
+			"inventory": [
+				{
+					"slot": 0,
+					"type": "OIL_CAN"
+				}
+			]
+		},
+		{
+			"gameObjectName": "bobbysRoomMask",
+			"gameObjectType": "CLEAR_QUAD_MASK",
+			"state": [
+				"GameObjectState::ON"
+			],
+			"transform": {
+				"x": 736.0,
+				"y": 4448.0
+			}
+		},
+		{
+			"gameObjectName": "BOBBY_DRESSER_SHELF",
+			"gameObjectType": "SHELF_1X3",
+			"transform": {
+				"x": 943.99993896484375,
+				"y": 4492.0
+			},
+			"inventory": [
+				{
+					"slot": 0,
+					"type": "OIL_CAN"
+				},
+				{
+					"slot": 1,
+					"type": "BOTTLE1"
+				}
+			]
+		},
+		{
+			"gameObjectName": "guestBedroomMask",
+			"gameObjectType": "CLEAR_QUAD_MASK",
+			"state": [
+				"GameObjectState::OFF"
+			],
+			"transform": {
+				"x": 1600.0,
+				"y": 4448.0
+			}
+		},
+		{
+			"gameObjectName": "frontBottomStairsRoomMask",
+			"gameObjectType": "CLEAR_QUAD_MASK",
+			"state": [
+				"GameObjectState::OFF"
+			],
+			"transform": {
+				"x": 1210.0,
+				"y": 4800.0
+			}
+		},
+		{
+			"gameObjectName": "bedroom1MainDoor",
+			"gameObjectType": "DOOR_SIDE",
+			"state": [
+				"GameObjectState::CLOSED",
+				"GameObjectState::IMPASSABLE"
+			],
+			"transform": {
+				"x": 1027.0,
+				"y": 4480.0
+			}
+		},
+		{
+			"gameObjectName": "bedroom1ClosetDoor",
+			"gameObjectType": "DOOR_FRONT",
+			"state": [
+				"GameObjectState::CLOSED"
+			],
+			"transform": {
+				"x": 584.0,
+				"y": 4496.0
+			}
+		},
+		{
+			"gameObjectName": "bedknobPuzzle",
+			"gameObjectType": "BOBBYS_BEDKNOB",
+			"puzzle": {
+				"pieces": [
+					false
+				]
+			},
+			"transform": {
+				"x": 843.99993896484375,
+				"y": 4450.0
+			}
+		},
+		{
+			"gameObjectName": "BOBBY_SIDETABLE_BOTTOM_DRAWER",
+			"gameObjectType": "DRAWER_1X2",
+			"transform": {
+				"x": 660.0,
+				"y": 4568.0
+			},
+			"inventory": [
+				{
+					"slot": 0,
+					"type": "OIL_CAN"
+				},
+				{
+					"slot": 1,
+					"type": "BOTTLE1"
+				}
+			]
+
+		}
+	]
+}

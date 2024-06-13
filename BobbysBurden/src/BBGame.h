@@ -21,13 +21,10 @@ public:
 		std::shared_ptr<PuzzleFactory>, 
 		std::shared_ptr<EnvironmentEventFactory> environmentEventFactory, 
 		std::shared_ptr<ContextManager>,
+		std::shared_ptr<GameStateManager>,
 		std::shared_ptr<EnumMap> enumMap, 
 		std::shared_ptr<ColorMap> colorMap
 	) override;
-
-
-	SDL_Point m_currentHousePosition{ HousePositionTopLeftLocations::FRONT};
-
 
 private:
 

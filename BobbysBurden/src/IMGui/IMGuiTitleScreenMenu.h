@@ -10,7 +10,6 @@ public:
 		bool autoSize);
 	glm::vec2 render() override;
 	void settingsModal();
-	void sendQuitEvent();
 	void apply(int mouseSensitivity, int soundVolume);
 	//void loadPlaySceneAndLevel(int level=0);
 

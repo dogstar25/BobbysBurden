@@ -3,7 +3,7 @@
     "gameObjects": [
         {
             "type": "SHELF_1X3",
-            "traitTags": [ "inventory", "receptacle", "inventory_open" ],
+            "traitTags": [ "inventory", "receptacle", "inventory_open", "save_me" ],
             "description": "Shelf",
             "components": [
                 {

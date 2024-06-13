@@ -45,6 +45,26 @@
                         "action": "SCENE_ACTION_TOGGLE_SETTING",
                         "actionId": "DebugSceneSettings::SHOW_PHYSICS_DEBUG"
                     }
+                },
+                {
+                    "keyCode": "Key::SDLK_F5",
+                    "sceneAction": {
+                        "action": "SCENE_ACTION_QUICK_SAVE"
+                    }
+                },
+                {
+                    "keyCode": "Key::SDLK_F8",
+                    "sceneAction": {
+                        "action": "SCENE_ACTION_QUICK_LOAD",
+                        "actionId": "DebugSceneSettings::SHOW_PHYSICS_DEBUG"
+                    }
+                },
+                {
+                    "keyCode": "Key::SDLK_F12",
+                    "sceneAction": {
+                        "action": "SCENE_ACTION_TOGGLE_SETTING",
+                        "actionId": "DebugSceneSettings::SHOW_PHYSICS_DEBUG"
+                    }
                 }
 
 

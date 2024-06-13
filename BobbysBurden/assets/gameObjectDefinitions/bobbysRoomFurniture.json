@@ -66,6 +66,7 @@
                         },
                         {
                             "gameObjectType": "BOBBYS_BEDKNOB",
+                            "name": "bedknobPuzzle",
                             "absolutePositionSlot": {
                                 "x": 60,
                                 "y": -46
@@ -262,7 +263,7 @@
         },
         {
             "type": "BOBBYS_BEDKNOB",
-            "traitTags": ["abstract", "puzzle" ],
+            "traitTags": [ "abstract", "puzzle", "save_me" ],
             "description": "Bed Knob",
             "components": [
                 {

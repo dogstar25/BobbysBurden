@@ -4,68 +4,70 @@
 
 extern std::unique_ptr<Game> game;
 
-BBContextManager::BBContextManager()
-	: ContextManager()
-{
-	auto saveFileData = std::make_shared<GameSaveFileData>();
 
-	//Get the saved values from gameData file or create the gameData file for the first time
-	if (std::filesystem::exists(m_saveGamePath + GAME_FILENAME)) {
-	//if (util::fileExists(m_saveGamePath + GAME_FILENAME)) {
- 		loadGame(saveFileData.get());
-	}
-	else {
-		saveFileData->level = 0;
-		saveFileData->mouseSensitivity = 50;
-		saveFileData->soundLevel = 50;
-		saveGame(saveFileData.get());
+void BBContextManager::loadSettings()
+{
+
+	std::string settingFilename = game->gameStateMananger()->getGamePath() + GAME_SETTINGS_FILENAME;
+
+	//If the settings file has never been created then create it and default the values
+	if (util::fileExists(settingFilename) == false) {
+		
+		setMouseSensitivity(50);
+		setSoundVolume(50);
+		saveSettings();
+		return;
 	}
 
-}
+	std::ifstream m_gameFile(game->gameStateMananger()->getGamePath() + GAME_SETTINGS_FILENAME, std::ofstream::in);
 
-int BBContextManager::getCurrentLevel()
-{
-	GameSaveFileData saveFileData{};
-	std::ifstream m_gameFile(m_saveGamePath + GAME_FILENAME, std::ofstream::in);
+	if (!m_gameFile.is_open()) {
+		std::cerr << "Error opening game settings file" << std::endl;
+		assert(m_gameFile && "Error opening game settings file");
+	}
 
-	m_gameFile.read((char*)&saveFileData, sizeof(GameSaveFileData));
+	Json::Value loadedGameData;
+	m_gameFile >> loadedGameData;
 
-	m_gameFile.close();
-	assert(m_gameFile && "Error reading game file");
-
-	return saveFileData.level;
-
-}
-
-bool BBContextManager::loadGame(BaseSaveFileData* saveFileData)
-{
-	std::ifstream m_gameFile(m_saveGamePath + GAME_FILENAME, std::ofstream::in);
-
-	m_gameFile.read( (char*)saveFileData, sizeof(GameSaveFileData));
+	if (!m_gameFile) {
+		std::cerr << "Error parsing game settings file" << std::endl;
+		assert(m_gameFile && "Error parsing game settings file");
+	}
 
 	m_gameFile.close();
-	assert(m_gameFile && "Error reading game file");
 
-	//set values for the settings
-	m_userSettings.mouseSensitivity = saveFileData->mouseSensitivity;
-	m_userSettings.soundLevel = saveFileData->soundLevel;
+	//Apply settinmgs data
+	if (loadedGameData["settings"].isMember("mouseSensitivity")) {
 
-	return true;
+		setMouseSensitivity(loadedGameData["settings"]["mouseSensitivity"].asInt());
+	}
+
+	if (loadedGameData["settings"].isMember("soundVolume")) {
+
+		setSoundVolume(loadedGameData["settings"]["soundVolume"].asInt());
+	}
 
 }
 
-bool BBContextManager::saveGame(BaseSaveFileData* saveFileData)
+bool BBContextManager::saveSettings()
 {
 
-	std::ofstream m_gameFile(m_saveGamePath + GAME_FILENAME, std::ofstream::out);
+	//Get whats currently there
+	Json::Value saveData;
 
-	m_gameFile.write(reinterpret_cast<char*>(saveFileData), sizeof(GameSaveFileData));
+	//Replace the settings items
+	saveData["settings"]["soundVolume"] = getSoundVolume();
+	saveData["settings"]["mouseSensitivity"] = getMouseSensitivity();
 
+	std::ofstream m_gameFile(game->gameStateMananger()->getGamePath() + GAME_SETTINGS_FILENAME, std::ofstream::out);
+
+	Json::StreamWriterBuilder writer;
+	std::string saveGameData = Json::writeString(writer, saveData);
+
+	m_gameFile << saveGameData;
 	m_gameFile.close();
-	assert(m_gameFile && "Error reading game file");
 
-	setMouseSensitivity(saveFileData->mouseSensitivity);
-	setSoundVolume(saveFileData->soundLevel);
+	assert(m_gameFile && "Error writing game file");
 
 	return true;
 }
