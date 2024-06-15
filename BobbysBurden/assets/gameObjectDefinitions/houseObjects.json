@@ -1,5 +1,4 @@
 {
-
     "gameObjects": [
         {
             "type": "FULL_HOUSE_EXTERIOR",
@@ -19,11 +18,12 @@
                     }
                 }
             ]
-
         },
         {
             "type": "BRICK_WALL_STATIC_1",
-            "traitTags": [ "barrier" ],
+            "traitTags": [
+                "barrier"
+            ],
             "description": "Brick Wall 1",
             "components": [
                 {
@@ -51,11 +51,12 @@
                     ]
                 }
             ]
-
         },
         {
             "type": "BRICK_WALL_SMALL_RIGHT_1",
-            "traitTags": [ "barrier" ],
+            "traitTags": [
+                "barrier"
+            ],
             "description": "Brick Wall 1",
             "components": [
                 {
@@ -83,11 +84,12 @@
                     ]
                 }
             ]
-
         },
         {
             "type": "BRICK_WALL_SMALL_LEFT_1",
-            "traitTags": [ "barrier" ],
+            "traitTags": [
+                "barrier"
+            ],
             "description": "Brick Wall 1",
             "components": [
                 {
@@ -115,11 +117,12 @@
                     ]
                 }
             ]
-
         },
         {
             "type": "BRICK_WALL_CHIMNEY_1",
-            "traitTags": [ "barrier" ],
+            "traitTags": [
+                "barrier"
+            ],
             "description": "Brick Wall 1",
             "components": [
                 {
@@ -147,11 +150,12 @@
                     ]
                 }
             ]
-
         },
         {
             "type": "BRICK_WALL_FREE_1",
-            "traitTags": [ "barrier" ],
+            "traitTags": [
+                "barrier"
+            ],
             "description": "Brick Wall 1",
             "components": [
                 {
@@ -177,11 +181,13 @@
                     ]
                 }
             ]
-
         },
         {
             "type": "BRICK_WALL_DYNAMIC_1",
-            "traitTags": [ "barrier", "draggable" ],
+            "traitTags": [
+                "barrier",
+                "draggable"
+            ],
             "description": "Brick Wall 1",
             "components": [
                 {
@@ -199,7 +205,6 @@
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
                     "linearDamping": 0.0,
-                    //"gravityScale": 1,
                     "restitution": 1,
                     "fixtures": [
                         {
@@ -211,11 +216,12 @@
                     ]
                 }
             ]
-
         },
         {
             "type": "BRICK_WALL_2",
-            "traitTags": [ "barrier" ],
+            "traitTags": [
+                "barrier"
+            ],
             "description": "Brick Wall 2",
             "components": [
                 {
@@ -230,7 +236,6 @@
                     }
                 }
             ]
-
         },
         {
             "type": "PARLOR_ROOM",
@@ -240,26 +245,6 @@
                 {
                     "id": "RENDER_COMPONENT",
                     "textureId": "TX_ROOM_PARLOR"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 544,
-                        "height": 320
-                    }
-                }
-            ]
-
-        },
-        {
-            "type": "BOBBYS_ROOM",
-            "traitTags": [],
-            "description": "Bedroom1 Room",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    //"textureId": "TX_BEDROOM_1",
-                    "textureId": "TX_WHITE_QUAD"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -277,7 +262,6 @@
                             "collisionShape": "B2_BOX",
                             "isSensor": true
                         }
-
                     ]
                 },
                 {
@@ -287,22 +271,71 @@
                     "childObjects": [
                         {
                             "gameObjectType": "CLEAR_QUAD_MASK",
+                            "name": "parlorRoomMask",
+                            "description": "The mask uses to show the room instead of house exterior",
                             "absolutePositionSlot": {
-                                "x": -48,
+                                "x": 0,
                                 "y": 0
                             },
-                            "name": "bobbysRoomMask",
+
                             "size": {
-                                "width": 640,
-                                "height": 322
+                                "width": 544,
+                                "height": 384
                             }
                         }
-
                     ]
                 }
-
             ]
+        },
+        {
+            "type": "BOBBYS_ROOM",
+            "traitTags": [],
+            "description": "Bedroom1 Room",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BEDROOM_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 544,
+                        "height": 320
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "GRADIENT_QUAD_MASK_ALL",
+                            "name": "bobbysRoomMask",
+                            "description": "The mask uses to show the room instead of house exterior",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 0
+                            },
 
+                            "size": {
+                                "width": 544,
+                                "height": 384
+                            }
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "GUEST_BEDROOM",
@@ -337,11 +370,9 @@
                                 "height": 322
                             }
                         }
-
                     ]
                 }
             ]
-
         },
         {
             "type": "DEN_ROOM",
@@ -368,11 +399,9 @@
                             "collisionShape": "B2_BOX",
                             "isSensor": true
                         }
-
                     ]
                 }
             ]
-
         },
         {
             "type": "FRONT_TOP_STAIRS_ROOM",
@@ -381,7 +410,7 @@
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_ROOM_PARLOR"
+                    "textureId": "TX_WHITE_QUAD"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -407,11 +436,9 @@
                                 "height": 320
                             }
                         }
-
                     ]
                 }
             ]
-
         },
         {
             "type": "STAIRS_RAIL",
@@ -430,7 +457,6 @@
                     }
                 }
             ]
-
         },
         {
             "type": "BOT_STAIRS_ROOM",
@@ -465,15 +491,16 @@
                                 "height": 320
                             }
                         }
-
                     ]
                 }
             ]
-
         },
         {
             "type": "MAIN_STAIRS",
-            "traitTags": [ "vertical_movement_zone", "always_in_line_of_sight" ],
+            "traitTags": [
+                "vertical_movement_zone",
+                "always_in_line_of_sight"
+            ],
             "description": "Stairs",
             "components": [
                 {
@@ -499,7 +526,6 @@
                                 "width": 24,
                                 "height": 400
                             }
-
                         }
                     ]
                 },
@@ -515,7 +541,6 @@
                                     "InterfaceEvents::ON_TOUCHING"
                                 ]
                             }
-
                         },
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
@@ -525,11 +550,8 @@
                                     "InterfaceEvents::ON_STOP_TOUCHING"
                                 ]
                             }
-
                         }
-
                     ]
-
                 },
                 {
                     "id": "ACTION_COMPONENT",
@@ -542,16 +564,15 @@
                             "actionId": "Actions::HIDE_INTERFACE",
                             "actionClass": "HideInterfaceAction"
                         }
-
                     ]
                 }
-
             ]
-
         },
         {
             "type": "HOUSE_BEAM",
-            "traitTags": [ "abstract" ],
+            "traitTags": [
+                "abstract"
+            ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT"
@@ -568,7 +589,6 @@
                             "collisionShape": "B2_BOX",
                             "friction": 0.5
                         }
-
                     ]
                 }
             ]
@@ -602,9 +622,7 @@
                         }
                     ]
                 }
-
             ]
-
         },
         {
             "type": "FIRELOGS_1",
@@ -625,7 +643,9 @@
                 },
                 {
                     "id": "BB_STATE_COMPONENT",
-                    "beginStates": [ "GameObjectState::ON" ],
+                    "beginStates": [
+                        "GameObjectState::ON"
+                    ],
                     "animationStates": [
                         {
                             "state": "GameObjectState::ON",

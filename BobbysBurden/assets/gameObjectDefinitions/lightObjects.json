@@ -237,7 +237,7 @@
                     "textureBlendMode": "RenderBlendMode::BLEND",
                     "color": {
                         "tint": "Colors::WHITE",
-                        "alpha": 25
+                        "alpha": 10
                     }
 
                 },
