@@ -1,705 +1,701 @@
 {
 
-    "gameObjects": [
-        {
-            "type": "DELETE_ME_OBJECT",
-            "traitTags": [],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_CLEAR_QUAD"
 
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 2,
-                        "height": 2
-                    }
+ "gameObjects": [
+  {
+   "type": "DELETE_ME_OBJECT",
+   "traitTags": [],
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_CLEAR_QUAD"
 
-                }
-            ]
-        },
-        {
-            "type": "BOWMAN",
-            "traitTags": [],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_BOWMAN1",
-                    "outline": {
-                        "color": "Colors::WHITE"
-                    }
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 2,
+      "height": 2
+     }
 
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    },
-                    "absolutePositioning": false
+    }
+   ]
+  },
+  {
+   "type": "BOWMAN",
+   "traitTags": [],
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_BOWMAN1",
+     "outline": {
+      "color": "Colors::WHITE"
+     }
 
-                },
-                {
-                    "id": "VITALITY_COMPONENT",
-                    "speed": 10
-                },
-                {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
-                        {
-                            "actionId": "Actions::MOVE",
-                            "actionClass": "DroneMove"
-                        }
-                    ]
-                }
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 32,
+      "height": 32
+     },
+     "absolutePositioning": false
+
+    },
+    {
+     "id": "VITALITY_COMPONENT",
+     "speed": 10
+    },
+    {
+     "id": "ACTION_COMPONENT",
+     "actions": [
+      {
+       "actionId": "Actions::MOVE",
+       "actionClass": "DroneMove"
+      }
+     ]
+    }
 
 
-            ]
-        },
-        {
-            "type": "PARTICLE_EMITTER_FIREPLACE",
-            "traitTags": [ "abstract" ],
-            "description": "Particle Emitter",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 4,
-                        "height": 4
-                    }
-                },
-                {
-                    "id": "PARTICLE_X_COMPONENT",
-                    "type": "ParticleEmitterType::CONTINUOUS",
-                    "emissionInterval": 0.3,
-                    "emissionLayer": "GameLayer::BACKGROUND_1",
-                    "maxParticles": 300,
-                    "effects": [
-                        "spark",
-                        "fireFlame"
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "PARTICLE_EMITTER_RAIN",
-            "traitTags": [],
-            "description": "Particle Emitter for rain",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT"
-                },
-                {
-                    "id": "PARTICLE_COMPONENT",
-                    "type": "ParticleEmitterType::CONTINUOUS",
-                    "emissionInterval": 0.2,
-                    "maxParticles": 2000,
-                    "effects": [
-                        "rain"
-                    ]
-                },
-                {
-                    "id": "BB_STATE_COMPONENT"
-                }
-            ]
-        },
-        {
-            "type": "NAVIGATION_WAYPOINT",
-            "traitTags": [ "waypoint", "abstract" ],
-            "description": "Navigation Object",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 64,
-                        "height": 64
-                    }
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_STATIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::GENERAL_FREE",
-                            "collisionShape": "B2_BOX"
-                        }
-                    ]
+   ]
+  },
+  {
+   "type": "PARTICLE_EMITTER_FIREPLACE",
+   "traitTags": [ "abstract" ],
+   "description": "Particle Emitter",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 4,
+      "height": 4
+     }
+    },
+    {
+     "id": "PARTICLE_X_COMPONENT",
+     "type": "ParticleEmitterType::CONTINUOUS",
+     "emissionInterval": 0.3,
+     "emissionLayer": "GameLayer::BACKGROUND_1",
+     "maxParticles": 300,
+     "effects": [
+      "spark",
+      "fireFlame"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "PARTICLE_EMITTER_RAIN",
+   "traitTags": [],
+   "description": "Particle Emitter for rain",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT"
+    },
+    {
+     "id": "PARTICLE_COMPONENT",
+     "type": "ParticleEmitterType::CONTINUOUS",
+     "emissionInterval": 0.2,
+     "maxParticles": 2000,
+     "effects": [
+      "rain"
+     ]
+    },
+    {
+     "id": "BB_STATE_COMPONENT"
+    }
+   ]
+  },
+  {
+   "type": "NAVIGATION_WAYPOINT",
+   "traitTags": [ "waypoint", "abstract" ],
+   "description": "Navigation Object",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 64,
+      "height": 64
+     }
+    },
+    {
+     "id": "PHYSICS_COMPONENT",
+     "type": "B2_STATIC",
+     "fixtures": [
+      {
+       "contactTag": "ContactTag::GENERAL_FREE",
+       "collisionShape": "B2_BOX"
+      }
+     ]
 
-                }
-            ]
-        },
-        {
-            "type": "LEVEL_CAGE",
-            "traitTags": [ "abstract" ],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                }
-            ]
-        },
-        {
-            "type": "LEVEL_MUSIC_PLAYER",
-            "traitTags": [ "abstract" ],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "SOUND_COMPONENT",
-                    "sounds": [
-                        {
-                            "id": "OPERATING_SOUND",
-                            "continuous": true
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "IMPASSE",
-            "traitTags": [ "abstract", "impasse" ],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    },
-                    "absolutePositioning": false
-                }
+    }
+   ]
+  },
+  {
+   "type": "LEVEL_CAGE",
+   "traitTags": [ "abstract" ],
+   "components": [
+    {
+     "id": "RENDER_COMPONENT"
+    }
+   ]
+  },
+  {
+   "type": "LEVEL_MUSIC_PLAYER",
+   "traitTags": [ "abstract" ],
+   "components": [
+    {
+     "id": "RENDER_COMPONENT"
+    },
+    {
+     "id": "SOUND_COMPONENT",
+     "sounds": [
+      {
+       "id": "OPERATING_SOUND",
+       "continuous": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "IMPASSE",
+   "traitTags": [ "abstract", "impasse" ],
+   "components": [
+    {
+     "id": "RENDER_COMPONENT"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 32,
+      "height": 32
+     },
+     "absolutePositioning": false
+    }
 
-            ]
-        },
-        {
-            "type": "DEBUG_GRID_32",
-            "traitTags": [],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureBlendMode": "RenderBlendMode::NONE",
-                    "textureId": "TX_FOG_BOX",
-                    "color": {
-                        "tint": "Colors::RED",
-                        "alpha": 255
-                    }
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    },
-                    "absolutePositioning": false
-                }
-            ]
-        },
-        {
-            "type": "MAIN_HUD_FRAME_RIGHT",
-            "traitTags": [ "gui" ],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_HUD_FRAME_3",
-                    "alpha": 255
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
-                    "size": {
-                        "width": 225,
-                        "height": 200
-                    }
-                }
+   ]
+  },
+  {
+   "type": "DEBUG_GRID_32",
+   "traitTags": [],
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureBlendMode": "RenderBlendMode::NONE",
+     "textureId": "TX_FOG_BOX",
+     "color": {
+      "tint": "Colors::RED",
+      "alpha": 255
+     }
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 32,
+      "height": 32
+     },
+     "absolutePositioning": false
+    }
+   ]
+  },
+  {
+   "type": "MAIN_HUD_FRAME_RIGHT",
+   "traitTags": [ "gui" ],
+   "description": "",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_HUD_FRAME_3",
+     "alpha": 255
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "absolutePositioning": true,
+     "size": {
+      "width": 225,
+      "height": 200
+     }
+    }
 
-            ]
+   ]
 
-        },
-        {
-            "type": "MAIN_HUD_FRAME_LEFT",
-            "traitTags": [ "gui" ],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_HUD_FRAME_4",
-                    "alpha": 255
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
-                    "size": {
-                        "width": 512,
-                        "height": 164
-                    }
-                }
+  },
+  {
+   "type": "MAIN_HUD_FRAME_LEFT",
+   "traitTags": [ "gui" ],
+   "description": "",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_HUD_FRAME_4",
+     "alpha": 255
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "absolutePositioning": true,
+     "size": {
+      "width": 512,
+      "height": 164
+     }
+    }
 
-            ]
+   ]
 
-        },
-        {
-            "type": "LIGHT_SWITCH",
-            "traitTags": [],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    }
-                },
-                {
-                    "id": "BB_STATE_COMPONENT",
-                    "animationStates": [
-                        {
-                            "state": "GameObjectState::ON",
-                            "animationId": "ON"
-                        },
-                        {
-                            "state": "GameObjectState::OFF",
-                            "animationId": "OFF"
-                        }
-                    ]
-                },
-                {
-                    "id": "ANIMATION_COMPONENT",
-                    "default": "ON",
-                    "frameSize": {
-                        "width": 32,
-                        "height": 32
-                    },
-                    "animations": [
-                        {
-                            "id": "ON",
-                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
-                            "textureId": "TX_LIGHT_SWITCH_ON",
-                            "frames": 1
-                        },
-                        {
-                            "id": "OFF",
-                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
-                            "textureId": "TX_LIGHT_SWITCH_OFF",
-                            "frames": 1
-                        }
-                    ]
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
-                        }
-                    ]
-                },
-                {
-                    "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "ON_OFF_MENU",
-                    "interfaceActions": [
-                        {
-                            "actionId": "Actions::USE",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_LCLICK",
-                                    "InterfaceEvents::ON_TOUCHING"
-                                ]
-                            }
+  },
+  {
+   "type": "LIGHT_SWITCH",
+   "traitTags": [],
+   "description": "",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 32,
+      "height": 32
+     }
+    },
+    {
+     "id": "BB_STATE_COMPONENT",
+     "animationStates": [
+      {
+       "state": "GameObjectState::ON",
+       "animationId": "ON"
+      },
+      {
+       "state": "GameObjectState::OFF",
+       "animationId": "OFF"
+      }
+     ]
+    },
+    {
+     "id": "ANIMATION_COMPONENT",
+     "default": "ON",
+     "frameSize": {
+      "width": 32,
+      "height": 32
+     },
+     "animations": [
+      {
+       "id": "ON",
+       "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
+       "textureId": "TX_LIGHT_SWITCH_ON",
+       "frames": 1
+      },
+      {
+       "id": "OFF",
+       "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
+       "textureId": "TX_LIGHT_SWITCH_OFF",
+       "frames": 1
+      }
+     ]
+    },
+    {
+     "id": "PHYSICS_COMPONENT",
+     "type": "B2_DYNAMIC",
+     "fixtures": [
+      {
+       "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+       "collisionShape": "B2_BOX",
+       "isSensor": true
+      }
+     ]
+    },
+    {
+     "id": "BB_INTERFACE_COMPONENT",
+     "menuObject": "ON_OFF_MENU",
+     "interfaceActions": [
+      {
+       "actionId": "Actions::USE",
+       "condition": {
+        "operator": "ConditionOperator::AND",
+        "events": [
+         "InterfaceEvents::ON_LCLICK",
+         "InterfaceEvents::ON_TOUCHING"
+        ]
+       }
+      },
+      {
+       "actionId": "Actions::SHOW_INTERFACE",
+       "condition": {
+        "operator": "ConditionOperator::AND",
+        "events": [
+         "InterfaceEvents::ON_TOUCHING",
+         "InterfaceEvents::ON_HOVER"
+        ]
+       }
+      },
+      {
+       "actionId": "Actions::HIDE_INTERFACE",
+       "condition": {
+        "operator": "ConditionOperator::OR",
+        "events": [
+         "InterfaceEvents::ON_STOP_TOUCHING",
+         "InterfaceEvents::ON_HOVER_OUT"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "id": "ACTION_COMPONENT",
+     "actions": [
+      {
+       "actionId": "Actions::USE",
+       "actionClass": "OnOffToggleAction"
+      },
+      {
+       "actionId": "Actions::SHOW_INTERFACE",
+       "actionClass": "ShowInterfaceAction"
+      },
+      {
+       "actionId": "Actions::HIDE_INTERFACE",
+       "actionClass": "HideInterfaceAction"
+      }
 
-                        },
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_TOUCHING",
-                                    "InterfaceEvents::ON_HOVER"
-                                ]
-                            }
+     ]
+    }
 
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::OR",
-                                "events": [
-                                    "InterfaceEvents::ON_STOP_TOUCHING",
-                                    "InterfaceEvents::ON_HOVER_OUT"
-                                ]
-                            }
+   ]
 
-                        }
+  },
+  {
+   "type": "UNLOCK_ICON",
+   "traitTags": [],
+   "description": "Navigation Object",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_UNLOCK_ICON",
+     "color": "Colors::EMERALD"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 64,
+      "height": 64
+     }
+    },
+    {
+     "id": "PHYSICS_COMPONENT",
+     "type": "B2_DYNAMIC",
+     "gravityScale": -0.5,
+     "fixtures": [
+      {
+       "contactTag": "ContactTag::GENERAL_FREE",
+       "density": 1,
+       "collisionShape": "B2_BOX"
+      }
+     ]
 
-                    ]
+    },
+    {
+     "id": "VITALITY_COMPONENT",
+     "lifetime": 1,
+     "lifetimeAlphaFade": true
+    }
+   ]
+  },
+  {
+   "type": "PUZZLE_HINT_SENSOR_BOX",
+   "traitTags": [ "abstract" ],
+   "description": "Proximmity Hint",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT"
+    },
+    {
+     "id": "PHYSICS_COMPONENT",
+     "type": "B2_STATIC",
+     "fixtures": [
+      {
+       "contactTag": "ContactTag::GENERAL_SOLID",
+       "collisionShape": "B2_BOX",
+       "isSensor": true
+      }
+     ]
 
-                },
-                {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
-                        {
-                            "actionId": "Actions::USE",
-                            "actionClass": "OnOffToggleAction"
-                        },
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowInterfaceAction"
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "HideInterfaceAction"
-                        }
+    },
+    {
+     "id": "BB_INTERFACE_COMPONENT",
+     "menuObject": "PROXIMITY_HINT_INTERFACE",
+     "interfaceActions": [
+      {
+       "actionId": "Actions::SHOW_INTERFACE",
+       "condition": {
+        "operator": "ConditionOperator::AND",
+        "events": [
+         "InterfaceEvents::ON_TOUCHING",
+         "InterfaceEvents::ON_HOVER"
+        ]
+       }
 
-                    ]
-                }
+      },
+      {
+       "actionId": "Actions::HIDE_INTERFACE",
+       "condition": {
+        "operator": "ConditionOperator::OR",
+        "events": [
+         "InterfaceEvents::ON_STOP_TOUCHING",
+         "InterfaceEvents::ON_HOVER_OUT"
+        ]
+       }
 
-            ]
+      }
 
-        },
-        {
-            "type": "UNLOCK_ICON",
-            "traitTags": [],
-            "description": "Navigation Object",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_UNLOCK_ICON",
-                    "color": "Colors::EMERALD"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 64,
-                        "height": 64
-                    }
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "gravityScale": -0.5,
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::GENERAL_FREE",
-                            "density": 1,
-                            "collisionShape": "B2_BOX"
-                        }
-                    ]
+     ]
+    },
+    {
+     "id": "ACTION_COMPONENT",
+     "actions": [
+      {
+       "actionId": "Actions::SHOW_INTERFACE",
+       "actionClass": "ShowInterfaceAction"
 
-                },
-                {
-                    "id": "VITALITY_COMPONENT",
-                    "lifetime": 1,
-                    "lifetimeAlphaFade": true
-                }
-            ]
-        },
-        {
-            "type": "PUZZLE_HINT_SENSOR_BOX",
-            "traitTags": [ "abstract" ],
-            "description": "Proximmity Hint",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT"
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_STATIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::GENERAL_SOLID",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
-                        }
-                    ]
+      },
+      {
+       "actionId": "Actions::HIDE_INTERFACE",
+       "actionClass": "HideInterfaceAction"
+      }
 
-                },
-                {
-                    "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "PROXIMITY_HINT_INTERFACE",
-                    "interfaceActions": [
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "InterfaceEvents::ON_TOUCHING",
-                                    "InterfaceEvents::ON_HOVER"
-                                ]
-                            }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "QUESTIONMARK_ICON",
+   "traitTags": [],
+   "description": "Navigation Object",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_QUESTIONMARK_ICON",
+     "color": "Colors::BLUE"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 32,
+      "height": 32
+     }
+    },
+    {
+     "id": "PHYSICS_COMPONENT",
+     "type": "B2_DYNAMIC",
+     "gravityScale": -0.1,
+     "fixtures": [
+      {
+       "contactTag": "ContactTag::GENERAL_FREE",
+       "density": 1,
+       "collisionShape": "B2_BOX"
+      }
+     ]
 
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "condition": {
-                                "operator": "ConditionOperator::OR",
-                                "events": [
-                                    "InterfaceEvents::ON_STOP_TOUCHING",
-                                    "InterfaceEvents::ON_HOVER_OUT"
-                                ]
-                            }
+    },
+    {
+     "id": "VITALITY_COMPONENT",
+     "lifetime": 1.5,
+     "lifetimeAlphaFade": true
+    }
+   ]
+  },
+  {
+   "type": "KEY1",
+   "traitTags": [ "puzzle_item", "save_me" ],
+   "description": "Small Key",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_KEY1"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 36,
+      "height": 36
+     }
+    },
+    {
+     "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+    },
+    {
+     "id": "[itemActions_ACTION_COMPONENT]"
+    },
+    {
+     "id": "STATE_COMPONENT"
+    },
+    {
+     "id": "PHYSICS_COMPONENT",
+     "type": "B2_DYNAMIC",
+     "fixtures": [
+      {
+       "contactTag": "ContactTag::GAME_ITEM",
+       "restitution": 0.5,
+       "collisionShape": "B2_BOX",
+       "density": 5,
+       "friction": 5,
+       "size": {
+        "width": 32,
+        "height": 12
+       }
 
-                        }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "HOUSE_OVERLAY",
+   "traitTags": [],
+   "description": "House Overlay",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureBlendMode": "RenderBlendMode::BLEND"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 3034,
+      "height": 1600
+     }
+    },
+    {
+     "id": "BB_MASKED_OVERLAY_COMPONENT",
+     "overlayObjects": [
+      "FULL_HOUSE_EXTERIOR"
 
-                    ]
-                },
-                {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
-                        {
-                            "actionId": "Actions::SHOW_INTERFACE",
-                            "actionClass": "ShowInterfaceAction"
+     ],
+     "maskObjects": [
+      "bobbysRoomMask",
+      "guestBedroomMask",
+      "frontTopStairsRoomMask",
+      "frontBottomStairsRoomMask"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "CLEAR_QUAD",
+   "traitTags": [],
+   "description": "Clear quad",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_CLEAR_QUAD",
+     "textureBlendMode": "RenderBlendMode::BLEND",
+     "color": "Colors::ALPHA_1_COLOR"
 
-                        },
-                        {
-                            "actionId": "Actions::HIDE_INTERFACE",
-                            "actionClass": "HideInterfaceAction"
-                        }
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 32,
+      "height": 32
+     }
+    }
+   ]
+  },
+  {
+   "type": "WHITE_QUAD",
+   "traitTags": [],
+   "description": "White quad",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_WHITE_QUAD",
+     "color": "Colors::WHITE"
 
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "QUESTIONMARK_ICON",
-            "traitTags": [],
-            "description": "Navigation Object",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_QUESTIONMARK_ICON",
-                    "color": "Colors::BLUE"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    }
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "gravityScale": -0.1,
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::GENERAL_FREE",
-                            "density": 1,
-                            "collisionShape": "B2_BOX"
-                        }
-                    ]
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 512,
+      "height": 512
+     }
+    }
+   ]
+  },
+  {
+   "type": "GRDIENT_QUAD_2",
+   "traitTags": [ "abstract" ],
+   "description": "White quad",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_GRADIENT_2"
 
-                },
-                {
-                    "id": "VITALITY_COMPONENT",
-                    "lifetime": 1.5,
-                    "lifetimeAlphaFade": true
-                }
-            ]
-        },
-        {
-            "type": "KEY1",
-            "traitTags": [ "puzzle_item", "save_me" ],
-            "description": "Small Key",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_KEY1"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 36,
-                        "height": 36
-                    }
-                },
-                {
-                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
-                },
-                {
-                    "id": "[itemActions_ACTION_COMPONENT]"
-                },
-                {
-                    "id": "STATE_COMPONENT"
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::GAME_ITEM",
-                            "restitution": 0.5,
-                            "collisionShape": "B2_BOX",
-                            "density": 5,
-                            "friction": 5,
-                            "size": {
-                                "width": 32,
-                                "height": 12
-                            }
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 512,
+      "height": 512
+     }
+    }
+   ]
+  },
+  {
+   "type": "CLEAR_QUAD_MASK",
+   "traitTags": [ "save_me" ],
+   "description": "Clear quad mask",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_CLEAR_QUAD"
 
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "HOUSE_OVERLAY",
-            "traitTags": [],
-            "description": "House Overlay",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureBlendMode": "RenderBlendMode::BLEND"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 3034,
-                        "height": 1600
-                    }
-                },
-                {
-                    "id": "BB_MASKED_OVERLAY_COMPONENT",
-                    "overlayObjects": [
-                        "FULL_HOUSE_EXTERIOR"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 32,
+      "height": 32
+     }
+    },
+    {
+     "id": "BB_STATE_COMPONENT"
+    }
+   ]
+  },
+  {
+   "type": "FULL_TREE_BACKGROUND_1",
+   "traitTags": [],
+   "description": "Background",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT",
+     "textureId": "TX_FULL_TREE_BACKGROUND_1"
 
-                    ],
-                    "maskObjects": [
-                        "bobbysRoomMask",
-                        "guestBedroomMask",
-                        "frontTopStairsRoomMask",
-                        "frontBottomStairsRoomMask"
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "CLEAR_QUAD",
-            "traitTags": [],
-            "description": "Clear quad",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_CLEAR_QUAD",
-                    "textureBlendMode": "RenderBlendMode::BLEND",
-                    "color": "Colors::ALPHA_1_COLOR"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 4000,
+      "height": 2000
+     }
+    },
+    {
+     "id": "BB_STATE_COMPONENT"
+    }
+   ]
+  }
 
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    }
-                }
-            ]
-        },
-        {
-            "type": "WHITE_QUAD",
-            "traitTags": [],
-            "description": "White quad",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_WHITE_QUAD",
-                    "color": "Colors::WHITE"
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 512,
-                        "height": 512
-                    }
-                }
-            ]
-        },
-        {
-            "type": "GRDIENT_QUAD_2",
-            "traitTags": [ "abstract" ],
-            "description": "White quad",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_GRADIENT_2"
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 512,
-                        "height": 512
-                    }
-                }
-            ]
-        },
-        {
-            "type": "CLEAR_QUAD_MASK",
-            "traitTags": ["save_me"],
-            "description": "Clear quad mask",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_CLEAR_QUAD"
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    }
-                },
-                {
-                    "id": "BB_STATE_COMPONENT"
-                }
-            ]
-        },
-        {
-            "type": "FULL_TREE_BACKGROUND_1",
-            "traitTags": [],
-            "description": "Background",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_FULL_TREE_BACKGROUND_1"
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 4000,
-                        "height": 2000
-                    }
-                },
-                {
-                    "id": "BB_STATE_COMPONENT"
-                }
-            ]
-        }
-
-    ]
+ ]
 }
 
 

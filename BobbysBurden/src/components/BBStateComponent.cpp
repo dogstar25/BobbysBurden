@@ -11,34 +11,40 @@ BBStateComponent::BBStateComponent(Json::Value definitionJSON) : StateComponent(
 
 void BBStateComponent::removeState(GameObjectState newState)
 {
-	switch (newState) {
 
-		case GameObjectState::ON_VERTICAL_MOVEMENT:
+	if (testState(newState)) {
 
-			if (parent()->hasComponent(ComponentTypes::PHYSICS_COMPONENT) &&
-				parent()->hasComponent(ComponentTypes::VITALITY_COMPONENT)) {
+		switch (newState) {
 
-				const auto& playerPhysics = parent()->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
-				const auto& playerVitality = parent()->getComponent<VitalityComponent>(ComponentTypes::VITALITY_COMPONENT);
+			case GameObjectState::ON_VERTICAL_MOVEMENT:
 
-				playerPhysics->setGravityScale(15);
-				playerPhysics->setLinearDamping(1);
-				playerPhysics->setAngularDamping(1);
-				playerVitality->setSpeed(3);
-			}
+				//Set the state to true
+				m_states.set((int)newState, false);
+
+				if (parent()->hasComponent(ComponentTypes::PHYSICS_COMPONENT) &&
+					parent()->hasComponent(ComponentTypes::VITALITY_COMPONENT)) {
+
+					const auto& playerPhysics = parent()->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
+					const auto& playerVitality = parent()->getComponent<VitalityComponent>(ComponentTypes::VITALITY_COMPONENT);
+
+					playerPhysics->setGravityScale(15);
+					playerPhysics->setLinearDamping(1);
+					playerPhysics->setAngularDamping(1);
+					playerVitality->setSpeed(3);
+				}
 
 			break;
 
 
 
-	default: //If no match then call the base class
+		default: //If no match then call the base class
 
-		StateComponent::removeState(newState);
+			StateComponent::removeState(newState);
+
+		}
+
 
 	}
-
-
-
 }
 
 void BBStateComponent::addState(GameObjectState newState)
@@ -62,6 +68,9 @@ void BBStateComponent::_setAndReconcileState(GameObjectState newState)
 
 		case GameObjectState::ON_VERTICAL_MOVEMENT:
 
+			//Set the state to true
+			m_states.set((int)newState, true);
+
 			if (parent()->hasComponent(ComponentTypes::PHYSICS_COMPONENT) &&
 				parent()->hasComponent(ComponentTypes::VITALITY_COMPONENT)) {
 
@@ -69,7 +78,7 @@ void BBStateComponent::_setAndReconcileState(GameObjectState newState)
 				const auto& playerVitality = parent()->getComponent<VitalityComponent>(ComponentTypes::VITALITY_COMPONENT);
 
 				playerPhysics->setGravityScale(0);
-				playerPhysics->setLinearDamping(100);
+				playerPhysics->setLinearDamping(75);
 				playerPhysics->setAngularDamping(100);
 				playerVitality->setSpeed(5);
 			}
