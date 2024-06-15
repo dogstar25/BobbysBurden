@@ -1,305 +1,304 @@
 {
-    "gameObjects": [
-        {
-            "type": "BOBBY",
-            "traitTags": [ "player" ],
-            "description": "Payer",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 64,
-                        "height": 112
-                    }
-                },
-                {
-                    "id": "INVENTORY_COMPONENT",
-                    "maxCapacity": 4,
-                    "displayObject": "BOBBY_INVENTORY_DISPLAY",
-                    "displayLayer": "GameLayer::GUI_3"
-                },
-                {
-                    "id": "VITALITY_COMPONENT",
-                    "speed": 3,
-                    "health": 6
-                },
-                {
-                    "id": "BB_INTERFACE_COMPONENT",
-                    "interfaceActions": [
-                        {
-                            "actionId": "Actions::OPEN",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "Key::SDL_SCANCODE_I"
-                                ]
-                            }
+ "gameObjects": [
 
-                        },
-                        {
-                            "actionId": "Actions::EQUIP_LIGHT",
-                            "condition": {
-                                "operator": "ConditionOperator::AND",
-                                "events": [
-                                    "Key::SDL_SCANCODE_F"
-                                ]
-                            }
+  {
+   "type": "BOBBY",
+   "traitTags": [ "player" ],
+   "description": "Payer",
+   "components": [
+    {
+     "id": "RENDER_COMPONENT"
+    },
+    {
+     "id": "TRANSFORM_COMPONENT",
+     "size": {
+      "width": 64,
+      "height": 112
+     }
+    },
+    {
+     "id": "INVENTORY_COMPONENT",
+     "maxCapacity": 4,
+     "displayObject": "BOBBY_INVENTORY_DISPLAY",
+     "displayLayer": "GameLayer::GUI_3"
+    },
+    {
+     "id": "VITALITY_COMPONENT",
+     "speed": 3,
+     "health": 6
+    },
+    {
+     "id": "BB_INTERFACE_COMPONENT",
+     "interfaceActions": [
+      {
+       "actionId": "Actions::OPEN",
+       "condition": {
+        "operator": "ConditionOperator::AND",
+        "events": [
+         "Key::SDL_SCANCODE_I"
+        ]
+       }
 
-                        }
+      },
+      {
+       "actionId": "Actions::EQUIP_LIGHT",
+       "condition": {
+        "operator": "ConditionOperator::AND",
+        "events": [
+         "Key::SDL_SCANCODE_F"
+        ]
+       }
 
+      }
+     ]
+    },
+    {
+     "id": "PHYSICS_COMPONENT",
+     "type": "B2_DYNAMIC",
+     "gravityScale": 15,
+     "linearDamping": 1.0,
+     "fixtures": [
+      {
+       "contactTag": "ContactTag::PLAYER_COLLISION",
+       "collisionShape": "B2_BOX",
+       "friction": 0.2,
+       "restitution": 0.0,
+       "density": 1000
+      },
+      {
+       "contactTag": "ContactTag::PLAYER_TOUCH",
+       "collisionShape": "B2_CIRCLE",
+       "collisionRadius": 1.4,
+       "isSensor": true
+      }
 
-                    ]
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "gravityScale": 15,
-                    "linearDamping": 1.0,
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::PLAYER_COLLISION",
-                            "collisionShape": "B2_BOX",
-                            "friction": 0.2,
-                            "restitution": 0.0,
-                            "density": 1000
-                        },
-                        {
-                            "contactTag": "ContactTag::PLAYER_TOUCH",
-                            "collisionShape": "B2_CIRCLE",
-                            "collisionRadius": 1.4,
-                            "isSensor": true
-                        }
+     ]
+    },
+    {
+     "id": "BOBBY_PLAYER_CONTROL_COMPONENT"
+    },
+    {
+     "id": "ACTION_COMPONENT",
+     "actions": [
+      {
+       "actionId": "Actions::MOVE",
+       "actionClass": "BobbyMoveAction"
+      },
+      {
+       "actionId": "Actions::OPEN",
+       "actionClass": "ToggleBobbyInventory"
+      },
+      {
+       "actionId": "Actions::EQUIP_LIGHT",
+       "actionClass": "ToggleBobbyEquip"
+      }
 
-                    ]
-                },
-                {
-                    "id": "BOBBY_PLAYER_CONTROL_COMPONENT"
-                },
-                {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
-                        {
-                            "actionId": "Actions::MOVE",
-                            "actionClass": "BobbyMoveAction"
-                        },
-                        {
-                            "actionId": "Actions::OPEN",
-                            "actionClass": "ToggleBobbyInventory"
-                        },
-                        {
-                            "actionId": "Actions::EQUIP_LIGHT",
-                            "actionClass": "ToggleBobbyEquip"
-                        }
+     ]
+    },
+    {
+     "id": "CHILDREN_COMPONENT",
+     "childPadding": 0,
+     "childPositionRelative": false,
+     "childObjects": [
+      {
+       "gameObjectType": "HOLDING_CANDLE",
+       "absolutePositionSlot": {
+        "x": 0,
+        "y": 0
+       },
+       "beginStates": [ "GameObjectState::DISABLED_RENDER", "GameObjectState::DISABLED_COLLISION" ]
+      }
 
-                    ]
-                },
-                {
-                    "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "childPositionRelative": false,
-                    "childObjects": [
-                        {
-                            "gameObjectType": "HOLDING_CANDLE",
-                            "absolutePositionSlot": {
-                                "x": 0,
-                                "y": 0
-                            },
-                            "beginStates": [ "GameObjectState::DISABLED_RENDER", "GameObjectState::DISABLED_COLLISION" ]
-                        }
+     ]
+    },
+    {
+     "id": "BB_STATE_COMPONENT",
+     "beginStates": [ "GameObjectState::IDLE_RIGHT" ],
+     "animationStates": [
+      {
+       "state": "GameObjectState::IDLE_RIGHT",
+       "animationId": "IDLE_RIGHT"
+      },
+      {
+       "state": "GameObjectState::IDLE_LEFT",
+       "animationId": "IDLE_LEFT"
+      },
+      {
+       "state": "GameObjectState::IDLE_UP",
+       "animationId": "WALK_UP_IDLE"
+      },
+      {
+       "state": "GameObjectState::IDLE_DOWN",
+       "animationId": "WALK_DOWN_IDLE"
+      },
+      {
+       "state": "GameObjectState::WALK_RIGHT",
+       "animationId": "WALK_RIGHT"
+      },
+      {
+       "state": "GameObjectState::WALK_LEFT",
+       "animationId": "WALK_LEFT"
+      },
+      {
+       "state": "GameObjectState::WALK_UP",
+       "animationId": "WALK_UP"
+      },
+      {
+       "state": "GameObjectState::WALK_DOWN",
+       "animationId": "WALK_DOWN"
+      },
+      {
+       "state": "GameObjectState::IDLE_RIGHT_EQUIPPED",
+       "animationId": "IDLE_RIGHT_EQUIPPED"
+      },
+      {
+       "state": "GameObjectState::IDLE_LEFT_EQUIPPED",
+       "animationId": "IDLE_LEFT_EQUIPPED"
+      },
+      {
+       "state": "GameObjectState::IDLE_UP_EQUIPPED",
+       "animationId": "WALK_UP_IDLE_EQUIPPED"
+      },
+      {
+       "state": "GameObjectState::IDLE_DOWN_EQUIPPED",
+       "animationId": "WALK_DOWN_IDLE_EQUIPPED"
+      },
+      {
+       "state": "GameObjectState::WALK_RIGHT_EQUIPPED",
+       "animationId": "WALK_RIGHT_EQUIPPED"
+      },
+      {
+       "state": "GameObjectState::WALK_LEFT_EQUIPPED",
+       "animationId": "WALK_LEFT_EQUIPPED"
+      },
+      {
+       "state": "GameObjectState::WALK_UP_EQUIPPED",
+       "animationId": "WALK_UP_EQUIPPED"
+      },
+      {
+       "state": "GameObjectState::WALK_DOWN_EQUIPPED",
+       "animationId": "WALK_DOWN_EQUIPPED"
+      }
 
-                    ]
-                },
-                {
-                    "id": "BB_STATE_COMPONENT",
-                    "beginStates": [ "GameObjectState::IDLE_RIGHT" ],
-                    "animationStates": [
-                        {
-                            "state": "GameObjectState::IDLE_RIGHT",
-                            "animationId": "IDLE_RIGHT"
-                        },
-                        {
-                            "state": "GameObjectState::IDLE_LEFT",
-                            "animationId": "IDLE_LEFT"
-                        },
-                        {
-                            "state": "GameObjectState::IDLE_UP",
-                            "animationId": "WALK_UP_IDLE"
-                        },
-                        {
-                            "state": "GameObjectState::IDLE_DOWN",
-                            "animationId": "WALK_DOWN_IDLE"
-                        },
-                        {
-                            "state": "GameObjectState::WALK_RIGHT",
-                            "animationId": "WALK_RIGHT"
-                        },
-                        {
-                            "state": "GameObjectState::WALK_LEFT",
-                            "animationId": "WALK_LEFT"
-                        },
-                        {
-                            "state": "GameObjectState::WALK_UP",
-                            "animationId": "WALK_UP"
-                        },
-                        {
-                            "state": "GameObjectState::WALK_DOWN",
-                            "animationId": "WALK_DOWN"
-                        },
-                        {
-                            "state": "GameObjectState::IDLE_RIGHT_EQUIPPED",
-                            "animationId": "IDLE_RIGHT_EQUIPPED"
-                        },
-                        {
-                            "state": "GameObjectState::IDLE_LEFT_EQUIPPED",
-                            "animationId": "IDLE_LEFT_EQUIPPED"
-                        },
-                        {
-                            "state": "GameObjectState::IDLE_UP_EQUIPPED",
-                            "animationId": "WALK_UP_IDLE_EQUIPPED"
-                        },
-                        {
-                            "state": "GameObjectState::IDLE_DOWN_EQUIPPED",
-                            "animationId": "WALK_DOWN_IDLE_EQUIPPED"
-                        },
-                        {
-                            "state": "GameObjectState::WALK_RIGHT_EQUIPPED",
-                            "animationId": "WALK_RIGHT_EQUIPPED"
-                        },
-                        {
-                            "state": "GameObjectState::WALK_LEFT_EQUIPPED",
-                            "animationId": "WALK_LEFT_EQUIPPED"
-                        },
-                        {
-                            "state": "GameObjectState::WALK_UP_EQUIPPED",
-                            "animationId": "WALK_UP_EQUIPPED"
-                        },
-                        {
-                            "state": "GameObjectState::WALK_DOWN_EQUIPPED",
-                            "animationId": "WALK_DOWN_EQUIPPED"
-                        }
+     ]
+    },
+    {
+     "id": "ANIMATION_COMPONENT",
+     "default": "IDLE_RIGHT",
+     "frameSize": {
+      "width": 89,
+      "height": 116
+     },
+     "animations": [
+      {
+       "id": "IDLE_RIGHT",
+       "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+       "textureId": "TX_BOBBY_IDLE_RIGHT",
+       "frames": 1
+      },
+      {
+       "id": "IDLE_LEFT",
+       "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+       "textureId": "TX_BOBBY_IDLE_LEFT",
+       "frames": 1
+      },
+      {
+       "id": "WALK_RIGHT",
+       "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+       "textureId": "TX_BOBBY_WALK_RIGHT",
+       "speed": 0.01,
+       "frames": 24
+      },
+      {
+       "id": "WALK_LEFT",
+       "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+       "textureId": "TX_BOBBY_WALK_LEFT",
+       "speed": 0.01,
+       "frames": 24
+      },
+      {
+       "id": "WALK_DOWN",
+       "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+       "textureId": "TX_BOBBY_WALK_DOWN_STAIRS",
+       "speed": 0.01,
+       "frames": 4
+      },
+      {
+       "id": "WALK_DOWN_IDLE",
+       "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+       "textureId": "TX_BOBBY_WALK_DOWN_IDLE_STAIRS",
+       "frames": 1
+      },
+      {
+       "id": "WALK_UP",
+       "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+       "textureId": "TX_BOBBY_WALK_UP_STAIRS",
+       "speed": 0.01,
+       "frames": 4
+      },
+      {
+       "id": "WALK_UP_IDLE",
+       "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+       "textureId": "TX_BOBBY_WALK_UP_IDLE_STAIRS",
+       "frames": 1
+      },
+      {
+       "id": "IDLE_RIGHT_EQUIPPED",
+       "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+       "textureId": "TX_BOBBY_IDLE_RIGHT_EQUIPPED",
+       "frames": 1
+      },
+      {
+       "id": "IDLE_LEFT_EQUIPPED",
+       "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+       "textureId": "TX_BOBBY_IDLE_LEFT_EQUIPPED",
+       "frames": 1
+      },
+      {
+       "id": "WALK_RIGHT_EQUIPPED",
+       "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+       "textureId": "TX_BOBBY_WALK_RIGHT_EQUIPPED",
+       "speed": 0.01,
+       "frames": 24
+      },
+      {
+       "id": "WALK_LEFT_EQUIPPED",
+       "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+       "textureId": "TX_BOBBY_WALK_LEFT_EQUIPPED",
+       "speed": 0.01,
+       "frames": 24
+      },
+      {
+       "id": "WALK_DOWN_EQUIPPED",
+       "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+       "textureId": "TX_BOBBY_WALK_DOWN_STAIRS_EQUIPPED",
+       "speed": 0.1,
+       "frames": 4
+      },
+      {
+       "id": "WALK_DOWN_IDLE_EQUIPPED",
+       "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+       "textureId": "TX_BOBBY_WALK_DOWN_IDLE_STAIRS_EQUIPPED",
+       "frames": 1
+      },
+      {
+       "id": "WALK_UP_EQUIPPED",
+       "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+       "textureId": "TX_BOBBY_WALK_UP_STAIRS_EQUIPPED",
+       "speed": 0.1,
+       "frames": 4
+      },
+      {
+       "id": "WALK_UP_IDLE_EQUIPPED",
+       "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+       "textureId": "TX_BOBBY_WALK_UP_IDLE_STAIRS_EQUIPPED",
+       "frames": 1
+      }
+     ]
+    }
 
-                    ]
-                },
-                {
-                    "id": "ANIMATION_COMPONENT",
-                    "default": "IDLE_RIGHT",
-                    "frameSize": {
-                        "width": 89,
-                        "height": 116
-                    },
-                    "animations": [
-                        {
-                            "id": "IDLE_RIGHT",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_BOBBY_IDLE_RIGHT",
-                            "frames": 1
-                        },
-                        {
-                            "id": "IDLE_LEFT",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_BOBBY_IDLE_LEFT",
-                            "frames": 1
-                        },
-                        {
-                            "id": "WALK_RIGHT",
-                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_BOBBY_WALK_RIGHT",
-                            "speed": 0.01,
-                            "frames": 24
-                        },
-                        {
-                            "id": "WALK_LEFT",
-                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_BOBBY_WALK_LEFT",
-                            "speed": 0.01,
-                            "frames": 24
-                        },
-                        {
-                            "id": "WALK_DOWN",
-                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_BOBBY_WALK_DOWN_STAIRS",
-                            "speed": 0.01,
-                            "frames": 4
-                        },
-                        {
-                            "id": "WALK_DOWN_IDLE",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_BOBBY_WALK_DOWN_IDLE_STAIRS",
-                            "frames": 1
-                        },
-                        {
-                            "id": "WALK_UP",
-                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_BOBBY_WALK_UP_STAIRS",
-                            "speed": 0.01,
-                            "frames": 4
-                        },
-                        {
-                            "id": "WALK_UP_IDLE",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_BOBBY_WALK_UP_IDLE_STAIRS",
-                            "frames": 1
-                        },
-                        {
-                            "id": "IDLE_RIGHT_EQUIPPED",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_BOBBY_IDLE_RIGHT_EQUIPPED",
-                            "frames": 1
-                        },
-                        {
-                            "id": "IDLE_LEFT_EQUIPPED",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_BOBBY_IDLE_LEFT_EQUIPPED",
-                            "frames": 1
-                        },
-                        {
-                            "id": "WALK_RIGHT_EQUIPPED",
-                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_BOBBY_WALK_RIGHT_EQUIPPED",
-                            "speed": 0.01,
-                            "frames": 24
-                        },
-                        {
-                            "id": "WALK_LEFT_EQUIPPED",
-                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_BOBBY_WALK_LEFT_EQUIPPED",
-                            "speed": 0.01,
-                            "frames": 24
-                        },
-                        {
-                            "id": "WALK_DOWN_EQUIPPED",
-                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_BOBBY_WALK_DOWN_STAIRS_EQUIPPED",
-                            "speed": 0.1,
-                            "frames": 4
-                        },
-                        {
-                            "id": "WALK_DOWN_IDLE_EQUIPPED",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_BOBBY_WALK_DOWN_IDLE_STAIRS_EQUIPPED",
-                            "frames": 1
-                        },
-                        {
-                            "id": "WALK_UP_EQUIPPED",
-                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_BOBBY_WALK_UP_STAIRS_EQUIPPED",
-                            "speed": 0.1,
-                            "frames": 4
-                        },
-                        {
-                            "id": "WALK_UP_IDLE_EQUIPPED",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_BOBBY_WALK_UP_IDLE_STAIRS_EQUIPPED",
-                            "frames": 1
-                        }
-                    ]
-                }
+   ]
 
-            ]
-
-        }
-    ]
+  }
+ ]
 }
