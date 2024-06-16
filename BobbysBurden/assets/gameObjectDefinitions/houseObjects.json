@@ -184,10 +184,7 @@
         },
         {
             "type": "BRICK_WALL_DYNAMIC_1",
-            "traitTags": [
-                "barrier",
-                "draggable"
-            ],
+            "traitTags": ["barrier"],
             "description": "Brick Wall 1",
             "components": [
                 {

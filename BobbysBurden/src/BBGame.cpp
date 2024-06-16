@@ -87,7 +87,7 @@ bool BBGame::init(
 	//Initialize the saveFile
 	gameStateManager->initializeGameDataFile();
 
-	gameStateManager->loadGamePrimerFile();
+	//gameStateManager->loadGamePrimerFile();
 
 
 	////////////////////////////////////////////////
@@ -96,20 +96,20 @@ bool BBGame::init(
 	contextManager->loadSettings();
 	
 	//Figure out a place to put this custom game type stuff later
-	//const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
-	//const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	//playerInventory->addItem("OIL_CAN");
+	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
+	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	playerInventory->addItem("OIL_CAN");
 
-	//const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");
-	//const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	//topDrawerInventory->addItem("BOTTLE1");
+	const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");
+	const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	topDrawerInventory->addItem("BOTTLE1");
 
 	////Dresser Shelf
-	//const auto& dresserShelf = scene.getFirstGameObjectByName("BOBBY_DRESSER_SHELF");
-	//const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	//dresserShelfInventory->addItem("OIL_CAN");
-	//dresserShelfInventory->addItem("BOTTLE1");
-	//dresserShelfInventory->refreshInventoryDisplay();
+	const auto& dresserShelf = scene.getFirstGameObjectByName("BOBBY_DRESSER_SHELF");
+	const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	dresserShelfInventory->addItem("OIL_CAN");
+	dresserShelfInventory->addItem("BOTTLE1");
+	dresserShelfInventory->refreshInventoryDisplay();
 
 	
 	//Initialize the clock object
