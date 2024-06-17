@@ -16,6 +16,19 @@
 			}
 		},
 		{
+			"gameObjectName" : "bedroom1ClosetDoor",
+			"gameObjectType" : "DOOR_FRONT",
+			"state" : 
+			[
+				"GameObjectState::CLOSED"
+			],
+			"transform" : 
+			{
+				"x" : 584.0,
+				"y" : 4496.0
+			}
+		},
+		{
 			"gameObjectName" : "frontTopStairsRoomMask",
 			"gameObjectType" : "CLEAR_QUAD_MASK",
 			"state" : 
@@ -26,6 +39,48 @@
 			{
 				"x" : 1210.0,
 				"y" : 4448.0
+			}
+		},
+		{
+			"gameObjectName" : "BOTTLE1_ANON",
+			"gameObjectType" : "BOTTLE1",
+			"state" : 
+			[
+				"GameObjectState::ITEM_OBTAINABLE",
+				"GameObjectState::ITEM_LOOSE",
+				"GameObjectState::ITEM_STORED_OPEN",
+				"GameObjectState::DRAGGABLE"
+			],
+			"transform" : 
+			{
+				"x" : 943.99993896484375,
+				"y" : 4492.0
+			}
+		},
+		{
+			"gameObjectName" : "bobbysRoomMask",
+			"gameObjectType" : "GRADIENT_QUAD_MASK_ALL",
+			"state" : 
+			[
+				"GameObjectState::ON"
+			],
+			"transform" : 
+			{
+				"x" : 784.0,
+				"y" : 4448.0
+			}
+		},
+		{
+			"gameObjectName" : "OIL_CAN_ANON",
+			"gameObjectType" : "OIL_CAN",
+			"state" : 
+			[
+				"GameObjectState::DRAGGABLE"
+			],
+			"transform" : 
+			{
+				"x" : -1568.0,
+				"y" : -1568.0
 			}
 		},
 		{
@@ -45,7 +100,7 @@
 			}
 		},
 		{
-			"gameObjectName" : "frontBottomStairsRoomMask",
+			"gameObjectName" : "parlorRoomMask",
 			"gameObjectType" : "CLEAR_QUAD_MASK",
 			"state" : 
 			[
@@ -53,50 +108,8 @@
 			],
 			"transform" : 
 			{
-				"x" : 1210.0,
+				"x" : 672.0,
 				"y" : 4800.0
-			}
-		},
-		{
-			"gameObjectName" : "bobbysRoomMask",
-			"gameObjectType" : "CLEAR_QUAD_MASK",
-			"state" : 
-			[
-				"GameObjectState::ON"
-			],
-			"transform" : 
-			{
-				"x" : 736.0,
-				"y" : 4448.0
-			}
-		},
-		{
-			"gameObjectName" : "BOBBY_SIDETABLE_BOTTOM_DRAWER",
-			"gameObjectType" : "DRAWER_1X2",
-			"inventory" : 
-			[
-				{
-					"slot" : 1,
-					"type" : "BOTTLE1"
-				}
-			],
-			"transform" : 
-			{
-				"x" : 660.0,
-				"y" : 4568.0
-			}
-		},
-		{
-			"gameObjectName" : "bedroom1ClosetDoor",
-			"gameObjectType" : "DOOR_FRONT",
-			"state" : 
-			[
-				"GameObjectState::CLOSED"
-			],
-			"transform" : 
-			{
-				"x" : 584.0,
-				"y" : 4496.0
 			}
 		},
 		{
@@ -132,12 +145,12 @@
 			"inventory" : 
 			[
 				{
-					"slot" : 1,
+					"slot" : 0,
 					"type" : "OIL_CAN"
 				},
 				{
-					"slot" : 2,
-					"type" : "OIL_CAN"
+					"slot" : 1,
+					"type" : "BOTTLE1"
 				}
 			],
 			"transform" : 
@@ -147,19 +160,85 @@
 			}
 		},
 		{
+			"gameObjectName" : "frontBottomStairsRoomMask",
+			"gameObjectType" : "CLEAR_QUAD_MASK",
+			"state" : 
+			[
+				"GameObjectState::OFF"
+			],
+			"transform" : 
+			{
+				"x" : 1210.0,
+				"y" : 4800.0
+			}
+		},
+		{
 			"gameObjectName" : "BOBBY_SIDETABLE_TOP_DRAWER",
 			"gameObjectType" : "DRAWER_1X1",
 			"inventory" : 
 			[
 				{
 					"slot" : 0,
-					"type" : "OIL_CAN"
+					"type" : "BOTTLE1"
 				}
 			],
 			"transform" : 
 			{
 				"x" : 660.0,
 				"y" : 4532.0
+			}
+		},
+		{
+			"gameObjectName" : "BOBBY_SIDETABLE_BOTTOM_DRAWER",
+			"gameObjectType" : "DRAWER_1X2",
+			"transform" : 
+			{
+				"x" : 660.0,
+				"y" : 4568.0
+			}
+		},
+		{
+			"gameObjectName" : "toddcan",
+			"gameObjectType" : "OIL_CAN",
+			"state" : 
+			[
+				"GameObjectState::ITEM_OBTAINABLE",
+				"GameObjectState::ITEM_LOOSE"
+			],
+			"transform" : 
+			{
+				"x" : 1184.0,
+				"y" : 4576.0
+			}
+		},
+		{
+			"gameObjectName" : "BOTTLE1_ANON",
+			"gameObjectType" : "BOTTLE1",
+			"state" : 
+			[
+				"GameObjectState::ITEM_OBTAINABLE",
+				"GameObjectState::DRAGGABLE"
+			],
+			"transform" : 
+			{
+				"x" : -1568.0,
+				"y" : -1568.0
+			}
+		},
+		{
+			"gameObjectName" : "OIL_CAN_ANON",
+			"gameObjectType" : "OIL_CAN",
+			"state" : 
+			[
+				"GameObjectState::ITEM_OBTAINABLE",
+				"GameObjectState::ITEM_LOOSE",
+				"GameObjectState::ITEM_STORED_OPEN",
+				"GameObjectState::DRAGGABLE"
+			],
+			"transform" : 
+			{
+				"x" : 893.99993896484375,
+				"y" : 4492.0
 			}
 		}
 	]
