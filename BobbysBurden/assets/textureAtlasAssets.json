@@ -1123,6 +1123,28 @@
                 "width": 401,
                 "height": 855
             }
+        },
+        {
+            "id": "TX_GRADIENT_QUAD_ALL",
+            "description": "Clear quad with gradient 32 pixels on all sides",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 736,
+                "y": 200,
+                "width": 538,
+                "height": 323
+            }
+        },
+        {
+            "id": "TX_GRADIENT_QUAD_TOP_AND_BOTTOM",
+            "description": "Clear quad with gradient 32 pixels on top and bottom only",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 768,
+                "y": 200,
+                "width": 474,
+                "height": 323
+            }
         }
 
     ],

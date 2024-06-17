@@ -96,7 +96,7 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 	ImGui::PushFont(m_normalFont);
 
 	//If this item has the "draggable" trait then show the Grab action
-	if (interfacedObject->hasTrait(TraitTag::draggable) && interfacedObject->isDragging() == false) {
+	if (interfacedObject->hasState(GameObjectState::DRAGGABLE) && interfacedObject->isDragging() == false) {
 
 		//If this is an object inside of an inventory OR its a loose item and touched by the player
 		if (interfacedObject->hasState(GameObjectState::ITEM_LOOSE) && interfacedObject->isTouchingByTrait(TraitTag::player) ||

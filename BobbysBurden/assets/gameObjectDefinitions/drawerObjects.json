@@ -311,8 +311,7 @@
                     "fixtures": [
                         {
                             "contactTag": "ContactTag::INTERACTABLE_OBJECT",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
+                            "collisionShape": "B2_BOX"
                         }
 
                     ]

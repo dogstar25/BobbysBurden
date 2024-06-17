@@ -94,6 +94,9 @@
                 },
                 {
                     "id": "POOL_COMPONENT"
+                },
+                {
+                    "id": "STATE_COMPONENT"
                 }
 
             ]
@@ -140,6 +143,9 @@
                 },
                 {
                     "id": "VITALITY_COMPONENT"
+                },
+                {
+                    "id": "STATE_COMPONENT"
                 }
 
 

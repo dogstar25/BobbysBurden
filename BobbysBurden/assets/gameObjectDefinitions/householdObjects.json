@@ -41,7 +41,7 @@
         },
         {
             "type": "OIL_CAN",
-            "traitTags": ["puzzle_item" ],
+            "traitTags": ["puzzle_item", "save_me" ],
             "description": "Oil Can",
             "components": [
                 {
@@ -85,7 +85,7 @@
         },
         {
             "type": "BOTTLE1",
-            "traitTags": [ "puzzle_item" ],
+            "traitTags": [ "puzzle_item", "save_me" ],
             "description": "Bottle",
             "components": [
                 {
