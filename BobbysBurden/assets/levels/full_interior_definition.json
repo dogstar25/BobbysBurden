@@ -35,11 +35,6 @@
                     "layer": "GameLayer::ABSTRACT"
                 },
                 {
-                    "id": "LOC_0000_0110",
-                    "gameObjectType": "FULL_TREE_BACKGROUND_1",
-                    "layer": "GameLayer::BACKGROUND_5"
-                },
-                {
                     "id": "LOC_0000_0000",
                     "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
                     "layer": "GameLayer::BACKGROUND_FINAL",
@@ -53,13 +48,29 @@
                 },
                 {
                     "id": "LOC_0000_0110",
-                    "gameObjectType": "HOUSE_OVERLAY",
-                    "layer": "GameLayer::FOREGROUND_5",
-                    "locationAdjust": {
-                        "x": -174.0,
-                        "y": -4
-                    }
+                    "gameObjectType": "HOUSE_OVERLAY_FRONT",
+                    "description": "House Overlay for the front view",
+                    "layer": "GameLayer::FOREGROUND_5"
+                },
+                {
+                    "id": "LOC_0000_0022",
+                    "gameObjectType": "HOUSE_OVERLAY_BACK",
+                    "description": "House Overlay for the back view",
+                    "layer": "GameLayer::FOREGROUND_5"
+                },
+                {
+                    "id": "LOC_0000_0110",
+                    "description": "Tree background for the Front view",
+                    "gameObjectType": "FULL_TREE_BACKGROUND_1",
+                    "layer": "GameLayer::BACKGROUND_5"
+                },
+                {
+                    "id": "LOC_0000_0022",
+                    "description": "Tree background for the Front view",
+                    "gameObjectType": "FULL_TREE_BACKGROUND_1",
+                    "layer": "GameLayer::BACKGROUND_5"
                 }
+
             ]
         },
         {
@@ -82,31 +93,11 @@
                 },
                 {
                     "id": "LOC_0029_0141",
+                    //"id": "LOC_0050_0054",
                     "gameObjectType": "BOBBY",
                     "name": "Player Bobby",
                     "layer": "GameLayer::MAIN",
                     "cameraFollow": true
-                },
-                {
-                    "id": "LOC_0017_0137",
-                    "gameObjectType": "DOOR_FRONT",
-                    "description": "Bedroom 1 closet door",
-                    "name": "bedroom1ClosetDoor",
-                    "layer": "GameLayer::BACKGROUND_2"
-                },
-                {
-                    "id": "LOC_0018_0142",
-                    "gameObjectType": "DOOR_WARP_EXIT",
-                    "description": "Bedroom 1 Door warp back to",
-                    "name": "bedroom1ClosetDoor_warp_EXIT",
-                    "layer": "GameLayer::ABSTRACT"
-                },
-                {
-                    "id": "LOC_0031_0136",
-                    "gameObjectType": "DOOR_SIDE",
-                    "description": "Bedroom1 main door",
-                    "name": "bedroom1MainDoor",
-                    "layer": "GameLayer::BACKGROUND_1"
                 },
                 {
                     "id": "LOC_0015_0144",
@@ -120,21 +111,6 @@
                     }
                 },
                 {
-                    "id": "LOC_0016_0134",
-                    "gameObjectType": "LIT_AREA",
-                    "layer": "GameLayer::FOREGROUND_2",
-                    "size": {
-                        "width": 544,
-                        "height": 320
-                    }
-                },
-                {
-                    "id": "LOC_0019_0135",
-                    "name": "windowFlash",
-                    "gameObjectType": "LIGHT_WINDOW_1",
-                    "layer": "GameLayer::FOREGROUND_2"
-                },
-                {
                     "id": "LOC_0021_0137",
                     "gameObjectType": "BOBBYS_BED",
                     "layer": "GameLayer::MAIN"
@@ -142,7 +118,7 @@
                 {
                     "id": "LOC_0027_0140",
                     "gameObjectType": "BOBBYS_DRESSER",
-                    "layer": "GameLayer::BACKGROUND_2"
+                    "layer": "GameLayer::BACKGROUND_4"
                 },
                 {
                     "id": "LOC_0020_0141",
@@ -150,38 +126,6 @@
                     "layer": "GameLayer::MAIN",
                     "locationAdjust": {
                         "x": -8
-                    }
-                },
-                {
-                    "id": "LOC_0028_0137",
-                    "gameObjectType": "WALL_MIRROR_1",
-                    "layer": "GameLayer::BACKGROUND_4",
-                    "locationAdjust": {
-                        "x": -8
-                    }
-                },
-                {
-                    "id": "LOC_0024_0134",
-                    "gameObjectType": "CEILING_LIGHT_1",
-                    "name": "bobbyRoomLightSwitch_TARGET",
-                    "layer": "GameLayer::BACKGROUND_4",
-                    "gameObjectStates": [
-                        "ON"
-                    ],
-                    "locationAdjust": {
-                        "y": -0.8
-                    }
-                },
-                {
-                    "id": "LOC_0031_0139",
-                    "gameObjectType": "LIGHT_SWITCH",
-                    "name": "bobbyRoomLightSwitch",
-                    "layer": "GameLayer::BACKGROUND_4",
-                    "gameObjectStates": [
-                        "ON"
-                    ],
-                    "locationAdjust": {
-                        "y": -16.0
                     }
                 }
             ]
@@ -447,11 +391,31 @@
             ]
         },
         {
-            "groupName": "BOT_STAIRS_ROOM",
+            "groupName": "BACK_TOP_STAIRS_ROOM",
+            "objects": [
+                {
+                    "id": "LOC_0044_0046",
+                    "gameObjectType": "BACK_TOP_STAIRS_ROOM",
+                    "layer": "GameLayer::BACKGROUND_5"
+                },
+                {
+                    "id": "LOC_0044_0056",
+                    "gameObjectType": "HOUSE_BEAM",
+                    "description": "Floor",
+                    "layer": "GameLayer::ABSTRACT",
+                    "size": {
+                        "width": 352,
+                        "height": 32
+                    }
+                }
+            ]
+        },
+        {
+            "groupName": "FRONT_BOT_STAIRS_ROOM",
             "objects": [
                 {
                     "id": "LOC_0033_0145",
-                    "gameObjectType": "BOT_STAIRS_ROOM",
+                    "gameObjectType": "FRONT_BOT_STAIRS_ROOM",
                     "layer": "GameLayer::BACKGROUND_5"
                 },
                 {

@@ -75,13 +75,24 @@
     ],
     "textures": [
         {
-            "id": "TX_FULL_HOUSE_EXTERIOR",
-            "description": "Default Texure",
+            "id": "TX_FULL_HOUSE_FRONT_EXTERIOR",
+            "description": "Default Texture",
             "atlas": "TEXTURE_ATLAS_3",
             "quadPosition": {
                 "x": 0,
                 "y": 0,
-                "width": 2240,
+                "width": 3034,
+                "height": 1600
+            }
+        },
+        {
+            "id": "TX_FULL_HOUSE_BACK_EXTERIOR",
+            "description": "Default Texture",
+            "atlas": "TEXTURE_ATLAS_6",
+            "quadPosition": {
+                "x": 0,
+                "y": 0,
+                "width": 3034,
                 "height": 1600
             }
         },

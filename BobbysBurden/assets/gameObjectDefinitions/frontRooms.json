@@ -1,0 +1,320 @@
+{
+    "gameObjects": [
+        {
+            "type": "PARLOR_ROOM",
+            "traitTags": [],
+            "description": "Parlor Room",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_ROOM_PARLOR"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 544,
+                        "height": 320
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CLEAR_QUAD_MASK",
+                            "name": "parlorRoomMask",
+                            "description": "The mask uses to show the room instead of house exterior",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 0
+                            },
+
+                            "size": {
+                                "width": 544,
+                                "height": 384
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "BOBBYS_ROOM",
+            "traitTags": [],
+            "description": "Bedroom1 Room",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BEDROOM_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 544,
+                        "height": 320
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "GRADIENT_QUAD_MASK_ALL",
+                            "name": "bobbysRoomMask",
+                            "description": "The mask uses to show the room instead of house exterior",
+                            "absolutePositionSlot": {
+                                "x": -32,
+                                "y": 0
+                            },
+                            "size": {
+                                "width": 676,
+                                "height": 384
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIT_AREA",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2",
+                            "size": {
+                                "width": 544,
+                                "height": 320
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIGHT_WINDOW_1",
+                            "name": "windowFlash",
+                            "absolutePositionSlot": {
+                                "x": -100,
+                                "y": 50
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "CEILING_LIGHT_1",
+                            "name": "bobbyRoomLightSwitch_TARGET",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -112
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_4",
+                            "beginStates": [ "GameObjectState::ON" ]
+                        },
+                        {
+                            "gameObjectType": "LIGHT_SWITCH",
+                            "name": "bobbyRoomLightSwitch",
+                            "absolutePositionSlot": {
+                                "x": 220,
+                                "y": 0
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_4",
+                            "beginStates": [ "GameObjectState::ON" ]
+                        },
+                        {
+                            "gameObjectType": "DOOR_FRONT",
+                            "name": "bedroom1ClosetDoor",
+                            "absolutePositionSlot": {
+                                "x": -200,
+                                "y": 40
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "DOOR_SIDE",
+                            "absolutePositionSlot": {
+                                "x": 244,
+                                "y": 32
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "GUEST_BEDROOM",
+            "traitTags": [],
+            "description": "Bedroom2 Room",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BEDROOM_2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 544,
+                        "height": 320
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CLEAR_QUAD_MASK",
+                            "absolutePositionSlot": {
+                                "x": -48,
+                                "y": 0
+                            },
+                            "name": "guestBedroomMask",
+                            "size": {
+                                "width": 640,
+                                "height": 322
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "DEN_ROOM",
+            "traitTags": [],
+            "description": "Den Room",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_ROOM_DEN"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 544,
+                        "height": 320
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "FRONT_TOP_STAIRS_ROOM",
+            "traitTags": [],
+            "description": "Top Stairs Room",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WHITE_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 320,
+                        "height": 320
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "GRADIENT_QUAD_MASK_ALL",
+                            "name": "frontTopStairsRoomMask",
+                            "description": "The mask uses to show the room instead of house exterior",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 342,
+                                "height": 384
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIT_AREA",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2",
+                            "size": {
+                                "width": 320,
+                                "height": 320
+                            }
+                        },
+                        {
+                            "gameObjectType": "DOOR_FRONT",
+                            "name": "topStairsDoor",
+                            "absolutePositionSlot": {
+                                "x": -60,
+                                "y": 46
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "FRONT_BOT_STAIRS_ROOM",
+            "traitTags": [],
+            "description": "Bottom Stairs Room",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_ROOM_PARLOR"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 320,
+                        "height": 320
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CLEAR_QUAD_MASK",
+                            "absolutePositionSlot": {
+                                "x": -6,
+                                "y": 0
+                            },
+                            "name": "frontBottomStairsRoomMask",
+                            "size": {
+                                "width": 326,
+                                "height": 320
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

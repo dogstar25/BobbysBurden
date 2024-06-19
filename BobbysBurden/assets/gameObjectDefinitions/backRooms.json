@@ -1,0 +1,48 @@
+{
+    "gameObjects": [
+        {
+            "type": "BACK_TOP_STAIRS_ROOM",
+            "traitTags": [],
+            "description": "Top Stairs Room",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WHITE_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 320,
+                        "height": 320
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "GRADIENT_QUAD_MASK_ALL",
+                            "name": "backTopStairsRoomMask",
+                            "description": "The mask uses to show the room instead of house exterior",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 384,
+                                "height": 384
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIT_AREA",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2",
+                            "size": {
+                                "width": 320,
+                                "height": 320
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -555,7 +555,7 @@
             ]
         },
         {
-            "type": "HOUSE_OVERLAY",
+            "type": "HOUSE_OVERLAY_FRONT",
             "traitTags": [],
             "description": "House Overlay",
             "components": [
@@ -573,7 +573,7 @@
                 {
                     "id": "BB_MASKED_OVERLAY_COMPONENT",
                     "overlayObjects": [
-                        "FULL_HOUSE_EXTERIOR"
+                        "FULL_HOUSE_FRONT_EXTERIOR"
                     ],
                     "maskObjects": [
                         "bobbysRoomMask",
@@ -581,6 +581,33 @@
                         "guestBedroomMask",
                         "frontTopStairsRoomMask",
                         "frontBottomStairsRoomMask"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "HOUSE_OVERLAY_BACK",
+            "traitTags": [],
+            "description": "House Overlay",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureBlendMode": "RenderBlendMode::BLEND"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 3034,
+                        "height": 1600
+                    }
+                },
+                {
+                    "id": "BB_MASKED_OVERLAY_COMPONENT",
+                    "overlayObjects": [
+                        "FULL_HOUSE_BACK_EXTERIOR"
+                    ],
+                    "maskObjects": [
+                        "backTopStairsRoomMask"
                     ]
                 }
             ]

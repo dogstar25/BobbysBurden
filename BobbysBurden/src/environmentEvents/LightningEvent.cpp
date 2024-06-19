@@ -69,13 +69,6 @@ std::vector<std::shared_ptr<EnvironmentEvent>> LightningEvent::perform(GameObjec
 			m_lightningOverlay = environmentObject->parentScene()->getFirstGameObjectByName("lightningBackground");
 
 		}
-		else if (m_layer == LightningLayor::FRONT) {
-
-			const auto& houseOverlayObject = environmentObject->parentScene()->getFirstGameObjectByType("HOUSE_OVERLAY");
-			const auto& maskOverlayComponent = houseOverlayObject.value()->getComponent<MaskedOverlayComponent>(ComponentTypes::MASKED_OVERLAY_COMPONENT);
-			m_lightningOverlay = maskOverlayComponent->getOverlayObject("LIGHTNING_FOREGROUND_FILTER_1");
-
-		}
 		m_lightningOverlay.value()->removeState(GameObjectState::DISABLED_RENDER);
 		m_status = EventStatus::IN_PROGRESS;
 

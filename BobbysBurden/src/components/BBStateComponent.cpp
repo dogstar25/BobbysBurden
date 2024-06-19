@@ -1,7 +1,8 @@
 #include "BBStateComponent.h"
+#include "../BBContextManager.h"
 #include "../GameConstants.h"
 
-
+extern std::unique_ptr<Game> game;
 
 BBStateComponent::BBStateComponent(Json::Value definitionJSON) : StateComponent(definitionJSON) 
 {
@@ -93,5 +94,29 @@ void BBStateComponent::_setAndReconcileState(GameObjectState newState)
 
 }
 
+void BBStateComponent::update()
+{
+
+	StateComponent::update();
+
+	//If this is the player, Determine if the player is on the Back side of the house or front side
+	if (parent()->hasTrait(TraitTag::player)) {
+
+		if (parent()->getCenterPosition().y > 3520) {
+
+
+			dynamic_pointer_cast<BBContextManager>(game->contextMananger())->setCurrentHousePosition(HousePositionTopLeftLocations::FRONT);
+
+		}
+		else {
+
+			dynamic_pointer_cast<BBContextManager>(game->contextMananger())->setCurrentHousePosition(HousePositionTopLeftLocations::BACK);
+
+		}
+
+	}
+	
+
+}
 
 

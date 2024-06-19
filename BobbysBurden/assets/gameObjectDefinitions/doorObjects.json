@@ -123,6 +123,15 @@
                                 "x": 0,
                                 "y": 20
                             }
+                        },
+                        {
+                            "gameObjectType": "DOOR_WARP_EXIT",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 64
+                            },
+                            "name": "bedroom1ClosetDoor_warp_EXIT"
+
                         }
 
 
