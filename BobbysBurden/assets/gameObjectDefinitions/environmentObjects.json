@@ -95,28 +95,6 @@
             ]
         },
         {
-            "type": "LIGHTNING_FOREGROUND_FILTER_1",
-            "traitTags": [],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_FOG_BOX2"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 5504,
-                        "height": 5504
-                    }
-                },
-                {
-                    "id": "BB_STATE_COMPONENT",
-                    "beginStates": [ "GameObjectState::DISABLED_RENDER" ]
-                }
-            ]
-        },
-        {
             "type": "LIGHTNING_BOLT_1",
             "traitTags": [],
             "description": "",

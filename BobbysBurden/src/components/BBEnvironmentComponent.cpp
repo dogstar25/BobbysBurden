@@ -17,7 +17,7 @@ void BBEnvironmentComponent::postInit()
 {
 
 	//Get the main house overlay object
-	const auto& houseOverlay = parent()->parentScene()->getFirstGameObjectByType("HOUSE_OVERLAY");
+	const auto& houseOverlay = parent()->parentScene()->getFirstGameObjectByType("HOUSE_OVERLAY_FRONT");
 	const auto& houseMaskOverlayComponent = houseOverlay.value()->getComponent<MaskedOverlayComponent>(ComponentTypes::MASKED_OVERLAY_COMPONENT);
 
 	//Create a rain emitter object
@@ -25,12 +25,6 @@ void BBEnvironmentComponent::postInit()
 	rainEmitter->disableRender();
 	rainEmitter->disableUpdate();
 	houseMaskOverlayComponent->addOverlayObject(rainEmitter);
-
-	//Create lightning overlay
-	auto lightingFilter = parent()->parentScene()->createGameObject("LIGHTNING_FOREGROUND_FILTER_1", -1.0F, -1.0F, 0.F, parent()->parentScene(), GameLayer::MAIN);
-	houseMaskOverlayComponent->addOverlayObject(lightingFilter);
-
-	
 
 }
 

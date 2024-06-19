@@ -11,6 +11,7 @@ public:
 	//static MRContextManager& instance();
 	BBContextManager() = default;
 	SDL_Point currentHousePosition() { return m_currentHousePosition; }
+	void setCurrentHousePosition(SDL_Point houseLocation) { m_currentHousePosition = houseLocation; }
 	
 	virtual bool saveSettings() override;
 	virtual void loadSettings() override;

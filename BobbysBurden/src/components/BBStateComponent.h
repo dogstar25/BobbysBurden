@@ -7,7 +7,7 @@ class BBStateComponent : public StateComponent
 
 public:
 	BBStateComponent(Json::Value definitionJSON);
-
+	void update() override;
 
 protected:
 

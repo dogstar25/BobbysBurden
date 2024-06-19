@@ -57,8 +57,6 @@ namespace HousePositionTopLeftLocations {
 
 	inline SDL_Point FRONT = { 0, 110 };
 	inline SDL_Point BACK = { 135, 22 };
-	inline SDL_Point LEFT = { 0, 22 };
-	inline SDL_Point RIGHT = { 135, 110 };
 
 }
 

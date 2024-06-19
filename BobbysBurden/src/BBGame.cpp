@@ -67,6 +67,8 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/particleObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/doorObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/environmentObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/frontRooms");
+	GameObjectManager::instance().load("gameObjectDefinitions/backRooms");
 
 	//GameObjectManager::instance().load("gameObjectDefinitions/testObjects");
 
