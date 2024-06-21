@@ -2,40 +2,6 @@
 
     "gameObjects": [
         {
-            "type": "HOLDING_CANDLE",
-            "traitTags": [],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_HOLDING_CANDLE"
-                },
-                {
-                    "id": "[item32_TRANSFORM_COMPONENT]"
-
-                },
-                {
-                    "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "childPositionRelative": false,
-                    "childObjects": [
-                        {
-                            "gameObjectType": "LIGHT_CANDLE_1",
-                            "absolutePositionSlot": {
-                                "x": 0,
-                                "y": -16
-                            }
-                        }
-
-                    ]
-                },
-                {
-                    "id": "STATE_COMPONENT"
-                }
-
-
-            ]
-        },
-        {
             "type": "BOBBYS_BED",
             "traitTags": [],
             "components": [
@@ -174,6 +140,18 @@
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 8
+                            }
+                        },
+                        {
+                            "gameObjectType": "BOBBYS_LAMP",
+                            "name": "bobbysLamp",
+                            "size": {
+                                "width": 32,
+                                "height": 60
+                            },
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -74
                             }
                         }
                     ]

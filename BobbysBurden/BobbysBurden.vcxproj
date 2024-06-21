@@ -310,6 +310,7 @@
     <None Include="assets\gameObjectDefinitions\guiObjects.json" />
     <None Include="assets\gameObjectDefinitions\householdObjects.json" />
     <None Include="assets\gameObjectDefinitions\houseObjects.json" />
+    <None Include="assets\gameObjectDefinitions\lightFixtureObjects.json" />
     <None Include="assets\gameObjectDefinitions\lightObjects.json" />
     <None Include="assets\gameObjectDefinitions\models\ACTION_COMPONENT_models.json" />
     <None Include="assets\gameObjectDefinitions\models\BB_INTERFACE_COMPONENT_models.json" />

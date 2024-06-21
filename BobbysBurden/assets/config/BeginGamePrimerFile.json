@@ -3,7 +3,7 @@
 	[
 		{
 			"gameObjectName" : "bedroom1ClosetDoor",
-			"gameObjectType" : "DOOR_SIDE",
+			"gameObjectType" : "DOOR_SIDE_RIGHT",
 			"state" : 
 			[
 				"GameObjectState::CLOSED",
@@ -127,7 +127,7 @@
 		},
 		{
 			"gameObjectName" : "bedroom1MainDoor",
-			"gameObjectType" : "DOOR_SIDE",
+			"gameObjectType" : "DOOR_SIDE_RIGHT",
 			"state" : 
 			[
 				"GameObjectState::CLOSED",

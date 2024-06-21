@@ -119,4 +119,36 @@ void BBStateComponent::update()
 
 }
 
+void BBStateComponent::flipBobby()
+{
+
+	if (testState(GameObjectState::IDLE_LEFT)) {
+		addState(GameObjectState::IDLE_RIGHT);
+	}
+	else if (testState(GameObjectState::IDLE_LEFT_EQUIPPED)) {
+		addState(GameObjectState::IDLE_RIGHT_EQUIPPED);
+	}
+	else if (testState(GameObjectState::WALK_LEFT)) {
+		addState(GameObjectState::WALK_RIGHT);
+	}
+	else if (testState(GameObjectState::WALK_LEFT_EQUIPPED)) {
+		addState(GameObjectState::WALK_RIGHT_EQUIPPED);
+	}
+	else if (testState(GameObjectState::IDLE_RIGHT)) {
+		addState(GameObjectState::IDLE_LEFT);
+	}
+	else if (testState(GameObjectState::IDLE_RIGHT_EQUIPPED)) {
+		addState(GameObjectState::IDLE_LEFT_EQUIPPED);
+	}
+	else if (testState(GameObjectState::WALK_RIGHT)) {
+		addState(GameObjectState::WALK_LEFT);
+	}
+	else if (testState(GameObjectState::WALK_RIGHT_EQUIPPED)) {
+		addState(GameObjectState::WALK_LEFT_EQUIPPED);
+	}
+
+
+}
+
+
 

@@ -42,16 +42,14 @@
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
                     "sameSlotTreatment": "ChildSlotTreatment::STACKED",
-                    "childPositionRelative": false,
                     "childObjects": [
                         {
                             "gameObjectType": "LIGHT_CIRCLE_DIM",
                             "standardSlot": "PositionAlignment::CENTER",
                             "size": {
-                                "width": 64,
-                                "height": 64
+                                "width": 32,
+                                "height": 32
                             }
                         }
                     ]
