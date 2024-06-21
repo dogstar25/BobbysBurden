@@ -15,17 +15,25 @@
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "childPositionRelative": false,
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childObjects": [
                         {
-                            "gameObjectType": "LIGHT_CANDLE_1",
-                            "absolutePositionSlot": {
-                                "x": 0,
-                                "y": -16
+                            "gameObjectType": "LIGHT_CIRCLE_FLICKER",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 300,
+                                "height": 300
                             }
-                        }
+                        },
+                        {
+                            "gameObjectType": "LIGHT_DIAMOND_FLICKER",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 64,
+                                "height": 64
+                            }
 
+                        }
                     ]
                 },
                 {
@@ -68,8 +76,7 @@
                     ]
                 },
                 {
-                    "id": "STATE_COMPONENT",
-                    "beginStates": ["GameObjectState::ON"]
+                    "id": "STATE_COMPONENT"
                 }
 
 
@@ -93,8 +100,6 @@
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "childPositionRelative": false,
                     "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childObjects": [
                         {
@@ -107,7 +112,6 @@
                                 "x": 0,
                                 "y": 0
                             }
-                            //"beginStates": ["GameObjectState::ON"]
                         }
                     ]
                 },

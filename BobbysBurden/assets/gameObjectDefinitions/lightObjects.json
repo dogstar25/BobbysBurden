@@ -1,7 +1,7 @@
 {
     "gameObjects": [
         {
-            "type": "LIGHT_DIAMOND",
+            "type": "LIGHT_DIAMOND_FLICKER",
             "traitTags": [ "abstract", "light" ],
             "description": "Light Diamond",
             "components": [
@@ -25,14 +25,10 @@
                 {
                     "id": "LIGHT_COMPONENT",
                     "type": "LightType::TEXTURE_LIGHT",
-                    "intensity": 5,
-                    "flicker": 10
+                    "flicker": true
                 },
                 {
-                    "id": "STATE_COMPONENT",
-                    "beginStates": [
-                        "GameObjectState::OFF"
-                    ]
+                    "id": "STATE_COMPONENT"
                 }
             ]
         },
@@ -60,17 +56,15 @@
                 },
                 {
                     "id": "LIGHT_COMPONENT",
-                    "type": "LightType::TEXTURE_LIGHT",
-                    "intensity": 10
+                    "type": "LightType::TEXTURE_LIGHT"
                 },
                 {
-                    "id": "BB_STATE_COMPONENT",
-                    "beginStates": [ "GameObjectState::ON" ]
+                    "id": "BB_STATE_COMPONENT"
                 }
             ]
         },
         {
-            "type": "LIGHT_CIRCLE",
+            "type": "LIGHT_CIRCLE_FLICKER",
             "traitTags": [ "abstract", "light" ],
             "description": "Light Circle",
             "components": [
@@ -94,96 +88,7 @@
                 {
                     "id": "LIGHT_COMPONENT",
                     "type": "LightType::TEXTURE_LIGHT",
-                    "intensity": 5,
-                    "flicker": 100
-                },
-                {
-                    "id": "STATE_COMPONENT",
-                    "beginStates": [
-                        "GameObjectState::OFF"
-                    ]
-                }
-            ]
-        },
-        {
-            "type": "LIGHT_CIRCLE_DIM",
-            "traitTags": [ "abstract", "light" ],
-            "description": "Light Circle dim",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_LIGHT_CIRCLE",
-                    "textureBlendMode": "RenderBlendMode::BLEND",
-                    "color": {
-                        "tint": "Colors::ORANGE",
-                        "alpha": 255
-                    }
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 64,
-                        "height": 64
-                    }
-                },
-                {
-                    "id": "LIGHT_COMPONENT",
-                    "type": "LightType::TEXTURE_LIGHT",
-                    "intensity": 1,
-                    "flicker": 100
-                },
-                {
-                    "id": "STATE_COMPONENT",
-                    "beginStates": [
-                        "GameObjectState::ON"
-                    ]
-
-                }
-            ]
-        },
-        {
-            "type": "LIGHT_CANDLE_1",
-            "traitTags": [ "abstract" ],
-            "description": "Light Candle 1",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_CLEAR_QUAD",
-                    "textureBlendMode": "RenderBlendMode::BLEND"
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    }
-                },
-                {
-                    "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
-                    "childPositionRelative": false,
-                    "childObjects": [
-                        {
-                            "gameObjectType": "LIGHT_CIRCLE",
-                            "standardSlot": "PositionAlignment::CENTER",
-                            "size": {
-                                "width": 512,
-                                "height": 512
-                            }
-                        },
-                        {
-                            "gameObjectType": "LIGHT_DIAMOND",
-                            "standardSlot": "PositionAlignment::CENTER",
-                            "size": {
-                                "width": 64,
-                                "height": 64
-                            }
-
-                        }
-                    ]
+                    "flicker": true
                 },
                 {
                     "id": "STATE_COMPONENT"
@@ -215,14 +120,10 @@
                 {
                     "id": "LIGHT_COMPONENT",
                     "type": "LightType::TEXTURE_LIGHT",
-                    "intensity": 5,
-                    "flicker": 0
+                    "flicker": false
                 },
                 {
-                    "id": "STATE_COMPONENT",
-                    "beginStates": [
-                        "GameObjectState::OFF"
-                    ]
+                    "id": "STATE_COMPONENT"
                 }
             ]
         },
@@ -277,8 +178,7 @@
                 },
                 {
                     "id": "LIGHT_COMPONENT",
-                    "type": "LightType::TEXTURE_LIGHT",
-                    "intensity": 5
+                    "type": "LightType::TEXTURE_LIGHT"
                 },
                 {
                     "id": "VITALITY_COMPONENT",
@@ -286,10 +186,7 @@
                     "lifetimeAlphaFade": true
                 },
                 {
-                    "id": "STATE_COMPONENT",
-                    "beginStates": [
-                        "GameObjectState::OFF"
-                    ]
+                    "id": "STATE_COMPONENT"
                 }
             ]
         }

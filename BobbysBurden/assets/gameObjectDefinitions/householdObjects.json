@@ -23,7 +23,7 @@
                     "childPositionRelative": false,
                     "childObjects": [
                         {
-                            "gameObjectType": "LIGHT_CIRCLE",
+                            "gameObjectType": "LIGHT_CIRCLE_FLICKER",
                             "size": {
                                 "width": 512,
                                 "height": 512

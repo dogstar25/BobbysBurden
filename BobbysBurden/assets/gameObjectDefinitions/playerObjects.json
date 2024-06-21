@@ -103,11 +103,16 @@
                     "childObjects": [
                         {
                             "gameObjectType": "HOLDING_CANDLE",
+                            "name": "holdingCandleToggleSwitch_TARGET",
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 0
                             },
-                            "beginStates": [ "GameObjectState::DISABLED_RENDER", "GameObjectState::DISABLED_COLLISION" ]
+                            "beginStates": [
+                                "GameObjectState::DISABLED_RENDER",
+                                "GameObjectState::DISABLED_COLLISION",
+                                "GameObjectState::OFF"
+                            ]
                         }
 
                     ]

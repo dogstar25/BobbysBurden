@@ -126,8 +126,7 @@
                                 "y": -112
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_4",
-                            "beginStates": [ "GameObjectState::ON" ]
+                            "layer": "GameLayer::BACKGROUND_4"
                         },
                         {
                             "gameObjectType": "LIGHT_SWITCH",

@@ -8,6 +8,7 @@ class BBStateComponent : public StateComponent
 public:
 	BBStateComponent(Json::Value definitionJSON);
 	void update() override;
+	virtual void postInit() override;
 	void flipBobby();
 
 protected:
