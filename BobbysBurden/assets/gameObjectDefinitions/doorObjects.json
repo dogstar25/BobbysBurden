@@ -18,17 +18,6 @@
                     "absolutePositioning": false
                 },
                 {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::DOOR_TOUCH",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
-                        }
-                    ]
-                },
-                {
                     "id": "BB_STATE_COMPONENT",
                     "beginStates": [ "GameObjectState::CLOSED" ],
                     "transitions": [
@@ -112,36 +101,37 @@
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::VERTICAL",
                     "childObjects": [
                         {
-                            "gameObjectType": "DOOR_ENTRY",
-                            "standardSlot": "PositionAlignment::CENTER"
-                        },
-                        {
-                            "gameObjectType": "DOOR_KNOB",
+                            "gameObjectType": "DOOR_KNOB", //HOLDS THE INTERFACING WITH THE DOOR
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 20
                             }
                         },
+
                         {
-                            "gameObjectType": "DOOR_WARP_EXIT",
+                            "gameObjectType": "DOOR_FRONT_ENTRY_POINT",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 32
+                            }
+                        },
+                        {
+                            "gameObjectType": "DOOR_EXIT_POINT",
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 64
-                            },
-                            "name": "bedroom1ClosetDoor_warp_EXIT"
-
+                            }
                         }
-
-
                     ]
                 }
 
             ]
         },
         {
-            "type": "DOOR_SIDE",
+            "type": "DOOR_SIDE_RIGHT",
             "traitTags": [ "mouse_interface", "door", "door_side", "save_me" ],
             "description": "Door",
             "components": [
@@ -158,14 +148,26 @@
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "childPositionRelative": false,
                     "childObjects": [
                         {
                             "gameObjectType": "DOOR_KNOB",
                             "absolutePositionSlot": {
                                 "x": 18,
                                 "y": 32
+                            }
+                        },
+                        {
+                            "gameObjectType": "DOOR_SIDE_ENTRY_POINT",
+                            "absolutePositionSlot": {
+                                "x": 64,
+                                "y": 64
+                            }
+                        },
+                        {
+                            "gameObjectType": "DOOR_EXIT_POINT",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 64
                             }
                         }
                     ]
@@ -186,7 +188,7 @@
                             }
                         }
                     ]
-                }, 
+                },
                 {
                     "id": "BB_STATE_COMPONENT",
                     "beginStates": [ "GameObjectState::CLOSED", "GameObjectState::IMPASSABLE" ],
@@ -231,6 +233,115 @@
                             "id": "OPENED",
                             "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
                             "textureId": "TX_DOOR1_SIDE_OPENED",
+                            "frames": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "DOOR_SIDE_LEFT",
+            "traitTags": [ "mouse_interface", "door", "door_side", "save_me" ],
+            "description": "Door",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 70,
+                        "height": 256
+                    },
+                    "absolutePositioning": false
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "DOOR_KNOB",
+                            "absolutePositionSlot": {
+                                "x": -18,
+                                "y": 32
+                            }
+                        },
+                        {
+                            "gameObjectType": "DOOR_SIDE_ENTRY_POINT",
+                            "absolutePositionSlot": {
+                                "x": -64,
+                                "y": 64
+                            }
+                        },
+                        {
+                            "gameObjectType": "DOOR_EXIT_POINT",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 64
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::DOOR_COLLISION",
+                            "collisionShape": "B2_BOX",
+                            "size": {
+                                "width": 22,
+                                "height": 256
+                            },
+                            "offset": {
+                                "x": -20
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::CLOSED", "GameObjectState::IMPASSABLE" ],
+                    "animationStates": [
+                        {
+                            "state": "GameObjectState::CLOSED",
+                            "animationId": "CLOSED"
+                        },
+                        {
+                            "state": "GameObjectState::OPENED",
+                            "animationId": "OPENED"
+                        }
+                    ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "CLOSED",
+                    "frameSize": {
+                        "width": 70,
+                        "height": 256
+                    },
+                    "animations": [
+                        {
+                            "id": "OPEN",
+                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
+                            "textureId": "TX_DOOR1_LEFT_SIDE_OPENED",
+                            "frames": 1
+                        },
+                        {
+                            "id": "CLOSE",
+                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
+                            "textureId": "TX_DOOR1_LEFT_SIDE_CLOSED",
+                            "frames": 1
+                        },
+                        {
+                            "id": "CLOSED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_DOOR1_LEFT_SIDE_CLOSED",
+                            "frames": 1
+                        },
+                        {
+                            "id": "OPENED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_DOOR1_LEFT_SIDE_OPENED",
                             "frames": 1
                         }
                     ]
@@ -328,55 +439,8 @@
             ]
         },
         {
-            "type": "DOOR_WARP_ENTRY",
+            "type": "DOOR_FRONT_ENTRY_POINT",
             "traitTags": [ "abstract" ],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 8,
-                        "height": 8
-                    },
-                    "absolutePositioning": false
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::WARP_ENTRY",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
-                        }
-                    ]
-                }
-
-            ]
-        },
-        {
-            "type": "DOOR_WARP_EXIT",
-            "traitTags": [ "abstract" ],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT"
-
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    },
-                    "absolutePositioning": false
-                }
-            ]
-        },
-        {
-            "type": "DOOR_ENTRY",
-            "traitTags": [ "door_entry", "abstract" ],
             "description": "Door",
             "components": [
                 {
@@ -386,7 +450,7 @@
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
                         "width": 2,
-                        "height": 2
+                        "height": 8
                     }
                 },
                 {
@@ -395,6 +459,92 @@
                     "fixtures": [
                         {
                             "contactTag": "ContactTag::DOOR_TOUCH",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                }
+
+            ]
+        },
+        {
+            "type": "DOOR_SIDE_ENTRY_POINT",
+            "traitTags": [ "abstract" ],
+            "description": "Door",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 2,
+                        "height": 8
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::DOOR_TOUCH",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "OPEN_CLOSE_DOOR_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::ENTER",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::ENTER",
+                            "actionClass": "DoorEnterAction"
+                        }
+
+                    ]
+                }
+
+            ]
+        },
+        {
+            "type": "DOOR_EXIT_POINT",
+            "traitTags": [ "abstract" ],
+            "description": "Door",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 8,
+                        "height": 8
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_FREE",
                             "collisionShape": "B2_BOX",
                             "isSensor": true
                         }

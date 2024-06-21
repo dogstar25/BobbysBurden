@@ -397,6 +397,30 @@
                 "height": 256
             }
         },
+        {
+            "id": "TX_DOOR1_LEFT_SIDE_OPENED",
+            "description": "Door from side closed",
+            "atlas": "TEXTURE_ATLAS_0",
+            "flip": true,
+            "quadPosition": {
+                "x": 1754,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_DOOR1_LEFT_SIDE_CLOSED",
+            "description": "Door from side open",
+            "atlas": "TEXTURE_ATLAS_0",
+            "flip": true,
+            "quadPosition": {
+                "x": 1683,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        },
         //
         // Bobby Animations
         //
@@ -603,6 +627,17 @@
                 "y": 1024,
                 "width": 512,
                 "height": 512
+            }
+        },
+        {
+            "id": "TX_LIGHT_RECTANGLE",
+            "description": "Light 360",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 531,
+                "y": 1604,
+                "width": 115,
+                "height": 89
             }
         },
         {
@@ -1155,6 +1190,17 @@
                 "y": 200,
                 "width": 474,
                 "height": 323
+            }
+        },
+        {
+            "id": "TX_BOBBYS_LAMP",
+            "description": "Bobbys lamp",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1799,
+                "y": 120,
+                "width": 68,
+                "height": 128
             }
         }
 

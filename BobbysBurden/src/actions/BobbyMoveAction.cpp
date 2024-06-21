@@ -69,11 +69,11 @@ void BobbyMoveAction::perform(GameObject* playerGameObject, int direction, int s
 				//handle entering door?
 				if (direction == -1) {
 
-					auto doorEntryContact = playerGameObject->getFirstTouchingByTrait(TraitTag::door_entry);
+					auto doorEntryObject = playerGameObject->getFirstTouchingByType("DOOR_FRONT_ENTRY_POINT");
 
-					if (doorEntryContact.has_value()) {
+					if (doorEntryObject.has_value()) {
 
-						const auto& doorEntryContactObject = doorEntryContact.value().lock().get();
+						const auto& doorEntryContactObject = doorEntryObject.value().lock().get();
 						const auto& doorObject = doorEntryContactObject->parent();
 						const auto& doorStateComponent = doorObject.value()->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 						const auto& doorActionComponent = doorObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
@@ -83,7 +83,7 @@ void BobbyMoveAction::perform(GameObject* playerGameObject, int direction, int s
 
 						if (doorStateComponent->testState(GameObjectState::OPENED)) {
 
-							enterAction->perform(playerGameObject, doorObject.value());
+							enterAction->perform(playerGameObject, doorEntryObject.value().lock().get());
 						}
 
 					}

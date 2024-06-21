@@ -123,8 +123,8 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 32,
-                        "height": 32
+                        "width": 64,
+                        "height": 64
                     }
                 },
                 {
@@ -250,47 +250,6 @@
                 },
                 {
                     "id": "LIGHTED_TREATMENT_COMPONENT"
-                }
-            ]
-        },
-        {
-            "type": "CEILING_LIGHT_1",
-            "traitTags": [],
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_CEILING_LIGHT_FIXTURE"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 112,
-                        "height": 96
-                    },
-                    "absolutePositioning": false
-                },
-                {
-                    "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "childPositionRelative": false,
-                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
-                    "childObjects": [
-                        {
-                            "gameObjectType": "ELECTRIC_ROOM_LIGHT_CIRCLE",
-                            "size": {
-                                "width": 1024,
-                                "height": 1024
-                            },
-                            "absolutePositionSlot": {
-                                "x": 0,
-                                "y": 0
-                            }
-                            //"beginStates": ["GameObjectState::ON"]
-                        }
-                    ]
-                },
-                {
-                    "id": "BB_STATE_COMPONENT"
                 }
             ]
         },

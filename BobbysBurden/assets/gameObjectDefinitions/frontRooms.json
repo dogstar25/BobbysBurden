@@ -82,25 +82,29 @@
                     "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childObjects": [
                         {
-                            "gameObjectType": "GRADIENT_QUAD_MASK_ALL",
+                            //"gameObjectType": "GRADIENT_QUAD_MASK_ALL",
+                            "gameObjectType": "CLEAR_QUAD_MASK",
                             "name": "bobbysRoomMask",
                             "description": "The mask uses to show the room instead of house exterior",
                             "absolutePositionSlot": {
-                                "x": -32,
+                                "x": -40,
                                 "y": 0
                             },
                             "size": {
-                                "width": 676,
+                                "width": 616,
                                 "height": 384
                             }
                         },
                         {
                             "gameObjectType": "LIT_AREA",
-                            "standardSlot": "PositionAlignment::CENTER",
+                            "absolutePositionSlot": {
+                                "x": -96,
+                                "y": 0
+                            },
                             "isStepChild": true,
                             "layer": "GameLayer::FOREGROUND_2",
                             "size": {
-                                "width": 544,
+                                "width": 740,
                                 "height": 320
                             }
                         },
@@ -147,7 +151,7 @@
                             "layer": "GameLayer::BACKGROUND_2"
                         },
                         {
-                            "gameObjectType": "DOOR_SIDE",
+                            "gameObjectType": "DOOR_SIDE_RIGHT",
                             "absolutePositionSlot": {
                                 "x": 244,
                                 "y": 32
@@ -171,27 +175,43 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 544,
+                        "width": 576,
                         "height": 320
                     }
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "childPositionRelative": false,
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childObjects": [
                         {
                             "gameObjectType": "CLEAR_QUAD_MASK",
-                            "absolutePositionSlot": {
-                                "x": -48,
-                                "y": 0
-                            },
+                            "standardSlot": "PositionAlignment::CENTER",
                             "name": "guestBedroomMask",
                             "size": {
-                                "width": 640,
-                                "height": 322
+                                "width": 576,
+                                "height": 384
                             }
+                        },
+                        {
+                            "gameObjectType": "LIT_AREA",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2",
+                            "size": {
+                                "width": 558,
+                                "height": 320
+                            }
+                        },
+                        {
+                            "gameObjectType": "DOOR_SIDE_LEFT",
+                            "absolutePositionSlot": {
+                                "x": -260,
+                                "y": 32
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_1"
                         }
+
                     ]
                 }
             ]
@@ -246,7 +266,7 @@
                     "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childObjects": [
                         {
-                            "gameObjectType": "GRADIENT_QUAD_MASK_ALL",
+                            "gameObjectType": "CLEAR_QUAD_MASK",
                             "name": "frontTopStairsRoomMask",
                             "description": "The mask uses to show the room instead of house exterior",
                             "standardSlot": "PositionAlignment::CENTER",
