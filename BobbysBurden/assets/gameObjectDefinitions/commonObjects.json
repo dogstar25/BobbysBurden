@@ -256,7 +256,7 @@
         },
         {
             "type": "LIGHT_SWITCH",
-            "traitTags": [],
+            "traitTags": ["toggle_switch"],
             "description": "",
             "components": [
                 {

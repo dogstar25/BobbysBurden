@@ -9,6 +9,35 @@ BBStateComponent::BBStateComponent(Json::Value definitionJSON) : StateComponent(
 
 }
 
+void BBStateComponent::postInit()
+{
+
+	StateComponent::postInit();
+
+	//Apply the On/OFF state of this object to all of its children
+	GameObjectState stateToPropogate{};
+	if (testState(GameObjectState::ON)) {
+
+		util::propogateStateToAllChildren(parent(), GameObjectState::ON);
+	}
+	else if (testState(GameObjectState::OFF)) {
+
+		util::propogateStateToAllChildren(parent(), GameObjectState::OFF);
+	}
+
+	//If this is a toggle switch object then go through and apply the switches state to the objects that it controls
+	if (parent()->hasTrait(TraitTag::toggle_switch)) {
+
+		std::shared_ptr<Action> onOffToggleAction = std::make_shared<OnOffToggleAction>();
+		onOffToggleAction->perform(parent());
+
+	}
+
+
+
+}
+
+
 
 void BBStateComponent::removeState(GameObjectState newState)
 {

@@ -435,8 +435,9 @@
                     "childPositionRelative": false,
                     "childObjects": [
                         {
-                            "gameObjectType": "LIGHT_CIRCLE_DIM",
+                            "gameObjectType": "LIGHT_CIRCLE_FLICKER",
                             "standardSlot": "PositionAlignment::CENTER",
+                            "color": "Colors::ORANGE",
                             "size": {
                                 "width": 256,
                                 "height": 256

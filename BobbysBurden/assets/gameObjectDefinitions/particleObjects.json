@@ -45,12 +45,14 @@
                     "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childObjects": [
                         {
-                            "gameObjectType": "LIGHT_CIRCLE_DIM",
+                            "gameObjectType": "LIGHT_CIRCLE_FLICKER",
+                            "color": "Colors::ORANGE",
                             "standardSlot": "PositionAlignment::CENTER",
                             "size": {
-                                "width": 32,
-                                "height": 32
-                            }
+                                "width": 64,
+                                "height": 64
+                            },
+                            "beginStates": [ "GameObjectState::ON" ]
                         }
                     ]
                 }
