@@ -4,11 +4,10 @@
 class BBInterfaceComponent : public InterfaceComponent
 {
 public:
-	BBInterfaceComponent(Json::Value definitionJSON, Scene* parentScene);
+	BBInterfaceComponent(Json::Value definitionJSON, GameObject* parent, Scene* parentScene);
 	~BBInterfaceComponent() = default;
 
 	virtual void render() override;
-	void postInit() override;
 	virtual bool isDraggingAllowed() override;
 	virtual bool isEventAvailable(int eventId) override;
 	virtual bool doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATES> eventState) override;

@@ -3,13 +3,8 @@
 
 extern std::unique_ptr<Game> game;
 
-BobbyPlayerControlComponent::BobbyPlayerControlComponent()
-{
-
-}
-
-BobbyPlayerControlComponent::BobbyPlayerControlComponent(Json::Value componentJSON)
-	: PlayerControlComponent(componentJSON)
+BobbyPlayerControlComponent::BobbyPlayerControlComponent(Json::Value componentJSON, GameObject* parent)
+	: PlayerControlComponent(componentJSON, parent)
 {
 
 }

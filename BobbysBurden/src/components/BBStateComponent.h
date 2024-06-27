@@ -6,7 +6,7 @@ class BBStateComponent : public StateComponent
 {
 
 public:
-	BBStateComponent(Json::Value definitionJSON);
+	BBStateComponent(Json::Value definitionJSON, GameObject* parent);
 	void update() override;
 	virtual void postInit() override;
 	void flipBobby();
@@ -21,6 +21,8 @@ protected:
 
 private:
 
+	void _setHouseLocationContext();
+	void _setOnOffStates();
 	
 };
 

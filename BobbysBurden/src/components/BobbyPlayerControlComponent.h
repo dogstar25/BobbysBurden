@@ -17,8 +17,8 @@ class BobbyPlayerControlComponent : public PlayerControlComponent
 {
 public:
 
-	BobbyPlayerControlComponent();
-	BobbyPlayerControlComponent(Json::Value componentJSON);
+	BobbyPlayerControlComponent()=default;
+	BobbyPlayerControlComponent(Json::Value componentJSON, GameObject* parent);
 
 	~BobbyPlayerControlComponent();
 

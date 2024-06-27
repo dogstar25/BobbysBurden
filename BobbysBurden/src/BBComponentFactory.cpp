@@ -8,6 +8,7 @@
 
 std::shared_ptr<Component> BBComponentFactory::create(
 	Json::Value definitionJSON,
+	GameObject* parent,
 	std::string gameObjectName,
 	std::string gameObjectTextType,
 	Scene* scene,
@@ -24,28 +25,29 @@ std::shared_ptr<Component> BBComponentFactory::create(
 	//Handle game specific componenets, otherwise call the base ComponentFactory 'create'
 	if (componentType == ComponentTypes::BOBBY_PLAYER_CONTROL_COMPONENT) {
 		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BOBBY_PLAYER_CONTROL_COMPONENT);
-		component = std::make_shared<BobbyPlayerControlComponent>(componentJSON);
+		component = std::make_shared<BobbyPlayerControlComponent>(componentJSON, parent);
 	}
 	else if (componentType == ComponentTypes::BB_INTERFACE_COMPONENT) {
 		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BB_INTERFACE_COMPONENT);
-		component = std::make_shared<BBInterfaceComponent>(componentJSON, scene);
+		component = std::make_shared<BBInterfaceComponent>(componentJSON, parent, scene);
 	}
 	else if (componentType == ComponentTypes::BB_STATE_COMPONENT) {
 		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BB_STATE_COMPONENT);
-		component = std::make_shared<BBStateComponent>(componentJSON);
+		component = std::make_shared<BBStateComponent>(componentJSON, parent);
 	}
 	else if (componentType == ComponentTypes::BB_MASKED_OVERLAY_COMPONENT) {
 		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BB_MASKED_OVERLAY_COMPONENT);
-		component = std::make_shared<BBMaskedOverlayComponent>(componentJSON, scene);
+		component = std::make_shared<BBMaskedOverlayComponent>(componentJSON, parent, scene);
 	}
 	else if (componentType == ComponentTypes::BB_ENVIRONMENT_COMPONENT) {
 		componentJSON = util::getComponentConfig(definitionJSON, ComponentTypes::BB_ENVIRONMENT_COMPONENT);
-		component = std::make_shared<BBEnvironmentComponent>(componentJSON);
+		component = std::make_shared<BBEnvironmentComponent>(componentJSON, parent);
 	}
 
 	else {
 		component = ComponentFactory::create(
 			definitionJSON,
+			parent,
 			gameObjectName,
 			gameObjectTextType,
 			scene,

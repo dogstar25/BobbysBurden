@@ -16,7 +16,7 @@ void TwistBedKnobAction::perform(GameObject* gameObject)
 	tilePosition.x -= 2;
 	tilePosition.y += 3;
 
-	const auto& keyObject = gameObject->parentScene()->addGameObject("KEY1", GameLayer::BACKGROUND_3, tilePosition.x, tilePosition.y);
+	const auto& keyObject = gameObject->parentScene()->addGameObject("KEY1", nullptr, GameLayer::BACKGROUND_3, tilePosition.x, tilePosition.y);
 	keyObject->addLitHighlight( {128.0,128.0} );
 	keyObject->addState(GameObjectState::ITEM_LOOSE);
 	keyObject->addState(GameObjectState::ITEM_OBTAINABLE);

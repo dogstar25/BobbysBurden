@@ -18,8 +18,8 @@ namespace ParticleEffects {
 		.angleMax = 125,
 		.particleSizeMin = 4.F,
 		.particleSizeMax = 8.F,
-		.colorRangeBegin = {255,255,255,255},
-		.colorRangeEnd = {255,255,255,255},
+		.colorRangeBegin = {255,0,0,255},
+		.colorRangeEnd = {255,0,0,255},
 		.particleSpawnCountMin = 0,
 		.particleSpawnCountMax = 5
 	};
@@ -39,12 +39,12 @@ namespace ParticleEffects {
 		.particleSizeMin = 5.F,
 		.particleSizeMax = 35.F,
 		.colorRangeBegin = {255,0,0,255},
-		.colorRangeEnd = {255,255,0,255},
+		.colorRangeEnd = {255,100,0,255},
 		.particleSpawnCountMin = 10,
 		.particleSpawnCountMax = 20
 	};
 
-	//static const ParticleEffect rain = {
+	//static const ParticleEffect rain = {P
 	//	.poolId = "RAIN_SHEET_PARTICLE_POOL",
 	//	//.poolId = "ROUND_PARTICLE_POOL",
 	//	.originMin = {-100,2845},

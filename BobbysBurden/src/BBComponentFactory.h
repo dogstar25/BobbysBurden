@@ -13,6 +13,7 @@ private:
 	//Create version that has ALL possible inputs
 	std::shared_ptr<Component> create(
 		Json::Value definitionJSON,
+		GameObject* parent,
 		std::string gameObjectName,
 		std::string gameObjectTextType,
 		Scene* scene,
