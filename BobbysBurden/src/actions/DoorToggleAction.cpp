@@ -5,6 +5,7 @@ extern std::unique_ptr<Game> game;
 
 void DoorToggleAction::perform(GameObject* doorKnobObject)
 {
+
 	const auto& doorObject = doorKnobObject->parent().value();
 
 	const auto& stateComponent = doorObject->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);

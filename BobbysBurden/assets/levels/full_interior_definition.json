@@ -123,7 +123,6 @@
                 {
                     "id": "LOC_0020_0141",
                     "gameObjectType": "BOBBYS_SIDETABLE",
-                    "layer": "GameLayer::MAIN",
                     "locationAdjust": {
                         "x": -8
                     }

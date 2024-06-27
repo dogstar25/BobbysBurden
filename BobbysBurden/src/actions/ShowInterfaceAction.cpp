@@ -16,6 +16,7 @@ void ShowInterfaceAction::perform(GameObject* gameObject)
 	const auto& menuObject =
 		interfaceComponent->interfaceMenuObject();
 
+
 	if (menuObject.has_value()) {
 		//Enable Render
 		menuObject.value()->enableRender();

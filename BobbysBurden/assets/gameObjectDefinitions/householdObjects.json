@@ -58,7 +58,7 @@
                     "id": "[itemActions_ACTION_COMPONENT]"
                 },
                 {
-                    "id": "STATE_COMPONENT"
+                    "id": "BB_STATE_COMPONENT"
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -125,7 +125,7 @@
                     ]
                 },
                 {
-                    "id": "STATE_COMPONENT"
+                    "id": "BB_STATE_COMPONENT"
                 }
             ]
         },

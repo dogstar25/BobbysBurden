@@ -17,7 +17,7 @@ BB_IMGuiFactory::BB_IMGuiFactory()
 }
 
 
-std::shared_ptr<IMGuiItem> BB_IMGuiFactory::create(std::string iMGuiItemType, std::string gameObjectType, Scene* parentScene, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
+std::shared_ptr<IMGuiItem> BB_IMGuiFactory::create(std::string iMGuiItemType, GameObject* parent, std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
 	ImVec4 buttonColor, ImVec4 buttonHoverColor, ImVec4 buttonActiveColor, bool autoSize, std::string staticTextValue)
 {
 	std::shared_ptr<IMGuiItem> iMGuiItem;
@@ -58,9 +58,11 @@ std::shared_ptr<IMGuiItem> BB_IMGuiFactory::create(std::string iMGuiItemType, st
 	
 	else {
 
-		iMGuiItem = IMGuiFactory::create(iMGuiItemType, gameObjectType, parentScene, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize, staticTextValue);
+		iMGuiItem = IMGuiFactory::create(iMGuiItemType, parent, gameObjectType, padding, backgroundColor, textColor, buttonColor, buttonHoverColor, buttonActiveColor, autoSize, staticTextValue);
 
 	}
+
+	iMGuiItem->setParent(parent);
 
 	return iMGuiItem;
 

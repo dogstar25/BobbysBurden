@@ -144,7 +144,6 @@
                         },
                         {
                             "gameObjectType": "BOBBYS_LAMP",
-                            "name": "bobbyLampLightSwitch_TARGET",
                             "size": {
                                 "width": 32,
                                 "height": 60
@@ -153,21 +152,6 @@
                                 "x": 0,
                                 "y": -74
                             }
-                        },
-                        {
-                            "gameObjectType": "LIGHT_SWITCH",
-                            "name": "bobbyLampLightSwitch",
-                            "absolutePositionSlot": {
-                                "x": 1,
-                                "y": -74
-                            },
-                            "size": {
-                                "width": 32,
-                                "height": 32
-                            },
-                            "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_4",
-                            "beginStates": [ "GameObjectState::ON", "GameObjectState::DISABLED_RENDER" ]
                         }
 
                     ]
@@ -280,7 +264,7 @@
                     }
                 },
                 {
-                    "id": "STATE_COMPONENT"
+                    "id": "BB_STATE_COMPONENT"
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",

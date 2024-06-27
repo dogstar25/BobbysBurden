@@ -61,7 +61,7 @@ std::vector<std::shared_ptr<EnvironmentEvent>> LightningBoltEvent::perform(GameO
 		}
 
 
-		m_lightningBoltObject = environmentObject->parentScene()->addGameObject(lightningBoltObjectType, gameLayer, location.x, location.y );
+		m_lightningBoltObject = environmentObject->parentScene()->addGameObject(lightningBoltObjectType, nullptr, gameLayer, location.x, location.y );
 		if (sizeOverride.has_value()) {
 			m_lightningBoltObject.value()->setSize(sizeOverride.value());
 		}

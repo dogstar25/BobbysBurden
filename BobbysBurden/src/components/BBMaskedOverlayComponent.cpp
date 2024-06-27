@@ -4,8 +4,8 @@
 
 extern std::unique_ptr<Game> game;
 
-BBMaskedOverlayComponent::BBMaskedOverlayComponent(Json::Value componentJSON, Scene* parentScene) :
-	MaskedOverlayComponent(componentJSON, parentScene)
+BBMaskedOverlayComponent::BBMaskedOverlayComponent(Json::Value componentJSON, GameObject* parent, Scene* parentScene) :
+	MaskedOverlayComponent(componentJSON, parent, parentScene)
 {
 
 }

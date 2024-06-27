@@ -4,8 +4,8 @@
 extern std::unique_ptr<Game> game;
 
 
-BBInterfaceComponent::BBInterfaceComponent(Json::Value componentJSON, Scene* parentScene) :
-	InterfaceComponent(componentJSON, parentScene)
+BBInterfaceComponent::BBInterfaceComponent(Json::Value componentJSON, GameObject* parent, Scene* parentScene) :
+	InterfaceComponent(componentJSON, parent, parentScene)
 {
 
 	//For all interface events that were already built in the base classes construtor
@@ -115,11 +115,6 @@ bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATE
 //	return true;
 //}
 
-
-void BBInterfaceComponent::postInit() {
-
-
-}
 
 bool BBInterfaceComponent::isDraggingAllowed()
 {

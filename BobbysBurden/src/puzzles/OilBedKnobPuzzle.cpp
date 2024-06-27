@@ -40,7 +40,7 @@ void OilBedKnobPuzzle::applyPuzzlePiece(GameObject* puzzleObject, GameObject* pu
 		auto mapPosition = util::pixelToTileLocation(position.x, position.y);
 
 		const auto& unlockObject = puzzlePieceObject->parentScene()->
-			addGameObject("UNLOCK_ICON", GameLayer::FOREGROUND_4, (float)mapPosition.x - 1, (float)mapPosition.y, (float)0);
+			addGameObject("UNLOCK_ICON", nullptr, GameLayer::FOREGROUND_4, (float)mapPosition.x - 1, (float)mapPosition.y, (float)0);
 
 		unlockObject->setSize({ 32.0, 32.0 });
 

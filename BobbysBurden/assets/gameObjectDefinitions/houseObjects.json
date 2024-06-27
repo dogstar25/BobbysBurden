@@ -441,7 +441,8 @@
                             "size": {
                                 "width": 256,
                                 "height": 256
-                            }
+                            },
+                            "beginStates": ["GameObjectState::ON"]
                         },
                         {
                             "gameObjectType": "PARTICLE_EMITTER_FIREPLACE",

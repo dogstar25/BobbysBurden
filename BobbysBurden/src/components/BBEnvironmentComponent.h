@@ -9,11 +9,10 @@ class BBEnvironmentComponent : public EnvironmentComponent
 
 public:
 
-	BBEnvironmentComponent(Json::Value definitionJSON);
+	BBEnvironmentComponent(Json::Value definitionJSON, GameObject* parent);
 
 	virtual void update() override;
 	virtual void postInit() override;
-	virtual void setParent(GameObject* gameObject) override;
 
 
 protected:

@@ -2,7 +2,7 @@
     "gameObjects": [
         {
             "type": "LIGHT_DIAMOND_FLICKER",
-            "traitTags": [ "abstract", "light" ],
+            "traitTags": [ "abstract", "light_emission" ],
             "description": "Light Diamond",
             "components": [
                 {
@@ -28,13 +28,13 @@
                     "flicker": true
                 },
                 {
-                    "id": "STATE_COMPONENT"
+                    "id": "BB_STATE_COMPONENT"
                 }
             ]
         },
         {
             "type": "ELECTRIC_ROOM_LIGHT_CIRCLE",
-            "traitTags": [ "abstract", "light" ],
+            "traitTags": [ "abstract", "light_emission" ],
             "description": "Light Circle",
             "components": [
                 {
@@ -65,7 +65,7 @@
         },
         {
             "type": "LIGHT_CIRCLE_FLICKER",
-            "traitTags": [ "abstract", "light" ],
+            "traitTags": [ "abstract", "light_emission" ],
             "description": "Light Circle",
             "components": [
                 {
@@ -91,13 +91,13 @@
                     "flicker": true
                 },
                 {
-                    "id": "STATE_COMPONENT"
+                    "id": "BB_STATE_COMPONENT"
                 }
             ]
         },
         {
             "type": "LIGHT_WINDOW_1",
-            "traitTags": [ "abstract", "light" ],
+            "traitTags": [ "abstract", "light_emission" ],
             "description": "Window Light 1",
             "components": [
                 {
@@ -123,7 +123,7 @@
                     "flicker": false
                 },
                 {
-                    "id": "STATE_COMPONENT"
+                    "id": "BB_STATE_COMPONENT"
                 }
             ]
         },
@@ -156,7 +156,7 @@
         },
         {
             "type": "LIGHT_ITEM_HIGHLIGHT_CIRCLE",
-            "traitTags": [ "abstract", "light" ],
+            "traitTags": [ "abstract", "light_emission" ],
             "description": "Light Circle",
             "components": [
                 {
@@ -186,7 +186,7 @@
                     "lifetimeAlphaFade": true
                 },
                 {
-                    "id": "STATE_COMPONENT"
+                    "id": "BB_STATE_COMPONENT"
                 }
             ]
         }

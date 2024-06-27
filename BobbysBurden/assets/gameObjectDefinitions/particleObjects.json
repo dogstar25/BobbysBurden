@@ -38,7 +38,7 @@
                     "id": "POOL_COMPONENT"
                 },
                 {
-                    "id": "STATE_COMPONENT"
+                    "id": "BB_STATE_COMPONENT"
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
@@ -46,7 +46,7 @@
                     "childObjects": [
                         {
                             "gameObjectType": "LIGHT_CIRCLE_FLICKER",
-                            "color": "Colors::ORANGE",
+                            //"color": "Colors::ORANGE",
                             "standardSlot": "PositionAlignment::CENTER",
                             "size": {
                                 "width": 64,
@@ -96,7 +96,7 @@
                     "id": "POOL_COMPONENT"
                 },
                 {
-                    "id": "STATE_COMPONENT"
+                    "id": "BB_STATE_COMPONENT"
                 }
 
             ]
@@ -145,7 +145,7 @@
                     "id": "VITALITY_COMPONENT"
                 },
                 {
-                    "id": "STATE_COMPONENT"
+                    "id": "BB_STATE_COMPONENT"
                 }
 
 

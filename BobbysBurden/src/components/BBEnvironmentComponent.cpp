@@ -4,8 +4,8 @@
 
 extern std::unique_ptr<Game> game;
 
-BBEnvironmentComponent::BBEnvironmentComponent(Json::Value componentJSON) :
-	EnvironmentComponent(ComponentTypes::ENVIRONMENT_COMPONENT)
+BBEnvironmentComponent::BBEnvironmentComponent(Json::Value componentJSON, GameObject* parent) :
+	EnvironmentComponent(ComponentTypes::ENVIRONMENT_COMPONENT, parent)
 {
 
 	m_currentCycleInstructions = environmentCycle;
@@ -21,9 +21,11 @@ void BBEnvironmentComponent::postInit()
 	const auto& houseMaskOverlayComponent = houseOverlay.value()->getComponent<MaskedOverlayComponent>(ComponentTypes::MASKED_OVERLAY_COMPONENT);
 
 	//Create a rain emitter object
-	auto rainEmitter = parent()->parentScene()->createGameObject("PARTICLE_EMITTER_RAIN", -1.0F, -1.0F, 0.F, parent()->parentScene(), GameLayer::MAIN);
+	auto rainEmitter = parent()->parentScene()->createGameObject("PARTICLE_EMITTER_RAIN", parent(), -1.0F, -1.0F, 0.F, parent()->parentScene(), GameLayer::MAIN);
+	rainEmitter->postInit();
 	rainEmitter->disableRender();
 	rainEmitter->disableUpdate();
+
 	houseMaskOverlayComponent->addOverlayObject(rainEmitter);
 
 }
@@ -55,15 +57,6 @@ void BBEnvironmentComponent::_applyEventInstructions(int sequence)
 
 }
 
-
-void BBEnvironmentComponent::setParent(GameObject* gameObject)
-{
-	//Call base component setParent
-	Component::setParent(gameObject);
-
-	
-
-}
 
 void BBEnvironmentComponent::update()
 {
