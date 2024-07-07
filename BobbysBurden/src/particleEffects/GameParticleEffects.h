@@ -44,6 +44,26 @@ namespace ParticleEffects {
 		.particleSpawnCountMax = 20
 	};
 
+	static const ParticleEffect fireFlame2 = {
+		.name = "FIREFLAME2",
+		.poolId = "ROUND_LIT_PARTICLE_POOL",
+		.originMin = {0,0},
+		.originMax = {0,0},
+		.forceMin = 1.1F,
+		.forceMax = 2.2F,
+		.lifetimeMin = 0.1F,
+		.lifetimeMax = 0.5F,
+		.alphaFade = true,
+		.angleMin = 270,
+		.angleMax = 270,
+		.particleSizeMin = 10.F,
+		.particleSizeMax = 30.F,
+		.colorRangeBegin = {255,0,0,50},
+		.colorRangeEnd = {255,100,0,150},
+		.particleSpawnCountMin = 0,
+		.particleSpawnCountMax = 5
+	};
+
 	//static const ParticleEffect rain = {P
 	//	.poolId = "RAIN_SHEET_PARTICLE_POOL",
 	//	//.poolId = "ROUND_PARTICLE_POOL",

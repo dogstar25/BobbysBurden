@@ -82,6 +82,35 @@
             ]
         },
         {
+            "type": "PARTICLE_EMITTER_FIREPLACE_2",
+            "traitTags": [
+                "abstract"
+            ],
+            "description": "Particle Emitter",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 4,
+                        "height": 4
+                    }
+                },
+                {
+                    "id": "PARTICLE_X_COMPONENT",
+                    "type": "ParticleEmitterType::CONTINUOUS",
+                    "emissionInterval": 1.0,
+                    "emissionLayer": "GameLayer::BACKGROUND_1",
+                    "maxParticles": 300,
+                    "effects": [
+                        "fireFlame2"
+                    ]
+                }
+            ]
+        },
+        {
             "type": "PARTICLE_EMITTER_RAIN",
             "traitTags": [],
             "description": "Particle Emitter for rain",
@@ -464,7 +493,8 @@
                         "parlorRoomMask",
                         "guestBedroomMask",
                         "frontTopStairsRoomMask",
-                        "frontBottomStairsRoomMask"
+                        "frontBottomStairsRoomMask",
+                        "denRoomMask"
                     ]
                 }
             ]
@@ -616,6 +646,96 @@
                 {
                     "id": "BB_STATE_COMPONENT"
                 }
+            ]
+        },
+        {
+            "type": "GHOST",
+            "traitTags": [],
+            "description": "White quad",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_GHOST_TEST"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 80,
+                        "height": 196
+                    }
+                }
+            ]
+        },
+        {
+            "type": "COLUMN_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_COLUMN_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 51,
+                        "height": 384
+                    }
+                }
+            ]
+        },
+        {
+            "type": "FIREPLACE_2",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_FIREPLACE_2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 361,
+                        "height": 472
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "FIRELOGS_2",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 120
+                            },
+                            "size": {
+                                "width": 68,
+                                "height": 72
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2"
+
+                        }
+                        //{
+                        //    "gameObjectType": "HOUSE_BEAM",
+                        //    "absolutePositionSlot": {
+                        //        "x": 0,
+                        //        "y": 80
+                        //    },
+                        //    "size": {
+                        //        "width": 4,
+                        //        "height": 4
+                        //    },
+                        //    "isStepChild": true,
+                        //    "layer": "GameLayer::MAIN"
+
+                        //}
+
+                    ]
+                }
+
             ]
         }
     ]

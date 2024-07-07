@@ -5,7 +5,7 @@ class BBCutSceneFactory : public CutSceneFactory
 {
 public:
 	
-	std::shared_ptr<CutScene> create(std::string cutSceneType);
+	virtual std::shared_ptr<CutScene> create(std::string cutSceneType) override;
 
 private:
 

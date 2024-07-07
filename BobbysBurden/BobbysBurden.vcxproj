@@ -168,6 +168,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\actions\DisableProximityHintAction.cpp" />
+    <ClCompile Include="src\actions\PlayCutSceneAction.cpp" />
     <ClCompile Include="src\actions\ToggleBobbyEquipAction.cpp" />
     <ClCompile Include="src\BBGameStateManager.cpp" />
     <ClCompile Include="src\components\BBStateComponent.cpp" />
@@ -196,6 +197,7 @@
     <ClCompile Include="src\components\BBMaskedOverlayComponent.cpp" />
     <ClCompile Include="src\components\BBEnvironmentComponent.cpp" />
     <ClCompile Include="src\cutScenes\BBCutSceneFactory.cpp" />
+    <ClCompile Include="src\cutScenes\CutSceneClownArtMove.cpp" />
     <ClCompile Include="src\environmentEvents\BBEnvironmentEventFactory.cpp" />
     <ClCompile Include="src\environmentEvents\LightningEvent.cpp" />
     <ClCompile Include="src\environmentEvents\LightningMaker.cpp" />
@@ -217,6 +219,7 @@
     <ClCompile Include="src\IMGui\IMGuiTitleScreenMenu.cpp" />
     <ClCompile Include="src\particleEffects\BBParticleEffectsFactory.cpp" />
     <ClCompile Include="src\puzzles\BBPuzzleFactory.cpp" />
+    <ClCompile Include="src\puzzles\ClownPicturePuzzle.cpp" />
     <ClCompile Include="src\puzzles\OilBedKnobPuzzle.cpp" />
     <ClCompile Include="src\Source.cpp" />
     <ClCompile Include="src\triggers\BBTriggerFactory.cpp" />
@@ -224,6 +227,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\actions\DisableProximityHintAction.h" />
+    <ClInclude Include="src\actions\PlayCutSceneAction.h" />
     <ClInclude Include="src\actions\ToggleBobbyEquipAction.h" />
     <ClInclude Include="src\BBEnvironmentEvents.h" />
     <ClInclude Include="src\BBGameStateManager.h" />
@@ -252,6 +256,7 @@
     <ClInclude Include="src\components\BBMaskedOverlayComponent.h" />
     <ClInclude Include="src\components\BBEnvironmentComponent.h" />
     <ClInclude Include="src\cutScenes\BBCutSceneFactory.h" />
+    <ClInclude Include="src\cutScenes\CutSceneClownArtMove.h" />
     <ClInclude Include="src\environmentEvents\BBEnvironmentEventFactory.h" />
     <ClInclude Include="src\environmentEvents\LightningEvent.h" />
     <ClInclude Include="src\environmentEvents\LightningMaker.h" />
@@ -275,6 +280,7 @@
     <ClInclude Include="src\particleEffects\BBParticleEffectsFactory.h" />
     <ClInclude Include="src\particleEffects\GameParticleEffects.h" />
     <ClInclude Include="src\puzzles\BBPuzzleFactory.h" />
+    <ClInclude Include="src\puzzles\ClownPicturePuzzle.h" />
     <ClInclude Include="src\puzzles\OilBedKnobPuzzle.h" />
     <ClInclude Include="src\triggers\BBTriggerFactory.h" />
     <ClInclude Include="src\triggers\PlayerDeath.h" />
@@ -318,8 +324,11 @@
     <None Include="assets\gameObjectDefinitions\particleObjects.json" />
     <None Include="assets\gameObjectDefinitions\playerObjects.json" />
     <None Include="assets\gameObjectDefinitions\frontRooms.json" />
+    <None Include="assets\gameObjectDefinitions\puzzleObjects.json" />
+    <None Include="assets\gameObjectDefinitions\puzzlePieceObjects.json" />
     <None Include="assets\gameObjectDefinitions\shelfObjects.json" />
     <None Include="assets\gameObjectDefinitions\testObjects.json" />
+    <None Include="assets\gameObjectDefinitions\wallBackgroundObjects.json" />
     <None Include="assets\levels\full_interior_definition.json" />
     <None Include="assets\levels\levels.json" />
     <None Include="assets\levels\test_definition.json" />

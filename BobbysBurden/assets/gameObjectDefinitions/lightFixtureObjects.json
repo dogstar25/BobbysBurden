@@ -95,6 +95,53 @@
             ]
         },
         {
+            "type": "WALLLAMP_1",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WALLLAMP_1_64"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 48,
+                        "height": 48
+                    },
+                    "absolutePositioning": false
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "LIGHT_CIRCLE_FLICKER",
+                            "size": {
+                                "width": 512,
+                                "height": 512
+                            },
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -16
+                            },
+                            "beginStates": [
+                                "GameObjectState::ON"
+                            ]
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [
+                        "GameObjectState::ON"
+                    ]
+                }
+
+            ]
+        },
+        {
             "type": "CEILING_LIGHT_1",
             "traitTags": [],
             "components": [
@@ -124,6 +171,46 @@
                                 "x": 0,
                                 "y": 0
                             }
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
+        },
+        {
+            "type": "CHANDELIER_1",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CHANDELIER_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 128,
+                        "height": 128
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "ELECTRIC_ROOM_LIGHT_CIRCLE",
+                            "size": {
+                                "width": 800,
+                                "height": 800
+                            },
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 25
+                            },
+                            "beginStates": [
+                                "GameObjectState::ON"
+                            ]
                         }
                     ]
                 },

@@ -1,5 +1,6 @@
 #include "BBPuzzleFactory.h"
 #include "OilBedKnobPuzzle.h"
+#include "ClownPicturePuzzle.h"
 
 
 
@@ -15,6 +16,10 @@ std::shared_ptr<Puzzle> BBPuzzleFactory::create(Json::Value puzzleJSON)
 	if (puzzleType == "OilBedKnobPuzzle") {
 
 		puzzle = std::make_shared<OilBedKnobPuzzle>(name, clue, puzzlePieces);
+	}
+	else if (puzzleType == "ClownPicturePuzzle") {
+
+		puzzle = std::make_shared<ClownPicturePuzzle>(name, clue, puzzlePieces);
 	}
 	else {
 

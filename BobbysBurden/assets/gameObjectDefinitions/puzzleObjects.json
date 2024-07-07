@@ -1,0 +1,304 @@
+{
+    "gameObjects": [
+        {
+            "type": "WALL_ART_CLOWN_1",
+            "traitTags": [ "puzzle" ],
+            "description": "Clown Portrait",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WALL_ART_CLOWN_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 140,
+                        "height": 150
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_KINEMATIC",
+                    "linearDamping": 1.0,
+                    "angularDamping": 1.0,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::PUZZLE_OBJECT",
+                            "collisionShape": "B2_BOX",
+                            "density": 1,
+                            "friction": 25,
+                            "size": {
+                                "height": 40,
+                                "width": 40
+                            },
+                            "offset": {
+                                "x": -20,
+                                "y": -20
+                            }
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "GENERIC_INTERFACE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "label": "Slide Up",
+                            "dependentPuzzles": [
+
+                                "COMPLETE_PAINTING"
+
+                            ],
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_LCLICK",
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "actionClass": "PlayCutSceneAction",
+                            "properties": [
+                                {
+                                    "cutSceneName": "CutSceneClownArtMove"
+                                }
+                            ]
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        }
+
+
+                    ]
+                },
+                {
+                    "id": "PUZZLE_COMPONENT",
+                    "name": "COMPLETE_PAINTING",
+                    "clue": "An unsettling picture of a clown with a missing section.",
+                    "puzzleType": "ClownPicturePuzzle",
+                    "pieces": 1
+
+
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::UNSOLVED" ],
+                    "animationStates": [
+                        {
+                            "state": "GameObjectState::UNSOLVED",
+                            "animationId": "UNSOLVED"
+                        },
+                        {
+                            "state": "GameObjectState::SOLVED",
+                            "animationId": "SOLVED"
+                        }
+                    ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "CLOSED",
+                    "frameSize": {
+                        "width": 132,
+                        "height": 148
+                    },
+                    "animations": [
+                        {
+                            "id": "UNSOLVED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_WALL_ART_CLOWN_1",
+                            "frames": 1
+                        },
+                        {
+                            "id": "SOLVED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_WALL_ART_CLOWN_2",
+                            "frames": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "BOBBYS_BEDKNOB",
+            "traitTags": [ "abstract", "puzzle", "save_me" ],
+            "description": "Bed Knob",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WHITE_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 12,
+                        "height": 12
+                    }
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "GENERIC_INTERFACE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "label": "Twist",
+                            "dependentPuzzles": [
+
+                                "OIL_BEDKNOB"
+
+                            ],
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_LCLICK"
+                                ]
+                            }
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "actionClass": "TwistBedKnobAction"
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "actionClass": "DisableProximityHintAction"
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "PUZZLE_COMPONENT",
+                    "name": "OIL_BEDKNOB",
+                    "clue": "The bedknob looks worn, like its been touched alot.",
+                    "puzzleType": "OilBedKnobPuzzle",
+                    "pieces": 1
+
+
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::PUZZLE_OBJECT",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "PUZZLE_HINT_SENSOR_BOX",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 64,
+                                "height": 64
+                            }
+                        }
+
+                    ]
+
+                }
+
+            ]
+
+        }
+
+    ]
+}

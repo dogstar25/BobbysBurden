@@ -97,7 +97,6 @@ bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATE
 
 		}
 
-
 	}
 
 	return hasHigherPriority;

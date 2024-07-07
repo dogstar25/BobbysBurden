@@ -82,8 +82,43 @@
                     ]
                 }
             ]
-        }
+        },
+        {
+            "type": "WALL_SHELF_1",
+            "traitTags": [],
+            "description": "Shelf",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WALL_SHELF_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 120,
+                        "height": 48
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "MERMAID_1",
+                            "name": "shelfcan",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 8 
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2",
+                            "beginStates": [ "GameObjectState::ITEM_OBTAINABLE", "GameObjectState::ITEM_LOOSE" ]
 
+                        }
+                    ]
+                }
+            ]
+        }
     ]
 }
 

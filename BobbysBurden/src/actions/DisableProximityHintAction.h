@@ -4,6 +4,10 @@
 class DisableProximityHintAction :  public Action
 {
 public:
+
+	DisableProximityHintAction(Json::Value properties)
+		:Action(properties) {}
+
 	void perform(GameObject* gameObject) override;
 
 };

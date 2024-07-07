@@ -44,7 +44,7 @@
                             "gameObjectType": "DOOR_FRONT",
                             "name": "topStairsDoor",
                             "absolutePositionSlot": {
-                                "x": -60,
+                                "x": 60,
                                 "y": 46
                             },
                             "isStepChild": true,

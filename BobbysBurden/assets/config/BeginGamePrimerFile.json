@@ -145,8 +145,8 @@
 			"inventory" : 
 			[
 				{
-					"slot" : 0,
-					"type" : "OIL_CAN"
+					"slot": 0,
+					"type": "PAPER_BALLOON"
 				},
 				{
 					"slot" : 1,
