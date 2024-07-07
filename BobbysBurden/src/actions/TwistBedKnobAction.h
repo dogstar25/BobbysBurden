@@ -5,7 +5,8 @@ class TwistBedKnobAction : public Action
 {
 
 public:
-	TwistBedKnobAction() = default;
+	TwistBedKnobAction(Json::Value properties)
+		:Action(properties) {}
 
 	void perform(GameObject* gameObject) override;
 

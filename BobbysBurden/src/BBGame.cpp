@@ -70,6 +70,9 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/frontRooms");
 	GameObjectManager::instance().load("gameObjectDefinitions/backRooms");
 	GameObjectManager::instance().load("gameObjectDefinitions/lightFixtureObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/wallBackgroundObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/puzzleObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/puzzlePieceObjects");
 
 	//GameObjectManager::instance().load("gameObjectDefinitions/testObjects");
 
@@ -101,7 +104,7 @@ bool BBGame::init(
 	//Figure out a place to put this custom game type stuff later
 	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
 	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	playerInventory->addItem("OIL_CAN");
+	playerInventory->addItem("PAPER_BALLOON");
 
 	const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");
 	const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);

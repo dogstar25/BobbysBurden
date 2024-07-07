@@ -150,7 +150,10 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 
 					ImGui::Text("Apply To");
 					ImGui::SameLine();
-					ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), puzzleTouched.value().lock()->description().c_str());
+					ImGui::PushStyleColor(ImGuiCol_Text, util::SDLColorToImVec4(Colors::EMERALD));
+					//ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), puzzleTouched.value().lock()->description().c_str());
+					ImGui::TextWrapped(puzzleTouched.value().lock()->description().c_str());
+					ImGui::PopStyleColor();
 
 					auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
 					SceneManager::instance().setMouseCursor(cursor);

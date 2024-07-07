@@ -421,12 +421,6 @@
                     "id": "BB_STATE_COMPONENT",
                     "beginStates": [
                         "GameObjectState::ON"
-                    ],
-                    "animationStates": [
-                        {
-                            "state": "GameObjectState::ON",
-                            "animationId": "LIT"
-                        }
                     ]
                 },
                 {
@@ -442,7 +436,7 @@
                                 "width": 256,
                                 "height": 256
                             },
-                            "beginStates": ["GameObjectState::ON"]
+                            "beginStates": [ "GameObjectState::ON" ]
                         },
                         {
                             "gameObjectType": "PARTICLE_EMITTER_FIREPLACE",
@@ -450,6 +444,56 @@
                                 "x": -5,
                                 "y": -12
                             }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "FIRELOGS_2",
+            "traitTags": [],
+            "description": "Firelogs",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_FIRELOGS_2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 69,
+                        "height": 72
+                    },
+                    "absolutePositioning": false
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [
+                        "GameObjectState::ON"
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "LIGHT_CIRCLE_FLICKER",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "color": "Colors::ORANGE",
+                            "size": {
+                                "width": 400,
+                                "height": 256
+                            },
+                            "beginStates": [ "GameObjectState::ON" ]
+                        },
+                        {
+                            "gameObjectType": "PARTICLE_EMITTER_FIREPLACE_2",
+                            "absolutePositionSlot": {
+                                "x": -5,
+                                "y": 0
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2"
+
                         }
                     ]
                 }

@@ -1,0 +1,182 @@
+{
+    "gameObjects": [
+        {
+            "type": "OIL_CAN",
+            "traitTags": [ "puzzle_item", "save_me" ],
+            "description": "Oil Can",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_OILCAN"
+                },
+                {
+                    "id": "[item64_TRANSFORM_COMPONENT]"
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "gravityScale": 0,
+                    "linearDamping": 0.0,
+                    "angularDamping": 5.0,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            //"contactTag": "ContactTag::INVENTORY_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 8,
+                                "height": 8
+                            },
+                            "density": 1
+                        }
+
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "PAPER_BALLOON",
+            "traitTags": [ "puzzle_item", "save_me" ],
+            "description": "Paper Balloon",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_PAPER_BALLOON"
+                },
+                {
+                    "id": "[item64_TRANSFORM_COMPONENT]"
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "gravityScale": 0,
+                    "linearDamping": 0.0,
+                    "angularDamping": 5.0,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            //"contactTag": "ContactTag::INVENTORY_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 8,
+                                "height": 8
+                            },
+                            "density": 1
+                        }
+
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "MERMAID_1",
+            "traitTags": [ "puzzle_item", "save_me" ],
+            "description": "Mermaid Statue",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_MERMAID_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 81,
+                        "height": 48
+                    }
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 8,
+                                "height": 8
+                            },
+                            "density": 1
+                        }
+
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "BOTTLE1",
+            "traitTags": [ "puzzle_item", "save_me" ],
+            "description": "Bottle",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BOTTLE_1"
+                },
+                {
+                    "id": "[item64_TRANSFORM_COMPONENT]"
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "gravityScale": 0,
+                    "linearDamping": 0.0,
+                    "angularDamping": 5.0,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            //"contactTag": "ContactTag::INVENTORY_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 18,
+                                "height": 48
+                            },
+                            "density": 1,
+                            "friction": 25
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
+        }
+    ]
+}

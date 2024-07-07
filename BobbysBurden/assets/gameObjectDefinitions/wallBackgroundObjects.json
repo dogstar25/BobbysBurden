@@ -2,40 +2,43 @@
 
     "gameObjects": [
         {
-            "type": "WALL_MIRROR_1",
-            "traitTags": [],
-            "description": "Dresser Mirror",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_WALL_MIRROR_1"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 100,
-                        "height": 128
-                    }
-                }
-            ]
-        },
-        {
-            "type": "GRANDFATHER_CLOCK",
+            "type": "WALL_BACKGROUND_SMALL_1",
             "traitTags": [],
             "description": "",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_GRANDFATHER_CLOCK"
+                    "textureId": "TX_WALLPAPER_SMALL_1"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 137,
-                        "height": 481
+                        "width": 256,
+                        "height": 300
+                    }
+                }
+            ]
+        },
+        {
+            "type": "WALL_BACKGROUND_BIG_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WALLPAPER_BIG_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 500,
+                        "height": 300
                     }
                 }
             ]
         }
+
+
     ]
 }
+

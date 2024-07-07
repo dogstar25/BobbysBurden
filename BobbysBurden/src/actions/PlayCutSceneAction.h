@@ -1,14 +1,13 @@
 #pragma once
 #include "MobyDick.h"
 
-class ShowInterfaceAction :  public Action
+class PlayCutSceneAction : public Action
 {
-public:
 
-	ShowInterfaceAction(Json::Value properties)
+public:
+	PlayCutSceneAction(Json::Value properties)
 		:Action(properties) {}
 
 	void perform(GameObject* gameObject) override;
 
 };
-

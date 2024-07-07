@@ -7,7 +7,7 @@
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_ROOM_PARLOR"
+                    "textureId": "TX_WHITE_QUAD"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -29,23 +29,81 @@
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "childPositionRelative": false,
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childObjects": [
                         {
                             "gameObjectType": "CLEAR_QUAD_MASK",
                             "name": "parlorRoomMask",
                             "description": "The mask uses to show the room instead of house exterior",
-                            "absolutePositionSlot": {
-                                "x": 0,
-                                "y": 0
-                            },
-
+                            "standardSlot": "PositionAlignment::CENTER",
                             "size": {
                                 "width": 544,
                                 "height": 384
                             }
+                        },
+                        {
+                            "gameObjectType": "LIT_AREA",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2",
+                            "size": {
+                                "width": 544,
+                                "height": 320
+                            }
+                        },
+                        {
+                            "gameObjectType": "WALL_BACKGROUND_BIG_1",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 564,
+                                "height": 320
+                            }
+
+                        },
+                        {
+                            "gameObjectType": "LIGHT_WINDOW_1",
+                            "name": "windowFlash",
+                            "absolutePositionSlot": {
+                                "x": -200,
+                                "y": 50
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "LIGHT_WINDOW_1",
+                            "name": "windowFlash",
+                            "absolutePositionSlot": {
+                                "x": 125,
+                                "y": 50
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "GHOST",
+                            "absolutePositionSlot": {
+                                "x": -200,
+                                "y": 60
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::MAIN"
+                        },
+                        {
+                            "gameObjectType": "COLUMN_1",
+                            "absolutePositionSlot": {
+                                "x": 262,
+                                "y": 50
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2",
+                            "size": {
+                                "width": 52,
+                                "height": 360
+                            }
                         }
+
+
                     ]
                 }
             ]
@@ -242,6 +300,96 @@
                             "isSensor": true
                         }
                     ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CLEAR_QUAD_MASK",
+                            "name": "denRoomMask",
+                            "description": "The mask uses to show the room instead of house exterior",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 544,
+                                "height": 384
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIT_AREA",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2",
+                            "size": {
+                                "width": 544,
+                                "height": 320
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIGHT_WINDOW_1",
+                            "name": "windowFlash",
+                            "absolutePositionSlot": {
+                                "x": -200,
+                                "y": 50
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "LIGHT_WINDOW_1",
+                            "name": "windowFlash",
+                            "absolutePositionSlot": {
+                                "x": 125,
+                                "y": 50
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "WALLLAMP_1",
+                            "absolutePositionSlot": {
+                                "x": -70,
+                                "y": -40
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "WALLLAMP_1",
+                            "absolutePositionSlot": {
+                                "x": 70,
+                                "y": -40
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "DOOR2_SIDE_LEFT",
+                            "absolutePositionSlot": {
+                                "x": -244,
+                                "y": 32
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_1",
+                            "size": {
+                                "width": 70,
+                                "height": 320
+                            }
+                        },
+                        {
+                            "gameObjectType": "FIREPLACE_2",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_3",
+                            "size": {
+                                "width": 256,
+                                "height": 320
+                            }
+                        }
+                    ]
                 }
             ]
         },
@@ -286,6 +434,15 @@
                             }
                         },
                         {
+                            "gameObjectType": "WALL_BACKGROUND_SMALL_1",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 320,
+                                "height": 320
+                            }
+
+                        },
+                        {
                             "gameObjectType": "DOOR_FRONT",
                             "name": "topStairsDoor",
                             "absolutePositionSlot": {
@@ -294,6 +451,19 @@
                             },
                             "isStepChild": true,
                             "layer": "GameLayer::BACKGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "WALL_SHELF_1",
+                            "absolutePositionSlot": {
+                                "x": 92,
+                                "y": 30
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_3",
+                            "size": {
+                                "width": 96,
+                                "height": 75
+                            }
                         }
                     ]
                 }
@@ -317,21 +487,69 @@
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
-                    "childPadding": 0,
-                    "childPositionRelative": false,
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childObjects": [
                         {
                             "gameObjectType": "CLEAR_QUAD_MASK",
-                            "absolutePositionSlot": {
-                                "x": -6,
-                                "y": 0
-                            },
+                            "standardSlot": "PositionAlignment::CENTER",
                             "name": "frontBottomStairsRoomMask",
                             "size": {
-                                "width": 326,
+                                "width": 342,
+                                "height": 384
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIT_AREA",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2",
+                            "size": {
+                                "width": 320,
                                 "height": 320
                             }
+                        },
+                        {
+                            "gameObjectType": "CHANDELIER_1",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -85
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2",
+                            "size": {
+                                "width": 156,
+                                "height": 156
+                            }
+                        },
+                        {
+                            "gameObjectType": "DOOR_FRONT",
+                            "name": "bottomStairsDoor",
+                            "absolutePositionSlot": {
+                                "x": -115,
+                                "y": 46
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2",
+                            "size": {
+                                "width": 68,
+                                "height": 224
+                            }
+                        },
+                        {
+                            "gameObjectType": "GRANDFATHER_CLOCK",
+                            "absolutePositionSlot": {
+                                "x": -40,
+                                "y": 46
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2",
+                            "size": {
+                                "width": 76,
+                                "height": 230
+                            }
+
                         }
+
                     ]
                 }
             ]

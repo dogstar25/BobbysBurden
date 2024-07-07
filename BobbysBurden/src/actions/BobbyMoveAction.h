@@ -6,7 +6,8 @@ class BobbyMoveAction : public Action
 {
 
 public:
-	BobbyMoveAction() = default;
+	BobbyMoveAction(Json::Value properties)
+		:Action(properties) {}
 
 	void perform(GameObject* gameObject, int direction, int strafe) override;
 

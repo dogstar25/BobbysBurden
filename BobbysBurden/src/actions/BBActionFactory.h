@@ -7,7 +7,7 @@ class BBActionFactory : public ActionFactory{
 
 public:
 
-	std::shared_ptr<Action> create(std::string actionType) override;
+	std::shared_ptr<Action> create(std::string actionType, Json::Value properties) override;
 
 
 private:

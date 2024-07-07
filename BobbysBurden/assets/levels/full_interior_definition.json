@@ -92,8 +92,8 @@
                     ]
                 },
                 {
+                    //"id": "LOC_0056_0152",
                     "id": "LOC_0029_0141",
-                    //"id": "LOC_0050_0054",
                     "gameObjectType": "BOBBY",
                     "name": "Player Bobby",
                     "layer": "GameLayer::MAIN",
@@ -218,11 +218,7 @@
                 {
                     "id": "LOC_0016_0145",
                     "gameObjectType": "PARLOR_ROOM",
-                    "layer": "GameLayer::BACKGROUND_5",
-                    "size": {
-                        "width": 320,
-                        "height": 320
-                    }
+                    "layer": "GameLayer::BACKGROUND_5"
                 },
                 {
                     "id": "LOC_0015_0155",
@@ -234,22 +230,6 @@
                         "width": 1472,
                         "height": 32
                     }
-                },
-                {
-                    "id": "LOC_0016_0145",
-                    "gameObjectType": "LIT_AREA",
-                    "layer": "GameLayer::FOREGROUND_1",
-                    "size": {
-                        "width": 544,
-                        "height": 320
-                    }
-                },
-                {
-                    "id": "LOC_0019_0146",
-                    "name": "windowFlashParlor",
-                    "description": "parlor window lighting flash",
-                    "gameObjectType": "LIGHT_WINDOW_1",
-                    "layer": "GameLayer::FOREGROUND_2"
                 }
             ]
         },
@@ -260,27 +240,6 @@
                     "id": "LOC_0043_0145",
                     "gameObjectType": "DEN_ROOM",
                     "layer": "GameLayer::BACKGROUND_5"
-                },
-                {
-                    "id": "LOC_0043_0145",
-                    "gameObjectType": "LIT_AREA",
-                    "layer": "GameLayer::FOREGROUND_1",
-                    "size": {
-                        "width": 544,
-                        "height": 320
-                    }
-                },
-                {
-                    "id": "LOC_0046_0146",
-                    "name": "windowFlash",
-                    "description": "den window lighting flash",
-                    "gameObjectType": "LIGHT_WINDOW_1",
-                    "layer": "GameLayer::FOREGROUND_2"
-                },
-                {
-                    "id": "LOC_0045_0149",
-                    "gameObjectType": "WALLLAMP_1",
-                    "layer": "GameLayer::FOREGROUND_1"
                 }
             ]
         },
@@ -369,12 +328,22 @@
                 {
                     "id": "LOC_0038_0136",
                     "gameObjectType": "WALL_ART_CLOWN_1",
-                    "layer": "GameLayer::BACKGROUND_4",
+                    "layer": "GameLayer::BACKGROUND_2",
                     "locationAdjust": {
                         "x": 16,
                         "y": 16
                     }
                 }
+                //{
+                //    "id": "LOC_0038_0136",
+                //    "gameObjectType": "OIL_CAN",
+                //    "layer": "GameLayer::BACKGROUND_2",
+                //    "locationAdjust": {
+                //        "x": 16,
+                //        "y": 32
+                //    },
+                //    "gameObjectStates": [ "ITEM_LOOSE", "ITEM_OBTAINABLE" ]
+                //}
             ]
         },
         {

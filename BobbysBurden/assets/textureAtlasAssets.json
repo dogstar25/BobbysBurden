@@ -300,10 +300,10 @@
             "description": "Top stairs rail",
             "atlas": "TEXTURE_ATLAS_0",
             "quadPosition": {
-                "x": 1094,
-                "y": 239,
-                "width": 130,
-                "height": 83
+                "x": 1869,
+                "y": 0,
+                "width": 125,
+                "height": 77
             }
         },
         {
@@ -420,7 +420,53 @@
                 "width": 70,
                 "height": 256
             }
+        }, ////
+        {
+            "id": "TX_DOOR2_SIDE_OPENED",
+            "description": "Door from side closed",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 1602,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
         },
+        {
+            "id": "TX_DOOR2_SIDE_CLOSED",
+            "description": "Door from side open",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 1531,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_DOOR2_LEFT_SIDE_OPENED",
+            "description": "Door from side closed",
+            "atlas": "TEXTURE_ATLAS_0",
+            "flip": true,
+            "quadPosition": {
+                "x": 1602,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_DOOR2_LEFT_SIDE_CLOSED",
+            "description": "Door from side open",
+            "atlas": "TEXTURE_ATLAS_0",
+            "flip": true,
+            "quadPosition": {
+                "x": 1531,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        }, ////
         //
         // Bobby Animations
         //
@@ -1010,10 +1056,21 @@
             "description": "Default Texure",
             "atlas": "TEXTURE_ATLAS_2",
             "quadPosition": {
-                "x": 2,
-                "y": 919,
-                "width": 140,
-                "height": 150
+                "x": 1018,
+                "y": 1077,
+                "width": 132,
+                "height": 148
+            }
+        },
+        {
+            "id": "TX_WALL_ART_CLOWN_2",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1150,
+                "y": 1077,
+                "width": 132,
+                "height": 148
             }
         },
         {
@@ -1201,6 +1258,116 @@
                 "y": 120,
                 "width": 68,
                 "height": 128
+            }
+        },
+        {
+            "id": "TX_WALLPAPER_BIG_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 1536,
+                "y": 1739,
+                "width": 507,
+                "height": 308
+            }
+        },
+        {
+            "id": "TX_WALLPAPER_SMALL_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 1536,
+                "y": 1739,
+                "width": 256,
+                "height": 308
+            }
+        },
+        {
+            "id": "TX_CHANDELIER_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1354,
+                "y": 1301,
+                "width": 269,
+                "height": 398
+            }
+        },
+        {
+            "id": "TX_GRANDFATHER_CLOCK",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1132,
+                "y": 1222,
+                "width": 137,
+                "height": 481
+            }
+        },
+        {
+            "id": "TX_GHOST_TEST",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 717,
+                "y": 1499,
+                "width": 55,
+                "height": 129
+            }
+        },
+        {
+            "id": "TX_COLUMN_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1,
+                "y": 1641,
+                "width": 51,
+                "height": 384
+            }
+        },
+        {
+            "id": "TX_FIREPLACE_2",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 1161,
+                "y": 1576,
+                "width": 361,
+                "height": 472
+            }
+        },
+        {
+            "id": "TX_WALL_SHELF_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 878,
+                "y": 1077,
+                "width": 139,
+                "height": 57
+            }
+        },
+        {
+            "id": "TX_MERMAID_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1689,
+                "y": 825,
+                "width": 255,
+                "height": 152
+            }
+        },
+        {
+            "id": "TX_PAPER_BALLOON",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 860,
+                "y": 54,
+                "width": 64,
+                "height": 64
             }
         }
 

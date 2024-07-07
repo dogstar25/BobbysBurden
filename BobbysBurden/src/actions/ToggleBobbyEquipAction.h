@@ -15,6 +15,10 @@ class ToggleBobbyEquipAction : public Action
 {
 
 public:
+
+	ToggleBobbyEquipAction(Json::Value properties)
+		:Action(properties) {}
+
 	void perform(GameObject* doorObject) override;
 
 private:

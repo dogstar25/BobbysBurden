@@ -5,7 +5,8 @@ class HideUnderBedAction : public Action
 {
 
 public:
-	HideUnderBedAction() = default;
+	HideUnderBedAction(Json::Value properties)
+		:Action(properties) {}
 
 	void perform(GameObject* gameObject) override;
 
