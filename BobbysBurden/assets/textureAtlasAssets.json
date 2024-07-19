@@ -466,7 +466,51 @@
                 "width": 70,
                 "height": 256
             }
-        }, ////
+        },
+        {
+            "id": "TX_DOOR_FRONT_HIDDEN_CLOSE",
+            "description": "Secret Door",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 98,
+                "y": 894,
+                "width": 128,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_DOOR_FRONT_HIDDEN_OPEN",
+            "description": "Secret Door",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 2,
+                "y": 894,
+                "width": 128,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_DOOR_FRONT_HIDDEN_OPENED",
+            "description": "Secret Den Door",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 98,
+                "y": 894,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_DOOR_FRONT_HIDDEN_CLOSED",
+            "description": "Secret Den Door",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 2,
+                "y": 894,
+                "width": 32,
+                "height": 32
+            }
+        },
         //
         // Bobby Animations
         //
@@ -1342,10 +1386,10 @@
             "description": "",
             "atlas": "TEXTURE_ATLAS_2",
             "quadPosition": {
-                "x": 878,
-                "y": 1077,
-                "width": 139,
-                "height": 57
+                "x": 879,
+                "y": 1078,
+                "width": 133,
+                "height": 55
             }
         },
         {
@@ -1365,6 +1409,61 @@
             "atlas": "TEXTURE_ATLAS_2",
             "quadPosition": {
                 "x": 860,
+                "y": 54,
+                "width": 64,
+                "height": 64
+            }
+        },
+        {
+            "id": "TX_BOOKCASE_2",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 753,
+                "y": 531,
+                "width": 219,
+                "height": 463
+            }
+        },
+        {
+            "id": "TX_BOOKCASE_3",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 973,
+                "y": 531,
+                "width": 146,
+                "height": 236
+            }
+        },
+        {
+            "id": "TX_WALLLAMP_2",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 992,
+                "y": 54,
+                "width": 64,
+                "height": 64
+            }
+        },
+        {
+            "id": "TX_CANDLE_2",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1969,
+                "y": 178,
+                "width": 39,
+                "height": 70
+            }
+        },
+        {
+            "id": "TX_BOOK_SEALIFE",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 398,
                 "y": 54,
                 "width": 64,
                 "height": 64

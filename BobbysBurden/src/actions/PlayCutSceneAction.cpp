@@ -7,7 +7,6 @@ void PlayCutSceneAction::perform(GameObject* gameObject)
 	SDL_Event event;
 
 	//Get the cut scene name from properties
-	
 	std::string cutScene = util::getJsonProperty("cutSceneName", m_properties).asString();
 
 

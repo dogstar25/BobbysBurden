@@ -10,14 +10,13 @@ enum class candleLocation {
 	DOWN
 };
 
-
 class ToggleBobbyEquipAction : public Action
 {
 
 public:
 
-	ToggleBobbyEquipAction(Json::Value properties)
-		:Action(properties) {}
+	ToggleBobbyEquipAction(Json::Value properties, GameObject* parent)
+		:Action(properties, parent) {}
 
 	void perform(GameObject* doorObject) override;
 

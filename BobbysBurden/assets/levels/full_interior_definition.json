@@ -92,8 +92,8 @@
                     ]
                 },
                 {
-                    //"id": "LOC_0056_0152",
-                    "id": "LOC_0029_0141",
+                    "id": "LOC_0056_0152",
+                    //"id": "LOC_0029_0141",
                     "gameObjectType": "BOBBY",
                     "name": "Player Bobby",
                     "layer": "GameLayer::MAIN",
@@ -240,6 +240,12 @@
                     "id": "LOC_0043_0145",
                     "gameObjectType": "DEN_ROOM",
                     "layer": "GameLayer::BACKGROUND_5"
+                },
+                {
+                    "id": "LOC_0055_0146",
+                    "name": "denBookcase",
+                    "gameObjectType": "BOOKCASE_3",
+                    "layer": "GameLayer::BACKGROUND_2"
                 }
             ]
         },

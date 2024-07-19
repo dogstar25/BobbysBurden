@@ -92,10 +92,16 @@
                     "actions": [
                         {
                             "actionId": "Actions::USE",
-                            "actionClass": "PlayCutSceneAction",
+                            "actionClass": "ProgressiveMoveByAction",
                             "properties": [
                                 {
-                                    "cutSceneName": "CutSceneClownArtMove"
+                                    "xPixels": 0
+                                },
+                                {
+                                    "yPixels": -72
+                                },
+                                {
+                                    "speed": 1
                                 }
                             ]
                         },
@@ -298,7 +304,117 @@
 
             ]
 
-        }
+        },
+        {
+            "type": "FIREPLACE_MANTLE_PUZZLE",
+            "traitTags": [ "puzzle" ],
+            "description": "Missing Mantle Object",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 1,
+                        "height": 1
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::PUZZLE_OBJECT",
+                            "collisionShape": "B2_BOX",
+                            "size": {
+                                "height": 64,
+                                "width": 32
+                            }
 
+                        }
+
+                    ]
+                },
+                {
+                    "id": "PUZZLE_COMPONENT",
+                    "name": "MERMAID_MANTLE",
+                    "clue": "Looks like something is missing from the mantle",
+                    "puzzleType": "MermaidMantlePuzzle",
+                    "pieces": 1
+
+
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "GENERIC_INTERFACE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "label": "Push",
+                            "dependentPuzzles": [
+
+                                "MERMAID_MANTLE"
+
+                            ],
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_LCLICK"
+                                ]
+                            }
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "actionClass": "MermaidStatueAction"
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+
+            ]
+        }
     ]
 }

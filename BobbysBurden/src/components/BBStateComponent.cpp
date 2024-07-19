@@ -27,9 +27,9 @@ void BBStateComponent::postInit()
 	//}
 
 	////If this is a toggle switch object then go through and apply the switches state to the objects that it controls
-	//if (parent()->hasTrait(TraitTag::light_switch)) {
+	//if (parent()->hasTrait(TraitTag::toggle_switch)) {
 
-	//	std::shared_ptr<Action> onOffToggleAction = std::make_shared<OnOffLightToggleAction>();
+	//	std::shared_ptr<Action> onOffToggleAction = std::make_shared<OnOffToggleAction>();
 	//	onOffToggleAction->perform(parent());
 
 	//}

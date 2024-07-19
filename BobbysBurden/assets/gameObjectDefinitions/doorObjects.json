@@ -24,13 +24,13 @@
                         {
                             "from": "GameObjectState::CLOSED",
                             "to": "GameObjectState::OPENED",
-                            "duration": 0.15,
+                            "duration": 1.0,
                             "animationId": "OPEN"
                         },
                         {
                             "from": "GameObjectState::OPENED",
                             "to": "GameObjectState::CLOSED",
-                            "duration": 0.15,
+                            "duration": 1.0,
                             "animationId": "CLOSE"
                         }
                     ],
@@ -57,21 +57,18 @@
                             "id": "OPEN",
                             "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
                             "textureId": "TX_DOOR1_FRONT_OPEN",
-                            "speed": 1.01,
                             "frames": 3
                         },
                         {
                             "id": "OPEN_CONTINUOUSLY", // as a test case
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_DOOR1_FRONT_OPEN",
-                            "speed": 0.01,
                             "frames": 3
                         },
                         {
                             "id": "CLOSE",
                             "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
                             "textureId": "TX_DOOR1_FRONT_CLOSE",
-                            "speed": 0.01,
                             "frames": 3
                         },
                         {
@@ -567,6 +564,127 @@
             ]
         },
         {
+            "type": "DOOR_FRONT_HIDDEN",
+            "traitTags": [ "door", "door_front", "save_me" ],
+            "description": "Secret Instant Door",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 64,
+                        "height": 130
+                    }
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::CLOSED" ],
+                    "transitions": [
+                        {
+                            "from": "GameObjectState::CLOSED",
+                            "to": "GameObjectState::OPENED",
+                            "duration": 1.0,
+                            "animationId": "OPEN"
+                        },
+                        {
+                            "from": "GameObjectState::OPENED",
+                            "to": "GameObjectState::CLOSED",
+                            "duration": 1.0,
+                            "animationId": "CLOSE"
+                        }
+                    ],
+                    "animationStates": [
+                        {
+                            "state": "GameObjectState::CLOSED",
+                            "animationId": "CLOSED"
+                        },
+                        {
+                            "state": "GameObjectState::OPENED",
+                            "animationId": "OPENED"
+                        }
+                    ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "CLOSED",
+                    "frameSize": {
+                        "width": 32,
+                        "height": 32
+                    },
+                    "animations": [
+                        {
+                            "id": "OPEN",
+                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
+                            "textureId": "TX_DOOR_FRONT_HIDDEN_OPEN",
+                            "speed": 0.25,
+                            "frames": 4
+                        },
+                        {
+                            "id": "CLOSE",
+                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
+                            "textureId": "TX_DOOR_FRONT_HIDDEN_CLOSE",
+                            "speed": 0.25,
+                            "frames": 4
+                        },
+                        {
+                            "id": "CLOSED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_DOOR_FRONT_HIDDEN_CLOSED",
+                            "frames": 1
+                        },
+                        {
+                            "id": "OPENED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_DOOR_FRONT_HIDDEN_OPENED",
+                            "frames": 1
+                        }
+                    ]
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::ENTER",
+                            "actionClass": "DoorEnterAction"
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::VERTICAL",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "DOOR_KNOB", //HOLDS THE INTERFACING WITH THE DOOR
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 20
+                            }
+                        },
+
+                        {
+                            "gameObjectType": "DOOR_FRONT_ENTRY_POINT",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 32
+                            }
+                        },
+                        {
+                            "gameObjectType": "DOOR_EXIT_POINT",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 64
+                            }
+                        }
+                    ]
+                }
+
+            ]
+        },
+        {
             "type": "DOOR_KNOB",
             "description": "Door",
             "traitTags": [ "always_in_line_of_sight", "abstract" ],
@@ -770,6 +888,32 @@
                 }
 
             ]
+        },
+        {
+            "type": "SECRET_DOORKNOB",
+            "traitTags": [],
+            "description": "White quad",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WHITE_QUAD",
+                    "color": {
+                        "tint": "Colors::GOLD",
+                        "alpha": 255
+                    }
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 16,
+                        "height": 8
+                    }
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
         }
+
     ]
 }
