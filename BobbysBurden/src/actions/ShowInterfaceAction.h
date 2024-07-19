@@ -5,8 +5,8 @@ class ShowInterfaceAction :  public Action
 {
 public:
 
-	ShowInterfaceAction(Json::Value properties)
-		:Action(properties) {}
+	ShowInterfaceAction(Json::Value properties, GameObject* parent)
+		:Action(properties, parent) {}
 
 	void perform(GameObject* gameObject) override;
 

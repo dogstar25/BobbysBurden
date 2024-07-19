@@ -717,22 +717,120 @@
                             "isStepChild": true,
                             "layer": "GameLayer::BACKGROUND_2"
 
+                        },
+                        {
+                            "gameObjectType": "FIREPLACE_MANTLE_PUZZLE",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "size": {
+                                "width": 64,
+                                "height": 32
+                            }
+
+                        },
+                        {
+                            "gameObjectType": "MERMAID_1",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -10
+                            },
+                            "size": {
+                                "width": 81,
+                                "height": 48
+                            },
+                            "beginStates": [ "GameObjectState::DISABLED_RENDER", "GameObjectState::DISABLED_UPDATE" ]
+
+
                         }
-                        //{
-                        //    "gameObjectType": "HOUSE_BEAM",
-                        //    "absolutePositionSlot": {
-                        //        "x": 0,
-                        //        "y": 80
-                        //    },
-                        //    "size": {
-                        //        "width": 4,
-                        //        "height": 4
-                        //    },
-                        //    "isStepChild": true,
-                        //    "layer": "GameLayer::MAIN"
 
-                        //}
+                    ]
+                }
 
+            ]
+        },
+        {
+            "type": "BOOKCASE_3",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BOOKCASE_3"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 128,
+                        "height": 275
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_KINEMATIC",
+                    "linearDamping": 1.0,
+                    "angularDamping": 1.0,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_FREE",
+                            "collisionShape": "B2_BOX",
+                            "density": 1,
+                            "friction": 1
+                        }
+
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CANDLE_2",
+                            "name": "denCandleSecretDoor",
+                            "absolutePositionSlot": {
+                                "x": -20,
+                                "y": 70
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_1"
+
+                        },
+                        {
+                            "gameObjectType": "BOOKCASE_1X3",
+                            "name": "denBookcaseShelf",
+                            "color": "Colors::GREEN",
+                            "size": {
+                                "width": 64,
+                                "height": 40
+                            },
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 8
+                            }
+                        }
+
+
+                    ]
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::MOVE",
+                            "actionClass": "ProgressiveMoveByAction",
+                            "properties": [
+                                {
+                                    "xPixels": 40
+                                },
+                                {
+                                    "yPixels": 0
+                                },
+                                {
+                                    "speed": 1
+                                }
+                            ]
+                        }
                     ]
                 }
 

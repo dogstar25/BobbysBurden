@@ -197,7 +197,6 @@
     <ClCompile Include="src\components\BBMaskedOverlayComponent.cpp" />
     <ClCompile Include="src\components\BBEnvironmentComponent.cpp" />
     <ClCompile Include="src\cutScenes\BBCutSceneFactory.cpp" />
-    <ClCompile Include="src\cutScenes\CutSceneClownArtMove.cpp" />
     <ClCompile Include="src\environmentEvents\BBEnvironmentEventFactory.cpp" />
     <ClCompile Include="src\environmentEvents\LightningEvent.cpp" />
     <ClCompile Include="src\environmentEvents\LightningMaker.cpp" />
@@ -220,6 +219,7 @@
     <ClCompile Include="src\particleEffects\BBParticleEffectsFactory.cpp" />
     <ClCompile Include="src\puzzles\BBPuzzleFactory.cpp" />
     <ClCompile Include="src\puzzles\ClownPicturePuzzle.cpp" />
+    <ClCompile Include="src\puzzles\MermaidMantlePuzzle.cpp" />
     <ClCompile Include="src\puzzles\OilBedKnobPuzzle.cpp" />
     <ClCompile Include="src\Source.cpp" />
     <ClCompile Include="src\triggers\BBTriggerFactory.cpp" />
@@ -256,7 +256,6 @@
     <ClInclude Include="src\components\BBMaskedOverlayComponent.h" />
     <ClInclude Include="src\components\BBEnvironmentComponent.h" />
     <ClInclude Include="src\cutScenes\BBCutSceneFactory.h" />
-    <ClInclude Include="src\cutScenes\CutSceneClownArtMove.h" />
     <ClInclude Include="src\environmentEvents\BBEnvironmentEventFactory.h" />
     <ClInclude Include="src\environmentEvents\LightningEvent.h" />
     <ClInclude Include="src\environmentEvents\LightningMaker.h" />
@@ -281,6 +280,7 @@
     <ClInclude Include="src\particleEffects\GameParticleEffects.h" />
     <ClInclude Include="src\puzzles\BBPuzzleFactory.h" />
     <ClInclude Include="src\puzzles\ClownPicturePuzzle.h" />
+    <ClInclude Include="src\puzzles\MermaidMantlePuzzle.h" />
     <ClInclude Include="src\puzzles\OilBedKnobPuzzle.h" />
     <ClInclude Include="src\triggers\BBTriggerFactory.h" />
     <ClInclude Include="src\triggers\PlayerDeath.h" />

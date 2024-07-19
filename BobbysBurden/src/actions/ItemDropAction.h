@@ -5,8 +5,8 @@ class ItemDropAction : public Action
 {
 
 public:
-	ItemDropAction(Json::Value properties)
-		:Action(properties) {}
+	ItemDropAction(Json::Value properties, GameObject* parent)
+		:Action(properties, parent) {}
 
 	void perform(GameObject* gameObject) override;
 

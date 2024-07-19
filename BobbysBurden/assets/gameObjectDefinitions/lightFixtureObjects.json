@@ -44,6 +44,58 @@
             ]
         },
         {
+            "type": "CANDLE_2",
+            "traitTags": ["toggle_switch"], //Objects with the toggle_switch trait will propogate on/off states through all children
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CANDLE_2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 30,
+                        "height": 40
+                    }
+
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "LIGHT_CIRCLE_FLICKER",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -20
+                            },
+                            "size": {
+                                "width": 160,
+                                "height": 160
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIGHT_DIAMOND_FLICKER",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -20
+                            },
+                            "size": {
+                                "width": 64,
+                                "height": 64
+                            }
+
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+
+
+            ]
+        },
+        {
             "type": "BOBBYS_LAMP",
             "traitTags": [],
             "components": [
@@ -115,7 +167,7 @@
                     "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childObjects": [
                         {
-                            "gameObjectType": "LIGHT_CIRCLE_FLICKER",
+                            "gameObjectType": "LIGHT_CIRCLE",
                             "size": {
                                 "width": 512,
                                 "height": 512
@@ -123,6 +175,52 @@
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": -16
+                            },
+                            "beginStates": [
+                                "GameObjectState::ON"
+                            ]
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [
+                        "GameObjectState::ON"
+                    ]
+                }
+
+            ]
+        },
+        {
+            "type": "WALLLAMP_2",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WALLLAMP_2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 48,
+                        "height": 48
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "LIGHT_CIRCLE",
+                            "size": {
+                                "width": 512,
+                                "height": 512
+                            },
+                            "absolutePositionSlot": {
+                                "x": -14,
+                                "y": -14
                             },
                             "beginStates": [
                                 "GameObjectState::ON"

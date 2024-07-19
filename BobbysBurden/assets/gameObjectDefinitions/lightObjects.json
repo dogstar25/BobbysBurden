@@ -64,6 +64,38 @@
             ]
         },
         {
+            "type": "LIGHT_CIRCLE",
+            "traitTags": [ "abstract", "light_emission" ],
+            "description": "Light Circle",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_LIGHT_CIRCLE",
+                    "textureBlendMode": "RenderBlendMode::BLEND",
+                    "color": {
+                        "tint": "Colors::CANDLE_LIGHT",
+                        "alpha": 255
+                    }
+
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "LIGHT_COMPONENT",
+                    "type": "LightType::TEXTURE_LIGHT",
+                    "flicker": false
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
+        },
+        {
             "type": "LIGHT_CIRCLE_FLICKER",
             "traitTags": [ "abstract", "light_emission" ],
             "description": "Light Circle",

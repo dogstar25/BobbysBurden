@@ -16,73 +16,73 @@
 
 
 
-std::shared_ptr<Action> BBActionFactory::create(std::string actionType, Json::Value properties)
+std::shared_ptr<Action> BBActionFactory::create(std::string actionType, Json::Value properties, GameObject* parent)
 {
     std::shared_ptr<Action> action;
 
     if (actionType == "CustomAction") {
 
-        action = std::make_shared<NoAction>(properties);
+        action = std::make_shared<NoAction>(properties, parent);
     }
     else if (actionType == "DoorToggleAction") {
 
-        action = std::make_shared<DoorToggleAction>(properties);
+        action = std::make_shared<DoorToggleAction>(properties, parent);
     }
     else if (actionType == "DoorEnterAction") {
 
-        action = std::make_shared<DoorEnterAction>(properties);
+        action = std::make_shared<DoorEnterAction>(properties, parent);
     }
     else if (actionType == "BobbyMoveAction") {
 
-        action = std::make_shared<BobbyMoveAction>(properties);
+        action = std::make_shared<BobbyMoveAction>(properties, parent);
     }
     else if (actionType == "HideUnderBedAction") {
 
-        action = std::make_shared<HideUnderBedAction>(properties);
+        action = std::make_shared<HideUnderBedAction>(properties, parent);
     }
     else if (actionType == "OilBedKnobAction") {
 
-        action = std::make_shared<OilBedKnobAction>(properties);
+        action = std::make_shared<OilBedKnobAction>(properties, parent);
     }
     else if (actionType == "TwistBedKnobAction") {
 
-        action = std::make_shared<TwistBedKnobAction>(properties);
+        action = std::make_shared<TwistBedKnobAction>(properties, parent);
     }
     else if (actionType == "ShowInterfaceAction") {
 
-        action = std::make_shared<ShowInterfaceAction>(properties);
+        action = std::make_shared<ShowInterfaceAction>(properties, parent);
     }
     else if (actionType == "HideInterfaceAction") {
 
-        action = std::make_shared<HideInterfaceAction>(properties);
+        action = std::make_shared<HideInterfaceAction>(properties, parent);
     }
     else if (actionType == "ToggleBobbyInventory") {
 
-        action = std::make_shared<ToggleBobbyInventory>(properties);
+        action = std::make_shared<ToggleBobbyInventory>(properties, parent);
     }
     else if (actionType == "ItemDragTreatmentAction") {
 
-        action = std::make_shared<ItemDragTreatmentAction>(properties);
+        action = std::make_shared<ItemDragTreatmentAction>(properties, parent);
     }
     else if (actionType == "ItemDropAction") {
 
-        action = std::make_shared<ItemDropAction>(properties);
+        action = std::make_shared<ItemDropAction>(properties, parent);
     }
     else if (actionType == "DisableProximityHintAction") {
 
-        action = std::make_shared<DisableProximityHintAction>(properties);
+        action = std::make_shared<DisableProximityHintAction>(properties, parent);
     }
     else if (actionType == "ToggleBobbyEquip") {
 
-        action = std::make_shared<ToggleBobbyEquipAction>(properties);
+        action = std::make_shared<ToggleBobbyEquipAction>(properties, parent);
     }
     else if (actionType == "PlayCutSceneAction") {
 
-        action = std::make_shared<PlayCutSceneAction>(properties);
+        action = std::make_shared<PlayCutSceneAction>(properties, parent);
     }
 
     else {
-        action = ActionFactory::create(actionType, properties);
+        action = ActionFactory::create(actionType, properties, parent);
     }
 
     return action;

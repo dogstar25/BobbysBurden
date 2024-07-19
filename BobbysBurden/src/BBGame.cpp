@@ -117,7 +117,10 @@ bool BBGame::init(
 	dresserShelfInventory->addItem("BOTTLE1");
 	dresserShelfInventory->refreshInventoryDisplay();
 
-	
+	const auto& denBookshelf = scene.getFirstGameObjectByName("denBookcaseShelf");
+	const auto& denBookshelfInventory = denBookshelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	denBookshelfInventory->addItem("BOOK_SEALIFE");
+
 	//Initialize the clock object
 	Clock::instance().init();
 

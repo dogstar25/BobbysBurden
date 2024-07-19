@@ -317,6 +317,7 @@
                         },
                         {
                             "gameObjectType": "LIT_AREA",
+                            "name": "denLitArea",
                             "standardSlot": "PositionAlignment::CENTER",
                             "isStepChild": true,
                             "layer": "GameLayer::FOREGROUND_2",
@@ -348,20 +349,20 @@
                         {
                             "gameObjectType": "WALLLAMP_1",
                             "absolutePositionSlot": {
-                                "x": -70,
-                                "y": -40
+                                "x": -140,
+                                "y": -80
                             },
                             "isStepChild": true,
                             "layer": "GameLayer::BACKGROUND_2"
                         },
                         {
-                            "gameObjectType": "WALLLAMP_1",
+                            "gameObjectType": "WALLLAMP_2",
                             "absolutePositionSlot": {
-                                "x": 70,
-                                "y": -40
+                                "x": 250,
+                                "y": -80
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_2"
+                            "layer": "GameLayer::MAIN"
                         },
                         {
                             "gameObjectType": "DOOR2_SIDE_LEFT",
@@ -379,7 +380,7 @@
                         {
                             "gameObjectType": "FIREPLACE_2",
                             "absolutePositionSlot": {
-                                "x": 0,
+                                "x": -32,
                                 "y": 0
                             },
                             "isStepChild": true,
@@ -388,7 +389,30 @@
                                 "width": 256,
                                 "height": 320
                             }
+                        },
+                        {
+                            "gameObjectType": "DOOR_FRONT_HIDDEN",
+                            "name": "secretDenDoor",
+                            "absolutePositionSlot": {
+                                "x": 129,
+                                "y": 80
+                            },
+                            "isStepChild": true,
+                            "beginStates": [ "GameObjectState::DISABLED_UPDATE" ],
+                            "layer": "GameLayer::BACKGROUND_3"
+                        },
+                        {
+                            "gameObjectType": "SECRET_DOORKNOB",
+                            "name":"secretDenDoorknob",
+                            "absolutePositionSlot": {
+                                "x": 140,
+                                "y": 80
+                            },
+                            "isStepChild": true,
+                            "beginStates": ["GameObjectState::DISABLED_RENDER"],
+                            "layer": "GameLayer::BACKGROUND_4"
                         }
+
                     ]
                 }
             ]

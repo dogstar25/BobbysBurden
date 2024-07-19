@@ -5,8 +5,8 @@ class DoorEnterAction : public Action
 {
 
 public:
-	DoorEnterAction(Json::Value properties)
-		:Action(properties) {}
+	DoorEnterAction(Json::Value properties, GameObject* parent)
+		:Action(properties,parent) {}
 
 	void perform(GameObject* interactingObject, GameObject* interactionObject) override;
 	void perform(GameObject* interactionObject) override;
