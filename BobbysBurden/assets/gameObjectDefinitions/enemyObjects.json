@@ -1,0 +1,58 @@
+{
+    "gameObjects": [
+
+
+        {
+            "type": "SPIDER",
+            "traitTags": [],
+            "description": "Spider",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 64,
+                        "height": 273
+                    }
+                },
+                {
+                    "id": "VITALITY_COMPONENT",
+                    "speed": 3,
+                    "health": 6
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::IDLE" ],
+                    "animationStates": [
+                        {
+                            "state": "GameObjectState::IDLE",
+                            "animationId": "IDLE"
+                        }
+
+                    ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "IDLE",
+                    "frameSize": {
+                        "width": 64,
+                        "height": 273
+                    },
+                    "animations": [
+                        {
+                            "id": "IDLE",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_SPIDER_IDLE",
+                            "speed": 5,
+                            "frames": 2
+                        }
+                    ]
+                }
+
+            ]
+
+        }
+    ]
+}

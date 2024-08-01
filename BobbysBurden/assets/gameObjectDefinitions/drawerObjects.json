@@ -503,7 +503,7 @@
         {
             "type": "BOOKCASE_1X3",
             "traitTags": [ "inventory", "inventory_closed", "receptacle", "save_me" ],
-            "description": "Bottom Drawer",
+            "description": "Bookcase Shelf",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",

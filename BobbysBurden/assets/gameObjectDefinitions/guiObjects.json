@@ -43,6 +43,7 @@
                             "gameObjectType": "HUD_INTERFACE_FRAME",
                             "standardSlot": "PositionAlignment::CENTER"
                         }
+
                     ]
                 },
                 {

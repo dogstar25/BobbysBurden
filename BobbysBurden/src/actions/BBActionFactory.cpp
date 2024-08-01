@@ -4,7 +4,7 @@
 #include "DoorEnterAction.h"
 #include "TwistBedKnobAction.h"
 #include "OilBedKnobAction.h"
-#include "HideUnderBedAction.h"
+#include "HideAction.h"
 #include "ShowInterfaceAction.h"
 #include "HideInterfaceAction.h"
 #include "ToggleBobbyInventory.h"
@@ -36,9 +36,9 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType, Json::Va
 
         action = std::make_shared<BobbyMoveAction>(properties, parent);
     }
-    else if (actionType == "HideUnderBedAction") {
+    else if (actionType == "HideAction") {
 
-        action = std::make_shared<HideUnderBedAction>(properties, parent);
+        action = std::make_shared<HideAction>(properties, parent);
     }
     else if (actionType == "OilBedKnobAction") {
 

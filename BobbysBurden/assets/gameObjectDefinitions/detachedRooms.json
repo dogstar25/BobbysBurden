@@ -1,0 +1,152 @@
+{
+    "gameObjects": [
+        {
+            "type": "BOBBYS_CLOSET",
+            "traitTags": [],
+            "description": "Bobbys Closet",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 608,
+                        "height": 320
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "WALL_BACKGROUND_TILE1_BIG",
+                            "isStepChild": false,
+                            "absolutePositionSlot": {
+                                "x": -48,
+                                "y": 0
+                            },
+                            "size": {
+                                "width": 512,
+                                "height": 320
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIT_AREA",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2",
+                            "size": {
+                                "width": 608,
+                                "height": 320
+                            }
+                        },
+                        {
+                            "gameObjectType": "PENDANT_LIGHT_1",
+                            "name": "bobbyClosetLightSwitch_TARGET",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -85
+                            },
+                            "size": {
+                                "width": 60,
+                                "height": 170
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_4"
+                        },
+                        {
+                            "gameObjectType": "LIGHT_SWITCH",
+                            "name": "bobbyClosetLightSwitch",
+                            "absolutePositionSlot": {
+                                "x": 100,
+                                "y": 0
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_4",
+                            "beginStates": [ "GameObjectState::ON" ]
+                        },
+                        {
+                            "gameObjectType": "DOOR_SIDE_RIGHT",
+                            "name": "bedroom1ClosetDoor",
+                            "absolutePositionSlot": {
+                                "x": 180,
+                                "y": 32
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_1"
+                        },
+                        {
+                            "gameObjectType": "TOILET_1",
+                            "absolutePositionSlot": {
+                                "x": -255,
+                                "y": 12
+                            },
+                            "size": {
+                                "width": 110,
+                                "height": 310
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "BATHTUB_1",
+                            "absolutePositionSlot": {
+                                "x": 32,
+                                "y": 100
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "SINK_1",
+                            "absolutePositionSlot": {
+                                "x": -128,
+                                "y": 100
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "MIRROR_2",
+                            "absolutePositionSlot": {
+                                "x": -124,
+                                "y": 0
+                            },
+                            "size": {
+                                "width": 75,
+                                "height": 100
+
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_3"
+                        },
+                        {
+                            "gameObjectType": "SPIDERWEB_1",
+                            "absolutePositionSlot": {
+                                "x": -185,
+                                "y": -84
+                            },
+                            "size": {
+                                "width": 230,
+                                "height": 150
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_1"
+                        },
+                        {
+                            "gameObjectType": "SPIDER",
+                            "absolutePositionSlot": {
+                                "x": -150,
+                                "y": -30
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
