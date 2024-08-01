@@ -84,6 +84,87 @@
             ]
         },
         {
+            "type": "SHELF_1X1",
+            "traitTags": [ "inventory", "receptacle", "inventory_open", "save_me" ],
+            "description": "Shelf",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 48,
+                        "height": 48
+                    }
+                },
+                {
+                    "id": "INVENTORY_COMPONENT",
+                    "maxCapacity": 1,
+                    "displayLayer": "GameLayer::GUI_1",
+                    "isAlwaysOpen": true
+
+                },
+                {
+                    "id": "GRID_DISPLAY_COMPONENT",
+                    "itemSize": 48,
+                    "itemPadding": 2,
+                    "rows": 1,
+                    "columns": 1,
+                    "marginPadding": {
+                        "x": 0,
+                        "y": 0
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::CLOSE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::CLOSE",
+                            "actionClass": "CloseShelfInventoryAction"
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "type": "WALL_SHELF_1",
             "traitTags": [],
             "description": "Shelf",

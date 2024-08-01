@@ -131,6 +131,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,6 +154,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -180,7 +182,7 @@
     <ClCompile Include="src\actions\BobbyMoveAction.cpp" />
     <ClCompile Include="src\actions\BBActionFactory.cpp" />
     <ClCompile Include="src\actions\DoorEnterAction.cpp" />
-    <ClCompile Include="src\actions\HideUnderBedAction.cpp" />
+    <ClCompile Include="src\actions\HideAction.cpp" />
     <ClCompile Include="src\actions\OilBedKnobAction.cpp" />
     <ClCompile Include="src\actions\HideInterfaceAction.cpp" />
     <ClCompile Include="src\actions\TwistBedKnobAction.cpp" />
@@ -240,7 +242,7 @@
     <ClInclude Include="src\actions\BobbyMoveAction.h" />
     <ClInclude Include="src\actions\BBActionFactory.h" />
     <ClInclude Include="src\actions\DoorEnterAction.h" />
-    <ClInclude Include="src\actions\HideUnderBedAction.h" />
+    <ClInclude Include="src\actions\HideAction.h" />
     <ClInclude Include="src\actions\OilBedKnobAction.h" />
     <ClInclude Include="src\actions\HideInterfaceAction.h" />
     <ClInclude Include="src\actions\TwistBedKnobAction.h" />
@@ -310,8 +312,10 @@
     <None Include="assets\gameObjectDefinitions\backRooms.json" />
     <None Include="assets\gameObjectDefinitions\bobbysRoomFurniture.json" />
     <None Include="assets\gameObjectDefinitions\commonObjects.json" />
+    <None Include="assets\gameObjectDefinitions\detachedRooms.json" />
     <None Include="assets\gameObjectDefinitions\doorObjects.json" />
     <None Include="assets\gameObjectDefinitions\drawerObjects.json" />
+    <None Include="assets\gameObjectDefinitions\enemyObjects.json" />
     <None Include="assets\gameObjectDefinitions\environmentObjects.json" />
     <None Include="assets\gameObjectDefinitions\guiObjects.json" />
     <None Include="assets\gameObjectDefinitions\householdObjects.json" />

@@ -2,6 +2,24 @@
 
     "gameObjects": [
         {
+            "type": "WALL_BACKGROUND_0",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WHITE_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 256,
+                        "height": 300
+                    }
+                }
+            ]
+        },
+        {
             "type": "WALL_BACKGROUND_SMALL_1",
             "traitTags": [],
             "description": "",
@@ -27,6 +45,24 @@
                 {
                     "id": "RENDER_COMPONENT",
                     "textureId": "TX_WALLPAPER_BIG_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 500,
+                        "height": 300
+                    }
+                }
+            ]
+        },
+        {
+            "type": "WALL_BACKGROUND_TILE1_BIG",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_TILE1_BIG"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",

@@ -92,8 +92,8 @@
                     ]
                 },
                 {
-                    "id": "LOC_0056_0152",
-                    //"id": "LOC_0029_0141",
+                    //"id": "LOC_0056_0152",
+                    "id": "LOC_0029_0141",
                     "gameObjectType": "BOBBY",
                     "name": "Player Bobby",
                     "layer": "GameLayer::MAIN",
@@ -194,11 +194,9 @@
             "groupName": "BOBBYS_CLOSET",
             "objects": [
                 {
-                    "id": "LOC_0165_0014",
-                    "gameObjectType": "DOOR_SIDE_RIGHT",
-                    "description": "Bedroom 1 closet door side version",
-                    "name": "bedroom1ClosetDoor",
-                    "layer": "GameLayer::MAIN"
+                    "id": "LOC_0151_0012",
+                    "gameObjectType": "BOBBYS_CLOSET",
+                    "layer": "GameLayer::BACKGROUND_5"
                 },
                 {
                     "id": "LOC_0150_0022",

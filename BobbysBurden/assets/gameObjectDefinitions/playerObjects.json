@@ -64,7 +64,11 @@
                             "collisionShape": "B2_BOX",
                             "friction": 0.2,
                             "restitution": 0.0,
-                            "density": 1000
+                            "density": 1000,
+                            "size": {
+                                "width": 60,
+                                "height": 99
+                            }
                         },
                         {
                             "contactTag": "ContactTag::PLAYER_TOUCH",

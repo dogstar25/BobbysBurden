@@ -36,6 +36,132 @@
                     }
                 }
             ]
+        },
+        {
+            "type": "TOILET_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_TOILET_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 100,
+                        "height": 315
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "sameSlotTreatment": "ChildSlotTreatment::HORIZONTAL",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "SHELF_1X1",
+                            "absolutePositionSlot": {
+                                "x": -32,
+                                "y": 22
+                            }
+                        }
+
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "BATHTUB_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BATHTUB_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 220,
+                        "height": 140
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "childObjects": [
+                        {
+                            "gameObjectType": "HIDING_SPOT",
+                            "description": "Bathtub",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 8
+                            },
+                            "size": {
+                                "width": 220,
+                                "height": 140
+                            }
+                        }
+
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "SINK_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_SINK_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 85,
+                        "height": 140
+                    }
+                }
+            ]
+        },
+        {
+            "type": "SPIDERWEB_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_SPIDERWEB_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 231,
+                        "height": 159
+                    }
+                }
+            ]
+        },
+        {
+            "type": "MIRROR_2",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_MIRROR_2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 129,
+                        "height": 161
+                    }
+                }
+            ]
         }
     ]
 }

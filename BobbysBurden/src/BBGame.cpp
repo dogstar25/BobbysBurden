@@ -69,10 +69,12 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/environmentObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/frontRooms");
 	GameObjectManager::instance().load("gameObjectDefinitions/backRooms");
+	GameObjectManager::instance().load("gameObjectDefinitions/detachedRooms");
 	GameObjectManager::instance().load("gameObjectDefinitions/lightFixtureObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/wallBackgroundObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/puzzleObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/puzzlePieceObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/enemyObjects");
 
 	//GameObjectManager::instance().load("gameObjectDefinitions/testObjects");
 
@@ -104,7 +106,9 @@ bool BBGame::init(
 	//Figure out a place to put this custom game type stuff later
 	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
 	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	playerInventory->addItem("PAPER_BALLOON");
+	playerInventory->addItem("MERMAID_1");
+	auto action = actionFactory->create("ToggleBobbyInventory", Json::Value{}, player->get());
+	action->perform(player->get());
 
 	const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");
 	const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
@@ -114,7 +118,7 @@ bool BBGame::init(
 	const auto& dresserShelf = scene.getFirstGameObjectByName("BOBBY_DRESSER_SHELF");
 	const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	dresserShelfInventory->addItem("OIL_CAN");
-	dresserShelfInventory->addItem("BOTTLE1");
+	dresserShelfInventory->addItem("PAPER_BALLOON");
 	dresserShelfInventory->refreshInventoryDisplay();
 
 	const auto& denBookshelf = scene.getFirstGameObjectByName("denBookcaseShelf");

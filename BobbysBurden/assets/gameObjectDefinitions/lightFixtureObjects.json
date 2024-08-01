@@ -527,6 +527,43 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "PENDANT_LIGHT_1",
+            "traitTags": [],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_PENDANT_LIGHT_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 79,
+                        "height": 239
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "ELECTRIC_ROOM_LIGHT_CIRCLE",
+                            "size": {
+                                "width": 800,
+                                "height": 800
+                            },
+                            "absolutePositionSlot": {
+                                "x": 10,
+                                "y": 84
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
         }
 
 

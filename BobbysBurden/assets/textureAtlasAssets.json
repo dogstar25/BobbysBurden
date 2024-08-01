@@ -1468,6 +1468,127 @@
                 "width": 64,
                 "height": 64
             }
+        },
+        {
+            "id": "TX_TOILET_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 591,
+                "y": 1641,
+                "width": 133,
+                "height": 347
+            }
+        },
+        {
+            "id": "TX_PENDANT_LIGHT_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 512,
+                "y": 1642,
+                "width": 77,
+                "height": 237
+            }
+        },
+        {
+            "id": "TX_BATHTUB_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 186,
+                "y": 1642,
+                "width": 323,
+                "height": 185
+            }
+        },
+        {
+            "id": "TX_TILE1_BIG",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 531,
+                "y": 1694,
+                "width": 543,
+                "height": 320
+            }
+        },
+        {
+            "id": "TX_SINK_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 54,
+                "y": 1642,
+                "width": 129,
+                "height": 225
+            }
+        },
+        {
+            "id": "TX_SPIDERWEB_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 727,
+                "y": 1697,
+                "width": 231,
+                "height": 159
+            }
+        },
+        {
+            "id": "TX_MIRROR_2",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 186,
+                "y": 1830,
+                "width": 129,
+                "height": 161
+            }
+        },
+        {
+            "id": "TX_SPIDER_IDLE",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1354,
+                "y": 1700,
+                "width": 128,
+                "height": 273
+            }
+        },
+        {
+            "id": "TX_SPIDER_HANGING_IDLE",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1610,
+                "y": 1700,
+                "width": 64,
+                "height": 273
+            }
+        },
+        {
+            "id": "TX_SPIDER_DROP",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1482,
+                "y": 1700,
+                "width": 192,
+                "height": 273
+            }
+        },
+        {
+            "id": "TX_SPIDER_RETREAT",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1610,
+                "y": 1700,
+                "width": 192,
+                "height": 273
+            }
         }
 
     ],

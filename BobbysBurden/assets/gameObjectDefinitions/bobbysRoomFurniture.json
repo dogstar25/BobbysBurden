@@ -24,10 +24,15 @@
                     "childPositionRelative": false,
                     "childObjects": [
                         {
-                            "gameObjectType": "BOBBYS_BEDSHEET",
+                            "gameObjectType": "HIDING_SPOT",
+                            "description": "Under the Bed",
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 8
+                            },
+                            "size": {
+                                "width": 124,
+                                "height": 32
                             }
                         },
                         {
@@ -159,9 +164,8 @@
             ]
         },
         {
-            "type": "BOBBYS_BEDSHEET",
+            "type": "HIDING_SPOT",
             "traitTags": ["abstract", "hiding_spot" ],
-            "description": "Bobby's BedSheet",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -187,7 +191,7 @@
                                     "InterfaceEvents::ON_LCLICK"
                                 ]
                             },
-                            "label": "Hide Under Sheets"
+                            "label": "Hide!"
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
@@ -219,7 +223,7 @@
                     "actions": [
                         {
                             "actionId": "Actions::USE",
-                            "actionClass": "HideUnderBedAction"
+                            "actionClass": "HideAction"
                         },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",

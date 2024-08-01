@@ -14,7 +14,7 @@ bool MermaidMantlePuzzle::isPuzzlePieceApplicable(GameObject* puzzlePieceObject)
 	bool isApplicable = false;
 
 	//Piece 1
-	if (puzzlePieceObject->type() == "PAPER_BALLOON") {
+	if (puzzlePieceObject->type() == "MERMAID_1") {
 
 		isApplicable = true;
 	}
@@ -29,7 +29,7 @@ void MermaidMantlePuzzle::applyPuzzlePiece(GameObject* puzzleObject, GameObject*
 	if (hasBeenSolved() == false) {
 
 		//Piece 1
-		if (puzzlePieceObject->type() == "PAPER_BALLOON") {
+		if (puzzlePieceObject->type() == "MERMAID_1") {
 
 			m_pieces[0] = true;
 

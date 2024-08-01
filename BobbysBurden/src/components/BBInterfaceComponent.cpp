@@ -89,6 +89,12 @@ bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATE
 			hasHigherPriority = true;
 		}
 
+		if (m_currentGameObjectInterfaceActive.value() != parent() &&
+			parent()->type() == "DOOR_SIDE_ENTRY_POINT") {
+
+			hasHigherPriority = true;
+		}
+
 		//Scenario where we are standing on the stairs area but we need the door to be available that is next to the stairs
 		if (parent()->type() == "DOOR_KNOB" &&
 			m_currentGameObjectInterfaceActive.value()->hasTrait(TraitTag::vertical_movement_zone)) {
