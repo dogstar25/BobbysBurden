@@ -91,29 +91,38 @@ void IMGuiDynamicInterfaceMenu::_buildInteractionRow(GameObject* interfaceGameOb
 
 	const auto& puzzleComponent = interfaceGameObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 	const auto& interfaceComponent = interfaceGameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
-	const auto clickEvent = interfaceComponent->eventActions().at(Actions::USE);
+
+
+	std::shared_ptr<InterfaceAction> clickEvent;
+
+	if (interfaceComponent->hasEvent(Actions::USE)) {
+
+		clickEvent = interfaceComponent->eventActions().at(Actions::USE);
+	}
 
 	ImGui::PushFont(m_normalFont);
 
 
 	//If the OnClick isAvailable, then show the green mouseclick image and the label that goes with the event
-	if (interfaceComponent->isEventAvailable(Actions::USE)) {
+	if (interfaceComponent->hasEvent(Actions::USE)) {
+		if (interfaceComponent->isEventAvailable(Actions::USE)) {
 
-		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
-		ImGui::SameLine();
-		ImGui::TextWrapped(clickEvent->label.c_str());
+			ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
+			ImGui::SameLine();
+			ImGui::TextWrapped(clickEvent->label.c_str());
 
-		//set the cursor
-		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_POINT");
-		SceneManager::instance().setMouseCursor(cursor);
+			//set the cursor
+			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_POINT");
+			SceneManager::instance().setMouseCursor(cursor);
 
-	}
-	else {
+		}
+		else {
 
-		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::GREY));
-		ImGui::SameLine();
-		ImGui::TextColored(util::SDLColorToImVec4(Colors::GREY), "[Locked]");
+			ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::GREY));
+			ImGui::SameLine();
+			ImGui::TextColored(util::SDLColorToImVec4(Colors::GREY), "[Locked]");
 
+		}
 	}
 
 	ImGui::PopFont();

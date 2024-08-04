@@ -80,6 +80,7 @@ namespace ContactTag {
 	inline constexpr int INTERACTABLE_OBJECT = 26;
 	inline constexpr int GAME_ITEM = 28;
 	inline constexpr int DOOR_KNOB = 29;
+	inline constexpr int FRIGHTING_OBJECT = 30;
 	
 
 }
@@ -111,6 +112,10 @@ namespace TraitTag {
 namespace Actions {
 	inline constexpr int STAIRS_MOVE = 30;
 	inline constexpr int EQUIP_LIGHT = 31;
+	inline constexpr int DEPLOY = 32;
+	inline constexpr int UNDEPLOY = 33;
+	inline constexpr int APPLY_SCARE = 34;
+	inline constexpr int REMOVE_SCARE = 35;
 
 }
 

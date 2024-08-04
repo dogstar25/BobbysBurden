@@ -171,6 +171,8 @@
   <ItemGroup>
     <ClCompile Include="src\actions\DisableProximityHintAction.cpp" />
     <ClCompile Include="src\actions\PlayCutSceneAction.cpp" />
+    <ClCompile Include="src\actions\ScareBobbyAction.cpp" />
+    <ClCompile Include="src\actions\SpiderDeployAction.cpp" />
     <ClCompile Include="src\actions\ToggleBobbyEquipAction.cpp" />
     <ClCompile Include="src\BBGameStateManager.cpp" />
     <ClCompile Include="src\components\BBStateComponent.cpp" />
@@ -221,6 +223,7 @@
     <ClCompile Include="src\particleEffects\BBParticleEffectsFactory.cpp" />
     <ClCompile Include="src\puzzles\BBPuzzleFactory.cpp" />
     <ClCompile Include="src\puzzles\ClownPicturePuzzle.cpp" />
+    <ClCompile Include="src\puzzles\KillSpiderPuzzle.cpp" />
     <ClCompile Include="src\puzzles\MermaidMantlePuzzle.cpp" />
     <ClCompile Include="src\puzzles\OilBedKnobPuzzle.cpp" />
     <ClCompile Include="src\Source.cpp" />
@@ -230,6 +233,8 @@
   <ItemGroup>
     <ClInclude Include="src\actions\DisableProximityHintAction.h" />
     <ClInclude Include="src\actions\PlayCutSceneAction.h" />
+    <ClInclude Include="src\actions\ScareBobbyAction.h" />
+    <ClInclude Include="src\actions\SpiderDeployAction.h" />
     <ClInclude Include="src\actions\ToggleBobbyEquipAction.h" />
     <ClInclude Include="src\BBEnvironmentEvents.h" />
     <ClInclude Include="src\BBGameStateManager.h" />
@@ -282,6 +287,7 @@
     <ClInclude Include="src\particleEffects\GameParticleEffects.h" />
     <ClInclude Include="src\puzzles\BBPuzzleFactory.h" />
     <ClInclude Include="src\puzzles\ClownPicturePuzzle.h" />
+    <ClInclude Include="src\puzzles\KillSpiderPuzzle.h" />
     <ClInclude Include="src\puzzles\MermaidMantlePuzzle.h" />
     <ClInclude Include="src\puzzles\OilBedKnobPuzzle.h" />
     <ClInclude Include="src\triggers\BBTriggerFactory.h" />

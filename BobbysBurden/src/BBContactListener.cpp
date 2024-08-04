@@ -83,7 +83,6 @@ void BBContactListener::handleContact(b2Contact* contact, b2Vec2 contactPoint)
 		}
 	}
 
-
 }
 
 

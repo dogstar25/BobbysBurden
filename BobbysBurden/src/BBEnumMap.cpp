@@ -21,6 +21,7 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("ContactTag::INTERACTABLE_OBJECT", ContactTag::INTERACTABLE_OBJECT);
 	addEnumItem("ContactTag::GAME_ITEM", ContactTag::GAME_ITEM);
 	addEnumItem("ContactTag::DOOR_KNOB", ContactTag::DOOR_KNOB);
+	addEnumItem("ContactTag::FRIGHTING_OBJECT", ContactTag::FRIGHTING_OBJECT);
 
 	
 	//Custom Component Types
@@ -40,6 +41,10 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("Actions::ENTER", Actions::ENTER);
 	addEnumItem("Actions::STAIRS_MOVE", Actions::STAIRS_MOVE);
 	addEnumItem("Actions::EQUIP_LIGHT", Actions::EQUIP_LIGHT);
+	addEnumItem("Actions::DEPLOY", Actions::DEPLOY);
+	addEnumItem("Actions::UNDEPLOY", Actions::UNDEPLOY);
+	addEnumItem("Actions::APPLY_SCARE", Actions::APPLY_SCARE);
+	addEnumItem("Actions::REMOVE_SCARE", Actions::REMOVE_SCARE);
 
 	//Traits
 	addEnumItem("hiding_spot", TraitTag::hiding_spot);

@@ -138,7 +138,7 @@
                         {
                             "gameObjectType": "SPIDER",
                             "absolutePositionSlot": {
-                                "x": -150,
+                                "x": -190,
                                 "y": -30
                             },
                             "isStepChild": true,

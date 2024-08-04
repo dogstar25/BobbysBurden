@@ -28,6 +28,7 @@ BBContactFilter::BBContactFilter()
 	m_contactMasks[PLAYER_TOUCH].set(GAME_ITEM);
 	m_contactMasks[PLAYER_TOUCH].set(PUZZLE_OBJECT);
 	m_contactMasks[PLAYER_TOUCH].set(INTERACTABLE_OBJECT);
+	m_contactMasks[PLAYER_TOUCH].set(FRIGHTING_OBJECT);
 	
 
 	//PLAYER_HITBOX
@@ -78,6 +79,10 @@ BBContactFilter::BBContactFilter()
 	m_contactMasks[PUZZLE_OBJECT].reset();
 	m_contactMasks[PUZZLE_OBJECT].set(PLAYER_TOUCH);
 	m_contactMasks[PUZZLE_OBJECT].set(GAME_ITEM);
+
+	//Frighting Object
+	m_contactMasks[FRIGHTING_OBJECT].reset();
+	m_contactMasks[FRIGHTING_OBJECT].set(PLAYER_TOUCH);
 
 }
 
