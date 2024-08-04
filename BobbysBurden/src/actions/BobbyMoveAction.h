@@ -13,4 +13,5 @@ public:
 
 private:
 	void _repositionEquippedItem(std::string gameObjectType, GameObject* bobbyObject);
+	SDL_Point _determineScaryDirection(GameObject* playerObject);
 };

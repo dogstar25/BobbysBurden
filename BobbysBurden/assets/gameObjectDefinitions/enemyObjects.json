@@ -4,7 +4,7 @@
 
         {
             "type": "SPIDER",
-            "traitTags": [],
+            "traitTags": [ "puzzle" ],
             "description": "Spider",
             "components": [
                 {
@@ -18,17 +18,30 @@
                     }
                 },
                 {
-                    "id": "VITALITY_COMPONENT",
-                    "speed": 3,
-                    "health": 6
-                },
-                {
                     "id": "BB_STATE_COMPONENT",
                     "beginStates": [ "GameObjectState::IDLE" ],
+                    "transitions": [
+                        {
+                            "from": "GameObjectState::IDLE",
+                            "to": "GameObjectState::DEPLOYED",
+                            "duration": 1.0,
+                            "animationId": "DROP"
+                        },
+                        {
+                            "from": "GameObjectState::DEPLOYED",
+                            "to": "GameObjectState::IDLE",
+                            "duration": 1.0,
+                            "animationId": "RETREAT"
+                        }
+                    ],
                     "animationStates": [
                         {
                             "state": "GameObjectState::IDLE",
                             "animationId": "IDLE"
+                        },
+                        {
+                            "state": "GameObjectState::DEPLOYED",
+                            "animationId": "DEPLOYED"
                         }
 
                     ]
@@ -47,12 +60,193 @@
                             "textureId": "TX_SPIDER_IDLE",
                             "speed": 5,
                             "frames": 2
+                        },
+                        {
+                            "id": "DROP",
+                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
+                            "textureId": "TX_SPIDER_DROP",
+                            "speed": 1,
+                            "frames": 3
+                        },
+                        {
+                            "id": "RETREAT",
+                            "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
+                            "textureId": "TX_SPIDER_RETREAT",
+                            "speed": 1,
+                            "frames": 2
+                        },
+                        {
+                            "id": "DEPLOYED",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_SPIDER_DEPLOYED",
+                            "speed": 0.1,
+                            "frames": 2
+                        }
+                    ]
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::DEPLOY",
+                            "actionClass": "SpiderDeployAction",
+                            "properties": [
+                                {
+                                    "actionType": "DEPLOY"
+                                }
+                            ]
+                        },
+                        {
+                            "actionId": "Actions::UNDEPLOY",
+                            "actionClass": "SpiderDeployAction",
+                            "properties": [
+                                {
+                                    "actionType": "UNDEPLOY"
+                                }
+                            ]
+
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        }
+
+
+
+                    ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "GENERIC_INTERFACE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::DEPLOY",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::UNDEPLOY",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::PUZZLE_OBJECT",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                },
+                {
+                    "id": "PUZZLE_COMPONENT",
+                    "clue": "You...don't do spiders.",
+                    "puzzleType": "KillSpiderPuzzle",
+                    "pieces": 1
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "SCARY_OBJECT",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 20
+                            }
                         }
                     ]
                 }
 
             ]
 
+        },
+        {
+            "type": "DEAD_SPIDER",
+            "traitTags": [
+                "puzzle_item",
+                "save_me"
+            ],
+            "description": "Dead Spider",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_DEAD_SPIDER"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 36,
+                        "height": 36
+                    }
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            "restitution": 0.5,
+                            "collisionShape": "B2_BOX",
+                            "density": 5,
+                            "friction": 5,
+                            "size": {
+                                "width": 32,
+                                "height": 16
+                            }
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

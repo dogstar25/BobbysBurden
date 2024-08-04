@@ -117,6 +117,17 @@
                                 "GameObjectState::DISABLED_COLLISION",
                                 "GameObjectState::OFF"
                             ]
+                        },
+                        {
+                            "gameObjectType": "NOPE_BUBBLE",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -90
+                            },
+                            "beginStates": [
+                                "GameObjectState::DISABLED_RENDER"
+                            ]
+
                         }
 
                     ]
@@ -309,6 +320,27 @@
 
             ]
 
+        },
+        {
+            "type": "NOPE_BUBBLE",
+            "traitTags": [],
+            "description": "Nope Speech Bubble",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_NOPE_BUBBLE"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 64,
+                        "height": 64
+                    }
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
         }
     ]
 }

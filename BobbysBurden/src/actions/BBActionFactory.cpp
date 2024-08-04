@@ -13,6 +13,8 @@
 #include "DisableProximityHintAction.h"
 #include "ToggleBobbyEquipAction.h"
 #include "PlayCutSceneAction.h"
+#include "SpiderDeployAction.h"
+#include "ScareBobbyAction.h"
 
 
 
@@ -79,6 +81,14 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType, Json::Va
     else if (actionType == "PlayCutSceneAction") {
 
         action = std::make_shared<PlayCutSceneAction>(properties, parent);
+    }
+    else if (actionType == "SpiderDeployAction") {
+
+        action = std::make_shared<SpiderDeployAction>(properties, parent);
+    }
+    else if (actionType == "ScareBobbyAction") {
+
+        action = std::make_shared<ScareBobbyAction>(properties, parent);
     }
 
     else {

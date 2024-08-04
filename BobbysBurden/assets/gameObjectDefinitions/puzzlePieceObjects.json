@@ -222,6 +222,51 @@
                     "id": "BB_STATE_COMPONENT"
                 }
             ]
+        },
+        {
+            "type": "BUGSPRAY",
+            "traitTags": [ "puzzle_item", "save_me" ],
+            "description": "Bug Spray",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BUGSPRAY"
+                },
+                {
+                    "id": "[item64_TRANSFORM_COMPONENT]"
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "gravityScale": 0,
+                    "linearDamping": 0.0,
+                    "angularDamping": 5.0,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 18,
+                                "height": 48
+                            },
+                            "density": 1,
+                            "friction": 25
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
         }
     ]
 }

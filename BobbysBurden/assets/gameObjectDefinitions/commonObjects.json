@@ -835,6 +835,87 @@
                 }
 
             ]
+        },
+        {
+            "type": "SCARY_OBJECT",
+            "traitTags": ["abstract"],
+            "description": "Generic Scary object that can be added as a child to any object",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 10,
+                        "height": 10
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "collisionShape": "B2_BOX",
+                            "density": 1,
+                            "friction": 1,
+                            "isSensor": true
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::APPLY_SCARE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_SCARE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::APPLY_SCARE",
+                            "actionClass": "ScareBobbyAction",
+                            "properties": [
+                                {
+                                    "parm": "applyScare"
+                                }
+                            ]
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_SCARE",
+                            "actionClass": "ScareBobbyAction",
+                            "properties": [
+                                {
+                                    "parm": "removeScare"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

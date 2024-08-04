@@ -12,6 +12,31 @@ void BobbyMoveAction::perform(GameObject* playerGameObject, int direction, int s
 	const auto& stateComponent = playerGameObject->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 	const auto& vitalityComponent = playerGameObject->getComponent<VitalityComponent>(ComponentTypes::VITALITY_COMPONENT);
 
+	//If bobby is scared then determine direction of scary object and do not allow bobby to move that direction
+	if (stateComponent->testState(GameObjectState::SCARED)) {
+
+		//x=0, scary on left
+		//x=1, scary on right
+		//y=0, scary up
+		//y=1, scary down
+		SDL_Point scaryDirection = _determineScaryDirection(playerGameObject);
+		
+		if (scaryDirection.x == 0 && strafe == -1) {
+			strafe = 0;
+		}
+		else if (scaryDirection.x == 1 && strafe == 1) {
+			strafe = 0;
+		}
+
+		if (scaryDirection.y == 0 && direction == -1) {
+			direction = 0;
+		}
+		else if (scaryDirection.y == 1 && direction == 1) {
+			direction = 0;
+		}
+
+	}
+
 	physicsComponent->applyMovement(vitalityComponent->speed(), direction, strafe);
 
 	//Get the entire before state so we can compare later to see if anything changed
@@ -222,4 +247,35 @@ void BobbyMoveAction::_repositionEquippedItem(std::string gameObjectType, GameOb
 	}
 
 
+}
+
+SDL_Point BobbyMoveAction::_determineScaryDirection(GameObject* playerObject)
+{
+
+	const auto& scaryObject = playerObject->getFirstTouchingByType("SCARY_OBJECT");
+	SDL_Point directionIndicator{};
+
+	if (scaryObject.has_value() && scaryObject.value().expired() == false) {
+
+		auto scaryObjectLocation = scaryObject.value().lock()->getCenterPosition();
+		auto playerLocation = playerObject->getCenterPosition();
+
+
+		if (scaryObjectLocation.x < playerLocation.x) {
+
+			directionIndicator.x = 0;
+		}
+		else {
+			directionIndicator.x = 1;
+		}
+
+		if (scaryObjectLocation.y < playerLocation.y) {
+
+			directionIndicator.y = 0;
+		}
+		else {
+			directionIndicator.y = 1;
+		}
+	}
+	return directionIndicator;
 }

@@ -1166,7 +1166,7 @@
             "description": "Smoke particle",
             "atlas": "TEXTURE_ATLAS_2",
             "quadPosition": {
-                "x": 398,
+                "x": 926,
                 "y": 54,
                 "width": 64,
                 "height": 64
@@ -1584,10 +1584,54 @@
             "description": "",
             "atlas": "TEXTURE_ATLAS_2",
             "quadPosition": {
+                "x": 1738,
+                "y": 1700,
+                "width": 128,
+                "height": 273
+            }
+        },
+        {
+            "id": "TX_SPIDER_DEPLOYED",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
                 "x": 1610,
                 "y": 1700,
-                "width": 192,
+                "width": 128,
                 "height": 273
+            }
+        },
+        {
+            "id": "TX_NOPE_BUBBLE",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1057,
+                "y": 54,
+                "width": 64,
+                "height": 64
+            }
+        },
+        {
+            "id": "TX_BUGSPRAY",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1123,
+                "y": 54,
+                "width": 64,
+                "height": 64
+            }
+        },
+        {
+            "id": "TX_DEAD_SPIDER",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1189,
+                "y": 54,
+                "width": 64,
+                "height": 64
             }
         }
 
