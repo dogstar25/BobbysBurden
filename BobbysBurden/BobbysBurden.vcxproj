@@ -304,10 +304,13 @@
     <Image Include="assets\levels\test_blueprint.png" />
     <Image Include="assets\textureAtlas00.png" />
     <Image Include="assets\textureAtlas01.png" />
+    <Image Include="assets\textureAtlas01_old.png" />
+    <Image Include="assets\textureAtlas01_save.png" />
     <Image Include="assets\textureAtlas02.png" />
     <Image Include="assets\textureAtlas03.png" />
     <Image Include="assets\textureAtlas04.png" />
     <Image Include="assets\textureAtlas05.png" />
+    <Image Include="assets\textureAtlas06.png" />
     <Image Include="assets\textureAtlasImGui.png" />
     <Image Include="assets\window_shadow1.png" />
   </ItemGroup>
