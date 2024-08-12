@@ -13,8 +13,8 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 64,
-                        "height": 112
+                        "width": 80,
+                        "height": 144
                     }
                 },
                 {
@@ -66,8 +66,8 @@
                             "restitution": 0.0,
                             "density": 1000,
                             "size": {
-                                "width": 60,
-                                "height": 99
+                                "width": 75,
+                                "height": 115
                             }
                         },
                         {
@@ -207,8 +207,8 @@
                     "id": "ANIMATION_COMPONENT",
                     "default": "IDLE_RIGHT",
                     "frameSize": {
-                        "width": 89,
-                        "height": 116
+                        "width": 64,
+                        "height": 128
                     },
                     "animations": [
                         {
@@ -228,21 +228,21 @@
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_RIGHT",
                             "speed": 0.01,
-                            "frames": 24
+                            "frames": 25
                         },
                         {
                             "id": "WALK_LEFT",
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_LEFT",
                             "speed": 0.01,
-                            "frames": 24
+                            "frames": 25
                         },
                         {
                             "id": "WALK_DOWN",
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_DOWN_STAIRS",
                             "speed": 0.01,
-                            "frames": 4
+                            "frames": 9
                         },
                         {
                             "id": "WALK_DOWN_IDLE",
@@ -255,7 +255,7 @@
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_UP_STAIRS",
                             "speed": 0.01,
-                            "frames": 4
+                            "frames": 9
                         },
                         {
                             "id": "WALK_UP_IDLE",
@@ -280,21 +280,21 @@
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_RIGHT_EQUIPPED",
                             "speed": 0.01,
-                            "frames": 24
+                            "frames": 25
                         },
                         {
                             "id": "WALK_LEFT_EQUIPPED",
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_LEFT_EQUIPPED",
                             "speed": 0.01,
-                            "frames": 24
+                            "frames": 25
                         },
                         {
                             "id": "WALK_DOWN_EQUIPPED",
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_DOWN_STAIRS_EQUIPPED",
-                            "speed": 0.1,
-                            "frames": 4
+                            "speed": 0.01,
+                            "frames": 9
                         },
                         {
                             "id": "WALK_DOWN_IDLE_EQUIPPED",
@@ -306,8 +306,8 @@
                             "id": "WALK_UP_EQUIPPED",
                             "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
                             "textureId": "TX_BOBBY_WALK_UP_STAIRS_EQUIPPED",
-                            "speed": 0.1,
-                            "frames": 4
+                            "speed": 0.01,
+                            "frames": 9
                         },
                         {
                             "id": "WALK_UP_IDLE_EQUIPPED",

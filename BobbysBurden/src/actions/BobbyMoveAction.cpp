@@ -224,25 +224,26 @@ void BobbyMoveAction::_repositionEquippedItem(std::string gameObjectType, GameOb
 	if (stateComponent->testState(GameObjectState::WALK_RIGHT_EQUIPPED) ||
 		stateComponent->testState(GameObjectState::IDLE_RIGHT_EQUIPPED)){
 
-		childrenComponent->changeChildPosition(gameObjectType, { 38., -20. });
+		childrenComponent->changeChildPosition(gameObjectType, { 36., -10. });
 
 	}
 	else if (stateComponent->testState(GameObjectState::WALK_LEFT_EQUIPPED) ||
 		stateComponent->testState(GameObjectState::IDLE_LEFT_EQUIPPED)){
 
-		childrenComponent->changeChildPosition(gameObjectType, { -38., -20. });
+		childrenComponent->changeChildPosition(gameObjectType, { -36., -10. });
 
 	}
 	else if (stateComponent->testState(GameObjectState::WALK_UP_EQUIPPED) ||
 		stateComponent->testState(GameObjectState::IDLE_UP_EQUIPPED)) {
 
-		childrenComponent->changeChildPosition(gameObjectType, { 30., -12. });
+		childrenComponent->changeChildPosition(gameObjectType, { -26., -14. });
 
 	}
 	else if (stateComponent->testState(GameObjectState::IDLE_DOWN_EQUIPPED) ||
 		stateComponent->testState(GameObjectState::WALK_DOWN_EQUIPPED)) {
 
-		childrenComponent->changeChildPosition(gameObjectType, { -8., 0. });
+		
+		childrenComponent->changeChildPosition(gameObjectType, { 30., -12. });
 
 	}
 

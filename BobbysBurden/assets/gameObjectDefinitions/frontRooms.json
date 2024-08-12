@@ -268,6 +268,36 @@
                             },
                             "isStepChild": true,
                             "layer": "GameLayer::BACKGROUND_1"
+                        },
+                        {
+                            "gameObjectType": "BED_3",
+                            "absolutePositionSlot": {
+                                "x": 116,
+                                "y": 46
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_3"
+                        },
+                        {
+                            "gameObjectType": "CEILING_LIGHT_1",
+                            "name": "guestRoomLightSwitch_TARGET",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -112
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_4"
+                        },
+                        {
+                            "gameObjectType": "LIGHT_SWITCH",
+                            "name": "guestRoomLightSwitch",
+                            "absolutePositionSlot": {
+                                "x": -220,
+                                "y": 0
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_4",
+                            "beginStates": [ "GameObjectState::ON" ]
                         }
 
                     ]

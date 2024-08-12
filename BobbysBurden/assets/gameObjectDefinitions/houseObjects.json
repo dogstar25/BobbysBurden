@@ -498,6 +498,24 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "BED_3",
+            "traitTags": [],
+            "description": "Bed",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BED3"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 275,
+                        "height": 200
+                    }
+                }
+            ]
         }
     ]
 }

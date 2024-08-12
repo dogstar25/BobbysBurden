@@ -42,7 +42,7 @@
                     "textureId": "TX_LIGHT_CIRCLE",
                     "textureBlendMode": "RenderBlendMode::BLEND",
                     "color": {
-                        "tint": "Colors::CANDLE_LIGHT",
+                        "tint": "Colors::WHITE",
                         "alpha": 255
                     }
 
@@ -170,7 +170,7 @@
                     "textureBlendMode": "RenderBlendMode::BLEND",
                     "color": {
                         "tint": "Colors::WHITE",
-                        "alpha": 10
+                        "alpha": 50
                     }
 
                 },
