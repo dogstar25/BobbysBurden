@@ -171,6 +171,7 @@
   <ItemGroup>
     <ClCompile Include="src\actions\DisableProximityHintAction.cpp" />
     <ClCompile Include="src\actions\PlayCutSceneAction.cpp" />
+    <ClCompile Include="src\actions\PushGuestBedButtonAction.cpp" />
     <ClCompile Include="src\actions\ScareBobbyAction.cpp" />
     <ClCompile Include="src\actions\SpiderDeployAction.cpp" />
     <ClCompile Include="src\actions\ToggleBobbyEquipAction.cpp" />
@@ -233,6 +234,7 @@
   <ItemGroup>
     <ClInclude Include="src\actions\DisableProximityHintAction.h" />
     <ClInclude Include="src\actions\PlayCutSceneAction.h" />
+    <ClInclude Include="src\actions\PushGuestBedButtonAction.h" />
     <ClInclude Include="src\actions\ScareBobbyAction.h" />
     <ClInclude Include="src\actions\SpiderDeployAction.h" />
     <ClInclude Include="src\actions\ToggleBobbyEquipAction.h" />
@@ -326,6 +328,7 @@
     <None Include="assets\gameObjectDefinitions\drawerObjects.json" />
     <None Include="assets\gameObjectDefinitions\enemyObjects.json" />
     <None Include="assets\gameObjectDefinitions\environmentObjects.json" />
+    <None Include="assets\gameObjectDefinitions\furnitureObjects.json" />
     <None Include="assets\gameObjectDefinitions\guiObjects.json" />
     <None Include="assets\gameObjectDefinitions\householdObjects.json" />
     <None Include="assets\gameObjectDefinitions\houseObjects.json" />

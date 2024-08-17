@@ -751,6 +751,120 @@
             ]
         },
         {
+            "type": "CHEST_1X1_INVENTORY_DISPLAY",
+            "traitTags": [ "gui", "inventory", "inventory_display" ],
+            "description": "Drawer",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WALL_SHELF_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 130,
+                        "height": 82
+                    }
+                },
+                {
+                    "id": "GRID_DISPLAY_COMPONENT",
+                    "itemSize": 64,
+                    "itemPadding": 10,
+                    "rows": 1,
+                    "columns": 1,
+                    "marginPadding": {
+                        "x": 0,
+                        "y": 4
+                    },
+                    "slotBackgroundImage": "GRID_SLOT_BOX"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX"
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "OPEN_CLOSE_RECEPTACLE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_LCLICK"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "actionClass": "ButtonCloseInventoryAction"
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        }
+
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "INVENTORY_CLOSE_BUTTON",
+                            "absolutePositionSlot": {
+                                "x": -60,
+                                "y": -16
+                            }
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+
+            ]
+        },
+        {
             "type": "INVENTORY_CLOSE_BUTTON",
             "traitTags": [ "gui" ],
             "components": [

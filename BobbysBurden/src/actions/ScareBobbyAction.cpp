@@ -14,7 +14,7 @@ void ScareBobbyAction::perform(GameObject* scaryObject)
 
 	const auto& nopeBubble = childrenComponent->getFirstChildByType("NOPE_BUBBLE");
 
-	scareType = util::getJsonProperty("parm", m_properties).asString();
+	scareType = getActionProperty("parm").asString();
 
 	if (scareType == "applyScare" && bobby.value()->hasState(GameObjectState::SCARED) == false) {
 

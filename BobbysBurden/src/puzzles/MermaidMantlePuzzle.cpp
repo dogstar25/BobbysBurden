@@ -68,6 +68,7 @@ void MermaidMantlePuzzle::applyPuzzlePiece(GameObject* puzzleObject, GameObject*
 
 		//light the canle on the shelf
 		const auto& candle = puzzleObject->parentScene()->getFirstGameObjectByName("denCandleSecretDoor");
+		//candle.value()->addState(GameObjectState::ON);
 		std::shared_ptr<Action> onOffToggleAction = std::make_shared<OnOffToggleAction>(Json::Value(), candle.value().get());
 		onOffToggleAction->perform(candle.value().get());
 

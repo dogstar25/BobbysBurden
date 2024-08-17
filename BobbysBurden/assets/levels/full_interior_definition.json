@@ -93,7 +93,7 @@
                 },
                 {
                     //"id": "LOC_0056_0152",
-                    "id": "LOC_0029_0141",
+                    "id": "LOC_0048_0141",
                     "gameObjectType": "BOBBY",
                     "name": "Player Bobby",
                     "layer": "GameLayer::MAIN",
@@ -254,16 +254,6 @@
                     "id": "LOC_0043_0134",
                     "gameObjectType": "GUEST_BEDROOM",
                     "layer": "GameLayer::BACKGROUND_5"
-                },
-                {
-                    "id": "LOC_0050_0136",
-                    "gameObjectType": "BRICK_WALL_DYNAMIC_1",
-                    "layer": "GameLayer::MAIN"
-                },
-                {
-                    "id": "LOC_0054_0140",
-                    "gameObjectType": "BRICK_WALL_DYNAMIC_1",
-                    "layer": "GameLayer::MAIN"
                 },
                 {
                     "id": "LOC_0042_0144",

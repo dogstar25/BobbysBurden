@@ -29,7 +29,7 @@ void ToggleBobbyEquipAction::_disableCandle(GameObject* gameObject)
 
 	candle.value()->disableRender();
 	candle.value()->addState(GameObjectState::OFF);
-	util::propogateStateToAllChildren(candle.value().get(), GameObjectState::OFF);
+	StateComponent::propogateStateToAllChildren(candle.value().get(), GameObjectState::OFF);
 
 }
 
@@ -42,7 +42,7 @@ void ToggleBobbyEquipAction::_enableCandle(GameObject* gameObject)
 
 	candle.value()->enableRender();
 	candle.value()->addState(GameObjectState::ON);
-	util::propogateStateToAllChildren(candle.value().get(), GameObjectState::ON);
+	StateComponent::propogateStateToAllChildren(candle.value().get(), GameObjectState::ON);
 
 
 

@@ -345,6 +345,77 @@
             ]
         },
         {
+            "type": "INVISIBLE_STAIRS",
+            "traitTags": [
+                "vertical_movement_zone"
+            ],
+            "description": "Stairs",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 64
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::STAIRS_TOUCH",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "GO_UP_DOWN_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
+        },
+        {
             "type": "HOUSE_BEAM",
             "traitTags": [
                 "abstract"
@@ -514,6 +585,94 @@
                         "width": 275,
                         "height": 200
                     }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "GUEST_BED_BUTTON",
+                            "absolutePositionSlot": {
+                                "x": -110,
+                                "y": 65
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_FREE",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "INSET_SHELVES",
+            "traitTags": [],
+            "description": "Inset SHelves",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_INSET_SHELVES"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 159,
+                        "height": 173
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "SHELF_1X3",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -65
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "CHEST_1",
+            "traitTags": [],
+            "description": "Small Chest",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CHEST_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 128,
+                        "height": 64
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CHEST_CONTAINER_1X1",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "size": {
+                                "width": 100,
+                                "height": 32
+                            }
+                        }
+                    ]
                 }
             ]
         }

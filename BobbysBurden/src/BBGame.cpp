@@ -75,6 +75,7 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/puzzleObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/puzzlePieceObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/enemyObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/furnitureObjects");
 
 	//GameObjectManager::instance().load("gameObjectDefinitions/testObjects");
 
