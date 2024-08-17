@@ -2,7 +2,7 @@
     "gameObjects": [
         {
             "type": "LIGHT_DIAMOND_FLICKER",
-            "traitTags": [ "abstract", "light_emission" ],
+            "traitTags": [ "abstract", "light_emission", "toggleable" ],
             "description": "Light Diamond",
             "components": [
                 {
@@ -25,7 +25,8 @@
                 {
                     "id": "LIGHT_COMPONENT",
                     "type": "LightType::TEXTURE_LIGHT",
-                    "flicker": true
+                    "flicker": true,
+                    "brightness": 100
                 },
                 {
                     "id": "BB_STATE_COMPONENT"
@@ -34,7 +35,7 @@
         },
         {
             "type": "ELECTRIC_ROOM_LIGHT_CIRCLE",
-            "traitTags": [ "abstract", "light_emission" ],
+            "traitTags": [ "abstract", "light_emission", "toggleable" ],
             "description": "Light Circle",
             "components": [
                 {
@@ -56,7 +57,8 @@
                 },
                 {
                     "id": "LIGHT_COMPONENT",
-                    "type": "LightType::TEXTURE_LIGHT"
+                    "type": "LightType::TEXTURE_LIGHT",
+                    "brightness": 100
                 },
                 {
                     "id": "BB_STATE_COMPONENT"
@@ -65,7 +67,7 @@
         },
         {
             "type": "LIGHT_CIRCLE",
-            "traitTags": [ "abstract", "light_emission" ],
+            "traitTags": [ "abstract", "light_emission", "toggleable" ],
             "description": "Light Circle",
             "components": [
                 {
@@ -88,7 +90,8 @@
                 {
                     "id": "LIGHT_COMPONENT",
                     "type": "LightType::TEXTURE_LIGHT",
-                    "flicker": false
+                    "flicker": false,
+                    "brightness": 100
                 },
                 {
                     "id": "BB_STATE_COMPONENT"
@@ -97,7 +100,7 @@
         },
         {
             "type": "LIGHT_CIRCLE_FLICKER",
-            "traitTags": [ "abstract", "light_emission" ],
+            "traitTags": [ "abstract", "light_emission", "toggleable" ],
             "description": "Light Circle",
             "components": [
                 {
@@ -120,7 +123,8 @@
                 {
                     "id": "LIGHT_COMPONENT",
                     "type": "LightType::TEXTURE_LIGHT",
-                    "flicker": true
+                    "flicker": true,
+                    "brightness": 100
                 },
                 {
                     "id": "BB_STATE_COMPONENT"
@@ -152,7 +156,8 @@
                 {
                     "id": "LIGHT_COMPONENT",
                     "type": "LightType::TEXTURE_LIGHT",
-                    "flicker": false
+                    "flicker": false,
+                    "brightness": 100
                 },
                 {
                     "id": "BB_STATE_COMPONENT"
@@ -188,7 +193,7 @@
         },
         {
             "type": "LIGHT_ITEM_HIGHLIGHT_CIRCLE",
-            "traitTags": [ "abstract", "light_emission" ],
+            "traitTags": [ "abstract", "light_emission", "toggleable" ],
             "description": "Light Circle",
             "components": [
                 {
@@ -210,7 +215,8 @@
                 },
                 {
                     "id": "LIGHT_COMPONENT",
-                    "type": "LightType::TEXTURE_LIGHT"
+                    "type": "LightType::TEXTURE_LIGHT",
+                    "brightness": 100
                 },
                 {
                     "id": "VITALITY_COMPONENT",

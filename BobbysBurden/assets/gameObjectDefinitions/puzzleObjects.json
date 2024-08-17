@@ -415,6 +415,132 @@
                 }
 
             ]
+        },
+        {
+            "type": "GUEST_BED_BUTTON",
+            "traitTags": [ "save_me","abstract" ],
+            "description": "Guest Bed Button",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WHITE_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 12,
+                        "height": 12
+                    }
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "GENERIC_INTERFACE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "label": "Push",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_LCLICK"
+                                ]
+                            }
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "actionClass": "PushGuestBedButtonAction"
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "actionClass": "DisableProximityHintAction"
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "PUZZLE_HINT_SENSOR_BOX",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 64,
+                                "height": 64
+                            }
+                        }
+
+                    ]
+
+                }
+
+            ]
+
         }
     ]
 }

@@ -81,6 +81,7 @@ namespace ContactTag {
 	inline constexpr int GAME_ITEM = 28;
 	inline constexpr int DOOR_KNOB = 29;
 	inline constexpr int FRIGHTING_OBJECT = 30;
+	inline constexpr int BED_STAIRS = 31;
 	
 
 }

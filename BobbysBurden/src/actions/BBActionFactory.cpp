@@ -15,6 +15,7 @@
 #include "PlayCutSceneAction.h"
 #include "SpiderDeployAction.h"
 #include "ScareBobbyAction.h"
+#include "PushGuestBedButtonAction.h"
 
 
 
@@ -89,6 +90,10 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType, Json::Va
     else if (actionType == "ScareBobbyAction") {
 
         action = std::make_shared<ScareBobbyAction>(properties, parent);
+    }
+    else if (actionType == "PushGuestBedButtonAction") {
+
+        action = std::make_shared<PushGuestBedButtonAction>(properties, parent);
     }
 
     else {

@@ -5,6 +5,7 @@ extern std::unique_ptr<Game> game;
 void ItemDropAction::perform(GameObject* droppedGameObject)
 {
 
+	
 	//Did we drop onto an inventory holding gameObject
 	if (droppedGameObject->isTouchingByTrait(TraitTag::inventory)) {
 
@@ -15,8 +16,11 @@ void ItemDropAction::perform(GameObject* droppedGameObject)
 
 		const auto& puzzleObject = droppedGameObject->getFirstTouchingByTrait(TraitTag::puzzle);
 
+		//Player has to be touching the item we are dropping on
+		const auto& player = droppedGameObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
+
 		const auto& puzzleComponent = puzzleObject->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
-		if (puzzleComponent->hasBeenSolved() == false) {
+		if (puzzleComponent->hasBeenSolved() == false && player.value()->isTouchingById(puzzleObject->lock()->id())) {
 
 			_handleDropOnPuzzle(puzzleObject.value().lock().get(), droppedGameObject);
 
@@ -33,7 +37,10 @@ void ItemDropAction::_handleDropOnInventory(GameObject* droppedGameObject)
 
 	const auto& touchingInventoryObject = droppedGameObject->getFirstTouchingByTrait(TraitTag::inventory).value().lock();
 
-	if (droppedGameObject->parent().has_value()) {
+	//Player has to be touching the item we are dropping on
+	const auto& player = droppedGameObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
+	 
+	if (droppedGameObject->parent().has_value() && player.value()->isTouchingById(touchingInventoryObject->id())) {
 
 		const auto& droppedObject = droppedGameObject->parent();
 		const auto& sourceInventoryObject = droppedObject.value()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);

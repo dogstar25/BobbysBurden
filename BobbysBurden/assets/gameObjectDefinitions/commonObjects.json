@@ -435,8 +435,8 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 36,
-                        "height": 36
+                        "width": 42,
+                        "height": 42
                     }
                 },
                 {
@@ -838,7 +838,7 @@
         },
         {
             "type": "SCARY_OBJECT",
-            "traitTags": ["abstract"],
+            "traitTags": [ "abstract" ],
             "description": "Generic Scary object that can be added as a child to any object",
             "components": [
                 {
@@ -913,6 +913,136 @@
                                 }
                             ]
                         }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "PICTURE_2",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_PICTURE_2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 50,
+                        "height": 50
+                    }
+                }
+            ]
+        },
+        {
+            "type": "PICTURE_3",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_PICTURE_3"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 30,
+                        "height": 30
+                    }
+                }
+            ]
+        },
+        {
+            "type": "SIDETABLE_2",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_SIDETABLE_2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 64,
+                        "height": 64
+                    }
+                }
+            ]
+        },
+        {
+            "type": "BED_STAIRS_BLOCK",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BED_STAIRS"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 64,
+                        "height": 40
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "density": 1,
+                            "friction": 1
+                        }
+
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "BED_STAIRS",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -16
+                            },
+                            "layer": "GameLayer::BACKGROUND_1"
+
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "BED_STAIRS",
+            "traitTags": [ "abstract","vertical_movement_zone" ],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 8,
+                        "height": 52
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::STAIRS_TOUCH",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+
                     ]
                 }
             ]

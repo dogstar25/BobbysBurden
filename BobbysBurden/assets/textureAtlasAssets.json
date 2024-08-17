@@ -568,7 +568,7 @@
                 "x": 0,
                 "y": 768,
                 "width": 576,
-                "height": 128 
+                "height": 128
             }
         },
         {
@@ -769,10 +769,10 @@
             "description": "Light Window 1",
             "atlas": "TEXTURE_ATLAS_0",
             "quadPosition": {
-                "x": 515,
-                "y": 1024,
-                "width": 256,
-                "height": 256
+                "x": 516,
+                "y": 1025,
+                "width": 254,
+                "height": 254
             }
         },
         {
@@ -1353,10 +1353,10 @@
             "description": "",
             "atlas": "TEXTURE_ATLAS_2",
             "quadPosition": {
-                "x": 1132,
-                "y": 1222,
-                "width": 137,
-                "height": 481
+                "x": 1133,
+                "y": 1223,
+                "width": 135,
+                "height": 479
             }
         },
         {
@@ -1654,6 +1654,83 @@
                 "y": 1705,
                 "width": 391,
                 "height": 267
+            }
+        },
+        {
+            "id": "TX_INSET_SHELVES",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1284,
+                "y": 996,
+                "width": 159,
+                "height": 173
+            }
+        },
+        {
+            "id": "TX_PICTURE_2",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 538,
+                "y": 1082,
+                "width": 147,
+                "height": 145
+            }
+        },
+        {
+            "id": "TX_PICTURE_3",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 241,
+                "y": 748,
+                "width": 75,
+                "height": 75
+            }
+        },
+        {
+            "id": "TX_SIDETABLE_2",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 813,
+                "y": 863,
+                "width": 166,
+                "height": 168
+            }
+        },
+        {
+            "id": "TX_BED_STAIRS",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 774,
+                "y": 1572,
+                "width": 58,
+                "height": 54
+            }
+        },
+        {
+            "id": "TX_DRESSER_2",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_0",
+            "quadPosition": {
+                "x": 1524,
+                "y": 1443,
+                "width": 440,
+                "height": 293
+            }
+        },
+        {
+            "id": "TX_CHEST_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1678,
+                "y": 121,
+                "width": 119,
+                "height": 76
             }
         }
 

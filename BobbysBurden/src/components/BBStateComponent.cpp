@@ -15,26 +15,27 @@ void BBStateComponent::postInit()
 
 	StateComponent::postInit();
 
-	////Apply the On/OFF state of this object to all of its children
-	//GameObjectState stateToPropogate{};
-	//if (testState(GameObjectState::ON)) {
 
-	//	util::propogateStateToAllChildren(parent(), GameObjectState::ON);
-	//}
-	//else if (testState(GameObjectState::OFF)) {
+	//Propogate the On/Off state
+	if (testState(GameObjectState::ON) || testState(GameObjectState::OFF)) {
 
-	//	util::propogateStateToAllChildren(parent(), GameObjectState::OFF);
-	//}
+		Json::Value jsonArray(Json::arrayValue);
+		Json::Value pair;
 
-	////If this is a toggle switch object then go through and apply the switches state to the objects that it controls
-	//if (parent()->hasTrait(TraitTag::toggle_switch)) {
+		if (testState(GameObjectState::ON)) {
 
-	//	std::shared_ptr<Action> onOffToggleAction = std::make_shared<OnOffToggleAction>();
-	//	onOffToggleAction->perform(parent());
+			pair["forcedState"] = "GameObjectState::ON";
+		}
+		else if (testState(GameObjectState::OFF)) {
 
-	//}
+			pair["forcedState"] = "GameObjectState::OFF";
+		}
 
+		jsonArray.append(pair);
+		std::shared_ptr<Action> onOffToggleAction = std::make_shared<OnOffToggleAction>(jsonArray, parent());
+		onOffToggleAction->perform(parent());
 
+	}
 
 }
 
@@ -137,13 +138,6 @@ void BBStateComponent::update()
 
 	}
 
-	if (parent()->hasTrait(TraitTag::toggle_switch)) {
-
-		_setOnOffStates();
-
-	}
-
-
 }
 
 void BBStateComponent::_setHouseLocationContext()
@@ -165,52 +159,68 @@ void BBStateComponent::_setHouseLocationContext()
 }
 
 
-void BBStateComponent::_setOnOffStates()
-{
-
-	GameObjectState stateToPropogate{};
-
-	//Only deal with gameobjects that are set to off or on
-	if (testState(GameObjectState::ON)) {
-
-		stateToPropogate = GameObjectState::ON;
-	}
-	else if (testState(GameObjectState::OFF)) {
-
-		stateToPropogate = GameObjectState::OFF;
-	}
-	else {
-		return;
-	}
-
-	//First check if this switch works using named _TARGET
-	std::string buttonTargetObjectName = parent()->name() + "_TARGET";
-	auto targetObjects = parent()->parentScene()->getGameObjectsByName(buttonTargetObjectName);
-	if (targetObjects.empty() == false) {
-
-		for (auto& targetObject : targetObjects) {
-
-			targetObject->addState(stateToPropogate);
-			//turn off state of all children as well
-			util::propogateStateToAllChildren(targetObject.get(), stateToPropogate);
-
-		}
-
-	}
-	else {
-
-		if (parent()->parent().has_value() &&
-			parent()->parent().value()->hasComponent(ComponentTypes::CHILDREN_COMPONENT)) {
-
-			parent()->parent().value()->addState(stateToPropogate);
-			util::propogateStateToAllChildren(parent()->parent().value(), stateToPropogate);
-
-		}
-
-	}
-
-
-}
+//void BBStateComponent::_setOnOffStates()
+//{
+//
+//	GameObjectState stateToPropogate{};
+//
+//	//Only deal with gameobjects that are set to off or on
+//	if (testState(GameObjectState::ON)) {
+//
+//		stateToPropogate = GameObjectState::ON;
+//	}
+//	else if (testState(GameObjectState::OFF)) {
+//
+//		stateToPropogate = GameObjectState::OFF;
+//	}
+//	else {
+//		return;
+//	}
+//
+//	//First check if this switch works using named _TARGET
+//	//If it does then apply state to the target object and all of its children that are tagged as toggleable
+//
+//	//If this is a toggle_switch, then we will propogate the state to the objects parent and all children underneath
+//	if (parent()->hasTrait(TraitTag::toggle_switch)) {
+//
+//
+//		std::string buttonTargetObjectName = parent()->name() + "_TARGET";
+//		auto targetObjects = parent()->parentScene()->getGameObjectsByName(buttonTargetObjectName);
+//		if (targetObjects.empty() == false) {
+//
+//
+//			for (auto& targetObject : targetObjects) {
+//
+//
+//				if (targetObject->hasTrait(TraitTag::toggleable)) {
+//					targetObject->addState(stateToPropogate);
+//				}
+//				//turn off state of all children as well
+//				propogateStateToAllChildren(targetObject.get(), stateToPropogate, TraitTag::toggleable);
+//
+//			}
+//
+//		}
+//		else if (parent()->parent().has_value() &&
+//			parent()->parent().value()->hasComponent(ComponentTypes::CHILDREN_COMPONENT)) {
+//
+//
+//			if (parent()->parent().value()->hasTrait(TraitTag::toggleable)) {
+//				parent()->parent().value()->addState(stateToPropogate);
+//			}
+//			propogateStateToAllChildren(parent()->parent().value(), stateToPropogate, TraitTag::toggleable);
+//
+//		}
+//	}
+//	//If this is a toggleable, then we will propogate the state to the children only
+//	else if (parent()->hasTrait(TraitTag::toggleable)) {
+//
+//		propogateStateToAllChildren(parent(), stateToPropogate, TraitTag::toggleable);
+//	}
+//
+//
+//
+//}
 
 
 void BBStateComponent::flipBobby()

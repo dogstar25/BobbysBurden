@@ -6,7 +6,7 @@ void SpiderDeployAction::perform(GameObject* gameObject)
 
 	const auto& stateComponent = gameObject->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 
-	std::string actionType = util::getJsonProperty("actionType", m_properties).asString();
+	std::string actionType = getActionProperty("actionType").asString();
 
 	if (actionType == "UNDEPLOY") {
 
