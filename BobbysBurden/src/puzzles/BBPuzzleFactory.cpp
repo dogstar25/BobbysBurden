@@ -33,7 +33,7 @@ std::shared_ptr<Puzzle> BBPuzzleFactory::create(Json::Value puzzleJSON)
 	}
 	else {
 
-		puzzle = PuzzleFactory::create(puzzleType);
+		puzzle = PuzzleFactory::create(puzzleJSON);
 	}
 
 	return puzzle;

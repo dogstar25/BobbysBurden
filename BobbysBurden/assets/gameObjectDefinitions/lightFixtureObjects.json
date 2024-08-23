@@ -24,7 +24,7 @@
                                 "width": 300,
                                 "height": 300
                             },
-                            "lightSpreadsToOtherAreas":  true
+                            "lightSpreadsToOtherAreas": true
                         },
                         {
                             "gameObjectType": "LIGHT_DIAMOND_FLICKER",
@@ -560,6 +560,55 @@
                             "absolutePositionSlot": {
                                 "x": 10,
                                 "y": 84
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
+        },
+        {
+            "type": "LAMP_2",
+            "traitTags": [ "toggleable" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_LAMP_2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 71,
+                        "height": 115
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "ELECTRIC_ROOM_LIGHT_CIRCLE",
+                            "size": {
+                                "width": 300,
+                                "height": 500
+                            },
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -20
+                            },
+                            "color": "Colors::CANDLE_LIGHT"
+                        },
+                        {
+                            "gameObjectType": "TOGGLE_SWITCH_INVISIBLE",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "size": {
+                                "width": 12,
+                                "height": 12
                             }
                         }
                     ]

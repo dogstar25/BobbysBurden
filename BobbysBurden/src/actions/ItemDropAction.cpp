@@ -5,14 +5,52 @@ extern std::unique_ptr<Game> game;
 void ItemDropAction::perform(GameObject* droppedGameObject)
 {
 
-	
-	//Did we drop onto an inventory holding gameObject
-	if (droppedGameObject->isTouchingByTrait(TraitTag::inventory)) {
 
-		_handleDropOnInventory(droppedGameObject);
+	const auto& puzzleTouched = droppedGameObject->getFirstTouchingByTrait(TraitTag::puzzle);
+	const auto& inventoryTouched = droppedGameObject->getFirstTouchingByTrait(TraitTag::inventory);
+
+	//Is this being dropped on a object with both inventory and puzzle
+	//puzzle has to be solved first before handling inventory, like a locked chest
+	if (puzzleTouched.has_value() && inventoryTouched.has_value() && (puzzleTouched.value().lock() == inventoryTouched.value().lock())) {
+
+		//Player has to be touching the item we are dropping on
+		const auto& player = droppedGameObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
+
+		const auto& puzzleComponent = puzzleTouched->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+		if (player.value()->isTouchingById(puzzleTouched->lock()->id())) {
+
+			if (puzzleComponent->hasBeenSolved() == false) {
+				_handleDropOnPuzzle(puzzleTouched.value().lock().get(), droppedGameObject);
+			}
+			else {
+				_handleDropOnInventory(droppedGameObject);
+			}
+
+		}
 
 	}
-	else if (droppedGameObject->isTouchingByTrait(TraitTag::puzzle)) {
+
+	//Is it dropped on inventory object
+	else if (inventoryTouched.has_value()) {
+
+		const auto& touchingInventoryObject = droppedGameObject->getFirstTouchingByTrait(TraitTag::inventory).value().lock();
+
+		//Player has to be touching the item we are dropping on
+		const auto& player = droppedGameObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
+
+		if (droppedGameObject->parent().has_value() &&
+			player.value()->isTouchingById(touchingInventoryObject->id()) &&
+			touchingInventoryObject->hasState(GameObjectState::LOCKED) == false) {
+
+			_handleDropOnInventory(droppedGameObject);
+
+		}
+
+	}
+
+
+	//Did we drop onto an puzzle object
+	else if (puzzleTouched.has_value()) {
 
 		const auto& puzzleObject = droppedGameObject->getFirstTouchingByTrait(TraitTag::puzzle);
 

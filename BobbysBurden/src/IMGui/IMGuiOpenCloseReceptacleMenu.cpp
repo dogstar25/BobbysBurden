@@ -46,7 +46,13 @@ glm::vec2 IMGuiOpenCloseReceptacleMenu::render()
 
 		//Build the description
 		ImGui::PushFont(m_smallGothicFont);
-		ImGui::textCentered(interfaceGameObject.value()->description().c_str());
+		if (interfaceGameObject.value()->hasTrait(TraitTag::inventory_display)) {
+			ImGui::textCentered(interfaceGameObject.value()->parent().value()->description().c_str());
+		}
+		else {
+			ImGui::textCentered(interfaceGameObject.value()->description().c_str());
+		}
+		
 		ImGui::PopFont();
 		ImGui::Separator();
 		ImGui::Spacing();
@@ -58,7 +64,12 @@ glm::vec2 IMGuiOpenCloseReceptacleMenu::render()
 		//If we have puzzle info the show then show it
 		if (interfaceGameObject.value()->hasComponent(ComponentTypes::PUZZLE_COMPONENT)) {
 
+			//Use small Font
+			ImGui::PushFont(m_smallFont);
+
 			ImGui::_buildPuzzleRow(interfaceGameObject.value());
+
+			ImGui::PopFont();
 
 		}
 

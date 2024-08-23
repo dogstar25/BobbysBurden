@@ -1732,6 +1732,17 @@
                 "width": 119,
                 "height": 76
             }
+        },
+        {
+            "id": "TX_LAMP_2",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_2",
+            "quadPosition": {
+                "x": 1904,
+                "y": 2,
+                "width": 71,
+                "height": 115
+            }
         }
 
     ],

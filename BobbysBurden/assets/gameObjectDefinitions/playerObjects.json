@@ -20,8 +20,11 @@
                 {
                     "id": "INVENTORY_COMPONENT",
                     "maxCapacity": 4,
-                    "displayObject": "BOBBY_INVENTORY_DISPLAY",
-                    "displayLayer": "GameLayer::GUI_3"
+                    "displayObject": {
+                        "gameObjectType": "BOBBY_INVENTORY_DISPLAY",
+                        "displayLayer": "GameLayer::GUI_3"
+                    }
+
                 },
                 {
                     "id": "VITALITY_COMPONENT",
