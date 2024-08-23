@@ -115,6 +115,62 @@ bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATE
 	return hasHigherPriority;
 }
 
+std::optional<std::shared_ptr<GameObject>> BBInterfaceComponent::determineItemContactInterfaceTarget()
+{
+
+	//const auto& puzzleTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::puzzle);
+	//const auto& inventoryTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::inventory);
+
+
+	////Is this a puzzle and an inventory object, like a locked chest
+	////Extra check to make sure we are not touching 2 objects, one a puzzle and one an inventory
+	//if (puzzleTouched.has_value() && inventoryTouched.has_value() && (puzzleTouched.value().lock() == inventoryTouched.value().lock())) {
+
+	//	if (puzzleTouched.value().lock()->isTouchingByTrait(TraitTag::player)) {
+
+	//		const auto& puzzleComponent = puzzleTouched->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+	//		if (puzzleComponent->hasBeenSolved() == false) {
+
+	//			_displayPuzzleGui(puzzleTouched.value().lock().get());
+	//		}
+	//		else {
+
+	//			_displayInventoryGui(interfacedObject);
+
+	//		}
+	//	}
+
+	//}
+	////Touching a inventory only
+	//else if (inventoryTouched.has_value()) {
+
+	//	_displayInventoryGui(interfacedObject);
+
+	//}
+
+	////Touching a puzzle only
+	//else if (puzzleTouched.has_value()) {
+
+	//	const auto& puzzleTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::puzzle);
+
+	//	if (puzzleTouched.value().lock()->isTouchingByTrait(TraitTag::player)) {
+
+	//		const auto& puzzleComponent = puzzleTouched->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+	//		if (puzzleComponent->hasBeenSolved() == false) {
+
+	//			_displayPuzzleGui(puzzleTouched.value().lock().get());
+	//		}
+	//	}
+
+	//}
+
+
+
+
+
+	return std::optional<std::shared_ptr<GameObject>>();
+}
+
 //bool BBInterfaceComponent::shouldInterfaceMenuBeShown(std::bitset<(int)InterfaceEvents::COUNT> eventState)
 //{
 //

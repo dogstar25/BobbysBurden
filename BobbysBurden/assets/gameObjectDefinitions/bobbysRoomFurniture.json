@@ -105,6 +105,7 @@
         {
             "type": "BOBBYS_SIDETABLE",
             "traitTags": [],
+            "description": "Bedside Table",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -133,7 +134,8 @@
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": -28
-                            }
+                            },
+                            "description": "Top Drawer"
                         },
                         {
                             "gameObjectType": "DRAWER_1X2",
@@ -145,7 +147,8 @@
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 8
-                            }
+                            },
+                            "description": "Bottom Drawer"
                         },
                         {
                             "gameObjectType": "BOBBYS_LAMP",

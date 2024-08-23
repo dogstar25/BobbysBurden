@@ -17,6 +17,7 @@ public:
 		return m_currentGameObjectInterfaceActive;
 	}
 	
+	std::optional<std::shared_ptr<GameObject>> determineItemContactInterfaceTarget();
 
 private:
 	std::map<int, std::string> m_dependentPuzzles{};

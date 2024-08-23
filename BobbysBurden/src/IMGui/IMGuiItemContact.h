@@ -14,6 +14,8 @@ private:
 	std::string m_label;
 
 	void _buildActionRow(GameObject* interfacedObject);
+	void _displayPuzzleGui(GameObject* puzzleTouched);
+	void _displayInventoryGui(GameObject* puzzleTouched);
 
 	
 

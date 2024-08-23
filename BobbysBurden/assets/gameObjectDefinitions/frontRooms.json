@@ -381,6 +381,15 @@
                             },
                             "isStepChild": true,
                             "layer": "GameLayer::BACKGROUND_3"
+                        },
+                        {
+                            "gameObjectType": "LAMP_2",
+                            "absolutePositionSlot": {
+                                "x": -170,
+                                "y": -15
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_3"
                         }
 
                     ]

@@ -3,8 +3,8 @@
     "gameObjects": [
         {
             "type": "DRAWER_1X1",
-            "traitTags": [ "inventory", "inventory_closed", "receptacle", "save_me" ],
-            "description": "Top Drawer",
+            "traitTags": [ "inventory", "receptacle", "save_me" ],
+            "description": "drawer 1x1 inventory",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -20,8 +20,11 @@
                 {
                     "id": "INVENTORY_COMPONENT",
                     "maxCapacity": 1,
-                    "displayObject": "DRAWER_1X1_INVENTORY_DISPLAY",
-                    "displayLayer": "GameLayer::GUI_1"
+                    "displayObject": {
+                        "gameObjectType": "DRAWER_1X1_INVENTORY_DISPLAY",
+                        "displayLayer": "GameLayer::GUI_1"
+                    }
+
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -141,8 +144,8 @@
         },
         {
             "type": "DRAWER_1X2",
-            "traitTags": [ "inventory", "inventory_closed", "receptacle", "save_me" ],
-            "description": "Bottom Drawer",
+            "traitTags": [ "inventory", "receptacle", "save_me" ],
+            "description": "drawer 1x2 inventory",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -158,8 +161,10 @@
                 {
                     "id": "INVENTORY_COMPONENT",
                     "maxCapacity": 2,
-                    "displayObject": "DRAWER_1X2_INVENTORY_DISPLAY",
-                    "displayLayer": "GameLayer::GUI_3"
+                    "displayObject": {
+                        "gameObjectType": "DRAWER_1X2_INVENTORY_DISPLAY",
+                        "displayLayer": "GameLayer::GUI_1"
+                    }
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -502,7 +507,7 @@
         },
         {
             "type": "BOOKCASE_1X3",
-            "traitTags": [ "inventory", "inventory_closed", "receptacle", "save_me" ],
+            "traitTags": [ "inventory", "receptacle", "save_me" ],
             "description": "Bookcase Shelf",
             "components": [
                 {
@@ -519,8 +524,11 @@
                 {
                     "id": "INVENTORY_COMPONENT",
                     "maxCapacity": 3,
-                    "displayObject": "BOOKCASE_1X3_INVENTORY_DISPLAY",
-                    "displayLayer": "GameLayer::GUI_3"
+                    "displayObject": {
+                        "gameObjectType": "BOOKCASE_1X3_INVENTORY_DISPLAY",
+                        "displayLayer": "GameLayer::GUI_3"
+                    }
+
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
@@ -753,7 +761,7 @@
         {
             "type": "CHEST_1X1_INVENTORY_DISPLAY",
             "traitTags": [ "gui", "inventory", "inventory_display" ],
-            "description": "Drawer",
+            "description": "chest inventory display object",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -841,19 +849,6 @@
                         {
                             "actionId": "Actions::HIDE_INTERFACE",
                             "actionClass": "HideInterfaceAction"
-                        }
-
-                    ]
-                },
-                {
-                    "id": "CHILDREN_COMPONENT",
-                    "childObjects": [
-                        {
-                            "gameObjectType": "INVENTORY_CLOSE_BUTTON",
-                            "absolutePositionSlot": {
-                                "x": -60,
-                                "y": -16
-                            }
                         }
 
                     ]
