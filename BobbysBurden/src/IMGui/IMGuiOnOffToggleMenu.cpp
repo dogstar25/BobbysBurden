@@ -101,7 +101,7 @@ void IMGuiOnOffToggleMenu::_buildInteractionRow(GameObject* onOffSwitchObject)
 				
 		}
 		else {
-			ImGui::TextWrapped("Tuen On");
+			ImGui::TextWrapped("Turn On");
 
 		}
 

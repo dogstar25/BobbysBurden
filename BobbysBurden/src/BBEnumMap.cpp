@@ -22,6 +22,7 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("ContactTag::GAME_ITEM", ContactTag::GAME_ITEM);
 	addEnumItem("ContactTag::DOOR_KNOB", ContactTag::DOOR_KNOB);
 	addEnumItem("ContactTag::FRIGHTING_OBJECT", ContactTag::FRIGHTING_OBJECT);
+	addEnumItem("ContactTag::HIDING_SPOT", ContactTag::HIDING_SPOT);
 
 	
 	//Custom Component Types

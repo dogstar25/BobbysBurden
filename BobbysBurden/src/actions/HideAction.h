@@ -10,4 +10,9 @@ public:
 
 	void perform(GameObject* gameObject) override;
 
+private:
+	void _hideBobby(GameObject* player);
+	void _unhideBobby(GameObject* player);
+
+
 };

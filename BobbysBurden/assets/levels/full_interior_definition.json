@@ -93,7 +93,7 @@
                 },
                 {
                     //"id": "LOC_0056_0152",
-                    "id": "LOC_0048_0141",
+                    "id": "LOC_0056_0152",
                     "gameObjectType": "BOBBY",
                     "name": "Player Bobby",
                     "layer": "GameLayer::MAIN",
@@ -113,7 +113,8 @@
                 {
                     "id": "LOC_0021_0137",
                     "gameObjectType": "BOBBYS_BED",
-                    "layer": "GameLayer::MAIN"
+                    "layer": "GameLayer::MAIN",
+                    "name": "bobbysBed"
                 },
                 {
                     "id": "LOC_0027_0140",

@@ -525,13 +525,35 @@
                         },
                         {
                             "gameObjectType": "SECRET_DOORKNOB",
-                            "name":"secretDenDoorknob",
+                            "name": "secretDenDoorknob",
                             "absolutePositionSlot": {
                                 "x": 140,
                                 "y": 80
                             },
                             "isStepChild": true,
-                            "beginStates": ["GameObjectState::DISABLED_RENDER"],
+                            "beginStates": [ "GameObjectState::DISABLED_RENDER" ],
+                            "layer": "GameLayer::BACKGROUND_4"
+                        },
+                        {
+                            "gameObjectType": "STAND_1",
+                            "absolutePositionSlot": {
+                                "x": -170,
+                                "y": 110
+                            },
+                            "size": {
+                                "width": 80,
+                                "height": 110
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "SKULL",
+                            "absolutePositionSlot": {
+                                "x": -172,
+                                "y": 20
+                            },
+                            "isStepChild": true,
                             "layer": "GameLayer::BACKGROUND_4"
                         }
 

@@ -4,7 +4,50 @@
 void HideAction::perform(GameObject* gameObject)
 {
 
-	std::cout << "Bobby Hid in the " << gameObject->name() << "!" << std::endl;
+	const auto& player = gameObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
 
+	if (player.value()->hasState(GameObjectState::HIDDEN)) {
+
+		_unhideBobby(player.value().get());
+		player.value()->removeState(GameObjectState::HIDDEN);
+
+	}
+	else {
+
+		_hideBobby(player.value().get());
+		player.value()->addState(GameObjectState::HIDDEN);
+
+
+	}
+
+	const auto& animationComponent = gameObject->parent().value()->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
+
+	if (player.value()->hasState(GameObjectState::HIDDEN)) {
+		animationComponent->animate("BOBBY_HIDING");
+	}
+	else{
+		animationComponent->animate("IDLE");
+	}
+
+
+}
+
+void HideAction::_hideBobby(GameObject* player)
+{
+	player->getComponent<PlayerControlComponent>(ComponentTypes::PLAYER_CONTROL_COMPONENT)->disable();
+	//player->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT)->disable();
+	//player->disablePhysics();
+	player->disableRender();
+	player->disableUpdate();
+	//player->stash();
+
+}
+
+void HideAction::_unhideBobby(GameObject* player)
+{
+	player->getComponent<PlayerControlComponent>(ComponentTypes::PLAYER_CONTROL_COMPONENT)->enable();
+	player->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT)->enable();
+	player->enableUpdate();
+	player->enableRender();
 }
 

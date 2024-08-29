@@ -1,94 +1,72 @@
 #include "ItemDropAction.h"
+#include "../components/BBInterfaceComponent.h"
 
 extern std::unique_ptr<Game> game;
 
 void ItemDropAction::perform(GameObject* droppedGameObject)
 {
 
+	const auto& objectToInterfaceWith = BBInterfaceComponent::determineItemContactInterfaceTarget(droppedGameObject);
 
-	const auto& puzzleTouched = droppedGameObject->getFirstTouchingByTrait(TraitTag::puzzle);
-	const auto& inventoryTouched = droppedGameObject->getFirstTouchingByTrait(TraitTag::inventory);
+	if (objectToInterfaceWith.has_value()) {
 
-	//Is this being dropped on a object with both inventory and puzzle
-	//puzzle has to be solved first before handling inventory, like a locked chest
-	if (puzzleTouched.has_value() && inventoryTouched.has_value() && (puzzleTouched.value().lock() == inventoryTouched.value().lock())) {
+		//Is this being dropped on a object with both inventory and puzzle
+		//puzzle has to be solved first before handling inventory, like a locked chest
+		if (objectToInterfaceWith.value()->hasTrait(TraitTag::inventory) && objectToInterfaceWith.value()->hasTrait(TraitTag::puzzle)) {
 
-		//Player has to be touching the item we are dropping on
-		const auto& player = droppedGameObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
-
-		const auto& puzzleComponent = puzzleTouched->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
-		if (player.value()->isTouchingById(puzzleTouched->lock()->id())) {
+			const auto& puzzleComponent = objectToInterfaceWith.value()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 
 			if (puzzleComponent->hasBeenSolved() == false) {
-				_handleDropOnPuzzle(puzzleTouched.value().lock().get(), droppedGameObject);
+				_handleDropOnPuzzle(objectToInterfaceWith.value().get(), droppedGameObject);
 			}
 			else {
-				_handleDropOnInventory(droppedGameObject);
+				_handleDropOnInventory(droppedGameObject, objectToInterfaceWith.value().get());
 			}
 
 		}
 
-	}
+		//Is it dropped on inventory object
+		else if (objectToInterfaceWith.value()->hasTrait(TraitTag::inventory)) {
 
-	//Is it dropped on inventory object
-	else if (inventoryTouched.has_value()) {
+			if (objectToInterfaceWith.value()->hasState(GameObjectState::LOCKED) == false) {
 
-		const auto& touchingInventoryObject = droppedGameObject->getFirstTouchingByTrait(TraitTag::inventory).value().lock();
-
-		//Player has to be touching the item we are dropping on
-		const auto& player = droppedGameObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
-
-		if (droppedGameObject->parent().has_value() &&
-			player.value()->isTouchingById(touchingInventoryObject->id()) &&
-			touchingInventoryObject->hasState(GameObjectState::LOCKED) == false) {
-
-			_handleDropOnInventory(droppedGameObject);
+				_handleDropOnInventory(droppedGameObject, objectToInterfaceWith.value().get());
+			}
 
 		}
 
-	}
 
+		//Did we drop onto an puzzle object
+		else if (objectToInterfaceWith.value()->hasTrait(TraitTag::puzzle)) {
 
-	//Did we drop onto an puzzle object
-	else if (puzzleTouched.has_value()) {
+			const auto& puzzleComponent = objectToInterfaceWith.value()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+			if (puzzleComponent->hasBeenSolved() == false) {
 
-		const auto& puzzleObject = droppedGameObject->getFirstTouchingByTrait(TraitTag::puzzle);
+				_handleDropOnPuzzle(objectToInterfaceWith.value().get(), droppedGameObject);
 
-		//Player has to be touching the item we are dropping on
-		const auto& player = droppedGameObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
-
-		const auto& puzzleComponent = puzzleObject->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
-		if (puzzleComponent->hasBeenSolved() == false && player.value()->isTouchingById(puzzleObject->lock()->id())) {
-
-			_handleDropOnPuzzle(puzzleObject.value().lock().get(), droppedGameObject);
+			}
 
 		}
-
 	}
-
 
 }
 
 
-void ItemDropAction::_handleDropOnInventory(GameObject* droppedGameObject)
+void ItemDropAction::_handleDropOnInventory(GameObject* droppedGameObject, GameObject* destinationInventoryObject)
 {
 
-	const auto& touchingInventoryObject = droppedGameObject->getFirstTouchingByTrait(TraitTag::inventory).value().lock();
+	//The droppedGameObject's parent has to be there because its the inventory that we're moving from
+	if (droppedGameObject->parent().has_value()) {
 
-	//Player has to be touching the item we are dropping on
-	const auto& player = droppedGameObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
-	 
-	if (droppedGameObject->parent().has_value() && player.value()->isTouchingById(touchingInventoryObject->id())) {
-
-		const auto& droppedObject = droppedGameObject->parent();
-		const auto& sourceInventoryObject = droppedObject.value()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+		const auto& droppedObjectInventoryObject = droppedGameObject->parent();
+		const auto& sourceInventoryObject = droppedObjectInventoryObject.value()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 
 		//Is this is a shelf type of inventory
-		if (touchingInventoryObject->hasTrait(TraitTag::inventory_open) ||
-			touchingInventoryObject->hasTrait(TraitTag::inventory_display)) {
+		if (destinationInventoryObject->hasTrait(TraitTag::inventory_open) ||
+			destinationInventoryObject->hasTrait(TraitTag::inventory_display)) {
 
 			//Get its grid display component
-			const auto& gridDisplayComponent = touchingInventoryObject->getComponent<GridDisplayComponent>(ComponentTypes::GRID_DISPLAY_COMPONENT);
+			const auto& gridDisplayComponent = destinationInventoryObject->getComponent<GridDisplayComponent>(ComponentTypes::GRID_DISPLAY_COMPONENT);
 
 			//Get the grid slot that we dropped this object on. if it wasnt close enough to any then we
 			//wont move the object
@@ -98,17 +76,17 @@ void ItemDropAction::_handleDropOnInventory(GameObject* droppedGameObject)
 				//Get the inventory objects Inventory component
 				std::shared_ptr<InventoryComponent> destinationInventoryComponent{};
 
-				if (touchingInventoryObject->hasTrait(TraitTag::inventory_open)) {
+				if (destinationInventoryObject->hasTrait(TraitTag::inventory_open)) {
 
-					destinationInventoryComponent = touchingInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+					destinationInventoryComponent = destinationInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 				}
-				else if (touchingInventoryObject->hasTrait(TraitTag::inventory_display)) {
+				else if (destinationInventoryObject->hasTrait(TraitTag::inventory_display)) {
 
 					//Get the gameObject that uses this grid display for its inventory
-					const auto& destinationInventoryObject = touchingInventoryObject->parent().value();
+					const auto& destinationInventoryParentObject = destinationInventoryObject->parent().value();
 
 					//Get the inventory objects Inventory component
-					destinationInventoryComponent = destinationInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+					destinationInventoryComponent = destinationInventoryParentObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 				}
 
 				//Remove the dropped gameObject from it's current inventory
@@ -140,17 +118,17 @@ void ItemDropAction::_handleDropOnInventory(GameObject* droppedGameObject)
 				//Get the inventory objects Inventory component
 				std::shared_ptr<InventoryComponent> destinationInventoryComponent{};
 
-				if (touchingInventoryObject->hasTrait(TraitTag::inventory_open)) {
+				if (destinationInventoryObject->hasTrait(TraitTag::inventory_open)) {
 
-					destinationInventoryComponent = touchingInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+					destinationInventoryComponent = destinationInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 				}
-				else if (touchingInventoryObject->hasTrait(TraitTag::inventory_display)) {
+				else if (destinationInventoryObject->hasTrait(TraitTag::inventory_display)) {
 
 					//Get the gameObject that uses this grid display for its inventory
-					const auto& destinationInventoryObject = touchingInventoryObject->parent().value();
+					const auto& destinationInventoryParentObject = destinationInventoryObject->parent().value();
 
 					//Get the inventory objects Inventory component
-					destinationInventoryComponent = destinationInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+					destinationInventoryComponent = destinationInventoryParentObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 				}
 
 				//Remove the dropped gameObject from it's current inventory
@@ -168,7 +146,7 @@ void ItemDropAction::_handleDropOnInventory(GameObject* droppedGameObject)
 					//Set the active interface to the inventory we dropped the item to
 					//If we don't then the interface of the now offscreen object could never be overridden
 					const auto& interfaceComponent = droppedGameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
-					interfaceComponent->setCurrentGameObjectInterfaceActive(touchingInventoryObject.get());
+					interfaceComponent->setCurrentGameObjectInterfaceActive(destinationInventoryObject);
 				}
 				else {
 					sourceInventoryObject->addItem(gameObjectSharedPtr);
@@ -181,7 +159,7 @@ void ItemDropAction::_handleDropOnInventory(GameObject* droppedGameObject)
 		else {
 
 			////Get the inventory objects Inventory component
-			const auto& destinationInventoryComponent = touchingInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+			const auto& destinationInventoryComponent = destinationInventoryObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 
 			//Remove the dropped gameObject from it's current inventory
 			//first get a shared pointer to the object so that the object isnt deallocated
@@ -198,7 +176,7 @@ void ItemDropAction::_handleDropOnInventory(GameObject* droppedGameObject)
 				//Set the active interface to the inventory we dropped the item to
 				//If we don't then the interface of the now offscreen object could never be overridden
 				const auto& interfaceComponent = droppedGameObject->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
-				interfaceComponent->setCurrentGameObjectInterfaceActive(touchingInventoryObject.get());
+				interfaceComponent->setCurrentGameObjectInterfaceActive(destinationInventoryObject);
 			}
 			else {
 				sourceInventoryObject->addItem(gameObjectSharedPtr);
@@ -213,9 +191,7 @@ void ItemDropAction::_handleDropOnInventory(GameObject* droppedGameObject)
 void ItemDropAction::_handleDropOnPuzzle(GameObject* puzzleGameObject, GameObject* droppedGameObject)
 {
 
-	//get the puzzle object
-	const auto& puzzleObject = droppedGameObject->getFirstTouchingByTrait(TraitTag::puzzle).value().lock();
-	const auto& puzzleComponent = puzzleObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+	const auto& puzzleComponent = puzzleGameObject->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 
 	//does this dropped item apply to the puzzle it was dropped on?
 	if (puzzleComponent->puzzle->isPuzzlePieceApplicable(droppedGameObject)) {

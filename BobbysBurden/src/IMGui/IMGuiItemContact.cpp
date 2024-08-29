@@ -2,6 +2,7 @@
 #include "BB_IMGuiUtil.h"
 #include "../GameConstants.h"
 #include "../BBContextManager.h"
+#include "../components/BBInterfaceComponent.h"
 
 
 
@@ -130,54 +131,46 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_GRAB_1");
 		SceneManager::instance().setMouseCursor(cursor);
 
-
 	}
 
 	//Is this a puzzle item piece
 	if (interfacedObject->isDragging() == true && interfacedObject->hasTrait(TraitTag::puzzle_item)) {
 
-		const auto& puzzleTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::puzzle);
-		const auto& inventoryTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::inventory);
+		const auto& ObjectToInterfaceWith = BBInterfaceComponent::determineItemContactInterfaceTarget(interfacedObject);
 
+		if (ObjectToInterfaceWith.has_value()) {
 
-		//Is this a puzzle and an inventory object, like a locked chest
-		//Extra check to make sure we are not touching 2 objects, one a puzzle and one an inventory
-		if (puzzleTouched.has_value() && inventoryTouched.has_value() && (puzzleTouched.value().lock() == inventoryTouched.value().lock())) {
+			//Is this a puzzle and an inventory object, like a locked chest
+			if (ObjectToInterfaceWith.value()->hasTrait(TraitTag::puzzle) && ObjectToInterfaceWith.value()->hasTrait(TraitTag::inventory)) {
 
-			if (puzzleTouched.value().lock()->isTouchingByTrait(TraitTag::player)) {
-
-				const auto& puzzleComponent = puzzleTouched->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+				const auto& puzzleComponent = ObjectToInterfaceWith.value()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 				if (puzzleComponent->hasBeenSolved() == false) {
 
-					_displayPuzzleGui(puzzleTouched.value().lock().get());
+					_displayPuzzleGui(ObjectToInterfaceWith.value().get());
 				}
 				else {
 
 					_displayInventoryGui(interfacedObject);
 
 				}
+
+			}
+			//Touching a inventory only
+			else if (ObjectToInterfaceWith.value()->hasTrait(TraitTag::inventory)) {
+
+				_displayInventoryGui(interfacedObject);
+
 			}
 
-		}
-		//Touching a inventory only
-		else if (inventoryTouched.has_value()) {
+			//Touching a puzzle only
+			else if (ObjectToInterfaceWith.value()->hasTrait(TraitTag::puzzle)) {
 
-			_displayInventoryGui(interfacedObject);
-
-		}
-
-		//Touching a puzzle only
-		else if (puzzleTouched.has_value()) {
-
-			const auto& puzzleTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::puzzle);
-
-			if (puzzleTouched.value().lock()->isTouchingByTrait(TraitTag::player)) {
-
-				const auto& puzzleComponent = puzzleTouched->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
+				const auto& puzzleComponent = ObjectToInterfaceWith.value()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 				if (puzzleComponent->hasBeenSolved() == false) {
 
-					_displayPuzzleGui(puzzleTouched.value().lock().get());
+					_displayPuzzleGui(ObjectToInterfaceWith.value().get());
 				}
+
 			}
 
 		}
