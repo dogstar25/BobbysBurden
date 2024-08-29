@@ -694,6 +694,17 @@
                 "height": 128
             }
         },
+        {
+            "id": "TX_BOBBY_HIDE_UNDER_BOBBY_SHEETS",
+            "description": "Bobby Hide",
+            "atlas": "TEXTURE_ATLAS_1",
+            "quadPosition": {
+                "x": 1,
+                "y": 1041,
+                "width": 64,
+                "height": 128
+            }
+        },
 
         ////////////
         {
@@ -831,14 +842,25 @@
             }
         },
         {
-            "id": "TX_BED_1_256",
+            "id": "TX_BOBBYS_BED",
             "description": "Default Texure",
-            "atlas": "TEXTURE_ATLAS_2",
+            "atlas": "TEXTURE_ATLAS_4",
             "quadPosition": {
-                "x": 518,
-                "y": 250,
-                "width": 256,
-                "height": 256
+                "x": 3,
+                "y": 1297,
+                "width": 254,
+                "height": 254
+            }
+        },
+        {
+            "id": "TX_BOBBYS_BED_HIDING",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 261,
+                "y": 1297,
+                "width": 254,
+                "height": 254
             }
         },
         {
@@ -984,7 +1006,17 @@
                 "height": 64
             }
         },
-
+        {
+            "id": "TX_MOUSE_CURSOR_HIDE",
+            "description": "Default Texure",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 399,
+                "y": 69,
+                "width": 62,
+                "height": 62
+            }
+        },
         {
             "id": "TX_HUD_FRAME_1",
             "description": "Default Texure",
@@ -1714,12 +1746,23 @@
         {
             "id": "TX_DRESSER_2",
             "description": "",
-            "atlas": "TEXTURE_ATLAS_0",
+            "atlas": "TEXTURE_ATLAS_4",
             "quadPosition": {
-                "x": 1524,
-                "y": 1443,
-                "width": 440,
-                "height": 293
+                "x": 519,
+                "y": 1384,
+                "width": 251,
+                "height": 167
+            }
+        },
+        {
+            "id": "TX_DRESSER_2_HIDING",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 773,
+                "y": 1384,
+                "width": 251,
+                "height": 167
             }
         },
         {
@@ -1742,6 +1785,61 @@
                 "y": 2,
                 "width": 71,
                 "height": 115
+            }
+        },
+        {
+            "id": "TX_INDIAN_STATUE",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 1121,
+                "y": 532,
+                "width": 131,
+                "height": 258
+            }
+        },
+        {
+            "id": "TX_INDIAN_STATUE_SOLVED",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 1255,
+                "y": 532,
+                "width": 131,
+                "height": 258
+            }
+        },
+        {
+            "id": "TX_STAND_1",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 1389,
+                "y": 660,
+                "width": 80,
+                "height": 131
+            }
+        },
+        {
+            "id": "TX_SKULL_UNSOLVED",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 1472,
+                "y": 686,
+                "width": 69,
+                "height": 105
+            }
+        },
+        {
+            "id": "TX_SKULL_SOLVED",
+            "description": "",
+            "atlas": "TEXTURE_ATLAS_4",
+            "quadPosition": {
+                "x": 1544,
+                "y": 686,
+                "width": 69,
+                "height": 105
             }
         }
 
@@ -1856,13 +1954,21 @@
             "id": "CURSOR_POINTING",
             "textureId": "TX_MOUSE_CURSOR_POINTING",
             "hotSpot": {
-                "x": 32,
-                "y": 32
+                "x": 20,
+                "y": 12
             }
         },
         {
             "id": "CURSOR_SEARCH",
             "textureId": "TX_MOUSE_CURSOR_SEARCH",
+            "hotSpot": {
+                "x": 32,
+                "y": 32
+            }
+        },
+        {
+            "id": "CURSOR_HIDE",
+            "textureId": "TX_MOUSE_CURSOR_HIDE",
             "hotSpot": {
                 "x": 32,
                 "y": 32

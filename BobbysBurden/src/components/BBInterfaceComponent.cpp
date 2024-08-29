@@ -115,73 +115,55 @@ bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATE
 	return hasHigherPriority;
 }
 
-std::optional<std::shared_ptr<GameObject>> BBInterfaceComponent::determineItemContactInterfaceTarget()
+std::optional<std::shared_ptr<GameObject>> BBInterfaceComponent::determineItemContactInterfaceTarget(GameObject* itemObject)
 {
 
-	//const auto& puzzleTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::puzzle);
-	//const auto& inventoryTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::inventory);
+	std::optional<std::shared_ptr<GameObject>> finalObject{};
 
+	if (itemObject->getTouchingObjects().empty() == false) {
 
-	////Is this a puzzle and an inventory object, like a locked chest
-	////Extra check to make sure we are not touching 2 objects, one a puzzle and one an inventory
-	//if (puzzleTouched.has_value() && inventoryTouched.has_value() && (puzzleTouched.value().lock() == inventoryTouched.value().lock())) {
+		const auto& player = itemObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
 
-	//	if (puzzleTouched.value().lock()->isTouchingByTrait(TraitTag::player)) {
+		auto itemContactItr = itemObject->getTouchingObjects().begin()->second;
 
-	//		const auto& puzzleComponent = puzzleTouched->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
-	//		if (puzzleComponent->hasBeenSolved() == false) {
+		//const auto& itemContactItr = itemObject->getTouchingObjects().begin();
+		for (auto itemContactItr = itemObject->getTouchingObjects().begin();
+			itemContactItr != itemObject->getTouchingObjects().end(); ++itemContactItr) {
 
-	//			_displayPuzzleGui(puzzleTouched.value().lock().get());
-	//		}
-	//		else {
+			const auto candidateObject = itemContactItr->second;
+			if (itemContactItr->second.expired() == false) {
 
-	//			_displayInventoryGui(interfacedObject);
+				if (candidateObject.lock()->hasTrait(TraitTag::puzzle) || candidateObject.lock()->hasTrait(TraitTag::inventory))
+				{
 
-	//		}
-	//	}
+					//If if this is a normal inventory object or puzzle then the player has to be close enough touching it
+					//but if its an inventory display object then player doesnt have to be touching it
+					if (candidateObject.lock()->hasTrait(TraitTag::inventory_display) == true ||
+						player.value()->isTouchingById(candidateObject.lock()->id())) {
 
-	//}
-	////Touching a inventory only
-	//else if (inventoryTouched.has_value()) {
+						//Initialize the first one
+						if (!finalObject) {
 
-	//	_displayInventoryGui(interfacedObject);
+							finalObject = candidateObject.lock();
+							continue;
+						}
 
-	//}
+						//If this item is on a higfher layer then it wins
+						if (candidateObject.lock()->layer() > finalObject.value()->layer()) {
 
-	////Touching a puzzle only
-	//else if (puzzleTouched.has_value()) {
+							finalObject = candidateObject.lock();
+						}
+					}
 
-	//	const auto& puzzleTouched = interfacedObject->getFirstTouchingByTrait(TraitTag::puzzle);
+				}
+			}
 
-	//	if (puzzleTouched.value().lock()->isTouchingByTrait(TraitTag::player)) {
+		}
+	}
 
-	//		const auto& puzzleComponent = puzzleTouched->lock()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
-	//		if (puzzleComponent->hasBeenSolved() == false) {
+	return finalObject;
 
-	//			_displayPuzzleGui(puzzleTouched.value().lock().get());
-	//		}
-	//	}
-
-	//}
-
-
-
-
-
-	return std::optional<std::shared_ptr<GameObject>>();
 }
-
-//bool BBInterfaceComponent::shouldInterfaceMenuBeShown(std::bitset<(int)InterfaceEvents::COUNT> eventState)
-//{
-//
-//	//At this point, we know the interface(with or without a menu will be active)
-//	// This is only applicable to the action "Actions::ShowInterface"
-//	//showing menu precedence
-//	//	If this is showing in the main hud, then 
-//
-//
-//	return true;
-//}
 
 
 bool BBInterfaceComponent::isDraggingAllowed()

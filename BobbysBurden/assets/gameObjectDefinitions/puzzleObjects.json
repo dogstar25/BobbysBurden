@@ -418,7 +418,7 @@
         },
         {
             "type": "GUEST_BED_BUTTON",
-            "traitTags": [ "save_me","abstract" ],
+            "traitTags": [ "save_me", "abstract" ],
             "description": "Guest Bed Button",
             "components": [
                 {
@@ -541,6 +541,129 @@
 
             ]
 
+        },
+        {
+            "type": "SKULL",
+            "traitTags": [ "puzzle" ],
+            "description": "Skull",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 45,
+                        "height": 80
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::PUZZLE_OBJECT",
+                            "collisionShape": "B2_BOX"
+                        }
+
+                    ],
+                    
+                    
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "GENERIC_INTERFACE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        }
+
+
+                    ]
+                },
+                {
+                    "id": "PUZZLE_COMPONENT",
+                    "name": "APPEASE_INDIAN",
+                    "clue": "A human skull",
+                    "puzzleType": "IndianStatuePuzzle",
+                    "pieces": 2
+
+
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::UNSOLVED" ],
+                    "animationStates": [
+                        {
+                            "state": "GameObjectState::UNSOLVED",
+                            "animationId": "UNSOLVED"
+                        },
+                        {
+                            "state": "GameObjectState::SOLVED",
+                            "animationId": "SOLVED"
+                        }
+                    ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "UNSOLVED",
+                    "frameSize": {
+                        "width": 69,
+                        "height": 105
+                    },
+                    "animations": [
+                        {
+                            "id": "UNSOLVED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_SKULL_UNSOLVED",
+                            "frames": 1
+                        },
+                        {
+                            "id": "SOLVED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_SKULL_SOLVED",
+                            "frames": 1
+                        }
+                    ]
+                }
+            ]
         }
+
+
     ]
 }

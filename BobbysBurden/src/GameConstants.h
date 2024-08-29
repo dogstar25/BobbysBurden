@@ -82,6 +82,7 @@ namespace ContactTag {
 	inline constexpr int DOOR_KNOB = 29;
 	inline constexpr int FRIGHTING_OBJECT = 30;
 	inline constexpr int BED_STAIRS = 31;
+	inline constexpr int HIDING_SPOT = 32;
 	
 
 }

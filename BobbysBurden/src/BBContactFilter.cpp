@@ -21,6 +21,7 @@ BBContactFilter::BBContactFilter()
 	m_contactMasks[PLAYER_COLLISION].set(DOOR_TOUCH);
 	m_contactMasks[PLAYER_COLLISION].set(WARP_ENTRY);
 	m_contactMasks[PLAYER_COLLISION].set(STAIRS_TOUCH);
+	m_contactMasks[PLAYER_COLLISION].set(HIDING_SPOT);
 	
 	//PLAYER_TOUCH
 	m_contactMasks[PLAYER_TOUCH].reset();
@@ -83,6 +84,10 @@ BBContactFilter::BBContactFilter()
 	//Frighting Object
 	m_contactMasks[FRIGHTING_OBJECT].reset();
 	m_contactMasks[FRIGHTING_OBJECT].set(PLAYER_TOUCH);
+
+	//Frighting Object
+	m_contactMasks[HIDING_SPOT].reset();
+	m_contactMasks[HIDING_SPOT].set(PLAYER_COLLISION);
 
 }
 

@@ -28,7 +28,10 @@
                         },
                         {
                             "gameObjectType": "LIGHT_DIAMOND_FLICKER",
-                            "standardSlot": "PositionAlignment::CENTER",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": -10
+                            },
                             "size": {
                                 "width": 64,
                                 "height": 64

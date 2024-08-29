@@ -6,8 +6,7 @@
             "traitTags": [],
             "components": [
                 {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_BED_1_256"
+                    "id": "RENDER_COMPONENT"
 
                 },
                 {
@@ -44,6 +43,28 @@
                             }
                         }
 
+                    ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "IDLE",
+                    "frameSize": {
+                        "width": 254,
+                        "height": 254
+                    },
+                    "animations": [
+                        {
+                            "id": "IDLE",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_BOBBYS_BED",
+                            "frames": 1
+                        },
+                        {
+                            "id": "BOBBY_HIDING",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_BOBBYS_BED_HIDING",
+                            "frames": 1
+                        }
                     ]
                 }
 
@@ -245,7 +266,7 @@
                     "type": "B2_STATIC",
                     "fixtures": [
                         {
-                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "contactTag": "ContactTag::HIDING_SPOT",
                             "collisionShape": "B2_BOX",
                             "isSensor": true
                         }

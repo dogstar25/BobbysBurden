@@ -5,8 +5,7 @@
             "traitTags": [],
             "components": [
                 {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_DRESSER_2"
+                    "id": "RENDER_COMPONENT"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -17,6 +16,8 @@
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::HORIZONTAL",
+                    "childPadding": 16,
                     "childObjects": [
                         {
                             "gameObjectType": "CHEST_1",
@@ -28,7 +29,7 @@
                                 "width": 100,
                                 "height": 64
                             },
-                            "layer": "GameLayer::GUI_1",
+                            "layer": "GameLayer::BACKGROUND_4",
                             "isStepChild": true
                         },
                         {
@@ -43,9 +44,75 @@
                             },
                             "description": "Dresser Cabinet"
 
+                        },
+                        {
+                            "gameObjectType": "CHEST_CONTAINER_1X1",
+                            "absolutePositionSlot": {
+                                "x": 50,
+                                "y": 0
+                            },
+                            "size": {
+                                "width": 36,
+                                "height": 48
+                            },
+                            "description": "Dresser Cabinet"
+
+                        },
+                        {
+                            "gameObjectType": "HIDING_SPOT",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "size": {
+                                "width": 44,
+                                "height": 50
+                            },
+                            "description": "Hide In Dresser"
+
                         }
 
                     ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "IDLE",
+                    "frameSize": {
+                        "width": 251,
+                        "height": 167
+                    },
+                    "animations": [
+                        {
+                            "id": "IDLE",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_DRESSER_2",
+                            "frames": 1
+                        },
+                        {
+                            "id": "BOBBY_HIDING",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_DRESSER_2_HIDING",
+                            "frames": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "STAND_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_STAND_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 80,
+                        "height": 131
+                    }
                 }
             ]
         }

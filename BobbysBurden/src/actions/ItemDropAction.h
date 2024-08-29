@@ -11,7 +11,7 @@ public:
 	void perform(GameObject* gameObject) override;
 
 protected:
-	void _handleDropOnInventory(GameObject* gameObject);
+	void _handleDropOnInventory(GameObject* gameObject, GameObject* destinationInventoryObject);
 	void _handleDropOnPuzzle(GameObject* puzzleGameObject, GameObject* droppedGameObject);
 
 

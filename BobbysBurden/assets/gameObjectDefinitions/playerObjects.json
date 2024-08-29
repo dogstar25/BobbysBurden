@@ -317,6 +317,12 @@
                             "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
                             "textureId": "TX_BOBBY_WALK_UP_IDLE_STAIRS_EQUIPPED",
                             "frames": 1
+                        },
+                        {
+                            "id": "HIDE_UNDER_BOBBY_SHEETS",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_BOBBY_HIDE_UNDER_BOBBY_SHEETS",
+                            "frames": 1
                         }
                     ]
                 }
