@@ -106,6 +106,28 @@
                         }
 
                     ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "IDLE",
+                    "frameSize": {
+                        "width": 252,
+                        "height": 143
+                    },
+                    "animations": [
+                        {
+                            "id": "IDLE",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_BATHTUB_1",
+                            "frames": 1
+                        },
+                        {
+                            "id": "BOBBY_HIDING",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_BATHTUB_1_HIDING",
+                            "frames": 1
+                        }
+                    ]
                 }
             ]
         },

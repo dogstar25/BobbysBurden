@@ -204,7 +204,7 @@
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
-                    "menuObject": "GENERIC_INTERFACE_MENU",
+                    "menuObject": "BOBBY_HIDE_MENU",
                     "interfaceActions": [
                         {
                             "actionId": "Actions::USE",

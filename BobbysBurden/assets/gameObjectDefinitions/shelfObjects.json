@@ -186,7 +186,6 @@
                     "childObjects": [
                         {
                             "gameObjectType": "MERMAID_1",
-                            "name": "shelfcan",
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 8

@@ -544,7 +544,7 @@
         },
         {
             "type": "SKULL",
-            "traitTags": [ "puzzle" ],
+            "traitTags": [ "puzzle"],
             "description": "Skull",
             "components": [
                 {
@@ -566,9 +566,9 @@
                             "collisionShape": "B2_BOX"
                         }
 
-                    ],
-                    
-                    
+                    ]
+
+
                 },
                 {
                     "id": "BB_INTERFACE_COMPONENT",
@@ -619,25 +619,11 @@
                 {
                     "id": "PUZZLE_COMPONENT",
                     "name": "APPEASE_INDIAN",
-                    "clue": "A human skull",
-                    "puzzleType": "IndianStatuePuzzle",
+                    "clue": "A human skull with deep sockets and a small key locked in its jaws.",
+                    "puzzleType": "SkullPuzzle",
                     "pieces": 2
 
 
-                },
-                {
-                    "id": "BB_STATE_COMPONENT",
-                    "beginStates": [ "GameObjectState::UNSOLVED" ],
-                    "animationStates": [
-                        {
-                            "state": "GameObjectState::UNSOLVED",
-                            "animationId": "UNSOLVED"
-                        },
-                        {
-                            "state": "GameObjectState::SOLVED",
-                            "animationId": "SOLVED"
-                        }
-                    ]
                 },
                 {
                     "id": "ANIMATION_COMPONENT",
@@ -658,6 +644,66 @@
                             "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
                             "textureId": "TX_SKULL_SOLVED",
                             "frames": 1
+                        }
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "DIAMOND",
+                            "absolutePositionSlot": {
+                                "x": -8,
+                                "y": -16
+                            },
+                            "size": {
+                                "width": 12,
+                                "height": 12
+                            },
+                            "beginStates": [ "GameObjectState::DISABLED_RENDER", "GameObjectState::STRAIGHT" ]
+
+
+                        },
+                        {
+                            "gameObjectType": "EMERALD",
+                            "absolutePositionSlot": {
+                                "x": 8,
+                                "y": -16
+                            },
+                            "size": {
+                                "width": 12,
+                                "height": 12
+                            },
+                            "beginStates": [ "GameObjectState::DISABLED_RENDER", "GameObjectState::STRAIGHT" ]
+
+                        },
+                        {
+                            "gameObjectType": "SMALL_KEY",
+                            "isStepChild": true,
+                            "layer": "GameLayer::MAIN",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 2
+                            },
+                            "size": {
+                                "width": 64,
+                                "height": 64
+                            }
+
+                        },
+                        {
+                            "gameObjectType": "LIGHT_CIRCLE",
+                            "color": "Colors::WHITE",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 8
+                            },
+                            "size": {
+                                "width": 80,
+                                "height": 64
+                            },
+                            "beginStates": [ "GameObjectState::OFF" ]
                         }
                     ]
                 }

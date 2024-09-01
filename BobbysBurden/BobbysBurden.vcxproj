@@ -170,7 +170,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\actions\DisableProximityHintAction.cpp" />
-    <ClCompile Include="src\actions\PlayCutSceneAction.cpp" />
     <ClCompile Include="src\actions\PushGuestBedButtonAction.cpp" />
     <ClCompile Include="src\actions\ScareBobbyAction.cpp" />
     <ClCompile Include="src\actions\SpiderDeployAction.cpp" />
@@ -210,6 +209,7 @@
     <ClCompile Include="src\environmentEvents\RainEvent.cpp" />
     <ClCompile Include="src\IMGui\BB_IMGuiFactory.cpp" />
     <ClCompile Include="src\IMGui\BB_IMGuiUtil.cpp" />
+    <ClCompile Include="src\IMGui\IMGuiBobbyHideMenu.cpp" />
     <ClCompile Include="src\IMGui\IMGuiDynamicInterfaceMenu.cpp" />
     <ClCompile Include="src\IMGui\IMGuiGoUpDownMenu.cpp" />
     <ClCompile Include="src\IMGui\IMGuiItemContact.cpp" />
@@ -228,13 +228,13 @@
     <ClCompile Include="src\puzzles\KillSpiderPuzzle.cpp" />
     <ClCompile Include="src\puzzles\MermaidMantlePuzzle.cpp" />
     <ClCompile Include="src\puzzles\OilBedKnobPuzzle.cpp" />
+    <ClCompile Include="src\puzzles\SkullPuzzle.cpp" />
     <ClCompile Include="src\Source.cpp" />
     <ClCompile Include="src\triggers\BBTriggerFactory.cpp" />
     <ClCompile Include="src\triggers\PlayerDeath.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\actions\DisableProximityHintAction.h" />
-    <ClInclude Include="src\actions\PlayCutSceneAction.h" />
     <ClInclude Include="src\actions\PushGuestBedButtonAction.h" />
     <ClInclude Include="src\actions\ScareBobbyAction.h" />
     <ClInclude Include="src\actions\SpiderDeployAction.h" />
@@ -275,6 +275,7 @@
     <ClInclude Include="src\GameConstants.h" />
     <ClInclude Include="src\IMGui\BB_IMGuiFactory.h" />
     <ClInclude Include="src\IMGui\BB_IMGuiUtil.h" />
+    <ClInclude Include="src\IMGui\IMGuiBobbyHideMenu.h" />
     <ClInclude Include="src\IMGui\IMGuiDynamicInterfaceMenu.h" />
     <ClInclude Include="src\IMGui\IMGuiGoUpDownMenu.h" />
     <ClInclude Include="src\IMGui\IMGuiItemContact.h" />
@@ -294,6 +295,7 @@
     <ClInclude Include="src\puzzles\KillSpiderPuzzle.h" />
     <ClInclude Include="src\puzzles\MermaidMantlePuzzle.h" />
     <ClInclude Include="src\puzzles\OilBedKnobPuzzle.h" />
+    <ClInclude Include="src\puzzles\SkullPuzzle.h" />
     <ClInclude Include="src\triggers\BBTriggerFactory.h" />
     <ClInclude Include="src\triggers\PlayerDeath.h" />
   </ItemGroup>
