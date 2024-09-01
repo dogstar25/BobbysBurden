@@ -6,29 +6,28 @@ void HideAction::perform(GameObject* gameObject)
 
 	const auto& player = gameObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
 
-	if (player.value()->hasState(GameObjectState::HIDDEN)) {
+	if (player.value()->hasState(GameObjectState::HIDING)) {
 
 		_unhideBobby(player.value().get());
-		player.value()->removeState(GameObjectState::HIDDEN);
+		player.value()->removeState(GameObjectState::HIDING);
 
 	}
 	else {
 
 		_hideBobby(player.value().get());
-		player.value()->addState(GameObjectState::HIDDEN);
+		player.value()->addState(GameObjectState::HIDING);
 
 
 	}
 
 	const auto& animationComponent = gameObject->parent().value()->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
 
-	if (player.value()->hasState(GameObjectState::HIDDEN)) {
+	if (player.value()->hasState(GameObjectState::HIDING)) {
 		animationComponent->animate("BOBBY_HIDING");
 	}
 	else{
 		animationComponent->animate("IDLE");
 	}
-
 
 }
 

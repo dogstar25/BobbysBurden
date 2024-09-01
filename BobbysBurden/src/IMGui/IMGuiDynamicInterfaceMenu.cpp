@@ -113,11 +113,6 @@ void IMGuiDynamicInterfaceMenu::_buildInteractionRow(GameObject* interfaceGameOb
 
 			//set the cursor
 			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_POINTING");
-			if (interfaceGameObject->hasTrait(TraitTag::hiding_spot)) {
-
-				cursor = TextureManager::instance().getMouseCursor("CURSOR_HIDE");
-			}
-
 			SceneManager::instance().setMouseCursor(cursor);
 
 		}

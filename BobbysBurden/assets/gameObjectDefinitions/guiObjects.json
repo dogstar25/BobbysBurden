@@ -314,6 +314,43 @@
 
         },
         {
+            "type": "BOBBY_HIDE_MENU",
+            "traitTags": [ "abstract" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "[interfaceMenu_TRANSFORM_COMPONENT]"
+
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+
+                },
+                {
+                    "id": "IMGUI_COMPONENT",
+                    "imguiType": "IMGuiBobbyHideMenu",
+                    "autoSize": false,
+                    "padding": {
+                        "x": 14,
+                        "y": 14
+                    },
+                    "color": {
+                        "background": "Colors::CHARCOAL",
+                        "backgroundAlpha": 172,
+                        "text": "Colors::CANDLE_LIGHT",
+                        "button": "Colors::MIRKWOOD",
+                        "buttonHover": "Colors::MIRKWOOD",
+                        "buttonActive": "Colors::YELLOW"
+                    }
+
+                }
+            ]
+
+
+        },
+        {
             "type": "GO_UP_DOWN_MENU",
             "traitTags": [ "abstract" ],
             "components": [

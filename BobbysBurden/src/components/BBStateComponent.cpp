@@ -128,13 +128,6 @@ void BBStateComponent::_setAndReconcileState(GameObjectState newState)
 void BBStateComponent::update()
 {
 
-	if (parent()->hasTrait(TraitTag::player)) {
-
-		int todd = 1;
-
-	}
-
-
 	StateComponent::update();
 
 	//If this is the player object then set the special house location context variable

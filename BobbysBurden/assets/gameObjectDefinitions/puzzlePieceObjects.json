@@ -267,6 +267,366 @@
                     "id": "BB_STATE_COMPONENT"
                 }
             ]
+        },
+        {
+            "type": "RUBY",
+            "traitTags": [ "puzzle_item", "save_me" ],
+            "description": "Ruby",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "[item64_TRANSFORM_COMPONENT]"
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 32,
+                                "height": 32
+                            },
+                            "density": 1
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "animationStates": [
+                        {
+                            "state": "GameObjectState::ANGLED",
+                            "animationId": "ANGLED"
+                        },
+                        {
+                            "state": "GameObjectState::STRAIGHT",
+                            "animationId": "STRAIGHT"
+                        }
+                    ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "ANGLED",
+                    "frameSize": {
+                        "width": 62,
+                        "height": 62
+                    },
+                    "animations": [
+                        {
+                            "id": "ANGLED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_RUBY_LOOSE",
+                            "frames": 1
+                        },
+                        {
+                            "id": "STRAIGHT",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_RUBY_SET",
+                            "frames": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "EMERALD",
+            "traitTags": [ "puzzle_item", "save_me" ],
+            "description": "Ruby",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "[item64_TRANSFORM_COMPONENT]"
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 32,
+                                "height": 32
+                            },
+                            "density": 1
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "animationStates": [
+                        {
+                            "state": "GameObjectState::ANGLED",
+                            "animationId": "ANGLED"
+                        },
+                        {
+                            "state": "GameObjectState::STRAIGHT",
+                            "animationId": "STRAIGHT"
+                        }
+                    ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "ANGLED",
+                    "frameSize": {
+                        "width": 62,
+                        "height": 62
+                    },
+                    "animations": [
+                        {
+                            "id": "ANGLED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_EMERALD_LOOSE",
+                            "frames": 1
+                        },
+                        {
+                            "id": "STRAIGHT",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_EMERALD_SET",
+                            "frames": 1
+                        }
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "LIGHT_CIRCLE",
+                            //"color": "Colors::ORANGE",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 32,
+                                "height": 32
+                            },
+                            "beginStates": [ "GameObjectState::OFF" ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "DIAMOND",
+            "traitTags": [ "puzzle_item", "save_me" ],
+            "description": "Ruby",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "[item64_TRANSFORM_COMPONENT]"
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 32,
+                                "height": 32
+                            },
+                            "density": 1
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "animationStates": [
+                        {
+                            "state": "GameObjectState::ANGLED",
+                            "animationId": "ANGLED"
+                        },
+                        {
+                            "state": "GameObjectState::STRAIGHT",
+                            "animationId": "STRAIGHT"
+                        }
+                    ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "ANGLED",
+                    "frameSize": {
+                        "width": 62,
+                        "height": 62
+                    },
+                    "animations": [
+                        {
+                            "id": "ANGLED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_DIAMOND_LOOSE",
+                            "frames": 1
+                        },
+                        {
+                            "id": "STRAIGHT",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_DIAMOND_SET",
+                            "frames": 1
+                        }
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "LIGHT_CIRCLE",
+                            //"color": "Colors::ORANGE",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 32,
+                                "height": 32
+                            },
+                            "beginStates": [ "GameObjectState::OFF" ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "SAPHIRE",
+            "traitTags": [ "puzzle_item", "save_me" ],
+            "description": "Ruby",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "[item64_TRANSFORM_COMPONENT]"
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 32,
+                                "height": 32
+                            },
+                            "density": 1
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "animationStates": [
+                        {
+                            "state": "GameObjectState::ANGLED",
+                            "animationId": "ANGLED"
+                        },
+                        {
+                            "state": "GameObjectState::STRAIGHT",
+                            "animationId": "STRAIGHT"
+                        }
+                    ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "ANGLED",
+                    "frameSize": {
+                        "width": 62,
+                        "height": 62
+                    },
+                    "animations": [
+                        {
+                            "id": "ANGLED",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_SAPHIRE_LOOSE",
+                            "frames": 1
+                        },
+                        {
+                            "id": "STRAIGHT",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_SAPHIRE_SET",
+                            "frames": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "SMALL_KEY",
+            "traitTags": [ "puzzle_item", "save_me" ],
+            "description": "Small Key",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_SMALL_KEY"
+                },
+                {
+                    "id": "[item64_TRANSFORM_COMPONENT]"
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 32,
+                                "height": 32
+                            },
+                            "density": 1
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
         }
     ]
 }

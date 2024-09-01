@@ -554,7 +554,7 @@
                                 "y": 20
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_4"
+                            "layer": "GameLayer::BACKGROUND_2"
                         }
 
                     ]

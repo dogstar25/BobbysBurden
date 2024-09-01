@@ -42,6 +42,9 @@ glm::vec2 IMGuiPauseWindow::render()
 		//top window spacing
 		ImGui::Spacing(); ImGui::Spacing(); ImGui::Spacing();
 
+		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_ARROW");
+		SceneManager::instance().setMouseCursor(cursor);
+
 		//Continue Button
 		if (ImGui::Button("Continue", ImGui::GameSettings::button1Size)) {
 			util::sendSceneEvent(SCENE_ACTION_EXIT);
