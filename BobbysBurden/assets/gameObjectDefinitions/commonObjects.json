@@ -240,50 +240,6 @@
             ]
         },
         {
-            "type": "MAIN_HUD_FRAME_RIGHT",
-            "traitTags": [
-                "gui"
-            ],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_HUD_FRAME_3",
-                    "alpha": 255
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
-                    "size": {
-                        "width": 225,
-                        "height": 200
-                    }
-                }
-            ]
-        },
-        {
-            "type": "MAIN_HUD_FRAME_LEFT",
-            "traitTags": [
-                "gui"
-            ],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_HUD_FRAME_4",
-                    "alpha": 255
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "absolutePositioning": true,
-                    "size": {
-                        "width": 512,
-                        "height": 164
-                    }
-                }
-            ]
-        },
-        {
             "type": "UNLOCK_ICON",
             "traitTags": [],
             "description": "Navigation Object",
@@ -451,6 +407,8 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
+                    "linearDamping": 50.0,
+                    "angularDamping": 50.0,
                     "fixtures": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
@@ -555,26 +513,6 @@
                     "id": "RENDER_COMPONENT",
                     "textureId": "TX_WHITE_QUAD",
                     "color": "Colors::WHITE"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 512,
-                        "height": 512
-                    }
-                }
-            ]
-        },
-        {
-            "type": "GRDIENT_QUAD_2",
-            "traitTags": [
-                "abstract"
-            ],
-            "description": "White quad",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_GRADIENT_2"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -751,92 +689,6 @@
             ]
         },
         {
-            "type": "BOOKCASE_3",
-            "traitTags": [],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_BOOKCASE_3"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 128,
-                        "height": 275
-                    }
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_KINEMATIC",
-                    "linearDamping": 1.0,
-                    "angularDamping": 1.0,
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::GENERAL_FREE",
-                            "collisionShape": "B2_BOX",
-                            "density": 1,
-                            "friction": 1
-                        }
-
-                    ]
-                },
-                {
-                    "id": "CHILDREN_COMPONENT",
-                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
-                    "childObjects": [
-                        {
-                            "gameObjectType": "CANDLE_2",
-                            "name": "denCandleSecretDoor",
-                            "absolutePositionSlot": {
-                                "x": -20,
-                                "y": 70
-                            },
-                            "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_1"
-
-                        },
-                        {
-                            "gameObjectType": "BOOKCASE_1X3",
-                            "name": "denBookcaseShelf",
-                            "color": "Colors::GREEN",
-                            "size": {
-                                "width": 64,
-                                "height": 40
-                            },
-                            "absolutePositionSlot": {
-                                "x": 0,
-                                "y": 8
-                            }
-                        }
-
-
-                    ]
-                },
-                {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
-                        {
-                            "actionId": "Actions::MOVE",
-                            "actionClass": "ProgressiveMoveByAction",
-                            "properties": [
-                                {
-                                    "xPixels": 40
-                                },
-                                {
-                                    "yPixels": 0
-                                },
-                                {
-                                    "speed": 1
-                                }
-                            ]
-                        }
-                    ]
-                }
-
-            ]
-        },
-        {
             "type": "SCARY_OBJECT",
             "traitTags": [ "abstract" ],
             "description": "Generic Scary object that can be added as a child to any object",
@@ -918,60 +770,6 @@
             ]
         },
         {
-            "type": "PICTURE_2",
-            "traitTags": [],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_PICTURE_2"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 50,
-                        "height": 50
-                    }
-                }
-            ]
-        },
-        {
-            "type": "PICTURE_3",
-            "traitTags": [],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_PICTURE_3"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 30,
-                        "height": 30
-                    }
-                }
-            ]
-        },
-        {
-            "type": "SIDETABLE_2",
-            "traitTags": [],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_SIDETABLE_2"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 64,
-                        "height": 64
-                    }
-                }
-            ]
-        },
-        {
             "type": "BED_STAIRS_BLOCK",
             "traitTags": [],
             "description": "",
@@ -1019,7 +817,7 @@
         },
         {
             "type": "BED_STAIRS",
-            "traitTags": [ "abstract","vertical_movement_zone" ],
+            "traitTags": [ "abstract", "vertical_movement_zone" ],
             "description": "",
             "components": [
                 {
@@ -1046,6 +844,42 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "WALL_SHELF_1",
+            "traitTags": [],
+            "description": "Shelf",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WALL_SHELF_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 120,
+                        "height": 48
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "MERMAID_1",
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 8
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2",
+                            "beginStates": [ "GameObjectState::ITEM_OBTAINABLE", "GameObjectState::ITEM_LOOSE" ]
+
+                        }
+                    ]
+                }
+            ]
         }
+
     ]
 }

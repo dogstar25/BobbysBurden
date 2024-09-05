@@ -27,7 +27,57 @@
 
         ]
 
-    }
+    },
+    "[inventoryActions_ACTION_COMPONENT]": {
 
+        "id": "ACTION_COMPONENT",
+        "actions": [
+            {
+                "actionId": "Actions::USE",
+                "actionClass": "ToggleInventoryAction"
+            },
+            {
+                "actionId": "Actions::CLOSE",
+                "actionClass": "CloseInventoryAction"
+            },
+            {
+                "actionId": "Actions::SHOW_INTERFACE",
+                "actionClass": "ShowInterfaceAction"
+            },
+            {
+                "actionId": "Actions::HIDE_INTERFACE",
+                "actionClass": "HideInterfaceAction"
+            },
+            {
+                "actionId": "Actions::APPLY_HIGHLIGHT",
+                "actionClass": "ItemhHighlightApplyAction"
+            },
+            {
+                "actionId": "Actions::REMOVE_HIGHLIGHT",
+                "actionClass": "ItemhHighlightRemoveAction"
+            }
+
+        ]
+    },
+    "[inventoryDisplayActions_ACTION_COMPONENT]": {
+
+        "id": "ACTION_COMPONENT",
+        "actions": [
+            {
+                "actionId": "Actions::USE",
+                "actionClass": "ButtonCloseInventoryAction"
+            },
+            {
+                "actionId": "Actions::SHOW_INTERFACE",
+                "actionClass": "ShowInterfaceAction"
+            },
+            {
+                "actionId": "Actions::HIDE_INTERFACE",
+                "actionClass": "HideInterfaceAction"
+            }
+
+        ]
+
+    }
 
 }

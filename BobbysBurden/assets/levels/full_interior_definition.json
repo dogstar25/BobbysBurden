@@ -192,11 +192,11 @@
             ]
         },
         {
-            "groupName": "BOBBYS_CLOSET",
+            "groupName": "BOBBYS_BATHROOM",
             "objects": [
                 {
                     "id": "LOC_0151_0012",
-                    "gameObjectType": "BOBBYS_CLOSET",
+                    "gameObjectType": "BOBBYS_BATHROOM",
                     "layer": "GameLayer::BACKGROUND_5"
                 },
                 {

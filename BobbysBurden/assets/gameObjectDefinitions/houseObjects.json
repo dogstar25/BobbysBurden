@@ -663,6 +663,7 @@
                     "childObjects": [
                         {
                             "gameObjectType": "CHEST_CONTAINER_LOCKED_1X1",
+                            "name": "chest1Locked",
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": -10

@@ -1,8 +1,8 @@
 #include "IndianStatuePuzzle.h"
 
 
-IndianStatuePuzzle::IndianStatuePuzzle(std::string name, std::string clue, int pieceCount)
-	:Puzzle(name, clue, pieceCount)
+IndianStatuePuzzle::IndianStatuePuzzle(std::string name, std::string clue, int pieceCount, GameObject* parent)
+	:Puzzle(name, clue, pieceCount, parent)
 {
 
 

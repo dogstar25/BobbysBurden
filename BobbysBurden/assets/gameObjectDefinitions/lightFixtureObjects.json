@@ -50,7 +50,7 @@
         },
         {
             "type": "CANDLE_2",
-            "traitTags": [ "toggleable" ], //Objects with the toggle_switch trait will propogate on/off states through all children
+            "traitTags": [ "toggleable" ],
             "components": [
                 {
                     "id": "RENDER_COMPONENT",

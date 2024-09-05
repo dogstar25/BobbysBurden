@@ -1,7 +1,7 @@
 {
     "gameObjects": [
         {
-            "type": "BOBBYS_CLOSET",
+            "type": "BOBBYS_BATHROOM",
             "traitTags": [],
             "description": "Bobbys Closet",
             "components": [

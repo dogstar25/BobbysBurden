@@ -5,7 +5,7 @@ class SkullPuzzle : public Puzzle
 {
 public:
 	SkullPuzzle() = default;
-	SkullPuzzle(std::string name, std::string clue, int pieceCount);
+	SkullPuzzle(std::string name, std::string clue, int pieceCount, GameObject* parent);
 
 	virtual bool isPuzzlePieceApplicable(GameObject* puzzlePieceObject) override;
 	virtual void applyPuzzlePiece(GameObject* puzzleObject, GameObject* puzzlePieceObject) override;

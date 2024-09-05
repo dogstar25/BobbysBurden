@@ -184,6 +184,42 @@
                     }
                 }
             ]
+        },
+        {
+            "type": "PICTURE_2",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_PICTURE_2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 50,
+                        "height": 50
+                    }
+                }
+            ]
+        },
+        {
+            "type": "PICTURE_3",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_PICTURE_3"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 30,
+                        "height": 30
+                    }
+                }
+            ]
         }
     ]
 }
