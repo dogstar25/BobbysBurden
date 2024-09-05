@@ -1,8 +1,8 @@
 #include "MermaidMantlePuzzle.h"
 
 
-MermaidMantlePuzzle::MermaidMantlePuzzle(std::string name, std::string clue, int pieceCount)
-	:Puzzle(name, clue, pieceCount)
+MermaidMantlePuzzle::MermaidMantlePuzzle(std::string name, std::string clue, int pieceCount, GameObject* parent)
+	:Puzzle(name, clue, pieceCount, parent)
 {
 
 

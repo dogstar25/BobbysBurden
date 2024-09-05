@@ -1,8 +1,8 @@
 #include "OilBedKnobPuzzle.h"
 
 
-OilBedKnobPuzzle::OilBedKnobPuzzle(std::string name, std::string clue, int pieceCount)
-	:Puzzle(name, clue, pieceCount)
+OilBedKnobPuzzle::OilBedKnobPuzzle(std::string name, std::string clue, int pieceCount, GameObject* parent)
+	:Puzzle(name, clue, pieceCount, parent)
 {
 
 

@@ -57,5 +57,117 @@
 
             }
         ]
+    },
+    "[inventoryInterface_BB_INTERFACE_COMPONENT]": {
+
+        "id": "BB_INTERFACE_COMPONENT",
+        "menuObject": "OPEN_CLOSE_RECEPTACLE_MENU",
+        "interfaceActions": [
+            {
+                "actionId": "Actions::USE",
+                "condition": {
+                    "operator": "ConditionOperator::AND",
+                    "events": [
+                        "InterfaceEvents::ON_LCLICK",
+                        "InterfaceEvents::ON_TOUCHING"
+                    ]
+                }
+
+            },
+            {
+                "actionId": "Actions::CLOSE",
+                "condition": {
+                    "operator": "ConditionOperator::AND",
+                    "events": [
+                        "InterfaceEvents::ON_STOP_TOUCHING"
+                    ]
+                }
+
+            },
+            {
+                "actionId": "Actions::SHOW_INTERFACE",
+                "condition": {
+                    "operator": "ConditionOperator::AND",
+                    "events": [
+                        "InterfaceEvents::ON_TOUCHING",
+                        "InterfaceEvents::ON_HOVER"
+                    ]
+                }
+
+            },
+            {
+                "actionId": "Actions::HIDE_INTERFACE",
+                "condition": {
+                    "operator": "ConditionOperator::OR",
+                    "events": [
+                        "InterfaceEvents::ON_STOP_TOUCHING",
+                        "InterfaceEvents::ON_HOVER_OUT"
+                    ]
+                }
+
+            },
+            {
+                "actionId": "Actions::APPLY_HIGHLIGHT",
+                "condition": {
+                    "operator": "ConditionOperator::AND",
+                    "events": [
+                        "InterfaceEvents::ON_HOVER",
+                        "InterfaceEvents::ON_TOUCHING"
+                    ]
+                }
+
+            },
+            {
+                "actionId": "Actions::REMOVE_HIGHLIGHT",
+                "condition": {
+                    "operator": "ConditionOperator::OR",
+                    "events": [
+                        "InterfaceEvents::ON_HOVER_OUT",
+                        "InterfaceEvents::ON_STOP_TOUCHING"
+                    ]
+                }
+
+            }
+
+
+        ]
+    },
+    "[inventoryDisplayInterface_BB_INTERFACE_COMPONENT]": {
+
+        "id": "BB_INTERFACE_COMPONENT",
+        "menuObject": "OPEN_CLOSE_RECEPTACLE_MENU",
+        "interfaceActions": [
+            {
+                "actionId": "Actions::USE",
+                "condition": {
+                    "operator": "ConditionOperator::AND",
+                    "events": [
+                        "InterfaceEvents::ON_LCLICK"
+                    ]
+                }
+
+            },
+            {
+                "actionId": "Actions::SHOW_INTERFACE",
+                "condition": {
+                    "operator": "ConditionOperator::AND",
+                    "events": [
+                        "InterfaceEvents::ON_HOVER"
+                    ]
+                }
+
+            },
+            {
+                "actionId": "Actions::HIDE_INTERFACE",
+                "condition": {
+                    "operator": "ConditionOperator::OR",
+                    "events": [
+                        "InterfaceEvents::ON_HOVER_OUT"
+                    ]
+                }
+
+            }
+
+        ]
     }
 }

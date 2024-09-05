@@ -3,8 +3,8 @@
 
 
 
-KillSpiderPuzzle::KillSpiderPuzzle(std::string name, std::string clue, int pieceCount)
-	:Puzzle(name, clue, pieceCount)
+KillSpiderPuzzle::KillSpiderPuzzle(std::string name, std::string clue, int pieceCount, GameObject* parent)
+	:Puzzle(name, clue, pieceCount, parent)
 {
 
 

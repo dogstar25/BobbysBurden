@@ -1,8 +1,8 @@
 #include "ClownPicturePuzzle.h"
 
 
-ClownPicturePuzzle::ClownPicturePuzzle(std::string name, std::string clue, int pieceCount)
-	:Puzzle(name, clue, pieceCount)
+ClownPicturePuzzle::ClownPicturePuzzle(std::string name, std::string clue, int pieceCount, GameObject* parent)
+	:Puzzle(name, clue, pieceCount, parent)
 {
 
 

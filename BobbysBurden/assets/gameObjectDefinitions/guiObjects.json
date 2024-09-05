@@ -576,6 +576,43 @@
             ]
 
 
+        },
+        {
+            "type": "SHELF_MENU",
+            "traitTags": [ "abstract" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "[interfaceMenu_TRANSFORM_COMPONENT]"
+
+                },
+                {
+                    "id": "IMGUI_COMPONENT",
+                    "imguiType": "IMGuiShelfMenu",
+                    "autoSize": false,
+                    "padding": {
+                        "x": 14,
+                        "y": 14
+                    },
+                    "color": {
+                        "background": "Colors::CHARCOAL",
+                        "backgroundAlpha": 172,
+                        "text": "Colors::CANDLE_LIGHT",
+                        "button": "Colors::MIRKWOOD",
+                        "buttonHover": "Colors::MIRKWOOD",
+                        "buttonActive": "Colors::YELLOW"
+                    }
+
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+
+                }
+            ]
+
+
         }
     ]
 }

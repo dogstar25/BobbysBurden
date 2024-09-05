@@ -60,12 +60,6 @@
                             "frames": 3
                         },
                         {
-                            "id": "OPEN_CONTINUOUSLY", // as a test case
-                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
-                            "textureId": "TX_DOOR1_FRONT_OPEN",
-                            "frames": 3
-                        },
-                        {
                             "id": "CLOSE",
                             "animateMode": "AnimationMode::ANIMATE_ONE_TIME",
                             "textureId": "TX_DOOR1_FRONT_CLOSE",
@@ -101,7 +95,7 @@
                     "sameSlotTreatment": "ChildSlotTreatment::VERTICAL",
                     "childObjects": [
                         {
-                            "gameObjectType": "DOOR_KNOB", //HOLDS THE INTERFACING WITH THE DOOR
+                            "gameObjectType": "DOOR_KNOB",
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 20

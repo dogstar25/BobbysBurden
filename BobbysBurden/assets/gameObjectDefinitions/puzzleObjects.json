@@ -680,6 +680,7 @@
                         },
                         {
                             "gameObjectType": "SMALL_KEY",
+                            "name": "key_chest1Locked",
                             "isStepChild": true,
                             "layer": "GameLayer::MAIN",
                             "absolutePositionSlot": {
