@@ -68,11 +68,11 @@ void SkullPuzzle::applyPuzzlePiece(GameObject* puzzleObject, GameObject* puzzleP
 
 			//un-hide the key
 			const auto& childrenComponent = puzzleObject->getComponent<ChildrenComponent>(ComponentTypes::CHILDREN_COMPONENT);
-			const auto& keyObject = childrenComponent->getFirstChildByType("SMALL_KEY").value();
+			const auto keyObject = childrenComponent->getFirstChildByType("SMALL_KEY").value();
 			keyObject->enableRender();
 			keyObject->addState(GameObjectState::ITEM_OBTAINABLE);
 			keyObject->addState(GameObjectState::ITEM_LOOSE);
-			//keyObject->enableUpdate();
+			keyObject->enableUpdate();
 
 
 			//disable the puzzle so that it is no long active

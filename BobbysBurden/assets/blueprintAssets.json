@@ -1,0 +1,27 @@
+{
+
+    "textureBlueprints": [
+        {
+            "id": "TX_FRONT1_BLUEPRINT",
+            "description": "Level 1 Bluprint",
+            "filename": "assets/levels/front1_blueprint.png"
+        },
+        {
+            "id": "TX_LEFT1_BLUEPRINT",
+            "description": "Level 1 Bluprint",
+            "filename": "assets/levels/left1_blueprint.png"
+        },
+        {
+            "id": "TX_FULL_INTERIOR_BLUEPRINT",
+            "description": "Level 1 Bluprint",
+            "filename": "assets/levels/full_interior_blueprint.png"
+        },
+        {
+            "id": "TX_TEST_BLUEPRINT",
+            "description": "Level 1 Bluprint",
+            "filename": "assets/levels/test_blueprint.png"
+        }
+
+    ]
+
+}

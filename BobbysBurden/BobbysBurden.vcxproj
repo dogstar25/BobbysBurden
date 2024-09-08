@@ -303,11 +303,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\bowman1.png" />
-    <Image Include="assets\HouseExterior_BG_1.png" />
-    <Image Include="assets\HouseExterior_BG_2.png" />
     <Image Include="assets\inventory1.png" />
-    <Image Include="assets\inventory2.png" />
-    <Image Include="assets\levels\front1_blueprint.png" />
     <Image Include="assets\levels\full_interior_blueprint.png" />
     <Image Include="assets\levels\test_blueprint.png" />
     <Image Include="assets\textureAtlas00.png" />
@@ -319,13 +315,14 @@
     <Image Include="assets\textureAtlas04.png" />
     <Image Include="assets\textureAtlas05.png" />
     <Image Include="assets\textureAtlas06.png" />
-    <Image Include="assets\textureAtlasImGui.png" />
-    <Image Include="assets\window_shadow1.png" />
+    <Image Include="assets\textureAtlas99.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\blueprintAssets.json" />
     <None Include="assets\config\BeginGamePrimerFile.json" />
     <None Include="assets\config\gameConfig.json" />
     <None Include="assets\config\gameScenes.json" />
+    <None Include="assets\fontAssets.json" />
     <None Include="assets\gameObjectDefinitions\backRooms.json" />
     <None Include="assets\gameObjectDefinitions\bobbysRoomFurniture.json" />
     <None Include="assets\gameObjectDefinitions\commonObjects.json" />
@@ -354,10 +351,17 @@
     <None Include="assets\levels\full_interior_definition.json" />
     <None Include="assets\levels\levels.json" />
     <None Include="assets\levels\test_definition.json" />
+    <None Include="assets\mouseCursors.json" />
     <None Include="assets\sound\buttonWorking.ogg" />
     <None Include="assets\sound\soundAssets.json" />
-    <None Include="assets\textureAtlas00.psd" />
-    <None Include="assets\textureAtlasAssets.json" />
+    <None Include="assets\textureAtlas00.json" />
+    <None Include="assets\textureAtlas01.json" />
+    <None Include="assets\textureAtlas02.json" />
+    <None Include="assets\textureAtlas03.json" />
+    <None Include="assets\textureAtlas04.json" />
+    <None Include="assets\textureAtlas05.json" />
+    <None Include="assets\textureAtlas06.json" />
+    <None Include="assets\textureAtlas99.json" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="assets\sound\approachingStorm_1.wav" />

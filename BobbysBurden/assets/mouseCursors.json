@@ -1,0 +1,126 @@
+{
+
+    "mouseCursors": [
+        {
+            "id": "CURSOR_ARROW",
+            "textureId": "TX_MOUSE_CURSOR_ARROW",
+            "hotSpot": {
+                "x": 25,
+                "y": 2
+            }
+        },
+        {
+            "id": "CURSOR_ARROW_QUESTION",
+            "textureId": "TX_MOUSE_CURSOR_ARROW_QUESTION",
+            "hotSpot": {
+                "x": 25,
+                "y": 2
+            }
+        },
+        {
+            "id": "CURSOR_HAND_GRAB_1",
+            "textureId": "TX_MOUSE_CURSOR_HAND_GRAB_1",
+            "hotSpot": {
+                "x": 16,
+                "y": 25
+            }
+        },
+        {
+            "id": "CURSOR_HAND_GRAB_1",
+            "textureId": "TX_MOUSE_CURSOR_HAND_GRAB_1",
+            "hotSpot": {
+                "x": 16,
+                "y": 25
+            }
+        },
+        {
+            "id": "CURSOR_HAND_APPLY",
+            "textureId": "TX_MOUSE_CURSOR_HAND_APPLY",
+            "hotSpot": {
+                "x": 14,
+                "y": 28
+            }
+        },
+        {
+            "id": "CURSOR_HAND_APPLY_2",
+            "textureId": "TX_MOUSE_CURSOR_HAND_APPLY_2",
+            "hotSpot": {
+                "x": 35,
+                "y": 2
+            }
+        },
+        {
+            "id": "CURSOR_HAND_OPEN",
+            "textureId": "TX_MOUSE_CURSOR_HAND_OPEN",
+            "hotSpot": {
+                "x": 35,
+                "y": 2
+            }
+        },
+        {
+            "id": "CURSOR_DOOR_CLOSE",
+            "textureId": "TX_MOUSE_CURSOR_DOOR_CLOSE",
+            "hotSpot": {
+                "x": 35,
+                "y": 9
+            }
+        },
+        {
+            "id": "CURSOR_DOOR_OPEN",
+            "textureId": "TX_MOUSE_CURSOR_DOOR_OPEN",
+            "hotSpot": {
+                "x": 32,
+                "y": 32
+            }
+        },
+        {
+            "id": "CURSOR_OPEN_RECEPTACLE",
+            "textureId": "TX_MOUSE_CURSOR_OPEN_RECEPTACLE",
+            "hotSpot": {
+                "x": 32,
+                "y": 32
+            }
+        },
+        {
+            "id": "CURSOR_DROP_ITEM",
+            "textureId": "TX_MOUSE_CURSOR_DROP_ITEM",
+            "hotSpot": {
+                "x": 32,
+                "y": 32
+            }
+        },
+        {
+            "id": "CURSOR_POINTING",
+            "textureId": "TX_MOUSE_CURSOR_POINTING",
+            "hotSpot": {
+                "x": 20,
+                "y": 12
+            }
+        },
+        {
+            "id": "CURSOR_SEARCH",
+            "textureId": "TX_MOUSE_CURSOR_SEARCH",
+            "hotSpot": {
+                "x": 32,
+                "y": 32
+            }
+        },
+        {
+            "id": "CURSOR_HIDE",
+            "textureId": "TX_MOUSE_CURSOR_HIDE",
+            "hotSpot": {
+                "x": 32,
+                "y": 32
+            }
+        },
+        {
+            "id": "CURSOR_UNHIDE",
+            "textureId": "TX_MOUSE_CURSOR_UNHIDE",
+            "hotSpot": {
+                "x": 32,
+                "y": 32
+            }
+        }
+    ]
+
+}

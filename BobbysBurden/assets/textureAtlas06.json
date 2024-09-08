@@ -1,0 +1,17 @@
+{
+    "textures": [
+
+        {
+            "id": "TX_FULL_HOUSE_BACK_EXTERIOR",
+            "description": "Default Texture",
+            "quadPosition": {
+                "x": 0,
+                "y": 0,
+                "width": 3034,
+                "height": 1600
+            }
+        }
+
+
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "textures": [
+
+        {
+            "id": "TX_FULL_TREE_BACKGROUND_1",
+            "description": "Default Texure",
+            "quadPosition": {
+                "x": 0,
+                "y": 0,
+                "width": 4000,
+                "height": 1266
+            }
+        }
+    ]
+}
