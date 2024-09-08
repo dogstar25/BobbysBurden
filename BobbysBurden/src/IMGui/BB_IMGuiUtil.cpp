@@ -52,8 +52,9 @@ namespace ImGui
 		}
 		else {
 
-			//SDL2 Texture void* is the SDL_Texture*
-			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
+			
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 	}
@@ -72,8 +73,8 @@ namespace ImGui
 		}
 		else {
 
-			//SDL2 Texture void* is the SDL_Texture*
-			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 	}
@@ -92,8 +93,8 @@ namespace ImGui
 		}
 		else {
 
-			//SDL2 Texture void* is the SDL_Texture*
-			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 	}
@@ -112,8 +113,8 @@ namespace ImGui
 		}
 		else {
 
-			//SDL2 Texture void* is the SDL_Texture*
-			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 	}
@@ -140,8 +141,8 @@ namespace ImGui
 		}
 		else {
 
-			//SDL2 Texture void* is the SDL_Texture*
-			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 
@@ -161,8 +162,8 @@ namespace ImGui
 		}
 		else {
 
-			//SDL2 Texture void* is the SDL_Texture*
-			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 
@@ -182,8 +183,8 @@ namespace ImGui
 		}
 		else {
 
-			//SDL2 Texture void* is the SDL_Texture*
-			SDL_Texture* sdlTexture = TextureManager::instance().getTexture("TEXTURE_IMGUI_ATLAS")->sdlTexture;
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 

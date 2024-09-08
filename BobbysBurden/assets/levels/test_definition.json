@@ -17,11 +17,26 @@
     ],
     "locationDefinedObjects": [
         {
-            "id": "LOC_0027_0017",
-            "gameObjectType": "PARENT_SQUARE",
-            "layer": "GameLayer::MAIN"
+            "groupName": "TEST",
+            "objects": [
+                {
+                    "id": "LOC_0023_0019",
+                    "gameObjectType": "HOUSE_BEAM",
+                    "layer": "GameLayer::ABSTRACT",
+                    "size": {
+                        "width": 768,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "LOC_0027_0017",
+                    "gameObjectType": "BOBBY",
+                    "layer": "GameLayer::MAIN",
+                    "cameraFollow": true
+                }
+
+            ]
+
         }
-
-
     ]
 }

@@ -1,5 +1,6 @@
 #include "HideAction.h"
 #include "../GameConstants.h"
+#include "ToggleBobbyEquipAction.h"
 
 void HideAction::perform(GameObject* gameObject)
 {
@@ -38,7 +39,11 @@ void HideAction::_hideBobby(GameObject* player)
 	//player->disablePhysics();
 	player->disableRender();
 	player->disableUpdate();
-	//player->stash();
+
+	if (player->hasState(GameObjectState::EQUIPPED)) {
+		ToggleBobbyEquipAction action(Json::Value{}, player);
+		action.perform(player);
+	}
 
 }
 

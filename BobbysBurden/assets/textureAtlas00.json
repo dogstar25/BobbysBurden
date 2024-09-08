@@ -1,0 +1,554 @@
+{
+    "textures": [
+        {
+            "id": "TX_DEFAULT",
+            "description": "Default Texure",
+            "quadPosition": {
+                "x": 2,
+                "y": 120,
+                "width": 128,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_WHITE_QUAD",
+            "description": "White Quad",
+            "quadPosition": {
+                "x": 2,
+                "y": 20,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_CLEAR_QUAD",
+            "description": "Clear Quad",
+            "quadPosition": {
+                "x": 2,
+                "y": 2,
+                "width": 16,
+                "height": 16
+            }
+        },
+        {
+            "id": "TX_FOG_BOX",
+            "description": "Fog Box",
+            "quadPosition": {
+                "x": 36,
+                "y": 20,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_FOG_BOX2",
+            "description": "Fog Box",
+            "quadPosition": {
+                "x": 104,
+                "y": 20,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_ALMOST_CLEAR_BOX",
+            "description": "Fog Box",
+            "quadPosition": {
+                "x": 105,
+                "y": 21,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_DARK_BOX",
+            "description": "Dark Box",
+            "quadPosition": {
+                "x": 70,
+                "y": 20,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_BOWMAN1",
+            "description": "Single bowman image",
+            "quadPosition": {
+                "x": 69,
+                "y": 55,
+                "width": 64,
+                "height": 64
+            }
+        },
+        {
+            "id": "TX_BRICK_WALL_1",
+            "description": "Brick Wall 1",
+            "quadPosition": {
+                "x": 38,
+                "y": 2,
+                "width": 16,
+                "height": 16
+            }
+        },
+        {
+            "id": "TX_BRICK_SMALL_RIGHT_1",
+            "description": "Brick Wall 1",
+            "quadPosition": {
+                "x": 91,
+                "y": 2,
+                "width": 16,
+                "height": 16
+            }
+        },
+        {
+            "id": "TX_BRICK_SMALL_LEFT_1",
+            "description": "Brick Wall 1",
+            "flip": true,
+            "quadPosition": {
+                "x": 91,
+                "y": 2,
+                "width": 16,
+                "height": 16
+            }
+        },
+        {
+            "id": "TX_BRICK_CHIMNEY_1",
+            "description": "Brick Wall 1",
+            "quadPosition": {
+                "x": 74,
+                "y": 2,
+                "width": 16,
+                "height": 16
+            }
+        },
+        {
+            "id": "TX_BRICK_WALL_2",
+            "description": "Brick Wall 2",
+            "quadPosition": {
+                "x": 134,
+                "y": 54,
+                "width": 64,
+                "height": 64
+            }
+        },
+        {
+            "id": "TX_ROOM_PARLOR",
+            "description": "Parlor Room",
+            "quadPosition": {
+                "x": 1256,
+                "y": 572,
+                "width": 544,
+                "height": 320
+            }
+        },
+        {
+            "id": "TX_ROOM_DEN",
+            "description": "Den Room",
+            "quadPosition": {
+                "x": 548,
+                "y": 250,
+                "width": 544,
+                "height": 320
+            }
+        },
+        {
+            "id": "TX_ROOM_TOPSTAIRS",
+            "description": "Top Floor Stairs",
+            "quadPosition": {
+                "x": 2,
+                "y": 572,
+                "width": 320,
+                "height": 320
+            }
+        },
+        {
+            "id": "TX_MAIN_STAIRS",
+            "description": "Bottom Floor Stairs",
+            "quadPosition": {
+                "x": 2,
+                "y": 572,
+                "width": 160,
+                "height": 320
+            }
+        },
+        {
+            "id": "TX_TOP_STAIRS_RAIL",
+            "description": "Top stairs rail",
+            "quadPosition": {
+                "x": 1869,
+                "y": 0,
+                "width": 125,
+                "height": 77
+            }
+        },
+        {
+            "id": "TX_BEDROOM_1",
+            "description": "Bedroom 1",
+            "quadPosition": {
+                "x": 2,
+                "y": 250,
+                "width": 544,
+                "height": 320
+            }
+        },
+        {
+            "id": "TX_BEDROOM_2",
+            "description": "Bedroom 2",
+            "quadPosition": {
+                "x": 710,
+                "y": 572,
+                "width": 544,
+                "height": 320
+            }
+        },
+        //
+        //DOORS
+        //
+        {
+            "id": "TX_DOOR1_FRONT_CLOSE",
+            "description": "Door1",
+            "quadPosition": {
+                "x": 621,
+                "y": 23,
+                "width": 288,
+                "height": 225
+            }
+        },
+        {
+            "id": "TX_DOOR1_FRONT_OPEN",
+            "description": "Door1",
+            "quadPosition": {
+                "x": 429,
+                "y": 23,
+                "width": 288,
+                "height": 225
+            }
+        },
+        {
+            "id": "TX_DOOR1_FRONT_OPENED",
+            "description": "Door1",
+            "quadPosition": {
+                "x": 621,
+                "y": 23,
+                "width": 101,
+                "height": 235
+            }
+        },
+        {
+            "id": "TX_DOOR1_FRONT_CLOSED",
+            "description": "Door1",
+            "quadPosition": {
+                "x": 429,
+                "y": 23,
+                "width": 101,
+                "height": 235
+            }
+        },
+        {
+            "id": "TX_DOOR1_SIDE_OPENED",
+            "description": "Door from side closed",
+            "quadPosition": {
+                "x": 1754,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_DOOR1_SIDE_CLOSED",
+            "description": "Door from side open",
+            "quadPosition": {
+                "x": 1683,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_DOOR1_LEFT_SIDE_OPENED",
+            "description": "Door from side closed",
+            "flip": true,
+            "quadPosition": {
+                "x": 1754,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_DOOR1_LEFT_SIDE_CLOSED",
+            "description": "Door from side open",
+            "flip": true,
+            "quadPosition": {
+                "x": 1683,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        }, ////
+        {
+            "id": "TX_DOOR2_SIDE_OPENED",
+            "description": "Door from side closed",
+            "quadPosition": {
+                "x": 1602,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_DOOR2_SIDE_CLOSED",
+            "description": "Door from side open",
+            "quadPosition": {
+                "x": 1531,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_DOOR2_LEFT_SIDE_OPENED",
+            "description": "Door from side closed",
+            "flip": true,
+            "quadPosition": {
+                "x": 1602,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_DOOR2_LEFT_SIDE_CLOSED",
+            "description": "Door from side open",
+            "flip": true,
+            "quadPosition": {
+                "x": 1531,
+                "y": 2,
+                "width": 70,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_DOOR_FRONT_HIDDEN_CLOSE",
+            "description": "Secret Door",
+            "quadPosition": {
+                "x": 98,
+                "y": 894,
+                "width": 128,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_DOOR_FRONT_HIDDEN_OPEN",
+            "description": "Secret Door",
+            "quadPosition": {
+                "x": 2,
+                "y": 894,
+                "width": 128,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_DOOR_FRONT_HIDDEN_OPENED",
+            "description": "Secret Den Door",
+            "quadPosition": {
+                "x": 98,
+                "y": 894,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_DOOR_FRONT_HIDDEN_CLOSED",
+            "description": "Secret Den Door",
+            "quadPosition": {
+                "x": 2,
+                "y": 894,
+                "width": 32,
+                "height": 32
+            }
+        },
+        {
+            "id": "TX_CRYSTAL",
+            "description": "CC",
+            "quadPosition": {
+                "x": 56,
+                "y": 2,
+                "width": 16,
+                "height": 16
+            }
+        },
+        //LIGHTS
+        {
+            "id": "TX_LIGHT_CIRCLE",
+            "description": "Light 360",
+            "quadPosition": {
+                "x": 2,
+                "y": 1227,
+                "width": 198,
+                "height": 198
+            }
+        },
+        {
+            "id": "TX_LIGHT_CIRCLE_BRIGHT",
+            "description": "Light 360",
+            "quadPosition": {
+                "x": 202,
+                "y": 1026,
+                "width": 198,
+                "height": 198
+            }
+        },
+        {
+            "id": "TX_LIGHT_RECTANGLE",
+            "description": "Light 360",
+            "quadPosition": {
+                "x": 531,
+                "y": 1604,
+                "width": 115,
+                "height": 89
+            }
+        },
+        {
+            "id": "TX_LIGHT_DIAMOND",
+            "description": "Light 360",
+            "quadPosition": {
+                "x": 1031,
+                "y": 894,
+                "width": 512,
+                "height": 512
+            }
+        },
+        {
+            "id": "TX_LIGHT_WINDOW_1",
+            "description": "Light Window 1",
+            "quadPosition": {
+                "x": 516,
+                "y": 1025,
+                "width": 254,
+                "height": 254
+            }
+        },
+        {
+            "id": "TX_LIGHT_WINDOW_2",
+            "description": "Light Window 2",
+            "quadPosition": {
+                "x": 515,
+                "y": 1282,
+                "width": 256,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_LIGHT_WINDOW_3",
+            "description": "Light Window 3",
+            "quadPosition": {
+                "x": 773,
+                "y": 1024,
+                "width": 256,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_LIGHT_WINDOW_4",
+            "description": "Light Window 4",
+            "quadPosition": {
+                "x": 773,
+                "y": 1282,
+                "width": 256,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_MOUSE_CURSOR_HAND_OPEN",
+            "description": "Default Texure",
+            "quadPosition": {
+                "x": 266,
+                "y": 120,
+                "width": 64,
+                "height": 64
+            }
+        },
+        {
+            "id": "TX_HUD_FRAME_1",
+            "description": "Default Texure",
+            "quadPosition": {
+                "x": 1031,
+                "y": 1408,
+                "width": 512,
+                "height": 512
+            }
+        },
+        {
+            "id": "TX_HUD_FRAME_2",
+            "description": "Default Texure",
+            "quadPosition": {
+                "x": 1,
+                "y": 1538,
+                "width": 343,
+                "height": 396
+            }
+        },
+        {
+            "id": "TX_HUD_FRAME_3",
+            "description": "Default Texure",
+            "quadPosition": {
+                "x": 410,
+                "y": 1538,
+                "width": 256,
+                "height": 185
+            }
+        },
+        {
+            "id": "TX_MOUSE_CURSOR_DROP_ITEM",
+            "description": "Default Texure",
+            "quadPosition": {
+                "x": 1293,
+                "y": 372,
+                "width": 62,
+                "height": 62
+            }
+        },
+        {
+            "id": "TX_WALLPAPER_BIG_1",
+            "description": "",
+            "quadPosition": {
+                "x": 1536,
+                "y": 1739,
+                "width": 507,
+                "height": 308
+            }
+        },
+        {
+            "id": "TX_WALLPAPER_SMALL_1",
+            "description": "",
+            "quadPosition": {
+                "x": 1536,
+                "y": 1739,
+                "width": 256,
+                "height": 308
+            }
+        },
+        {
+            "id": "TX_FIREPLACE_2",
+            "description": "",
+            "quadPosition": {
+                "x": 1161,
+                "y": 1576,
+                "width": 361,
+                "height": 472
+            }
+        },
+        {
+            "id": "TX_TILE1_BIG",
+            "description": "",
+            "quadPosition": {
+                "x": 531,
+                "y": 1694,
+                "width": 543,
+                "height": 320
+            }
+        }
+
+    ]
+}

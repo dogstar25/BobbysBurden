@@ -44,8 +44,18 @@ bool BBGame::init(
 	//Display basic loading message
 	_displayLoadingMsg();
 
-	TextureManager::instance().init();
-	TextureManager::instance().load("textureAtlasAssets");
+	//Load all textures
+	TextureManager::instance().loadTextures("textureAtlas00");
+	TextureManager::instance().loadTextures("textureAtlas01");
+	TextureManager::instance().loadTextures("textureAtlas02");
+	TextureManager::instance().loadTextures("textureAtlas03");
+	TextureManager::instance().loadTextures("textureAtlas04");
+	TextureManager::instance().loadTextures("textureAtlas05");
+	TextureManager::instance().loadTextures("textureAtlas06");
+	TextureManager::instance().loadTextures("textureAtlas99");
+	TextureManager::instance().loadBlueprints("blueprintAssets");
+	TextureManager::instance().loadFonts("fontAssets");
+	TextureManager::instance().loadCursors("mouseCursors");
 
 	//Initialize the SceneManager
 	SceneManager::instance().init();

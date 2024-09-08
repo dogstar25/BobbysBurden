@@ -1,0 +1,183 @@
+{
+    "textures": [
+
+        //
+        // Bobby Animations
+        //
+        {
+            "id": "TX_BOBBY_IDLE_RIGHT",
+            "description": "Bobby Idle Right",
+            "flip": true,
+            "quadPosition": {
+                "x": 0,
+                "y": 0,
+                "width": 64,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_IDLE_LEFT",
+            "description": "Bobby Idle",
+            "quadPosition": {
+                "x": 0,
+                "y": 0,
+                "width": 64,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_RIGHT",
+            "description": "Bobby Walk",
+            "flip": true,
+            "quadPosition": {
+                "x": 0,
+                "y": 0,
+                "width": 640,
+                "height": 384
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_LEFT",
+            "description": "Bobby Walk",
+            "quadPosition": {
+                "x": 0,
+                "y": 0,
+                "width": 640,
+                "height": 384
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_DOWN_STAIRS",
+            "description": "Bobby Walk",
+            "quadPosition": {
+                "x": 0,
+                "y": 768,
+                "width": 576,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_DOWN_IDLE_STAIRS",
+            "description": "Bobby Walk",
+            "quadPosition": {
+                "x": 0,
+                "y": 768,
+                "width": 64,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_UP_STAIRS",
+            "description": "Bobby Walk",
+            "quadPosition": {
+                "x": 0,
+                "y": 896,
+                "width": 576,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_UP_IDLE_STAIRS",
+            "description": "Bobby Walk",
+            "quadPosition": {
+                "x": 0,
+                "y": 896,
+                "width": 64,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_IDLE_RIGHT_EQUIPPED",
+            "description": "Bobby Idle Right",
+            "flip": true,
+            "quadPosition": {
+                "x": 0,
+                "y": 384,
+                "width": 64,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_IDLE_LEFT_EQUIPPED",
+            "description": "Bobby Idle",
+            "quadPosition": {
+                "x": 0,
+                "y": 384,
+                "width": 64,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_RIGHT_EQUIPPED",
+            "description": "Bobby Walk",
+            "flip": true,
+            "quadPosition": {
+                "x": 0,
+                "y": 384,
+                "width": 640,
+                "height": 384
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_LEFT_EQUIPPED",
+            "description": "Bobby Walk",
+            "quadPosition": {
+                "x": 0,
+                "y": 384,
+                "width": 640,
+                "height": 384
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_DOWN_STAIRS_EQUIPPED",
+            "description": "Bobby Walk",
+            "quadPosition": {
+                "x": 0,
+                "y": 768,
+                "width": 576,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_DOWN_IDLE_STAIRS_EQUIPPED",
+            "description": "Bobby Walk",
+            "quadPosition": {
+                "x": 0,
+                "y": 768,
+                "width": 64,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_UP_STAIRS_EQUIPPED",
+            "description": "Bobby Walk",
+            "quadPosition": {
+                "x": 0,
+                "y": 896,
+                "width": 576,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_WALK_UP_IDLE_STAIRS_EQUIPPED",
+            "description": "Bobby Walk",
+            "quadPosition": {
+                "x": 0,
+                "y": 896,
+                "width": 576,
+                "height": 128
+            }
+        },
+        {
+            "id": "TX_BOBBY_HIDE_UNDER_BOBBY_SHEETS",
+            "description": "Bobby Hide",
+            "quadPosition": {
+                "x": 1,
+                "y": 1041,
+                "width": 64,
+                "height": 128
+            }
+        }
+
+    ]
+}

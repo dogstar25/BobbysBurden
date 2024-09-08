@@ -58,6 +58,7 @@ bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATE
 
 		hasHigherPriority = false;
 
+
 		if (m_currentGameObjectInterfaceActive.value() == parent()) {
 
 			hasHigherPriority = true;
@@ -109,6 +110,13 @@ bool BBInterfaceComponent::doesInterfaceHavePriority(std::bitset<MAX_EVENT_STATE
 
 		}
 
+		//Scenario where we want the skull holding the small key override the key interface itself
+		if (parent()->type() == "SKULL" &&
+			m_currentGameObjectInterfaceActive.value()->type() == "SMALL_KEY"){
+
+			hasHigherPriority = true;
+
+		}
 
 	}
 
