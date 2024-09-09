@@ -3,10 +3,10 @@
 
 extern std::unique_ptr<Game> game;
 
-void ItemDropAction::perform(GameObject* droppedGameObject)
+void ItemDropAction::perform()
 {
 
-	const auto& objectToInterfaceWith = BBInterfaceComponent::determineItemContactInterfaceTarget(droppedGameObject);
+	const auto& objectToInterfaceWith = BBInterfaceComponent::determineItemContactInterfaceTarget(m_parent);
 
 	if (objectToInterfaceWith.has_value()) {
 
@@ -17,10 +17,10 @@ void ItemDropAction::perform(GameObject* droppedGameObject)
 			const auto& puzzleComponent = objectToInterfaceWith.value()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 
 			if (puzzleComponent->hasBeenSolved() == false) {
-				_handleDropOnPuzzle(objectToInterfaceWith.value().get(), droppedGameObject);
+				_handleDropOnPuzzle(objectToInterfaceWith.value().get(), m_parent);
 			}
 			else {
-				_handleDropOnInventory(droppedGameObject, objectToInterfaceWith.value().get());
+				_handleDropOnInventory(m_parent, objectToInterfaceWith.value().get());
 			}
 
 		}
@@ -30,7 +30,7 @@ void ItemDropAction::perform(GameObject* droppedGameObject)
 
 			if (objectToInterfaceWith.value()->hasState(GameObjectState::LOCKED) == false) {
 
-				_handleDropOnInventory(droppedGameObject, objectToInterfaceWith.value().get());
+				_handleDropOnInventory(m_parent, objectToInterfaceWith.value().get());
 			}
 
 		}
@@ -42,7 +42,7 @@ void ItemDropAction::perform(GameObject* droppedGameObject)
 			const auto& puzzleComponent = objectToInterfaceWith.value()->getComponent<PuzzleComponent>(ComponentTypes::PUZZLE_COMPONENT);
 			if (puzzleComponent->hasBeenSolved() == false) {
 
-				_handleDropOnPuzzle(objectToInterfaceWith.value().get(), droppedGameObject);
+				_handleDropOnPuzzle(objectToInterfaceWith.value().get(), m_parent);
 
 			}
 

@@ -3,7 +3,6 @@
 #include "DoorToggleAction.h"
 #include "DoorEnterAction.h"
 #include "TwistBedKnobAction.h"
-#include "OilBedKnobAction.h"
 #include "HideAction.h"
 #include "ShowInterfaceAction.h"
 #include "HideInterfaceAction.h"
@@ -41,10 +40,6 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType, Json::Va
     else if (actionType == "HideAction") {
 
         action = std::make_shared<HideAction>(properties, parent);
-    }
-    else if (actionType == "OilBedKnobAction") {
-
-        action = std::make_shared<OilBedKnobAction>(properties, parent);
     }
     else if (actionType == "TwistBedKnobAction") {
 

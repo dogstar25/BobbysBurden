@@ -2,11 +2,11 @@
 #include "../components/BBStateComponent.h"
 #include "../GameConstants.h"
 
-void ScareBobbyAction::perform(GameObject* scaryObject)
+void ScareBobbyAction::perform()
 {
 	std::string scareType{"removeScare"};
 
-	const auto& bobby = scaryObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
+	const auto& bobby = m_parent->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
 	const auto& childrenComponent = bobby.value()->getComponent<ChildrenComponent>(ComponentTypes::CHILDREN_COMPONENT);
 	const auto& playerController = bobby.value()->getComponent<PlayerControlComponent>(ComponentTypes::PLAYER_CONTROL_COMPONENT);
 	const auto& stateComponent = bobby.value()->getComponent<BBStateComponent>(ComponentTypes::STATE_COMPONENT);

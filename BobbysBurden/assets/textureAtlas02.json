@@ -651,6 +651,36 @@
                 "width": 62,
                 "height": 62
             }
+        },
+        {
+            "id": "TX_BAR_CABINET",
+            "description": "",
+            "quadPosition": {
+                "x": 1809,
+                "y": 251,
+                "width": 134,
+                "height": 254
+            }
+        },
+        {
+            "id": "TX_PHONOGRAPH",
+            "description": "",
+            "quadPosition": {
+                "x": 1574,
+                "y": 121,
+                "width": 101,
+                "height": 125
+            }
+        },
+        {
+            "id": "TX_TABLE_4",
+            "description": "",
+            "quadPosition": {
+                "x": 339,
+                "y": 798,
+                "width": 192,
+                "height": 246
+            }
         }
 
 

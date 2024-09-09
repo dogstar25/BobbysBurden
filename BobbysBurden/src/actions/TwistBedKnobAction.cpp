@@ -1,12 +1,12 @@
 #include "TwistBedKnobAction.h"
 #include "../GameConstants.h"
 
-void TwistBedKnobAction::perform(GameObject* gameObject)
+void TwistBedKnobAction::perform()
 {
 	std::cout << "Twisted the bedknob!" << std::endl;
 
 	//Get bedObject
-	auto bedPosition = gameObject->parent().value()->getCenterPosition();
+	auto bedPosition = m_parent->parent().value()->getCenterPosition();
 
 	bedPosition.x += 64;
 	bedPosition.y += 12;
@@ -16,13 +16,13 @@ void TwistBedKnobAction::perform(GameObject* gameObject)
 	tilePosition.x -= 2;
 	tilePosition.y += 3;
 
-	const auto& keyObject = gameObject->parentScene()->addGameObject("KEY1", nullptr, GameLayer::BACKGROUND_3, tilePosition.x, tilePosition.y);
+	const auto& keyObject = m_parent->parentScene()->addGameObject("KEY1", nullptr, GameLayer::BACKGROUND_3, tilePosition.x, tilePosition.y);
 	keyObject->addLitHighlight( {128.0,128.0} );
 	keyObject->addState(GameObjectState::ITEM_LOOSE);
 	keyObject->addState(GameObjectState::ITEM_OBTAINABLE);
 
 	//disable this puzzle object so that the action can only be triggered once
-	gameObject->disableUpdate();
+	m_parent->disableUpdate();
 	
 
 }

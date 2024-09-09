@@ -33,7 +33,7 @@ void BBStateComponent::postInit()
 
 		jsonArray.append(pair);
 		std::shared_ptr<Action> onOffToggleAction = std::make_shared<OnOffToggleAction>(jsonArray, parent());
-		onOffToggleAction->perform(parent());
+		onOffToggleAction->perform();
 
 	}
 

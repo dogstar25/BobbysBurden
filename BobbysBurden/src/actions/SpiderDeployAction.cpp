@@ -1,10 +1,10 @@
 #include "SpiderDeployAction.h"
 #include "../GameConstants.h"
 
-void SpiderDeployAction::perform(GameObject* gameObject)
+void SpiderDeployAction::perform()
 {
 
-	const auto& stateComponent = gameObject->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
+	const auto& stateComponent = m_parent->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 
 	std::string actionType = getActionProperty("actionType").asString();
 

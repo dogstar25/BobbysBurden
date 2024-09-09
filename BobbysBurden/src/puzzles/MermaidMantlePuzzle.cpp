@@ -55,7 +55,7 @@ void MermaidMantlePuzzle::applyPuzzlePiece(GameObject* puzzleObject, GameObject*
 		if (bookcase.has_value()) {
 			const auto& bookcaseActionComponent = bookcase.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
 			const auto& moveAction = bookcaseActionComponent->getAction(Actions::MOVE);
-			moveAction->perform(bookcase.value().get());
+			moveAction->perform();
 		}
 
 		//Unhide The secret doorknob
@@ -70,7 +70,7 @@ void MermaidMantlePuzzle::applyPuzzlePiece(GameObject* puzzleObject, GameObject*
 		const auto& candle = puzzleObject->parentScene()->getFirstGameObjectByName("denCandleSecretDoor");
 		//candle.value()->addState(GameObjectState::ON);
 		std::shared_ptr<Action> onOffToggleAction = std::make_shared<OnOffToggleAction>(Json::Value(), candle.value().get());
-		onOffToggleAction->perform(candle.value().get());
+		onOffToggleAction->perform();
 
 		//disable the puzzle so that it is no long active
 		puzzleObject->disableUpdate();

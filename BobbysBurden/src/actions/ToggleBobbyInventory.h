@@ -9,7 +9,7 @@ public:
 	ToggleBobbyInventory(Json::Value properties, GameObject* parent)
 		:Action(properties, parent) {}
 
-	void perform(GameObject* doorObject) override;
+	void perform() override;
 
 
 };
