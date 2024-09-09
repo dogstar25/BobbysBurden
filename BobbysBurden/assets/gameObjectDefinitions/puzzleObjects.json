@@ -544,7 +544,7 @@
         },
         {
             "type": "SKULL",
-            "traitTags": [ "puzzle"],
+            "traitTags": [ "puzzle" ],
             "description": "Skull",
             "components": [
                 {
@@ -691,7 +691,7 @@
                                 "width": 64,
                                 "height": 64
                             },
-                            "beginStates": ["GameObjectState::DISABLED_UPDATE"]
+                            "beginStates": [ "GameObjectState::DISABLED_UPDATE" ]
 
                         },
                         {

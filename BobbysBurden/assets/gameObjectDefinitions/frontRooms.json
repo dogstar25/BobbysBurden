@@ -81,15 +81,6 @@
                             "layer": "GameLayer::FOREGROUND_2"
                         },
                         {
-                            "gameObjectType": "GHOST",
-                            "absolutePositionSlot": {
-                                "x": -200,
-                                "y": 60
-                            },
-                            "isStepChild": true,
-                            "layer": "GameLayer::MAIN"
-                        },
-                        {
                             "gameObjectType": "COLUMN_1",
                             "absolutePositionSlot": {
                                 "x": 262,
@@ -101,6 +92,92 @@
                                 "width": 52,
                                 "height": 360
                             }
+                        },
+                        {
+                            "gameObjectType": "BAR_CABINET",
+                            "absolutePositionSlot": {
+                                "x": 170,
+                                "y": 40
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_3",
+                            "size": {
+                                "width": 128,
+                                "height": 254
+                            }
+                        },
+                        {
+                            "gameObjectType": "SOFA_1",
+                            "absolutePositionSlot": {
+                                "x": -24,
+                                "y": 100
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_3",
+                            "size": {
+                                "width": 270,
+                                "height": 145
+                            }
+                        },
+                        {
+                            "gameObjectType": "TABLE_4",
+                            "absolutePositionSlot": {
+                                "x": -200,
+                                "y": 110
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_3",
+                            "size": {
+                                "width": 96,
+                                "height": 100
+                            }
+                        },
+                        {
+                            "gameObjectType": "PHONOGRAPH",
+                            "absolutePositionSlot": {
+                                "x": -184,
+                                "y": 10
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_3",
+                            "size": {
+                                "width": 108,
+                                "height": 108
+                            }
+                        },
+                        {
+                            "gameObjectType": "CHANDELIER_2",
+                            "name": "parlorLightSwitch_TARGET",
+                            "absolutePositionSlot": {
+                                "x": -26,
+                                "y": -97
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_3",
+                            "size": {
+                                "width": 130,
+                                "height": 130
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIGHT_SWITCH",
+                            "name": "parlorLightSwitch",
+                            "absolutePositionSlot": {
+                                "x": 248,
+                                "y": 0
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_4",
+                            "beginStates": [ "GameObjectState::ON" ]
+                        },
+                        {
+                            "gameObjectType": "PICTURES_GROUP_1",
+                            "absolutePositionSlot": {
+                                "x": -20,
+                                "y": -28
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_4"
                         }
 
 
@@ -283,7 +360,7 @@
                             "name": "guestRoomLightSwitch_TARGET",
                             "absolutePositionSlot": {
                                 "x": 0,
-                                "y": -112
+                                "y": -118
                             },
                             "isStepChild": true,
                             "layer": "GameLayer::BACKGROUND_3"

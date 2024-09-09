@@ -220,6 +220,117 @@
                     }
                 }
             ]
+        },
+        {
+            "type": "PICTURE_4",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_PICTURE_4"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 190,
+                        "height": 124
+                    }
+                }
+            ]
+        },
+        {
+            "type": "PICTURES_GROUP_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_PICTURES_GROUP_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 232,
+                        "height": 108
+                    }
+                }
+            ]
+        },
+        {
+            "type": "PHONOGRAPH",
+            "traitTags": [],
+            "description": "Phonograph",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_PHONOGRAPH"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 96,
+                        "height": 110
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::PUZZLE_OBJECT",
+                            "collisionShape": "B2_BOX"
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "GENERIC_INTERFACE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        }
+
+                    ]
+
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        }
+
+
+                    ]
+                }
+            ]
         }
     ]
 }
