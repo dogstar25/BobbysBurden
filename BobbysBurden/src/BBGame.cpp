@@ -123,7 +123,7 @@ bool BBGame::init(
 	playerInventory->addItem("SAPHIRE");
 
 	auto action = actionFactory->create("ToggleBobbyInventory", Json::Value{}, player->get());
-	action->perform(player->get());
+	action->perform();
 
 	const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");
 	const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);

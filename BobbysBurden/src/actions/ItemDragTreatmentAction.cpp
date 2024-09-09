@@ -2,17 +2,17 @@
 
 extern std::unique_ptr<Game> game;
 
-void ItemDragTreatmentAction::perform(GameObject* gameObject)
+void ItemDragTreatmentAction::perform()
 {
 
 	//If the object being dragged is out of Bobby's reach range, then apply a red overlay
-	if (gameObject->isTouchingByTrait(TraitTag::player) == false ) {
+	if (m_parent->isTouchingByTrait(TraitTag::player) == false ) {
 
-		const auto& renderComponent = gameObject->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
+		const auto& renderComponent = m_parent->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
 		renderComponent->applyDisplayOverlay(displayOverlays::tint_RED1);
 	}
 	else {
-		const auto& renderComponent = gameObject->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
+		const auto& renderComponent = m_parent->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
 		renderComponent->removeDisplayOverlay();
 
 	}

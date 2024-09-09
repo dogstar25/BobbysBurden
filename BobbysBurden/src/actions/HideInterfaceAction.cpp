@@ -2,15 +2,15 @@
 #include "../components/BBInterfaceComponent.h"
 
 
-void HideInterfaceAction::perform(GameObject* parentObject)
+void HideInterfaceAction::perform()
 {
 
-	const auto& interfaceComponent = parentObject->getComponent<BBInterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
+	const auto& interfaceComponent = m_parent->getComponent<BBInterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
 
 	const auto& menuObject = interfaceComponent->interfaceMenuObject();
 
 	//If I am the current global interfaceObject, then clear the static variable
-	if (parentObject == interfaceComponent->currentGameObjectInterfaceActive()) {
+	if (m_parent == interfaceComponent->currentGameObjectInterfaceActive()) {
 		interfaceComponent->clearCurrentGameObjectInterfaceActive();
 	}
 

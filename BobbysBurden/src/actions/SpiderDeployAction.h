@@ -8,6 +8,6 @@ public:
 	SpiderDeployAction(Json::Value properties, GameObject* parent)
 		:Action(properties, parent) {}
 
-	void perform(GameObject* gameObject) override;
+	void perform() override;
 
 };

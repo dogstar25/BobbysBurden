@@ -83,7 +83,7 @@ void BobbyPlayerControlComponent::_handleMovement()
 	else {
 
 		const auto& moveAction = actionComponent->getAction(Actions::MOVE);
-		moveAction->perform(parent(), direction, strafe);
+		moveAction->perform(direction, strafe);
 
 
 	}

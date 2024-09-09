@@ -70,7 +70,7 @@ void KillSpiderPuzzle::applyPuzzlePiece(GameObject* puzzleObject, GameObject* pu
 		const auto& scaryObject = childrenComponent->getFirstChildByType("SCARY_OBJECT");
 		const auto& scaryObjectActionComponent = scaryObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
 		const auto removeScareAction = scaryObjectActionComponent->getAction(Actions::REMOVE_SCARE);
-		removeScareAction->perform(scaryObject.value().get());
+		removeScareAction->perform();
 
 		//disable the puzzle so that it is no long active
 		puzzleObject->disableUpdate();

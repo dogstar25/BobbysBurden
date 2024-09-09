@@ -5,12 +5,12 @@
 //#include "GameObject.h"
 
 
-void BobbyMoveAction::perform(GameObject* playerGameObject, int direction, int strafe)
+void BobbyMoveAction::perform(int direction, int strafe)
 {
-	const auto& physicsComponent = playerGameObject->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
-	const auto& animationComponent = playerGameObject->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
-	const auto& stateComponent = playerGameObject->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
-	const auto& vitalityComponent = playerGameObject->getComponent<VitalityComponent>(ComponentTypes::VITALITY_COMPONENT);
+	const auto& physicsComponent = m_parent->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
+	const auto& animationComponent = m_parent->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
+	const auto& stateComponent = m_parent->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
+	const auto& vitalityComponent = m_parent->getComponent<VitalityComponent>(ComponentTypes::VITALITY_COMPONENT);
 
 	//If bobby is scared then determine direction of scary object and do not allow bobby to move that direction
 	if (stateComponent->testState(GameObjectState::SCARED)) {
@@ -19,7 +19,7 @@ void BobbyMoveAction::perform(GameObject* playerGameObject, int direction, int s
 		//x=1, scary on right
 		//y=0, scary up
 		//y=1, scary down
-		SDL_Point scaryDirection = _determineScaryDirection(playerGameObject);
+		SDL_Point scaryDirection = _determineScaryDirection(m_parent);
 		
 		if (scaryDirection.x == 0 && strafe == -1) {
 			strafe = 0;
@@ -94,21 +94,22 @@ void BobbyMoveAction::perform(GameObject* playerGameObject, int direction, int s
 				//handle entering door?
 				if (direction == -1) {
 
-					auto doorEntryObject = playerGameObject->getFirstTouchingByType("DOOR_FRONT_ENTRY_POINT");
+					auto doorEntryObject = m_parent->getFirstTouchingByType("DOOR_FRONT_ENTRY_POINT");
 
 					if (doorEntryObject.has_value()) {
 
 						const auto& doorEntryContactObject = doorEntryObject.value().lock().get();
 						const auto& doorObject = doorEntryContactObject->parent();
 						const auto& doorStateComponent = doorObject.value()->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
-						const auto& doorActionComponent = doorObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
+						const auto& doorActionComponent = doorEntryContactObject->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
 
 						//auto doorState = doorAnimationComponent->currentAnimationState();
 						const auto& enterAction = doorActionComponent->getAction(Actions::ENTER);
 
 						if (doorStateComponent->testState(GameObjectState::OPENED)) {
 
-							enterAction->perform(playerGameObject, doorEntryObject.value().lock().get());
+							//enterAction->perform(doorEntryObject.value().lock().get());
+							enterAction->perform();
 						}
 
 					}
@@ -208,7 +209,7 @@ void BobbyMoveAction::perform(GameObject* playerGameObject, int direction, int s
 	auto afterState = stateComponent->getStateBitSet();
 	if (stateComponent->testState(GameObjectState::EQUIPPED) && beforeState != afterState) {
 
-		_repositionEquippedItem("HOLDING_CANDLE", playerGameObject);
+		_repositionEquippedItem("HOLDING_CANDLE", m_parent);
 
 	}
 

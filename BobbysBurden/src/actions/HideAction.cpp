@@ -2,10 +2,10 @@
 #include "../GameConstants.h"
 #include "ToggleBobbyEquipAction.h"
 
-void HideAction::perform(GameObject* gameObject)
+void HideAction::perform()
 {
 
-	const auto& player = gameObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
+	const auto& player = m_parent->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
 
 	if (player.value()->hasState(GameObjectState::HIDING)) {
 
@@ -21,7 +21,7 @@ void HideAction::perform(GameObject* gameObject)
 
 	}
 
-	const auto& animationComponent = gameObject->parent().value()->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
+	const auto& animationComponent = m_parent->parent().value()->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
 
 	if (player.value()->hasState(GameObjectState::HIDING)) {
 		animationComponent->animate("BOBBY_HIDING");
@@ -42,7 +42,7 @@ void HideAction::_hideBobby(GameObject* player)
 
 	if (player->hasState(GameObjectState::EQUIPPED)) {
 		ToggleBobbyEquipAction action(Json::Value{}, player);
-		action.perform(player);
+		action.perform();
 	}
 
 }

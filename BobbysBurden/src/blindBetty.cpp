@@ -22,12 +22,10 @@ std::unique_ptr<Game> game;
 int main(int argc, char* argv[])
 {
 
-	//create game 
 	game = std::make_unique<BBGame>();
 
 	std::cout << "Bobby's Ghost Adventure Begins\n";
 
-	//init game
 	game->init(
 		std::make_shared<BBContactListener>(), 
 		std::make_shared<BBContactFilter>(),
@@ -45,7 +43,6 @@ int main(int argc, char* argv[])
 		std::make_shared<BBColorMap>()
 	);
 
-	//play game
 	game->play();
 
 	return 0;

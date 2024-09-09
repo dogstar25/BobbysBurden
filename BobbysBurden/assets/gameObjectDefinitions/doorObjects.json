@@ -80,17 +80,6 @@
                     ]
                 },
                 {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
-                        {
-                            "actionId": "Actions::ENTER",
-                            "actionClass": "DoorEnterAction"
-
-                        }
-
-                    ]
-                },
-                {
                     "id": "CHILDREN_COMPONENT",
                     "sameSlotTreatment": "ChildSlotTreatment::VERTICAL",
                     "childObjects": [
@@ -793,7 +782,19 @@
                             "isSensor": true
                         }
                     ]
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::ENTER",
+                            "actionClass": "DoorEnterAction"
+
+                        }
+
+                    ]
                 }
+
 
             ]
         },

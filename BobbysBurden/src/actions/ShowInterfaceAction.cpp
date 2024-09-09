@@ -2,7 +2,7 @@
 #include "../components/BBInterfaceComponent.h"
 
 
-void ShowInterfaceAction::perform(GameObject* gameObject)
+void ShowInterfaceAction::perform()
 {
 
 	////Build a Puzzle Interface Menu
@@ -12,7 +12,7 @@ void ShowInterfaceAction::perform(GameObject* gameObject)
 
 	//Get the Puzzle Interface Menu
 	const auto& interfaceComponent =
-		gameObject->getComponent<BBInterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
+		m_parent->getComponent<BBInterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
 	const auto& menuObject =
 		interfaceComponent->interfaceMenuObject();
 
@@ -23,7 +23,7 @@ void ShowInterfaceAction::perform(GameObject* gameObject)
 
 		//Get the Main frame object where we're gonna show this menu
 		//const auto& mainFrame = gameObject->parentScene()->getFirstGameObjectByName("MainHudFrame");
-		const auto& mainFrame = gameObject->parentScene()->getFirstGameObjectByType("HUD_INTERFACE_FRAME");
+		const auto& mainFrame = m_parent->parentScene()->getFirstGameObjectByType("HUD_INTERFACE_FRAME");
 
 		if (mainFrame.has_value()) {
 			menuObject.value()->setPosition(mainFrame.value()->getCenterPosition());

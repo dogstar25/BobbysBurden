@@ -3,15 +3,15 @@
 
 extern std::unique_ptr<Game> game;
 
-void ToggleBobbyInventory::perform(GameObject* playerObject)
+void ToggleBobbyInventory::perform()
 {
 
-	const auto& inventoryComponent = playerObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	const auto& inventoryComponent = m_parent->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 
 	if (inventoryComponent->isOpen()) {
 		
 		//Get the Main HUD Holder and remove the bobby inventory object
-		const auto& mainHudHolder = playerObject->parentScene()->getFirstGameObjectByType("MAIN_HUD_HOLDER");
+		const auto& mainHudHolder = m_parent->parentScene()->getFirstGameObjectByType("MAIN_HUD_HOLDER");
 		if (mainHudHolder.has_value()) {
 			const auto& mainHudHolderChildren = mainHudHolder.value()->getComponent<ChildrenComponent>(ComponentTypes::CHILDREN_COMPONENT);
 			
@@ -25,7 +25,7 @@ void ToggleBobbyInventory::perform(GameObject* playerObject)
 
 	}
 	else {
-		const auto& mainHudHolder = playerObject->parentScene()->getFirstGameObjectByType("MAIN_HUD_HOLDER");
+		const auto& mainHudHolder = m_parent->parentScene()->getFirstGameObjectByType("MAIN_HUD_HOLDER");
 
 		if (mainHudHolder.has_value()) {
 

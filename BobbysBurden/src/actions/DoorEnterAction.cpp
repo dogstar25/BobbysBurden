@@ -4,19 +4,12 @@
 
 extern std::unique_ptr<Game> game;
 
-void DoorEnterAction::perform(GameObject* doorEntryObject)
+void DoorEnterAction::perform()
 {
 
-	const auto& player = doorEntryObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
-	perform(player->get(), doorEntryObject);
+	const auto& doorObject = m_parent->parent();
+	const auto playerObject = m_parent->parentScene()->getFirstGameObjectByTrait(TraitTag::player).value();
 
-}
-
-
-void DoorEnterAction::perform(GameObject* playerObject, GameObject* doorEntryObject)
-{
-
-	const auto& doorObject = doorEntryObject->parent();
 	const auto& playerPhysicsComponent = playerObject->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
 
 	static Timer DisableEntryTimer{};

@@ -3,10 +3,10 @@
 
 extern std::unique_ptr<Game> game;
 
-void DoorToggleAction::perform(GameObject* doorKnobObject)
+void DoorToggleAction::perform()
 {
 
-	const auto& doorObject = doorKnobObject->parent().value();
+	const auto& doorObject = m_parent->parent().value();
 
 	const auto& stateComponent = doorObject->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 	auto isOpen = stateComponent->testState(GameObjectState::OPENED);

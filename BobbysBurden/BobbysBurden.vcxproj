@@ -185,7 +185,6 @@
     <ClCompile Include="src\actions\BBActionFactory.cpp" />
     <ClCompile Include="src\actions\DoorEnterAction.cpp" />
     <ClCompile Include="src\actions\HideAction.cpp" />
-    <ClCompile Include="src\actions\OilBedKnobAction.cpp" />
     <ClCompile Include="src\actions\HideInterfaceAction.cpp" />
     <ClCompile Include="src\actions\TwistBedKnobAction.cpp" />
     <ClCompile Include="src\BBColorMap.cpp" />
@@ -252,7 +251,6 @@
     <ClInclude Include="src\actions\BBActionFactory.h" />
     <ClInclude Include="src\actions\DoorEnterAction.h" />
     <ClInclude Include="src\actions\HideAction.h" />
-    <ClInclude Include="src\actions\OilBedKnobAction.h" />
     <ClInclude Include="src\actions\HideInterfaceAction.h" />
     <ClInclude Include="src\actions\TwistBedKnobAction.h" />
     <ClInclude Include="src\BBColorMap.h" />

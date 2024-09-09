@@ -8,8 +8,7 @@ public:
 	DoorEnterAction(Json::Value properties, GameObject* parent)
 		:Action(properties,parent) {}
 
-	void perform(GameObject* interactingObject, GameObject* interactionObject) override;
-	void perform(GameObject* interactionObject) override;
+	void perform() override;
 
 
 };

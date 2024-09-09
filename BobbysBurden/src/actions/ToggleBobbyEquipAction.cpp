@@ -3,19 +3,19 @@
 
 extern std::unique_ptr<Game> game;
 
-void ToggleBobbyEquipAction::perform(GameObject* playerObject)
+void ToggleBobbyEquipAction::perform()
 {
 
-	if (playerObject->hasState(GameObjectState::EQUIPPED)) {
+	if (m_parent->hasState(GameObjectState::EQUIPPED)) {
 
-		playerObject->removeState(GameObjectState::EQUIPPED);
-		_disableCandle(playerObject);
+		m_parent->removeState(GameObjectState::EQUIPPED);
+		_disableCandle(m_parent);
 
 	}
 	else {
 
-		playerObject->addState(GameObjectState::EQUIPPED);
-		_enableCandle(playerObject);
+		m_parent->addState(GameObjectState::EQUIPPED);
+		_enableCandle(m_parent);
 
 	}
 
