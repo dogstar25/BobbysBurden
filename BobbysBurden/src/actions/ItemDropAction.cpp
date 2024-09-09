@@ -83,7 +83,7 @@ void ItemDropAction::_handleDropOnInventory(GameObject* droppedGameObject, GameO
 				else if (destinationInventoryObject->hasTrait(TraitTag::inventory_display)) {
 
 					//Get the gameObject that uses this grid display for its inventory
-					const auto& destinationInventoryParentObject = destinationInventoryObject->parent().value();
+					const auto destinationInventoryParentObject = destinationInventoryObject->parent().value();
 
 					//Get the inventory objects Inventory component
 					destinationInventoryComponent = destinationInventoryParentObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
@@ -125,7 +125,7 @@ void ItemDropAction::_handleDropOnInventory(GameObject* droppedGameObject, GameO
 				else if (destinationInventoryObject->hasTrait(TraitTag::inventory_display)) {
 
 					//Get the gameObject that uses this grid display for its inventory
-					const auto& destinationInventoryParentObject = destinationInventoryObject->parent().value();
+					const auto destinationInventoryParentObject = destinationInventoryObject->parent().value();
 
 					//Get the inventory objects Inventory component
 					destinationInventoryComponent = destinationInventoryParentObject->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);

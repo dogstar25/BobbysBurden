@@ -93,7 +93,7 @@
                 },
                 {
                     //"id": "LOC_0056_0152",
-                    "id": "LOC_0056_0152",
+                    "id": "LOC_0026_0152",
                     "gameObjectType": "BOBBY",
                     "name": "Player Bobby",
                     "layer": "GameLayer::MAIN",

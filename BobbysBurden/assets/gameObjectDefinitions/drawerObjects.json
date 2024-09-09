@@ -133,16 +133,6 @@
                     "id": "[inventoryDisplayActions_ACTION_COMPONENT]"
                 },
                 {
-                    "id": "CHILDREN_COMPONENT",
-                    "childObjects": [
-                        {
-                            "gameObjectType": "INVENTORY_CLOSE_BUTTON",
-                            "standardSlot": "PositionAlignment::TOP_CENTER"
-                        }
-
-                    ]
-                },
-                {
                     "id": "BB_STATE_COMPONENT"
                 }
 
@@ -193,16 +183,6 @@
                 },
                 {
                     "id": "[inventoryDisplayActions_ACTION_COMPONENT]"
-                },
-                {
-                    "id": "CHILDREN_COMPONENT",
-                    "childObjects": [
-                        {
-                            "gameObjectType": "INVENTORY_CLOSE_BUTTON",
-                            "standardSlot": "PositionAlignment::TOP_CENTER"
-                        }
-
-                    ]
                 },
                 {
                     "id": "BB_STATE_COMPONENT"
@@ -300,14 +280,100 @@
                     "id": "[inventoryDisplayActions_ACTION_COMPONENT]"
                 },
                 {
-                    "id": "CHILDREN_COMPONENT",
-                    "childObjects": [
+                    "id": "BB_STATE_COMPONENT"
+                }
+
+            ]
+        },
+        {
+            "type": "BOOKCASE_1X2",
+            "traitTags": [ "inventory", "receptacle", "save_me" ],
+            "description": "Bookcase Shelf",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "INVENTORY_COMPONENT",
+                    "maxCapacity": 2,
+                    "displayObject": {
+                        "gameObjectType": "BOOKCASE_1X2_INVENTORY_DISPLAY",
+                        "displayLayer": "GameLayer::GUI_3"
+                    }
+
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
                         {
-                            "gameObjectType": "INVENTORY_CLOSE_BUTTON",
-                            "standardSlot": "PositionAlignment::TOP_CENTER"
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX"
+                        }
+                    ]
+                },
+                {
+                    "id": "[inventoryInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[inventoryActions_ACTION_COMPONENT]"
+                }
+            ]
+        },
+        {
+            "type": "BOOKCASE_1X2_INVENTORY_DISPLAY",
+            "traitTags": [ "gui", "inventory", "inventory_display" ],
+            "description": "Bookcase",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WALL_SHELF_1",
+                    "color": "Colors::BROWN"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 186,
+                        "height": 120
+                    }
+                },
+                {
+                    "id": "GRID_DISPLAY_COMPONENT",
+                    "itemSize": 64,
+                    "itemPadding": 10,
+                    "rows": 1,
+                    "columns": 2,
+                    "marginPadding": {
+                        "x": 4,
+                        "y": 4
+                    },
+                    "slotBackgroundImage": "GRID_SLOT_BOX"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
                         }
 
                     ]
+                },
+                {
+                    "id": "[inventoryDisplayInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[inventoryDisplayActions_ACTION_COMPONENT]"
                 },
                 {
                     "id": "BB_STATE_COMPONENT"

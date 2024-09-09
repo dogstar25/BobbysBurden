@@ -325,6 +325,47 @@
             ]
         },
         {
+            "type": "CHANDELIER_2",
+            "traitTags": [ "toggleable" ],
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CHANDELIER_2"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "ELECTRIC_ROOM_LIGHT_CIRCLE",
+                            "size": {
+                                "width": 600,
+                                "height": 600
+                            },
+                            "absolutePositionSlot": {
+                                "x": 0,
+                                "y": 25
+                            },
+                            "beginStates": [
+                                "GameObjectState::ON"
+                            ],
+                            "lightBrightnes": 75
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
+        },
+        {
             "type": "LIGHT_SWITCH",
             "traitTags": [ "toggle_switch", "save_me" ],
             "description": "",

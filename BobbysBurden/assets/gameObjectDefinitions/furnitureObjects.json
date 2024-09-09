@@ -219,6 +219,109 @@
                     }
                 }
             ]
+        },
+        {
+            "type": "TABLE_4",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_TABLE_4"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 128,
+                        "height": 196
+                    }
+                }
+            ]
+        },
+        {
+            "type": "SOFA_1",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_SOFA_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 200,
+                        "height": 128
+                    }
+                }
+            ]
+        },
+        {
+            "type": "PHONOGRAPH",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_PHONOGRAPH"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 64,
+                        "height": 64
+                    }
+                }
+            ]
+        },
+        {
+            "type": "BAR_CABINET",
+            "traitTags": [],
+            "description": "",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BAR_CABINET"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 128,
+                        "height": 254
+                    }
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CANDLE_2",
+                            "absolutePositionSlot": {
+                                "x": 8,
+                                "y": 24
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_1",
+                            "beginStates": ["GameObjectState::ON"]
+
+                        },
+                        {
+                            "gameObjectType": "BOOKCASE_1X2",
+                            "inventoryDisplayObjectColor": "Colors::BROWN",
+                            "size": {
+                                "width": 40,
+                                "height": 32
+                            },
+                            "absolutePositionSlot": {
+                                "x": -16,
+                                "y": -68
+                            }
+                        }
+
+
+                    ]
+                }
+            ]
         }
     ]
 }

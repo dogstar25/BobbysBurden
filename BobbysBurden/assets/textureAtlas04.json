@@ -325,6 +325,16 @@
                 "width": 483,
                 "height": 220
             }
+        },
+        {
+            "id": "TX_PICTURES_GROUP_1",
+            "description": "",
+            "quadPosition": {
+                "x": 974,
+                "y": 795,
+                "width": 232,
+                "height": 108
+            }
         }
 
     ]
