@@ -627,6 +627,47 @@
                     "id": "BB_STATE_COMPONENT"
                 }
             ]
+        },
+        {
+            "type": "RECORD",
+            "traitTags": [ "puzzle_item", "save_me"],
+            "description": "Record",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_RECORD_1"
+                },
+                {
+                    "id": "[item64_TRANSFORM_COMPONENT]"
+                },
+                {
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GAME_ITEM",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true,
+                            "size": {
+                                "width": 32,
+                                "height": 32
+                            },
+                            "density": 1
+
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                }
+            ]
         }
     ]
 }

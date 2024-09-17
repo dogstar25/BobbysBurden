@@ -33,4 +33,7 @@ BBColorMap::BBColorMap()
 	addColor("Colors::MIRKWOOD", Colors::MIRKWOOD);
 	addColor("Colors::SLATE", Colors::SLATE);
 
+	//BROWNS
+	addColor("Colors::OAK", Colors::OAK);
+	addColor("Colors::LIGHT_OAK", Colors::LIGHT_OAK);
 }

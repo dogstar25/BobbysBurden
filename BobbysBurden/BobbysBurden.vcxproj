@@ -170,6 +170,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\actions\DisableProximityHintAction.cpp" />
+    <ClCompile Include="src\actions\PlayPhonographAction.cpp" />
     <ClCompile Include="src\actions\PushGuestBedButtonAction.cpp" />
     <ClCompile Include="src\actions\ScareBobbyAction.cpp" />
     <ClCompile Include="src\actions\SpiderDeployAction.cpp" />
@@ -235,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\actions\DisableProximityHintAction.h" />
+    <ClInclude Include="src\actions\PlayPhonographAction.h" />
     <ClInclude Include="src\actions\PushGuestBedButtonAction.h" />
     <ClInclude Include="src\actions\ScareBobbyAction.h" />
     <ClInclude Include="src\actions\SpiderDeployAction.h" />
@@ -326,13 +328,13 @@
     <None Include="assets\gameObjectDefinitions\commonObjects.json" />
     <None Include="assets\gameObjectDefinitions\detachedRooms.json" />
     <None Include="assets\gameObjectDefinitions\doorObjects.json" />
-    <None Include="assets\gameObjectDefinitions\drawerObjects.json" />
     <None Include="assets\gameObjectDefinitions\enemyObjects.json" />
     <None Include="assets\gameObjectDefinitions\environmentObjects.json" />
     <None Include="assets\gameObjectDefinitions\furnitureObjects.json" />
     <None Include="assets\gameObjectDefinitions\guiObjects.json" />
     <None Include="assets\gameObjectDefinitions\householdObjects.json" />
     <None Include="assets\gameObjectDefinitions\houseObjects.json" />
+    <None Include="assets\gameObjectDefinitions\inventoryObjects.json" />
     <None Include="assets\gameObjectDefinitions\lightFixtureObjects.json" />
     <None Include="assets\gameObjectDefinitions\lightObjects.json" />
     <None Include="assets\gameObjectDefinitions\models\ACTION_COMPONENT_models.json" />
@@ -351,6 +353,7 @@
     <None Include="assets\levels\test_definition.json" />
     <None Include="assets\mouseCursors.json" />
     <None Include="assets\sound\buttonWorking.ogg" />
+    <None Include="assets\sound\music\cellarSong.ogg" />
     <None Include="assets\sound\soundAssets.json" />
     <None Include="assets\textureAtlas00.json" />
     <None Include="assets\textureAtlas01.json" />
@@ -388,6 +391,8 @@
     <Media Include="assets\sound\storm_medium_long.mp3" />
     <Media Include="assets\sound\thunder_boom_01.wav" />
     <Media Include="assets\sound\thunder_boom_02.wav" />
+    <Media Include="assets\sound\thunder_boom_03.wav" />
+    <Media Include="assets\sound\thunder_boom_04.wav" />
     <Media Include="assets\sound\thunder_rumble_01.wav" />
     <Media Include="assets\sound\thunder_rumble_02.wav" />
     <Media Include="assets\sound\thunder_rumble_03.wav" />

@@ -72,7 +72,7 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/lightObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/householdObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/bobbysRoomFurniture");
-	GameObjectManager::instance().load("gameObjectDefinitions/drawerObjects");
+	//GameObjectManager::instance().load("gameObjectDefinitions/drawerObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/shelfObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/particleObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/doorObjects");
@@ -86,6 +86,7 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/puzzlePieceObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/enemyObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/furnitureObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/inventoryObjects");
 
 	//GameObjectManager::instance().load("gameObjectDefinitions/testObjects");
 
@@ -117,10 +118,9 @@ bool BBGame::init(
 	//Figure out a place to put this custom game type stuff later
 	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
 	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	playerInventory->addItem("RUBY");
+	playerInventory->addItem("RECORD", "cellarSong");
 	playerInventory->addItem("EMERALD");
 	playerInventory->addItem("DIAMOND");
-	playerInventory->addItem("SAPHIRE");
 
 	auto action = actionFactory->create("ToggleBobbyInventory", Json::Value{}, player->get());
 	action->perform();

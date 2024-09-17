@@ -51,6 +51,11 @@ namespace Colors {
 	inline SDL_Color MIRKWOOD = { 39, 52, 39, 255 };
 	inline SDL_Color SLATE = { 11, 14, 51, 255 };
 
+	//Browns
+	inline SDL_Color OAK = { 111, 70, 42, 255 };
+	inline SDL_Color LIGHT_OAK = { 145, 103, 64, 255 };
+
+
 }
 
 namespace HousePositionTopLeftLocations {

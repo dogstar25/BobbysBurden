@@ -33,7 +33,9 @@
                             "isStepChild": true
                         },
                         {
-                            "gameObjectType": "CHEST_CONTAINER_1X1",
+                            "gameObjectType": "CONTAINER_INVENTORY_1X1",
+                            "inventoryDisplayObjectColor": "Colors::LIGHT_OAK",
+                            "inventoryDisplayObjectTexture": "TX_WALL_SHELF_1",
                             "absolutePositionSlot": {
                                 "x": -50,
                                 "y": 0
@@ -46,7 +48,9 @@
 
                         },
                         {
-                            "gameObjectType": "CHEST_CONTAINER_1X1",
+                            "gameObjectType": "CONTAINER_INVENTORY_1X1",
+                            "inventoryDisplayObjectColor": "Colors::LIGHT_OAK",
+                            "inventoryDisplayObjectTexture": "TX_WALL_SHELF_1",
                             "absolutePositionSlot": {
                                 "x": 50,
                                 "y": 0
@@ -163,9 +167,10 @@
 
                         },
                         {
-                            "gameObjectType": "BOOKCASE_1X3",
+                            "gameObjectType": "CONTAINER_INVENTORY_1X3",
+                            "inventoryDisplayObjectColor": "Colors::BROWN",
+                            "inventoryDisplayObjectTexture": "TX_WALL_SHELF_1",
                             "name": "denBookcaseShelf",
-                            "color": "Colors::GREEN",
                             "size": {
                                 "width": 64,
                                 "height": 40
@@ -257,24 +262,6 @@
             ]
         },
         {
-            "type": "PHONOGRAPH",
-            "traitTags": [],
-            "description": "",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_PHONOGRAPH"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 64,
-                        "height": 64
-                    }
-                }
-            ]
-        },
-        {
             "type": "BAR_CABINET",
             "traitTags": [],
             "description": "",
@@ -306,8 +293,9 @@
 
                         },
                         {
-                            "gameObjectType": "BOOKCASE_1X2",
+                            "gameObjectType": "CONTAINER_INVENTORY_1X2",
                             "inventoryDisplayObjectColor": "Colors::BROWN",
+                            "inventoryDisplayObjectTexture": "TX_WALL_SHELF_1",
                             "size": {
                                 "width": 40,
                                 "height": 32

@@ -708,7 +708,8 @@
                             "size": {
                                 "width": 96,
                                 "height": 75
-                            }
+                            },
+                            "color": "Colors::LIGHT_OAK"
                         }
                     ]
                 }
