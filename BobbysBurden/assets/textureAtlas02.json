@@ -106,10 +106,10 @@
             "id": "TX_DRAWER_SMALL",
             "description": "Default Texure",
             "quadPosition": {
-                "x": 240,
-                "y": 508,
-                "width": 261,
-                "height": 162
+                "x": 703,
+                "y": 1340,
+                "width": 214,
+                "height": 137
             }
         },
         {
@@ -298,7 +298,7 @@
             "quadPosition": {
                 "x": 879,
                 "y": 1078,
-                "width": 133,
+                "width": 137,
                 "height": 55
             }
         },
@@ -700,6 +700,26 @@
                 "y": 798,
                 "width": 192,
                 "height": 246
+            }
+        },
+        {
+            "id": "TX_PHONOGRAPH_TOP",
+            "description": "",
+            "quadPosition": {
+                "x": 240,
+                "y": 508,
+                "width": 140,
+                "height": 140
+            }
+        },
+        {
+            "id": "TX_RECORD_1",
+            "description": "",
+            "quadPosition": {
+                "x": 597,
+                "y": 55,
+                "width": 62,
+                "height": 62
             }
         }
 

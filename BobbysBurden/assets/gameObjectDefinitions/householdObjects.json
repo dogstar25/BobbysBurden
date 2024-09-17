@@ -278,8 +278,39 @@
                     "type": "B2_STATIC",
                     "fixtures": [
                         {
-                            "contactTag": "ContactTag::PUZZLE_OBJECT",
-                            "collisionShape": "B2_BOX"
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX",
+                            "size": {
+                                "width": 16,
+                                "height": 16
+                            }
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT"
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "childPadding": 0,
+                    "childPositionRelative": false,
+                    "sameSlotTreatment": "ChildSlotTreatment::HORIZONTAL",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CONTAINER_INVENTORY_1X1",
+                            "inventoryDisplayObjectColor": "Colors::WHITE",
+                            "inventoryDisplayObjectTexture": "TX_PHONOGRAPH_TOP",
+                            "name": "PHONOGRAPH_INVENTORY",
+                            "size": {
+                                "width": 46,
+                                "height": 16
+                            },
+                            "absolutePositionSlot": {
+                                "x": -16,
+                                "y": 20
+                            },
+                            "description": "Record Platter"
                         }
 
                     ]
@@ -288,6 +319,17 @@
                     "id": "BB_INTERFACE_COMPONENT",
                     "menuObject": "GENERIC_INTERFACE_MENU",
                     "interfaceActions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "label": "Crank to Play",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_LCLICK"
+                                ]
+                            }
+                        },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
                             "condition": {
@@ -312,11 +354,14 @@
                         }
 
                     ]
-
                 },
                 {
                     "id": "ACTION_COMPONENT",
                     "actions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "actionClass": "PlayPhonographAction"
+                        },
                         {
                             "actionId": "Actions::SHOW_INTERFACE",
                             "actionClass": "ShowInterfaceAction"
@@ -327,8 +372,20 @@
                             "actionClass": "HideInterfaceAction"
                         }
 
-
                     ]
+                },
+                {
+                    "id": "SOUND_COMPONENT",
+                    "sounds": [
+                        {
+                            "id": "CELLAR_SONG",
+                            "soundAssetId": "SFX_RECORD_CELLAR_SONG",
+                            "distanceSensitive": true,
+                            "soundRange": 1200,
+                            "lineOfSightAdjustment": 10
+                        }
+                    ]
+
                 }
             ]
         }

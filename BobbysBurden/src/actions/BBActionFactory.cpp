@@ -14,7 +14,7 @@
 #include "SpiderDeployAction.h"
 #include "ScareBobbyAction.h"
 #include "PushGuestBedButtonAction.h"
-
+#include "PlayPhonographAction.h"
 
 
 std::shared_ptr<Action> BBActionFactory::create(std::string actionType, Json::Value properties, GameObject* parent)
@@ -84,6 +84,10 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType, Json::Va
     else if (actionType == "PushGuestBedButtonAction") {
 
         action = std::make_shared<PushGuestBedButtonAction>(properties, parent);
+    }
+    else if (actionType == "PlayPhonographAction") {
+
+        action = std::make_shared<PlayPhonographAction>(properties, parent);
     }
 
     else {

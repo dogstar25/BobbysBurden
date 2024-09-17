@@ -59,6 +59,21 @@
             "id": "SFX_PEACEFULL_1",
             "description": "",
             "filename": "crickets_chirping_night_ambience_loop.wav"
+        },
+        {
+            "id": "SFX_RECORD_GOOD_MAN_SONG",
+            "description": "",
+            "filename": "/music/goodManSong.wav"
+        },
+        {
+            "id": "SFX_RECORD_CELLAR_SONG",
+            "description": "",
+            "filename": "/music/cellarSong.ogg"
+        },
+        {
+            "id": "SFX_RECORD_LET_IT_ALONE_SONG",
+            "description": "",
+            "filename": "/music/letItAloneSong.wav"
         }
 
 

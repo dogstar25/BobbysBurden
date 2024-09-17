@@ -2,7 +2,7 @@
 
     "gameObjects": [
         {
-            "type": "DRAWER_1X1",
+            "type": "CONTAINER_INVENTORY_1X1",
             "traitTags": [ "inventory", "receptacle", "save_me" ],
             "description": "drawer 1x1 inventory",
             "components": [
@@ -13,16 +13,18 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 32,
-                        "height": 32
+                        "width": 1,
+                        "height": 1
                     }
                 },
                 {
                     "id": "INVENTORY_COMPONENT",
                     "maxCapacity": 1,
                     "displayObject": {
-                        "gameObjectType": "DRAWER_1X1_INVENTORY_DISPLAY",
-                        "displayLayer": "GameLayer::GUI_1"
+                        "gameObjectType": "CONTAINER_INVENTORY_DISPLAY_1X1",
+                        "displayLayer": "GameLayer::GUI_1",
+                        "color": "Colors::WHITE",
+                        "texture": "TX_FOG_BOX"
                     }
 
                 },
@@ -46,60 +48,18 @@
             ]
         },
         {
-            "type": "DRAWER_1X2",
-            "traitTags": [ "inventory", "receptacle", "save_me" ],
-            "description": "drawer 1x2 inventory",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_CLEAR_QUAD"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 32,
-                        "height": 32
-                    }
-                },
-                {
-                    "id": "INVENTORY_COMPONENT",
-                    "maxCapacity": 2,
-                    "displayObject": {
-                        "gameObjectType": "DRAWER_1X2_INVENTORY_DISPLAY",
-                        "displayLayer": "GameLayer::GUI_1"
-                    }
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_STATIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
-                            "collisionShape": "B2_BOX"
-                        }
-                    ]
-                },
-                {
-                    "id": "[inventoryInterface_BB_INTERFACE_COMPONENT]"
-                },
-                {
-                    "id": "[inventoryActions_ACTION_COMPONENT]"
-                }
-            ]
-        },
-        {
-            "type": "DRAWER_1X1_INVENTORY_DISPLAY",
+            "type": "CONTAINER_INVENTORY_DISPLAY_1X1",
             "traitTags": [ "gui", "inventory", "inventory_display" ],
             "description": "Drawer",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_DRAWER_SMALL"
+                    "textureId": "TX_FOG_BOX"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 130,
+                        "width": 132,
                         "height": 132
                     }
                 },
@@ -139,13 +99,59 @@
             ]
         },
         {
-            "type": "DRAWER_1X2_INVENTORY_DISPLAY",
+            "type": "CONTAINER_INVENTORY_1X2",
+            "traitTags": [ "inventory", "receptacle", "save_me" ],
+            "description": "drawer 1x2 inventory",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_CLEAR_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 1,
+                        "height": 1
+                    }
+                },
+                {
+                    "id": "INVENTORY_COMPONENT",
+                    "maxCapacity": 2,
+                    "displayObject": {
+                        "gameObjectType": "CONTAINER_INVENTORY_DISPLAY_1X2",
+                        "displayLayer": "GameLayer::GUI_1",
+                        "color": "Colors::WHITE",
+                        "backgroundTexture": "TX_FOG_BOX"
+                    }
+
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX"
+                        }
+                    ]
+                },
+                {
+                    "id": "[inventoryInterface_BB_INTERFACE_COMPONENT]"
+
+                },
+                {
+                    "id": "[inventoryActions_ACTION_COMPONENT]"
+                }
+            ]
+        },
+        {
+            "type": "CONTAINER_INVENTORY_DISPLAY_1X2",
             "traitTags": [ "gui", "inventory", "inventory_display" ],
             "description": "Drawer",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_DRAWER_SMALL"
+                    "textureId": "TX_FOG_BOX"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -172,8 +178,7 @@
                     "fixtures": [
                         {
                             "contactTag": "ContactTag::INTERACTABLE_OBJECT",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
+                            "collisionShape": "B2_BOX"
                         }
 
                     ]
@@ -191,9 +196,9 @@
             ]
         },
         {
-            "type": "BOOKCASE_1X3",
+            "type": "CONTAINER_INVENTORY_1X3",
             "traitTags": [ "inventory", "receptacle", "save_me" ],
-            "description": "Bookcase Shelf",
+            "description": "drawer 1x3 inventory",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -202,16 +207,18 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 32,
-                        "height": 32
+                        "width": 1,
+                        "height": 1
                     }
                 },
                 {
                     "id": "INVENTORY_COMPONENT",
                     "maxCapacity": 3,
                     "displayObject": {
-                        "gameObjectType": "BOOKCASE_1X3_INVENTORY_DISPLAY",
-                        "displayLayer": "GameLayer::GUI_3"
+                        "gameObjectType": "CONTAINER_INVENTORY_DISPLAY_1X3",
+                        "displayLayer": "GameLayer::GUI_1",
+                        "color": "Colors::WHITE",
+                        "backgroundTexture": "TX_FOG_BOX"
                     }
 
                 },
@@ -227,6 +234,7 @@
                 },
                 {
                     "id": "[inventoryInterface_BB_INTERFACE_COMPONENT]"
+
                 },
                 {
                     "id": "[inventoryActions_ACTION_COMPONENT]"
@@ -234,19 +242,19 @@
             ]
         },
         {
-            "type": "BOOKCASE_1X3_INVENTORY_DISPLAY",
+            "type": "CONTAINER_INVENTORY_DISPLAY_1X3",
             "traitTags": [ "gui", "inventory", "inventory_display" ],
-            "description": "Bookcase",
+            "description": "Drawer",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_WALL_SHELF_1"
+                    "textureId": "TX_FOG_BOX"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 250,
-                        "height": 120
+                        "width": 246,
+                        "height": 132
                     }
                 },
                 {
@@ -256,7 +264,7 @@
                     "rows": 1,
                     "columns": 3,
                     "marginPadding": {
-                        "x": 4,
+                        "x": 0,
                         "y": 4
                     },
                     "slotBackgroundImage": "GRID_SLOT_BOX"
@@ -267,8 +275,7 @@
                     "fixtures": [
                         {
                             "contactTag": "ContactTag::INTERACTABLE_OBJECT",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
+                            "collisionShape": "B2_BOX"
                         }
 
                     ]
@@ -286,9 +293,9 @@
             ]
         },
         {
-            "type": "BOOKCASE_1X2",
+            "type": "CONTAINER_INVENTORY_4X1",
             "traitTags": [ "inventory", "receptacle", "save_me" ],
-            "description": "Bookcase Shelf",
+            "description": "drawer 4X1 inventory",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -297,16 +304,18 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 32,
-                        "height": 32
+                        "width": 1,
+                        "height": 1
                     }
                 },
                 {
                     "id": "INVENTORY_COMPONENT",
-                    "maxCapacity": 2,
+                    "maxCapacity": 4,
                     "displayObject": {
-                        "gameObjectType": "BOOKCASE_1X2_INVENTORY_DISPLAY",
-                        "displayLayer": "GameLayer::GUI_3"
+                        "gameObjectType": "CONTAINER_INVENTORY_DISPLAY_4X1",
+                        "displayLayer": "GameLayer::GUI_1",
+                        "color": "Colors::WHITE",
+                        "backgroundTexture": "TX_FOG_BOX"
                     }
 
                 },
@@ -322,6 +331,7 @@
                 },
                 {
                     "id": "[inventoryInterface_BB_INTERFACE_COMPONENT]"
+
                 },
                 {
                     "id": "[inventoryActions_ACTION_COMPONENT]"
@@ -329,79 +339,26 @@
             ]
         },
         {
-            "type": "BOOKCASE_1X2_INVENTORY_DISPLAY",
+            "type": "CONTAINER_INVENTORY_DISPLAY_4X1",
             "traitTags": [ "gui", "inventory", "inventory_display" ],
-            "description": "Bookcase",
+            "description": "Drawer",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_WALL_SHELF_1",
-                    "color": "Colors::BROWN"
+                    "textureId": "TX_FOG_BOX"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 186,
-                        "height": 120
+                        "width": 212,
+                        "height": 132
                     }
                 },
                 {
                     "id": "GRID_DISPLAY_COMPONENT",
                     "itemSize": 64,
                     "itemPadding": 10,
-                    "rows": 1,
-                    "columns": 2,
-                    "marginPadding": {
-                        "x": 4,
-                        "y": 4
-                    },
-                    "slotBackgroundImage": "GRID_SLOT_BOX"
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_STATIC",
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
-                            "collisionShape": "B2_BOX",
-                            "isSensor": true
-                        }
-
-                    ]
-                },
-                {
-                    "id": "[inventoryDisplayInterface_BB_INTERFACE_COMPONENT]"
-                },
-                {
-                    "id": "[inventoryDisplayActions_ACTION_COMPONENT]"
-                },
-                {
-                    "id": "BB_STATE_COMPONENT"
-                }
-
-            ]
-        },
-        {
-            "type": "CHEST_1X1_INVENTORY_DISPLAY",
-            "traitTags": [ "gui", "inventory", "inventory_display" ],
-            "description": "chest inventory display object",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_WALL_SHELF_1"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 130,
-                        "height": 82
-                    }
-                },
-                {
-                    "id": "GRID_DISPLAY_COMPONENT",
-                    "itemSize": 64,
-                    "itemPadding": 10,
-                    "rows": 1,
+                    "rows": 4,
                     "columns": 1,
                     "marginPadding": {
                         "x": 0,
@@ -433,21 +390,163 @@
             ]
         },
         {
-            "type": "INVENTORY_CLOSE_BUTTON",
-            "traitTags": [ "gui" ],
+            "type": "CONTAINER_INVENTORY_LOCKED_1X1",
+            "traitTags": [ "receptacle", "save_me", "puzzle" ],
+            "description": "locked chest inventory object",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
-                    "textureId": "TX_INVENTORY_CLOSE_BUTTON"
+                    "textureId": "TX_CLEAR_QUAD"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 45,
-                        "height": 45
+                        "width": 100,
+                        "height": 32
                     }
-                }
+                },
+                {
+                    "id": "INVENTORY_COMPONENT",
+                    "maxCapacity": 1,
+                    "displayObject": {
+                        "gameObjectType": "CONTAINER_INVENTORY_DISPLAY_1X1",
+                        "displayLayer": "GameLayer::GUI_1",
+                        "color": "Colors::WHITE",
+                        "texture": "TX_FOG_BOX"
+                    }
 
+                },
+                {
+                    "id": "PUZZLE_COMPONENT",
+                    "name": "LOCKED_CONTAINER",
+                    "clue": "The chest is locked",
+                    "puzzleType": "UnlockContainer",
+                    "pieces": 1
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::LOCKED" ]
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::INTERACTABLE_OBJECT",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_INTERFACE_COMPONENT",
+                    "menuObject": "OPEN_CLOSE_RECEPTACLE_MENU",
+                    "interfaceActions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_LCLICK",
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            },
+                            "dependentPuzzles": [
+
+                                "LOCKED_CONTAINER"
+
+                            ]
+                        },
+                        {
+                            "actionId": "Actions::CLOSE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_STOP_TOUCHING",
+                                    "InterfaceEvents::ON_HOVER_OUT"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::APPLY_HIGHLIGHT",
+                            "condition": {
+                                "operator": "ConditionOperator::AND",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER",
+                                    "InterfaceEvents::ON_TOUCHING"
+                                ]
+                            }
+
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "condition": {
+                                "operator": "ConditionOperator::OR",
+                                "events": [
+                                    "InterfaceEvents::ON_HOVER_OUT",
+                                    "InterfaceEvents::ON_STOP_TOUCHING"
+                                ]
+                            }
+
+                        }
+
+
+                    ]
+
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::USE",
+                            "actionClass": "ToggleInventoryAction"
+                        },
+                        {
+                            "actionId": "Actions::CLOSE",
+                            "actionClass": "CloseInventoryAction"
+                        },
+                        {
+                            "actionId": "Actions::SHOW_INTERFACE",
+                            "actionClass": "ShowInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::HIDE_INTERFACE",
+                            "actionClass": "HideInterfaceAction"
+                        },
+                        {
+                            "actionId": "Actions::APPLY_HIGHLIGHT",
+                            "actionClass": "ItemhHighlightApplyAction"
+                        },
+                        {
+                            "actionId": "Actions::REMOVE_HIGHLIGHT",
+                            "actionClass": "ItemhHighlightRemoveAction"
+                        }
+
+                    ]
+                }
             ]
         }
 

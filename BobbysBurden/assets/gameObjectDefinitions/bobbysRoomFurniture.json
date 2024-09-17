@@ -146,7 +146,9 @@
                     "sameSlotTreatment": "ChildSlotTreatment::HORIZONTAL",
                     "childObjects": [
                         {
-                            "gameObjectType": "DRAWER_1X1",
+                            "gameObjectType": "CONTAINER_INVENTORY_1X1",
+                            "inventoryDisplayObjectColor": "Colors::OAK",
+                            "inventoryDisplayObjectTexture": "TX_DRAWER_SMALL",
                             "name": "BOBBY_SIDETABLE_TOP_DRAWER",
                             "size": {
                                 "width": 32,
@@ -159,7 +161,9 @@
                             "description": "Top Drawer"
                         },
                         {
-                            "gameObjectType": "DRAWER_1X2",
+                            "gameObjectType": "CONTAINER_INVENTORY_1X2",
+                            "inventoryDisplayObjectColor": "Colors::OAK",
+                            "inventoryDisplayObjectTexture": "TX_DRAWER_SMALL",
                             "name": "BOBBY_SIDETABLE_BOTTOM_DRAWER",
                             "size": {
                                 "width": 32,

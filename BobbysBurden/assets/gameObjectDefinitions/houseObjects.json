@@ -662,7 +662,9 @@
                     "id": "CHILDREN_COMPONENT",
                     "childObjects": [
                         {
-                            "gameObjectType": "CHEST_CONTAINER_LOCKED_1X1",
+                            "gameObjectType": "CONTAINER_INVENTORY_LOCKED_1X1",
+                            "inventoryDisplayObjectColor": "Colors::GOLD",
+                            "inventoryDisplayObjectTexture": "TX_WALL_SHELF_1",
                             "name": "chest1Locked",
                             "absolutePositionSlot": {
                                 "x": 0,
