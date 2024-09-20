@@ -799,6 +799,102 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "ATTIC_ROOM",
+            "traitTags": [],
+            "description": "Attic Room",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_WHITE_QUAD"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 864,
+                        "height": 256
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                },
+                {
+                    "id": "CHILDREN_COMPONENT",
+                    "sameSlotTreatment": "ChildSlotTreatment::STACKED",
+                    "childObjects": [
+                        {
+                            "gameObjectType": "CLEAR_QUAD_MASK",
+                            "name": "atticRoomMask",
+                            "description": "The mask uses to show the room instead of house exterior",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 864,
+                                "height": 256
+                            }
+                        },
+                        {
+                            "gameObjectType": "LIT_AREA",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2",
+                            "size": {
+                                "width": 854,
+                                "height": 256
+                            }
+                        },
+                        {
+                            "gameObjectType": "WALL_BACKGROUND_BIG_1",
+                            "standardSlot": "PositionAlignment::CENTER",
+                            "size": {
+                                "width": 854,
+                                "height": 256
+                            }
+                        
+                        },
+                        {
+                            "gameObjectType": "LIGHT_WINDOW_1",
+                            "name": "windowFlash",
+                            "absolutePositionSlot": {
+                                "x": -200,
+                                "y": 50
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "LIGHT_WINDOW_1",
+                            "name": "windowFlash",
+                            "absolutePositionSlot": {
+                                "x": 125,
+                                "y": 50
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::FOREGROUND_2"
+                        },
+                        {
+                            "gameObjectType": "DOOR_FRONT",
+                            "name": "topStairsDoor",
+                            "absolutePositionSlot": {
+                                "x": 340,
+                                "y": 46
+                            },
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_2"
+                        }
+
+
+                    ]
+                }
+            ]
         }
     ]
 }

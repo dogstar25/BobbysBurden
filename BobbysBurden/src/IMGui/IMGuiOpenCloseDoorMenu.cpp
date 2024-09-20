@@ -23,8 +23,6 @@ glm::vec2 IMGuiOpenCloseDoorMenu::render()
 
 	const auto& doorKnobGameObject = parent()->parent();
 	const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
-	//const auto& doorKnobActionComponent = doorKnobGameObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
-	const auto& player = parent()->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
 
 
 	ImGuiIO& io = ImGui::GetIO(); (void)io;

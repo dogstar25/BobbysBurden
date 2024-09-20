@@ -116,13 +116,13 @@ bool BBGame::init(
 	contextManager->loadSettings();
 	
 	//Figure out a place to put this custom game type stuff later
-	const auto& player = scene.getFirstGameObjectByTrait(TraitTag::player);
-	const auto& playerInventory = player->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+	const auto& player = scene.player();
+	const auto& playerInventory = player->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	playerInventory->addItem("RECORD", "cellarSong");
 	playerInventory->addItem("EMERALD");
 	playerInventory->addItem("DIAMOND");
 
-	auto action = actionFactory->create("ToggleBobbyInventory", Json::Value{}, player->get());
+	auto action = actionFactory->create("ToggleBobbyInventory", Json::Value{}, player.get());
 	action->perform();
 
 	const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");

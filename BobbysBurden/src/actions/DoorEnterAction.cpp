@@ -8,7 +8,7 @@ void DoorEnterAction::perform()
 {
 
 	const auto& doorObject = m_parent->parent();
-	const auto playerObject = m_parent->parentScene()->getFirstGameObjectByTrait(TraitTag::player).value();
+	const auto playerObject = m_parent->parentScene()->player();
 
 	const auto& playerPhysicsComponent = playerObject->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
 
