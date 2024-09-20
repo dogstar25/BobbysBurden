@@ -42,7 +42,7 @@
                         },
                         {
                             "gameObjectType": "DOOR_FRONT",
-                            "name": "topStairsDoor",
+                            "name": "topStairsDoorX",
                             "absolutePositionSlot": {
                                 "x": 60,
                                 "y": 46

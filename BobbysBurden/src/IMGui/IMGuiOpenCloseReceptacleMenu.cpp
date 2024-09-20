@@ -24,7 +24,6 @@ glm::vec2 IMGuiOpenCloseReceptacleMenu::render()
 	const auto& interfaceGameObject = parent()->parent();
 	const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
 	const auto& actionComponent = interfaceGameObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
-	const auto& player = parent()->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
 
 
 	ImGuiIO& io = ImGui::GetIO(); (void)io;

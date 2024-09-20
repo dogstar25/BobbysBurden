@@ -277,7 +277,16 @@
                     "id": "RENDER_COMPONENT"
                 },
                 {
-                    "id": "[item64_TRANSFORM_COMPONENT]"
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": false,
+                    "size": {
+                        "width": 64,
+                        "height": 64
+                    },
+                    "worldDisplaySizeOverride": {
+                        "width": 16,
+                        "height": 16
+                    }
                 },
                 {
                     "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
@@ -348,7 +357,16 @@
                     "id": "RENDER_COMPONENT"
                 },
                 {
-                    "id": "[item64_TRANSFORM_COMPONENT]"
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": false,
+                    "size": {
+                        "width": 64,
+                        "height": 64
+                    },
+                    "worldDisplaySizeOverride": {
+                        "width": 16,
+                        "height": 16
+                    }
                 },
                 {
                     "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
@@ -436,7 +454,16 @@
                     "id": "RENDER_COMPONENT"
                 },
                 {
-                    "id": "[item64_TRANSFORM_COMPONENT]"
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": false,
+                    "size": {
+                        "width": 64,
+                        "height": 64
+                    },
+                    "worldDisplaySizeOverride": {
+                        "width": 16,
+                        "height": 16
+                    }
                 },
                 {
                     "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
@@ -524,7 +551,16 @@
                     "id": "RENDER_COMPONENT"
                 },
                 {
-                    "id": "[item64_TRANSFORM_COMPONENT]"
+                    "id": "TRANSFORM_COMPONENT",
+                    "absolutePositioning": false,
+                    "size": {
+                        "width": 64,
+                        "height": 64
+                    },
+                    "worldDisplaySizeOverride": {
+                        "width": 16,
+                        "height": 16
+                    }
                 },
                 {
                     "id": "[itemInterface_BB_INTERFACE_COMPONENT]"

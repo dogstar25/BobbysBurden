@@ -93,7 +93,7 @@
                 },
                 {
                     //"id": "LOC_0056_0152",
-                    "id": "LOC_0026_0152",
+                    "id": "LOC_0038_0141",
                     "gameObjectType": "BOBBY",
                     "name": "Player Bobby",
                     "layer": "GameLayer::MAIN",
@@ -129,7 +129,7 @@
                     }
                 }
 
-                
+
             ]
         },
         {
@@ -356,6 +356,26 @@
                     "layer": "GameLayer::ABSTRACT",
                     "size": {
                         "width": 352,
+                        "height": 32
+                    }
+                }
+            ]
+        },
+        {
+            "groupName": "ATTIC_ROOM",
+            "objects": [
+                {
+                    "id": "LOC_0016_0125",
+                    "gameObjectType": "ATTIC_ROOM",
+                    "layer": "GameLayer::BACKGROUND_5"
+                },
+                {
+                    "id": "LOC_0016_0133",
+                    "gameObjectType": "HOUSE_BEAM",
+                    "description": "Floor",
+                    "layer": "GameLayer::ABSTRACT",
+                    "size": {
+                        "width": 864,
                         "height": 32
                     }
                 }

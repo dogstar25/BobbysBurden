@@ -6,19 +6,19 @@ void ScareBobbyAction::perform()
 {
 	std::string scareType{"removeScare"};
 
-	const auto& bobby = m_parent->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
-	const auto& childrenComponent = bobby.value()->getComponent<ChildrenComponent>(ComponentTypes::CHILDREN_COMPONENT);
-	const auto& playerController = bobby.value()->getComponent<PlayerControlComponent>(ComponentTypes::PLAYER_CONTROL_COMPONENT);
-	const auto& stateComponent = bobby.value()->getComponent<BBStateComponent>(ComponentTypes::STATE_COMPONENT);
-	const auto& physicsComponent = bobby.value()->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
+	const auto& bobby = m_parent->parentScene()->player();
+	const auto& childrenComponent = bobby->getComponent<ChildrenComponent>(ComponentTypes::CHILDREN_COMPONENT);
+	const auto& playerController = bobby->getComponent<PlayerControlComponent>(ComponentTypes::PLAYER_CONTROL_COMPONENT);
+	const auto& stateComponent = bobby->getComponent<BBStateComponent>(ComponentTypes::STATE_COMPONENT);
+	const auto& physicsComponent = bobby->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
 
 	const auto& nopeBubble = childrenComponent->getFirstChildByType("NOPE_BUBBLE");
 
 	scareType = getActionProperty("parm").asString();
 
-	if (scareType == "applyScare" && bobby.value()->hasState(GameObjectState::SCARED) == false) {
+	if (scareType == "applyScare" && bobby->hasState(GameObjectState::SCARED) == false) {
 
-		bobby.value()->addState(GameObjectState::SCARED);
+		bobby->addState(GameObjectState::SCARED);
 
 		nopeBubble.value()->enableRender();
 
@@ -27,7 +27,7 @@ void ScareBobbyAction::perform()
 	}
 	else if (scareType == "removeScare") {
 
-		bobby.value()->removeState(GameObjectState::SCARED);
+		bobby->removeState(GameObjectState::SCARED);
 		nopeBubble.value()->disableRender();
 
 	}

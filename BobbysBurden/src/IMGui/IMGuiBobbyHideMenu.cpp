@@ -23,7 +23,7 @@ glm::vec2 IMGuiBobbyHideMenu::render()
 
 	const auto& hideInGameObject = parent()->parent();
 	const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
-	const auto& player = parent()->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
+	const auto& player = parent()->parentScene()->player();
 
 
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
@@ -74,7 +74,7 @@ void IMGuiBobbyHideMenu::_buildInteractionRow(GameObject* hideInGameObject)
 	static int buttonSeq{};
 
 	const auto& hidingSpotInterfaceComponent = parent()->parent().value()->getComponent<InterfaceComponent>(ComponentTypes::INTERFACE_COMPONENT);
-	const auto& playerObject = parent()->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
+	const auto& playerObject = parent()->parentScene()->player();
 
 	ImGui::PushFont(m_normalFont);
 
@@ -84,7 +84,7 @@ void IMGuiBobbyHideMenu::_buildInteractionRow(GameObject* hideInGameObject)
 		ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
 		ImGui::SameLine();
 
-		if (playerObject.value()->hasState(GameObjectState::HIDING)) {
+		if (playerObject->hasState(GameObjectState::HIDING)) {
 
 			ImGui::TextWrapped("Unhide");
 				

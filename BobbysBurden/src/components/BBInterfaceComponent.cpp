@@ -130,7 +130,7 @@ std::optional<std::shared_ptr<GameObject>> BBInterfaceComponent::determineItemCo
 
 	if (itemObject->getTouchingObjects().empty() == false) {
 
-		const auto& player = itemObject->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
+		const auto& player = itemObject->parentScene()->player();
 
 		auto itemContactItr = itemObject->getTouchingObjects().begin()->second;
 
@@ -147,7 +147,7 @@ std::optional<std::shared_ptr<GameObject>> BBInterfaceComponent::determineItemCo
 					//If if this is a normal inventory object or puzzle then the player has to be close enough touching it
 					//but if its an inventory display object then player doesnt have to be touching it
 					if (candidateObject.lock()->hasTrait(TraitTag::inventory_display) == true ||
-						player.value()->isTouchingById(candidateObject.lock()->id())) {
+						player->isTouchingById(candidateObject.lock()->id())) {
 
 						//Initialize the first one
 						if (!finalObject) {

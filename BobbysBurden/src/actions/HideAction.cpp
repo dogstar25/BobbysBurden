@@ -5,25 +5,25 @@
 void HideAction::perform()
 {
 
-	const auto& player = m_parent->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
+	const auto& player = m_parent->parentScene()->player();
 
-	if (player.value()->hasState(GameObjectState::HIDING)) {
+	if (player->hasState(GameObjectState::HIDING)) {
 
-		_unhideBobby(player.value().get());
-		player.value()->removeState(GameObjectState::HIDING);
+		_unhideBobby(player.get());
+		player->removeState(GameObjectState::HIDING);
 
 	}
 	else {
 
-		_hideBobby(player.value().get());
-		player.value()->addState(GameObjectState::HIDING);
+		_hideBobby(player.get());
+		player->addState(GameObjectState::HIDING);
 
 
 	}
 
 	const auto& animationComponent = m_parent->parent().value()->getComponent<AnimationComponent>(ComponentTypes::ANIMATION_COMPONENT);
 
-	if (player.value()->hasState(GameObjectState::HIDING)) {
+	if (player->hasState(GameObjectState::HIDING)) {
 		animationComponent->animate("BOBBY_HIDING");
 	}
 	else{

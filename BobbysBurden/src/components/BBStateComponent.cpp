@@ -50,7 +50,7 @@ void BBStateComponent::removeState(GameObjectState newState)
 
 			case GameObjectState::ON_VERTICAL_MOVEMENT:
 
-				//Set the state to true
+				//Set the state to false
 				m_states.set((int)newState, false);
 
 				if (parent()->hasComponent(ComponentTypes::PHYSICS_COMPONENT) &&
@@ -66,6 +66,16 @@ void BBStateComponent::removeState(GameObjectState newState)
 				}
 
 			break;
+
+			case GameObjectState::ITEM_LOOSE:
+
+				m_states.set((int)newState, false);
+
+				//Restore to normal size
+				parent()->revertToOriginalSize();
+
+				break;
+
 
 
 
@@ -97,6 +107,36 @@ void BBStateComponent::_setAndReconcileState(GameObjectState newState)
 {
 
 	switch (newState) {
+
+		case GameObjectState::ITEM_OBTAINABLE:
+
+			m_states.set((int)newState, true);
+			m_states.set((int)GameObjectState::ITEM_STORED_PLAYER, false);
+			break;
+
+		case GameObjectState::ITEM_STORED_ENCLOSED:
+
+			m_states.set((int)newState, true);
+			m_states.set((int)GameObjectState::ITEM_STORED_PLAYER, false);
+			break;
+
+		case GameObjectState::ITEM_STORED_OPEN:
+
+			m_states.set((int)newState, true);
+			m_states.set((int)GameObjectState::ITEM_STORED_ENCLOSED, false);
+			m_states.set((int)GameObjectState::ITEM_STORED_PLAYER, false);
+			break;
+
+		case GameObjectState::ITEM_LOOSE:
+
+			m_states.set((int)newState, true);
+			m_states.set((int)GameObjectState::ITEM_STORED_PLAYER, false);
+			m_states.set((int)GameObjectState::ITEM_STORED_ENCLOSED, false);
+
+			//Set to world display size
+			parent()->setSizeToWorldViewOverride();
+
+			break;
 
 		case GameObjectState::ON_VERTICAL_MOVEMENT:
 

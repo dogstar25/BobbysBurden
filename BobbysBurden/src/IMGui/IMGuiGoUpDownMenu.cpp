@@ -23,8 +23,6 @@ glm::vec2 IMGuiGoUpDownMenu::render()
 
 	const auto& stairsGameObject = parent()->parent();
 	const auto& renderComponent = parent()->getComponent<RenderComponent>(ComponentTypes::RENDER_COMPONENT);
-	//const auto& doorKnobActionComponent = doorKnobGameObject.value()->getComponent<ActionComponent>(ComponentTypes::ACTION_COMPONENT);
-	const auto& player = parent()->parentScene()->getFirstGameObjectByTrait(TraitTag::player);
 
 
 	ImGuiIO& io = ImGui::GetIO(); (void)io;

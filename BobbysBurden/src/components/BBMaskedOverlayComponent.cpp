@@ -15,10 +15,10 @@ void BBMaskedOverlayComponent::update()
 
 	//loop through all masks and turn on ones that are associated with rooms
 	//that Bobby can see and turn off ones associated with rooms he cannot
-	const auto& player = parent()->parentScene()->getFirstGameObjectByTrait(TraitTag::player).value().get();
+	const auto& player = parent()->parentScene()->player();
 	for(const auto& mask : m_maskObjects){
 
-		if (util::hasLineOfSight(player, mask.get())) {
+		if (util::hasLineOfSight(player.get(), mask.get())) {
 
 			mask->addState(GameObjectState::ON);
 

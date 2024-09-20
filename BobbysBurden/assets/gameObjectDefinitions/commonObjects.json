@@ -449,6 +449,7 @@
                     "maskObjects": [
                         "bobbysRoomMask",
                         "parlorRoomMask",
+                        "atticRoomMask",
                         "guestBedroomMask",
                         "frontTopStairsRoomMask",
                         "frontBottomStairsRoomMask",
