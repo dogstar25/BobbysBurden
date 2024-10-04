@@ -11,6 +11,7 @@
 #include "puzzles/BBPuzzleFactory.h"
 #include "BBContextManager.h"
 #include "BBGameStateManager.h"
+#include "BBNavigationManager.h"
 #include "BBEnumMap.h"
 #include "BBColorMap.h"
 #include <wtypes.h>
@@ -39,6 +40,7 @@ int main(int argc, char* argv[])
 		std::make_shared<BBEnvironmentEventFactory>(),
 		std::make_shared<BBContextManager>(),
 		std::make_shared<BBGameStateManager>(),
+		std::make_shared<BBNavigationManager>(),
 		std::make_shared<BBEnumMap>(),
 		std::make_shared<BBColorMap>()
 	);

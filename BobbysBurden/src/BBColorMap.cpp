@@ -27,6 +27,7 @@ BBColorMap::BBColorMap()
 	addColor("Colors::CYAN", Colors::CYAN);
 	addColor("Colors::MARINE", Colors::MARINE);
 	addColor("Colors::SAPPHIRE", Colors::SAPPHIRE);
+	addColor("Colors::BLUEGREY", Colors::BLUEGREY);
 
 	//Dark
 	addColor("Colors::CHARCOAL", Colors::CHARCOAL);

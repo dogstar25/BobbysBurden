@@ -169,6 +169,8 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\components\BBGhostBrainComponent.cpp" />
+    <ClCompile Include="src\BBNavigationManager.cpp" />
     <ClCompile Include="src\actions\DisableProximityHintAction.cpp" />
     <ClCompile Include="src\actions\PlayPhonographAction.cpp" />
     <ClCompile Include="src\actions\PushGuestBedButtonAction.cpp" />
@@ -235,6 +237,8 @@
     <ClCompile Include="src\triggers\PlayerDeath.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\components\BBGhostBrainComponent.h" />
+    <ClInclude Include="src\BBNavigationManager.h" />
     <ClInclude Include="src\actions\DisableProximityHintAction.h" />
     <ClInclude Include="src\actions\PlayPhonographAction.h" />
     <ClInclude Include="src\actions\PushGuestBedButtonAction.h" />
