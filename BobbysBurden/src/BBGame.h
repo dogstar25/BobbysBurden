@@ -22,6 +22,7 @@ public:
 		std::shared_ptr<EnvironmentEventFactory> environmentEventFactory, 
 		std::shared_ptr<ContextManager>,
 		std::shared_ptr<GameStateManager>,
+		std::shared_ptr<NavigationManager>,
 		std::shared_ptr<EnumMap> enumMap, 
 		std::shared_ptr<ColorMap> colorMap
 	) override;

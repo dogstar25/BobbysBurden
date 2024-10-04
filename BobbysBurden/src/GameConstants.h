@@ -45,6 +45,7 @@ namespace Colors {
 	//blue
 	inline SDL_Color MARINE = { 50, 147, 196, 255 };
 	inline SDL_Color SAPPHIRE = { 113, 197, 219, 255 };
+	inline SDL_Color BLUEGREY = { 135, 192, 202, 255 };
 
 	//grey / dark
 	inline SDL_Color CHARCOAL = { 25, 25, 25, 255 };

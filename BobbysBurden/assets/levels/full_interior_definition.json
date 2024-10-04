@@ -23,6 +23,11 @@
             "colorKey": "Colors::ORANGE",
             "gameObjectType": "BRICK_WALL_2",
             "layer": "GameLayer::BACKGROUND_5"
+        },
+        {
+            "colorKey": "Colors::BLUEGREY",
+            "gameObjectType": "NAVIGATION_WAYPOINT",
+            "layer": "GameLayer::ABSTRACT"
         }
     ],
     "locationDefinedObjects": [

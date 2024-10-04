@@ -1,6 +1,7 @@
 #include "BBGame.h"
 #include "GameConstants.h"
 #include "BBContextManager.h"
+#include "BBNavigationManager.h"
 
 using namespace std::chrono_literals;
 
@@ -17,6 +18,7 @@ bool BBGame::init(
 	std::shared_ptr<EnvironmentEventFactory> environmentEventFactory,
 	std::shared_ptr<ContextManager> contextManager,
 	std::shared_ptr<GameStateManager> gameStateManager,
+	std::shared_ptr<NavigationManager> navigationManager,
 	std::shared_ptr<EnumMap> enumMap, 
 	std::shared_ptr<ColorMap> colorMap
 )
@@ -25,7 +27,7 @@ bool BBGame::init(
 	//Assign all of the game specific managers and factories to the main game object
 	Game::init(
 		contactListener, contactFilter, componentFactory, actionFactory, particleEffectsFactory, cutSceneFactory, iMGuiFactory, triggerFactory, 
-		puzzleFactory, environmentEventFactory, contextManager, gameStateManager, enumMap, colorMap
+		puzzleFactory, environmentEventFactory, contextManager, gameStateManager, navigationManager, enumMap, colorMap
 	);
 
 	m_gameState = GameState::PLAY;
@@ -100,6 +102,9 @@ bool BBGame::init(
 	//Scene& scene = SceneManager::instance().pushScene("SCENE_TEST");
 
 	scene.loadLevel("full_interior");
+
+	//For Bobby's burden we need to manually build the navigation maps
+	static_pointer_cast<BBNavigationManager>(m_navigationManager)->buildNavigationMap();
 
 	//////////////////////////////////////////////////////
 	//Force the load of the new game primer file for now

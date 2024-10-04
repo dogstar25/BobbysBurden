@@ -137,10 +137,7 @@
         },
         {
             "type": "NAVIGATION_WAYPOINT",
-            "traitTags": [
-                "waypoint",
-                "abstract"
-            ],
+            "traitTags": ["waypoint","abstract"],
             "description": "Navigation Object",
             "components": [
                 {
@@ -149,7 +146,7 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 64,
+                        "width": 32,
                         "height": 64
                     }
                 },
