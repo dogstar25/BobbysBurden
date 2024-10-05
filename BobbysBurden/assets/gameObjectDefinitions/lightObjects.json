@@ -185,10 +185,10 @@
                         "width": 32,
                         "height": 32
                     }
-                },
-                {
-                    "id": "LIGHTED_TREATMENT_COMPONENT"
                 }
+                //{
+                //    "id": "LIGHTED_TREATMENT_COMPONENT"
+                //}
             ]
         },
         {

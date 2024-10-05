@@ -47,7 +47,7 @@ namespace ImGui
 
 		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
 
-			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			GLuint64 textureAtlasId = static_cast<RendererGL*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
 			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 		else {
@@ -68,7 +68,7 @@ namespace ImGui
 
 		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
 
-			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			GLuint64 textureAtlasId = static_cast<RendererGL*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
 			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 		else {
@@ -88,7 +88,7 @@ namespace ImGui
 
 		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
 
-			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			GLuint64 textureAtlasId = static_cast<RendererGL*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
 			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 		else {
@@ -108,7 +108,7 @@ namespace ImGui
 
 		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
 
-			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			GLuint64 textureAtlasId = static_cast<RendererGL*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
 			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 		else {
@@ -136,7 +136,7 @@ namespace ImGui
 
 		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
 
-			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			GLuint64 textureAtlasId = static_cast<RendererGL*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
 			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 		else {
@@ -157,7 +157,7 @@ namespace ImGui
 
 		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
 
-			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			GLuint64 textureAtlasId = static_cast<RendererGL*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
 			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 		else {
@@ -178,7 +178,7 @@ namespace ImGui
 
 		if (GameConfig::instance().rendererType() == RendererType::OPENGL) {
 
-			GLuint64 textureAtlasId = static_cast<GLRenderer*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
+			GLuint64 textureAtlasId = static_cast<RendererGL*>(game->renderer())->getTextureId(GL_TextureIndexType::IMGUI_TEXTURE_ATLAS);
 			ImGui::Image((void*)textureAtlasId, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
 		else {
