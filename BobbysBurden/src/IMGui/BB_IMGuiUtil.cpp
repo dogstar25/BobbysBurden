@@ -28,13 +28,7 @@ namespace ImGui
 		game->gameStateMananger()->loadGamePrimerFile();
 
 		//Send change to Play Scene Event
-		sceneAction = new SceneAction();
-		sceneAction->actionCode = SCENE_ACTION_REPLACE;
-		sceneAction->actionId = "SCENE_PLAY";
-
-		event.type = SDL_USEREVENT;
-		event.user.data1 = sceneAction;
-		SDL_PushEvent(&event);
+		util::sendSceneEvent(SCENE_ACTION_REPLACE, "SCENE_PLAY");
 
 	}
 
@@ -52,7 +46,7 @@ namespace ImGui
 		}
 		else {
 
-			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_07");
 			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
@@ -73,7 +67,7 @@ namespace ImGui
 		}
 		else {
 
-			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_07");
 			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
@@ -93,7 +87,7 @@ namespace ImGui
 		}
 		else {
 
-			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_07");
 			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
@@ -113,7 +107,7 @@ namespace ImGui
 		}
 		else {
 
-			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_07");
 			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
@@ -141,7 +135,7 @@ namespace ImGui
 		}
 		else {
 
-			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_07");
 			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
@@ -162,7 +156,7 @@ namespace ImGui
 		}
 		else {
 
-			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_07");
 			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}
@@ -183,7 +177,7 @@ namespace ImGui
 		}
 		else {
 
-			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_99");
+			std::shared_ptr<Texture> texture = TextureManager::instance().getTextureAtlas("ATLAS_07");
 			SDL_Texture* sdlTexture = std::static_pointer_cast<SDLTexture>(texture).get()->sdlTexture;
 			ImGui::Image((void*)(SDL_Texture*)sdlTexture, ImVec2(32, 32), ImVec2(topLeft.x, topLeft.y), ImVec2(bottomRight.x, bottomRight.y), color);
 		}

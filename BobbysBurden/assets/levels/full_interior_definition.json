@@ -31,53 +31,53 @@
         }
     ],
     "locationDefinedObjects": [
-        //{
-        //    "groupName": "ENVIORNMENT",
-        //    "objects": [
-        //        //{
-        //        //    "id": "LOC_0000_0000",
-        //        //    "gameObjectType": "Environment_CONTROLLER",
-        //        //    "layer": "GameLayer::ABSTRACT"
-        //        //},
-        //        //{
-        //        //    "id": "LOC_0000_0000",
-        //        //    "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
-        //        //    "layer": "GameLayer::BACKGROUND_FINAL",
-        //        //    "name": "lightningBackgroundFinal"
-        //        //},
-        //        //{
-        //        //    "id": "LOC_0000_0000",
-        //        //    "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
-        //        //    "layer": "GameLayer::BACKGROUND_4",
-        //        //    "name": "lightningBackground"
-        //        //},
-        //        //{
-        //        //    "id": "LOC_0000_0110",
-        //        //    "gameObjectType": "HOUSE_OVERLAY_FRONT",
-        //        //    "description": "House Overlay for the front view",
-        //        //    "layer": "GameLayer::FOREGROUND_5"
-        //        //},
-        //        //{
-        //        //    "id": "LOC_0000_0022",
-        //        //    "gameObjectType": "HOUSE_OVERLAY_BACK",
-        //        //    "description": "House Overlay for the back view",
-        //        //    "layer": "GameLayer::FOREGROUND_5"
-        //        //},
-        //        //{
-        //        //    "id": "LOC_0000_0110",
-        //        //    "description": "Tree background for the Front view",
-        //        //    "gameObjectType": "FULL_TREE_BACKGROUND_1",
-        //        //    "layer": "GameLayer::BACKGROUND_5"
-        //        //},
-        //        //{
-        //        //    "id": "LOC_0000_0022",
-        //        //    "description": "Tree background for the Front view",
-        //        //    "gameObjectType": "FULL_TREE_BACKGROUND_1",
-        //        //    "layer": "GameLayer::BACKGROUND_5"
-        //        //}
+        {
+            "groupName": "ENVIORNMENT",
+            "objects": [
+                {
+                    "id": "LOC_0000_0000",
+                    "gameObjectType": "Environment_CONTROLLER",
+                    "layer": "GameLayer::ABSTRACT"
+                },
+                {
+                    "id": "LOC_0000_0000",
+                    "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
+                    "layer": "GameLayer::BACKGROUND_FINAL",
+                    "name": "lightningBackgroundFinal"
+                },
+                {
+                    "id": "LOC_0000_0000",
+                    "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
+                    "layer": "GameLayer::BACKGROUND_4",
+                    "name": "lightningBackground"
+                },
+                {
+                    "id": "LOC_0000_0110",
+                    "gameObjectType": "HOUSE_OVERLAY_FRONT",
+                    "description": "House Overlay for the front view",
+                    "layer": "GameLayer::FOREGROUND_5"
+                },
+                {
+                    "id": "LOC_0000_0022",
+                    "gameObjectType": "HOUSE_OVERLAY_BACK",
+                    "description": "House Overlay for the back view",
+                    "layer": "GameLayer::FOREGROUND_5"
+                },
+                {
+                    "id": "LOC_0000_0110",
+                    "description": "Tree background for the Front view",
+                    "gameObjectType": "FULL_TREE_BACKGROUND_1",
+                    "layer": "GameLayer::BACKGROUND_5"
+                },
+                {
+                    "id": "LOC_0000_0022",
+                    "description": "Tree background for the Front view",
+                    "gameObjectType": "FULL_TREE_BACKGROUND_1",
+                    "layer": "GameLayer::BACKGROUND_5"
+                }
 
-        //    ]
-        //},
+            ]
+        },
         {
             "groupName": "BOBBYS_BEDROOM",
             "objects": [
