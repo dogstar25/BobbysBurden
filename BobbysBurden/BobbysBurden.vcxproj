@@ -321,7 +321,7 @@
     <Image Include="assets\textureAtlas04.png" />
     <Image Include="assets\textureAtlas05.png" />
     <Image Include="assets\textureAtlas06.png" />
-    <Image Include="assets\textureAtlas07.png" />
+    <Image Include="assets\textureAtlas_ImGui.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\blueprintAssets.json" />
@@ -368,7 +368,7 @@
     <None Include="assets\textureAtlas04.json" />
     <None Include="assets\textureAtlas05.json" />
     <None Include="assets\textureAtlas06.json" />
-    <None Include="assets\textureAtlas07.json" />
+    <None Include="assets\textureAtlas_ImGui.json" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="assets\sound\approachingStorm_1.wav" />
