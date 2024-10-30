@@ -23,19 +23,20 @@ std::vector<std::shared_ptr<EnvironmentEvent>> RainEvent::perform(GameObject* en
 		int randomNumber = std::rand() % 10;
 
 		const auto& rainEmitter = environmentObject->parentScene()->getFirstGameObjectByType("PARTICLE_EMITTER_RAIN");
-		rainEmitter.value()->enableRender();
-		rainEmitter.value()->enableUpdate();
-		const auto& rainParticleComponent = rainEmitter.value()->getComponent<ParticleComponent>(ComponentTypes::PARTICLE_COMPONENT);
-		
-		switch (m_eventLevel) {
-		
+		if (rainEmitter.has_value()) {
+			rainEmitter.value()->enableRender();
+			rainEmitter.value()->enableUpdate();
+			const auto& rainParticleComponent = rainEmitter.value()->getComponent<ParticleComponent>(ComponentTypes::PARTICLE_COMPONENT);
+
+			switch (m_eventLevel) {
+
 			case EventLevel::MILD:
-		
+
 				rainParticleComponent->setParticleEffectSpawnCount("RAIN", 20, 20);
 				rainParticleComponent->setParticleEffectEmitAngle("RAIN", 88.0F, 92.0F);
 				rainParticleComponent->setParticleEffectForce("RAIN", 40.0F, 50.0F);
 				rainParticleComponent->setEmissionInterval(1.5);
-		
+
 				break;
 			case EventLevel::MODERATE:
 				rainParticleComponent->setParticleEffectSpawnCount("RAIN", 20, 60);
@@ -53,7 +54,8 @@ std::vector<std::shared_ptr<EnvironmentEvent>> RainEvent::perform(GameObject* en
 				break;
 			default:
 				break;
-		
+
+			}
 		}
 
 		m_durationTimer.reset();
