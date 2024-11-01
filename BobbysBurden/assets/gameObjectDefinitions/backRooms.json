@@ -30,16 +30,16 @@
                                 "height": 384
                             }
                         },
-                        {
-                            "gameObjectType": "LIT_AREA",
-                            "standardSlot": "PositionAlignment::CENTER",
-                            "isStepChild": true,
-                            "layer": "GameLayer::FOREGROUND_2",
-                            "size": {
-                                "width": 320,
-                                "height": 320
-                            }
-                        },
+                        //{
+                        //    "gameObjectType": "LIT_AREA",
+                        //    "standardSlot": "PositionAlignment::CENTER",
+                        //    "isStepChild": true,
+                        //    "layer": "GameLayer::FOREGROUND_2",
+                        //    "size": {
+                        //        "width": 320,
+                        //        "height": 320
+                        //    }
+                        //},
                         {
                             "gameObjectType": "DOOR_FRONT",
                             "name": "topStairsDoorX",

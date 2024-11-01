@@ -32,16 +32,16 @@
                                 "height": 320
                             }
                         },
-                        {
-                            "gameObjectType": "LIT_AREA",
-                            "standardSlot": "PositionAlignment::CENTER",
-                            "isStepChild": true,
-                            "layer": "GameLayer::FOREGROUND_2",
-                            "size": {
-                                "width": 608,
-                                "height": 320
-                            }
-                        },
+                        //{
+                        //    "gameObjectType": "LIT_AREA",
+                        //    "standardSlot": "PositionAlignment::CENTER",
+                        //    "isStepChild": true,
+                        //    "layer": "GameLayer::FOREGROUND_2",
+                        //    "size": {
+                        //        "width": 608,
+                        //        "height": 320
+                        //    }
+                        //},
                         {
                             "gameObjectType": "PENDANT_LIGHT_1",
                             "name": "bobbyClosetLightSwitch_TARGET",

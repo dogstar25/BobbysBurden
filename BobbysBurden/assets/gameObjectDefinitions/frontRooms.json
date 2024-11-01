@@ -41,16 +41,16 @@
                                 "height": 384
                             }
                         },
-                        {
-                            "gameObjectType": "LIT_AREA",
-                            "standardSlot": "PositionAlignment::CENTER",
-                            "isStepChild": true,
-                            "layer": "GameLayer::FOREGROUND_2",
-                            "size": {
-                                "width": 544,
-                                "height": 320
-                            }
-                        },
+                        //{
+                        //    "gameObjectType": "LIT_AREA",
+                        //    "standardSlot": "PositionAlignment::CENTER",
+                        //    "isStepChild": true,
+                        //    "layer": "GameLayer::FOREGROUND_2",
+                        //    "size": {
+                        //        "width": 544,
+                        //        "height": 320
+                        //    }
+                        //},
                         {
                             "gameObjectType": "WALL_BACKGROUND_BIG_1",
                             "standardSlot": "PositionAlignment::CENTER",
@@ -327,16 +327,16 @@
                                 "height": 384
                             }
                         },
-                        {
-                            "gameObjectType": "LIT_AREA",
-                            "standardSlot": "PositionAlignment::CENTER",
-                            "isStepChild": true,
-                            "layer": "GameLayer::FOREGROUND_2",
-                            "size": {
-                                "width": 558,
-                                "height": 320
-                            }
-                        },
+                        //{
+                        //    "gameObjectType": "LIT_AREA",
+                        //    "standardSlot": "PositionAlignment::CENTER",
+                        //    "isStepChild": true,
+                        //    "layer": "GameLayer::FOREGROUND_2",
+                        //    "size": {
+                        //        "width": 558,
+                        //        "height": 320
+                        //    }
+                        //},
                         {
                             "gameObjectType": "DOOR_SIDE_LEFT",
                             "absolutePositionSlot": {
@@ -514,17 +514,17 @@
                                 "height": 384
                             }
                         },
-                        {
-                            "gameObjectType": "LIT_AREA",
-                            "name": "denLitArea",
-                            "standardSlot": "PositionAlignment::CENTER",
-                            "isStepChild": true,
-                            "layer": "GameLayer::FOREGROUND_2",
-                            "size": {
-                                "width": 544,
-                                "height": 320
-                            }
-                        },
+                        //{
+                        //    "gameObjectType": "LIT_AREA",
+                        //    "name": "denLitArea",
+                        //    "standardSlot": "PositionAlignment::CENTER",
+                        //    "isStepChild": true,
+                        //    "layer": "GameLayer::FOREGROUND_2",
+                        //    "size": {
+                        //        "width": 544,
+                        //        "height": 320
+                        //    }
+                        //},
                         {
                             "gameObjectType": "LIGHT_WINDOW_1",
                             "name": "windowFlash",
@@ -668,16 +668,16 @@
                                 "height": 384
                             }
                         },
-                        {
-                            "gameObjectType": "LIT_AREA",
-                            "standardSlot": "PositionAlignment::CENTER",
-                            "isStepChild": true,
-                            "layer": "GameLayer::FOREGROUND_2",
-                            "size": {
-                                "width": 320,
-                                "height": 320
-                            }
-                        },
+                        //{
+                        //    "gameObjectType": "LIT_AREA",
+                        //    "standardSlot": "PositionAlignment::CENTER",
+                        //    "isStepChild": true,
+                        //    "layer": "GameLayer::FOREGROUND_2",
+                        //    "size": {
+                        //        "width": 320,
+                        //        "height": 320
+                        //    }
+                        //},
                         {
                             "gameObjectType": "WALL_BACKGROUND_SMALL_1",
                             "standardSlot": "PositionAlignment::CENTER",
@@ -744,16 +744,16 @@
                                 "height": 384
                             }
                         },
-                        {
-                            "gameObjectType": "LIT_AREA",
-                            "standardSlot": "PositionAlignment::CENTER",
-                            "isStepChild": true,
-                            "layer": "GameLayer::FOREGROUND_2",
-                            "size": {
-                                "width": 320,
-                                "height": 320
-                            }
-                        },
+                        //{
+                        //    "gameObjectType": "LIT_AREA",
+                        //    "standardSlot": "PositionAlignment::CENTER",
+                        //    "isStepChild": true,
+                        //    "layer": "GameLayer::FOREGROUND_2",
+                        //    "size": {
+                        //        "width": 320,
+                        //        "height": 320
+                        //    }
+                        //},
                         {
                             "gameObjectType": "CHANDELIER_1",
                             "absolutePositionSlot": {
@@ -841,16 +841,16 @@
                                 "height": 256
                             }
                         },
-                        {
-                            "gameObjectType": "LIT_AREA",
-                            "standardSlot": "PositionAlignment::CENTER",
-                            "isStepChild": true,
-                            "layer": "GameLayer::FOREGROUND_2",
-                            "size": {
-                                "width": 854,
-                                "height": 256
-                            }
-                        },
+                        //{
+                        //    "gameObjectType": "LIT_AREA",
+                        //    "standardSlot": "PositionAlignment::CENTER",
+                        //    "isStepChild": true,
+                        //    "layer": "GameLayer::FOREGROUND_2",
+                        //    "size": {
+                        //        "width": 854,
+                        //        "height": 256
+                        //    }
+                        //},
                         {
                             "gameObjectType": "WALL_BACKGROUND_BIG_1",
                             "standardSlot": "PositionAlignment::CENTER",

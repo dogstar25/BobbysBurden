@@ -31,53 +31,53 @@
         }
     ],
     "locationDefinedObjects": [
-        {
-            "groupName": "ENVIORNMENT",
-            "objects": [
-                {
-                    "id": "LOC_0000_0000",
-                    "gameObjectType": "Environment_CONTROLLER",
-                    "layer": "GameLayer::ABSTRACT"
-                },
-                {
-                    "id": "LOC_0000_0000",
-                    "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
-                    "layer": "GameLayer::BACKGROUND_FINAL",
-                    "name": "lightningBackgroundFinal"
-                },
-                {
-                    "id": "LOC_0000_0000",
-                    "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
-                    "layer": "GameLayer::BACKGROUND_4",
-                    "name": "lightningBackground"
-                },
-                {
-                    "id": "LOC_0000_0110",
-                    "gameObjectType": "HOUSE_OVERLAY_FRONT",
-                    "description": "House Overlay for the front view",
-                    "layer": "GameLayer::FOREGROUND_5"
-                },
-                //{
-                //    "id": "LOC_0000_0022",
-                //    "gameObjectType": "HOUSE_OVERLAY_BACK",
-                //    "description": "House Overlay for the back view",
-                //    "layer": "GameLayer::FOREGROUND_5"
-                //},
-                {
-                    "id": "LOC_0000_0110",
-                    "description": "Tree background for the Front view",
-                    "gameObjectType": "FULL_TREE_BACKGROUND_1",
-                    "layer": "GameLayer::BACKGROUND_5"
-                }
-                //{
-                //    "id": "LOC_0000_0022",
-                //    "description": "Tree background for the Front view",
-                //    "gameObjectType": "FULL_TREE_BACKGROUND_1",
-                //    "layer": "GameLayer::BACKGROUND_5"
-                //}
+        //{
+        //    "groupName": "ENVIORNMENT",
+        //    "objects": [
+        //        {
+        //            "id": "LOC_0000_0000",
+        //            "gameObjectType": "Environment_CONTROLLER",
+        //            "layer": "GameLayer::ABSTRACT"
+        //        },
+        //        {
+        //            "id": "LOC_0000_0000",
+        //            "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
+        //            "layer": "GameLayer::BACKGROUND_FINAL",
+        //            "name": "lightningBackgroundFinal"
+        //        },
+        //        {
+        //            "id": "LOC_0000_0000",
+        //            "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
+        //            "layer": "GameLayer::BACKGROUND_4",
+        //            "name": "lightningBackground"
+        //        },
+        //        {
+        //            "id": "LOC_0000_0110",
+        //            "gameObjectType": "HOUSE_OVERLAY_FRONT",
+        //            "description": "House Overlay for the front view",
+        //            "layer": "GameLayer::FOREGROUND_5"
+        //        },
+        //        {
+        //            "id": "LOC_0000_0022",
+        //            "gameObjectType": "HOUSE_OVERLAY_BACK",
+        //            "description": "House Overlay for the back view",
+        //            "layer": "GameLayer::FOREGROUND_5"
+        //        },
+        //        {
+        //            "id": "LOC_0000_0110",
+        //            "description": "Tree background for the Front view",
+        //            "gameObjectType": "FULL_TREE_BACKGROUND_1",
+        //            "layer": "GameLayer::BACKGROUND_5"
+        //        },
+        //        {
+        //            "id": "LOC_0000_0022",
+        //            "description": "Tree background for the Front view",
+        //            "gameObjectType": "FULL_TREE_BACKGROUND_1",
+        //            "layer": "GameLayer::BACKGROUND_5"
+        //        }
 
-            ]
-        },
+        //    ]
+        //},
         {
             "groupName": "BOBBYS_BEDROOM",
             "objects": [
@@ -89,7 +89,7 @@
                 {
                     "id": "LOC_0036_0142",
                     "gameObjectType": "OIL_CAN",
-                    "layer": "GameLayer::MAIN",
+                    "layer": "GameLayer::BACKGROUND_1",
                     "name": "toddcan",
                     "gameObjectStates": [
                         "ITEM_LOOSE",
@@ -118,7 +118,7 @@
                 {
                     "id": "LOC_0021_0137",
                     "gameObjectType": "BOBBYS_BED",
-                    "layer": "GameLayer::MAIN",
+                    "layer": "GameLayer::BACKGROUND_4",
                     "name": "bobbysBed"
                 },
                 {
@@ -131,7 +131,8 @@
                     "gameObjectType": "BOBBYS_SIDETABLE",
                     "locationAdjust": {
                         "x": -8
-                    }
+                    },
+                    "layer": "GameLayer::BACKGROUND_4"
                 }
 
 
@@ -140,15 +141,15 @@
         {
             "groupName": "BOBBYS_FIREPLACE",
             "objects": [
-                {
-                    "id": "LOC_0013_0134",
-                    "gameObjectType": "LIT_AREA",
-                    "layer": "GameLayer::FOREGROUND_1",
-                    "size": {
-                        "width": 96,
-                        "height": 320
-                    }
-                },
+                //{
+                //    "id": "LOC_0013_0134",
+                //    "gameObjectType": "LIT_AREA",
+                //    "layer": "GameLayer::FOREGROUND_1",
+                //    "size": {
+                //        "width": 96,
+                //        "height": 320
+                //    }
+                //},
                 {
                     "id": "LOC_0014_0142",
                     "gameObjectType": "FIRELOGS_1",
@@ -271,15 +272,15 @@
                         "height": 32
                     }
                 },
-                {
-                    "id": "LOC_0043_0134",
-                    "gameObjectType": "LIT_AREA",
-                    "layer": "GameLayer::FOREGROUND_1",
-                    "size": {
-                        "width": 544,
-                        "height": 320
-                    }
-                },
+                //{
+                //    "id": "LOC_0043_0134",
+                //    "gameObjectType": "LIT_AREA",
+                //    "layer": "GameLayer::FOREGROUND_1",
+                //    "size": {
+                //        "width": 544,
+                //        "height": 320
+                //    }
+                //},
                 {
                     "id": "LOC_0047_0135",
                     "name": "windowFlash",
