@@ -174,7 +174,7 @@
                     "textureId": "TX_FOG_BOX",
                     "textureBlendMode": "RenderBlendMode::BLEND",
                     "color": {
-                        "tint": "Colors::RED",
+                        "tint": "Colors::WHITE",
                         "alpha": 50
                     }
 
