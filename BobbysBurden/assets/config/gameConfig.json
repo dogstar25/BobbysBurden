@@ -23,7 +23,7 @@
     },
     //"rendererType": "RendererType::SDL",
     "rendererType": "RendererType::OPENGL",
-    "openGLBatching": true,
+    "openGLBatching": false,
     "debugGrid": false,
     "gameLoopStep": 0.016,
     "physics": {
