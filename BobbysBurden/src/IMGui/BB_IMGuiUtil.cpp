@@ -22,9 +22,6 @@ namespace ImGui
 	void newGameLoad()
 	{
 
-		SDL_Event event;
-		SceneAction* sceneAction;
-
 		game->gameStateMananger()->loadGamePrimerFile();
 
 		//Send change to Play Scene Event

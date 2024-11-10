@@ -93,16 +93,16 @@ std::vector<std::shared_ptr<EnvironmentEvent>> LightningMaker::_createLighting(i
 	float timerDuration{};
 	//Calculate a random duration
 	if (randomSeed == 0) {
-		timerDuration = 0.1;
+		timerDuration = 0.1f;
 	}
 	else if (randomSeed == 1) {
-		timerDuration = 0.25;
+		timerDuration = 0.25f;
 	}
 	else if (randomSeed == 2) {
-		timerDuration = 0.75;
+		timerDuration = 0.75f;
 	}
 	else {
-		timerDuration = 1.0;
+		timerDuration = 1.0f;
 	}
 
 	//Create a lighting flash event

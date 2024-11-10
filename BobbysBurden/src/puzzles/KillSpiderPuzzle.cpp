@@ -62,7 +62,8 @@ void KillSpiderPuzzle::applyPuzzlePiece(GameObject* puzzleObject, GameObject* pu
 		tilePosition.x -= 6;
 		tilePosition.y += 1;
 
-		puzzleObject->parentScene()->addGameObject("DEAD_SPIDER", nullptr, GameLayer::BACKGROUND_3, tilePosition.x, tilePosition.y);
+		puzzleObject->parentScene()->addGameObject("DEAD_SPIDER", nullptr, GameLayer::BACKGROUND_3, 
+			static_cast<float>(tilePosition.x), static_cast<float>(tilePosition.y));
 
 
 		//Get the scary object and execute the removeScare action from it

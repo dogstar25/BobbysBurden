@@ -363,7 +363,7 @@
                                 "y": -118
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_4"
+                            "layer": "GameLayer::MAIN"
                         },
                         {
                             "gameObjectType": "LIGHT_SWITCH",
