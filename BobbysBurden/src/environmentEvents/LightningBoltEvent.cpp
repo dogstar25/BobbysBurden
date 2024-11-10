@@ -61,7 +61,8 @@ std::vector<std::shared_ptr<EnvironmentEvent>> LightningBoltEvent::perform(GameO
 		}
 
 
-		m_lightningBoltObject = environmentObject->parentScene()->addGameObject(lightningBoltObjectType, nullptr, gameLayer, location.x, location.y );
+		m_lightningBoltObject = environmentObject->parentScene()->addGameObject(lightningBoltObjectType, nullptr, gameLayer, 
+			static_cast<float>(location.x), static_cast<float>(location.y) );
 		if (sizeOverride.has_value()) {
 			m_lightningBoltObject.value()->setSize(sizeOverride.value());
 		}
@@ -205,7 +206,7 @@ std::shared_ptr<EnvironmentEvent> LightningBoltEvent::_createThunderStrikeSound(
 
 	}
 
-	std::shared_ptr<EnvironmentEvent> event = game->environmentEventFactory()->create("soundEvent", thunderSoundId, Timer(.01));
+	std::shared_ptr<EnvironmentEvent> event = game->environmentEventFactory()->create("soundEvent", thunderSoundId, Timer(.01f));
 
 	return event;
 }

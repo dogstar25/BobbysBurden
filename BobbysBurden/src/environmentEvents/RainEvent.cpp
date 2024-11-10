@@ -35,21 +35,21 @@ std::vector<std::shared_ptr<EnvironmentEvent>> RainEvent::perform(GameObject* en
 				rainParticleComponent->setParticleEffectSpawnCount("RAIN", 20, 20);
 				rainParticleComponent->setParticleEffectEmitAngle("RAIN", 88.0F, 92.0F);
 				rainParticleComponent->setParticleEffectForce("RAIN", 40.0F, 50.0F);
-				rainParticleComponent->setEmissionInterval(1.5);
+				rainParticleComponent->setEmissionInterval(1.5f);
 
 				break;
 			case EventLevel::MODERATE:
 				rainParticleComponent->setParticleEffectSpawnCount("RAIN", 20, 60);
 				rainParticleComponent->setParticleEffectEmitAngle("RAIN", 41.0F, 48.0F);
 				rainParticleComponent->setParticleEffectForce("RAIN", 50.0F, 70.0F);
-				rainParticleComponent->setEmissionInterval(0.8);
+				rainParticleComponent->setEmissionInterval(0.8f);
 
 				break;
 			case EventLevel::INTENSE:
 				rainParticleComponent->setParticleEffectSpawnCount("RAIN", 40, 70);
 				rainParticleComponent->setParticleEffectEmitAngle("RAIN", 40.0F, 50.0F);
 				rainParticleComponent->setParticleEffectForce("RAIN", 60.0F, 80.0F);
-				rainParticleComponent->setEmissionInterval(0.8);
+				rainParticleComponent->setEmissionInterval(0.8f);
 
 				break;
 			default:
