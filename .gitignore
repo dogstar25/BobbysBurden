@@ -6,7 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
-assets/working/
+/BobbysBurden/assets/working
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -260,70 +260,3 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-/BobbysBurden/assets/working/ghost/A_10-frame_animated_depiction_of_a_ghost_walking_f.png
-/BobbysBurden/assets/working/ghost/A_complete_sequence_of_10_frames_showing_a_ghost_c.png
-/BobbysBurden/assets/working/ghost/A_ghost_walking_from_the_side_covered_in_a_flowing.png
-/BobbysBurden/assets/working/ghost/A_sequence_of_10_frames_showing_a_ghost_covered_in.png
-/BobbysBurden/assets/working/ghost/bec319e7-4e47-4257-96d7-8c05b3662d63.webp
-/BobbysBurden/assets/working/ghost/blender/ghost1.blend
-/BobbysBurden/assets/working/ghost/blender/ghost1.blend1
-/BobbysBurden/assets/working/ghost/blender/Standing Idle.fbx
-/BobbysBurden/assets/working/ghost/marvelous designer/export1.fbx
-/BobbysBurden/assets/working/ghost/marvelous designer/export1.mcx
-/BobbysBurden/assets/working/ghost/marvelous designer/export1.xml
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_diffuse_1001.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_diffuse_1002.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_diffuse_1009.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_diffuse_1011.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_diffuse_1012.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_diffuse_1019.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_diffuse_1021.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_diffuse_1022.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_diffuse_999.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_displacement_1001.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_displacement_1002.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_displacement_1009.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_displacement_1011.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_displacement_1012.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_displacement_1019.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_displacement_1021.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_displacement_1022.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_displacement_999.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_metalness_1001.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_metalness_1002.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_metalness_1009.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_metalness_1011.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_metalness_1012.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_metalness_1019.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_metalness_1021.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_metalness_1022.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_metalness_999.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_normal_1001.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_normal_1002.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_normal_1009.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_normal_1011.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_normal_1012.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_normal_1019.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_normal_1021.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_normal_1022.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_normal_999.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_opacity_1001.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_opacity_1002.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_opacity_1009.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_opacity_1011.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_opacity_1012.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_opacity_1019.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_opacity_1021.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_opacity_1022.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_opacity_999.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_roughness_1001.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_roughness_1002.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_roughness_1009.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_roughness_1011.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_roughness_1012.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_roughness_1019.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_roughness_1021.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_roughness_1022.png
-/BobbysBurden/assets/working/ghost/marvelous designer/export1_roughness_999.png
-/BobbysBurden/assets/working/ghost/marvelous designer/ghost1.png
-/BobbysBurden/assets/working/ghost/marvelous designer/ghost1.zprj
