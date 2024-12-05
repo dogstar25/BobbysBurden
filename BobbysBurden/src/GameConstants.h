@@ -86,7 +86,8 @@ namespace ComponentTypes {
 
 namespace BrainState {
 
-	inline constexpr auto FOLLOW = 20;
+	inline constexpr auto UNDISCOVERED = 20;
+	inline constexpr auto FIRST_DISCOVERED = 21;
 
 }
 
