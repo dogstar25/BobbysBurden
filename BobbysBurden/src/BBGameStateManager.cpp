@@ -278,7 +278,7 @@ void BBGameStateManager::_buildStateSaveData(GameObject* gameObject, Json::Value
 
 	const auto& stateComponent = gameObject->getComponent<StateComponent>(ComponentTypes::STATE_COMPONENT);
 
-	for (size_t i = 0; i < stateComponent->getStateBitSet().size(); ++i) {
+	for (int i = 0; i < stateComponent->getStateBitSet().size(); ++i) {
 
 		if (stateComponent->testState(static_cast<GameObjectState>(i))) {
 

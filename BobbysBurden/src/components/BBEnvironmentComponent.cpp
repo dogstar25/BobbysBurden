@@ -18,15 +18,17 @@ void BBEnvironmentComponent::postInit()
 
 	//Get the main house overlay object
 	const auto& houseOverlay = parent()->parentScene()->getFirstGameObjectByType("HOUSE_OVERLAY_FRONT");
-	const auto& houseMaskOverlayComponent = houseOverlay.value()->getComponent<MaskedOverlayComponent>(ComponentTypes::MASKED_OVERLAY_COMPONENT);
+	if (houseOverlay.has_value()) {
+		const auto& houseMaskOverlayComponent = houseOverlay.value()->getComponent<MaskedOverlayComponent>(ComponentTypes::MASKED_OVERLAY_COMPONENT);
 
-	//Create a rain emitter object
-	auto rainEmitter = parent()->parentScene()->createGameObject("PARTICLE_EMITTER_RAIN", parent(), -1.0F, -1.0F, 0.F, parent()->parentScene(), GameLayer::MAIN);
-	rainEmitter->postInit();
-	rainEmitter->disableRender();
-	rainEmitter->disableUpdate();
+		//Create a rain emitter object
+		auto rainEmitter = parent()->parentScene()->createGameObject("PARTICLE_EMITTER_RAIN", parent(), -1.0F, -1.0F, 0.F, parent()->parentScene(), GameLayer::MAIN);
+		rainEmitter->postInit();
+		rainEmitter->disableRender();
+		rainEmitter->disableUpdate();
 
-	houseMaskOverlayComponent->addOverlayObject(rainEmitter);
+		houseMaskOverlayComponent->addOverlayObject(rainEmitter);
+	}
 
 }
 

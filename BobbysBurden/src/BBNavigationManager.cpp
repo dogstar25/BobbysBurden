@@ -47,12 +47,9 @@ void BBNavigationManager::buildNavigationMap()
 	//Add all of our hardcoded nav points
 	for (const auto& point : m_navigationPoints) {
 
-		m_navigationMap[point.x][point.y].passable = true;
+		m_navigationMap[static_cast<int>(point.x)][static_cast<int>(point.y)].passable = true;
 
 	}
-
-
-
 
 }
 
