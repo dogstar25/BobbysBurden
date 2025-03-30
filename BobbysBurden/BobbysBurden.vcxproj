@@ -319,7 +319,12 @@
     <Image Include="assets\textureAtlas04.png" />
     <Image Include="assets\textureAtlas05.png" />
     <Image Include="assets\textureAtlas06.png" />
+    <Image Include="assets\textureAtlas07.png" />
+    <Image Include="assets\textureAtlas07_old.png" />
     <Image Include="assets\textureAtlas99.png" />
+    <Image Include="assets\working\textureAtlas07.png" />
+    <Image Include="assets\working\textureAtlas07_fixed.png" />
+    <Image Include="assets\working\textureAtlas07_version2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\blueprintAssets.json" />
@@ -335,6 +340,7 @@
     <None Include="assets\gameObjectDefinitions\enemyObjects.json" />
     <None Include="assets\gameObjectDefinitions\environmentObjects.json" />
     <None Include="assets\gameObjectDefinitions\furnitureObjects.json" />
+    <None Include="assets\gameObjectDefinitions\ghostObjects.json" />
     <None Include="assets\gameObjectDefinitions\guiObjects.json" />
     <None Include="assets\gameObjectDefinitions\householdObjects.json" />
     <None Include="assets\gameObjectDefinitions\houseObjects.json" />
@@ -366,6 +372,7 @@
     <None Include="assets\textureAtlas04.json" />
     <None Include="assets\textureAtlas05.json" />
     <None Include="assets\textureAtlas06.json" />
+    <None Include="assets\textureAtlas07.json" />
     <None Include="assets\textureAtlas99.json" />
   </ItemGroup>
   <ItemGroup>

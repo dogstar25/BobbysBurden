@@ -1,0 +1,28 @@
+{
+    "textures": [
+
+        {
+            "id": "TX_GHOST_MOVE_RIGHT",
+            "description": "Default Texture",
+            "quadPosition": {
+                "x": 0,
+                "y": 0,
+                "width": 2048,
+                "height": 2304
+            },
+            "flip": true
+        },
+        {
+            "id": "TX_GHOST_MOVE_LEFT",
+            "description": "Default Texture",
+            "quadPosition": {
+                "x": 0,
+                "y": 0,
+                "width": 2048,
+                "height": 2304
+            }
+        }
+
+
+    ]
+}

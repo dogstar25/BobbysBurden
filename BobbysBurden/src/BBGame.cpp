@@ -54,6 +54,7 @@ bool BBGame::init(
 	TextureManager::instance().loadTextures("textureAtlas04");
 	TextureManager::instance().loadTextures("textureAtlas05");
 	TextureManager::instance().loadTextures("textureAtlas06");
+	TextureManager::instance().loadTextures("textureAtlas07");
 	TextureManager::instance().loadTextures("textureAtlas99");
 	TextureManager::instance().loadBlueprints("blueprintAssets");
 	TextureManager::instance().loadFonts("fontAssets");
@@ -89,6 +90,7 @@ bool BBGame::init(
 	GameObjectManager::instance().load("gameObjectDefinitions/enemyObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/furnitureObjects");
 	GameObjectManager::instance().load("gameObjectDefinitions/inventoryObjects");
+	GameObjectManager::instance().load("gameObjectDefinitions/ghostObjects");
 
 	//GameObjectManager::instance().load("gameObjectDefinitions/testObjects");
 

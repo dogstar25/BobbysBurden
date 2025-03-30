@@ -1,7 +1,7 @@
 {
     "gameTitle": "Bobby's Burden'",
     "window": {
-        "fullscreen": false,
+        "fullscreen": true,
         "defaultTileSize": {
             "width": 1,
             "height": 1
