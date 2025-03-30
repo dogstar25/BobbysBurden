@@ -585,24 +585,6 @@
             ]
         },
         {
-            "type": "GHOST",
-            "traitTags": [],
-            "description": "White quad",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_GHOST_TEST"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 80,
-                        "height": 196
-                    }
-                }
-            ]
-        },
-        {
             "type": "COLUMN_1",
             "traitTags": [],
             "description": "",

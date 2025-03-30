@@ -1,0 +1,134 @@
+{
+    "gameObjects": [
+
+
+        {
+            "type": "GHOST",
+            "traitTags": [ ],
+            "description": "Ghost",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 256,
+                        "height": 256
+                    }
+                },
+                {
+                    "id": "VITALITY_COMPONENT",
+                    "speed": 3,
+                    "health": 6
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "gravityScale": 0,
+                    "linearDamping": 1.0,
+                    "fixtures": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_FREE",
+                            "collisionShape": "B2_BOX",
+                            "friction": 0.2,
+                            "restitution": 0.0,
+                            "density": 1,
+                            "size": {
+                                "width": 50,
+                                "height": 175
+                            }
+                        }
+
+                    ]
+                },
+                {
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::WALK_RIGHT" ],
+                    "animationStates": [
+                        {
+                            "state": "GameObjectState::IDLE_RIGHT",
+                            "animationId": "IDLE_RIGHT"
+                        },
+                        {
+                            "state": "GameObjectState::IDLE_LEFT",
+                            "animationId": "IDLE_LEFT"
+                        },
+                        {
+                            "state": "GameObjectState::IDLE_UP",
+                            "animationId": "WALK_UP_IDLE"
+                        },
+                        {
+                            "state": "GameObjectState::IDLE_DOWN",
+                            "animationId": "WALK_DOWN_IDLE"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_RIGHT",
+                            "animationId": "WALK_RIGHT"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_LEFT",
+                            "animationId": "WALK_LEFT"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_UP",
+                            "animationId": "WALK_UP"
+                        },
+                        {
+                            "state": "GameObjectState::WALK_DOWN",
+                            "animationId": "WALK_DOWN"
+                        }
+
+                    ]
+                },
+                {
+                    "id": "ANIMATION_COMPONENT",
+                    "default": "WALK_LEFT",
+                    "frameSize": {
+                        "width": 256,
+                        "height": 256
+                    },
+                    "animations": [
+                        {
+                            "id": "IDLE_RIGHT",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_GHOST_MOVE_RIGHT",
+                            "frames": 1
+                        },
+                        {
+                            "id": "IDLE_LEFT",
+                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
+                            "textureId": "TX_GHOST_MOVE_LEFT",
+                            "frames": 1
+                        },
+                        {
+                            "id": "WALK_RIGHT",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_GHOST_MOVE_RIGHT",
+                            "speed": 0.04,
+                            "frames": 68
+                        },
+                        {
+                            "id": "WALK_LEFT",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_GHOST_MOVE_LEFT",
+                            "speed": 0.04,
+                            "frames": 68
+                        }
+                    ]
+                },
+                {
+                    "id": "BB_GHOST_BRAIN_COMPONENT",
+                    "sightSensorSize": 25,
+                    "detectObjectTraits": [ "mobile" ]
+                },
+                {
+                    "id": "NAVIGATION_COMPONENT",
+                    "passageFitSizeCategory": "NavigationSizeCategory::LARGE"
+                }
+
+            ]
+
+        }
+    ]
+}

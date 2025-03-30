@@ -80,6 +80,7 @@ namespace ComponentTypes {
 	inline constexpr int BB_STATE_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 3;
 	inline constexpr int BB_MASKED_OVERLAY_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 4;
 	inline constexpr int BB_ENVIRONMENT_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 5;
+	inline constexpr int BB_GHOST_BRAIN_COMPONENT = ComponentTypes::LAST_BASE_COMPONENT + 6;
 	
 
 }

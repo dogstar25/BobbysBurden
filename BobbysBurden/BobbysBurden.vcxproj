@@ -45,7 +45,6 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <EnableASAN>false</EnableASAN>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -53,7 +52,6 @@
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <EnableASAN>false</EnableASAN>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -321,7 +319,12 @@
     <Image Include="assets\textureAtlas04.png" />
     <Image Include="assets\textureAtlas05.png" />
     <Image Include="assets\textureAtlas06.png" />
-    <Image Include="assets\textureAtlas_ImGui.png" />
+    <Image Include="assets\textureAtlas07.png" />
+    <Image Include="assets\textureAtlas07_old.png" />
+    <Image Include="assets\textureAtlas99.png" />
+    <Image Include="assets\working\textureAtlas07.png" />
+    <Image Include="assets\working\textureAtlas07_fixed.png" />
+    <Image Include="assets\working\textureAtlas07_version2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\blueprintAssets.json" />
@@ -337,6 +340,7 @@
     <None Include="assets\gameObjectDefinitions\enemyObjects.json" />
     <None Include="assets\gameObjectDefinitions\environmentObjects.json" />
     <None Include="assets\gameObjectDefinitions\furnitureObjects.json" />
+    <None Include="assets\gameObjectDefinitions\ghostObjects.json" />
     <None Include="assets\gameObjectDefinitions\guiObjects.json" />
     <None Include="assets\gameObjectDefinitions\householdObjects.json" />
     <None Include="assets\gameObjectDefinitions\houseObjects.json" />
@@ -368,7 +372,8 @@
     <None Include="assets\textureAtlas04.json" />
     <None Include="assets\textureAtlas05.json" />
     <None Include="assets\textureAtlas06.json" />
-    <None Include="assets\textureAtlas_ImGui.json" />
+    <None Include="assets\textureAtlas07.json" />
+    <None Include="assets\textureAtlas99.json" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="assets\sound\approachingStorm_1.wav" />
