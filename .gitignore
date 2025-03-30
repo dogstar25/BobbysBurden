@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+/BobbysBurden/assets/working
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -259,5 +260,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-/BobbysBurden/assets/working/textureAtlas07.png
-*.png
+

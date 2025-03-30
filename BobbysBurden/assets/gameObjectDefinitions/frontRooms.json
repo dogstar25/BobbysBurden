@@ -282,7 +282,7 @@
                                 "y": 40
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_2"
+                            "layer": "GameLayer::BACKGROUND_4"
                         },
                         {
                             "gameObjectType": "DOOR_SIDE_RIGHT",
@@ -292,7 +292,7 @@
                                 "y": 32
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_1"
+                            "layer": "GameLayer::BACKGROUND_3"
                         }
                     ]
                 }
@@ -344,7 +344,7 @@
                                 "y": 32
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_1"
+                            "layer": "GameLayer::BACKGROUND_4"
                         },
                         {
                             "gameObjectType": "BED_3",
@@ -353,7 +353,7 @@
                                 "y": 60
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_3"
+                            "layer": "GameLayer::BACKGROUND_4"
                         },
                         {
                             "gameObjectType": "CEILING_LIGHT_1",
@@ -363,7 +363,7 @@
                                 "y": -118
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_3"
+                            "layer": "GameLayer::MAIN"
                         },
                         {
                             "gameObjectType": "LIGHT_SWITCH",
@@ -424,7 +424,7 @@
                                 "height": 100
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_2"
+                            "layer": "GameLayer::BACKGROUND_3"
                         },
                         {
                             "gameObjectType": "CANDLE_2",
@@ -437,7 +437,7 @@
                                 "height": 60
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_1",
+                            "layer": "GameLayer::BACKGROUND_2",
                             "beginStates": [ "GameObjectState::ON" ]
                         },
                         {
@@ -457,7 +457,7 @@
                                 "y": 96
                             },
                             "isStepChild": true,
-                            "layer": "GameLayer::BACKGROUND_3"
+                            "layer": "GameLayer::BACKGROUND_4"
                         },
                         {
                             "gameObjectType": "LAMP_2",

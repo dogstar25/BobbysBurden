@@ -661,8 +661,9 @@
                                 "width": 12,
                                 "height": 12
                             },
-                            "beginStates": [ "GameObjectState::DISABLED_RENDER", "GameObjectState::STRAIGHT" ]
-
+                            "beginStates": [ "GameObjectState::DISABLED_RENDER", "GameObjectState::STRAIGHT" ],
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_1"
 
                         },
                         {
@@ -675,7 +676,9 @@
                                 "width": 12,
                                 "height": 12
                             },
-                            "beginStates": [ "GameObjectState::DISABLED_RENDER", "GameObjectState::STRAIGHT" ]
+                            "beginStates": [ "GameObjectState::DISABLED_RENDER", "GameObjectState::STRAIGHT" ],
+                            "isStepChild": true,
+                            "layer": "GameLayer::BACKGROUND_1"
 
                         },
                         {
