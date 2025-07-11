@@ -15,21 +15,15 @@ void BBGhostBrainComponent::postInit()
 	BrainComponent::postInit();
 
 
-	//Store a 
-
-
-
-
-
 	//Get all WayPoints
-	//for (const auto& gameObject : parent()->parentScene()->getGameObjectsByTrait(TraitTag::waypoint)) {
+	for (const auto& gameObject : parent()->parentScene()->getGameObjectsByTrait(TraitTag::waypoint)) {
 
-	//	m_wayPoints.push_back(gameObject);
-	//}
+		m_wayPoints.push_back(gameObject);
+	}
 
-	////Do an random sort of the waypoints order
-	//unsigned seed = static_cast<unsigned>(std::chrono::system_clock::now().time_since_epoch().count());
-	//std::shuffle(m_wayPoints.begin(), m_wayPoints.end(), std::default_random_engine(seed));
+	//Do an random sort of the waypoints order
+	unsigned seed = static_cast<unsigned>(std::chrono::system_clock::now().time_since_epoch().count());
+	std::shuffle(m_wayPoints.begin(), m_wayPoints.end(), std::default_random_engine(seed));
 
 }
 

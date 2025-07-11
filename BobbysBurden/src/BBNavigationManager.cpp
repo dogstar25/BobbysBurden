@@ -58,3 +58,38 @@ void BBNavigationManager::updateNavigationMap()
 
 
 }
+
+void BBNavigationManager::buildNavigationMapItem(GameObject* gameObject, Scene* scene)
+{
+
+	NavigationMapItem navigationMapItem{};
+
+	//This is a possible impasse
+	if (gameObject->hasTrait(TraitTag::impasse) ||
+		gameObject->hasTrait(TraitTag::conditional_impasse) ||
+		gameObject->hasTrait(TraitTag::complex_impasse))
+	{
+
+		//Find this objects shared_ptr so we can store the weak_ptr of it here
+		auto gameObjectSharedPtr = scene->getGameObject(gameObject->id()).value();
+
+		navigationMapItem.gameObject = gameObjectSharedPtr;
+
+		//If this is impasse, then it will always be so set it now so that the 
+		//the navigationComponent will work on the first pass
+		if (gameObject->hasTrait(TraitTag::impasse)) {
+			navigationMapItem.passable = false;
+		}
+
+		//Add the initial navigationMapItem to the collection
+		m_navigationMap[(int)gameObject->getOriginalTilePosition().x][(int)gameObject->getOriginalTilePosition().y] = navigationMapItem;
+
+	}
+	else {
+
+		navigationMapItem.passable = true;
+		m_navigationMap[(int)gameObject->getOriginalTilePosition().x][(int)gameObject->getOriginalTilePosition().y] = navigationMapItem;
+
+	}
+
+}

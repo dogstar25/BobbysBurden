@@ -55,7 +55,7 @@ bool BBGame::init(
 	TextureManager::instance().loadTextures("textureAtlas05");
 	TextureManager::instance().loadTextures("textureAtlas06");
 	TextureManager::instance().loadTextures("textureAtlas07");
-	TextureManager::instance().loadTextures("textureAtlas99");
+	TextureManager::instance().loadTextures("textureAtlas_ImGui");
 	TextureManager::instance().loadBlueprints("blueprintAssets");
 	TextureManager::instance().loadFonts("fontAssets");
 	TextureManager::instance().loadCursors("mouseCursors");
