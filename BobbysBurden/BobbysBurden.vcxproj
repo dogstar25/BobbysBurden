@@ -320,8 +320,8 @@
     <Image Include="assets\textureAtlas05.png" />
     <Image Include="assets\textureAtlas06.png" />
     <Image Include="assets\textureAtlas07.png" />
-    <Image Include="assets\textureAtlas07_old.png" />
     <Image Include="assets\textureAtlas99.png" />
+    <Image Include="assets\textureAtlas_ImGui.png" />
     <Image Include="assets\working\textureAtlas07.png" />
     <Image Include="assets\working\textureAtlas07_fixed.png" />
     <Image Include="assets\working\textureAtlas07_version2.png" />
@@ -374,6 +374,7 @@
     <None Include="assets\textureAtlas06.json" />
     <None Include="assets\textureAtlas07.json" />
     <None Include="assets\textureAtlas99.json" />
+    <None Include="assets\textureAtlas_ImGui.json" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="assets\sound\approachingStorm_1.wav" />

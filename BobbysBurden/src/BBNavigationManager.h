@@ -8,7 +8,7 @@ public:
 
 	BBNavigationManager();
 
-	virtual void buildNavigationMapItem(GameObject* gameObject, Scene* scene) override {};
+	virtual void buildNavigationMapItem(GameObject* gameObject, Scene* scene) override;
 	virtual void updateNavigationMap() override;
 
 	void buildNavigationMap();//This nav map is built manually, not using the levelmanager

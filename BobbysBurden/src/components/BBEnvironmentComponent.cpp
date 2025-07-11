@@ -43,19 +43,19 @@ void BBEnvironmentComponent::_applyEventInstructions(int sequence)
 
 	}
 
-	//for (const auto& instruction : m_currentCycleInstructions[sequence]) {
+	for (const auto& instruction : m_currentCycleInstructions[sequence]) {
 
-	//	if (instruction.id == "lightningMaker") {
+		if (instruction.id == "lightningMaker") {
 
-	//		auto event = game->environmentEventFactory()->create(instruction.id, instruction.param, instruction.durationTimer);
-	//		m_events.push_back(event);
+			auto event = game->environmentEventFactory()->create(instruction.id, instruction.param, instruction.durationTimer);
+			m_events.push_back(event);
 
-	//	}
-	//	else {
-	//		EnvironmentComponent::_applyEventInstructions(sequence);
-	//	}
+		}
+		else {
+			EnvironmentComponent::_applyEventInstructions(sequence);
+		}
 
-	//}
+	}
 
 }
 

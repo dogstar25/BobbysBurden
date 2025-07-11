@@ -207,12 +207,12 @@
             "groupName": "BOBBYS_BATHROOM",
             "objects": [
                 {
-                    "id": "LOC_0151_0012",
+                    "id": "LOC_0027_0067",
                     "gameObjectType": "BOBBYS_BATHROOM",
                     "layer": "GameLayer::BACKGROUND_5"
                 },
                 {
-                    "id": "LOC_0150_0022",
+                    "id": "LOC_0028_0077",
                     "gameObjectType": "HOUSE_BEAM",
                     "description": "Floor",
                     "layer": "GameLayer::ABSTRACT",
