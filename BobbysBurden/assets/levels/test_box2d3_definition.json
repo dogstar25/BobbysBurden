@@ -1,0 +1,48 @@
+{
+    "id": "TEST_BOX2D_V3",
+    "blueprint": "TX_TEST_BOX2D_V3_BLUEPRINT",
+    "description": "Test",
+    "dimensions": {
+        "levelWidth": 32,
+        "levelHeight": 32,
+        "tileWidth": 32,
+        "tileHeight": 32
+    },
+    "colorDefinedObjects": [
+        {
+            "colorKey": "Colors::BROWN",
+            "gameObjectType": "BRICK_WALL_STATIC_1",
+            "layer": "GameLayer::MAIN"
+        }
+    ],
+    "locationDefinedObjects": [
+        {
+            "groupName": "TEST",
+            "objects": [
+                {
+                    "id": "LOC_0001_0031",
+                    "gameObjectType": "HOUSE_BEAM",
+                    "layer": "GameLayer::ABSTRACT",
+                    "size": {
+                        "width": 960,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "LOC_0015_0028",
+                    "gameObjectType": "BOBBY",
+                    "layer": "GameLayer::MAIN",
+                    "cameraFollow": true
+                },
+                {
+                    "id": "LOC_0011_0027",
+                    "gameObjectType": "CRYSTAL",
+                    "layer": "GameLayer::MAIN",
+                    "color": "Colors:GREEN"
+                }
+
+            ]
+
+        }
+    ]
+}

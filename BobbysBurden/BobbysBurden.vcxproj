@@ -310,6 +310,7 @@
     <Image Include="assets\inventory1.png" />
     <Image Include="assets\levels\full_interior_blueprint.png" />
     <Image Include="assets\levels\test_blueprint.png" />
+    <Image Include="assets\levels\test_box2d3_blueprint.png" />
     <Image Include="assets\textureAtlas00.png" />
     <Image Include="assets\textureAtlas01.png" />
     <Image Include="assets\textureAtlas01_old.png" />
@@ -360,6 +361,7 @@
     <None Include="assets\gameObjectDefinitions\wallBackgroundObjects.json" />
     <None Include="assets\levels\full_interior_definition.json" />
     <None Include="assets\levels\levels.json" />
+    <None Include="assets\levels\test_box2d3_definition.json" />
     <None Include="assets\levels\test_definition.json" />
     <None Include="assets\mouseCursors.json" />
     <None Include="assets\sound\buttonWorking.ogg" />

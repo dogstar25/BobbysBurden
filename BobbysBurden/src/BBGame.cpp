@@ -100,13 +100,14 @@ bool BBGame::init(
 	SoundManager::instance().initSound();
 
 	//Load a first scene
-	Scene& scene = SceneManager::instance().pushScene("SCENE_PLAY");
-	//Scene& scene = SceneManager::instance().pushScene("SCENE_TEST");
+	//Scene& scene = SceneManager::instance().pushScene("SCENE_PLAY");
+	Scene& scene = SceneManager::instance().pushScene("SCENE_TEST");
 
-	scene.loadLevel("full_interior");
+	//scene.loadLevel("full_interior");
+	scene.loadLevel("test_box2d3");
 
 	//For Bobby's burden we need to manually build the navigation maps
-	static_pointer_cast<BBNavigationManager>(m_navigationManager)->buildNavigationMap();
+	//static_pointer_cast<BBNavigationManager>(m_navigationManager)->buildNavigationMap();
 
 	//////////////////////////////////////////////////////
 	//Force the load of the new game primer file for now
@@ -133,19 +134,24 @@ bool BBGame::init(
 	action->perform();
 
 	const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");
-	const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	topDrawerInventory->addItem("BOTTLE1");
-
+	if (topDrawer.has_value()) {
+		const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+		topDrawerInventory->addItem("BOTTLE1");
+	}
 	////Dresser Shelf
 	const auto& dresserShelf = scene.getFirstGameObjectByName("BOBBY_DRESSER_SHELF");
-	const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	dresserShelfInventory->addItem("OIL_CAN");
-	dresserShelfInventory->addItem("PAPER_BALLOON");
-	dresserShelfInventory->refreshInventoryDisplay();
+	if (dresserShelf.has_value()) {
+		const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+		dresserShelfInventory->addItem("OIL_CAN");
+		dresserShelfInventory->addItem("PAPER_BALLOON");
+		dresserShelfInventory->refreshInventoryDisplay();
+	}
 
 	const auto& denBookshelf = scene.getFirstGameObjectByName("denBookcaseShelf");
-	const auto& denBookshelfInventory = denBookshelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	denBookshelfInventory->addItem("BOOK_SEALIFE");
+	if (denBookshelf.has_value()) {
+		const auto& denBookshelfInventory = denBookshelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+		denBookshelfInventory->addItem("BOOK_SEALIFE");
+	}
 
 	//Initialize the clock object
 	Clock::instance().init();

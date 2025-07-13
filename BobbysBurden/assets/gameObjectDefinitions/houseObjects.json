@@ -464,7 +464,7 @@
                             "contactTag": "ContactTag::GENERAL_SOLID",
                             "collisionShape": "B2_BOX",
                             "density": 10,
-                            "restitution": 1,
+                            "restitution": 0.1,
                             "friction": 1.0
                         }
                     ]
