@@ -8,7 +8,7 @@ extern std::unique_ptr<Game> game;
 
 
 
-void BBContactListener::_actor_warpEntry(GameObject* interactingObject, GameObject* warpEntry, b2Vec2 contactPoint)
+void BBContactListener::_actor_warpEntry(GameObject* interactingObject, GameObject* warpEntry, const b2Vec2 contactPoint[])
 {
 
 	const auto& physicsComponent = interactingObject->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
@@ -29,59 +29,60 @@ void BBContactListener::_actor_warpEntry(GameObject* interactingObject, GameObje
 
 }
 
-void BBContactListener::BeginContact(b2Contact* contact) {
-
-	b2WorldManifold worldManifold;
-
-	contact->GetWorldManifold(&worldManifold);
-	b2Vec2 contactPoint = worldManifold.points[0];
-
-	handleContact(contact, contactPoint);
-
-}
-
-
-void BBContactListener::EndContact(b2Contact* contact)
+void BBContactListener::handleContacts(const b2WorldId physicsWorldId)
 {
 
 
-}
+	b2ContactEvents contactEvents = b2World_GetContactEvents(physicsWorldId);
 
+	for (int i = 0; i < contactEvents.beginCount; ++i) {
 
+		const b2ContactBeginTouchEvent& event = contactEvents.beginEvents[i];
 
-void BBContactListener::handleContact(b2Contact* contact, b2Vec2 contactPoint)
-{
+		//Get Shape User Data which is the contact collision info
+		//This represents the gameObject's potential individual physical parts
+		void* shapeUserDataA = b2Shape_GetUserData(event.shapeIdA);
+		void* shapeUserDataB = b2Shape_GetUserData(event.shapeIdB);
 
+		ContactDefinition* contactDefinitionA = reinterpret_cast<ContactDefinition*>(shapeUserDataA);
+		ContactDefinition* contactDefinitionB = reinterpret_cast<ContactDefinition*>(shapeUserDataB);
+		int contactTagA = contactDefinitionA->contactTag;
+		int contactTagB = contactDefinitionB->contactTag;
 
-	//Get fixtures
-	b2Fixture* fixture1 = contact->GetFixtureA();
-	b2Fixture* fixture2 = contact->GetFixtureB();
+		//Get BodyId and Body User Data
+		//This represents the gameObject Itself usually
+		b2BodyId bodyIdA = b2Shape_GetBody(event.shapeIdA);
+		b2BodyId bodyIdB = b2Shape_GetBody(event.shapeIdB);
+		void* bodyUserDataA = b2Body_GetUserData(bodyIdA);
+		void* bodyUserDataB = b2Body_GetUserData(bodyIdB);
 
+		//Get the GameObjects associated with these bodies
+		GameObject* contactA = reinterpret_cast<GameObject*>(bodyUserDataA);
+		GameObject* contactB = reinterpret_cast<GameObject*>(bodyUserDataB);
 
-	//Get the GameObjects attched to these fixtures
-	GameObject* contact1 = reinterpret_cast<GameObject*>(fixture1->GetBody()->GetUserData().pointer);
-	GameObject* contact2 = reinterpret_cast<GameObject*>(fixture2->GetBody()->GetUserData().pointer);
+		// If the contact point count is zero, which apparently is possible in box2d v3 then dont do anything, otherwise, 
+		// pass in both contact points and let the specific scenario use them as needed
+		if (event.manifold.pointCount  <=0 ) {
 
-	ContactDefinition* contactDefinitionA = reinterpret_cast<ContactDefinition*>(fixture1->GetUserData().pointer);
-	ContactDefinition* contactDefinitionB = reinterpret_cast<ContactDefinition*>(fixture2->GetUserData().pointer);
-
-	int contactTag1 = contactDefinitionA->contactTag;
-	int contactTag2 = contactDefinitionB->contactTag;
-
-
-	////////////////////////////////////
-	// Player -  Wall
-	//////////////////////////////////
-	if ((contactTag1 == ContactTag::PLAYER_COLLISION && contactTag2 == ContactTag::WARP_ENTRY) ||
-		(contactTag2 == ContactTag::PLAYER_COLLISION && contactTag1 == ContactTag::WARP_ENTRY)) {
-
-		if (contactTag1 == ContactTag::PLAYER_COLLISION) {
-			_actor_warpEntry(contact1, contact2, contactPoint);
+			return;
 		}
-		else {
-			_actor_warpEntry(contact2, contact1, contactPoint);
+
+		////////////////////////////////////
+		// Player -  Warp Entry
+		//////////////////////////////////
+		if ((contactTagA == ContactTag::PLAYER_COLLISION && contactTagA == ContactTag::WARP_ENTRY) ||
+			(contactTagB == ContactTag::PLAYER_COLLISION && contactTagB == ContactTag::WARP_ENTRY)) {
+
+			if (contactTagA == ContactTag::PLAYER_COLLISION) {
+				_actor_warpEntry(contactA, contactB, &event.manifold.points->point);
+			}
+			else {
+				_actor_warpEntry(contactA, contactB, &event.manifold.points->point);
+			}
 		}
+
 	}
+
 
 }
 

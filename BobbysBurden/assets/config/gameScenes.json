@@ -167,8 +167,7 @@
                 },
                 "b2DebugDrawMode": false,
                 "timeStep": 0.016,
-                "velocityIterations": 6,
-                "positionIterations": 2
+                "subSteps": 4
             }
         }
     ]

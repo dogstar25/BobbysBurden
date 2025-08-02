@@ -11,14 +11,11 @@ public:
 
 	BBContactListener() {};
 
-	void BeginContact(b2Contact*) override;
-	void EndContact(b2Contact*) override;
-
-	void virtual handleContact(b2Contact* contact, b2Vec2 contactPoint) override;
+	void virtual handleContacts(const b2WorldId physicsWorldId) override;
 
 private:
 
-	void _actor_warpEntry(GameObject*, GameObject*, b2Vec2 contactPoint);
+	void _actor_warpEntry(GameObject*, GameObject*, const b2Vec2 contactPoint[]);
 	
 };
 
