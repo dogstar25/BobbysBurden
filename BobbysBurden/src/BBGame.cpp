@@ -6,7 +6,7 @@
 using namespace std::chrono_literals;
 
 bool BBGame::init(
-	std::shared_ptr<ContactListener> contactListener, 
+	std::shared_ptr<ContactHandler> contactHandler, 
 	std::shared_ptr<ContactFilter> contactFilter,
 	std::shared_ptr<ComponentFactory> componentFactory, 
 	std::shared_ptr<ActionFactory> actionFactory, 
@@ -26,7 +26,7 @@ bool BBGame::init(
 
 	//Assign all of the game specific managers and factories to the main game object
 	Game::init(
-		contactListener, contactFilter, componentFactory, actionFactory, particleEffectsFactory, cutSceneFactory, iMGuiFactory, triggerFactory, 
+		contactHandler, contactFilter, componentFactory, actionFactory, particleEffectsFactory, cutSceneFactory, iMGuiFactory, triggerFactory,
 		puzzleFactory, environmentEventFactory, contextManager, gameStateManager, navigationManager, enumMap, colorMap
 	);
 
@@ -100,11 +100,11 @@ bool BBGame::init(
 	SoundManager::instance().initSound();
 
 	//Load a first scene
-	//Scene& scene = SceneManager::instance().pushScene("SCENE_PLAY");
-	Scene& scene = SceneManager::instance().pushScene("SCENE_TEST");
+	Scene& scene = SceneManager::instance().pushScene("SCENE_PLAY");
+	//Scene& scene = SceneManager::instance().pushScene("SCENE_TEST");
 
-	//scene.loadLevel("full_interior");
-	scene.loadLevel("test_box2d3");
+	scene.loadLevel("full_interior");
+	//scene.loadLevel("test_box2d3");
 
 	//For Bobby's burden we need to manually build the navigation maps
 	//static_pointer_cast<BBNavigationManager>(m_navigationManager)->buildNavigationMap();
@@ -115,7 +115,7 @@ bool BBGame::init(
 	//Initialize the saveFile
 	gameStateManager->initializeGameDataFile();
 
-	//gameStateManager->loadGamePrimerFile();
+	gameStateManager->loadGamePrimerFile();
 
 
 	////////////////////////////////////////////////

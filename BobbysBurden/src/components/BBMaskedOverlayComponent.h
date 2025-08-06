@@ -14,7 +14,6 @@ public:
 
 private:
 
-	bool _hasLineOfSight(SDL_FPoint playerLocation, SDL_FPoint maskLocation);
 
 
 };

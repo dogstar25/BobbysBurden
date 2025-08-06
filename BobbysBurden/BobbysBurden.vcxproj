@@ -193,7 +193,7 @@
     <ClCompile Include="src\BBColorMap.cpp" />
     <ClCompile Include="src\BBComponentFactory.cpp" />
     <ClCompile Include="src\BBContactFilter.cpp" />
-    <ClCompile Include="src\BBContactListener.cpp" />
+    <ClCompile Include="src\BBContactHandler.cpp" />
     <ClCompile Include="src\BBContextManager.cpp" />
     <ClCompile Include="src\BBEnumMap.cpp" />
     <ClCompile Include="src\BBGame.cpp" />
@@ -262,7 +262,7 @@
     <ClInclude Include="src\BBColorMap.h" />
     <ClInclude Include="src\BBComponentFactory.h" />
     <ClInclude Include="src\BBContactFilter.h" />
-    <ClInclude Include="src\BBContactListener.h" />
+    <ClInclude Include="src\BBContactHandler.h" />
     <ClInclude Include="src\BBContextManager.h" />
     <ClInclude Include="src\BBEnumMap.h" />
     <ClInclude Include="src\BBGame.h" />

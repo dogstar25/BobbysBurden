@@ -21,7 +21,7 @@
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
                     "gravityScale": -0.05,
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::HEAVY_PARTICLE",
                             "collisionShape": "B2_BOX",
@@ -80,7 +80,7 @@
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
                     "gravityScale": -0.1,
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_FREE",
                             "collisionShape": "B2_BOX",

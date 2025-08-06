@@ -27,7 +27,7 @@
                     "gravityScale": 0,
                     "linearDamping": 0.0,
                     "angularDamping": 5.0,
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             //"contactTag": "ContactTag::INVENTORY_ITEM",
@@ -71,7 +71,7 @@
                     "gravityScale": 0,
                     "linearDamping": 0.0,
                     "angularDamping": 5.0,
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             //"contactTag": "ContactTag::INVENTORY_ITEM",
@@ -116,7 +116,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             "collisionShape": "B2_BOX",
@@ -156,7 +156,7 @@
                     "gravityScale": 0,
                     "linearDamping": 0.0,
                     "angularDamping": 5.0,
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             //"contactTag": "ContactTag::INVENTORY_ITEM",
@@ -202,7 +202,7 @@
                     "gravityScale": 0,
                     "linearDamping": 0.0,
                     "angularDamping": 5.0,
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             "collisionShape": "B2_BOX",
@@ -247,7 +247,7 @@
                     "gravityScale": 0,
                     "linearDamping": 0.0,
                     "angularDamping": 5.0,
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             "collisionShape": "B2_BOX",
@@ -297,7 +297,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             "collisionShape": "B2_BOX",
@@ -377,7 +377,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             "collisionShape": "B2_BOX",
@@ -474,7 +474,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             "collisionShape": "B2_BOX",
@@ -571,7 +571,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             "collisionShape": "B2_BOX",
@@ -644,7 +644,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             "collisionShape": "B2_BOX",
@@ -685,7 +685,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             "collisionShape": "B2_BOX",

@@ -91,10 +91,10 @@ BBContactFilter::BBContactFilter()
 
 }
 
-bool BBContactFilter::ShouldCollide(b2Fixture* fixtureA, b2Fixture* fixtureB)
+bool BBContactFilter::ShouldCollide(b2ShapeId shapeAId, b2ShapeId shapeBId, void* context)
 {
 	//Call base function
-	return ContactFilter::ShouldCollide(fixtureA, fixtureB);
+	return ContactFilter::ShouldCollide(shapeAId, shapeBId, context);
 
 
 }

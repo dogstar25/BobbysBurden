@@ -18,7 +18,8 @@ void BBMaskedOverlayComponent::update()
 	const auto& player = parent()->parentScene()->player();
 	for(const auto& mask : m_maskObjects){
 
-		if (util::hasLineOfSight(player.get(), mask.get())) {
+		auto hasLineOfSight = util::hasLineOfSight(player.get(), mask.get(), parent()->parentScene()->physicsWorld());
+		if (hasLineOfSight.has_value()) {
 
 			mask->addState(GameObjectState::ON);
 
@@ -33,32 +34,4 @@ void BBMaskedOverlayComponent::update()
 
 }
 
-bool BBMaskedOverlayComponent::_hasLineOfSight(SDL_FPoint playerPosition, SDL_FPoint maskPosition)
-{
-	bool clearPath{ true };
-
-
-	util::toBox2dPoint(playerPosition);
-	util::toBox2dPoint(maskPosition);
-
-	//cast a physics raycast from the light object to the center of this lightedArea's center
-	parent()->parentScene()->physicsWorld()->RayCast(&RayCastCallBack::instance(),
-		{ playerPosition.x, playerPosition.y }, { maskPosition.x, maskPosition.y });
-
-	//Loop through all objects hit between the player and the center of the mask area
-	for (BrainRayCastFoundItem rayHitObject : RayCastCallBack::instance().intersectionItems()) {
-
-		//Is this a barrier or and also NOT its own body and the object is not physicsdisabled
-		if ((rayHitObject.gameObject->hasTrait(TraitTag::barrier) || rayHitObject.gameObject->hasState(GameObjectState::IMPASSABLE)) &&
-			rayHitObject.gameObject != parent()) {
-			clearPath = false;
-			break;
-		}
-	}
-
-	RayCastCallBack::instance().reset();
-
-	return clearPath;
-
-}
 

@@ -5,13 +5,14 @@
 class GameObject;
 
 
-class BBContactListener : public ContactListener
+class BBContactHandler : public ContactHandler
 {
 public:
 
-	BBContactListener() {};
+	BBContactHandler() {};
 
 	void virtual handleContacts(const b2WorldId physicsWorldId) override;
+	
 
 private:
 

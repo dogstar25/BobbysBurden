@@ -1,4 +1,4 @@
-#include "BBContactListener.h"
+#include "BBContactHandler.h"
 #include "BBContextManager.h"
 #include "GameConstants.h"
 #include "particleEffects/GameParticleEffects.h"
@@ -8,7 +8,7 @@ extern std::unique_ptr<Game> game;
 
 
 
-void BBContactListener::_actor_warpEntry(GameObject* interactingObject, GameObject* warpEntry, const b2Vec2 contactPoint[])
+void BBContactHandler::_actor_warpEntry(GameObject* interactingObject, GameObject* warpEntry, const b2Vec2 contactPoint[])
 {
 
 	const auto& physicsComponent = interactingObject->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
@@ -29,7 +29,7 @@ void BBContactListener::_actor_warpEntry(GameObject* interactingObject, GameObje
 
 }
 
-void BBContactListener::handleContacts(const b2WorldId physicsWorldId)
+void BBContactHandler::handleContacts(const b2WorldId physicsWorldId)
 {
 
 
@@ -82,7 +82,6 @@ void BBContactListener::handleContacts(const b2WorldId physicsWorldId)
 		}
 
 	}
-
 
 }
 
