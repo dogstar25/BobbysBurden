@@ -37,18 +37,27 @@
                     "absolutePositioning": false
                 },
                 {
-                    "id": "VITALITY_COMPONENT",
-                    "speed": 10
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::DRAGGABLE" ]
                 },
                 {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "shapes": [
                         {
-                            "actionId": "Actions::MOVE",
-                            "actionClass": "DroneMove"
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "density": 1,
+                            "collisionShape": "B2_BOX"
                         }
                     ]
                 }
+
             ]
         },
         {

@@ -68,8 +68,6 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
-                    "gravityScale": 0,
-                    "linearDamping": 0.0,
                     "angularDamping": 5.0,
                     "shapes": [
                         {

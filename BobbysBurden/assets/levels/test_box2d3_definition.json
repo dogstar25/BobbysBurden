@@ -3,7 +3,7 @@
     "blueprint": "TX_TEST_BOX2D_V3_BLUEPRINT",
     "description": "Test",
     "dimensions": {
-        "levelWidth": 32,
+        "levelWidth": 60,
         "levelHeight": 32,
         "tileWidth": 32,
         "tileHeight": 32
@@ -20,25 +20,30 @@
             "groupName": "TEST",
             "objects": [
                 {
-                    "id": "LOC_0001_0031",
+                    "id": "LOC_0000_0031",
                     "gameObjectType": "HOUSE_BEAM",
                     "layer": "GameLayer::ABSTRACT",
                     "size": {
-                        "width": 960,
+                        "width": 1920,
                         "height": 32
                     }
                 },
                 {
-                    "id": "LOC_0015_0028",
+                    "id": "LOC_0029_0028",
                     "gameObjectType": "BOBBY",
                     "layer": "GameLayer::MAIN",
                     "cameraFollow": true
                 },
                 {
-                    "id": "LOC_0011_0027",
+                    "id": "LOC_0025_0027",
                     "gameObjectType": "CRYSTAL",
                     "layer": "GameLayer::MAIN",
                     "color": "Colors:GREEN"
+                },
+                {
+                    "id": "LOC_0025_0027",
+                    "gameObjectType": "BOWMAN",
+                    "layer": "GameLayer::MAIN"
                 }
 
             ]

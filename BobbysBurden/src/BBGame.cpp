@@ -127,7 +127,7 @@ bool BBGame::init(
 	const auto& player = scene.player();
 	const auto& playerInventory = player->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	playerInventory->addItem("RECORD", "cellarSong");
-	playerInventory->addItem("EMERALD");
+	playerInventory->addItem("PAPER_BALLOON");
 	playerInventory->addItem("DIAMOND");
 
 	auto action = actionFactory->create("ToggleBobbyInventory", Json::Value{}, player.get());

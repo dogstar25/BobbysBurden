@@ -452,8 +452,8 @@
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 32,
-                        "height": 32
+                        "width": 8,
+                        "height": 8
                     }
                 },
                 {
@@ -463,7 +463,7 @@
                         {
                             "contactTag": "ContactTag::GENERAL_SOLID",
                             "collisionShape": "B2_BOX",
-                            "density": 10,
+                            "density": 5,
                             "restitution": 0.1,
                             "friction": 1.0
                         }
