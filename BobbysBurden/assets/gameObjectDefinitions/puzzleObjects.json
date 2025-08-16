@@ -19,7 +19,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_KINEMATIC",
-                    "linearDamping": 1.0,
+                    "linearDamping": 10.0,
                     "angularDamping": 1.0,
                     "shapes": [
                         {
@@ -98,7 +98,7 @@
                                     "xPixels": 0
                                 },
                                 {
-                                    "yPixels": -72
+                                    "yPixels": -5
                                 },
                                 {
                                     "speed": 1

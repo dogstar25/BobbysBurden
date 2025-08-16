@@ -115,7 +115,7 @@ bool BBGame::init(
 	//Initialize the saveFile
 	gameStateManager->initializeGameDataFile();
 
-	gameStateManager->loadGamePrimerFile();
+	//gameStateManager->loadGamePrimerFile();
 
 
 	////////////////////////////////////////////////
@@ -128,7 +128,7 @@ bool BBGame::init(
 	const auto& playerInventory = player->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	playerInventory->addItem("RECORD", "cellarSong");
 	playerInventory->addItem("PAPER_BALLOON");
-	playerInventory->addItem("DIAMOND");
+	playerInventory->addItem("MERMAID_1");
 
 	auto action = actionFactory->create("ToggleBobbyInventory", Json::Value{}, player.get());
 	action->perform();
@@ -143,7 +143,7 @@ bool BBGame::init(
 	if (dresserShelf.has_value()) {
 		const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 		dresserShelfInventory->addItem("OIL_CAN");
-		dresserShelfInventory->addItem("PAPER_BALLOON");
+		dresserShelfInventory->addItem("MERMAID_1");
 		dresserShelfInventory->refreshInventoryDisplay();
 	}
 

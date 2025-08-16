@@ -859,6 +859,7 @@
                     "childObjects": [
                         {
                             "gameObjectType": "MERMAID_1",
+                            "name": "PICTURE_MERMAID",
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 8

@@ -446,14 +446,13 @@
             "description": "",
             "components": [
                 {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_CRYSTAL"
+                    "id": "RENDER_COMPONENT"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
                     "size": {
-                        "width": 8,
-                        "height": 8
+                        "width": 16,
+                        "height": 16
                     }
                 },
                 {
@@ -462,10 +461,11 @@
                     "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_SOLID",
-                            "collisionShape": "B2_BOX",
+                            "collisionShape": "B2_CIRCLE",
                             "density": 5,
-                            "restitution": 0.1,
-                            "friction": 1.0
+                            "restitution": 0.3,
+                            "friction": 1.0,
+                            "collisionRadius": 0.04
                         }
                     ]
                 }

@@ -3,7 +3,7 @@
     "blueprint": "TX_FULL_INTERIOR_BLUEPRINT",
     "description": "Front elevation level 1",
     "dimensions": {
-        "levelWidth": 250,
+        "levelWidth": 96,
         "levelHeight": 172,
         "tileWidth": 32,
         "tileHeight": 32
