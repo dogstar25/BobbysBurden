@@ -154,7 +154,7 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
+                    "type": "B2_STATIC",
                     "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_COLLISION",
@@ -263,7 +263,7 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
+                    "type": "B2_STATIC",
                     "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_COLLISION",
@@ -372,7 +372,7 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
+                    "type": "B2_STATIC",
                     "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_COLLISION",
@@ -481,7 +481,7 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
+                    "type": "B2_STATIC",
                     "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_COLLISION",
@@ -686,7 +686,7 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
+                    "type": "B2_STATIC",
                     "shapes": [
                         {
                             "contactTag": "ContactTag::INTERACTABLE_OBJECT",
@@ -774,7 +774,7 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
+                    "type": "B2_STATIC",
                     "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_TOUCH",
@@ -815,7 +815,7 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
+                    "type": "B2_STATIC",
                     "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_TOUCH",

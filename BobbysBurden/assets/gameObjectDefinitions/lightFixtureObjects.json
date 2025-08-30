@@ -417,7 +417,7 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
+                    "type": "B2_STATIC",
                     "shapes": [
                         {
                             "contactTag": "ContactTag::INTERACTABLE_OBJECT",

@@ -19,14 +19,14 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_KINEMATIC",
-                    "linearDamping": 10.0,
-                    "angularDamping": 1.0,
+                    "linearDamping": 0.0,
+                    "angularDamping": 0.0,
                     "shapes": [
                         {
                             "contactTag": "ContactTag::PUZZLE_OBJECT",
                             "collisionShape": "B2_BOX",
                             "density": 1,
-                            "friction": 25,
+                            "friction": 0,
                             "size": {
                                 "height": 40,
                                 "width": 40
@@ -98,7 +98,7 @@
                                     "xPixels": 0
                                 },
                                 {
-                                    "yPixels": -5
+                                    "yPixels": -45
                                 },
                                 {
                                     "speed": 1

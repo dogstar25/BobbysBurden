@@ -117,9 +117,8 @@ LightningLayor LightningBoltEvent::_determineLayer()
 
 SDL_Point LightningBoltEvent::_determineLocation(LightningLayor layer)
 {
-	//The X for this location will be whatever our current house position is in
 	
-	SDL_Point location = static_cast<BBContextManager*>(game->contextMananger().get())->currentHousePosition();
+	SDL_Point location = HousePositionTopLeftLocations::FRONT;
 
 	int randomNumberForLeftRight = std::rand() % 10;
 

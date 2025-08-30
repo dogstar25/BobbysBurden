@@ -25,6 +25,7 @@
                         {
                             "contactTag": "ContactTag::HEAVY_PARTICLE",
                             "collisionShape": "B2_BOX",
+                            "disableSensorInvolvement": true,
                             "density": 0.01,
                             "restitution": 1.2
                         }
@@ -84,6 +85,7 @@
                         {
                             "contactTag": "ContactTag::GENERAL_FREE",
                             "collisionShape": "B2_BOX",
+                            "disableSensorInvolvement": true,
                             "density": 0.01
                         }
                     ]

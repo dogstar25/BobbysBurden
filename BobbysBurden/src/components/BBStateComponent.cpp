@@ -170,34 +170,7 @@ void BBStateComponent::update()
 
 	StateComponent::update();
 
-	//If this is the player object then set the special house location context variable
-	//Is the player in the Back half or front half of the house
-	if (parent()->hasTrait(TraitTag::player)) {
-
-		_setHouseLocationContext();
-
-	}
-
 }
-
-void BBStateComponent::_setHouseLocationContext()
-{
-
-	if (parent()->getCenterPosition().y > 3520) {
-
-
-		dynamic_pointer_cast<BBContextManager>(game->contextMananger())->setCurrentHousePosition(HousePositionTopLeftLocations::FRONT);
-
-	}
-	else {
-
-		dynamic_pointer_cast<BBContextManager>(game->contextMananger())->setCurrentHousePosition(HousePositionTopLeftLocations::BACK);
-
-	}
-
-
-}
-
 
 //void BBStateComponent::_setOnOffStates()
 //{

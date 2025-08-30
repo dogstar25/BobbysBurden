@@ -115,7 +115,7 @@ bool BBGame::init(
 	//Initialize the saveFile
 	gameStateManager->initializeGameDataFile();
 
-	//gameStateManager->loadGamePrimerFile();
+	gameStateManager->loadGamePrimerFile();
 
 
 	////////////////////////////////////////////////
@@ -127,8 +127,9 @@ bool BBGame::init(
 	const auto& player = scene.player();
 	const auto& playerInventory = player->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	playerInventory->addItem("RECORD", "cellarSong");
-	playerInventory->addItem("PAPER_BALLOON");
 	playerInventory->addItem("MERMAID_1");
+	playerInventory->addItem("EMERALD");
+	playerInventory->addItem("BUGSPRAY");
 
 	auto action = actionFactory->create("ToggleBobbyInventory", Json::Value{}, player.get());
 	action->perform();

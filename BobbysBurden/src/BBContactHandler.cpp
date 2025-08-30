@@ -23,7 +23,11 @@ void BBContactHandler::_actor_warpEntry(GameObject* interactingObject, GameObjec
 		//Get location and use it as warp destination
 		b2Vec2 exitLocation = { exit.value()->getCenterPosition().x, exit.value()->getCenterPosition().y };
 		util::toBox2dPoint(exitLocation);
-		physicsComponent->setChangePositionPosition(exitLocation);
+
+		const auto& physicsComponent = interactingObject->getComponent<PhysicsComponent>(ComponentTypes::PHYSICS_COMPONENT);
+
+		b2Body_SetTransform(physicsComponent->physicsBodyId(), exitLocation, b2Body_GetRotation(physicsComponent->physicsBodyId()));
+
 
 	}
 

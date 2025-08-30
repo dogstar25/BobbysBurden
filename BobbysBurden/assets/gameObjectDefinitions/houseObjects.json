@@ -434,7 +434,9 @@
                         {
                             "contactTag": "ContactTag::GENERAL_SOLID",
                             "collisionShape": "B2_BOX",
-                            "friction": 0.5
+                            "friction": 0.5,
+                            "restitution": 0.5
+
                         }
                     ]
                 }
@@ -446,7 +448,8 @@
             "description": "",
             "components": [
                 {
-                    "id": "RENDER_COMPONENT"
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_FOG_BOX"
                 },
                 {
                     "id": "TRANSFORM_COMPONENT",
@@ -461,11 +464,10 @@
                     "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_SOLID",
-                            "collisionShape": "B2_CIRCLE",
+                            "collisionShape": "B2_BOX",
                             "density": 5,
                             "restitution": 0.3,
-                            "friction": 1.0,
-                            "collisionRadius": 0.04
+                            "friction": 1.0
                         }
                     ]
                 }
