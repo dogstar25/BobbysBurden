@@ -19,7 +19,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_SOLID",
                             "collisionShape": "B2_BOX",
@@ -204,7 +204,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_SOLID",
                             "collisionShape": "B2_BOX",
@@ -492,7 +492,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_SOLID",
                             "collisionShape": "B2_BOX",
@@ -819,7 +819,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_SOLID",
                             "collisionShape": "B2_BOX",

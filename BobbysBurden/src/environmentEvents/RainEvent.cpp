@@ -15,9 +15,10 @@ RainEvent::RainEvent(std::variant<std::string, EventLevel, float> param, Timer d
 std::vector<std::shared_ptr<EnvironmentEvent>> RainEvent::perform(GameObject* environmentObject)
 {
 
-	
+	///////////////////////////////
+	//Test purposes - REMOVE
+	return std::vector<std::shared_ptr<EnvironmentEvent>>();
 
-	//Show Lighting Flash
 	if (m_status == EventStatus::IDLE) {
 
 		int randomNumber = std::rand() % 10;
@@ -63,7 +64,6 @@ std::vector<std::shared_ptr<EnvironmentEvent>> RainEvent::perform(GameObject* en
 
 	}
 
-	//empty
 	return std::vector<std::shared_ptr<EnvironmentEvent>>();
 
 }

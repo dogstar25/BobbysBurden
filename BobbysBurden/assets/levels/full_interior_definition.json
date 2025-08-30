@@ -3,7 +3,7 @@
     "blueprint": "TX_FULL_INTERIOR_BLUEPRINT",
     "description": "Front elevation level 1",
     "dimensions": {
-        "levelWidth": 250,
+        "levelWidth": 96,
         "levelHeight": 172,
         "tileWidth": 32,
         "tileHeight": 32
@@ -40,13 +40,13 @@
                     "layer": "GameLayer::ABSTRACT"
                 },
                 {
-                    "id": "LOC_0000_0000",
+                    "id": "LOC_0000_0110",
                     "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
                     "layer": "GameLayer::BACKGROUND_FINAL",
                     "name": "lightningBackgroundFinal"
                 },
                 {
-                    "id": "LOC_0000_0000",
+                    "id": "LOC_0000_0110",
                     "gameObjectType": "LIGHTNING_BACKGROUND_FILTER_1",
                     "layer": "GameLayer::BACKGROUND_4",
                     "name": "lightningBackground"
@@ -104,12 +104,12 @@
                     "layer": "GameLayer::MAIN",
                     "cameraFollow": true
                 },
-                {
-                    "id": "LOC_0023_0138",
-                    "gameObjectType": "GHOST",
-                    "name": "Ghost",
-                    "layer": "GameLayer::MAIN"
-                },
+                //{
+                //    "id": "LOC_0023_0138",
+                //    "gameObjectType": "GHOST",
+                //    "name": "Ghost",
+                //    "layer": "GameLayer::MAIN"
+                //},
                 {
                     "id": "LOC_0015_0144",
                     "gameObjectType": "HOUSE_BEAM",

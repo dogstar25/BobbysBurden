@@ -139,14 +139,11 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_KINEMATIC",
-                    "linearDamping": 1.0,
-                    "angularDamping": 1.0,
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_FREE",
                             "collisionShape": "B2_BOX",
                             "density": 1,
-                            "friction": 1
                         }
 
                     ]
@@ -192,13 +189,13 @@
                             "actionClass": "ProgressiveMoveByAction",
                             "properties": [
                                 {
-                                    "xPixels": 40
+                                    "xPixels": 64
                                 },
                                 {
                                     "yPixels": 0
                                 },
                                 {
-                                    "speed": 1
+                                    "speed": 2
                                 }
                             ]
                         }

@@ -128,7 +128,7 @@
         },
         {
             "id": "SCENE_TEST",
-            "inputControlMode": "CONTROL_MODE_PLAY",
+            "inputControlMode": "CONTROL_MODE_SELECT",
             "maxObjects": 8000,
             "keyActions": [
                 {
@@ -151,18 +151,23 @@
                         "action": "SCENE_ACTION_TOGGLE_SETTING",
                         "actionId": "DebugSceneSettings::SHOW_PHYSICS_DEBUG"
                     }
+                },
+                {
+                    "keyCode": "Key::SDLK_F8",
+                    "sceneAction": {
+                        "action": "SCENE_ACTION_SPAWN_CRYSTAL"
+                    }
                 }
 
             ],
             "physics": {
                 "gravity": {
                     "x": 0.0,
-                    "y": 0.0
+                    "y": 9.8
                 },
                 "b2DebugDrawMode": false,
                 "timeStep": 0.016,
-                "velocityIterations": 6,
-                "positionIterations": 2
+                "subSteps": 4
             }
         }
     ]

@@ -9,7 +9,7 @@ void TwistBedKnobAction::perform()
 	auto bedPosition = m_parent->parent().value()->getCenterPosition();
 
 	bedPosition.x += 64;
-	bedPosition.y += 12;
+	bedPosition.y -= 20;
 
 	auto newPosition = bedPosition;
 	auto tilePosition = util::pixelToTileLocation(newPosition.x, newPosition.y);

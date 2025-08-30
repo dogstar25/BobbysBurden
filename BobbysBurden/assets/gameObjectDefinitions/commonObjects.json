@@ -37,18 +37,27 @@
                     "absolutePositioning": false
                 },
                 {
-                    "id": "VITALITY_COMPONENT",
-                    "speed": 10
+                    "id": "BB_STATE_COMPONENT",
+                    "beginStates": [ "GameObjectState::DRAGGABLE" ]
                 },
                 {
-                    "id": "ACTION_COMPONENT",
-                    "actions": [
+                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
+                },
+                {
+                    "id": "[itemActions_ACTION_COMPONENT]"
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_DYNAMIC",
+                    "shapes": [
                         {
-                            "actionId": "Actions::MOVE",
-                            "actionClass": "DroneMove"
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "density": 1,
+                            "collisionShape": "B2_BOX"
                         }
                     ]
                 }
+
             ]
         },
         {
@@ -153,7 +162,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_FREE",
                             "collisionShape": "B2_BOX"
@@ -260,7 +269,7 @@
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
                     "gravityScale": -0.5,
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_FREE",
                             "density": 1,
@@ -291,7 +300,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_SOLID",
                             "collisionShape": "B2_BOX",
@@ -361,7 +370,7 @@
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
                     "gravityScale": -0.1,
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_FREE",
                             "density": 1,
@@ -373,55 +382,6 @@
                     "id": "VITALITY_COMPONENT",
                     "lifetime": 1.5,
                     "lifetimeAlphaFade": true
-                }
-            ]
-        },
-        {
-            "type": "KEY1",
-            "traitTags": [
-                "puzzle_item",
-                "save_me"
-            ],
-            "description": "Small Key",
-            "components": [
-                {
-                    "id": "RENDER_COMPONENT",
-                    "textureId": "TX_KEY1"
-                },
-                {
-                    "id": "TRANSFORM_COMPONENT",
-                    "size": {
-                        "width": 42,
-                        "height": 42
-                    }
-                },
-                {
-                    "id": "[itemInterface_BB_INTERFACE_COMPONENT]"
-                },
-                {
-                    "id": "[itemActions_ACTION_COMPONENT]"
-                },
-                {
-                    "id": "BB_STATE_COMPONENT"
-                },
-                {
-                    "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "linearDamping": 50.0,
-                    "angularDamping": 50.0,
-                    "fixtures": [
-                        {
-                            "contactTag": "ContactTag::GAME_ITEM",
-                            "restitution": 0.5,
-                            "collisionShape": "B2_BOX",
-                            "density": 5,
-                            "friction": 5,
-                            "size": {
-                                "width": 32,
-                                "height": 12
-                            }
-                        }
-                    ]
                 }
             ]
         },
@@ -688,8 +648,8 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "type": "B2_KINEMATIC",
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_SOLID",
                             "collisionShape": "B2_BOX",
@@ -771,7 +731,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             "collisionShape": "B2_BOX",
@@ -817,7 +777,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::STAIRS_TOUCH",
                             "collisionShape": "B2_BOX",
@@ -850,6 +810,7 @@
                     "childObjects": [
                         {
                             "gameObjectType": "MERMAID_1",
+                            "name": "PICTURE_MERMAID",
                             "absolutePositionSlot": {
                                 "x": 0,
                                 "y": 8

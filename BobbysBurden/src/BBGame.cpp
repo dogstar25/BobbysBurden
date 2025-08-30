@@ -6,7 +6,7 @@
 using namespace std::chrono_literals;
 
 bool BBGame::init(
-	std::shared_ptr<ContactListener> contactListener, 
+	std::shared_ptr<ContactHandler> contactHandler, 
 	std::shared_ptr<ContactFilter> contactFilter,
 	std::shared_ptr<ComponentFactory> componentFactory, 
 	std::shared_ptr<ActionFactory> actionFactory, 
@@ -26,7 +26,7 @@ bool BBGame::init(
 
 	//Assign all of the game specific managers and factories to the main game object
 	Game::init(
-		contactListener, contactFilter, componentFactory, actionFactory, particleEffectsFactory, cutSceneFactory, iMGuiFactory, triggerFactory, 
+		contactHandler, contactFilter, componentFactory, actionFactory, particleEffectsFactory, cutSceneFactory, iMGuiFactory, triggerFactory,
 		puzzleFactory, environmentEventFactory, contextManager, gameStateManager, navigationManager, enumMap, colorMap
 	);
 
@@ -104,9 +104,10 @@ bool BBGame::init(
 	//Scene& scene = SceneManager::instance().pushScene("SCENE_TEST");
 
 	scene.loadLevel("full_interior");
+	//scene.loadLevel("test_box2d3");
 
 	//For Bobby's burden we need to manually build the navigation maps
-	static_pointer_cast<BBNavigationManager>(m_navigationManager)->buildNavigationMap();
+	//static_pointer_cast<BBNavigationManager>(m_navigationManager)->buildNavigationMap();
 
 	//////////////////////////////////////////////////////
 	//Force the load of the new game primer file for now
@@ -114,7 +115,7 @@ bool BBGame::init(
 	//Initialize the saveFile
 	gameStateManager->initializeGameDataFile();
 
-	//gameStateManager->loadGamePrimerFile();
+	gameStateManager->loadGamePrimerFile();
 
 
 	////////////////////////////////////////////////
@@ -126,26 +127,32 @@ bool BBGame::init(
 	const auto& player = scene.player();
 	const auto& playerInventory = player->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
 	playerInventory->addItem("RECORD", "cellarSong");
+	playerInventory->addItem("MERMAID_1");
 	playerInventory->addItem("EMERALD");
-	playerInventory->addItem("DIAMOND");
+	playerInventory->addItem("BUGSPRAY");
 
 	auto action = actionFactory->create("ToggleBobbyInventory", Json::Value{}, player.get());
 	action->perform();
 
 	const auto& topDrawer = scene.getFirstGameObjectByName("BOBBY_SIDETABLE_TOP_DRAWER");
-	const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	topDrawerInventory->addItem("BOTTLE1");
-
+	if (topDrawer.has_value()) {
+		const auto& topDrawerInventory = topDrawer->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+		topDrawerInventory->addItem("BOTTLE1");
+	}
 	////Dresser Shelf
 	const auto& dresserShelf = scene.getFirstGameObjectByName("BOBBY_DRESSER_SHELF");
-	const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	dresserShelfInventory->addItem("OIL_CAN");
-	dresserShelfInventory->addItem("PAPER_BALLOON");
-	dresserShelfInventory->refreshInventoryDisplay();
+	if (dresserShelf.has_value()) {
+		const auto& dresserShelfInventory = dresserShelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+		dresserShelfInventory->addItem("OIL_CAN");
+		dresserShelfInventory->addItem("MERMAID_1");
+		dresserShelfInventory->refreshInventoryDisplay();
+	}
 
 	const auto& denBookshelf = scene.getFirstGameObjectByName("denBookcaseShelf");
-	const auto& denBookshelfInventory = denBookshelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
-	denBookshelfInventory->addItem("BOOK_SEALIFE");
+	if (denBookshelf.has_value()) {
+		const auto& denBookshelfInventory = denBookshelf->get()->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
+		denBookshelfInventory->addItem("BOOK_SEALIFE");
+	}
 
 	//Initialize the clock object
 	Clock::instance().init();

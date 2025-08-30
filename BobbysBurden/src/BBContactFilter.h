@@ -5,7 +5,7 @@ class BBContactFilter : public ContactFilter
 {
 public:
 	BBContactFilter();
-	bool ShouldCollide(b2Fixture* fixtureA, b2Fixture* fixtureB) final;
+	static bool ShouldCollide(b2ShapeId shapeAId, b2ShapeId shapeBId, void* context) ;
 
 };
 

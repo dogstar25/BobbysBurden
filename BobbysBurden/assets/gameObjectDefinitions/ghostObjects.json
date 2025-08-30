@@ -27,7 +27,7 @@
                     "type": "B2_DYNAMIC",
                     "gravityScale": 0,
                     "linearDamping": 1.0,
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_FREE",
                             "collisionShape": "B2_BOX",

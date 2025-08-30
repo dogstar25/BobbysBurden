@@ -19,14 +19,14 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_KINEMATIC",
-                    "linearDamping": 1.0,
-                    "angularDamping": 1.0,
-                    "fixtures": [
+                    "linearDamping": 0.0,
+                    "angularDamping": 0.0,
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::PUZZLE_OBJECT",
                             "collisionShape": "B2_BOX",
                             "density": 1,
-                            "friction": 25,
+                            "friction": 0,
                             "size": {
                                 "height": 40,
                                 "width": 40
@@ -98,7 +98,7 @@
                                     "xPixels": 0
                                 },
                                 {
-                                    "yPixels": -72
+                                    "yPixels": -45
                                 },
                                 {
                                     "speed": 1
@@ -276,7 +276,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::PUZZLE_OBJECT",
                             "collisionShape": "B2_BOX",
@@ -324,7 +324,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::PUZZLE_OBJECT",
                             "collisionShape": "B2_BOX",
@@ -513,7 +513,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::INTERACTABLE_OBJECT",
                             "collisionShape": "B2_BOX",
@@ -560,7 +560,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::PUZZLE_OBJECT",
                             "collisionShape": "B2_BOX"

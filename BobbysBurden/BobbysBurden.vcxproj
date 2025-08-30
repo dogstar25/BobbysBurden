@@ -45,6 +45,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <EnableASAN>false</EnableASAN>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -85,6 +86,9 @@
     <VcpkgUseStatic>false</VcpkgUseStatic>
     <VcpkgUseMD>false</VcpkgUseMD>
     <VcpkgInstalledDir>..\..\MobyDick_NEW\MobyDick\vcpkg_installed\x64-windows</VcpkgInstalledDir>
+    <VcpkgConfiguration>Debug</VcpkgConfiguration>
+    <VcpkgTriplet>
+    </VcpkgTriplet>
   </PropertyGroup>
   <PropertyGroup Label="Vcpkg">
     <VcpkgEnabled>true</VcpkgEnabled>
@@ -193,7 +197,7 @@
     <ClCompile Include="src\BBColorMap.cpp" />
     <ClCompile Include="src\BBComponentFactory.cpp" />
     <ClCompile Include="src\BBContactFilter.cpp" />
-    <ClCompile Include="src\BBContactListener.cpp" />
+    <ClCompile Include="src\BBContactHandler.cpp" />
     <ClCompile Include="src\BBContextManager.cpp" />
     <ClCompile Include="src\BBEnumMap.cpp" />
     <ClCompile Include="src\BBGame.cpp" />
@@ -262,7 +266,7 @@
     <ClInclude Include="src\BBColorMap.h" />
     <ClInclude Include="src\BBComponentFactory.h" />
     <ClInclude Include="src\BBContactFilter.h" />
-    <ClInclude Include="src\BBContactListener.h" />
+    <ClInclude Include="src\BBContactHandler.h" />
     <ClInclude Include="src\BBContextManager.h" />
     <ClInclude Include="src\BBEnumMap.h" />
     <ClInclude Include="src\BBGame.h" />
@@ -310,6 +314,7 @@
     <Image Include="assets\inventory1.png" />
     <Image Include="assets\levels\full_interior_blueprint.png" />
     <Image Include="assets\levels\test_blueprint.png" />
+    <Image Include="assets\levels\test_box2d3_blueprint.png" />
     <Image Include="assets\textureAtlas00.png" />
     <Image Include="assets\textureAtlas01.png" />
     <Image Include="assets\textureAtlas01_old.png" />
@@ -360,6 +365,7 @@
     <None Include="assets\gameObjectDefinitions\wallBackgroundObjects.json" />
     <None Include="assets\levels\full_interior_definition.json" />
     <None Include="assets\levels\levels.json" />
+    <None Include="assets\levels\test_box2d3_definition.json" />
     <None Include="assets\levels\test_definition.json" />
     <None Include="assets\mouseCursors.json" />
     <None Include="assets\sound\buttonWorking.ogg" />

@@ -10,7 +10,7 @@ public:
 	BBGame() = default;
 
 	bool init(
-		std::shared_ptr<ContactListener>, 
+		std::shared_ptr<ContactHandler>, 
 		std::shared_ptr<ContactFilter>,
 		std::shared_ptr<ComponentFactory>, 
 		std::shared_ptr<ActionFactory>, 

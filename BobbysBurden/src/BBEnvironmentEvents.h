@@ -56,10 +56,10 @@ namespace EnvironmentSequence {
 
 std::vector <std::vector<EnvironmentEventInstruction>> environmentCycle = {
 
-	//{ //Approaching Storm
-	//	{ "soundLoop", "APPROACHING_STORM", Timer(60.0f)},
-	//	{ "lightningMaker", EventLevel::MILD, Timer(60.0f)}
-	//},
+	{ //Approaching Storm
+		{ "soundLoop", "APPROACHING_STORM", Timer(60.0f)},
+		{ "lightningMaker", EventLevel::MILD, Timer(60.0f)}
+	},
 	{ //Near Storm
 		{ "soundLoop", "NEAR_STORM", Timer(60.0f)},
 		{ "lightningMaker", EventLevel::MODERATE, Timer(60.0f)},

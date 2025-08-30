@@ -169,8 +169,8 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "type": "B2_STATIC",
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::PUZZLE_OBJECT",
                             "collisionShape": "B2_BOX",
@@ -232,7 +232,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GAME_ITEM",
                             "restitution": 0.5,

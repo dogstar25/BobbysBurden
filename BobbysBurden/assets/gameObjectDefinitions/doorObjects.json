@@ -154,8 +154,8 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "type": "B2_STATIC",
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_COLLISION",
                             "collisionShape": "B2_BOX",
@@ -263,8 +263,8 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "type": "B2_STATIC",
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_COLLISION",
                             "collisionShape": "B2_BOX",
@@ -372,8 +372,8 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "type": "B2_STATIC",
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_COLLISION",
                             "collisionShape": "B2_BOX",
@@ -481,8 +481,8 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "type": "B2_STATIC",
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_COLLISION",
                             "collisionShape": "B2_BOX",
@@ -686,8 +686,8 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "type": "B2_STATIC",
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::INTERACTABLE_OBJECT",
                             "collisionShape": "B2_BOX",
@@ -774,8 +774,8 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "type": "B2_STATIC",
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_TOUCH",
                             "collisionShape": "B2_BOX",
@@ -815,8 +815,8 @@
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
-                    "type": "B2_DYNAMIC",
-                    "fixtures": [
+                    "type": "B2_STATIC",
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::DOOR_TOUCH",
                             "collisionShape": "B2_BOX",
@@ -873,7 +873,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_FREE",
                             "collisionShape": "B2_BOX",

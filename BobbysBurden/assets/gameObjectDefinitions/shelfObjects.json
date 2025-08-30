@@ -38,7 +38,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::INTERACTABLE_OBJECT",
                             "collisionShape": "B2_BOX",
@@ -127,7 +127,7 @@
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_STATIC",
-                    "fixtures": [
+                    "shapes": [
                         {
                             "contactTag": "ContactTag::INTERACTABLE_OBJECT",
                             "collisionShape": "B2_BOX",
