@@ -202,6 +202,37 @@
             ]
         },
         {
+            "type": "NAVIGATION_BLOCKER",
+            "traitTags": [
+                "ghostWall"
+            ],
+            "description": "Brick Wall 1",
+            "components": [
+                {
+                    "id": "RENDER_COMPONENT",
+                    "textureId": "TX_BRICK_WALL_1"
+                },
+                {
+                    "id": "TRANSFORM_COMPONENT",
+                    "size": {
+                        "width": 32,
+                        "height": 32
+                    }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "touchingObjectsCapturedRequired": false,
+                    "shapes": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_FREE",
+                            "collisionShape": "B2_BOX"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "type": "BRICK_WALL_DYNAMIC_1",
             "traitTags": [ "barrier" ],
             "description": "Brick Wall 1",

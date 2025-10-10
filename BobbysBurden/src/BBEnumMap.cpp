@@ -50,6 +50,7 @@ BBEnumMap::BBEnumMap()
 
 	//Traits
 	addEnumItem("hiding_spot", TraitTag::hiding_spot);
+	addEnumItem("ghostWall", TraitTag::ghostWall);
 
 
 }
