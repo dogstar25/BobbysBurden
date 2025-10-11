@@ -8,6 +8,20 @@
         "tileWidth": 32,
         "tileHeight": 32
     },
+    "debugGrid": {
+
+        "regions": [
+            {
+                "x": 13,
+                "y": 133,
+                "width": 48,
+                "height": 32
+            }
+        ],
+
+        "impassableTraitTags": ["ghostWall"]
+
+    },
     "colorDefinedObjects": [
         {
             "colorKey": "Colors::BROWN",
@@ -27,6 +41,11 @@
         {
             "colorKey": "Colors::BLUEGREY",
             "gameObjectType": "NAVIGATION_WAYPOINT",
+            "layer": "GameLayer::ABSTRACT"
+        },
+        {
+            "colorKey": "Colors::COPPER",
+            "gameObjectType": "NAVIGATION_BLOCKER",
             "layer": "GameLayer::ABSTRACT"
         }
     ],

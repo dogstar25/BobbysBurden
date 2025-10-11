@@ -24,7 +24,7 @@
     "rendererType": "RendererType::SDL",
     //"rendererType": "RendererType::OPENGL",
     "openGLBatching": true,
-    "debugGrid": false,
+    "debugGrid": true,
     "gameLoopStep": 0.016,
     "physics": {
         "box2dScale": 100
