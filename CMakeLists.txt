@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26)
+﻿cmake_minimum_required(VERSION 3.26)
 
 project(BobbysBurden LANGUAGES CXX)
 
@@ -42,8 +42,30 @@ endforeach()
 # Optional: tell CMake what we appended (helpful for debugging once)
 message(STATUS "CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH}")
 
-# Bring in the engine (MobyDick)   adjust relative path as needed
-add_subdirectory(../MobyDick_NEW ${CMAKE_BINARY_DIR}/MobyDickBuild)
+# --- Locate the MobyDick engine ---
+set(MOBYDICK_PATH "")
+
+if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../MobyDick/CMakeLists.txt")
+    set(MOBYDICK_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../MobyDick")
+elseif (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../MobyDick_NEW/CMakeLists.txt")
+    set(MOBYDICK_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../MobyDick_NEW")
+else()
+    message(FATAL_ERROR
+        "❌ Could not locate MobyDick engine. Checked:\n"
+        "  ${CMAKE_CURRENT_SOURCE_DIR}/../MobyDick\n"
+        "  ${CMAKE_CURRENT_SOURCE_DIR}/../MobyDick_NEW"
+    )
+endif()
+
+message(STATUS "🔍 Using MobyDick engine from: ${MOBYDICK_PATH}")
+
+# Only add the subdirectory if the engine target hasn't been defined yet
+if (NOT TARGET MobyDick)
+    set(MOBYDICK_BINARY_DIR "${CMAKE_BINARY_DIR}/_moby_build")
+    add_subdirectory("${MOBYDICK_PATH}" "${MOBYDICK_BINARY_DIR}")
+else()
+    message(STATUS "⚙️  MobyDick already defined at top level — skipping add_subdirectory.")
+endif()
 
 # Gather all BobbysBurden source files
 file(GLOB_RECURSE BOBBYSBURDEN_SOURCES
