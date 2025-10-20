@@ -7,38 +7,33 @@ BBGameStateManager::BBGameStateManager()
 	: GameStateManager()
 {
 
-	// Adjust path to fit this game
-	std::string path = getGamePath();
-	path += "\\BobbysGhostAdventure";
-	setGamePath(path);
-
 	m_beginPrimerFilename = "BeginGamePrimerFile.json";
-
-	if (!std::filesystem::is_directory(m_saveGamePath) || !std::filesystem::exists(m_saveGamePath)) {
-		if (std::filesystem::create_directory(m_saveGamePath) == false) {
-			assert(true && "Error creating save game directory!");
-		}
-	}
 
 }
 
 void BBGameStateManager::loadGamePrimerFile()
 {
 
-	std::string texturefilename = "assets/config/" + m_beginPrimerFilename;
-	std::ifstream fin(texturefilename);
+	//Get Json from the primer file
+	std::string primerfilename = "config/" + m_beginPrimerFilename;
+	auto primerFileReadResult = mobydick::ResourceManager::getJSON(primerfilename);
+	if(!primerFileReadResult) {
 
-	Json::CharReaderBuilder readerBuilder;
-	std::string errs;
-	Json::Value loadedPrimerData;
+		SDL_Log("Error reading in data from primer file %s", primerfilename.c_str());
+		return;
 
-	bool parsingSuccessful = Json::parseFromStream(readerBuilder, fin, &loadedPrimerData, &errs);
+	}
 
-	fin.close();
+	//Save json to the save data file
+	auto primerFileSaveResult = mobydick::ResourceManager::saveUserPathDataJSON(primerFileReadResult.value(), primerfilename);
+	if (!primerFileSaveResult) {
 
-	save(loadedPrimerData);
+		SDL_Log("Error saving data to primer file %s", primerfilename.c_str());
+		abort();
 
-	_applyDataToGame(loadedPrimerData);
+	}
+
+	_applyDataToGame(primerFileReadResult.value());
 
 }
 
@@ -144,22 +139,16 @@ void BBGameStateManager::loadGame()
 Json::Value BBGameStateManager::getSaveData()
 {
 
-	std::ifstream m_gameFile(m_saveGamePath + GAMEOBJECT_STATE_FILENAME, std::ofstream::in);
+	//Read json to the save data file
+	auto getSaveDataResult = mobydick::ResourceManager::getUserPathDataJSON(GAMEOBJECT_STATE_FILENAME);
+	if (!getSaveDataResult) {
 
-	if (!m_gameFile.is_open()) {
-		std::cerr << "Error opening game file" << std::endl;
-		return false;
+		SDL_Log("Error reading save game data %s", GAMEOBJECT_STATE_FILENAME);
+		abort();
+
 	}
 
-	Json::Value loadedGameData;
-	m_gameFile >> loadedGameData;
-
-	if (!m_gameFile) {
-		std::cerr << "Error reading game file" << std::endl;
-		return false;
-	}
-
-	m_gameFile.close();
+	Json::Value loadedGameData = getSaveDataResult.value();
 
 	return loadedGameData;
 
@@ -168,18 +157,16 @@ Json::Value BBGameStateManager::getSaveData()
 void BBGameStateManager::save(Json::Value saveGamaDataJSON)
 {
 
-	// Convert the serialized Json::Value to a formatted text string
-	Json::StreamWriterBuilder writer;
-	//writer["indentation"] = "  ";  // or whatever indentation you prefer
-	std::string saveGameData = Json::writeString(writer, saveGamaDataJSON);
+	//save json to the save data file
+	auto saveDataResult = mobydick::ResourceManager::saveUserPathDataJSON(saveGamaDataJSON, GAMEOBJECT_STATE_FILENAME);
+	if (!saveDataResult) {
 
-	//write jsonString to output file
-	std::ofstream m_gameFile(m_saveGamePath + GAMEOBJECT_STATE_FILENAME, std::ofstream::out);
+		SDL_Log("Error reading save game data %s", GAMEOBJECT_STATE_FILENAME);
+		abort();
 
-	m_gameFile << saveGameData;
-	m_gameFile.close();
+	}
 
-	assert(m_gameFile && "Error writing game file");
+	return;
 
 }
 
