@@ -53,7 +53,7 @@ bool BBContextManager::saveSettings()
 	auto settingsResult = mobydick::ResourceManager::saveUserPathDataJSON(saveData, GAME_SETTINGS_FILENAME);
 	if (!settingsResult) {
 
-		SDL_Log("loadSettings: Error saving %s", GAME_SETTINGS_FILENAME);
+		SDL_Log("loadSettings: Error saving %s", GAME_SETTINGS_FILENAME.c_str());
 		abort();
 
 	}
