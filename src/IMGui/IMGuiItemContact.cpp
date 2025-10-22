@@ -189,7 +189,7 @@ void IMGuiItemContact::_displayPuzzleGui(GameObject* puzzleTouched)
 	ImGui::SameLine();
 	ImGui::PushStyleColor(ImGuiCol_Text, util::SDLColorToImVec4(Colors::EMERALD));
 	//ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), puzzleTouched.value().lock()->description().c_str());
-	ImGui::Text(puzzleTouched->description().c_str());
+	ImGui::Text("%s", puzzleTouched->description().c_str());
 	ImGui::PopStyleColor();
 
 	auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
