@@ -215,7 +215,8 @@ void IMGuiItemContact::_displayInventoryGui(GameObject* interfacedObject)
 
 		ImGui::Text("Drop In");
 		ImGui::SameLine();
-		ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), receptacleDescription.c_str());
+		ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD),
+			"%s", receptacleDescription.c_str());
 
 		if (inventoryTouched.value().lock()->hasTrait(TraitTag::receptacle)) {
 			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
