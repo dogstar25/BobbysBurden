@@ -161,7 +161,7 @@ void BBGameStateManager::save(Json::Value saveGamaDataJSON)
 	auto saveDataResult = mobydick::ResourceManager::saveUserPathDataJSON(saveGamaDataJSON, GAMEOBJECT_STATE_FILENAME.c_str());
 	if (!saveDataResult) {
 
-		SDL_Log("Error reading save game data %s", GAMEOBJECT_STATE_FILENAME);
+		SDL_Log("Error reading save game data %s", GAMEOBJECT_STATE_FILENAME.c_str());
 		abort();
 
 	}
