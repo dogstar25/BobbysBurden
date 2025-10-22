@@ -196,7 +196,7 @@ namespace ImGui
 
 		//Clue text
 		ImGui::PushStyleColor(ImGuiCol_Text, util::SDLColorToImVec4(Colors::CANDLE_LIGHT));
-		ImGui::Text(puzzleComponent->puzzle->clue().c_str());
+		ImGui::TextUnformatted(puzzleComponent->puzzle->clue().c_str());
 		ImGui::PopStyleColor();
 		ImGui::NewLine();
 
