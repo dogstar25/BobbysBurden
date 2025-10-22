@@ -78,11 +78,11 @@ void IMGuiGoUpDownMenu::_buildInteractionRow()
 
 	ImGui::displayUpArrowImage(util::SDLColorToImVec4(Colors::EMERALD));
 	ImGui::SameLine();
-	ImGui::TextWrapped("Up");
+	ImGui::Text("Up");
 				
 	ImGui::displayDownArrowImage(util::SDLColorToImVec4(Colors::EMERALD));
 	ImGui::SameLine();
-	ImGui::TextWrapped("Down");
+	ImGui::Text("Down");
 
 	ImGui::PopFont();
 

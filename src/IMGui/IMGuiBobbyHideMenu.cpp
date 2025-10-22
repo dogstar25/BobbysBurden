@@ -86,14 +86,14 @@ void IMGuiBobbyHideMenu::_buildInteractionRow(GameObject* hideInGameObject)
 
 		if (playerObject->hasState(GameObjectState::HIDING)) {
 
-			ImGui::TextWrapped("Unhide");
+			ImGui::Text("Unhide");
 				
 			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_UNHIDE");
 			SceneManager::instance().setMouseCursor(cursor);
 
 		}
 		else {
-			ImGui::TextWrapped("Hide!");
+			ImGui::Text("Hide!");
 
 			//Set mouse Cursor
 			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HIDE");

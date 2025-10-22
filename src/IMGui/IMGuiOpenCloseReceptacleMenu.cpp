@@ -129,7 +129,7 @@ void IMGuiOpenCloseReceptacleMenu::_buildInteractionRow(GameObject* interfaceGam
 		//Not an inventory component but maybe a inventory display object
 		else {
 
-			ImGui::TextWrapped("Close");
+			ImGui::Text("Close");
 
 			//Set mouse Cursor
 			if (parent()->parent().value()->hasTrait(TraitTag::receptacle)) {

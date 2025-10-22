@@ -86,7 +86,7 @@ void IMGuiShelfMenu::_buildInteractionRow(GameObject* onOffSwitchObject)
 
 	ImGui::PushFont(m_normalFont);
 
-	ImGui::TextWrapped("You can place items here.");
+	ImGui::Text("You can place items here.");
 
 	ImGui::PopFont();
 

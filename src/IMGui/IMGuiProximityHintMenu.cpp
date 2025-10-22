@@ -100,11 +100,11 @@ void IMGuiProximityHintMenu::_buildInteractionRow(GameObject* onOffSwitchObject)
 
 		if (doorStateComponent->testState(GameObjectState::ON)) {
 
-			ImGui::TextWrapped("Turn Off");
+			ImGui::Text("Turn Off");
 				
 		}
 		else {
-			ImGui::TextWrapped("Tuen On");
+			ImGui::Text("Tuen On");
 
 		}
 

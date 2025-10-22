@@ -100,7 +100,7 @@ void IMGuiOpenCloseDoorMenu::_buildInteractionRow(GameObject* doorKnobGameObject
 
 		if (doorStateComponent->testState(GameObjectState::CLOSED)) {
 
-			ImGui::TextWrapped("Open");
+			ImGui::Text("Open");
 				
 			//Set mouse Cursor
 			if (doorGameObject.value()->hasTrait(TraitTag::door)) {
@@ -111,7 +111,7 @@ void IMGuiOpenCloseDoorMenu::_buildInteractionRow(GameObject* doorKnobGameObject
 
 		}
 		else {
-			ImGui::TextWrapped("Close");
+			ImGui::Text("Close");
 
 			//Set mouse Cursor
 			if (doorGameObject.value()->hasTrait(TraitTag::door)) {

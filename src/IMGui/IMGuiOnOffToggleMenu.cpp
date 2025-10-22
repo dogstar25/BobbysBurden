@@ -97,11 +97,11 @@ void IMGuiOnOffToggleMenu::_buildInteractionRow(GameObject* onOffSwitchObject)
 
 		if (doorStateComponent->testState(GameObjectState::ON)) {
 
-			ImGui::TextWrapped("Turn Off");
+			ImGui::Text("Turn Off");
 				
 		}
 		else {
-			ImGui::TextWrapped("Turn On");
+			ImGui::Text("Turn On");
 
 		}
 

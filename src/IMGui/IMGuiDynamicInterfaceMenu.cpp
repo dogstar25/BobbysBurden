@@ -108,7 +108,7 @@ void IMGuiDynamicInterfaceMenu::_buildInteractionRow(GameObject* interfaceGameOb
 
 			ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
 			ImGui::SameLine();
-			ImGui::TextWrapped(clickEvent->label.c_str());
+			ImGui::Text(clickEvent->label.c_str());
 
 			//set the cursor
 			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_POINTING");
