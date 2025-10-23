@@ -1,6 +1,6 @@
 #include "ItemDragTreatmentAction.h"
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 void ItemDragTreatmentAction::perform()
 {

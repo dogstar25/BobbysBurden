@@ -2,7 +2,7 @@
 #include "LightningEvent.h"
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 LightningMaker::LightningMaker(std::variant<std::string, EventLevel, float> param, Timer durationTimer) :
 	EnvironmentEvent(durationTimer)

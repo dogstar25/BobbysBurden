@@ -4,7 +4,7 @@
 #include "particleEffects/GameParticleEffects.h"
 #include "components/BobbyPlayerControlComponent.h"
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 
 

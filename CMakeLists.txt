@@ -68,15 +68,14 @@ else()
 endif()
 
 # Gather all BobbysBurden source files
-file(GLOB_RECURSE BOBBYSBURDEN_SOURCES
+file(GLOB_RECURSE BOBBYSBURDEN_SOURCES CONFIGURE_DEPENDS
     "src/*.cpp"
     "src/*.h"
 )
 
 # Create a static library for the game
 add_library(BobbysBurden STATIC
-    ${BOBBYSBURDEN_SOURCES}
-)
+    ${BOBBYSBURDEN_SOURCES})
 
 # Include directories for this project
 target_include_directories(BobbysBurden

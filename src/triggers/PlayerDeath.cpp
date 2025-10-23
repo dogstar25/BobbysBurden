@@ -4,7 +4,7 @@
 #include "../particleEffects/GameParticleEffects.h"
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 PlayerDeath::PlayerDeath() :
 	Trigger()

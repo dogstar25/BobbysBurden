@@ -5,7 +5,7 @@
 #include "../BBGameStateManager.h"
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 
 IMGuiPauseWindow::IMGuiPauseWindow(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,

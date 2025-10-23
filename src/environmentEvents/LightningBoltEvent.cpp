@@ -3,7 +3,7 @@
 #include "../BBContextManager.h"
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 
 LightningBoltEvent::LightningBoltEvent(std::variant<std::string, EventLevel, float> param, Timer durationTimer) :

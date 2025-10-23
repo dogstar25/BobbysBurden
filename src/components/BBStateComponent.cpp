@@ -2,7 +2,7 @@
 #include "../BBContextManager.h"
 #include "../GameConstants.h"
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 BBStateComponent::BBStateComponent(Json::Value definitionJSON, GameObject* parent) 
 	: StateComponent(definitionJSON, parent)
