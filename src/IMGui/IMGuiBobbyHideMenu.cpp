@@ -4,7 +4,7 @@
 
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 IMGuiBobbyHideMenu::IMGuiBobbyHideMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
 	ImVec4 buttonColor, ImVec4 buttonHoverColor, ImVec4 buttonActiveColor, bool autoSize) :
@@ -86,14 +86,14 @@ void IMGuiBobbyHideMenu::_buildInteractionRow(GameObject* hideInGameObject)
 
 		if (playerObject->hasState(GameObjectState::HIDING)) {
 
-			ImGui::TextWrapped("Unhide");
+			ImGui::Text("%s", "Unhide");
 				
 			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_UNHIDE");
 			SceneManager::instance().setMouseCursor(cursor);
 
 		}
 		else {
-			ImGui::TextWrapped("Hide!");
+			ImGui::Text("%s", "Hide!");
 
 			//Set mouse Cursor
 			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HIDE");

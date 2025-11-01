@@ -4,7 +4,7 @@
 #include "../gameConstants.h"
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 IMGuiProximityHintMenu::IMGuiProximityHintMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
 	ImVec4 buttonColor, ImVec4 buttonHoverColor, ImVec4 buttonActiveColor, bool autoSize) :
@@ -100,11 +100,11 @@ void IMGuiProximityHintMenu::_buildInteractionRow(GameObject* onOffSwitchObject)
 
 		if (doorStateComponent->testState(GameObjectState::ON)) {
 
-			ImGui::TextWrapped("Turn Off");
+			ImGui::Text("Turn Off");
 				
 		}
 		else {
-			ImGui::TextWrapped("Tuen On");
+			ImGui::Text("Tuen On");
 
 		}
 

@@ -3,7 +3,7 @@
 #include "../IMGui/BB_IMGuiUtil.h"
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 
 IMGuiTestLevelMenu::IMGuiTestLevelMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,

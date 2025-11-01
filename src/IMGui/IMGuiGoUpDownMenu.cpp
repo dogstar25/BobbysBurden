@@ -4,7 +4,7 @@
 
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 IMGuiGoUpDownMenu::IMGuiGoUpDownMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
 	ImVec4 buttonColor, ImVec4 buttonHoverColor, ImVec4 buttonActiveColor, bool autoSize) :
@@ -78,11 +78,11 @@ void IMGuiGoUpDownMenu::_buildInteractionRow()
 
 	ImGui::displayUpArrowImage(util::SDLColorToImVec4(Colors::EMERALD));
 	ImGui::SameLine();
-	ImGui::TextWrapped("Up");
+	ImGui::Text("%s", "Up");
 				
 	ImGui::displayDownArrowImage(util::SDLColorToImVec4(Colors::EMERALD));
 	ImGui::SameLine();
-	ImGui::TextWrapped("Down");
+	ImGui::Text("Down");
 
 	ImGui::PopFont();
 

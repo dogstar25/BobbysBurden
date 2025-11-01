@@ -4,7 +4,7 @@
 
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 IMGuiOpenCloseReceptacleMenu::IMGuiOpenCloseReceptacleMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
 	ImVec4 buttonColor, ImVec4 buttonHoverColor, ImVec4 buttonActiveColor, bool autoSize) :
@@ -129,7 +129,7 @@ void IMGuiOpenCloseReceptacleMenu::_buildInteractionRow(GameObject* interfaceGam
 		//Not an inventory component but maybe a inventory display object
 		else {
 
-			ImGui::TextWrapped("Close");
+			ImGui::Text("Close");
 
 			//Set mouse Cursor
 			if (parent()->parent().value()->hasTrait(TraitTag::receptacle)) {

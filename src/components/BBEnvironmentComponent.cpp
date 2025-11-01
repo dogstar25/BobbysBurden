@@ -2,7 +2,7 @@
 #include "../GameConstants.h"
 #include "../BBEnvironmentEvents.h"
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 BBEnvironmentComponent::BBEnvironmentComponent(Json::Value componentJSON, GameObject* parent) :
 	EnvironmentComponent(ComponentTypes::ENVIRONMENT_COMPONENT, parent)

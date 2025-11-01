@@ -1,5 +1,6 @@
 #include "BBGhostBrainComponent.h"
-
+#include <algorithm>
+#include <random>   
 
 BBGhostBrainComponent::BBGhostBrainComponent(Json::Value definitionJSON, GameObject* parent)
 	: BrainComponent(definitionJSON, parent)

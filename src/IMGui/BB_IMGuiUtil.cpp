@@ -3,7 +3,7 @@
 #include "../BBContextManager.h"
 #include "../BBGameStateManager.h"
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 namespace ImGui
 {
@@ -196,7 +196,7 @@ namespace ImGui
 
 		//Clue text
 		ImGui::PushStyleColor(ImGuiCol_Text, util::SDLColorToImVec4(Colors::CANDLE_LIGHT));
-		ImGui::TextWrapped(puzzleComponent->puzzle->clue().c_str());
+		ImGui::TextUnformatted(puzzleComponent->puzzle->clue().c_str());
 		ImGui::PopStyleColor();
 		ImGui::NewLine();
 

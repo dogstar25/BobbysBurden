@@ -2,7 +2,7 @@
 #include "DoorToggleAction.h"
 #include "../components/BBStateComponent.h"
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 void DoorEnterAction::perform()
 {

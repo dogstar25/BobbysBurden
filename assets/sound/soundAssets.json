@@ -73,17 +73,17 @@
         {
             "id": "SFX_RECORD_LET_IT_ALONE_SONG",
             "description": "",
-            "filename": "/music/letItAloneSong.wav"
+            "filename": "/music/letItAlone.wav"
         }
 
 
-    ],
-    "music": [
-        {
-            "id": "MUSIC_MAIN_THEME_A",
-            "description": "Music",
-            "filename": "main_theme_a.mp3"
-        }
     ]
+    //"music": [
+    //    {
+    //        "id": "MUSIC_MAIN_THEME_A",
+    //        "description": "Music",
+    //        "filename": "main_theme_a.mp3"
+    //    }
+    //]
 
 }

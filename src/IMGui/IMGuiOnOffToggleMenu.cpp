@@ -4,7 +4,7 @@
 #include "../gameConstants.h"
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 IMGuiOnOffToggleMenu::IMGuiOnOffToggleMenu(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
 	ImVec4 buttonColor, ImVec4 buttonHoverColor, ImVec4 buttonActiveColor, bool autoSize) :
@@ -97,11 +97,11 @@ void IMGuiOnOffToggleMenu::_buildInteractionRow(GameObject* onOffSwitchObject)
 
 		if (doorStateComponent->testState(GameObjectState::ON)) {
 
-			ImGui::TextWrapped("Turn Off");
+			ImGui::Text("Turn Off");
 				
 		}
 		else {
-			ImGui::TextWrapped("Turn On");
+			ImGui::Text("Turn On");
 
 		}
 

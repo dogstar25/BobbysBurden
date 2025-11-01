@@ -3,17 +3,17 @@
         {
             "id": "FONT_ARIAL_REG",
             "description": "Arial Regular",
-            "filename": "assets/fonts/arial.ttf"
+            "filename": "fonts/arial.ttf"
         },
         {
             "id": "FONT_DROID_SANS",
             "description": "Droid Sans",
-            "filename": "assets/fonts/DroidSans.ttf"
+            "filename": "fonts/DroidSans.ttf"
         },
         {
             "id": "FONT_CONTHRAX",
             "description": "Droid Sans",
-            "filename": "assets/fonts/conthrax-sb.ttf"
+            "filename": "fonts/conthrax-sb.ttf"
         }
     ]
 

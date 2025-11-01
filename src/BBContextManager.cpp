@@ -2,16 +2,24 @@
 #include "GameConstants.h"
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 
 void BBContextManager::loadSettings()
 {
 
-	std::string settingFilename = game->gameStateMananger()->getGamePath() + GAME_SETTINGS_FILENAME;
+	auto settingsResult = mobydick::ResourceManager::getUserPathDataJSON(GAME_SETTINGS_FILENAME);
+	if (!settingsResult) {
+
+		SDL_Log("%s", "loadSettings: Error opening GAME_SETTINGS_FILENAME");
+		abort();
+
+	}
+
+	Json::Value settingsJSON = settingsResult.value();
 
 	//If the settings file has never been created then create it and default the values
-	if (util::fileExists(settingFilename) == false) {
+	if (settingsJSON.empty()) {
 		
 		setMouseSensitivity(50);
 		setSoundVolume(50);
@@ -19,32 +27,15 @@ void BBContextManager::loadSettings()
 		return;
 	}
 
-	std::ifstream m_gameFile(game->gameStateMananger()->getGamePath() + GAME_SETTINGS_FILENAME, std::ofstream::in);
-
-	if (!m_gameFile.is_open()) {
-		std::cerr << "Error opening game settings file" << std::endl;
-		assert(m_gameFile && "Error opening game settings file");
-	}
-
-	Json::Value loadedGameData;
-	m_gameFile >> loadedGameData;
-
-	if (!m_gameFile) {
-		std::cerr << "Error parsing game settings file" << std::endl;
-		assert(m_gameFile && "Error parsing game settings file");
-	}
-
-	m_gameFile.close();
-
 	//Apply settinmgs data
-	if (loadedGameData["settings"].isMember("mouseSensitivity")) {
+	if (settingsJSON["settings"].isMember("mouseSensitivity")) {
 
-		setMouseSensitivity(loadedGameData["settings"]["mouseSensitivity"].asInt());
+		setMouseSensitivity(settingsJSON["settings"]["mouseSensitivity"].asInt());
 	}
 
-	if (loadedGameData["settings"].isMember("soundVolume")) {
+	if (settingsJSON["settings"].isMember("soundVolume")) {
 
-		setSoundVolume(loadedGameData["settings"]["soundVolume"].asInt());
+		setSoundVolume(settingsJSON["settings"]["soundVolume"].asInt());
 	}
 
 }
@@ -59,15 +50,13 @@ bool BBContextManager::saveSettings()
 	saveData["settings"]["soundVolume"] = getSoundVolume();
 	saveData["settings"]["mouseSensitivity"] = getMouseSensitivity();
 
-	std::ofstream m_gameFile(game->gameStateMananger()->getGamePath() + GAME_SETTINGS_FILENAME, std::ofstream::out);
+	auto settingsResult = mobydick::ResourceManager::saveUserPathDataJSON(saveData, GAME_SETTINGS_FILENAME);
+	if (!settingsResult) {
 
-	Json::StreamWriterBuilder writer;
-	std::string saveGameData = Json::writeString(writer, saveData);
+		SDL_Log("loadSettings: Error saving %s", GAME_SETTINGS_FILENAME.c_str());
+		abort();
 
-	m_gameFile << saveGameData;
-	m_gameFile.close();
-
-	assert(m_gameFile && "Error writing game file");
+	}
 
 	return true;
 }

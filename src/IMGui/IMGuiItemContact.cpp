@@ -6,7 +6,7 @@
 
 
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 IMGuiItemContact::IMGuiItemContact(std::string gameObjectType, b2Vec2 padding, ImVec4 backgroundColor, ImVec4 textColor,
 	ImVec4 buttonColor, ImVec4 buttonHoverColor, ImVec4 buttonActiveColor, bool autoSize) :
@@ -105,7 +105,7 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 			ImGui::displayMouseLeftClickImage(util::SDLColorToImVec4(Colors::EMERALD));
 			ImGui::SameLine();
 
-			ImGui::TextWrapped("Grab");
+			ImGui::Text("Grab");
 
 			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_GRAB_1");
 			SceneManager::instance().setMouseCursor(cursor);
@@ -125,7 +125,7 @@ void IMGuiItemContact::_buildActionRow(GameObject* interfacedObject)
 		ImGui::displayMouseRightClickImage(util::SDLColorToImVec4(Colors::EMERALD));
 		ImGui::SameLine();
 
-		ImGui::TextWrapped("Take");
+		ImGui::Text("Take");
 
 		auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_GRAB_1");
 		SceneManager::instance().setMouseCursor(cursor);
@@ -189,7 +189,7 @@ void IMGuiItemContact::_displayPuzzleGui(GameObject* puzzleTouched)
 	ImGui::SameLine();
 	ImGui::PushStyleColor(ImGuiCol_Text, util::SDLColorToImVec4(Colors::EMERALD));
 	//ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), puzzleTouched.value().lock()->description().c_str());
-	ImGui::TextWrapped(puzzleTouched->description().c_str());
+	ImGui::Text("%s", puzzleTouched->description().c_str());
 	ImGui::PopStyleColor();
 
 	auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");
@@ -215,7 +215,8 @@ void IMGuiItemContact::_displayInventoryGui(GameObject* interfacedObject)
 
 		ImGui::Text("Drop In");
 		ImGui::SameLine();
-		ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD), receptacleDescription.c_str());
+		ImGui::TextColored(util::SDLColorToImVec4(Colors::EMERALD),
+			"%s", receptacleDescription.c_str());
 
 		if (inventoryTouched.value().lock()->hasTrait(TraitTag::receptacle)) {
 			auto cursor = TextureManager::instance().getMouseCursor("CURSOR_HAND_APPLY_2");

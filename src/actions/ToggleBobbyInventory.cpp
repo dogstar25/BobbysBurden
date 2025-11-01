@@ -1,7 +1,7 @@
 #include "ToggleBobbyInventory.h"
 #include "../GameConstants.h"
 
-extern std::unique_ptr<Game> game;
+//extern std::unique_ptr<Game> game;
 
 void ToggleBobbyInventory::perform()
 {
