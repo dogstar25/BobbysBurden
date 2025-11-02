@@ -9,8 +9,8 @@
             "height": 1
         },
         "targetScreenResolution": {
-            "width": 1920,
-            "height": 1080
+            "width": 2560,
+            "height": 1440
         },
         "fallbackScreenResolution": {
             "width": 1280,
