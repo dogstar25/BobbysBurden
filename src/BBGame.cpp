@@ -38,10 +38,10 @@ bool BBGame::init(
 	TTF_Init();
 
 	//Initialize the texture manager
-	m_renderer->init(m_window);
+	//m_renderer->init(m_window);
 
 	//Initialize IMGUI
-	ImGui::MobyDickInit(this);
+	//ImGui::MobyDickInit(this);
 
 	//Display basic loading message
 	_displayLoadingMsg();
