@@ -28,7 +28,6 @@ BBContactFilter::BBContactFilter()
 	m_contactMasks[PLAYER_TOUCH].set(INTERACTABLE_OBJECT);
 	m_contactMasks[PLAYER_TOUCH].set(GAME_ITEM);
 	m_contactMasks[PLAYER_TOUCH].set(PUZZLE_OBJECT);
-	m_contactMasks[PLAYER_TOUCH].set(INTERACTABLE_OBJECT);
 	m_contactMasks[PLAYER_TOUCH].set(FRIGHTING_OBJECT);
 	
 
