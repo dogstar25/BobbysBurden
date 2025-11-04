@@ -63,17 +63,17 @@
         {
             "id": "SFX_RECORD_GOOD_MAN_SONG",
             "description": "",
-            "filename": "/music/goodManSong.wav"
+            "filename": "music/goodManSong.wav"
         },
         {
             "id": "SFX_RECORD_CELLAR_SONG",
             "description": "",
-            "filename": "/music/cellarSong.ogg"
+            "filename": "music/cellarSong.ogg"
         },
         {
             "id": "SFX_RECORD_LET_IT_ALONE_SONG",
             "description": "",
-            "filename": "/music/letItAlone.wav"
+            "filename": "music/letItAlone.wav"
         }
 
 

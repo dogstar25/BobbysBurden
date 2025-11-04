@@ -37,12 +37,6 @@ bool BBGame::init(
 	//for the "Loading..." text display
 	TTF_Init();
 
-	//Initialize the texture manager
-	//m_renderer->init(m_window);
-
-	//Initialize IMGUI
-	//ImGui::MobyDickInit(this);
-
 	//Display basic loading message
 	_displayLoadingMsg();
 
@@ -95,8 +89,14 @@ bool BBGame::init(
 
 	_displayLoadingMsg();
 
+	//Load the game Settings
+	contextManager->loadSettings();
+
 	//Initialize the sound manager
-	SoundManager::instance().initSound();
+	if (!SoundManager::instance().initSound())
+	{
+		return false;
+	}
 
 	//Load a first scene
 	Scene& scene = SceneManager::instance().pushScene("SCENE_PLAY");
@@ -119,9 +119,6 @@ bool BBGame::init(
 
 	////////////////////////////////////////////////
 
-	//Load the game Settings
-	contextManager->loadSettings();
-	
 	//Figure out a place to put this custom game type stuff later
 	const auto& player = scene.player();
 	const auto& playerInventory = player->getComponent<InventoryComponent>(ComponentTypes::INVENTORY_COMPONENT);
