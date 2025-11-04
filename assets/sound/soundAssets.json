@@ -77,13 +77,13 @@
         }
 
 
+    ],
+    "music": [
+        {
+            "id": "MUSIC_MAIN_THEME_A",
+            "description": "Music",
+            "filename": "main_theme_a.ogg"
+        }
     ]
-    //"music": [
-    //    {
-    //        "id": "MUSIC_MAIN_THEME_A",
-    //        "description": "Music",
-    //        "filename": "main_theme_a.mp3"
-    //    }
-    //]
 
 }

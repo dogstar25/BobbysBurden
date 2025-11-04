@@ -2,6 +2,7 @@
     "id": "FULL_INTERIOR",
     "blueprint": "TX_FULL_INTERIOR_BLUEPRINT",
     "description": "Front elevation level 1",
+    "backgroundMusic": "MUSIC_MAIN_THEME_A",
     "dimensions": {
         "levelWidth": 96,
         "levelHeight": 172,
@@ -19,7 +20,7 @@
             }
         ],
 
-        "impassableTraitTags": ["ghostWall"]
+        "impassableTraitTags": [ "ghostWall" ]
 
     },
     "colorDefinedObjects": [
