@@ -2,6 +2,7 @@
     "gameTitle": "Bobby's Burden'",
     "gameInstallOrg": "com.sinbadgames",
     "gameInstallName": "BobbysBurden",
+    "uIScalingFactorForMobile" :  160,
     "window": {
         "fullscreen": true,
         "defaultTileSize": {

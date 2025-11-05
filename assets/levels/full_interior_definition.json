@@ -46,7 +46,7 @@
         {
             "colorKey": "Colors::COPPER",
             "gameObjectType": "NAVIGATION_BLOCKER",
-            "layer": "GameLayer::ABSTRACT"
+            "layer": "GameLayer::FOREGROUND_4"
         }
     ],
     "locationDefinedObjects": [
