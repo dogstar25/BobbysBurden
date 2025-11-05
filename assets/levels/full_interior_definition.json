@@ -19,7 +19,7 @@
             }
         ],
 
-        "impassableTraitTags": ["ghostWall"]
+        "impassableTraitTags": [ "ghostWall" ]
 
     },
     "colorDefinedObjects": [
