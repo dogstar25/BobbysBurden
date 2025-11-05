@@ -18,7 +18,9 @@ void BBMaskedOverlayComponent::update()
 	const auto& player = parent()->parentScene()->player();
 	for(const auto& mask : m_maskObjects){
 
-		auto hasLineOfSight = util::hasLineOfSight(player.get(), mask.get(), parent()->parentScene()->physicsWorld());
+		//Todd
+		//auto hasLineOfSight = util::hasLineOfSight(player.get(), mask.get(), parent()->parentScene()->physicsWorld());
+		std::optional<bool> hasLineOfSight = true;
 		if (hasLineOfSight.has_value()) {
 
 			mask->addState(GameObjectState::ON);

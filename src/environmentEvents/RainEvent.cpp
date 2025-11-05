@@ -17,7 +17,7 @@ std::vector<std::shared_ptr<EnvironmentEvent>> RainEvent::perform(GameObject* en
 
 	///////////////////////////////
 	//Test purposes - REMOVE
-	return std::vector<std::shared_ptr<EnvironmentEvent>>();
+	//return std::vector<std::shared_ptr<EnvironmentEvent>>();
 
 	if (m_status == EventStatus::IDLE) {
 
