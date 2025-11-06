@@ -10,6 +10,7 @@ public:
 	BBGame() = default;
 
 	bool init(
+		std::shared_ptr<SoundManager> soundManager,
 		std::shared_ptr<ContactHandler>, 
 		std::shared_ptr<ContactFilter>,
 		std::shared_ptr<ComponentFactory>, 
