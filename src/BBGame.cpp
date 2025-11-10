@@ -107,7 +107,7 @@ bool BBGame::init(
 	//scene.loadLevel("test_box2d3");
 
 	//For Bobby's burden we need to manually build the navigation maps
-	//static_pointer_cast<BBNavigationManager>(m_navigationManager)->buildNavigationMap();
+	static_pointer_cast<BBNavigationManager>(m_navigationManager)->buildNavigationMap();
 
 	//////////////////////////////////////////////////////
 	//Force the load of the new game primer file for now

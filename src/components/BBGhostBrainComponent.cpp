@@ -6,7 +6,14 @@ BBGhostBrainComponent::BBGhostBrainComponent(Json::Value definitionJSON, GameObj
 	: BrainComponent(definitionJSON, parent)
 {
 
+	m_manualWayPoints = {
 
+		{ 20, 139 },
+		{56,139},
+		{56,150},
+		{20,150}
+
+	};
 
 }
 
@@ -16,12 +23,18 @@ void BBGhostBrainComponent::postInit()
 	BrainComponent::postInit();
 
 
-	//Get all WayPoints
-	for (const auto& gameObject : parent()->parentScene()->getGameObjectsByTrait(TraitTag::waypoint)) {
+	////Get all WayPoints - set manually since this is a simple situation
+	for (const auto waypoint : m_manualWayPoints) {
 
-		m_wayPoints.push_back(gameObject);
+		//Add a nav object to the worls. we have to do this because the navigation
+		const auto navObject = parent()->parentScene()->createGameObject("NAVIGATION_WAYPOINT", nullptr, 
+			waypoint.x, waypoint.y, 0.0f, parent()->parentScene(), GameLayer::ABSTRACT);
+
+		m_wayPoints.push_back(navObject);
+
 	}
-
+	 
+	 
 	//Do an random sort of the waypoints order
 	unsigned seed = static_cast<unsigned>(std::chrono::system_clock::now().time_since_epoch().count());
 	std::shuffle(m_wayPoints.begin(), m_wayPoints.end(), std::default_random_engine(seed));
@@ -30,7 +43,19 @@ void BBGhostBrainComponent::postInit()
 
 int BBGhostBrainComponent::_determineState()
 {
+
+	//todd
+	//Temporaryily only do patrol when the debuggrid is turned on
+	//if(parent()->parentScene()->isDebugSetting(DebugSceneSettings::SHOW_NAVIGATION_DEBUG_MAP))
+	//{
+	//	return BrainState::PATROL;
+	//}
+
 	return BrainState::PATROL;
+}
+
+void BBGhostBrainComponent::_doIdle()
+{
 }
 
 void BBGhostBrainComponent::_doPatrol()
@@ -43,7 +68,7 @@ void BBGhostBrainComponent::_doPatrol()
 		m_focusPoint = _getNextPatrolDestination();
 	}
 
-	//navigationCode = navigationComponent->navigateTo(m_focusPoint.value().x, m_focusPoint.value().y);
+	navigationCode = navigationComponent->navigateTo(m_focusPoint.value().x, m_focusPoint.value().y);
 	if (navigationCode == NavigationStatus::DESTINATION_REACHED) {
 		m_focusPoint = _getNextPatrolDestination();
 		assert(m_focusPoint.has_value() && "No Patrol Destination was set");
@@ -83,7 +108,7 @@ void BBGhostBrainComponent::update()
 		_doEngage();
 		break;
 	default:
-		_doPatrol();
+		_doIdle();
 		break;
 	}
 
@@ -108,7 +133,7 @@ SDL_FPoint BBGhostBrainComponent::_getNextPatrolDestination()
 	}
 
 	auto newDestination = m_wayPoints[m_currentWaypointIndex];
-	newPatrolLocation = newDestination.lock().get()->getCenterPosition();
+	newPatrolLocation = newDestination.get()->getCenterPosition();
 
 	return newPatrolLocation;
 
