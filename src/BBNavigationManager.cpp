@@ -9,24 +9,24 @@ BBNavigationManager::BBNavigationManager()
 		{1,2},
 
 		//Top floor
-		{16,141},{17,141},{18,141},{19,141},{20,141},{21,141},{22,141},{23,141},{24,141},{25,141},{26,141},{27,141},{28,141},{29,141},{30,141},{31,141},{32,141},
-		{33,141},{34,141},{35,141},{36,141},{37,141},{38,141},{39,141},{40,141},{41,141},{42,141},{44,141},{45,141},{46,141},{47,141},{48,141},{49,141},{50,141},
-		{51,141},{52,141},{53,141},{54,141},{55,141},{56,141},{57,141},{58,141},{59,141},
+		{16,139},{17,139},{18,139},{19,139},{20,139},{21,139},{22,139},{23,139},{24,139},{25,139},{26,139},{27,139},{28,139},{29,139},{30,139},{31,139},{32,139},
+		{33,139},{34,139},{35,139},{36,139},{37,139},{38,139},{39,139},{40,139},{41,139},{42,139},{43,139},{44,139},{45,139},{46,139},{47,139},{48,139},{49,139},{50,139},
+		{51,139},{52,139},{53,139},{54,139},{55,139},{56,139},{57,139},{58,139},{59,139},
 
 		//Bottom Floor
-		{16,152},{17,152},{18,152},{19,152},{20,152},{21,152},{22,152},{23,152},{24,152},{25,152},{26,152},{27,152},{28,152},{29,152},{30,152},{31,152},{32,152},
-		{33,152},{34,152},{35,152},{36,152},{37,152},{38,152},{39,152},{40,152},{41,152},{42,152},{44,152},{45,152},{46,152},{47,152},{48,152},{49,152},{50,152},
-		{51,152},{52,152},{53,152},{54,152},{55,152},{56,152},{57,152},{58,152},{59,152},
+		{16,150},{17,150},{18,150},{19,150},{20,150},{21,150},{22,150},{23,150},{24,150},{25,150},{26,150},{27,150},{28,150},{29,150},{30,150},{31,150},{32,150},
+		{33,150},{34,150},{35,150},{36,150},{37,150},{38,150},{39,150},{40,150},{41,150},{42,150},{43,150},{44,150},{45,150},{46,150},{47,150},{48,150},{49,150},{50,150},
+		{51,150},{52,150},{53,150},{54,150},{55,150},{56,150},{57,150},{58,150},{59,150},
 
 		//Cellar
 		//{0,0},
 
 		//Main stairs
-		{40,142},{40,143},{40,144},{40,145},{40,146},{40,147},{40,148},{40,149},{40,150},{40,151},
+		{40,139},{40,140},{40,141},{40,142},{40,143},{40,144},{40,145},{40,146},{40,147},{40,148},{40,149},{40,150},
 		 
 		//Bobbys bathroom
-		{151,19},{152,19},{153,19},{154,19},{155,19},{156,19},{157,19},{158,19},{159,19},{160,19},{161,19},{162,19},{163,19},{164,19},{165,19},{166,19},{167,19},
-		{168,19},{169,19},
+		/*{151,19},{152,19},{153,19},{154,19},{155,19},{156,19},{157,19},{158,19},{159,19},{160,19},{161,19},{162,19},{163,19},{164,19},{165,19},{166,19},{167,19},
+		{168,19},{169,19},*/
 
 	};
 
@@ -40,6 +40,8 @@ void BBNavigationManager::buildNavigationMap()
 	//Initialize all to false
 	for (auto& row : m_navigationMap) {
 		for (auto& item : row) {
+			//todd temp
+			//item.passable = true;
 			item.passable = false;
 		}
 	}
@@ -56,40 +58,41 @@ void BBNavigationManager::buildNavigationMap()
 void BBNavigationManager::updateNavigationMap()
 {
 
+	//NavigationManager::updateNavigationMap();
 
 }
 
 void BBNavigationManager::buildNavigationMapItem(GameObject* gameObject, Scene* scene)
 {
 
-	NavigationMapItem navigationMapItem{};
+	//NavigationMapItem navigationMapItem{};
 
-	//This is a possible impasse
-	if (gameObject->hasTrait(TraitTag::impasse) ||
-		gameObject->hasTrait(TraitTag::conditional_impasse) ||
-		gameObject->hasTrait(TraitTag::complex_impasse))
-	{
+	////This is a possible impasse
+	//if (gameObject->hasTrait(TraitTag::impasse) ||
+	//	gameObject->hasTrait(TraitTag::conditional_impasse) ||
+	//	gameObject->hasTrait(TraitTag::complex_impasse))
+	//{
 
-		//Find this objects shared_ptr so we can store the weak_ptr of it here
-		auto gameObjectSharedPtr = scene->getGameObject(gameObject->id()).value();
+	//	//Find this objects shared_ptr so we can store the weak_ptr of it here
+	//	auto gameObjectSharedPtr = scene->getGameObject(gameObject->id()).value();
 
-		navigationMapItem.gameObject = gameObjectSharedPtr;
+	//	navigationMapItem.gameObject = gameObjectSharedPtr;
 
-		//If this is impasse, then it will always be so set it now so that the 
-		//the navigationComponent will work on the first pass
-		if (gameObject->hasTrait(TraitTag::impasse)) {
-			navigationMapItem.passable = false;
-		}
+	//	//If this is impasse, then it will always be so set it now so that the 
+	//	//the navigationComponent will work on the first pass
+	//	if (gameObject->hasTrait(TraitTag::impasse)) {
+	//		navigationMapItem.passable = false;
+	//	}
 
-		//Add the initial navigationMapItem to the collection
-		m_navigationMap[(int)gameObject->getOriginalTilePosition().x][(int)gameObject->getOriginalTilePosition().y] = navigationMapItem;
+	//	//Add the initial navigationMapItem to the collection
+	//	m_navigationMap[(int)gameObject->getOriginalTilePosition().x][(int)gameObject->getOriginalTilePosition().y] = navigationMapItem;
 
-	}
-	else {
+	//}
+	//else {
 
-		navigationMapItem.passable = true;
-		m_navigationMap[(int)gameObject->getOriginalTilePosition().x][(int)gameObject->getOriginalTilePosition().y] = navigationMapItem;
+	//	navigationMapItem.passable = true;
+	//	m_navigationMap[(int)gameObject->getOriginalTilePosition().x][(int)gameObject->getOriginalTilePosition().y] = navigationMapItem;
 
-	}
+	//}
 
 }

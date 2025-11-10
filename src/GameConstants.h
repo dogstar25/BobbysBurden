@@ -70,6 +70,7 @@ namespace ContactTag {
 	inline constexpr int FRIGHTING_OBJECT = 30;
 	inline constexpr int BED_STAIRS = 31;
 	inline constexpr int HIDING_SPOT = 32;
+	inline constexpr int GHOST_COLLISION = 33;
 	
 
 }

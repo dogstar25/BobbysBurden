@@ -19,23 +19,24 @@
                 },
                 {
                     "id": "VITALITY_COMPONENT",
-                    "speed": 3,
+                    "speed": 1,
                     "health": 6
                 },
                 {
                     "id": "PHYSICS_COMPONENT",
                     "type": "B2_DYNAMIC",
                     "gravityScale": 0,
-                    "linearDamping": 1.0,
+                    "linearDamping": 4.0,
+                    "isFixedRotation": true,
                     "shapes": [
                         {
                             "contactTag": "ContactTag::GENERAL_FREE",
                             "collisionShape": "B2_BOX",
                             "friction": 0.2,
                             "restitution": 0.0,
-                            "density": 1,
+                            "density": 1000,
                             "size": {
-                                "width": 50,
+                                "width": 32,
                                 "height": 175
                             }
                         }
@@ -124,7 +125,17 @@
                 },
                 {
                     "id": "NAVIGATION_COMPONENT",
-                    "passageFitSizeCategory": "NavigationSizeCategory::LARGE"
+                    "passageFitSizeCategory": "NavigationSizeCategory::SMALL",
+                    "destinationReachedToleranceOverride":  32
+                },
+                {
+                    "id": "ACTION_COMPONENT",
+                    "actions": [
+                        {
+                            "actionId": "Actions::MOVE",
+                            "actionClass": "DefaultMove"
+                        }
+                    ]
                 }
 
             ]

@@ -46,7 +46,7 @@
         {
             "colorKey": "Colors::COPPER",
             "gameObjectType": "NAVIGATION_BLOCKER",
-            "layer": "GameLayer::ABSTRACT"
+            "layer": "GameLayer::FOREGROUND_4"
         }
     ],
     "locationDefinedObjects": [
@@ -123,12 +123,12 @@
                     "layer": "GameLayer::MAIN",
                     "cameraFollow": true
                 },
-                //{
-                //    "id": "LOC_0023_0138",
-                //    "gameObjectType": "GHOST",
-                //    "name": "Ghost",
-                //    "layer": "GameLayer::MAIN"
-                //},
+                {
+                    "id": "LOC_0023_0136",
+                    "gameObjectType": "GHOST",
+                    "name": "Ghost",
+                    "layer": "GameLayer::MAIN"
+                },
                 {
                     "id": "LOC_0015_0144",
                     "gameObjectType": "HOUSE_BEAM",

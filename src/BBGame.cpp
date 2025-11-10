@@ -6,6 +6,7 @@
 using namespace std::chrono_literals;
 
 bool BBGame::init(
+	std::shared_ptr<SoundManager> soundManager,
 	std::shared_ptr<ContactHandler> contactHandler, 
 	std::shared_ptr<ContactFilter> contactFilter,
 	std::shared_ptr<ComponentFactory> componentFactory, 
@@ -26,7 +27,7 @@ bool BBGame::init(
 
 	//Assign all of the game specific managers and factories to the main game object
 	Game::init(
-		contactHandler, contactFilter, componentFactory, actionFactory, particleEffectsFactory, cutSceneFactory, iMGuiFactory, triggerFactory,
+		soundManager, contactHandler, contactFilter, componentFactory, actionFactory, particleEffectsFactory, cutSceneFactory, iMGuiFactory, triggerFactory,
 		puzzleFactory, environmentEventFactory, contextManager, gameStateManager, navigationManager, enumMap, colorMap
 	);
 
@@ -93,7 +94,7 @@ bool BBGame::init(
 	contextManager->loadSettings();
 
 	//Initialize the sound manager
-	if (!SoundManager::instance().initSound())
+	if (!soundManager->initSound())
 	{
 		return false;
 	}
@@ -106,7 +107,7 @@ bool BBGame::init(
 	//scene.loadLevel("test_box2d3");
 
 	//For Bobby's burden we need to manually build the navigation maps
-	//static_pointer_cast<BBNavigationManager>(m_navigationManager)->buildNavigationMap();
+	static_pointer_cast<BBNavigationManager>(m_navigationManager)->buildNavigationMap();
 
 	//////////////////////////////////////////////////////
 	//Force the load of the new game primer file for now
