@@ -45,23 +45,11 @@
                 },
                 {
                     "id": "BB_STATE_COMPONENT",
-                    "beginStates": [ "GameObjectState::WALK_RIGHT" ],
+                    "beginStates": [ "GameObjectState::IDLE" ],
                     "animationStates": [
                         {
-                            "state": "GameObjectState::IDLE_RIGHT",
-                            "animationId": "IDLE_RIGHT"
-                        },
-                        {
-                            "state": "GameObjectState::IDLE_LEFT",
-                            "animationId": "IDLE_LEFT"
-                        },
-                        {
-                            "state": "GameObjectState::IDLE_UP",
-                            "animationId": "WALK_UP_IDLE"
-                        },
-                        {
-                            "state": "GameObjectState::IDLE_DOWN",
-                            "animationId": "WALK_DOWN_IDLE"
+                            "state": "GameObjectState::IDLE",
+                            "animationId": "IDLE"
                         },
                         {
                             "state": "GameObjectState::WALK_RIGHT",
@@ -84,23 +72,18 @@
                 },
                 {
                     "id": "ANIMATION_COMPONENT",
-                    "default": "WALK_LEFT",
+                    "default": "IDLE",
                     "frameSize": {
                         "width": 256,
                         "height": 256
                     },
                     "animations": [
                         {
-                            "id": "IDLE_RIGHT",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_GHOST_MOVE_RIGHT",
-                            "frames": 1
-                        },
-                        {
-                            "id": "IDLE_LEFT",
-                            "animateMode": "AnimationMode::ANIMATE_STILL_FRAME",
-                            "textureId": "TX_GHOST_MOVE_LEFT",
-                            "frames": 1
+                            "id": "IDLE",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_GHOST_MOVE_DOWN",
+                            "speed": 0.04,
+                            "frames": 2
                         },
                         {
                             "id": "WALK_RIGHT",
@@ -115,6 +98,20 @@
                             "textureId": "TX_GHOST_MOVE_LEFT",
                             "speed": 0.04,
                             "frames": 68
+                        },
+                        {
+                            "id": "WALK_UP",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_GHOST_MOVE_UP",
+                            "speed": 0.04,
+                            "frames": 2
+                        },
+                        {
+                            "id": "WALK_DOWN",
+                            "animateMode": "AnimationMode::ANIMATE_CONTINUOUS",
+                            "textureId": "TX_GHOST_MOVE_DOWN",
+                            "speed": 0.04,
+                            "frames": 2
                         }
                     ]
                 },
@@ -133,7 +130,7 @@
                     "actions": [
                         {
                             "actionId": "Actions::MOVE",
-                            "actionClass": "DefaultMove"
+                            "actionClass": "GhostMoveAction"
                         }
                     ]
                 }
