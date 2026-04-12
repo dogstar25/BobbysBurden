@@ -2,7 +2,7 @@
 	"gameObjects" : 
 	[
 		{
-			"gameObjectName" : "bedroom1ClosetDoor",
+			"gameObjectName" : "bobbysBathroomDoor",
 			"gameObjectType" : "DOOR_SIDE_RIGHT",
 			"state" : 
 			[
@@ -16,7 +16,7 @@
 			}
 		},
 		{
-			"gameObjectName" : "bedroom1ClosetDoor",
+			"gameObjectName" : "bobbysBathroomDoor",
 			"gameObjectType" : "DOOR_FRONT",
 			"state" : 
 			[
