@@ -3,7 +3,7 @@
         {
             "type": "BOBBYS_BATHROOM",
             "traitTags": [],
-            "description": "Bobbys Closet",
+            "description": "Bobbys Bathroom",
             "components": [
                 {
                     "id": "RENDER_COMPONENT",
@@ -15,6 +15,17 @@
                         "width": 608,
                         "height": 320
                     }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "shapes": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
                 },
                 {
                     "id": "CHILDREN_COMPONENT",
@@ -69,7 +80,7 @@
                         },
                         {
                             "gameObjectType": "DOOR_SIDE_RIGHT",
-                            "name": "bedroom1ClosetDoor",
+                            "name": "bobbysBathroomDoor",
                             "absolutePositionSlot": {
                                 "x": 180,
                                 "y": 32

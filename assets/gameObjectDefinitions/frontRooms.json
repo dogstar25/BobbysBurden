@@ -276,7 +276,7 @@
                         },
                         {
                             "gameObjectType": "DOOR_FRONT",
-                            "name": "bedroom1ClosetDoor",
+                            "name": "bobbysBathroomDoor",
                             "absolutePositionSlot": {
                                 "x": -200,
                                 "y": 40
@@ -655,6 +655,17 @@
                     }
                 },
                 {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "shapes": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
+                },
+                {
                     "id": "CHILDREN_COMPONENT",
                     "sameSlotTreatment": "ChildSlotTreatment::STACKED",
                     "childObjects": [
@@ -730,6 +741,17 @@
                         "width": 320,
                         "height": 320
                     }
+                },
+                {
+                    "id": "PHYSICS_COMPONENT",
+                    "type": "B2_STATIC",
+                    "shapes": [
+                        {
+                            "contactTag": "ContactTag::GENERAL_SOLID",
+                            "collisionShape": "B2_BOX",
+                            "isSensor": true
+                        }
+                    ]
                 },
                 {
                     "id": "CHILDREN_COMPONENT",

@@ -30,13 +30,14 @@
                     "isFixedRotation": true,
                     "shapes": [
                         {
-                            "contactTag": "ContactTag::GENERAL_FREE",
+                            "contactTag": "ContactTag::GHOST_TOUCH",
                             "collisionShape": "B2_BOX",
+                            "isSensor":  true,
                             "friction": 0.2,
                             "restitution": 0.0,
                             "density": 1000,
                             "size": {
-                                "width": 32,
+                                "width": 48,
                                 "height": 175
                             }
                         }
@@ -118,7 +119,7 @@
                 {
                     "id": "BB_GHOST_BRAIN_COMPONENT",
                     "sightSensorSize": 25,
-                    "detectObjectTraits": [ "mobile" ]
+                    "detectObjectTraits": [ "player" ]
                 },
                 {
                     "id": "NAVIGATION_COMPONENT",

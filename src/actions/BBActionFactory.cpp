@@ -16,6 +16,7 @@
 #include "PushGuestBedButtonAction.h"
 #include "PlayPhonographAction.h"
 #include "GhostMoveAction.h"
+#include "GhostDoorEnterAction.h"
 
 
 std::shared_ptr<Action> BBActionFactory::create(std::string actionType, Json::Value properties, GameObject* parent)
@@ -93,6 +94,10 @@ std::shared_ptr<Action> BBActionFactory::create(std::string actionType, Json::Va
     else if (actionType == "GhostMoveAction") {
 
         action = std::make_shared<GhostMoveAction>(properties, parent);
+    }
+    else if (actionType == "GhostDoorEnterAction") {
+
+        action = std::make_shared<GhostDoorEnterAction>(properties, parent);
     }
 
     else {
