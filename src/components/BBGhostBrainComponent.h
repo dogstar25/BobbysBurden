@@ -1,7 +1,7 @@
 #pragma once
 #include "MobyDick.h"
 
-class BBGhostBrainComponent :  public BrainComponent
+class BBGhostBrainComponent : public BrainComponent
 {
 
 public:
@@ -14,17 +14,22 @@ public:
 private:
 	std::vector<std::shared_ptr<GameObject>> m_wayPoints;
 
-
 	int _determineState();
 	void _doPatrol();
+	void _doAlert();
 	void _doEngage();
 	void _doIdle();
 	SDL_FPoint _getNextPatrolDestination();
+	void _updateLastSeenBobbyPosition();
 
 	std::optional<SDL_FPoint> m_focusPoint{};
 	size_t m_currentWaypointIndex{};
 	std::vector<SDL_FPoint> m_manualWayPoints{};
 
+	SDL_FPoint m_lastSeenBobbyPosition{};
+	Timer m_alertTimer{ 1.5f, false };
+
+	float m_normalSpeed{};
+	float m_huntSpeed{};
 
 };
-

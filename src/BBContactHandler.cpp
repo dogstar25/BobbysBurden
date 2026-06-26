@@ -3,6 +3,7 @@
 #include "GameConstants.h"
 #include "particleEffects/GameParticleEffects.h"
 #include "components/BobbyPlayerControlComponent.h"
+#include "cutScenes/BBCutSceneCaught.h"
 
 //extern std::unique_ptr<Game> game;
 
@@ -28,6 +29,62 @@ void BBContactHandler::_actor_warpEntry(GameObject* interactingObject, GameObjec
 
 		b2Body_SetTransform(physicsComponent->physicsBodyId(), exitLocation, b2Body_GetRotation(physicsComponent->physicsBodyId()));
 
+
+	}
+
+}
+
+void BBContactHandler::_actor_ghostCaughtBobby(GameObject* ghost, GameObject* bobby)
+{
+
+	// Don't re-trigger if a cutscene is already running
+	if (SceneManager::instance().currentScene().cutScene().has_value()) {
+		return;
+	}
+
+	SceneManager::instance().directScene("BBCutSceneCaught");
+
+}
+
+void BBContactHandler::handleSensors(const b2WorldId physicsWorldId)
+{
+
+	// Base class updates touchingObjects for all sensor overlaps
+	ContactHandler::handleSensors(physicsWorldId);
+
+	b2SensorEvents sensorEvents = b2World_GetSensorEvents(physicsWorldId);
+
+	for (int i = 0; i < sensorEvents.beginCount; ++i) {
+
+		const b2SensorBeginTouchEvent& event = sensorEvents.beginEvents[i];
+
+		void* sensorShapeUserData = b2Shape_GetUserData(event.sensorShapeId);
+		void* visitorShapeUserData = b2Shape_GetUserData(event.visitorShapeId);
+
+		ContactDefinition* sensorContactDef = reinterpret_cast<ContactDefinition*>(sensorShapeUserData);
+		ContactDefinition* visitorContactDef = reinterpret_cast<ContactDefinition*>(visitorShapeUserData);
+
+		if (!sensorContactDef || !visitorContactDef) {
+			continue;
+		}
+
+		int sensorTag = sensorContactDef->contactTag;
+		int visitorTag = visitorContactDef->contactTag;
+
+		//////////////////////////////////////
+		// Ghost Touch + Bobby Collision
+		//////////////////////////////////////
+		if (sensorTag == ContactTag::GHOST_TOUCH && visitorTag == ContactTag::PLAYER_COLLISION) {
+
+			b2BodyId ghostBodyId = b2Shape_GetBody(event.sensorShapeId);
+			b2BodyId bobbyBodyId = b2Shape_GetBody(event.visitorShapeId);
+
+			GameObject* ghost = reinterpret_cast<GameObject*>(b2Body_GetUserData(ghostBodyId));
+			GameObject* bobby = reinterpret_cast<GameObject*>(b2Body_GetUserData(bobbyBodyId));
+
+			_actor_ghostCaughtBobby(ghost, bobby);
+
+		}
 
 	}
 

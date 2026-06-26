@@ -39,6 +39,12 @@
                                 "width": 32,
                                 "height": 175
                             }
+                        },
+                        {
+                            "contactTag": "ContactTag::GHOST_TOUCH",
+                            "collisionShape": "B2_CIRCLE",
+                            "collisionRadius": 1.0,
+                            "isSensor": true
                         }
 
                     ]

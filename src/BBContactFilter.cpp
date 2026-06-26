@@ -100,6 +100,13 @@ BBContactFilter::BBContactFilter()
 	m_contactMasks[HIDING_SPOT].reset();
 	m_contactMasks[HIDING_SPOT].set(PLAYER_COLLISION);
 
+	// Ghost touch sensor - fires when ghost overlaps Bobby's collision body
+	m_contactMasks[GHOST_TOUCH].reset();
+	m_contactMasks[GHOST_TOUCH].set(PLAYER_COLLISION);
+
+	// Bobby's collision body can be detected by the ghost touch sensor
+	m_contactMasks[PLAYER_COLLISION].set(GHOST_TOUCH);
+
 }
 
 bool BBContactFilter::ShouldCollide(b2ShapeId shapeAId, b2ShapeId shapeBId, void* context)
