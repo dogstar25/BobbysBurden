@@ -10,6 +10,11 @@ BBContactFilter::BBContactFilter()
 	m_contactMasks[LEVEL_CAGE].reset();
 	m_contactMasks[LEVEL_CAGE].set(PLAYER_COLLISION);
 
+	//GHOST_TOUCH
+	m_contactMasks[PLAYER_COLLISION].reset();
+	m_contactMasks[PLAYER_COLLISION].set(WARP_ENTRY);
+	m_contactMasks[PLAYER_COLLISION].set(PLAYER_COLLISION);
+
 	//PLAYER_COLLISION
 	m_contactMasks[PLAYER_COLLISION].reset();
 	m_contactMasks[PLAYER_COLLISION].set(GENERAL_SOLID);
@@ -42,6 +47,7 @@ BBContactFilter::BBContactFilter()
 	m_contactMasks[WALL].set(HEAVY_PARTICLE);
 	m_contactMasks[WALL].set(PLAYER_COLLISION);
 	m_contactMasks[WALL].set(WALL);
+
 
 	//DOOR Collision
 	m_contactMasks[DOOR_COLLISION].reset();

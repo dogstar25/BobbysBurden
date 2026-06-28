@@ -204,7 +204,8 @@
         {
             "type": "NAVIGATION_BLOCKER",
             "traitTags": [
-                "ghostWall"
+                "ghostWall",
+                "impasse"
             ],
             "description": "Brick Wall 1",
             "components": [

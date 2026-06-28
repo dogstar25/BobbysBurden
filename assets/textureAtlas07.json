@@ -21,6 +21,26 @@
                 "width": 2048,
                 "height": 2304
             }
+        },
+        {
+            "id": "TX_GHOST_MOVE_UP",
+            "description": "Default Texture",
+            "quadPosition": {
+                "x": 1537,
+                "y": 2049,
+                "width": 512,
+                "height": 256
+            }
+        },
+        {
+            "id": "TX_GHOST_MOVE_DOWN",
+            "description": "Default Texture",
+            "quadPosition": {
+                "x": 1025,
+                "y": 2049,
+                "width": 512,
+                "height": 256
+            }
         }
 
 

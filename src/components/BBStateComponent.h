@@ -10,14 +10,11 @@ public:
 	void update() override;
 	virtual void postInit() override;
 	void flipBobby();
-
-protected:
-
 	virtual void addState(GameObjectState state) override;
 	virtual void removeState(GameObjectState state) override;
 	void _setAndReconcileState(GameObjectState newState);
 
-	
+protected:
 
 private:
 

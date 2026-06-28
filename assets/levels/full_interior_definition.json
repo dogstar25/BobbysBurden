@@ -46,7 +46,7 @@
         {
             "colorKey": "Colors::COPPER",
             "gameObjectType": "NAVIGATION_BLOCKER",
-            "layer": "GameLayer::ABSTRACT"
+            "layer": "GameLayer::FOREGROUND_4"
         }
     ],
     "locationDefinedObjects": [
@@ -121,13 +121,14 @@
                     "gameObjectType": "BOBBY",
                     "name": "Player Bobby",
                     "layer": "GameLayer::MAIN",
-                    "cameraFollow": true
+                    "cameraFollow": false
                 },
                 {
-                    "id": "LOC_0023_0138",
+                    "id": "LOC_0023_0136",
                     "gameObjectType": "GHOST",
                     "name": "Ghost",
-                    "layer": "GameLayer::MAIN"
+                    "layer": "GameLayer::MAIN",
+                    "cameraFollow": true
                 },
                 {
                     "id": "LOC_0015_0144",
@@ -435,22 +436,6 @@
                         "height": 32
                     },
                     "angle": 90
-                }
-            ]
-        },
-        {
-            "groupName": "FRONT_ATTIC",
-            "objects": [
-                {
-                    "id": "LOC_0015_0133",
-                    "gameObjectType": "HOUSE_BEAM",
-                    "name": "Beam 46 Long",
-                    "description": "Floor",
-                    "layer": "GameLayer::ABSTRACT",
-                    "size": {
-                        "width": 1472,
-                        "height": 32
-                    }
                 }
             ]
         },

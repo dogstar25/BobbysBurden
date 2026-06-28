@@ -23,6 +23,7 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("ContactTag::DOOR_KNOB", ContactTag::DOOR_KNOB);
 	addEnumItem("ContactTag::FRIGHTING_OBJECT", ContactTag::FRIGHTING_OBJECT);
 	addEnumItem("ContactTag::HIDING_SPOT", ContactTag::HIDING_SPOT);
+	addEnumItem("ContactTag::GHOST_TOUCH", ContactTag::GHOST_TOUCH);
 
 	
 	//Custom Component Types
@@ -47,6 +48,8 @@ BBEnumMap::BBEnumMap()
 	addEnumItem("Actions::UNDEPLOY", Actions::UNDEPLOY);
 	addEnumItem("Actions::APPLY_SCARE", Actions::APPLY_SCARE);
 	addEnumItem("Actions::REMOVE_SCARE", Actions::REMOVE_SCARE);
+	addEnumItem("Actions::MOVE", Actions::MOVE);
+	addEnumItem("Actions::GHOST_DOOR_ENTER", Actions::GHOST_DOOR_ENTER);
 
 	//Traits
 	addEnumItem("hiding_spot", TraitTag::hiding_spot);
